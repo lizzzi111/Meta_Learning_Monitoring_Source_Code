@@ -1,0 +1,4 @@
+[tool.ruff]
+select = ["ALL"]
+ignore = ["ERA001","E501"]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
