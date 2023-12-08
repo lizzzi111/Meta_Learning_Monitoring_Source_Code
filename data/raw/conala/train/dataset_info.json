@@ -1,0 +1,59 @@
+{
+  "builder_name": "conala",
+  "citation": "@inproceedings{yin2018learning,\n  title={Learning to mine aligned code and natural language pairs from stack overflow},\n  author={Yin, Pengcheng and Deng, Bowen and Chen, Edgar and Vasilescu, Bogdan and Neubig, Graham},\n  booktitle={2018 IEEE/ACM 15th international conference on mining software repositories (MSR)},\n  pages={476--486},\n  year={2018},\n  organization={IEEE}\n}\n",
+  "config_name": "curated",
+  "dataset_size": 475799,
+  "description": "CoNaLa is a dataset of code and natural language pairs crawled from Stack Overflow, for more details please refer to this paper: https://arxiv.org/pdf/1805.08949.pdf or the dataset page https://conala-corpus.github.io/.\n",
+  "download_checksums": {
+    "data/conala-paired-train.json": {
+      "num_bytes": 517891,
+      "checksum": null
+    },
+    "data/conala-paired-test.json": {
+      "num_bytes": 109186,
+      "checksum": null
+    }
+  },
+  "download_size": 627077,
+  "features": {
+    "question_id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "intent": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "rewritten_intent": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "snippet": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://conala-corpus.github.io/",
+  "license": "",
+  "size_in_bytes": 1102876,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 392968,
+      "num_examples": 2379,
+      "dataset_name": "conala"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 82831,
+      "num_examples": 500,
+      "dataset_name": "conala"
+    }
+  },
+  "version": {
+    "version_str": "1.1.0",
+    "major": 1,
+    "minor": 1,
+    "patch": 0
+  }
+}
