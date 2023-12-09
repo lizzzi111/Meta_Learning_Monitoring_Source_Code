@@ -1,10 +1,27 @@
+from __future__ import annotations  # noqa: EXE002, D100
+
 import json
+import logging
+from typing import TYPE_CHECKING
 
 import pandas as pd
-from transformers import DataCollatorForSeq2Seq, Seq2SeqTrainer, Seq2SeqTrainingArguments
+from transformers import (
+    DataCollatorForSeq2Seq,
+    RobertaTokenizerFast,
+    Seq2SeqTrainer,
+    Seq2SeqTrainingArguments,
+    T5ForConditionalGeneration,
+)
 
-from src.processing_utils import compute_metric_with_params, prepare_hg_ds
 from src.data_prep_utils import prep_for_hf
+from src.model import load_model_tok
+from src.processing_utils import compute_metric_with_params, prepare_hg_ds
+
+if TYPE_CHECKING:
+    from datasets import Dataset
+
+logging.basicConfig()
+logging.getLogger().setLevel(logging.INFO)
 
 EVAL_COLUMNS = [
     "eval_loss",
@@ -15,9 +32,26 @@ EVAL_COLUMNS = [
     "eval_bleu",
     "eval_gen_len",
 ]
+LOGS_COLUMNS = [
+    "epoch",
+    "loss",
+    "step",
+    "eval_loss",
+    "eval_rouge1",
+    "eval_rouge2",
+    "eval_rougeL",
+    "eval_rougeLsum",
+    "eval_bleu",
+]
 
-def prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer):
-
+def prepare_trainer(
+        train_data: Dataset,
+        validation_data: Dataset,
+        training_arguments:dict,
+        model: T5ForConditionalGeneration | str,
+        tokenizer: RobertaTokenizerFast,
+        ) -> list:
+    """Prepare HuggingFace trainer."""
     analysis_name = f'{training_arguments["MODEL"]}_{training_arguments["TRAIN_N"]}_{training_arguments["BATCH_SIZE"]}'
     training_args = Seq2SeqTrainingArguments(
         **training_arguments["SEQ_TRAINER_ARGS"],
@@ -37,51 +71,47 @@ def prepare_trainer(train_data, validation_data, training_arguments, model, toke
     )
     return trainer, analysis_name
 
+def train(
+        train_data: Dataset,
+        validation_data: Dataset,
+        training_arguments: dict,
+        model: T5ForConditionalGeneration,
+        tokenizer: RobertaTokenizerFast,
+        ) -> Seq2SeqTrainer:
+    """Train the T5 Model."""
+    trainer, analysis_name = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
+    # TRAINING
+    trainer.train()
+    trainer.save_model(f"reports/{analysis_name}/trained_model")
+    return trainer
 
-def eval(trainer, train_data, validation_data, training_arguments, model, tokenizer):
-    #trainer, analysis_name = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
+def dd_eval(  # noqa: PLR0913
+        train_data: Dataset,
+        validation_data: Dataset,
+        training_arguments: dict,
+        model: T5ForConditionalGeneration | str,
+        tokenizer: RobertaTokenizerFast,
+        trainer: Seq2SeqTrainer=None,
+        ) -> list:
+    """Evaluate HF on validation data."""
     analysis_name = f'{training_arguments["MODEL"]}_{training_arguments["TRAIN_N"]}_{training_arguments["BATCH_SIZE"]}'
+    if isinstance(model, str):
+        model = load_model_tok(f"reports/{analysis_name}/trained_model", freeze=True)
+    trainer, analysis_name = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
     # ZERO - SHOT
     results_zero_shot = trainer.evaluate()
     results_zero_shot_df = pd.DataFrame(data=results_zero_shot, index=[0])[EVAL_COLUMNS]
     results_zero_shot_df.loc[0, :] = results_zero_shot_df.loc[0, :].apply(lambda x: round(x, 3))
     results_zero_shot_df.to_csv(f"reports/{analysis_name}/zero_shot_results.csv", index=False)
-    print(results_zero_shot_df)
+    logging.info(results_zero_shot_df)
 
     # STORE PARAMS
-    with open(f"reports/{analysis_name}/config.json", "w") as params_file:
+    with open(f"reports/{analysis_name}/config.json", "w") as params_file:  # noqa: PTH123
         json.dump(training_arguments, params_file)
 
     return trainer, {"loss" : results_zero_shot_df["eval_loss"], "rouge" : results_zero_shot_df["eval_rouge1"]}, analysis_name
 
-
-def train_evaluate(train_data, validation_data, training_arguments, model, tokenizer):
-    trainer, analysis_name = eval(train_data, validation_data, training_arguments, model, tokenizer)
-
-    # TRAINING
-    trainer.train()
-
-    # FINE-TUNING
-    results_fine_tune = trainer.evaluate()
-    results_fine_tune_df = pd.DataFrame(data=results_fine_tune, index=[0])[EVAL_COLUMNS]
-    results_fine_tune_df.loc[0, :] = results_fine_tune_df.loc[0, :].apply(lambda x: round(x, 3))
-    results_fine_tune_df.to_csv(f"reports/{analysis_name}/fine_tune_results.csv", index=False)
-    print(results_fine_tune_df)
-
-    logs_df = parse_logs(trainer)
-    logs_df.to_csv(f"reports/{analysis_name}/training_logs.csv", index=False)
-
-    return trainer
-
-def train(train_data, validation_data, training_arguments, model, tokenizer):
-    trainer, _ = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
-    # TRAINING
-    trainer.train()
-
-    return trainer
-
-
-def parse_logs(trainer):
+def parse_logs(trainer: Seq2SeqTrainer) -> pd.DataFrame:
     """Parse Trainer Logs."""
     log_history = trainer.state.log_history
     train_log = pd.DataFrame(columns=log_history[0].keys())
@@ -105,21 +135,15 @@ def parse_logs(trainer):
         left_on=["epoch", "step"],
         right_on=["epoch", "step"],
     )
-    return logs[
-        [
-            "epoch",
-            "loss",
-            "step",
-            "eval_loss",
-            "eval_rouge1",
-            "eval_rouge2",
-            "eval_rougeL",
-            "eval_rougeLsum",
-            "eval_bleu",
-        ]
-    ]
+    return logs[LOGS_COLUMNS]
 
-def dd_analysis(df, tokenizer, model, training_args):
+def dd_analysis(
+        df:pd.DataFrame,
+        tokenizer:RobertaTokenizerFast,
+        model: T5ForConditionalGeneration,
+        training_args: dict,
+        ) -> pd.DataFrame:
+    """Runs analysis on data drift along time dimension."""  # noqa: D401
     loss = []
     rouge_1 = []
 
@@ -132,8 +156,8 @@ def dd_analysis(df, tokenizer, model, training_args):
     )
 
     for i in range(df.t_batch.nunique()-1):
-        print(f"Validation for time step {i}")
-        test_dataset  = prep_for_hf(df, 0)
+        logging.info(f"Validation for time step {i}")  # noqa: G004
+        test_dataset  = prep_for_hf(df, i)
         validation_data = prepare_hg_ds(
             test_dataset,
             tokenizer=tokenizer,
@@ -142,9 +166,9 @@ def dd_analysis(df, tokenizer, model, training_args):
         )
         if i==0:
             trainer = train(train_data, validation_data, training_args, model, tokenizer)
-        trainer, results, analysis_name = eval(trainer, train_data, validation_data, training_args, model, tokenizer)
-        loss.append(results["loss"])
-        rouge_1.append(results["rouge"])
+        trainer, results, analysis_name = dd_eval(train_data, validation_data, training_args, model, tokenizer)
+        loss.append(results["loss"].iloc[0])
+        rouge_1.append(results["rouge"].iloc[0])
     loss_df = pd.DataFrame(data={"i": range(df.t_batch.nunique()-1),
                     "loss" : loss,
                     "rouge": rouge_1})

@@ -1,11 +1,11 @@
-import gc
+import gc  # noqa: EXE002, D100
 
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 
 def load_model_tok(model_name: str, freeze:bool=True) -> list:  # noqa: FBT001, FBT002
-
+    """Load T5 model and tokenizer."""
     if model_name=="CodeT5":
         model_name="Salesforce/codet5-base-multi-sum"
 
@@ -25,5 +25,6 @@ def load_model_tok(model_name: str, freeze:bool=True) -> list:  # noqa: FBT001, 
 
 
 def torch_clean():  # noqa: ANN201
+    """Clean up torch cache."""
     gc.collect()
     torch.cuda.empty_cache()
