@@ -1,11 +1,8 @@
-import numpy as np
 import evaluate
+import nltk
+import numpy as np
 
-import nltk 
 nltk.download('punkt')
-
-
-
 
 def postprocess_text(preds, labels):
 
@@ -42,21 +39,18 @@ def batch_tokenize_preprocess(batch, tokenizer, max_input_length, max_output_len
     return batch
 
 def prepare_hg_ds(dataset, tokenizer, max_input_length, max_output_length, batch_size=8):
-    """
-    Tokenize and prepare the HF dataset
-    """
-    data = dataset.map(
+    """Tokenize and prepare the HF dataset."""
+    return dataset.map(
         lambda batch: batch_tokenize_preprocess(
-            batch, 
+            batch,
             tokenizer=tokenizer,
             max_input_length=max_input_length,
-            max_output_length=max_output_length
+            max_output_length=max_output_length,
         ),
         batch_size=batch_size,
         batched=True,
         remove_columns=dataset.column_names,
     )
-    return data
 
 def compute_metric_with_params(tokenizer, metrics_list=['rouge', 'bleu']):
     def compute_metrics(eval_preds):

@@ -3,7 +3,8 @@ import json
 import pandas as pd
 from transformers import DataCollatorForSeq2Seq, Seq2SeqTrainer, Seq2SeqTrainingArguments
 
-from src.processing_utils import compute_metric_with_params
+from src.processing_utils import compute_metric_with_params, prepare_hg_ds
+from src.data_prep_utils import prep_for_hf
 
 EVAL_COLUMNS = [
     "eval_loss",
@@ -37,9 +38,9 @@ def prepare_trainer(train_data, validation_data, training_arguments, model, toke
     return trainer, analysis_name
 
 
-def evaluate(train_data, validation_data, training_arguments, model, tokenizer):
-    trainer, analysis_name = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
-
+def eval(trainer, train_data, validation_data, training_arguments, model, tokenizer):
+    #trainer, analysis_name = prepare_trainer(train_data, validation_data, training_arguments, model, tokenizer)
+    analysis_name = f'{training_arguments["MODEL"]}_{training_arguments["TRAIN_N"]}_{training_arguments["BATCH_SIZE"]}'
     # ZERO - SHOT
     results_zero_shot = trainer.evaluate()
     results_zero_shot_df = pd.DataFrame(data=results_zero_shot, index=[0])[EVAL_COLUMNS]
@@ -51,11 +52,11 @@ def evaluate(train_data, validation_data, training_arguments, model, tokenizer):
     with open(f"reports/{analysis_name}/config.json", "w") as params_file:
         json.dump(training_arguments, params_file)
 
-    return trainer, analysis_name
+    return trainer, {"loss" : results_zero_shot_df["eval_loss"], "rouge" : results_zero_shot_df["eval_rouge1"]}, analysis_name
 
 
 def train_evaluate(train_data, validation_data, training_arguments, model, tokenizer):
-    trainer, analysis_name = evaluate(train_data, validation_data, training_arguments, model, tokenizer)
+    trainer, analysis_name = eval(train_data, validation_data, training_arguments, model, tokenizer)
 
     # TRAINING
     trainer.train()
@@ -117,3 +118,35 @@ def parse_logs(trainer):
             "eval_bleu",
         ]
     ]
+
+def dd_analysis(df, tokenizer, model, training_args):
+    loss = []
+    rouge_1 = []
+
+    train_dataset = prep_for_hf(df, -1)
+    train_data = prepare_hg_ds(
+        train_dataset,
+        tokenizer=tokenizer,
+        max_input_length=training_args["ENCODER_LENGTH"],
+        max_output_length=training_args["DECODER_LENGTH"],
+    )
+
+    for i in range(df.t_batch.nunique()-1):
+        print(f"Validation for time step {i}")
+        test_dataset  = prep_for_hf(df, 0)
+        validation_data = prepare_hg_ds(
+            test_dataset,
+            tokenizer=tokenizer,
+            max_input_length=training_args["ENCODER_LENGTH"],
+            max_output_length=training_args["DECODER_LENGTH"],
+        )
+        if i==0:
+            trainer = train(train_data, validation_data, training_args, model, tokenizer)
+        trainer, results, analysis_name = eval(trainer, train_data, validation_data, training_args, model, tokenizer)
+        loss.append(results["loss"])
+        rouge_1.append(results["rouge"])
+    loss_df = pd.DataFrame(data={"i": range(df.t_batch.nunique()-1),
+                    "loss" : loss,
+                    "rouge": rouge_1})
+    loss_df.to_csv(f"reports/{analysis_name}/ts_logs.csv", index=False)
+    return loss_df
