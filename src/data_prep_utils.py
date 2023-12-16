@@ -50,10 +50,10 @@ def conala_to_time_batches(full_df:pd.DataFrame, train_size: int, batch_size: in
             batches.append(qids[batch_start:])
             #print(len(qids)-1)
 
-    full_df["t_batch"] = -1
+    full_df["t_batch"] = 0
 
     for i, batch_ids in enumerate(batches):
-        full_df.loc[full_df.question_id.isin(set(batch_ids)), "t_batch"] = i
+        full_df.loc[full_df.question_id.isin(set(batch_ids)), "t_batch"] = i+1
 
     return full_df
 
