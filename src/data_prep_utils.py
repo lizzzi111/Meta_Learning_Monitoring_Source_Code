@@ -1,10 +1,16 @@
+#!/usr/bin/python3
+"""Helper functions to prepare the data for analysis."""
+
+from __future__ import annotations
+
 import logging
 import math
 
 import pandas as pd
 from datasets import Dataset, load_from_disk
 
-logger = logging.getLogger()
+logging.basicConfig()
+logging.getLogger().setLevel(logging.INFO)
 
 def load_time_sorted_conala(path: str) -> pd.DataFrame:
     """Load local conala data set, convert it to pandas and return sorted df along the time axis (here question id)."""
@@ -21,16 +27,16 @@ def load_time_sorted_conala(path: str) -> pd.DataFrame:
 
     full_df = pd.concat([train_df, test_df], axis=0)
     full_df = full_df.sort_values("question_id").reset_index(drop=True)
-    print(f"Unique questions: {full_df.question_id.nunique()}")
+    logging.info(f"Unique questions: {full_df.question_id.nunique()}")  # noqa: G004
     return full_df
 
 def conala_to_time_batches(full_df:pd.DataFrame, train_size: int, batch_size: int) -> pd.DataFrame:
     """Prepare to time line batching of conala dataset."""
-    print("Sort Question IDs")
+    logging.info("Sort Question IDs")
     qids = full_df.question_id.unique()
     qids.sort()
 
-    print("Create t=0 training sample")
+    logging.info("Create t=0 training sample")
 
     #first_train_ids = qids[:train_size]
     batches = []
@@ -57,10 +63,13 @@ def conala_to_time_batches(full_df:pd.DataFrame, train_size: int, batch_size: in
 
     return full_df
 
-def prep_for_hf(df: pd.DataFrame, batch_id: int) -> Dataset:
-    """Convert pandas to huggingface."""
+def prep_for_hf(df: pd.DataFrame, batch_id: int|list) -> Dataset:
+    """Convert pandas dataframe to huggingface."""
     df = df.rename(columns={"snippet": "input_sequence",  # noqa: PD901
                     "intent" : "output_sequence"})
-    df = df.loc[df.t_batch==batch_id, ["input_sequence", "output_sequence"]]  # noqa: PD901
+    if isinstance(batch_id, list):
+        df = df.loc[df.t_batch.isin(batch_id), ["input_sequence", "output_sequence"]]  # noqa: PD901
+    elif isinstance(batch_id, int):
+        df = df.loc[df.t_batch==batch_id, ["input_sequence", "output_sequence"]]  # noqa: PD901
     df = df.sample(frac=1, random_state=42)  # noqa: PD901
     return Dataset.from_pandas(df)

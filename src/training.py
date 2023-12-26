@@ -58,7 +58,7 @@ def prepare_trainer(
     model = load_model(model, freeze=True, analysis_name=analysis_name)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
-    print(device)
+    logging.info(device)
 
     training_args = Seq2SeqTrainingArguments(
         **training_arguments["SEQ_TRAINER_ARGS"],
@@ -80,7 +80,7 @@ def prepare_trainer(
 def train(
         trainer:Seq2SeqTrainer,
         timestamp: int,
-        ):
+        ) -> None:
     """Train the T5 Model."""
     # TRAINING
     trainer.train()
@@ -140,7 +140,7 @@ def dd_analysis(
     analysis_name = f'{training_args["MODEL"]}_{training_args["TRAIN_N"]}_{training_args["BATCH_SIZE"]}'
     tokenizer = load_tok(model, analysis_name)
 
-    print(f"Conduct {analysis_name} ANALYSIS")
+    logging.info(f"Conduct {analysis_name} ANALYSIS")  # noqa: G004
 
     loss = []
     rouge_1 = []
@@ -154,7 +154,6 @@ def dd_analysis(
             max_input_length=training_args["ENCODER_LENGTH"],
             max_output_length=training_args["DECODER_LENGTH"],
         )
-
 
         logging.info(f"Validation for time step {i}")  # noqa: G004
         test_dataset  = prep_for_hf(df, i)
