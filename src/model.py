@@ -14,7 +14,7 @@ def load_model(model_name: str | int, freeze:bool=True, analysis_name:str=None) 
         if analysis_name is None:
             msg = "Requires analysis name"
             raise NameError(msg)
-        model_name = f"reports/{analysis_name}/trained_model_{model_name}"
+        model_name = f"reports/{analysis_name}/trained_model"
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
     if freeze:
