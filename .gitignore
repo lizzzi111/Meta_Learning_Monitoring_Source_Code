@@ -2,3 +2,4 @@
 .conda
 src/__pycache__
 notebooks/reports
+data/processed

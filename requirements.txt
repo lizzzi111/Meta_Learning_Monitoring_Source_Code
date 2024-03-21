@@ -1,0 +1,5 @@
+python==3.11
+scikit-learn==1.4.1.post1
+transformers==4.39.0
+numpy==1.26.4
+pandas==2.2.1
