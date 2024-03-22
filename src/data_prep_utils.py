@@ -30,7 +30,10 @@ def load_time_sorted_conala(path: str) -> pd.DataFrame:
     logging.info(f"Unique questions: {full_df.question_id.nunique()}")  # noqa: G004
     return full_df
 
-def conala_to_time_batches(full_df:pd.DataFrame, train_size: int, batch_size: int) -> pd.DataFrame:
+def conala_to_time_batches(full_df:pd.DataFrame, 
+                           train_size: int, 
+                           n_batches: int=None,
+                           batch_size: int=None) -> pd.DataFrame:
     """Prepare to time line batching of conala dataset."""
     logging.info("Sort Question IDs")
     qids = full_df.question_id.unique()
@@ -38,17 +41,26 @@ def conala_to_time_batches(full_df:pd.DataFrame, train_size: int, batch_size: in
 
     logging.info("Create t=0 training sample")
 
-    #first_train_ids = qids[:train_size]
+    if n_batches and batch_size:
+        raise ValueError("Please provide either n_batches or batch_size, not both.")
+    if not n_batches and not batch_size:
+        raise ValueError("Please provide either n_batches or batch_size.")
+    
     batches = []
-    batch_n = math.ceil((full_df.question_id.nunique()-train_size)/batch_size)
 
-    for i in range(batch_n):
+    if n_batches:
+        batch_size = math.ceil((full_df.question_id.nunique()-train_size)/n_batches)
+    #first_train_ids = qids[:train_size]
+    else:
+        n_batches = math.ceil((full_df.question_id.nunique()-train_size)/batch_size)
+
+    for i in range(n_batches):
         #print(i)
 
         batch_start = train_size+(i)*batch_size
         #print(batch_start)
 
-        if i!=(batch_n-1):
+        if i!=(n_batches-1):
             batch_end = batch_start + batch_size
             batches.append(qids[batch_start:batch_end])
             #print(batch_end)
