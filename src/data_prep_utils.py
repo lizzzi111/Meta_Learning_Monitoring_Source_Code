@@ -27,8 +27,23 @@ def load_time_sorted_conala(path: str) -> pd.DataFrame:
 
     full_df = pd.concat([train_df, test_df], axis=0)
     full_df = full_df.sort_values("question_id").reset_index(drop=True)
-    logging.info(f"Unique questions: {full_df.question_id.nunique()}")  # noqa: G004
+    logging.info(f"Unique questions: {full_df.question_id.nunique()}")
+    logging.info(f"Shape: {full_df.shape}")  # noqa: G004
     return full_df
+
+
+def time_batches(dataset, train_size, n_batches):
+    batch_size = math.ceil((len(dataset) - train_size) / n_batches)
+    print(train_size)
+    dataset["time_batch"] = 0
+    for i in range(0, n_batches):
+        batch_start = train_size + i * batch_size
+        batch_end = batch_start + batch_size
+        if i == n_batches - 1:
+            batch_end = len(dataset)
+        dataset.loc[batch_start:batch_end, "time_batch"] = i+1
+
+    return dataset, batch_size
 
 def conala_to_time_batches(full_df:pd.DataFrame, 
                            train_size: int, 
@@ -36,8 +51,9 @@ def conala_to_time_batches(full_df:pd.DataFrame,
                            batch_size: int=None) -> pd.DataFrame:
     """Prepare to time line batching of conala dataset."""
     logging.info("Sort Question IDs")
-    qids = full_df.question_id.unique()
-    qids.sort()
+    full_df = full_df.sort_values("question_id").reset_index(drop=True)
+    #qids = full_df.question_id.unique()
+    #qids.sort()
 
     logging.info("Create t=0 training sample")
 
@@ -49,10 +65,10 @@ def conala_to_time_batches(full_df:pd.DataFrame,
     batches = []
 
     if n_batches:
-        batch_size = math.ceil((full_df.question_id.nunique()-train_size)/n_batches)
+        batch_size = math.ceil((full_df.shape[0]-train_size)/n_batches)
     #first_train_ids = qids[:train_size]
     else:
-        n_batches = math.ceil((full_df.question_id.nunique()-train_size)/batch_size)
+        n_batches = math.ceil((full_df.shape[0]-train_size)/batch_size)
 
     for i in range(n_batches):
         #print(i)
@@ -63,10 +79,12 @@ def conala_to_time_batches(full_df:pd.DataFrame,
         if i!=(n_batches-1):
             batch_end = batch_start + batch_size
             batches.append(qids[batch_start:batch_end])
-            #print(batch_end)
+            print(batch_end)
+            #batches.append(full_df.question_id[batch_start:batch_end].values)
         else:
             batches.append(qids[batch_start:])
-            #print(len(qids)-1)
+            print(len(qids)-1)
+            #batches.append(full_df.question_id[batch_start:].values)
 
     full_df["t_batch"] = 0
 
