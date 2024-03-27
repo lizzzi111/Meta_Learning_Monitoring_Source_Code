@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+402504,determine the variable type,determine the type of variable `v`,type(v),175,0,4,33,1,27,1
+610883,know if an object has an attribute,get the value of attribute 'property' of object `a` with default value 'default value',"getattr(a, 'property', 'default value')",243,0,4,44,1,27,1
+610883,know if an object has an attribute,check if object `a` has property 'property',"if hasattr(a, 'property'):
+    pass",244,0,4,54,1,27,1
+739993,get a list of locally installed Python modules,get a list of locally installed Python modules,help('modules'),300,0,4,42,1,27,1
+902408,How to use variables in SQL statement in Python?,"Execute a sql statement using variables `var1`, `var2` and `var3`","cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))",356,0,4,56,1,27,1
+1093322,check what version of Python is running,check python version,sys.version_info,415,1,4,36,1,27,1
+2052390,Manually raising (throwing) an exception,"throw a ValueError with message 'represents a hidden bug, do not catch this'","raise ValueError('represents a hidden bug, do not catch this')",546,5,4,28,1,27,1
+2890896,Extract IP address from an html string (python),extract ip address from an html string,"ip = re.findall('[0-9]+(?:\\.[0-9]+){3}', s)",679,8,4,61,1,27,1
+3805958,How to delete a record in Django models?,How to delete a record in Django models?,SomeModel.objects.filter(id=id).delete(),817,12,4,22,1,27,1
+4476373,Simple URL GET/POST,make an HTTP post request with data `post_data`,"post_response = requests.post(url='http://httpbin.org/post', json=post_data)",934,15,4,27,1,27,1
+4476373,Simple URL GET/POST function,request http url `url` with parameters `payload`,"r = requests.get(url, params=payload)",936,15,4,26,1,27,1
+4789021,"In Django, how do I check if a user is in a certain group?","in django, check if a user is in a group 'Member'",return user.groups.filter(name='Member').exists(),987,16,4,28,1,27,1
+4906977,Access environment variables,"get value of environment variable ""HOME""",os.environ['HOME'],1007,17,4,44,1,27,1
+5255657,How can I disable logging while running unit tests in Python Django?,disable logging while running unit tests in python django,logging.disable(logging.CRITICAL),1052,18,4,57,1,27,1
+5404068,How to read keyboard-input?,read keyboard-input,input('Enter your input:'),1066,18,4,51,1,27,1
+6407780,How to extract data from JSON Object in Python?,extract data field 'bar' from json object,"json.loads('{""foo"": 42, ""bar"": ""baz""}')['bar']",1143,20,4,22,1,27,1
+7142062,Get function name as a string in python,get the name of function `func` as a string,print(func.__name__),1199,22,4,12,1,27,1
+7732125,Clear text from textarea with selenium,clear text from textarea 'foo' with selenium,driver.find_element_by_id('foo').clear(),1253,23,4,40,1,27,1
+7974442,lambda in python,make a function `f` that calculates the sum of two integer variables `x` and `y`,"f = lambda x, y: x + y",1273,23,4,49,1,27,1
+8519922,Posting raw data with Python,Send a post request with raw data `DATA` and basic authentication with `username` and `password`,"requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))",1335,25,4,63,1,27,1
+8586738,Get required fields from Document in mongoengine?,Get a list of all fields in class `User` that are marked `required`,"[k for k, v in User._fields.items() if v.required]",1342,25,4,29,1,27,1
+11709079,Parsing HTML,Parsing HTML string `html` using BeautifulSoup,"parsed_html = BeautifulSoup(html)
+print(parsed_html.body.find('div', attrs={'class': 'container', }).text)",1599,32,4,29,1,27,1
+11837979,Removing white space around a saved image in matplotlib,remove white space padding around a saved image `test.png` in matplotlib,"plt.savefig('test.png', bbox_inches='tight')",1611,32,4,39,1,27,1
+12557612,Calling a parent class constructor from a child class in python,call parent class `Instructor` of child class constructor,"super(Instructor, self).__init__(name, year)",1655,33,4,13,1,27,1
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for (i, j) in product(list(range(256)), list(range(256))):
+    pass",1734,35,4,58,1,27,1
+14306852,How do I modify the width of a TextCtrl in wxPython?,modify the width of a text control as `300` keeping default height in wxpython,"wx.TextCtrl(self, -1, size=(300, -1))",1824,38,4,40,1,27,1
+14734750,How to get multiple parameters with same name from a URL in Pylons?,get multiple parameters with same name from a url in pylons,request.params.getall('c'),1853,38,4,24,1,27,1
+15405636,Python's argparse to show program's version with prog and version string formatting,argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`,"parser.add_argument('--version', action='version', version='%(prog)s 2.0')",1920,40,4,55,1,27,1
+17306755,How can I format a float using matplotlib's LaTeX formatter?,format float `3.5e+20`  to `$3.5 \\times 10^{20}$` and set as title of matplotlib plot `ax`,"ax.set_title('$%s \\times 10^{%s}$' % ('3.5', '+20'))",2050,43,4,54,1,27,1
+19011613,Using BeautifulSoup to select div blocks within HTML,using beautifulsoup to select div blocks within html `soup`,"soup.find_all('div', class_='crBlock ')",2175,47,4,21,1,27,1
+19601086,Click a href button with selenium and python?,click a href button with text 'Send InMail' with selenium,driver.find_element_by_link_text('Send InMail').click(),2208,47,4,24,1,27,1
+19664253,selenium how to get the content of href within some targeted class,get the content of child tag with`href` attribute whose parent has css `someclass`,self.driver.find_element_by_css_selector('.someclass a').get_attribute('href'),2216,48,4,55,1,27,1
+20837786,Changing the referrer URL in python requests,request URL `url` using http header `{'referer': my_referer}`,"requests.get(url, headers={'referer': my_referer})",2284,49,4,51,1,27,1
+21350605,python selenium click on button,python selenium click on button,driver.find_element_by_css_selector('.button .c_button .s_button').click(),2305,50,4,63,1,27,1
+23351183,Django - Filter queryset by CharField value length,filter a Django model `MyModel` to have charfield length of max `255`,MyModel.objects.extra(where=['CHAR_LENGTH(text) > 254']),2376,52,4,53,1,27,1
+25540259,Remove or adapt border of frame of legend using matplotlib,remove frame of legend in plot `plt`,plt.legend(frameon=False),2425,53,4,47,1,27,1
+28667684,Python Requests getting SSLerror,request url 'https://www.reporo.com/' without verifying SSL certificates,"requests.get('https://www.reporo.com/', verify=False)",2494,55,4,59,1,27,1
+29784889,"Python, how to enable all warnings?",enable warnings using action 'always',warnings.simplefilter('always'),2529,56,4,47,1,27,1
+39605640,How do I pull a recurring key from a JSON?,pull a value with key 'name' from a json object `item`,print(item['name']),2770,62,4,25,1,27,1

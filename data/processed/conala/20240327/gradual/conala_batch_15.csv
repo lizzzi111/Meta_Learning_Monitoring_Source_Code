@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+123198,copy a file,"copy file ""/dir/file.ext"" to ""/new/dir/newname.ext""","shutil.copy2('/dir/file.ext', '/new/dir/newname.ext')",73,0,9,15,1
+180606,How do I convert a list of ascii values to a string in python?,convert a list `L` of ascii values to a string,""""""""""""".join(chr(i) for i in L)",83,0,7,15,1
+307305,Play a Sound with Python,play the wav file 'sound.wav',"winsound.PlaySound('sound.wav', winsound.SND_FILENAME)",137,0,9,15,1
+510348,make a time delay,make a 0.1 seconds time delay,time.sleep(0.1),215,0,4,15,1
+638048,How do I sum the first value in each tuple in a list of tuples in Python?,How do I sum the first value in each tuple in a list of tuples in Python?,sum([pair[0] for pair in list_of_pairs]),255,0,7,15,1
+715550,Best way to encode tuples with json,"serialize dictionary `d` as a JSON formatted string with each key formatted to pattern '%d,%d'","simplejson.dumps(dict([('%d,%d' % k, v) for k, v in list(d.items())]))",294,0,1,15,0
+1024847,Add key to a dictionary,Add key 'a' to dictionary `data` with value 1,data.update(a=1),402,1,1,15,0
+1388818,How can I compare two lists in python and return matches,compare two lists in python `a` and `b` and return matches,set(a).intersection(b),448,2,7,15,1
+1712227,get the size of a list,get the size of object `items`,items.__len__(),489,3,4,15,1
+1949318,Checking if a website is up,"Check the status code of url ""www.python.org""","conn = httplib.HTTPConnection('www.python.org')
+conn.request('HEAD', '/')
+r1 = conn.getresponse()
+print(r1.status, r1.reason)",528,4,4,15,1
+1966207,Converting NumPy array into Python List structure?,convert numpy array into python list structure,"np.array([[1, 2, 3], [4, 5, 6]]).tolist()",532,4,6,15,0
+2231663,Slicing a list into a list of sub-lists,"get a list of tuples of every three consecutive items in list `[1, 2, 3, 4, 5, 6, 7, 8, 9]`","list(zip(*((iter([1, 2, 3, 4, 5, 6, 7, 8, 9]),) * 3)))",576,6,7,15,1
+2269827,convert an int to a hex string,convert an int 65 to hex string,hex(65),582,6,5,15,0
+2793324,delete a list element by value,delete the element 6 from list `a`,a.remove(6),664,8,7,15,1
+3494906,How do I merge a list of dicts into a single dict?,Convert list of dictionaries `L` into a flat dictionary,dict(pair for d in L for pair in list(d.items())),776,11,1,15,0
+3989016,How to find all positions of the maximum value in a list?,get index of the first biggest element in list `a`,a.index(max(a)),863,13,7,15,1
+4116061,Importing everything ( * ) dynamically from a module,import all classes from module `some.package`,globals().update(importlib.import_module('some.package').__dict__),880,13,4,15,1
+4174941,sort a list of lists by a specific index,"sort a list of lists `list_to_sort` by indices 2,0,1 of the inner list","sorted_list = sorted(list_to_sort, key=itemgetter(2, 0, 1))",892,14,7,15,1
+4843173,How to check if type of a variable is string?,check if type of a variable `s` is string,"isinstance(s, str)",1000,16,0,15,0
+6856119,Can I use an alias to execute a program from a python script,execute command 'source .bashrc; shopt -s expand_aliases; nuke -x scriptPath' from python script,os.system('source .bashrc; shopt -s expand_aliases; nuke -x scriptPath'),1180,21,9,15,1
+8177079,take the content of a list and append it to another list,append list `a` to `c`,c.extend(a),1289,24,7,15,1
+10346336,List of lists into numpy array,List of lists into numpy array,"numpy.array([[1, 2], [3, 4]])",1480,29,6,15,0
+10668585,How to get max value in django ORM,Django get maximum value associated with field 'added' in model `AuthorizedEmail`,AuthorizedEmail.objects.filter(group=group).order_by('-added')[0],1516,30,4,15,1
+11066400,Remove punctuation from Unicode formatted strings,substitute occurrences of unicode regex pattern u'\\p{P}+' with empty string '' in string `text`,"return re.sub('\\p{P}+', '', text)",1545,30,8,15,0
+11692613,Python - sum values in dictionary,get a sum of all values from key `gold` in a list of dictionary `example_list`,sum([item['gold'] for item in example_list]),1595,32,1,15,0
+12310141,Python counting elements of a list within a list,check if all lists in list `L` have three elements of integer 1,all(x.count(1) == 3 for x in L),1637,33,7,15,1
+13395888,How can I get the color of the last figure in matplotlib?,"make a line plot with errorbars, `ebar`, from data `x, y, err` and set color of the errorbars to `y` (yellow)","ebar = plt.errorbar(x, y, yerr=err, ecolor='y')",1738,35,4,15,1
+14661701,How to drop a list of rows from Pandas dataframe?,"drop rows whose index value in list `[1, 3]` in dataframe `df`","df.drop(df.index[[1, 3]], inplace=True)",1847,38,3,15,0
+15459217,how to set cookie in python mechanize,"Add header `('Cookie', 'cookiename=cookie value')` to mechanize browser `br`","br.addheaders = [('Cookie', 'cookiename=cookie value')]",1928,40,4,15,1
+18137341,applying functions to groups in pandas dataframe,apply function `log2` to the grouped values by 'type' in dataframe `df`,df.groupby('type').apply(lambda x: np.mean(np.log2(x['v']))),2108,45,3,15,0
+18292500,Python logging typeerror,Log message 'test' on the root logger.,logging.info('test'),2119,45,4,15,1
+18432823,how to create similarity matrix in numpy python?,Convert array `x` into a correlation matrix,np.corrcoef(x),2128,45,6,15,0
+19738169,Convert column of date objects in Pandas DataFrame to strings,convert column of date objects 'DateObj' in pandas dataframe `df` to strings in new column 'DateStr',df['DateStr'] = df['DateObj'].dt.strftime('%d%m%Y'),2219,48,2,15,0
+26443308,Find last occurrence of character,"Find last occurrence of character '}' in string ""abcd}def}""",'abcd}def}'.rfind('}'),2443,53,0,15,0
+32032836,Select everything but a list of columns from pandas dataframe,get all column name of dataframe `df` except for column 'T1_V6',df[df.columns - ['T1_V6']],2613,58,3,15,0
+36381230,How to find row of 2d array in 3d numpy array,"find rows of 2d array in 3d numpy array 'arr' if the row has value '[[0, 3], [3, 0]]'","np.argwhere(np.all(arr == [[0, 3], [3, 0]], axis=(1, 2)))",2709,60,6,15,0
+39381222,How to print/show an expression in rational number form in python,print a rational number `3/2`,print('\n\x1b[4m' + '3' + '\x1b[0m' + '\n2'),2762,62,5,15,0
+41946927,Getting pandas dataframe from list of nested dictionaries,create a pandas data frame from list of nested dictionaries `my_list`,"pd.concat([pd.DataFrame(l) for l in my_list], axis=1).T",2855,64,3,15,0
+42364992,Python - Insert numbers in string between quotes,Enclose numbers in quotes in a string `This is number 1 and this is number 22`,"re.sub('(\\d+)', '""\\1""', 'This is number 1 and this is number 22')",2869,64,8,15,0

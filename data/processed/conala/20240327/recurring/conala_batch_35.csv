@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+89228,Calling an external command,"Calling an external command ""some_command with args""",stream = os.popen('some_command with args'),61,0,9,12,1,35,0
+663171,selecting alternate characters,"select alternate characters of ""H-e-l-l-o- -W-o-r-l-d""",'H-e-l-l-o- -W-o-r-l-d'[::2],269,0,8,0,0,35,0
+1007481,How do I replace whitespaces with underscore and vice versa?,replace spaces with underscore,"mystring.replace(' ', '_')",395,1,8,3,0,35,0
+2597099,Sorting numbers in string format with Python,Sort a list of integers `keys` where each value is in string format,keys.sort(key=lambda x: [int(y) for y in x.split('.')]),621,7,1,32,0,35,0
+3294889,Iterating over dictionaries using for loops,get keys and items of dictionary `d`,list(d.items()),739,10,1,54,0,35,0
+3518778,read csv into record array,read csv file 'myfile.csv' into array,"np.genfromtxt('myfile.csv', delimiter=',', dtype=None)",785,11,6,11,0,35,0
+3820312,Python: Write a list of tuples to a file,create a file 'filename' with each tuple in the list `mylist` written to a line,"open('filename', 'w').write('\n'.join('%s %s' % x for x in mylist))",820,12,9,38,1,35,0
+3996904,Generate random integers between 0 and 9,Generate random integers between 0 and 9,"print((random.randint(0, 9)))",865,13,5,59,0,35,0
+4060221,How to reliably open a file in the same directory as a Python script,open a file 'bundled-resource.jpg' in the same directory as a python script,"f = open(os.path.join(__location__, 'bundled-resource.jpg'))",874,13,9,25,1,35,0
+4706499,append to a file,"append line ""cool beans..."" to file ""foo""","with open('foo', 'a') as f:
+    f.write('cool beans...')",978,16,9,33,1,35,0
+5254445,Add string in a certain position in Python,add string `-` in `4th` position of a string `s`,s[:4] + '-' + s[4:],1051,18,8,0,0,35,0
+6159900,write line to file,"write line ""Hello"" to file `somefile.txt`","with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')",1127,20,9,61,1,35,0
+6900955,python convert list to dictionary,"build a dictionary containing the conversion of each list in list `[['two', 2], ['one', 1]]` to a key/value pair as its items","dict([['two', 2], ['one', 1]])",1186,21,1,22,0,35,0
+7142227,How do I sort a zipped list in Python?,sort a zipped list `zipped` using lambda function,"sorted(zipped, key=lambda x: x[1])",1201,22,7,55,1,35,0
+7900882,extract item from list of dictionaries,extract dictionary from list of dictionaries based on a key's value.,[d for d in a if d['name'] == 'pluto'],1267,23,1,7,0,35,0
+8243188,Inserting a string into a list without getting split into characters,insert string `foo` at position `0` of list `list`,"list.insert(0, 'foo')",1303,24,7,44,1,35,0
+8654637,"Pythonic way to fetch all elements in a dictionary, falling between two keys?",fetch all elements in a dictionary 'parent_dict' where the key is between the range of 2 to 4,"dict((k, v) for k, v in parent_dict.items() if k > 2 and k < 4)",1346,25,1,12,0,35,0
+9210525,convert hex to decimal,convert hex string '0xdeadbeef' to decimal,ast.literal_eval('0xdeadbeef'),1395,27,5,34,0,35,0
+9507819,Can I have a non-greedy regex with dotall?,match regex pattern 'a*?bc*?' on string 'aabcc' with DOTALL enabled,"re.findall('a*?bc*?', 'aabcc', re.DOTALL)",1419,27,0,49,0,35,0
+10716796,How to convert a string to its Base-10 representation?,convert a string `s` to its base-10 representation,"int(s.encode('hex'), 16)",1521,30,5,7,0,35,0
+11066400,Remove punctuation from Unicode formatted strings,substitute occurrences of unicode regex pattern u'\\p{P}+' with empty string '' in string `text`,"return re.sub('\\p{P}+', '', text)",1545,30,8,15,0,35,0
+11573817,How to download a file via FTP with Python ftplib,How to download a file via FTP with Python ftplib,"ftp.retrbinary('RETR %s' % filename, file.write)",1585,31,9,36,1,35,0
+15411107,Delete a dictionary item if the key exists,"Delete an item with key ""key"" from `mydict`","mydict.pop('key', None)",1923,40,1,36,0,35,0
+16127862,"in Python, how to convert list of float numbers to string with certain format?",convert list of sublists `lst` of floats to a list of sublists `str_list` of strings of integers in scientific notation with 8 decimal points,str_list = [['{0:.8e}'.format(flt) for flt in sublist] for sublist in lst],1968,41,5,1,0,35,0
+16330838,Python split a string using regex,Python split a string using regex,"re.findall('(.+?):(.+?)\\b ?', text)",1983,42,0,25,0,35,0
+16772071,sort dict by value python,Get a list of pairs of key-value sorted by values in dictionary `data`,"sorted(list(data.items()), key=lambda x: x[1])",2006,42,1,29,0,35,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,select rows of dataframe `df` whose value for column `A` is `foo`,print(df.loc[df['A'] == 'foo']),2024,43,3,28,0,35,0
+17438906,Combining rows in pandas,combining rows in pandas by adding their values,df.groupby(df.index).sum(),2058,44,3,5,0,35,0
+19618912,Finding common rows (intersection) in two Pandas dataframes,Join data of dataframe `df1` with data in dataframe `df2` based on similar values of column 'user_id' in both dataframes,"s1 = pd.merge(df1, df2, how='inner', on=['user_id'])",2213,48,3,55,0,35,0
+22229255,Confusing with the usage of regex in Python,match zero-or-more instances of lower case alphabet characters in a string `f233op `,"re.findall('([a-z])*', 'f233op')",2345,51,0,54,0,35,0
+22799300,How to unpack a Series of tuples in Pandas?,unpack a series of tuples in pandas into a DataFrame with column names 'out-1' and 'out-2',"pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)",2364,51,3,1,0,35,0
+23354124,"How can I ""unpivot"" specific columns from a pandas DataFrame?",unpivot first 2 columns into new columns 'year' and 'value' from a pandas dataframe `x`,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')",2377,52,3,5,0,35,0
+28431359,How to decode a 'url-encoded' string in python,"decode a double URL encoded string 
+'FireShot3%2B%25282%2529.png' to
+'FireShot3+(2).png'",urllib.parse.unquote(urllib.parse.unquote('FireShot3%2B%25282%2529.png')),2489,55,8,0,0,35,0
+34338341,Regex for getting all digits in a string after a character,get all digits in a string `s` after a '[' character,"re.findall('\\d+(?=[^[]+$)', s)",2661,59,0,17,0,35,0
+38231591,Splitting dictionary/list inside a Pandas Column into Separate Columns,split dictionary/list inside a pandas column 'b' into separate columns in dataframe `df`,"pd.concat([df.drop('b', axis=1), pd.DataFrame(df['b'].tolist())], axis=1)",2737,61,3,6,0,35,0
+39381222,How to print/show an expression in rational number form in python,print a rational number `3/2`,print('\n\x1b[4m' + '3' + '\x1b[0m' + '\n2'),2762,62,5,15,0,35,0
+39414085,How to convert the following string in python?,lower-case the string obtained by replacing the occurrences of regex pattern '(?<=[a-z])([A-Z])' in string `s` with eplacement '-\\1',"re.sub('(?<=[a-z])([A-Z])', '-\\1', s).lower()",2763,62,0,64,0,35,0
+40903174,Sorting data in DataFrame Pandas,Sorting data in DataFrame Pandas,"df.sort_values(['System_num', 'Dis'])",2818,63,3,2,0,35,0
+42172204,Replace value in any column in pandas dataframe,"replace value '-' in any column of pandas dataframe to ""NaN""","df.replace('-', 'NaN')",2861,64,3,6,0,35,0

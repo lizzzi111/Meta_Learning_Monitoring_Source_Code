@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+1476,express binary literals,convert 21 to binary string,bin(21),1,0,5,55,0,55,0
+51520,How to get an absolute file path in Python,get an absolute file path of file 'mydir/myfile.txt',os.path.abspath('mydir/myfile.txt'),34,0,9,24,1,55,0
+113534,Is there a function in Python to split a string without ignoring the spaces?,split a string `mystring` considering the spaces ' ',"mystring.replace(' ', '! !').split('!')",67,0,8,0,0,55,0
+533398,"In python 2.4, how can I execute external commands with csh instead of bash?",execute command 'echo $0' in Z shell,"os.system(""zsh -c 'echo $0'"")",228,0,9,41,1,55,0
+761804,Trimming a string,Trimming a string `str`,str.strip(),316,0,8,0,0,55,0
+1514553,declare an array,declare an array with element 'i',intarray = array('i'),466,3,6,51,0,55,0
+1602934,Check if a given key already exists in a dictionary,Check if a given key 'key1' exists in dictionary `dict`,"if ('key1' in dict):
+    pass",480,3,1,3,0,55,0
+2793324,delete a list element by value,delete the element `c` from list `a`,"if (c in a):
+    a.remove(c)",662,8,7,57,1,55,0
+2878084,Sort a list of dicts by dict values,"sort a list of dictionaries by the value of keys 'title', 'title_url', 'id' in ascending order.","l.sort(key=lambda x: (x['title'], x['title_url'], x['id']))",677,8,1,4,0,55,0
+2918362,writing string to a file on a new line everytime?,Write a string `My String` to a file `file` including new line character,file.write('My String\n'),683,8,9,40,1,55,0
+3059301,Manipulating binary data in Python,encode string `data` using hex 'hex' encoding,print(data.encode('hex')),697,9,8,0,0,55,0
+3505831,in python how do I convert a single digit number into a double digits string?,pads string '5' on the left with 1 zero,print('{0}'.format('5'.zfill(2))),780,11,5,21,0,55,0
+4284648,Converting lists of tuples to strings Python,convert each tuple in list `l` to a string with '@' separating the tuples' elements,""""""" """""".join([('%d@%d' % (t[0], t[1])) for t in l])",906,14,7,35,1,55,0
+4998629,Python: Split string with multiple delimiters,"split string `str` with delimiter '; ' or delimiter ', '","re.split('; |, ', str)",1026,17,8,0,0,55,0
+5183533,How to make List from Numpy Matrix in Python,Convert the first row of numpy matrix `a` to a list,numpy.array(a)[0].tolist(),1044,18,6,1,0,55,0
+5844672,Delete an element from a dictionary,Delete an element 0 from a dictionary `a`,{i: a[i] for i in a if (i != 0)},1098,19,1,48,0,55,0
+7522533,How can I turn a string into a list in Python?,Convert a string into a list,list('hello'),1239,23,8,17,0,55,0
+7717380,how to convert 2d list to 2d numpy array?,Convert array `a` to numpy array,a = np.array(a),1252,23,6,58,0,55,0
+8577137,creating a tmp file in python,Open a file `path/to/FILE_NAME.ext` in write mode,"new_file = open('path/to/FILE_NAME.ext', 'w')",1341,25,9,20,1,55,0
+9001509,sort a dictionary by key,sort dictionary `d` by key,od = collections.OrderedDict(sorted(d.items())),1380,26,1,28,0,55,0
+9637838,Convert string date to timestamp in Python,convert string '01/12/2011' to an integer timestamp,"int(datetime.datetime.strptime('01/12/2011', '%d/%m/%Y').strftime('%s'))",1436,28,2,10,0,55,0
+13254241,Removing key values pairs from a list of dictionaries,removing key values pairs with key 'mykey1' from a list of dictionaries `mylist`,"[{k: v for k, v in d.items() if k != 'mykey1'} for d in mylist]",1721,35,1,62,0,55,0
+13838405,Custom sorting in pandas dataframe,sort column `m` in panda dataframe `df`,df.sort('m'),1780,36,3,52,0,55,0
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""",separate numbers and characters in string '20M10000N80M',"re.findall('([0-9]+|[A-Z])', '20M10000N80M')",1894,39,5,32,0,55,0
+16176996,Keep only date part when using pandas.to_datetime,get date from dataframe `df` column 'dates' to column 'just_date',df['just_date'] = df['dates'].dt.date,1973,41,3,41,0,55,0
+17141558,How to sort a dataFrame in python pandas by two or more columns?,sort dataframe `df` based on column 'a' in ascending and column 'b' in descending,"df.sort_values(['a', 'b'], ascending=[True, False])",2040,43,3,8,0,55,0
+18170459,How to check if a dictionary is in another dictionary in python,check if dictionary `L[0].f.items()` is in dictionary `a3.f.items()`,set(L[0].f.items()).issubset(set(a3.f.items())),2111,45,1,13,0,55,0
+18319101,What's the best way to generate random strings of a specific length in Python?,generate random upper-case ascii string of 12 characters length,print(''.join(choice(ascii_uppercase) for i in range(12))),2121,45,8,0,0,55,0
+18663026,How do I pythonically set a value in a dictionary if it is None?,Set value for key `a` in dict `count` to `0` if key `a` does not exist or if value is `none`,"count.setdefault('a', 0)",2149,46,1,11,0,55,0
+18663644,How to account for accent characters for regex in Python?,"match a sharp, followed by letters (including accent characters) in string `str1` using a regex","hashtags = re.findall('#(\\w+)', str1, re.UNICODE)",2150,46,0,11,0,55,0
+19643099,Sorting a list of tuples with multiple conditions,sort list `list_` based on first element of each tuple and by the length of the second element of each tuple,"list_.sort(key=lambda x: [x[0], len(x[1]), x[1]])",2215,48,7,49,1,55,0
+19745091,Accessing dictionary by key in Django template,lookup dictionary key `key1` in Django template `json`,{{json.key1}},2220,48,1,18,0,55,0
+27218543,How can I select 'last business day of the month' in Pandas?,select the last business day of the month for each month in 2014 in pandas,"pd.date_range('1/1/2014', periods=12, freq='BM')",2459,54,3,10,0,55,0
+29218750,What is the best way to remove a dictionary item by value in python?,Remove all items from a dictionary `myDict` whose values are `42`,"{key: val for key, val in list(myDict.items()) if val != 42}",2510,55,1,1,0,55,0
+30546889,"Python list of dicts, get max value index",get dictionary with max value of key 'size' in list of dicts `ld`,"max(ld, key=lambda d: d['size'])",2553,56,1,46,0,55,0
+32996293,Comparing values in two lists in Python,create a list which indicates whether each element in `x` and `y` is identical,[(x[i] == y[i]) for i in range(len(x))],2639,58,7,58,1,55,0
+34410358,Splitting a string based on a certain set of words,split string 'happy_hats_for_cats' using string '_for_',"re.split('_for_', 'happy_hats_for_cats')",2663,59,8,0,0,55,0
+39112645,Save line in file to list,Retrieve each line from a file 'File.txt' as a list,[line.split() for line in open('File.txt')],2751,61,9,37,1,55,0
+41572822,How to swap a group of column headings with their values in Pandas,Sort the values of the dataframe `df` and align the columns accordingly based on the obtained indices after np.argsort.,"pd.DataFrame(df.columns[np.argsort(df.values)], df.index, np.unique(df.values))",2842,64,3,50,0,55,0

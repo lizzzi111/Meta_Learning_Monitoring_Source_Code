@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+227459,"get the <a href=""http://en.wikipedia.org/wiki/ASCII"" rel=""nofollow noreferrer"">ASCII</a> value of a character as an int",get the ASCII value of a character u'あ' as an int,ord('\u3042'),99,0,8,0,0,9,0
+373194,Python regex for MD5 hash,find all matches of regex pattern '([a-fA-F\\d]{32})' in string `data`,"re.findall('([a-fA-F\\d]{32})', data)",170,0,0,59,0,9,0
+663171,substring a string,get a new string including the last two characters of string `x`,x[(-2):],270,0,8,0,0,9,0
+698223,How can I parse a time string containing milliseconds in it with python?,How can I parse a time string containing milliseconds in it with python?,"time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')",291,0,2,60,0,9,0
+931092,Reverse a string,Reverse string 'foo',''.join(reversed('foo')),374,0,8,0,0,9,0
+1185524,trim whitespace,trim whitespace in string `s`,s.strip(),421,2,8,0,0,9,0
+2269827,convert an int to a hex string,convert an int 65 to hex string,hex(65),582,6,5,15,0,9,0
+2637760,How do I match contents of an element in XPath (lxml)?,match contents of an element to 'Example' in xpath (lxml),"tree.xpath("".//a[text()='Example']"")[0].tag",641,7,0,4,0,9,0
+3061761,Numpy array dimensions,get the dimensions of numpy array `a`,a.shape,701,9,6,30,0,9,0
+3431825,Generating an MD5 checksum of a file,Generate MD5 checksum of file in the path `full_path` in hashlib,"print(hashlib.md5(open(full_path, 'rb').read()).hexdigest())",762,10,9,45,1,9,0
+3437059,string contains substring method,"check if string `s` contains ""is""","if (s.find('is') == (-1)):
+    print(""No 'is' here!"")
+else:
+    print(""Found 'is' in the string."")",764,10,0,6,0,9,0
+4668619,Django database query: How to filter objects by date range?,filter objects month wise in django model `Sample` for year `2011`,"Sample.objects.filter(date__year='2011', date__month='01')",967,16,2,19,0,9,0
+4706499,append to a file,append to file 'test' content 'koko',"open('test', 'a+b').write('koko')",981,16,9,26,1,9,0
+4859292,How to get a random value in python dictionary,get a random key `country` and value `capital` form a dictionary `d`,"country, capital = random.choice(list(d.items()))",1001,16,1,48,0,9,0
+7262828,python : how to convert string literal to raw string literal?,convert a string literal `s` with values `\\` to raw string literal,"s = s.replace('\\', '\\\\')",1210,22,8,0,0,9,0
+7271482,python getting a list of value from list of dict,generate a list containing values associated with the key 'value' of each dictionary inside list `list_of_dicts`,[x['value'] for x in list_of_dicts],1217,22,1,7,0,9,0
+7961363,Removing duplicates in lists,Removing duplicates in list `abracadabra`,list(OrderedDict.fromkeys('abracadabra')),1272,23,7,24,1,9,0
+8270092,remove all whitespace in a string,remove whitespace in string `sentence` from beginning and end,sentence.strip(),1312,24,8,0,0,9,0
+8735312,How to change folder names in python?,"Rename a folder `Joe Blow` to `Blow, Joe`","os.rename('Joe Blow', 'Blow, Joe')",1357,26,9,42,1,9,0
+10592674,"Updating a list of python dictionaries with a key, value pair from another list",update a list `l1` dictionaries with a key `count` and value from list `l2`,"[dict(d, count=n) for d, n in zip(l1, l2)]",1508,29,1,47,0,9,0
+10974932,python split string based on regular expression,python split string based on regular expression,"re.findall('\\S+', str1)",1538,30,0,9,0,9,0
+11840111,Divide the values of two dictionaries in python,divide the values with same keys of two dictionary `d1` and `d2`,{k: (float(d2[k]) / d1[k]) for k in d2},1613,32,1,40,0,9,0
+13902805,List of all unique characters in a string?,List of all unique characters in a string?,""""""""""""".join(set('aaabcabccd'))",1788,37,0,57,0,9,0
+14301913,Convert pandas group by object to multi-indexed Dataframe,convert pandas group by object to multi-indexed dataframe with indices 'Name' and 'Destination',"df.set_index(['Name', 'Destination'])",1823,38,3,1,0,9,0
+14950260,Convert unicode string dictionary into dictionary in python,"convert unicode string u""{'code1':1,'code2':1}"" into dictionary","d = ast.literal_eval(""{'code1':1,'code2':1}"")",1877,39,1,58,0,9,0
+15455388,Dict of dicts of dicts to DataFrame,Create a pandas dataframe of values from a dictionary `d` which contains dictionaries of dictionaries,"pd.concat(map(pd.DataFrame, iter(d.values())), keys=list(d.keys())).stack().unstack(0)",1926,40,1,8,0,9,0
+15474933,List comprehension with if statement,get items from list `a` that don't appear in list `b`,[y for y in a if y not in b],1930,40,7,28,1,9,0
+16677816,Printing lists onto tables in python,print list `t` into a table-like shape,"print('\n'.join('  '.join(map(str, row)) for row in t))",1997,42,7,58,1,9,0
+17690738,In Pandas how do I convert a string of date strings to datetime objects and put them in a DataFrame?,convert a string of date strings `date_stngs ` to datetime objects and put them in a dataframe,pd.to_datetime(pd.Series(date_stngs)),2076,44,2,54,0,9,0
+18050937,How can I execute shell command with a | pipe in it,execute shell command 'grep -r PASSED *.log | sort -u | wc -l' with a | pipe in it,"subprocess.call('grep -r PASSED *.log | sort -u | wc -l', shell=True)",2099,45,9,17,1,9,0
+18253210,Creating a numpy array of 3D coordinates from three 1D arrays,"creating a numpy array of 3d coordinates from three 1d arrays `x_p`, `y_p` and `z_p`","np.vstack(np.meshgrid(x_p, y_p, z_p)).reshape(3, -1).T",2116,45,6,36,0,9,0
+19641579,Python convert tuple to string,"concatenate strings in tuple `('a', 'b', 'c', 'd', 'g', 'x', 'r', 'e')` into a single string",""""""""""""".join(('a', 'b', 'c', 'd', 'g', 'x', 'r', 'e'))",2214,48,8,0,0,9,0
+20461165,How to convert pandas index in a dataframe to a column?,Add indexes in a data frame `df` to a column `index1`,df['index1'] = df.index,2262,49,3,2,0,9,0
+20546419,Shuffle columns of an array with Numpy,shuffle columns of an numpy array 'r',np.random.shuffle(np.transpose(r)),2269,49,6,31,0,9,0
+22187233,How to delete all instances of a character in a string in python?,How to delete all instances of a character in a string in python?,""""""""""""".join([char for char in 'it is icy' if char != 'i'])",2341,51,8,0,0,9,0
+24082784,pandas dataframe groupby datetime month,Group a pandas data frame by monthly frequenct `M` using groupby,df.groupby(pd.TimeGrouper(freq='M')),2400,52,3,7,0,9,0
+26367812,Appending to list in Python dictionary,"append `date` to list value of `key` in dictionary `dates_dict`, or create key `key` with value `date` in a list if it does not exist","dates_dict.setdefault(key, []).append(date)",2441,53,1,30,0,9,0
+28669459,How to print variables without spaces between values,print variable `value ` without spaces,"print('Value is ""' + str(value) + '""')",2495,55,8,60,0,9,0
+39607540,Count the number of Occurrence of Values based on another column,get the count of each unique value in column `Country` of dataframe `df` and store in column `Sum of Accidents`,df.Country.value_counts().reset_index(name='Sum of Accidents'),2771,62,3,11,0,9,0

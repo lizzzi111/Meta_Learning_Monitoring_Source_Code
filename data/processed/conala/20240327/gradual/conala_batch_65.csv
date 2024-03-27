@@ -1,0 +1,6 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+2990121,loop through a Python list by twos,loop through 0 to 10 with step 2,"for i in range(0, 10, 2):
+    pass",692,9,5,65,0
+5999747,Beautifulsoup - nextSibling,"In `soup`, get the content of the sibling of the `td`  tag with text content `Address:`",print(soup.find(text='Address:').findNext('td').contents[0]),1116,19,4,65,1
+18448469,Python: filter list of list with another list,create a list `result` containing elements form list `list_a` if first element of list `list_a` is in list `list_b`,result = [x for x in list_a if x[0] in list_b],2129,45,7,65,1
+31143732,How to create range of numbers in Python like in MATLAB,Create numpy array of `5` numbers starting from `1` with interval of `3`,"print(np.linspace(1, 3, num=5))",2573,57,6,65,0

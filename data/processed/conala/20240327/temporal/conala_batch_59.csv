@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+33065588,How to execute a command in the terminal from a Python script?,execute a command `command ` in the terminal from a python script,os.system(command),2641,59
+33078554,Mapping dictionary value to list,get a list from a list `lst` with values mapped into a dictionary `dct`,[dct[k] for k in lst],2642,59
+33127636,PUT Request to REST API using Python,Execute a put request to the url `url`,"response = requests.put(url, data=json.dumps(data), headers=headers)",2643,59
+33147992,how to turn a string of letters embedded in squared brackets into embedded lists,convert a string `a` of letters embedded in squared brackets into embedded lists,"[i.split() for i in re.findall('\\[([^\\[\\]]+)\\]', a)]",2644,59
+33218968,How do you call a python file that requires a command line argument from within another python file?,Run 'test2.py' file with python location 'path/to/python' and arguments 'neededArgumetGoHere' as a subprocess,"call(['path/to/python', 'test2.py', 'neededArgumetGoHere'])",2645,59
+33435418,How to find the difference between 3 lists that may have duplicate numbers,"Get the difference between two lists `[1, 2, 2, 2, 3]` and `[1, 2]` that may have duplicate values","Counter([1, 2, 2, 2, 3]) - Counter([1, 2])",2646,59
+33565643,how to slice a dataframe having date field as index?,Set index equal to field 'TRX_DATE' in dataframe `df`,df = df.set_index(['TRX_DATE']),2647,59
+33680914,Grouping dataframes in pandas?,Return values for column `C` after group by on column `A` and `B` in dataframe `df`,"df.groupby(['A', 'B'])['C'].unique()",2648,59
+33711985,Flattening a list of NumPy arrays?,concatenate a list of numpy arrays `input_list` together into a flattened list of values,np.concatenate(input_list).ravel().tolist(),2649,59
+33724111,Python RegEx using re.sub with multiple patterns,remove colon character surrounded by vowels letters in string `word`,"word = re.sub('([aeiou]):(([aeiou][^aeiou]*){3})$', '\\1\\2', word)",2650,59
+33769531,Python: Converting from binary to String,Convert a binary value '1633837924' to string,"struct.pack('<I', 1633837924)",2651,59
+33824334,How to convert this list into a dictionary,"convert list `lst` of key, value pairs into a dictionary","dict([(e[0], int(e[1])) for e in lst])",2652,59
+34015615,Python reversing an UTF-8 string,reverse a UTF-8 string 'a',b = a.decode('utf8')[::-1].encode('utf8'),2653,59
+34023918,Make new column in Panda dataframe by adding values from other columns,make new column 'C' in panda dataframe by adding values from other columns 'A' and 'B',df['C'] = df['A'] + df['B'],2654,59
+34097281,How can I convert a tensor into a numpy array in TensorFlow?,"convert a tensor with list of constants `[1, 2, 3]` into a numpy array in tensorflow","print(type(tf.Session().run(tf.constant([1, 2, 3]))))",2655,59
+34148637,Sorting JSON in python by a specific value,sort json `ips_data` by a key 'data_two',"sorted_list_of_keyvalues = sorted(list(ips_data.items()), key=item[1]['data_two'])",2656,59
+34155829,How to efficiently convert Matlab engine arrays to numpy ndarray?,convert matlab engine array `x` to a numpy ndarray,np.array(x._data).reshape(x.size[::-1]).T,2657,59
+34158494,Variants of string concatenation?,"concatenate array of strings `['A', 'B', 'C', 'D']` into a string",""""""""""""".join(['A', 'B', 'C', 'D'])",2658,59
+34197047,sorting list of list in python,sorting the lists in list of lists `data`,[sorted(item) for item in data],2659,59
+34280147,How to print an entire list while not starting by the first item,print a list `l` and move first 3 elements to the end of the list,print(l[3:] + l[:3]),2660,59
+34338341,Regex for getting all digits in a string after a character,get all digits in a string `s` after a '[' character,"re.findall('\\d+(?=[^[]+$)', s)",2661,59
+34358278,Django filter JSONField list of dicts,Filter a json from a key-value pair as `{'fixed_key_1': 'foo2'}` in Django,Test.objects.filter(actions__contains=[{'fixed_key_1': 'foo2'}]),2662,59
+34410358,Splitting a string based on a certain set of words,split string 'happy_hats_for_cats' using string '_for_',"re.split('_for_', 'happy_hats_for_cats')",2663,59
+34410358,Splitting a string based on a certain set of words,"Split string 'sad_pandas_and_happy_cats_for_people' based on string 'and', 'or' or 'for'","re.split('_(?:for|or|and)_', 'sad_pandas_and_happy_cats_for_people')",2664,59
+34410358,Splitting a string based on a certain set of words,Split a string `l` by multiple words `for` or `or` or `and`,"[re.split('_(?:f?or|and)_', s) for s in l]",2665,59
+34437284,Sum of product of combinations in a list,sum of product of combinations in a list `l`,"sum([(i * j) for i, j in list(itertools.combinations(l, 2))])",2666,59
+34438901,finding the last occurrence of an item in a list python,assign the index of the last occurence of `x` in list `s` to the variable `last`,last = len(s) - s[::-1].index(x) - 1,2667,59
+34468983,How to check if all elements in a tuple or list are in another?,"check if all elements in a tuple `(1, 6)` are in another `(1, 2, 3, 4, 5)`","all(i in (1, 2, 3, 4, 5) for i in (1, 6))",2668,59
+34527388,How to click on the text button using selenium python,click on the text button 'section-select-all' using selenium python,browser.find_element_by_class_name('section-select-all').click(),2669,59
+34543513,Find maximum with limited length in a list,find maximum with lookahead = 4 in a list `arr`,"[max(abs(x) for x in arr[i:i + 4]) for i in range(0, len(arr), 4)]",2670,59
+34587346,Python: Check if a string contains chinese character?,Find all Chinese characters in string `ipath`,"re.findall('[\u4e00-\u9fff]+', ipath)",2671,59
+34696853,Convert list of strings to int,convert a list of strings `lst` to list of integers,"[map(int, sublist) for sublist in lst]",2672,59
+34696853,Convert list of strings to int,convert strings in list-of-lists `lst` to ints,[[int(x) for x in sublist] for sublist in lst],2673,59
+34705205,Sort a nested list by two elements,"sort a nested list by the inverse of element 2, then by element 1","sorted(l, key=lambda x: (-int(x[1]), x[0]))",2674,59
+34750084,Regex and Octal Characters,Find octal characters matches from a string `str` using regex,"print(re.findall(""'\\\\[0-7]{1,3}'"", str))",2675,59
+34776651,Concatenate rows of pandas DataFrame with same id,group rows of pandas dataframe `df` with same 'id',df.groupby('id').agg(lambda x: x.tolist()),2676,59
+34902378,Where do I get a SECRET_KEY for Flask?,Initialize `SECRET_KEY` in flask config with `Your_secret_string `,app.config['SECRET_KEY'] = 'Your_secret_string',2677,59
+34945274,How to find all elements in a numpy 2-dimensional array that match a certain list?,"replace all elements in array `A` that are not present in array `[1, 3, 4]` with zeros","np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)",2678,59
+34962104,Pandas: How can I use the apply() function for a single column?,Pandas: How can I use the apply() function for a single column?,df['a'] = df['a'].apply(lambda x: x + 1),2679,59

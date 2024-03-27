@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+172439,How do I split a multi-line string into multiple lines?,split a multi-line string `inputString` into separate strings,inputString.split('\n'),77,0,8,0,0,15,0,30,0
+209513,Convert hex string to int,Convert hex string `hexString` to int,"int(hexString, 16)",93,0,5,35,0,43,0,30,0
+227459,"get the <a href=""http://en.wikipedia.org/wiki/ASCII"" rel=""nofollow noreferrer"">ASCII</a> value of a character as an int",get the ASCII value of a character 'a' as an int,ord('a'),98,0,5,42,0,22,0,30,0
+300445,How to unquote a urlencoded unicode string in python?,decode url `url` from UTF-16 code to UTF-8 code,urllib.parse.unquote(url).decode('utf8'),134,0,8,29,0,63,0,30,0
+356483,Python regex findall numbers and dots,Find all numbers and dots from a string `text` using regex,"re.findall('Test([0-9.]*[0-9]+)', text)",154,0,0,20,0,64,0,30,0
+613183,Sort a Python dictionary by value,Sort dictionary `d` by value in descending order,"sorted(d, key=d.get, reverse=True)",246,0,1,50,0,58,0,30,0
+761804,Trimming a string,"Trimming a string "" Hello """,' Hello '.strip(),318,0,8,0,0,21,0,30,0
+845058,get line count,get line count of file 'myfile.txt',sum((1 for line in open('myfile.txt'))),343,0,9,34,1,4,0,30,0
+931092,Reverse a string,Reverse a string `a_string`,"def reversed_string(a_string):
+    return a_string[::(-1)]",368,0,8,0,0,37,0,30,0
+1059559,Split Strings with Multiple Delimiters?,"split string ""a;bcd,ef g"" on delimiters ';' and ','","""""""a;bcd,ef g"""""".replace(';', ' ').replace(',', ' ').split()",410,1,8,0,0,33,0,30,0
+1592158,Convert hex to float,convert hex string '470FC614' to a float number,"struct.unpack('!f', '470FC614'.decode('hex'))[0]",477,3,5,11,0,34,0,30,0
+2878084,Sort a list of dicts by dict values,sort a list of dictionary `mylist` by the key `title`,mylist.sort(key=lambda x: x['title']),678,8,1,24,0,5,0,30,0
+3328012,How can I tell if a file is a descendant of a given directory?,check if file `filename` is descendant of directory '/the/dir/',"os.path.commonprefix(['/the/dir/', os.path.realpath(filename)]) == '/the/dir/'",747,10,9,62,1,62,0,30,0
+3862010,Is there a generator version of `string.split()` in Python?,split string `string` on whitespaces using a generator,"return (x.group(0) for x in re.finditer(""[A-Za-z']+"", string))",826,12,8,0,0,1,0,30,0
+4508155,How do I use a MD5 hash (or other binary data) as a key name?,Get a md5 hash from string `thecakeisalie`,k = hashlib.md5('thecakeisalie').hexdigest(),942,15,4,31,1,46,1,30,0
+4642501,How to sort dictionaries by keys in Python,How to sort dictionaries by keys in Python,sorted(d.items()),960,15,1,11,0,49,0,30,0
+4644025,Python how to sort this list?,Sort a list 'lst' in descending order.,"sorted(lst, reverse=True)",963,15,7,52,1,41,0,30,0
+6900955,python convert list to dictionary,"build a dictionary containing the conversion of each list in list `[['two', 2], ['one', 1]]` to a key/value pair as its items","dict([['two', 2], ['one', 1]])",1186,21,1,22,0,35,0,30,0
+7668141,Pycurl keeps printing in terminal,Make function `WRITEFUNCTION` output nothing in curl `p`,"p.setopt(pycurl.WRITEFUNCTION, lambda x: None)",1250,23,4,19,1,45,1,30,0
+7732125,Clear text from textarea with selenium,"if Selenium textarea element `foo` is not empty, clear the field",driver.find_element_by_id('foo').clear(),1254,23,4,38,1,46,1,30,0
+7750557,How do I get JSON data from RESTful service using Python?,get json data from restful service 'url',json.load(urllib.request.urlopen('url')),1259,23,4,50,1,25,1,30,0
+9841303,Removing duplicate characters from a string,"removing duplicate characters from a string variable ""foo""",""""""""""""".join(set(foo))",1452,28,8,0,0,30,0,30,0
+9891814,How to use regex with optional characters in python?,match regex pattern '(\\d+(\\.\\d+)?)' with string '3434.35353',"print(re.match('(\\d+(\\.\\d+)?)', '3434.35353').group(1))",1457,28,0,62,0,42,0,30,0
+10562778,Replacing characters in a file,replace character 'a' with character 'e' and character 's' with character '3' in file `contents`,"newcontents = contents.replace('a', 'e').replace('s', '3')",1502,29,8,0,0,41,0,30,0
+10960463,Non-ASCII characters in Matplotlib,set font `Arial` to display non-ascii characters in matplotlib,"matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})",1533,30,4,59,1,45,1,30,0
+11277432,How to remove a key from a python dictionary?,remove a key 'key' from a dictionary `my_dict`,"my_dict.pop('key', None)",1557,31,1,0,0,1,0,30,0
+11479392,What does a for loop within a list do in Python?,Get a list `myList` from 1 to 10,myList = [i for i in range(10)],1581,31,7,38,1,60,0,30,0
+13496087,Python: How to generate a 12-digit random number?,generate a random 12-digit number,""""""""""""".join(str(random.randint(0, 9)) for _ in range(12))",1753,36,5,61,0,34,0,30,0
+13557937,How to convert decimal to binary list in python,convert decimal integer 8 to a list of its binary values as elements,[int(x) for x in list('{0:0b}'.format(8))],1757,36,5,32,0,15,0,30,0
+13793321,Joining Table/DataFrames with common Column in Python,joining data from dataframe `df1` with data from dataframe `df2` based on matching values of column 'Date_Time' in both dataframes,"df1.merge(df2, on='Date_Time')",1776,36,3,62,0,20,0,30,0
+16735786,How to generate unique equal hash for equal dictionaries?,generate unique equal hash for equal dictionaries `a` and `b`,hash(pformat(a)) == hash(pformat(b)),1999,42,1,21,0,41,0,30,0
+17027690,How to skip the extra newline while printing lines read from a file?,skip the newline while printing `line`,print(line.rstrip('\n')),2017,43,8,0,0,7,0,30,0
+17856928,How to terminate process from Python using pid?,terminate process `p`,p.terminate(),2088,44,4,42,1,26,1,30,0
+20733827,creating list of random numbers in python,create list `randomList` with 10 random floating point numbers between 0.0 and 1.0,randomList = [random.random() for _ in range(10)],2277,49,5,12,0,3,0,30,0
+22187233,How to delete all instances of a character in a string in python?,How to delete all instances of a character in a string in python?,""""""""""""".join([char for char in 'it is icy' if char != 'i'])",2341,51,8,0,0,9,0,30,0
+27946742,Regular expression in Python sentence extractor,Get all the sentences from a string `text` using regex,"re.split('\\.\\s', text)",2479,54,0,32,0,64,0,30,0
+35561743,python comprehension loop for dictionary,count `True` values associated with key 'one' in dictionary `tadas`,sum(item['one'] for item in list(tadas.values())),2696,60,1,49,0,22,0,30,0
+41946927,Getting pandas dataframe from list of nested dictionaries,create a pandas data frame from list of nested dictionaries `my_list`,"pd.concat([pd.DataFrame(l) for l in my_list], axis=1).T",2855,64,3,15,0,49,0,30,0
+42364992,Python - Insert numbers in string between quotes,Enclose numbers in quotes in a string `This is number 1 and this is number 22`,"re.sub('(\\d+)', '""\\1""', 'This is number 1 and this is number 22')",2869,64,8,15,0,37,0,30,0

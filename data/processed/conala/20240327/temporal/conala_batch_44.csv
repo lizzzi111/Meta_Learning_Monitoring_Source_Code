@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+17426386,How to transform a tuple to a string of values without comma and parentheses,"Concat each values in a tuple `(34.2424, -64.2344, 76.3534, 45.2344)` to get a string",""""""""""""".join(str(i) for i in (34.2424, -64.2344, 76.3534, 45.2344))",2056,44
+17438096,FTP upload files Python,upload file using FTP,"ftp.storlines('STOR ' + filename, open(filename, 'r'))",2057,44
+17438906,Combining rows in pandas,combining rows in pandas by adding their values,df.groupby(df.index).sum(),2058,44
+17457793,Sorting a set of values,sort a set `s` by numerical value,"sorted(s, key=float)",2059,44
+17462994,Python getting a string (key + value) from Python Dictionary,Get a string with string formatting from dictionary `d`,""""""", """""".join(['{}_{}'.format(k, v) for k, v in d.items()])",2060,44
+17467504,Python re.findall print all patterns,Get all matching patterns 'a.*?a' from a string 'a 1 a 2 a 3 a 4 a'.,"re.findall('(?=(a.*?a))', 'a 1 a 2 a 3 a 4 a')",2061,44
+17474211,How to sort python list of strings of numbers,sort list `a` in ascending order based on its elements' float values,"a = sorted(a, key=lambda x: float(x))",2062,44
+17484631,Format string - spaces between every three digit,"insert ' ' between every three digit before '.' and replace ',' with '.' in 12345678.46","format(12345678.46, ',').replace(',', ' ').replace('.', ',')",2063,44
+17498027,Clicking a link using selenium using python,Clicking a link using selenium using python,driver.find_element_by_xpath('xpath').click(),2064,44
+17552997,How to update a subset of a MultiIndexed pandas DataFrame,add a column 'day' with value 'sat' to dataframe `df`,"df.xs('sat', level='day', drop_level=False)",2065,44
+17555218,Python - How to sort a list of lists by the fourth element in each list?,Sort lists in the list `unsorted_list` by the element at index 3 of each list,unsorted_list.sort(key=lambda x: x[3]),2066,44
+17558552,How do I add custom field to Python log format string?,Log info message 'Log message' with attributes `{'app_name': 'myapp'}`,"logging.info('Log message', extra={'app_name': 'myapp'})",2067,44
+17577727,"Python, Encoding output to UTF-8",decode string `content` to UTF-8 code,print(content.decode('utf8')),2068,44
+17589590,Can I get a list of the variables that reference an other in Python 2.7?,"Define a list with string values `['a', 'c', 'b', 'obj']`","['a', 'c', 'b', 'obj']",2069,44
+17604837,"Python - Combine two dictionaries, concatenate string values?","combine two dictionaries `d ` and `d1`, concatenate string values with identical `keys`","dict((k, d.get(k, '') + d1.get(k, '')) for k in keys)",2070,44
+17608210,sorting a list in python,Sort a list of strings 'words' such that items starting with 's' come first.,"sorted(words, key=lambda x: 'a' + x if x.startswith('s') else 'b' + x)",2071,44
+17618981,How to sort pandas data frame using values from several columns?,sort pandas data frame `df` using values from columns `c1` and `c2` in ascending order,"df.sort(['c1', 'c2'], ascending=[True, True])",2072,44
+17627531,Sort list of date strings,sort list of date strings 'd',"sorted(d, key=lambda x: datetime.datetime.strptime(x, '%m-%Y'))",2073,44
+17665809,Remove key from dictionary in Python returning new dictionary,remove key 'c' from dictionary `d`,{i: d[i] for i in d if i != 'c'},2074,44
+17679089,Pandas DataFrame Groupby two columns and get counts,get count of rows in each series grouped by column 'col5' and column 'col2' of dataframe `df`,"df.groupby(['col5', 'col2']).size().groupby(level=1).max()",2075,44
+17690738,In Pandas how do I convert a string of date strings to datetime objects and put them in a DataFrame?,convert a string of date strings `date_stngs ` to datetime objects and put them in a dataframe,pd.to_datetime(pd.Series(date_stngs)),2076,44
+17713873,How do I sort a Python list of time values?,"sort list `['14:10:01', '03:12:08']`","sorted(['14:10:01', '03:12:08'])",2077,44
+17731822,Elegant way to convert list to hex string,Convert list of booleans `walls` into a hex string,"hex(int(''.join([str(int(b)) for b in walls]), 2))",2078,44
+17731822,Elegant way to convert list to hex string,convert the sum of list `walls` into a hex presentation,"hex(sum(b << i for i, b in enumerate(reversed(walls))))",2079,44
+17734779,how do I sort a python list of dictionaries given a list of ids with the desired order?,sort a python list of dictionaries `users` by a given list `order` of ids 'id' with the desired order,users.sort(key=lambda x: order.index(x['id'])),2080,44
+17734779,how do I sort a python list of dictionaries given a list of ids with the desired order?,sort list `users` using values associated with key 'id' according to elements in list `order`,users.sort(key=lambda x: order.index(x['id'])),2081,44
+17757450,"How to print a list with integers without the brackets, commas and no quotes?",convert list `data` into a string of its elements,"print(''.join(map(str, data)))",2082,44
+17794266,How to get the highest element in absolute value in a numpy matrix?,get the highest element in absolute value in a numpy matrix `x`,"max(x.min(), x.max(), key=abs)",2083,44
+17812978,How to plot two columns of a pandas data frame using points?,How to plot two columns of a pandas data frame using points?,"df.plot(x='col_name_1', y='col_name_2', style='o')",2084,44
+17815945,Convert generator object to a dictionary,convert generator object to a dictionary,"dict((i, i * 2) for i in range(10))",2085,44
+17815945,Convert generator object to a dictionary,convert generator object to a dictionary,{i: (i * 2) for i in range(10)},2086,44
+17846545,Python: comprehension to compose two dictionaries,Compose keys from dictionary `d1` with respective values in dictionary `d2`,"result = {k: d2.get(v) for k, v in list(d1.items())}",2087,44
+17856928,How to terminate process from Python using pid?,terminate process `p`,p.terminate(),2088,44
+17888152,Parse string to int when string contains a number + extra characters,parse string `s` to int when string contains a number,int(''.join(c for c in s if c.isdigit())),2089,44
+17895835,format strings and named arguments in Python,print two numbers `10` and `20` using string formatting,"""""""{0} {1}"""""".format(10, 20)",2090,44
+17895835,format strings and named arguments in Python,"replace placeholders in string '{1} {ham} {0} {foo} {1}' with arguments `(10, 20, foo='bar', ham='spam')`","""""""{1} {ham} {0} {foo} {1}"""""".format(10, 20, foo='bar', ham='spam')",2091,44
+17926273,How to count distinct values in a column of a pandas group by object?,How to count distinct values in a column of a pandas group by object?,"df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()",2092,44
+17952279,Logarithmic y-axis bins in python,plot a data logarithmically in y axis,"plt.yscale('log', nonposy='clip')",2093,44
+17960441,"in Numpy, how to zip two 2-D arrays?",join each element in array `a` with element at the same index in array `b` as a tuple,"np.array([zip(x, y) for x, y in zip(a, b)])",2094,44

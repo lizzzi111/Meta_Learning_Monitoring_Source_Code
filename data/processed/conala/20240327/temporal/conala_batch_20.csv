@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+6086047,Get output of python script from within python script,get output of script `proc`,print(proc.communicate()[0]),1120,20
+6133434,Find the sum of subsets of a list in python,find the sums of length 7 subsets of a list `daily`,"weekly = [sum(visitors[x:x + 7]) for x in range(0, len(daily), 7)]",1121,20
+6146778,matplotlib Legend Markers Only Once,make matplotlib plot legend put marker in legend only once,legend(numpoints=1),1122,20
+6159313,Can Python test the membership of multiple values in a list?,"test if either of strings `a` or `b` are members of the set of strings, `['b', 'a', 'foo', 'bar']`","set(['a', 'b']).issubset(['b', 'a', 'foo', 'bar'])",1123,20
+6159313,Can Python test the membership of multiple values in a list?,"Check if all the values in a list `['a', 'b']` are present in another list `['b', 'a', 'foo', 'bar']`","all(x in ['b', 'a', 'foo', 'bar'] for x in ['a', 'b'])",1124,20
+6159900,write line to file,"write line ""hi there"" to file `myfile`","f = open('myfile', 'w')
+f.write('hi there\n')
+f.close()",1125,20
+6159900,write line to file,"write line ""hi there"" to file `f`","print('hi there', file=f)",1126,20
+6159900,write line to file,"write line ""Hello"" to file `somefile.txt`","with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')",1127,20
+6243460,Python lambda function,lambda function that adds two operands,"lambda x, y: x + y",1128,20
+6250046,How can I remove the fragment identifier from a URL?,remove the fragment identifier `#something` from a url `http://www.address.com/something#something`,urlparse.urldefrag('http://www.address.com/something#something'),1129,20
+6266727,Python: Cut off the last word of a sentence?,cut off the last word of a sentence `content`,""""""" """""".join(content.split(' ')[:-1])",1130,20
+6275762,Escaping quotes in string,escaping quotes in string,"replace('""', '\\""')",1131,20
+6278847,Is it possible to kill a process on Windows from within Python?,kill a process `make.exe` from python script on windows,os.system('taskkill /im make.exe'),1132,20
+6280978,how to uniqify a list of dict in python,how to uniqify a list of dict in python,[dict(y) for y in set(tuple(x.items()) for x in d)],1133,20
+6294179,How to find all occurrences of an element in a list?,How to find all occurrences of an element in a list?,"indices = [i for i, x in enumerate(my_list) if x == 'whatever']",1134,20
+6310475,datetime.datetime.now() + 1,add one day and three hours to the present time from datetime.now(),"datetime.datetime.now() + datetime.timedelta(days=1, hours=3)",1135,20
+6323296,Python remove anything that is not a letter or number,replace everything that is not an alphabet or a digit with '' in 's'.,"re.sub('[\\W_]+', '', s)",1136,20
+6372228,how to parse a list or string into chunks of fixed length,Get a list of strings `split_text` with fixed chunk size `n` from a string `the_list`,"split_list = [the_list[i:i + n] for i in range(0, len(the_list), n)]",1137,20
+6375343,Reading unicode elements into numpy array,load data containing `utf-8` from file `new.txt` into numpy array `arr`,"arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')",1138,20
+6376886,What is the best way to create a string array in python?,create list of 'size' empty strings,strs = ['' for x in range(size)],1139,20
+6378889,How to convert a string list into an integer in python,convert string `user_input` into a list of integers `user_list`,"user_list = [int(number) for number in user_input.split(',')]",1140,20
+6378889,How to convert a string list into an integer in python,Get a list of integers by splitting  a string `user` with comma,"[int(s) for s in user.split(',')]",1141,20
+6407362,How can I check if a date is the same day as datetime.today()?,check if date `yourdatetime` is equal to today's date,yourdatetime.date() == datetime.today().date(),1142,20
+6407780,How to extract data from JSON Object in Python?,extract data field 'bar' from json object,"json.loads('{""foo"": 42, ""bar"": ""baz""}')['bar']",1143,20
+6416131,add new item to dictionary,"add key ""item3"" and value ""3"" to dictionary `default_data `","default_data.update({'item3': 3, })",1144,20
+6416131,add new item to dictionary,"add key value pairs 'item4' , 4 and 'item5' , 5 to dictionary `default_data`","default_data.update({'item4': 4, 'item5': 5, })",1145,20
+6416131,add new item to dictionary,"add key ""item3"" and value ""3"" to dictionary `default_data `",default_data['item3'] = 3,1146,20
+6420361,How can I reload objects in my namespace in ipython,reload a module `module`,"import imp
+imp.reload(module)",1147,20
+6429638,How to split a string into integers in Python?,split a string `s` into integers,l = (int(x) for x in s.split()),1148,20
+6429638,How to split a string into integers in Python?,split a string `42 0` by white spaces.,"""""""42 0"""""".split()",1149,20
+6429638,How to split a string into integers in Python?,How to split a string into integers in Python?,"map(int, '42 0'.split())",1150,20
+6480441,2D array of objects in Python,create a 2D array of `Node` objects with dimensions `cols` columns and `rows` rows,nodes = [[Node() for j in range(cols)] for i in range(rows)],1151,20
+6490560,How do I move the last item in a list to the front in python?,move the last item in list `a` to the beginning,a = a[-1:] + a[:-1],1152,20
+6494508,"How do you pick ""x"" number of unique numbers from a list in Python?",Get `3` unique items from a list,"random.sample(list(range(1, 16)), 3)",1153,20
+6504200,How to decode unicode raw literals to readable string?,decode unicode string `s` into a readable unicode literal,s.decode('unicode_escape'),1154,20
+6510477,How can i list only the folders in zip archive in Python?,list folders in zip file 'file' that ends with '/',[x for x in file.namelist() if x.endswith('/')],1155,20
+6532881,How to make a copy of a 2D array in Python?,make a row-by-row copy `y` of array `x`,y = [row[:] for row in x],1156,20
+6539881,Python: Converting from ISO-8859-1/latin1 to UTF-8,convert string `apple` from iso-8859-1/latin1 to utf-8,apple.decode('iso-8859-1').encode('utf8'),1157,20
+6561653,how to get the index of dictionary with the highest value in a list of dictionary,Get an item from a list of dictionary `lst` which has maximum value in the key `score` using lambda function,"max(lst, key=lambda x: x['score'])",1158,20

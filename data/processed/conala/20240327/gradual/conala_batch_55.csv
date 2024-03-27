@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+1476,express binary literals,convert 21 to binary string,bin(21),1,0,5,55,0
+22676,download a file over HTTP,download a file `url` over HTTP,r = requests.get(url),20,0,9,55,1
+73663,Terminating a Python script,"Terminating a Python script with error message ""some error message""",sys.exit('some error message'),45,0,4,55,1
+439115,random Decimal in python,generate random Decimal,decimal.Decimal(random.randrange(10000)) / 100,196,0,5,55,0
+730764,do a try-except without handling the exception,call `doSomething()` in a try-except without handling the exception,"try:
+    doSomething()
+except:
+    pass",298,0,4,55,1
+1547733,How to sort this list in Python?,Sort a list of dictionary `l` based on key `time` in descending order,"l = sorted(l, key=lambda a: a['time'], reverse=True)",472,3,1,55,0
+1712227,get the size of a list,function to get the size of object,len(),490,3,4,55,1
+2759323,How can I list the contents of a directory in Python?,list the contents of a directory '/home/username/www/',os.listdir('/home/username/www/'),653,8,9,55,1
+2805231,"How can I do DNS lookups in Python, including referring to /etc/hosts?",fetch address information for host 'google.com' ion port 80,"print(socket.getaddrinfo('google.com', 80))",668,8,4,55,1
+2813829,How do I coalesce a sequence of identical characters into just one?,coalesce non-word-characters in string `a`,"print(re.sub('(\\W)\\1+', '\\1', a))",671,8,8,55,0
+2850966,How can I lookup an attribute in any scope by name?,lookup an attribute in any scope by name 'range',"getattr(__builtins__, 'range')",675,8,4,55,1
+3476732,How to loop backwards in python?,iterate backwards from 10 to 0,"range(10, 0, -1)",773,11,5,55,0
+3940128,reverse a list,reverse a list `array`,reversed(array),853,13,7,55,1
+4810537,how to clear the screen in python,clear terminal screen on windows,os.system('cls'),992,16,4,55,1
+4934806,How can I find script's directory with Python?,print script's directory,print(os.path.dirname(os.path.realpath(__file__))),1020,17,9,55,1
+5826427,Can a python script execute a function inside a bash script?,call a function `otherfunc` inside a bash script `test.sh` using subprocess,subprocess.call('test.sh otherfunc'),1093,19,9,55,1
+7142227,How do I sort a zipped list in Python?,sort a zipped list `zipped` using lambda function,"sorted(zipped, key=lambda x: x[1])",1201,22,7,55,1
+7574841,open a terminal from python,open a 'gnome' terminal from python script and run  'sudo apt-get update' command.,"os.system('gnome-terminal -e \'bash -c ""sudo apt-get update; exec bash""\'')",1244,23,4,55,1
+8209568,How do I draw a grid onto a plot in Python?,draw a grid line on every tick of plot `plt`,plt.grid(True),1297,24,4,55,1
+8383213,Python Regex for hyphenated words,python regex for hyphenated words in `text`,"re.findall('\\w+(?:-\\w+)+', text)",1325,25,0,55,0
+9323159,finding n largest differences between two lists,find 10 largest differences between each respective elements of list `l1` and list `l2`,"heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))",1405,27,7,55,1
+13156395,Python load json file with UTF-8 BOM header,Open file 'sample.json' in read mode with encoding of 'utf-8-sig',"json.load(codecs.open('sample.json', 'r', 'utf-8-sig'))",1707,35,9,55,1
+13411544,Delete column from pandas DataFrame,delete a column `column_name` without having to reassign from pandas data frame `df`,"df.drop('column_name', axis=1, inplace=True)",1740,35,3,55,0
+14850853,How to include third party Python libraries in Google App Engine?,insert directory 'libs' at the 0th index of current directory,"sys.path.insert(0, 'libs')",1866,39,9,55,1
+15405636,Python's argparse to show program's version with prog and version string formatting,argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`,"parser.add_argument('--version', action='version', version='%(prog)s 2.0')",1920,40,4,55,1
+16568056,Python Nested List Comprehension with two Lists,create a list of aggregation of each element from list `l2` to all elements of list `l1`,[(x + y) for x in l2 for y in l1],1995,42,7,55,1
+17757450,"How to print a list with integers without the brackets, commas and no quotes?",convert list `data` into a string of its elements,"print(''.join(map(str, data)))",2082,44,7,55,1
+17846545,Python: comprehension to compose two dictionaries,Compose keys from dictionary `d1` with respective values in dictionary `d2`,"result = {k: d2.get(v) for k, v in list(d1.items())}",2087,44,1,55,0
+18265935,Python - Create list with numbers between 2 values?,create a list of integers between 2 values `11` and `17`,"list(range(11, 17))",2117,45,5,55,0
+18351951,Check if string ends with one of the strings from a list,"check if string `test.mp3` ends with one of the strings from a tuple `('.mp3', '.avi')`","""""""test.mp3"""""".endswith(('.mp3', '.avi'))",2122,45,0,55,0
+19618912,Finding common rows (intersection) in two Pandas dataframes,Join data of dataframe `df1` with data in dataframe `df2` based on similar values of column 'user_id' in both dataframes,"s1 = pd.merge(df1, df2, how='inner', on=['user_id'])",2213,48,3,55,0
+19664253,selenium how to get the content of href within some targeted class,get the content of child tag with`href` attribute whose parent has css `someclass`,self.driver.find_element_by_css_selector('.someclass a').get_attribute('href'),2216,48,4,55,1
+28416408,Scikit-learn: How to run KMeans on a one-dimensional array?,Fit Kmeans function to a one-dimensional array `x` by reshaping it to be a multidimensional array of single values,"km.fit(x.reshape(-1, 1))",2488,55,6,55,0
+30062429,Python How to get every first element in 2 Dimensional List,python how to get every first element in 2 dimensional list `a`,[i[0] for i in a],2543,56,7,55,1
+31818050,round number to nearest integer,round number 4.0005 up to 3 decimal places,"round(4.0005, 3)",2601,57,5,55,0
+35017035,Compare elements of a list of lists and return a list,convert a list of lists `a` into list of tuples of appropriate elements form nested lists,zip(*a),2683,60,7,55,1
+36402748,How to sort a Dataframe by the ocurrences in a column in Python (pandas),How to sort a Dataframe by the ocurrences in a column in Python (pandas),"df.groupby('prots').sum().sort('scores', ascending=False)",2710,60,3,55,0
+40384599,Sorting a list of tuples by the addition of second and third element of the tuple,sort the list of tuples `lst` by the sum of every value except the first and by the first value in reverse order,"sorted(lst, key=lambda x: (sum(x[1:]), x[0]), reverse=True)",2799,63,7,55,1
+41463763,Merge 2 dataframes with same values in a column,merge 2 dataframes `df1` and `df2` with same values in a column 'revenue' with and index 'date',df2['revenue'] = df2.CET.map(df1.set_index('date')['revenue']),2836,64,3,55,0

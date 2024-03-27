@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+73663,Terminating a Python script,terminate the program,sys.exit(),44,0,4,41,1,47,1,42,0
+120656,Directory listing,list all files in directory `path`,os.listdir(path),70,0,9,13,1,41,0,42,0
+273192,check if a directory exists and create it if necessary,check if a directory `path` exists and create it if necessary,distutils.dir_util.mkpath(path),118,0,9,35,1,29,0,42,0
+583557,What is the best way to print a table with delimiters in Python,print a 2 dimensional list `tab` as a table with delimiters,print('\n'.join('\t'.join(str(col) for col in row) for row in tab)),238,0,7,39,1,17,0,42,0
+613183,Sort a Python dictionary by value,Sort dictionary `dict1` by value in ascending order,"sorted(dict1, key=dict1.get)",247,0,1,5,0,18,0,42,0
+638360,Python - How to calculate equal parts of two dictionaries?,get set intersection between dictionaries `d1` and `d2`,"dict((x, set(y) & set(d1.get(x, ()))) for x, y in d2.items())",256,0,1,38,0,49,0,42,0
+739993,get a list of locally installed Python modules,get a list of locally installed Python modules,help('modules'),300,0,4,42,1,27,1,42,0
+902408,How to use variables in SQL statement in Python?,How to use variables in SQL statement in Python?,"cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))",357,0,4,23,1,46,1,42,0
+2397687,What's the easiest way to convert a list of hex byte strings to a list of hex integers?,convert the elements of list `L` from hex byte strings to hex integers,"[int(x, 16) for x in L]",597,6,5,40,0,51,0,42,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (letter, number) in list(d.items()):
+    pass",735,10,1,26,0,6,0,42,0
+3880399,how to send the output of pprint module to a log file,send the output of pprint object `dataobject` to file `logFile`,"pprint.pprint(dataobject, logFile)",831,12,9,47,1,6,0,42,0
+4231345,Zip and apply a list of functions over a list of values in Python,apply a list of functions named 'functions' over a list of values named 'values',"[x(y) for x, y in zip(functions, values)]",899,14,7,21,1,29,0,42,0
+4454298,Prepend a line to an existing file in Python,prepend the line '#test firstline\n' to the contents of file 'infile' and save as the file 'outfile',"open('outfile', 'w').write('#test firstline\n' + open('infile').read())",932,15,9,34,1,57,0,42,0
+5744980,Taking the results of a bash command and using it in python,"Taking the results of a bash command ""awk '{print $10, $11}' test.txt > test2.txt""","os.system(""awk '{print $10, $11}' test.txt > test2.txt"")",1086,19,9,19,1,50,0,42,0
+5858916,Find array item in a string,check if any of the items in  `search` appear in `string`,any(x in string for x in search),1100,19,0,5,0,42,0,42,0
+6797984,convert string to lowercase,convert string `s` to lowercase,s.lower(),1178,21,8,0,0,54,0,42,0
+7126916,Perform a string operation for every element in a Python list,formate each string cin list `elements` into pattern '%{0}%',elements = ['%{0}%'.format(element) for element in elements],1196,21,8,0,0,38,0,42,0
+8970524,Python regex search AND split,regex search and split string 'aaa bbb ccc ddd eee fff' by delimiter '(d(d)d)',"re.split('(d(d)d)', 'aaa bbb ccc ddd eee fff', 1)",1378,26,0,34,0,5,0,42,0
+9354127,How to grab one random item from a database in Django/postgreSQL?,grab one random item from a database `model` in django/postgresql,model.objects.all().order_by('?')[0],1409,27,4,46,1,45,1,42,0
+10078470,Sort numpy matrix row values in ascending order,sort array `arr` in ascending order by values of the 3rd column,"arr[arr[:, (2)].argsort()]",1467,28,6,14,0,42,0,42,0
+10973614,Convert JSON array to Python list,Convert JSON array `array` to Python object,data = json.loads(array),1536,30,6,13,0,49,0,42,0
+12426043,Can I read and write file in one line with Python?,write the content of file `xxx.mp4` to file `f`,"f.write(open('xxx.mp4', 'rb').read())",1648,33,9,26,1,6,0,42,0
+13079852,How do I stack two DataFrames next to each other in Pandas?,stack two dataframes next to each other in pandas,"pd.concat([GOOG, AAPL], keys=['GOOG', 'AAPL'], axis=1)",1698,34,3,17,0,39,0,42,0
+13840379,How can I multiply all items in a list together with Python?,"multiply all items in a list `[1, 2, 3, 4, 5, 6]` together","from functools import reduce
+reduce(lambda x, y: x * y, [1, 2, 3, 4, 5, 6])",1781,36,7,37,1,14,0,42,0
+14750675,Delete letters from string,delete letters from string '12454v',""""""""""""".join(filter(str.isdigit, '12454v'))",1858,38,8,0,0,57,0,42,0
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",shutdown a computer using subprocess,"subprocess.call(['shutdown', '/s'])",1863,39,4,33,1,26,1,42,0
+17141558,How to sort a dataFrame in python pandas by two or more columns?,"sort a pandas data frame by column `a` in ascending, and by column `b` in descending order","df.sort(['a', 'b'], ascending=[True, False])",2037,43,3,24,0,6,0,42,0
+18689823,pandas DataFrame: replace nan values with average of columns,replace nan values in a pandas data frame with the average of columns,"df.apply(lambda x: x.fillna(x.mean()), axis=0)",2153,46,3,4,0,44,0,42,0
+18785032,Replace a substring when it is a separate word,Replace a separate word 'H3' by 'H1' in a string 'text',"re.sub('\\bH3\\b', 'H1', text)",2162,46,8,0,0,54,0,42,0
+19961490,Construct pandas DataFrame from list of tuples,construct pandas dataframe from a list of tuples,"df = pandas.DataFrame(data, columns=['R_Number', 'C_Number', 'Avg', 'Std'])",2235,48,3,18,0,64,0,42,0
+20585920,How to add multiple values to a dictionary key in python?,"for a dictionary `a`, set default value for key `somekey` as list and append value `bob`  in that key","a.setdefault('somekey', []).append('bob')",2272,49,1,64,0,40,0,42,0
+21206395,write to csv from DataFrame python pandas,Write column 'sum' of DataFrame `a` to csv file 'test.csv',"a.to_csv('test.csv', cols=['sum'])",2300,50,3,30,0,41,0,42,0
+22187233,How to delete all instances of a character in a string in python?,"delete all characters ""i"" in string ""it is icy""","""""""it is icy"""""".replace('i', '')",2342,51,8,0,0,60,0,42,0
+23970693,How To Format a JSON Text In Python?,load a json data `json_string` into variable `json_data`,json_data = json.loads(json_string),2397,52,4,46,1,10,1,42,0
+26897536,Python Pandas drop columns based on max value of column,drop all columns in dataframe `df` that holds a maximum value bigger than 0,df.columns[df.max() > 0],2453,54,3,46,0,33,0,42,0
+27060098,Replacing few values in a pandas dataframe column with another value,"replace values `['ABC', 'AB']` in a column 'BrandName' of  pandas dataframe `df` with another value 'A'","df['BrandName'] = df['BrandName'].replace(['ABC', 'AB'], 'A')",2454,54,3,2,0,59,0,42,0
+31771758,"Concatenating Unicode with string: print '£' + '1' works, but print '£' + u'1' throws UnicodeDecodeError",add unicode string '1' to UTF-8 decoded string '\xc2\xa3',print('\xc2\xa3'.decode('utf8') + '1'),2594,57,8,0,0,48,0,42,0
+31958637,BeautifulSoup - search by text inside a tag,BeautifulSoup search string 'Elsie' inside tag 'a',"soup.find_all('a', string='Elsie')",2612,58,0,50,0,4,0,42,0
+41133414,Strip random characters from url,"strip everything up to and including the character `&` from url `url`, strip the character `=` from the remaining string and concatenate `.html` to the end","url.split('&')[-1].replace('=', '') + '.html'",2827,63,8,0,0,3,0,42,0

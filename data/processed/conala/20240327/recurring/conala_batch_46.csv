@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+3061,Calling a function of a module from a string with the function's name in Python,calling a function named 'myfunction' in the module,globals()['myfunction'](),9,0,4,57,1,46,1
+276052,get current CPU and RAM usage,get current CPU and RAM usage,"psutil.cpu_percent()
+psutil.virtual_memory()",129,0,4,36,1,46,1
+402504,determine the variable type,determine the type of variable `v`,type(v),174,0,4,16,1,46,1
+432842,get the logical xor of two variables,get the logical xor of two variables `str1` and `str2`,return (bool(str1) ^ bool(str2)),190,0,4,40,1,46,1
+902408,How to use variables in SQL statement in Python?,How to use variables in SQL statement in Python?,"cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))",357,0,4,23,1,46,1
+962619,How to pull a random record using Django's ORM?,get a random record from model 'MyModel' using django's orm,MyModel.objects.order_by('?').first(),386,1,4,48,1,46,1
+1269217,Calling a base class's classmethod in Python,Call a base class's class method `do` from derived class `Derived`,"super(Derived, cls).do(a)",437,2,4,51,1,46,1
+1712227,get the size of a list,get the size of object `items`,items.__len__(),489,3,4,15,1,46,1
+2051744,Reverse Y-Axis in PyPlot,reverse y-axis in pyplot,plt.gca().invert_yaxis(),538,5,4,11,1,46,1
+2052390,Manually raising (throwing) an exception,"throw an assertion error with message ""Unexpected value of 'distance'!"", distance","raise AssertionError(""Unexpected value of 'distance'!"", distance)",541,5,4,17,1,46,1
+2229827,Django urlsafe base64 decoding with decryption,django urlsafe base64 decode string `uenc` with decryption,base64.urlsafe_b64decode(uenc.encode('ascii')),575,6,4,58,1,46,1
+2850966,How can I lookup an attribute in any scope by name?,lookup an attribute in any scope by name 'range',"getattr(__builtins__, 'range')",675,8,4,55,1,46,1
+3925096,How to get only the last part of a path in Python?,How to get only the last part of a path in Python?,os.path.basename(os.path.normpath('/folderA/folderB/folderC/folderD/')),838,12,4,57,1,46,1
+4508155,How do I use a MD5 hash (or other binary data) as a key name?,Get a md5 hash from string `thecakeisalie`,k = hashlib.md5('thecakeisalie').hexdigest(),942,15,4,31,1,46,1
+4906977,Access environment variables,print all environment variables,print(os.environ),1008,17,4,33,1,46,1
+4906977,Access environment variables,get value of the environment variable 'HOME' with default value '/home/username/',"print(os.environ.get('HOME', '/home/username/'))",1013,17,4,33,1,46,1
+5022066,How to serialize SqlAlchemy result to JSON?,serialise SqlAlchemy RowProxy object `row` to a json object,json.dumps([dict(list(row.items())) for row in rs]),1028,17,4,43,1,46,1
+5507948,How can I insert NULL data into MySQL database with Python?,insert row into mysql database with column 'column1' set to the value `value`,"cursor.execute('INSERT INTO table (`column1`) VALUES (%s)', (value,))",1074,18,4,47,1,46,1
+5625524,How to Close a program using python?,execute os command ''TASKKILL /F /IM firefox.exe'',os.system('TASKKILL /F /IM firefox.exe'),1085,19,4,60,1,46,1
+7253803,How to get everything after last slash in a URL?,get every thing after last `/`,"url.rsplit('/', 1)",1207,22,4,25,1,46,1
+7263824,Get HTML Source of WebElement in Selenium WebDriver using Python,get html source of Selenium WebElement `element`,element.get_attribute('innerHTML'),1211,22,4,64,1,46,1
+7732125,Clear text from textarea with selenium,"if Selenium textarea element `foo` is not empty, clear the field",driver.find_element_by_id('foo').clear(),1254,23,4,38,1,46,1
+8409095,matplotlib: Set markers for individual points on a line,set color marker styles `--bo` in matplotlib,"plt.plot(list(range(10)), '--bo')",1327,25,4,53,1,46,1
+8639973,How to plot with x-axis at the top of the figure?,How to plot with x-axis at the top of the figure?,ax.xaxis.set_ticks_position('top'),1343,25,4,24,1,46,1
+9561243,How to check if something exists in a postgresql database using django?,Django check if an object with criteria `name` equal to 'name' and criteria `title` equal to 'title' exists in model `Entry`,"Entry.objects.filter(name='name', title='title').exists()",1426,27,4,19,1,46,1
+10668585,How to get max value in django ORM,Django get maximum value associated with field 'added' in model `AuthorizedEmail`,AuthorizedEmail.objects.filter(group=group).order_by('-added')[0],1516,30,4,15,1,46,1
+13279399,How to obtain values of request variables using Python and Flask,Flask get value of request variable 'firstname',first_name = request.args.get('firstname'),1723,35,4,23,1,46,1
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",logoff computer having windows operating system using python,"subprocess.call(['shutdown', '/l '])",1861,39,4,59,1,46,1
+15080500,How can I send a signal from a python program?,send a signal `signal.SIGUSR1` to the current process,"os.kill(os.getpid(), signal.SIGUSR1)",1889,39,4,31,1,46,1
+15286401,Print multiple arguments in python,"print the string `Total score for`, the value of the variable `name`, the string `is` and the value of the variable `score` in one print call.","print(('Total score for', name, 'is', score))",1909,40,4,60,1,46,1
+15457504,How to set the font size of a Canvas' text item?,set the font 'Purisa' of size 12 for a canvas' text item `k`,"canvas.create_text(x, y, font=('Purisa', 12), text=k)",1927,40,4,34,1,46,1
+15459217,how to set cookie in python mechanize,"Add header `('Cookie', 'cookiename=cookie value')` to mechanize browser `br`","br.addheaders = [('Cookie', 'cookiename=cookie value')]",1928,40,4,15,1,46,1
+15985339,How do I get current URL in Selenium Webdriver 2 Python?,get current url in selenium webdriver `browser`,print(browser.current_url),1958,41,4,16,1,46,1
+16114244,Get contents of entire page using Selenium,Selenium get the entire `driver` page text,driver.page_source,1965,41,4,36,1,46,1
+18742657,Execute Shell Script from python with variable,Execute Shell Script from python with variable,"subprocess.call(['test.sh', str(domid)])",2161,46,4,64,1,46,1
+20347766,Pythonically add header to a csv file,add field names as headers in csv constructor `writer`,writer.writeheader(),2256,49,4,42,1,46,1
+21350605,python selenium click on button,python selenium click on button '.button.c_button.s_button',driver.find_element_by_css_selector('.button.c_button.s_button').click(),2304,50,4,58,1,46,1
+24659239,How to change QPushButton text and background color,set text color as `red` and background color as `#A3C1DA` in qpushbutton,setStyleSheet('QPushButton {background-color: #A3C1DA; color: red;}'),2408,53,4,42,1,46,1
+39538010,How can I execute Python code in a virtualenv from Matlab,execute python code `myscript.py` in a virtualenv `/path/to/my/venv` from matlab,system('/path/to/my/venv/bin/python myscript.py'),2765,62,4,40,1,46,1

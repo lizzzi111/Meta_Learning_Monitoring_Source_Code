@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+22676,download a file over HTTP,"download a file ""http://www.example.com/songs/mp3.mp3"" over HTTP and save to ""mp3.mp3""","urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')",19,0,9,54,1,48,0,52,0
+319426,case insensitive string comparison,case insensitive comparison of strings `string1` and `string2`,"if (string1.lower() == string2.lower()):
+    print('The strings are the same (case insensitive)')
+else:
+    print('The strings are not the same (case insensitive)')",146,0,0,10,0,21,0,52,0
+743806,Split string into a list,Split string `line` into a list by whitespace,line.split(),303,0,8,0,0,60,0,52,0
+902408,How to use variables in SQL statement in Python?,"insert variables `(var1, var2, var3)` into sql statement 'INSERT INTO table VALUES (?, ?, ?)'","cursor.execute('INSERT INTO table VALUES (?, ?, ?)', (var1, var2, var3))",355,0,8,47,0,32,0,52,0
+988228,Convert a String representation of a Dictionary to a dictionary?,"build a dict of key:value pairs from a string representation of a dict, `{'muffin' : 'lolz', 'foo' : 'kitty'}`","ast.literal_eval(""{'muffin' : 'lolz', 'foo' : 'kitty'}"")",394,1,1,38,0,32,0,52,0
+1058712,How do I select a random element from an array in Python?,"select a random element from array `[1, 2, 3]`","random.choice([1, 2, 3])",409,1,6,35,0,31,0,52,0
+1207457,Convert a Unicode string to a string,Convert a Unicode string `a` to a 'ascii' string,"a.encode('ascii', 'ignore')",431,2,8,0,0,51,0,52,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'c' in `d`,('c' in d),481,3,0,29,0,44,0,52,0
+1747817,Create a dictionary with list comprehension,Create a dictionary `d` from list of key value pairs `iterable`,"d = {k: v for (k, v) in iterable}",496,4,1,18,0,22,0,52,0
+1962795,How to get alpha value of a PNG image with PIL?,get alpha value `alpha` of a png image `img`,alpha = img.split()[-1],531,4,4,53,1,11,1,52,0
+2354166,How do you modify sys.path in Google App Engine (Python)?,Insert directory 'apps' into directory `__file__`,"sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))",591,6,9,64,1,24,0,52,0
+3774571,Get data from the meta tags using BeautifulSoup,BeautifulSoup find all tags with attribute 'name' equal to 'description',soup.findAll(attrs={'name': 'description'}),811,12,4,63,1,47,1,52,0
+4690366,Creating a list from a Scipy matrix,"create a matrix from a list `[1, 2, 3]`","x = scipy.matrix([1, 2, 3]).transpose()",972,16,6,9,0,34,0,52,0
+4979542,Python - use list as function parameters,unpack the arguments out of list `params` to function `some_func`,some_func(*params),1025,17,7,59,1,43,0,52,0
+5075247,Regular expression to remove line breaks,remove line breaks from string `textblock` using regex,"re.sub('(?<=[a-z])\\r?\\n', ' ', textblock)",1031,17,0,8,0,60,0,52,0
+5123839,Fastest way to get the first object from a queryset in django?,get the first object from a queryset in django model `Entry`,Entry.objects.filter()[:1].get(),1034,17,4,58,1,26,1,52,0
+6159313,Can Python test the membership of multiple values in a list?,"test if either of strings `a` or `b` are members of the set of strings, `['b', 'a', 'foo', 'bar']`","set(['a', 'b']).issubset(['b', 'a', 'foo', 'bar'])",1123,20,0,42,0,19,0,52,0
+6633523,How can I convert a string with dot and comma into a float number in Python,"convert a string `123,456.908` with dot and comma into a floating number","float('123,456.908'.replace(',', ''))",1166,21,5,60,0,38,0,52,0
+6714826,How can I determine the byte length of a utf-8 encoded string in Python?,Determine the byte length of a utf-8 encoded string `s`,return len(s.encode('utf-8')),1173,21,8,0,0,59,0,52,0
+6916542,Writing List of Strings to Excel CSV File in Python,write a list of strings `row` to csv object `csvwriter`,csvwriter.writerow(row),1188,21,8,0,0,23,0,52,0
+12589481,Python Pandas: Multiple aggregations of the same column,apply two different aggregating functions `mean` and `sum` to the same column `dummy` in pandas data frame `df`,"df.groupby('dummy').agg({'returns': [np.mean, np.sum]})",1660,33,3,35,0,8,0,52,0
+13254241,Removing key values pairs from a list of dictionaries,Removing key values pairs from a list of dictionaries,"[dict((k, v) for k, v in d.items() if k != 'mykey1') for d in mylist]",1720,35,1,39,0,13,0,52,0
+13891559,Is there a more pythonic way of exploding a list over a function's arguments?,unpack elements of list `i` as arguments into function `foo`,foo(*i),1785,37,7,18,1,59,0,52,0
+14299978,How to use lxml to find an element by text?,find the element that holds string 'TEXT A' in file `root`,"e = root.xpath('.//a[text()=""TEXT A""]')",1821,37,0,10,0,43,0,52,0
+14411633,Python - Fastest way to check if a string contains specific characters in any of the items in a list,do a boolean check if a string `lestring` contains any of the items in list `lelist`,any(e in lestring for e in lelist),1831,38,7,14,1,23,0,52,0
+16962512,Convert scientific notation to decimal - python,convert scientific notation of variable `a` to decimal,"""""""{:.50f}"""""".format(float(a[0] / a[1]))",2014,42,5,18,0,29,0,52,0
+18432823,how to create similarity matrix in numpy python?,Convert array `x` into a correlation matrix,np.corrcoef(x),2128,45,6,15,0,44,0,52,0
+21778118,Counting the number of non-NaN elements in a numpy ndarray matrix in Python,count the number of non-nan elements in a numpy ndarray matrix `data`,np.count_nonzero(~np.isnan(data)),2317,50,6,59,0,39,0,52,0
+23566515,Multiplication of 1d arrays in numpy,get the dot product of two one dimensional numpy arrays,"np.dot(a[:, (None)], b[(None), :])",2382,52,6,26,0,21,0,52,0
+23668427,pandas joining multiple dataframes on columns,"join multiple dataframes `d1`, `d2`, and `d3` on column 'name'","df1.merge(df2, on='name').merge(df3, on='name')",2385,52,3,52,0,37,0,52,0
+25823608,Find matching rows in 2 dimensional numpy array,"find rows matching `(0,1)` in a 2 dimensional numpy array `vals`","np.where((vals == (0, 1)).all(axis=1))",2432,53,6,52,0,29,0,52,0
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data of dataframe `df` where the sum of column 'X' grouped by column 'User' is equal to 0,df.loc[df.groupby('User')['X'].transform(sum) == 0],2474,54,3,7,0,32,0,52,0
+29464234,Compare Python Pandas DataFrames for matching rows,"find all the rows in Dataframe 'df2' that are also present in Dataframe 'df1', for the columns 'A', 'B', 'C' and 'D'.","pd.merge(df1, df2, on=['A', 'B', 'C', 'D'], how='inner')",2521,55,3,57,0,42,0,52,0
+31818050,round number to nearest integer,round number 4.0005 up to 3 decimal places,"round(4.0005, 3)",2601,57,5,55,0,31,0,52,0
+31888871,Pandas - replacing column values,replace value 0 with 'Female' and value 1 with 'Male' in column 'sex' of dataframe `data`,"data['sex'].replace([0, 1], ['Female', 'Male'], inplace=True)",2609,58,3,20,0,22,0,52,0
+33058590,Pandas Dataframe: Replacing NaN with row average,replacing nan in the dataframe `df` with row average,"df.fillna(df.mean(axis=1), axis=1)",2640,58,3,10,0,30,0,52,0
+34696853,Convert list of strings to int,convert strings in list-of-lists `lst` to ints,[[int(x) for x in sublist] for sublist in lst],2673,59,7,23,1,15,0,52,0
+40452956,remove escape character from string,"remove escape character from string ""\\a""","""""""\\a"""""".decode('string_escape')",2801,63,8,0,0,23,0,52,0
+41469647,Outer product of each column of a 2D array to form a 3D array - NumPy,outer product of each column of a 2d `X` array to form a 3d array `X`,"np.einsum('ij,kj->jik', X, X)",2837,64,6,40,0,52,0,52,0

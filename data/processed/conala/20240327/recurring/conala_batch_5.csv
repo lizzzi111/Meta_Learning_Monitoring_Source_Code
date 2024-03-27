@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+237079,get file creation & modification date/times in,get modification time of file `filename`,t = os.path.getmtime(filename),103,0,9,44,1,5,0
+237079,get file creation & modification date/times in,get creation time of file `file`,time.ctime(os.path.getctime(file)),104,0,9,28,1,5,0
+439115,random Decimal in python,generate random Decimal,decimal.Decimal(random.randrange(10000)) / 100,196,0,5,55,0,5,0
+761804,Trimming a string,"Trimming ""\n"" from string `myString`",myString.strip('\n'),315,0,8,0,0,5,0
+931092,Reverse a string,Reverse a string `string`,''.join(reversed(string)),372,0,8,0,0,5,0
+1386811,Convert binary string to list of integers using Python,Convert binary string to list of integers using Python,"[int(s[i:i + 3], 2) for i in range(0, len(s), 3)]",447,2,5,43,0,5,0
+2847272,"Python string formatting when string contains ""%s"" without escaping","replace fields delimited by braces {} in string ""Day old bread, 50% sale {0}"" with string 'today'","""""""Day old bread, 50% sale {0}"""""".format('today')",673,8,8,0,0,5,0
+2878084,Sort a list of dicts by dict values,sort a list of dictionary `mylist` by the key `title`,mylist.sort(key=lambda x: x['title']),678,8,1,24,0,5,0
+3895424,what is a quick way to delete all elements from a list that do not satisfy a constraint?,delete all elements from a list `x` if a function `fn` taking value as parameter returns `0`,[x for x in lst if fn(x) != 0],834,12,7,22,1,5,0
+3933478,accessing python dictionary,get the value associated with unicode key 'from_user' of first dictionary in list `result`,result[0]['from_user'],843,12,1,12,0,5,0
+4233476,Sort a list by multiple attributes?,sort a list of lists `s` by second and third element in each list.,"s.sort(key=operator.itemgetter(1, 2))",901,14,7,64,1,5,0
+4481724,Convert a list of characters into a string,"convert a list of characters `['a', 'b', 'c', 'd']` into a string",""""""""""""".join(['a', 'b', 'c', 'd'])",937,15,8,0,0,5,0
+5404665,Accessing elements of python dictionary,access value associated with key 'American' of key 'Apple' from dictionary `dict`,dict['Apple']['American'],1067,18,1,5,0,5,0
+6310475,datetime.datetime.now() + 1,add one day and three hours to the present time from datetime.now(),"datetime.datetime.now() + datetime.timedelta(days=1, hours=3)",1135,20,2,39,0,5,0
+8970524,Python regex search AND split,regex search and split string 'aaa bbb ccc ddd eee fff' by delimiter '(d(d)d)',"re.split('(d(d)d)', 'aaa bbb ccc ddd eee fff', 1)",1378,26,0,34,0,5,0
+9746522,How can I use sum() function for a list in Python?,convert int values in list `numlist` to float,numlist = [float(x) for x in numlist],1443,28,5,58,0,5,0
+10351772,converting list of string to list of integer,convert list of string numbers into list of integers,"map(int, eval(input('Enter the unfriendly numbers: ')))",1482,29,5,44,0,5,0
+11303238,Finding recurring patterns in a string,find recurring patterns in a string '42344343434',"re.findall('^(.+?)((.+)\\3+)$', '42344343434')[0][:-1]",1561,31,0,12,0,5,0
+11760095,convert binary string to numpy array,convert binary string '\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@' to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='<f4')",1601,32,5,5,0,5,0
+12527959,Passing the '+' character in a POST request in Python,replace percent-encoded code in request `f` to their single-character equivalent,"f = urllib.request.urlopen(url, urllib.parse.unquote(urllib.parse.urlencode(params)))",1654,33,8,0,0,5,0
+12845112,Python: Make last item of array become the first,move last item of array `a` to the first position,a[-1:] + a[:-1],1682,34,6,2,0,5,0
+14524322,How to convert a date string to different format,convert a date string '2013-1-25' in format '%Y-%m-%d' to different format '%-m/%d/%y',"datetime.datetime.strptime('2013-1-25', '%Y-%m-%d').strftime('%-m/%d/%y')",1839,38,2,59,0,5,0
+15752422,Python Pandas - Date Column to Column index,set dataframe `df` index using column 'month',df.set_index('month'),1942,41,3,9,0,5,0
+15851568,how to get the last part of a string before a certain character?,Split a string `x` by last occurrence of character `-`,print(x.rpartition('-')[0]),1947,41,8,0,0,5,0
+17057544,Python - Extract folder path from file path,extract folder path from file path,os.path.dirname(os.path.abspath(existGDBPath)),2022,43,9,61,1,5,0
+17679089,Pandas DataFrame Groupby two columns and get counts,get count of rows in each series grouped by column 'col5' and column 'col2' of dataframe `df`,"df.groupby(['col5', 'col2']).size().groupby(level=1).max()",2075,44,3,19,0,5,0
+18684397,"How to create datetime object from ""16SEP2012"" in python","create datetime object from ""16sep2012""","datetime.datetime.strptime('16Sep2012', '%d%b%Y')",2152,46,2,9,0,5,0
+19794051,Regex for removing data in parenthesis,Remove all data inside parenthesis in string `item`,"item = re.sub(' \\(\\w+\\)', '', item)",2224,48,8,0,0,5,0
+20677660,python string format() with dict with integer keys,format string with dict `{'5': 'you'}` with integer keys,'hello there %(5)s' % {'5': 'you'},2275,49,1,2,0,5,0
+21787496,converting epoch time with milliseconds to datetime,convert epoch time represented as milliseconds `s` to string using format '%Y-%m-%d %H:%M:%S.%f',datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f'),2318,50,2,8,0,5,0
+24958010,get key by value in dictionary with same value in python?,get keys with same value in dictionary `d`,print([key for key in d if d[key] == 1]),2414,53,1,56,0,5,0
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((.*?cat.*?){1})cat', '\\1Bull', s)",2467,54,0,3,0,5,0
+29815129,Pandas DataFrame to List of Dictionaries,Create list of dictionaries from pandas dataframe `df`,df.to_dict('records'),2530,56,3,1,0,5,0
+38708621,How to calculate percentage of sparsity for a numpy array/matrix?,calculate ratio of sparsity in a numpy array `a`,np.isnan(a).sum() / np.prod(a.shape),2748,61,6,7,0,5,0
+39600161,Regular expression matching all but a string,regular expression matching all but 'aa' and 'bb' for string `string`,"re.findall('-(?!aa-|bb-)([^-]+)', string)",2767,62,0,51,0,5,0
+40963347,Find Average of Every Three Columns in Pandas dataframe,Get average for every three columns in `df` dataframe,"df.groupby(np.arange(len(df.columns)) // 3, axis=1).mean()",2820,63,3,1,0,5,0
+41127441,"Why can you loop through an implicit tuple in a for loop, but not a comprehension in Python?",get a list each value `i` in the implicit tuple `range(3)`,list(i for i in range(3)),2826,63,7,52,1,5,0
+41178532,Percentage match in pandas Dataframe,get proportion of rows in dataframe `trace_df` whose values for column `ratio` are greater than 0,(trace_df['ratio'] > 0).mean(),2829,63,3,53,0,5,0
+42060144,Conditionally fill a column of a pandas df with values of a different df,Merge column  'word' in dataframe `df2` with column 'word' on dataframe `df1`,"df1.merge(df2, how='left', on='word')",2857,64,3,12,0,5,0

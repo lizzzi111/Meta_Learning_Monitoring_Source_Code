@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+3464359,Is it possible to wrap the text of xticks in matplotlib in python?,rotate the xtick labels of matplotlib plot `ax` by `45` degrees to make long labels readable,"ax.set_xticklabels(labels, rotation=45)",769,11
+3471999,How do I merge two lists into a single list?,interleave the elements of two lists `a` and `b`,"[j for i in zip(a, b) for j in i]",770,11
+3471999,How do I merge two lists into a single list?,merge two lists `a` and `b` into a single list,"[j for i in zip(a, b) for j in i]",771,11
+3475251,Split a string by a delimiter in python,Split a string by a delimiter in python,[x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')],772,11
+3476732,How to loop backwards in python?,iterate backwards from 10 to 0,"range(10, 0, -1)",773,11
+3486384,Output first 100 characters in a string,output first 100 characters in a string `my_string`,print(my_string[0:100]),774,11
+3487377,How can I check a Python unicode string to see that it *actually* is proper Unicode?,check if string `foo` is UTF-8 encoded,foo.decode('utf8').encode('utf8'),775,11
+3494906,How do I merge a list of dicts into a single dict?,Convert list of dictionaries `L` into a flat dictionary,dict(pair for d in L for pair in list(d.items())),776,11
+3494906,How do I merge a list of dicts into a single dict?,merge a list of dictionaries in list `L` into a single dict,"{k: v for d in L for k, v in list(d.items())}",777,11
+3501382,Checking whether a variable is an integer,check if `x` is an integer,"isinstance(x, int)",778,11
+3501382,Checking whether a variable is an integer,check if `x` is an integer,(type(x) == int),779,11
+3505831,in python how do I convert a single digit number into a double digits string?,pads string '5' on the left with 1 zero,print('{0}'.format('5'.zfill(2))),780,11
+3506678,"In Django, how do I select 100 random records from the database?","in Django, select 100 random records from the database `Content.objects`",Content.objects.all().order_by('?')[:100],781,11
+3518778,read csv into record array in numpy,read csv file 'myfile.csv' into array,"df = pd.read_csv('myfile.csv', sep=',', header=None)",782,11
+3518778,read csv into record array in numpy,read csv file 'myfile.csv' into array,"np.genfromtxt('myfile.csv', delimiter=',')",783,11
+3518778,read csv into record array in numpy,read csv file 'my_file.csv' into numpy array,"my_data = genfromtxt('my_file.csv', delimiter=',')",784,11
+3518778,read csv into record array,read csv file 'myfile.csv' into array,"np.genfromtxt('myfile.csv', delimiter=',', dtype=None)",785,11
+3519125,Converting a hex-string representation to actual bytes in Python,convert a hex-string representation to actual bytes,"""""""\\xF3\\xBE\\x80\\x80"""""".replace('\\x', '').decode('hex')",786,11
+3523048,Add another tuple to a tuple,Add a tuple with value `another_choice` to a tuple `my_choices`,"final_choices = ((another_choice,) + my_choices)",787,11
+3523048,Add another tuple to a tuple,Add a tuple with value `another_choice` to a tuple `my_choices`,"final_choices = ((another_choice,) + my_choices)",788,11
+3548673,How to replace (or strip) an extension from a filename in Python?,replace extension '.txt' in basename '/home/user/somefile.txt' with extension '.jpg',print(os.path.splitext('/home/user/somefile.txt')[0] + '.jpg'),789,11
+3559559,How to delete a character from a string using python?,"Delete character ""M"" from a string `s` using python","s = s.replace('M', '')",790,11
+3559559,How to delete a character from a string using python?,How to delete a character from a string using python?,"newstr = oldstr.replace('M', '')",791,11
+3582601,How to call an element in an numpy array?,"get an element at index `[1,1]`in a numpy array `arr`","print(arr[1, 1])",792,11
+3590165,Joining a list that has Integer values with Python,print a list of integers `list_of_ints` using string formatting,"print(', '.join(str(x) for x in list_of_ints))",793,11
+3595685,start python script as background process from within a python script,Open a background process 'background-process' with arguments 'arguments',"subprocess.Popen(['background-process', 'arguments'])",794,11
+3608411,Python: How can I find all files with a particular extension?,find all files with extension '.c' in directory `folder`,results += [each for each in os.listdir(folder) if each.endswith('.c')],795,11
+3662142,How to remove tags from a string in python using regular expressions? (NOT in HTML),remove tags from a string `mystring`,"re.sub('<[^>]*>', '', mystring)",796,11
+3668964,How to check if a character is upper-case in Python?,check if all string elements in list `words` are upper-cased,print(all(word[0].isupper() for word in words)),797,11
+3673428,Convert int to ASCII and back in Python,convert ascii value 'a' to int,ord('a'),798,11
+3685265,How to write a multidimensional array to a text file?,save numpy array `x` into text file 'test.txt',"np.savetxt('test.txt', x)",799,11
+3704731,Replace non-ascii chars from a unicode string in Python,replace non-ascii chars from a unicode string u'm\xfasica',"unicodedata.normalize('NFKD', 'm\xfasica').encode('ascii', 'ignore')",800,11
+3718657,How to properly determine current script directory in Python?,get current script directory,os.path.dirname(os.path.abspath(__file__)),801,11
+3724551,Python: Uniqueness for list of lists,remove duplicated items from list of lists `testdata`,"list(map(list, set(map(lambda i: tuple(i), testdata))))",802,11
+3724551,Python: Uniqueness for list of lists,uniqueness for list of lists `testdata`,[list(i) for i in set(tuple(i) for i in testdata)],803,11
+3728017,Sorting while preserving order in python,Sorting while preserving order in python,"sorted(enumerate(a), key=lambda x: x[1])",804,11
+3731426,How do I divide the members of a list by the corresponding members of another list in Python?,divide the members of a list `conversions` by the corresponding members of another list `trials`,"[(c / t) for c, t in zip(conversions, trials)]",805,11
+3735814,Check for a key pattern in a dictionary in python,Check if any key in the dictionary `dict1` starts with the string `EMP$$`,any(key.startswith('EMP$$') for key in dict1),806,11
+3735814,Check for a key pattern in a dictionary in python,create list of values from dictionary `dict1` that have a key that starts with 'EMP$$',"[value for key, value in list(dict1.items()) if key.startswith('EMP$$')]",807,11

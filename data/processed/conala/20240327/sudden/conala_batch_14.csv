@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+237079,get file creation & modification date/times in,get the creation time of file `path_to_file`,return os.path.getctime(path_to_file),105,0,9,26,1,33,0,14,0
+432842,get the logical xor of two variables,get logical xor of `a` and `b`,(bool(a) ^ bool(b)),189,0,0,13,0,4,0,14,0
+1249388,Removing all non-numeric characters from string in Python,remove all non-numeric characters from string `sdkjh987978asd098as0980a98sd `,"re.sub('[^0-9]', '', 'sdkjh987978asd098as0980a98sd')",435,2,8,0,0,16,0,14,0
+1810743,How to set the current working directory in Python?,set the current working directory to 'c:\\Users\\uname\\desktop\\python',os.chdir('c:\\Users\\uname\\desktop\\python'),509,4,4,44,1,10,1,14,0
+2354166,How do you modify sys.path in Google App Engine (Python)?,modify sys.path for python module `subdir`,"sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))",592,6,9,45,1,58,0,14,0
+2606976,How to replace empty string with zero in comma-separated string?,"split string `s` into a list of strings based on ',' then replace empty strings with zero",""""""","""""".join(x or '0' for x in s.split(','))",632,7,8,31,0,19,0,14,0
+3059301,Manipulating binary data in Python,Return the decimal value for each hex character in data `data`,print(' '.join([str(ord(a)) for a in data])),696,9,5,32,0,37,0,14,0
+3294889,Iterating over dictionaries using for loops,get keys and items of dictionary `d`,list(d.items()),739,10,1,54,0,35,0,14,0
+3506678,"In Django, how do I select 100 random records from the database?","in Django, select 100 random records from the database `Content.objects`",Content.objects.all().order_by('?')[:100],781,11,4,58,1,12,1,14,0
+3673428,Convert int to ASCII and back in Python,convert ascii value 'a' to int,ord('a'),798,11,5,63,0,41,0,14,0
+3777301,How to call a shell script from python code?,call a shell script `notepad` using subprocess,subprocess.call(['notepad']),812,12,9,45,1,0,0,14,0
+3925096,How to get only the last part of a path in Python?,How to get only the last part of a path in Python?,os.path.basename(os.path.normpath('/folderA/folderB/folderC/folderD/')),838,12,4,57,1,46,1,14,0
+3944876,Casting an int to a string in Python,cast an int `i` to a string and concat to string 'ME','ME' + str(i),854,13,8,0,0,13,0,14,0
+4174941,sort a list of lists by a specific index of the inner list,sort a list of lists `L` by index 2 of the inner list,"sorted(L, key=itemgetter(2))",894,14,7,34,1,2,0,14,0
+7658932,Finding index of the same elements in a list,Get all indexes of a letter `e` from a string `word`,"[index for index, letter in enumerate(word) if letter == 'e']",1249,23,0,2,0,54,0,14,0
+8270092,remove all whitespace in a string,remove all whitespaces in a string `sentence`,sentence = ''.join(sentence.split()),1310,24,8,0,0,1,0,14,0
+8691311,Python: How to write multiple strings in one line?,"write multiple strings `line1`, `line2` and `line3` in one line in a file `target`","target.write('%r\n%r\n%r\n' % (line1, line2, line3))",1351,25,8,0,0,14,0,14,0
+8899905,Count number of occurrences of a given substring in a string,"count number of occurrences of a substring 'ab' in a string ""abcdabcva""","""""""abcdabcva"""""".count('ab')",1366,26,0,7,0,54,0,14,0
+8936030,Using BeautifulSoup to search html for string,BeautifulSoup find string 'Python Jobs' in HTML body `body`,soup.body.findAll(text='Python Jobs'),1375,26,4,63,1,48,1,14,0
+10194713,Sorting a defaultdict by value in python,Sort dictionary `u` in ascending order based on second elements of its values,"sorted(list(u.items()), key=lambda v: v[1])",1472,29,1,17,0,43,0,14,0
+12485244,Tuple conversion to a string,convert list of tuples `L` to a string,""""""", """""".join('(' + ', '.join(i) + ')' for i in L)",1651,33,7,59,1,22,0,14,0
+13490292,Format number using LaTeX notation in Python,format number 1000000000.0 using latex notation,print('\\num{{{0:.2g}}}'.format(1000000000.0)),1749,36,5,12,0,17,0,14,0
+14159753,how to change the size of the sci notation above the y axis in matplotlib?,change the size of the sci notation to '30' above the y axis in matplotlib `plt`,"plt.rc('font', **{'size': '30'})",1807,37,4,58,1,47,1,14,0
+15271907,"Python mySQL Update, Working but not updating table",commit all the changes after executing a query.,dbb.commit(),1905,40,4,26,1,45,1,14,0
+15459217,how to set cookie in python mechanize,"Add header `('Cookie', 'cookiename=cookie value')` to mechanize browser `br`","br.addheaders = [('Cookie', 'cookiename=cookie value')]",1928,40,4,15,1,46,1,14,0
+16888888,How to read a .xlsx file using the pandas Library in iPython?,read excel file `file_name` using pandas,"dfs = pd.read_excel(file_name, sheetname=None)",2013,42,3,19,0,43,0,14,0
+18200052,How to convert ndarray to array?,convert ndarray with shape 3x3 to array,"np.zeros((3, 3)).ravel()",2113,45,6,16,0,34,0,14,0
+18504967,pandas dataframe create new columns and fill with calculated values from same df,create new column `A_perc` in dataframe `df` with row values equal to the value in column `A` divided by the value in column `sum`,df['A_perc'] = df['A'] / df['sum'],2137,46,3,0,0,43,0,14,0
+19664253,selenium how to get the content of href within some targeted class,get the content of child tag with`href` attribute whose parent has css `someclass`,self.driver.find_element_by_css_selector('.someclass a').get_attribute('href'),2216,48,4,55,1,27,1,14,0
+21833383,When the key is a tuple in dictionary in Python,make all keys lowercase in dictionary `d`,"d = {(a.lower(), b): v for (a, b), v in list(d.items())}",2329,51,1,39,0,32,0,14,0
+22086116,how do you filter pandas dataframes by multiple columns,create dataframe `males` containing data of dataframe `df` where column `Gender` is equal to 'Male' and column `Year` is equal to 2014,males = df[(df[Gender] == 'Male') & (df[Year] == 2014)],2338,51,3,2,0,39,0,14,0
+25440008,python pandas flatten a dataframe to a list,flatten a dataframe df to a list,df.values.flatten(),2423,53,3,1,0,20,0,14,0
+26081300,Pandas: Subtract row mean from each element in row,Subtract the mean of each row in dataframe `df` from the corresponding row's elements,"df.sub(df.mean(axis=1), axis=0)",2436,53,3,12,0,42,0,14,0
+26155985,Is there a way to refer to the entire matched expression in re.sub without the use of a group?,place '\' infront of each non-letter char in string `line`,"print(re.sub('[_%^$]', '\\\\\\g<0>', line))",2439,53,8,0,0,14,0,14,0
+26724275,Removing the first folder in a path,remove first directory from path '/First/Second/Third/Fourth/Fifth',os.path.join(*x.split(os.path.sep)[2:]),2448,54,9,16,1,30,0,14,0
+29386995,How to get http headers in flask?,get http header of the key 'your-header-name' in flask,request.headers['your-header-name'],2517,55,4,49,1,47,1,14,0
+31818050,round number to nearest integer,round number 3.0005 up to 3 decimal places,"round(3.0005, 3)",2607,58,5,36,0,51,0,14,0
+35427814,Get the number of all keys in a dictionary of dictionaries in Python,get the number of all keys in the nested dictionary `dict_list`,len(dict_test) + sum(len(v) for v in dict_test.values()),2695,60,1,22,0,32,0,14,0
+42172204,Replace value in any column in pandas dataframe,"replace value '-' in any column of pandas dataframe to ""NaN""","df.replace('-', 'NaN')",2861,64,3,6,0,35,0,14,0

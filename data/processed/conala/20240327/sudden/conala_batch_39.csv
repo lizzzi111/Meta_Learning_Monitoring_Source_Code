@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+89228,Calling an external command,"Calling an external command ""some_command < input_file | another_command > output_file""",os.system('some_command < input_file | another_command > output_file'),64,0,9,27,1,39,0,39,0
+432842,get the logical xor of two variables,get the logical xor of two variables `str1` and `str2`,return (bool(str1) ^ bool(str2)),190,0,4,40,1,46,1,39,0
+642154,convert strings into integers,convert items in `T1` to integers,"T2 = [map(int, x) for x in T1]",259,0,5,7,0,31,0,39,0
+748028,How to get output of exe in python script?,How to get output of exe in python script?,"output = subprocess.Popen(['mycmd', 'myarg'], stdout=PIPE).communicate()[0]",307,0,4,18,1,11,1,39,0
+983354,How do I make python to wait for a pressed key,prompt string 'Press Enter to continue...' to the console,input('Press Enter to continue...'),392,1,4,49,1,11,1,39,0
+1012185,"In Python, how do I index a list with another list?",index a list `L` with another list `Idx`,T = [L[i] for i in Idx],397,1,7,35,1,21,0,39,0
+1547733,How to sort this list in Python?,Sort a list of dictionary `l` based on key `time` in descending order,"l = sorted(l, key=lambda a: a['time'], reverse=True)",472,3,1,55,0,42,0,39,0
+3320406,How to check if a path is absolute path or relative path in cross platform way with Python?,check if path `my_path` is an absolute path,os.path.isabs(my_path),746,10,9,22,1,30,0,39,0
+3735814,Check for a key pattern in a dictionary in python,create list of values from dictionary `dict1` that have a key that starts with 'EMP$$',"[value for key, value in list(dict1.items()) if key.startswith('EMP$$')]",807,11,1,23,0,43,0,39,0
+4444923,Get Filename Without Extension in Python,get filename without extension from file `filename`,os.path.splitext(filename)[0],931,15,9,27,1,61,0,39,0
+4476373,Simple URL GET/POST function,post request url `url` with parameters `payload`,"r = requests.post(url, data=payload)",933,15,4,27,1,10,1,39,0
+5285181,IO Error while storing data in pickle,open a file `/home/user/test/wsservice/data.pkl` in binary write mode,"output = open('/home/user/test/wsservice/data.pkl', 'wb')",1054,18,9,23,1,40,0,39,0
+5333244,How to display a jpg file in Python?,Display a image file `pathToFile`,Image.open('pathToFile').show(),1058,18,9,52,1,53,0,39,0
+6159900,write line to file,"write line ""hi there"" to file `myfile`","f = open('myfile', 'w')
+f.write('hi there\n')
+f.close()",1125,20,9,62,1,58,0,39,0
+6996603,Delete a file or folder,recursively delete all contents in directory `path`,"shutil.rmtree(path, ignore_errors=False, onerror=None)",1189,21,9,39,1,23,0,39,0
+7164679,How to send cookies in a post request with the Python Requests library?,send cookies `cookie` in a post request to url 'http://wikipedia.org' with the python requests library,"r = requests.post('http://wikipedia.org', cookies=cookie)",1203,22,4,23,1,47,1,39,0
+7286879,splitting unicode string into words,"split unicode string ""раз два три"" into words",'\u0440\u0430\u0437 \u0434\u0432\u0430 \u0442\u0440\u0438'.split(),1220,22,8,62,0,1,0,39,0
+7356042,Pythonic way to populate numpy array,Create 2D numpy array from the data provided in 'somefile.csv' with each row in the file having same number of values,"X = numpy.loadtxt('somefile.csv', delimiter=',')",1229,22,6,6,0,37,0,39,0
+9775731,Clamping floating numbers in Python?,clamping floating number `my_value` to be between `min_value` and `max_value`,"max(min(my_value, max_value), min_value)",1451,28,5,9,0,8,0,39,0
+10824319,Python: How to convert a string containing hex bytes to a hex string,Convert a string `s` containing hex bytes to a hex string,s.decode('hex'),1526,30,8,0,0,2,0,39,0
+11399384,Extract all keys from a list of dictionaries,create a set containing all keys names from list of dictionaries `LoD`,set([i for s in [list(d.keys()) for d in LoD] for i in s]),1575,31,1,59,0,4,0,39,0
+12527959,Passing the '+' character in a POST request in Python,replace percent-encoded code in request `f` to their single-character equivalent,"f = urllib.request.urlopen(url, urllib.parse.unquote(urllib.parse.urlencode(params)))",1654,33,8,0,0,5,0,39,0
+13438574,Sorting JSON data by keys value,sort list `results` by keys value 'year',"sorted(results, key=itemgetter('year'))",1745,36,1,8,0,1,0,39,0
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame by column `Peak` in ascending and `Weeks` in descending order,"df.sort(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1765,36,3,5,0,22,0,39,0
+13902805,List of all unique characters in a string?,List of all unique characters in a string?,""""""""""""".join(set('aaabcabccd'))",1788,37,0,57,0,9,0,39,0
+14182339,Matching multiple regex patterns with the alternation operator?,"get whatever is between parentheses as a single match, and any char outside as an individual match in string '(zyx)bc'","re.findall('\\(.+?\\)|\\w', '(zyx)bc')",1812,37,0,42,0,21,0,39,0
+15313250,Python BeautifulSoup Extract specific URLs,find all anchor tags in html `soup` whose url begins with `http://www.iwashere.com`,"soup.find_all('a', href=re.compile('http://www\\.iwashere\\.com/'))",1912,40,4,61,1,26,1,39,0
+15769246,Pythonic way to print list items,print list of items `myList`,print('\n'.join(str(p) for p in myList)),1943,41,7,24,1,19,0,39,0
+19328874,Python - read text file with weird utf-16 format,print line `line` from text file with 'utf-16-le' format,print(line.decode('utf-16-le').split()),2189,47,8,10,0,29,0,39,0
+19794051,Regex for removing data in parenthesis,Remove all data inside parenthesis in string `item`,"item = re.sub(' \\(\\w+\\)', '', item)",2224,48,8,0,0,5,0,39,0
+21414159,login to a site using python and opening the login site in the browser,open the login site 'http://somesite.com/adminpanel/index.php' in the browser,webbrowser.open('http://somesite.com/adminpanel/index.php'),2308,50,4,17,1,48,1,39,0
+22904654,How to save Xlsxwriter file in certain path?,save xlsxwriter file to 'C:/Users/Steven/Documents/demo.xlsx' path,workbook = xlsxwriter.Workbook('C:/Users/Steven/Documents/demo.xlsx'),2367,51,9,63,1,2,0,39,0
+23531030,MultiValueDictKeyError in Django,"Get value for  ""username"" parameter in GET request  in Django","request.GET.get('username', '')",2380,52,4,58,1,45,1,39,0
+31547657,How can I solve system of linear equations in SymPy?,"sympy solve matrix of linear equations `(([1, 1, 1, 1], [1, 1, 2, 3]))` with variables `(x, y, z)`","linsolve(Matrix(([1, 1, 1, 1], [1, 1, 2, 3])), (x, y, z))",2586,57,6,62,0,58,0,39,0
+32792874,"Searching if the values on a list is in the dictionary whose format is key-string, value-list(strings)",get geys of dictionary `my_dict` that contain any values from list `lst`,"[key for key, value in list(my_dict.items()) if set(value).intersection(lst)]",2633,58,1,19,0,38,0,39,0
+35044115,Replacing characters in a regex,replace dot characters  '.' associated with ascii letters in list `s` with space ' ',"[re.sub('(?<!\\d)\\.(?!\\d)', ' ', i) for i in s]",2684,60,8,0,0,6,0,39,0
+35837346,Is there a one line code to find maximal value in a matrix?,find maximal value in matrix `matrix`,max([max(i) for i in matrix]),2701,60,6,54,0,23,0,39,0
+36623789,How to convert unicode text to normal text,convert unicode text from list `elems` with index 0 to normal text 'utf-8',elems[0].getText().encode('utf-8'),2714,60,8,0,0,22,0,39,0
+41861705,Merging two pandas dataframes,"Create new DataFrame object by merging columns ""key"" of  dataframes `split_df` and `csv_df` and rename the columns from dataframes `split_df` and `csv_df` with suffix `_left` and `_right` respectively","pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))",2850,64,3,7,0,50,0,39,0

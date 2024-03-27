@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+53513,check if a list is empty,check if list `a` is empty,"if (not a):
+    pass",37,0,7,26,1,15,0,56,0
+123198,copy a file,copy file '/dir/file.ext' to '/new/dir',"shutil.copy2('/dir/file.ext', '/new/dir')",74,0,9,25,1,56,0,56,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `dict` in sorted order,return sorted(dict.items()),157,0,1,39,0,15,0,56,0
+432842,get the logical xor of two variables,get logical xor of `a` and `b`,"xor(bool(a), bool(b))",191,0,0,4,0,54,0,56,0
+663171,get a new string from the 3rd character to the end of the string,get a new string from the 3rd character to the end of the string `x`,x[2:],266,0,8,0,0,0,0,56,0
+755857,Default value for field in Django model,Django set default value of field `b` equal to '0000000',"b = models.CharField(max_length=7, default='0000000', editable=False)",310,0,4,50,1,12,1,56,0
+826284,How do I convert a string 2 bytes long to an integer in python,unpack first and second bytes of byte string `pS` into integer,"struct.unpack('h', pS[0:2])",336,0,5,53,0,15,0,56,0
+2269827,convert an int to a hex string,convert an int 65 to hex string,hex(65),582,6,5,15,0,9,0,56,0
+2300756,Get the nth item of a generator in Python,get the 5th item of a generator,"next(itertools.islice(range(10), 5, 5 + 1))",584,6,7,21,1,54,0,56,0
+3519125,Converting a hex-string representation to actual bytes in Python,convert a hex-string representation to actual bytes,"""""""\\xF3\\xBE\\x80\\x80"""""".replace('\\x', '').decode('hex')",786,11,5,8,0,22,0,56,0
+3984539,Python: use regular expression to remove the white space from all lines,replace white spaces in string '  a\n b\n c\nd  e' with empty string '',"re.sub('(?m)^[^\\S\\n]+', '', '  a\n b\n c\nd  e')",861,13,8,0,0,42,0,56,0
+4642501,How to sort dictionaries by keys in Python,get sorted list of keys of dict `d`,sorted(d),961,15,1,44,0,51,0,56,0
+7323859,Python - How to call bash commands with pipe?,call bash command 'tar c my_dir | md5sum' with pipe,"subprocess.call('tar c my_dir | md5sum', shell=True)",1223,22,9,30,1,32,0,56,0
+8337004,"How to print +1 in Python, as +1 (with plus sign) instead of 1?",Print +1 using format '{0:+d}',print('{0:+d}'.format(score)),1320,25,5,62,0,23,0,56,0
+9072844,How can I check if a string contains ANY letters from the alphabet?,check if string `the_string` contains any upper or lower-case ASCII letters,"re.search('[a-zA-Z]', the_string)",1387,26,0,3,0,14,0,56,0
+9402255,Drawing a huge graph with networkX and matplotlib,save current figure to file 'graph.png' with resolution of 1000 dpi,"plt.savefig('graph.png', dpi=1000)",1412,27,9,56,1,40,0,56,0
+9889635,Regular expression to return all characters between two special characters,find all substrings in `mystring` beginning and ending with square brackets,"re.findall('\\[(.*?)\\]', mystring)",1456,28,0,22,0,49,0,56,0
+10194713,Sorting a defaultdict by value in python,reverse sort dictionary `d` based on its values,"sorted(list(d.items()), key=lambda k_v: k_v[1], reverse=True)",1471,29,1,50,0,3,0,56,0
+10996140,How to remove specific elements in a numpy array,remove specific elements in a numpy array `a`,"numpy.delete(a, index)",1539,30,6,26,0,44,0,56,0
+12030179,Issue sending email with python?,setup a smtp mail server to `smtp.gmail.com` with port `587`,"server = smtplib.SMTP('smtp.gmail.com', 587)",1623,32,4,20,1,28,1,56,0
+13628725,How to generate random numbers that are different?,generate six unique random numbers in the range of 1 to 49.,"random.sample(range(1, 50), 6)",1762,36,5,12,0,20,0,56,0
+14591855,pandas HDFStore - how to reopen?,create dataframe `df` with content of hdf store file '/home/.../data.h5' with key of 'firstSet',"df1 = pd.read_hdf('/home/.../data.h5', 'firstSet')",1843,38,3,33,0,15,0,56,0
+15405636,Python's argparse to show program's version with prog and version string formatting,argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`,"parser.add_argument('--version', action='version', version='%(prog)s 2.0')",1920,40,4,55,1,27,1,56,0
+15985339,How do I get current URL in Selenium Webdriver 2 Python?,get current url in selenium webdriver `browser`,print(browser.current_url),1958,41,4,16,1,46,1,56,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,select rows whose column value in column `column_name` does not equal `some_value` in pandas data frame,df.loc[df['column_name'] != some_value],2025,43,3,47,0,34,0,56,0
+18493677,how do i return a string from a regex match in python,return a string from a regex match with pattern '<img.*?>' in string 'line',"imtag = re.match('<img.*?>', line).group(0)",2135,46,0,5,0,19,0,56,0
+18979111,Sending post data from angularjs to django as JSON and not as raw content,decode json string `request.body` to python dict,json.loads(request.body),2171,46,4,13,1,12,1,56,0
+20062565,Splitting a string by using two substrings in Python,search for regex pattern 'Test(.*)print' in string `testStr` including new line character '\n',"re.search('Test(.*)print', testStr, re.DOTALL)",2241,48,0,5,0,54,0,56,0
+23306653,Python Accessing Nested JSON Data,get value of key `post code` associated with first index of key `places` of dictionary `data`,print(data['places'][0]['post code']),2374,52,1,31,0,20,0,56,0
+27175400,How to find the index of a value in 2d array in Python?,find all the indexes in a Numpy 2D array where the value is 1,zip(*np.where(a == 1)),2458,54,6,38,0,54,0,56,0
+28199524,Best way to count the number of rows with missing values in a pandas DataFrame,count the number of rows with missing values in a pandas dataframe `df`,"sum(df.apply(lambda x: sum(x.isnull().values), axis=1) > 0)",2484,54,3,13,0,24,0,56,0
+30026815,Add Multiple Columns to Pandas Dataframe from Function,"add multiple columns `hour`, `weekday`, `weeknum` to pandas data frame `df` from lambda function `lambdafunc`","df[['hour', 'weekday', 'weeknum']] = df.apply(lambdafunc, axis=1)",2541,56,3,4,0,52,0,56,0
+31767173,How do I vectorize this loop in numpy?,find the index of the maximum value in the array `arr` where the boolean condition in array `cond` is true,"np.ma.array(np.tile(arr, 2).reshape(2, 3), mask=~cond).argmax(axis=1)",2593,57,6,17,0,41,0,56,0
+31950612,find last occurence of multiple characters in a string in Python,get the largest index of the last occurrence of characters '([{' in string `test_string`,max(test_string.rfind(i) for i in '([{'),2610,58,0,3,0,4,0,56,0
+34705205,Sort a nested list by two elements,"sort a nested list by the inverse of element 2, then by element 1","sorted(l, key=lambda x: (-int(x[1]), x[0]))",2674,59,7,61,1,60,0,56,0
+34750084,Regex and Octal Characters,Find octal characters matches from a string `str` using regex,"print(re.findall(""'\\\\[0-7]{1,3}'"", str))",2675,59,0,39,0,13,0,56,0
+37497559,Python Pandas Identify Duplicated rows with Additional Column,identify duplicated rows in columns 'PplNum' and 'RoomNum' with additional column in dataframe `df`,"df.groupby(['PplNum', 'RoomNum']).cumcount() + 1",2724,61,3,50,0,15,0,56,0
+38535931,Pandas: Delete rows based on multiple columns values,pandas: delete rows in dataframe `df` based on multiple columns values,"df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()",2745,61,3,7,0,54,0,56,0
+40660956,Sum of Every Two Columns in Pandas dataframe,sum the values in each row of every two adjacent columns in dataframe `df`,"df.groupby(np.arange(len(df.columns)) // 2 + 1, axis=1).sum().add_prefix('s')",2810,63,3,19,0,6,0,56,0

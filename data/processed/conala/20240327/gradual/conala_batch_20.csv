@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+42950,Get Last Day of the Month,Get Last Day of the second month in 2100,"calendar.monthrange(2100, 2)",29,0,2,20,0
+187455,Counting array elements in Python,count the number of elements in array `myArray`,len(myArray),85,0,6,20,0
+356483,Python regex findall numbers and dots,Find all numbers and dots from a string `text` using regex,"re.findall('Test([0-9.]*[0-9]+)', text)",154,0,0,20,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"for i in (i for (i, x) in enumerate(testlist) if (x == 1)):
+    pass",162,0,7,20,1
+455612,Limiting floats to two decimal points,limit float 13.9499999 to two decimal points,('%.2f' % 13.9499999),201,0,5,20,0
+730764,do a try-except without handling the exception,call `doSomething()` in a try-except without handling the exception,"try:
+    doSomething()
+except Exception:
+    pass",299,0,4,20,1
+1082413,Sort a list of strings based on regular expression match or something similar,sort list `strings` in alphabetical order based on the letter after percent character `%` in each element,"strings.sort(key=lambda str: re.sub('.*%(.).*', '\\1', str))",413,1,0,20,0
+2052390,Manually raising (throwing) an exception,"Manually throw an exception ""I know python!""",raise Exception('I know python!'),539,5,4,20,1
+2191699,Find an element in a list of tuples,find all elements in a list of tuples `a` where the first element of each tuple equals 1,[item for item in a if item[0] == 1],570,5,7,20,1
+2231663,Slicing a list into a list of sub-lists,Slicing a list into a list of sub-lists,"[input[i:i + n] for i in range(0, len(input), n)]",577,6,7,20,1
+2600191,count the occurrences of a list item,count the occurrences of items in list `l`,"dict(((x, l.count(x)) for x in set(l)))",629,7,7,20,1
+3034014,How to apply itertools.product to elements of a list of lists?,apply itertools.product to elements of a list of lists `arrays`,list(itertools.product(*arrays)),694,9,7,20,1
+3277503,read a file line by line into a list,read file 'filename' line by line into a list `lines`,"with open('filename') as f:
+    lines = f.readlines()",731,10,9,20,1
+3518778,read csv into record array in numpy,read csv file 'myfile.csv' into array,"np.genfromtxt('myfile.csv', delimiter=',')",783,11,6,20,0
+3899782,How to check whether elements appears in the list only once in python?,check whether elements in list `a` appear only once,len(set(a)) == len(a),836,12,7,20,1
+4152376,How to get the n next values of a generator in a list (python),create a list containing the `n` next values of generator `it`,[next(it) for _ in range(n)],888,14,7,20,1
+5306079,Python: How do I convert an array of strings to an array of numbers?,"convert a list of strings `['1', '-1', '1']` to a list of numbers","map(int, ['1', '-1', '1'])",1056,18,7,20,1
+5775719,How do I find the first letter of each word?,find the first letter of each element in string `input`,output = ''.join(item[0].upper() for item in input.split()),1088,19,0,20,0
+7961363,Removing duplicates in lists,Removing duplicates in list `source_list`,list(set(source_list)),1270,23,7,20,1
+8577137,creating a tmp file in python,Open a file `path/to/FILE_NAME.ext` in write mode,"new_file = open('path/to/FILE_NAME.ext', 'w')",1341,25,9,20,1
+10264618,Transform unicode string in python,"encode value of key `City` in dictionary `data` as `ascii`, ignoring non-ascii characters","data['City'].encode('ascii', 'ignore')",1478,29,1,20,0
+11344827,Summing elements in a list,Sum numbers in a list 'your_list',sum(your_list),1565,31,7,20,1
+11530799,Python Finding Index of Maximum in List,find the index of the element with the maximum value from a list 'a'.,"max(enumerate(a), key=lambda x: x[1])[0]",1582,31,7,20,1
+12030179,Issue sending email with python?,setup a smtp mail server to `smtp.gmail.com` with port `587`,"server = smtplib.SMTP('smtp.gmail.com', 587)",1623,32,4,20,1
+12692135,Create dictionary from lists of keys and multiple values,"convert list `[('Name', 'Joe'), ('Age', 22)]` into a dictionary","dict([('Name', 'Joe'), ('Age', 22)])",1665,33,1,20,0
+12808420,split items in list,Create new list `result` by splitting each item in list `words`,"result = [item for word in words for item in word.split(',')]",1675,34,7,20,1
+14406214,Moving x-axis to the top of a plot in matplotlib,Move x-axis of the pyplot object `ax` to the top of a plot in matplotlib,ax.xaxis.set_ticks_position('top'),1829,38,4,20,1
+14734533,How to access pandas groupby dataframe by key,get data of column 'A' and column 'B' in dataframe `df` where column 'A' is equal to 'foo',"df.loc[gb.groups['foo'], ('A', 'B')]",1852,38,3,20,0
+15183084,how to create a dictionary using two lists in python?,create a dictionary using two lists`x` and `y`,"dict(zip(x, y))",1900,40,1,20,0
+19779790,How to get yesterday in python,How to get yesterday in python,datetime.datetime.now() - datetime.timedelta(days=1),2222,48,2,20,0
+20950650,How to sort Counter by value? - python,reverse sort Counter `x` by values,"sorted(x, key=x.get, reverse=True)",2288,49,7,20,1
+21691126,Find and click an item from 'onclick' partial value,"find element by css selector ""input[onclick*='1 Bedroom Deluxe']""","driver.find_element_by_css_selector(""input[onclick*='1 Bedroom Deluxe']"")",2315,50,4,20,1
+22733642,how to write a unicode csv in Python 2.7,how to write a unicode csv in Python 2.7,self.writer.writerow([str(s).encode('utf-8') for s in row]),2361,51,4,20,1
+26097916,"python, best way to convert a pandas series into a pandas dataframe",convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`,"pd.DataFrame({'email': sf.index, 'list': sf.values})",2437,53,3,20,0
+28780956,how to get the context of a search in BeautifulSoup?,get the context of a search by keyword 'My keywords' in beautifulsoup `soup`,k = soup.find(text=re.compile('My keywords')).parent.text,2502,55,4,20,1
+29903025,Count most frequent 100 words from sentences in Dataframe Pandas,count most frequent 100 words in column 'text' of dataframe `df`,Counter(' '.join(df['text']).split()).most_common(100),2536,56,3,20,0
+31888871,Pandas - replacing column values,replace value 0 with 'Female' and value 1 with 'Male' in column 'sex' of dataframe `data`,"data['sex'].replace([0, 1], ['Female', 'Male'], inplace=True)",2609,58,3,20,0
+41313232,delete items from list of list: pythonic way,delete items from list `my_list` if the item exist in list `to_dell`,my_list = [[x for x in sublist if x not in to_del] for sublist in my_list],2834,63,7,20,1
+41923858,Mapping a string into a list of pairs,create a list containing each two adjacent letters in string `word` as its elements,"[(x + y) for x, y in zip(word, word[1:])]",2852,64,7,20,1

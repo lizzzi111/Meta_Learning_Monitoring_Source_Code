@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+82831,check whether a file exists,"check whether a path ""/etc"" exists",print(os.path.exists('/etc')),49,0,9,63,1,3,0
+199059,I'm looking for a pythonic way to insert a space before capital letters,insert spaces before capital letters in string `text`,"re.sub('([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))', '\\1 ', text)",86,0,8,0,0,3,0
+403421,"How to sort a list of objects , based on an attribute of the objects?",sort a list of objects `ut` in reverse order by their `count` property,"ut.sort(key=lambda x: x.count, reverse=True)",180,0,7,59,1,3,0
+2331943,decode JSON,decode JSON string `u` to a dictionary,json.load(u),587,6,1,61,0,3,0
+2759323,How can I list the contents of a directory in Python?,list all the contents of the directory 'path'.,os.listdir('path'),652,8,9,61,1,3,0
+2769061,How to erase the file contents of text file in Python?,How to erase the file contents of text file in Python?,"open('file.txt', 'w').close()",657,8,9,17,1,3,0
+3061761,Numpy array dimensions,get the dimensions of array `a`,N.shape(a),699,9,6,28,0,3,0
+3471999,How do I merge two lists into a single list?,merge two lists `a` and `b` into a single list,"[j for i in zip(a, b) for j in i]",771,11,7,41,1,3,0
+3501382,Checking whether a variable is an integer,check if `x` is an integer,(type(x) == int),779,11,5,17,0,3,0
+3518778,read csv into record array in numpy,read csv file 'my_file.csv' into numpy array,"my_data = genfromtxt('my_file.csv', delimiter=',')",784,11,6,45,0,3,0
+3704731,Replace non-ascii chars from a unicode string in Python,replace non-ascii chars from a unicode string u'm\xfasica',"unicodedata.normalize('NFKD', 'm\xfasica').encode('ascii', 'ignore')",800,11,8,0,0,3,0
+3718657,How to properly determine current script directory in Python?,get current script directory,os.path.dirname(os.path.abspath(__file__)),801,11,9,45,1,3,0
+4880960,Sum of all values in a Python dict,sum of all values in a python dict `d`,sum(d.values()),1004,17,1,29,0,3,0
+6378889,How to convert a string list into an integer in python,convert string `user_input` into a list of integers `user_list`,"user_list = [int(number) for number in user_input.split(',')]",1140,20,5,3,0,3,0
+6900955,python convert list to dictionary,convert list `l` to dictionary having each two adjacent elements as key/value pair,"dict(zip(l[::2], l[1::2]))",1187,21,1,60,0,3,0
+9618050,Python regular expression with codons,match regex pattern 'TAA(?:[ATGC]{3})+?TAA' on string `seq`,"re.findall('TAA(?:[ATGC]{3})+?TAA', seq)",1433,28,0,10,0,3,0
+10194713,Sorting a defaultdict by value in python,reverse sort dictionary `d` based on its values,"sorted(list(d.items()), key=lambda k_v: k_v[1], reverse=True)",1471,29,1,50,0,3,0
+10543303,number of values in a list greater than a certain number,get the number of values in list `j` that is greater than 5,sum(((i > 5) for i in j)),1500,29,7,46,1,3,0
+11791568,What is the most pythonic way to exclude elements of a list that start with a specific character?,What is the most pythonic way to exclude elements of a list that start with a specific character?,[x for x in my_list if not x.startswith('#')],1604,32,7,34,1,3,0
+13209288,Python split string based on regex,Split string `input` at every space followed by an upper-case letter,"re.split('[ ](?=[A-Z])', input)",1712,35,8,0,0,3,0
+13902805,List of all unique characters in a string?,get list of all unique characters in a string 'aaabcabccd',list(set('aaabcabccd')),1787,37,0,13,0,3,0
+14507794,Python Pandas - How to flatten a hierarchical index in columns,Collapse hierarchical column index to level 0 in dataframe `df`,df.columns = df.columns.get_level_values(0),1837,38,3,9,0,3,0
+15352457,How can I sum a column of a list?,sum columns of a list `array`,[sum(row[i] for row in array) for i in range(len(array[0]))],1917,40,6,41,0,3,0
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,From multiIndexed dataframe `data` select columns `a` and `c` within each higher order column `one` and `two`,"data.loc[:, (list(itertools.product(['one', 'two'], ['a', 'c'])))]",2134,46,3,27,0,3,0
+18789262,python dict comprehension with two ranges,"convert the zip of range `(1, 5)` and range `(7, 11)` into a dictionary","dict(zip(list(range(1, 5)), list(range(7, 11))))",2163,46,1,64,0,3,0
+20638006,Convert list of dictionaries to Dataframe,convert a list of dictionaries `d` to pandas data frame,pd.DataFrame(d),2273,49,3,1,0,3,0
+20733827,creating list of random numbers in python,create list `randomList` with 10 random floating point numbers between 0.0 and 1.0,randomList = [random.random() for _ in range(10)],2277,49,5,12,0,3,0
+21804935,How to use the mv command in Python with subprocess,execute a mv command `mv /home/somedir/subdir/* somedir/` in subprocess,"subprocess.call('mv /home/somedir/subdir/* somedir/', shell=True)",2324,50,9,58,1,3,0
+22625616,listing files from a directory using glob python,List all the files that doesn't contain the name `hello`,glob.glob('[!hello]*.txt'),2358,51,9,60,1,3,0
+27946742,Regular expression in Python sentence extractor,Regular expression in Python sentence extractor,"re.split('\\.\\s', re.sub('\\.\\s*$', '', text))",2478,54,0,9,0,3,0
+28773683,Combine two Pandas dataframes with the same index,combine  dataframe `df1` and dataframe `df2` by index number,"pd.merge(df1, df2, left_index=True, right_index=True, how='outer')",2500,55,3,4,0,3,0
+31258561,get current directory - Python,Get the current directory of a script,os.path.basename(os.path.dirname(os.path.realpath(__file__))),2577,57,9,56,1,3,0
+31818050,round number to nearest integer,round number `x` to nearest integer,int(round(x)),2596,57,5,33,0,3,0
+34587346,Python: Check if a string contains chinese character?,Find all Chinese characters in string `ipath`,"re.findall('[\u4e00-\u9fff]+', ipath)",2671,59,0,27,0,3,0
+37619348,Summing 2nd list items in a list of lists of lists,summing the second item in a list of lists of lists,[sum([x[1] for x in i]) for i in data],2727,61,7,38,1,3,0
+38331568,Return the column name(s) for a specific value in a pandas dataframe,return the column for value 38.15 in dataframe `df`,"df.ix[:, (df.loc[0] == 38.15)].columns",2740,61,3,14,0,3,0
+39821166,How to reverse the elements in a sublist?,"given list `to_reverse`, reverse the all sublists and the list itself",[sublist[::-1] for sublist in to_reverse[::-1]],2776,62,7,24,1,3,0
+41067960,How to convert a list of multiple integers into a single integer?,Concatenate elements of a list 'x' of multiple integers to a single integer,"sum(d * 10 ** i for i, d in enumerate(x[::-1]))",2823,63,7,53,1,3,0
+41133414,Strip random characters from url,"strip everything up to and including the character `&` from url `url`, strip the character `=` from the remaining string and concatenate `.html` to the end","url.split('&')[-1].replace('=', '') + '.html'",2827,63,8,0,0,3,0

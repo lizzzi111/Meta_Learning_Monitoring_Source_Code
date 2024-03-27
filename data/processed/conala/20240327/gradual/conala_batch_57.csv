@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+3061,Calling a function of a module from a string with the function's name in Python,calling a function named 'myfunction' in the module,globals()['myfunction'](),9,0,4,57,1
+19339,inverse of zip,"unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]`","zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])",12,0,7,57,1
+53513,check if a list is empty,check if list `seq` is empty,"if (not seq):
+    pass",35,0,7,57,1
+432842,get the logical xor of two variables,get logical xor of `a` and `b`,((a and (not b)) or ((not a) and b)),192,0,0,57,0
+748028,How to get output of exe in python script?,get output from process `p1`,p1.communicate()[0],306,0,4,57,1
+1447575,Symlinks on windows?,create a symlink directory `D:\\testdirLink` for directory `D:\\testdir` with unicode support using ctypes library,"kdll.CreateSymbolicLinkW('D:\\testdirLink', 'D:\\testdir', 1)",458,3,9,57,1
+2793324,delete a list element by value,delete the element `c` from list `a`,"if (c in a):
+    a.remove(c)",662,8,7,57,1
+2911754,How to upload binary file with ftplib in Python?,upload binary file `myfile.txt` with ftplib,"ftp.storbinary('STOR myfile.txt', open('myfile.txt', 'rb'))",680,8,9,57,1
+3207219,list all files of a directory,list all files of a directory `mypath`,"f = []
+for (dirpath, dirnames, filenames) in walk(mypath):
+    f.extend(filenames)
+    break",715,9,9,57,1
+3925096,How to get only the last part of a path in Python?,How to get only the last part of a path in Python?,os.path.basename(os.path.normpath('/folderA/folderB/folderC/folderD/')),838,12,4,57,1
+3945750,Find a specific tag with BeautifulSoup,BeautifulSoup find tag 'div' with styling 'width=300px;' in HTML string `soup`,"soup.findAll('div', style='width=300px;')",855,13,4,57,1
+4135344,generate pdf from markdown file,generate pdf file `output_filename` from markdown file `input_filename`,"with open(input_filename, 'r') as f:
+    html_text = markdown(f.read(), output_format='html4')
+pdfkit.from_string(html_text, output_filename)",884,13,9,57,1
+5255657,How can I disable logging while running unit tests in Python Django?,disable logging while running unit tests in python django,logging.disable(logging.CRITICAL),1052,18,4,57,1
+8081545,convert list of tuples to multiple lists in Python,convert list of tuples to multiple lists in Python,"zip(*[(1, 2), (3, 4), (5, 6)])",1279,24,7,57,1
+8243188,Inserting a string into a list without getting split into characters,append string `foo` to list `list`,list.append('foo'),1304,24,7,57,1
+9962293,Python turning a list into a list of tuples,"create list `done` containing permutations of each element in list `[a, b, c, d]` with variable `x` as tuples","done = [(el, x) for el in [a, b, c, d]]",1461,28,7,57,1
+10406130,Check if something is not in a list,"Check if tuple (2, 3) is not in a list [(2, 3), (5, 6), (9, 1)]","((2, 3) not in [(2, 3), (5, 6), (9, 1)])",1488,29,7,57,1
+11391969,How to group pandas DataFrame entries by date in a non-unique column,group dataframe `data` entries by year value of the date in column 'date',data.groupby(data['date'].map(lambda x: x.year)),1572,31,3,57,0
+12765833,Counting the number of True Booleans in a Python List,"counting the number of true booleans in a python list `[True, True, False, False, False, True]`","sum([True, True, False, False, False, True])",1669,34,7,57,1
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)",1733,35,4,57,1
+13480031,How do I zip keys with individual values in my lists in python?,zip keys with individual values in lists `k` and `v`,"[dict(zip(k, x)) for x in v]",1748,36,7,57,1
+13557937,How to convert decimal to binary list in python,convert decimal 8 to a list of its binary values,list('{0:0b}'.format(8)),1755,36,5,57,0
+13902805,List of all unique characters in a string?,List of all unique characters in a string?,""""""""""""".join(set('aaabcabccd'))",1788,37,0,57,0
+14180866,sum each value in a list of tuples,sum each value in a list `l` of tuples,"map(sum, zip(*l))",1811,37,7,57,1
+14295673,Convert string into datetime.time object,Convert string '03:55' into datetime.time object,"datetime.datetime.strptime('03:55', '%H:%M').time()",1819,37,2,57,0
+15158599,Removing entries from a dictionary based on values,Get a dictionary from a dictionary `hand` where the values are present,"dict((k, v) for k, v in hand.items() if v)",1897,39,1,57,0
+16099694,How to remove empty string in a list?,get a list `cleaned` that contains all non-empty elements in list `your_list`,cleaned = [x for x in your_list if x],1964,41,7,57,1
+17952279,Logarithmic y-axis bins in python,plot a data logarithmically in y axis,"plt.yscale('log', nonposy='clip')",2093,44,4,57,1
+20067636,Pandas dataframe get first row of each group,pandas dataframe get first row of each group by 'id',df.groupby('id').first(),2242,48,3,57,0
+20211942,Insert Null into SQLite3 in Python,Insert a 'None' value into a SQLite3 table.,"db.execute(""INSERT INTO present VALUES('test2', ?, 10)"", (None,))",2253,49,4,57,1
+23638638,numpy array assignment using slicing,assign an array of floats in range from 0 to 100 to a variable `values`,"values = np.array([i for i in range(100)], dtype=np.float64)",2384,52,5,57,0
+25040875,Get a list of values from a list of dictionaries in python,get a list of values with key 'key' from a list of dictionaries `l`,[d['key'] for d in l if 'key' in d],2415,53,1,57,0
+28684154,Python copy a list of lists,Copy list `old_list` and name it `new_list`,new_list = [x[:] for x in old_list],2497,55,7,57,1
+29464234,Compare Python Pandas DataFrames for matching rows,"find all the rows in Dataframe 'df2' that are also present in Dataframe 'df1', for the columns 'A', 'B', 'C' and 'D'.","pd.merge(df1, df2, on=['A', 'B', 'C', 'D'], how='inner')",2521,55,3,57,0
+29902714,Print the complete string of a pandas dataframe,"get  value at index `[2, 0]` in dataframe `df`","df.iloc[2, 0]",2535,56,3,57,0
+29983106,How can i set proxy with authentication in selenium chrome web driver using python,navigate to webpage given by url `http://www.python.org` using Selenium,driver.get('http://www.google.com.br'),2538,56,4,57,1
+33435418,How to find the difference between 3 lists that may have duplicate numbers,"Get the difference between two lists `[1, 2, 2, 2, 3]` and `[1, 2]` that may have duplicate values","Counter([1, 2, 2, 2, 3]) - Counter([1, 2])",2646,59,7,57,1
+36454494,Calcuate mean for selected rows for selected columns in pandas data frame,"get mean of columns `2, 5, 6, 7, 8` for all rows in dataframe `df`","df.iloc[:, ([2, 5, 6, 7, 8])].mean(axis=1)",2711,60,3,57,0
+39373620,How to get a max string length in nested lists,get the maximum string length in nested list `i`,"len(max(i, key=len))",2760,62,7,57,1

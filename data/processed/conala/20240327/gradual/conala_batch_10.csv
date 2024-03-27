@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+319426,case insensitive string comparison,case insensitive comparison of strings `string1` and `string2`,"if (string1.lower() == string2.lower()):
+    print('The strings are the same (case insensitive)')
+else:
+    print('The strings are not the same (case insensitive)')",146,0,0,10,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `dict` in sorted order,return iter(sorted(dict.items())),160,0,1,10,0
+674509,"How do I iterate over a Python dictionary, ordered by values?",sort dictionary `dictionary` in ascending order by its values,"sorted(list(dictionary.items()), key=operator.itemgetter(1))",272,0,1,10,0
+674519,How can I convert a Python dictionary to a list of tuples?,convert a python dictionary 'a' to a list of tuples,"[(k, v) for k, v in a.items()]",276,0,1,10,0
+861190,Ordering a list of dictionaries in python,"Sort a list of dictionaries `mylist` by keys ""weight"" and ""factor""","mylist.sort(key=operator.itemgetter('weight', 'factor'))",348,0,1,10,0
+1094717,Convert a string to integer with decimal in Python,convert a string `s` containing a decimal to an integer,int(Decimal(s)),416,1,5,10,0
+2755950,How to use regular expression in lxml xpath?,Get all `a` tags where the text starts with value `some text` using regex,"doc.xpath(""//a[starts-with(text(),'some text')]"")",650,7,0,10,0
+4383082,Python regex separate space-delimited words into a list,separate words delimited by one or more spaces into a list,"re.split(' +', 'hello world sample text')",927,15,8,10,0
+4484690,How to filter a dictionary in Python?,Filter a dictionary `d` to remove keys with value None and replace other values with 'updated',"dict((k, 'updated') for k, v in d.items() if v is None)",939,15,1,10,0
+5180365,Python Add Comma Into Number String,format floating point number  `TotalAmount` to be rounded off to two decimal places and have a comma thousands' seperator,"print('Total cost is: ${:,.2f}'.format(TotalAmount))",1042,18,5,10,0
+5352546,best way to extract subset of key-value pairs from python dictionary object,"Get items from a dictionary `bigdict` where the keys are present in `('l', 'm', 'n')`","{k: bigdict.get(k, None) for k in ('l', 'm', 'n')}",1060,18,1,10,0
+7595148,Python - Converting Hex to INT/CHAR,converting hex string `s` to its integer representations,[ord(c) for c in s.decode('hex')],1245,23,5,10,0
+7999935,Python datetime to string without microsecond component,Formate current date and time to a string using pattern '%Y-%m-%d %H:%M:%S',datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),1275,23,2,10,0
+9210525,convert hex to decimal,convert hex string `s` to decimal,"i = int(s, 16)",1394,27,5,10,0
+9560207,How to count values in a certain range in a Numpy array?,get count of values in numpy array `a` that are between values `25` and `100`,((25 < a) & (a < 100)).sum(),1425,27,6,10,0
+9618050,Python regular expression with codons,match regex pattern 'TAA(?:[ATGC]{3})+?TAA' on string `seq`,"re.findall('TAA(?:[ATGC]{3})+?TAA', seq)",1433,28,0,10,0
+9637838,Convert string date to timestamp in Python,convert string '01/12/2011' to an integer timestamp,"int(datetime.datetime.strptime('01/12/2011', '%d/%m/%Y').strftime('%s'))",1436,28,2,10,0
+10972410,pandas: combine two columns in a DataFrame,combine two columns `foo` and `bar` in a pandas data frame,"pandas.concat([df['foo'].dropna(), df['bar'].dropna()]).reindex_like(df)",1534,30,3,10,0
+11361985,Output data from all columns in a dataframe in pandas,Display maximum output data of columns in dataframe `pandas` that will fit into the screen,"pandas.set_option('display.max_columns', None)",1570,31,3,10,0
+11764260,How to find the minimum value in a numpy matrix?,find the minimum value in a numpy array `arr` excluding 0,arr[arr != 0].min(),1603,32,6,10,0
+11932729,How to sort a Python dictionary by value?,sort a python dictionary `a_dict` by element `1` of the value,"sorted(list(a_dict.items()), key=lambda item: item[1][1])",1619,32,1,10,0
+12337583,"Saving dictionary whose keys are tuples with json, python",Serialize dictionary `data` and its keys to a JSON formatted string,"json.dumps({str(k): v for k, v in data.items()})",1642,33,1,10,0
+12572362,Get a string after a specific substring,"print a string after a specific substring ', ' in string `my_string `","print(my_string.split(', ', 1)[1])",1656,33,0,10,0
+13163145,Multiplying Rows and Columns of Python Sparse Matrix by elements in an Array,multiply the columns of sparse matrix `m` by array `a` then multiply the rows of the resulting matrix by array `a`,"numpy.dot(numpy.dot(a, m), a)",1709,35,6,10,0
+14299978,How to use lxml to find an element by text?,find the element that holds string 'TEXT A' in file `root`,"e = root.xpath('.//a[text()=""TEXT A""]')",1821,37,0,10,0
+14991195,How to remove rows with null values from kth column onward in python,"remove all null values from columns 'three', 'four' and 'five' of dataframe `df2`","df2.dropna(subset=['three', 'four', 'five'], how='all')",1883,39,3,10,0
+17467504,Python re.findall print all patterns,Get all matching patterns 'a.*?a' from a string 'a 1 a 2 a 3 a 4 a'.,"re.findall('(?=(a.*?a))', 'a 1 a 2 a 3 a 4 a')",2061,44,0,10,0
+17960441,"in Numpy, how to zip two 2-D arrays?",zip two 2-d arrays `a` and `b`,"np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)",2095,45,6,10,0
+18722196,How to set UTC offset for datetime?,set UTC offset by 9 hrs ahead for date '2013/09/11 00:17',dateutil.parser.parse('2013/09/11 00:17 +0900'),2157,46,2,10,0
+19328874,Python - read text file with weird utf-16 format,print line `line` from text file with 'utf-16-le' format,print(line.decode('utf-16-le').split()),2189,47,8,10,0
+20183069,How to sort multidimensional array by column?,sort a multidimensional array `a` by column with index 1,"sorted(a, key=lambda x: x[1])",2250,48,6,10,0
+20461165,How to convert pandas index in a dataframe to a column?,convert index at level 0 into a column in dataframe `df`,"df.reset_index(level=0, inplace=True)",2263,49,3,10,0
+23566515,Multiplication of 1d arrays in numpy,multiplication of two 1-dimensional arrays  in numpy,"np.outer(a, b)",2381,52,6,10,0
+27218543,How can I select 'last business day of the month' in Pandas?,select the last business day of the month for each month in 2014 in pandas,"pd.date_range('1/1/2014', periods=12, freq='BM')",2459,54,3,10,0
+33058590,Pandas Dataframe: Replacing NaN with row average,replacing nan in the dataframe `df` with row average,"df.fillna(df.mean(axis=1), axis=1)",2640,58,3,10,0
+34945274,How to find all elements in a numpy 2-dimensional array that match a certain list?,"replace all elements in array `A` that are not present in array `[1, 3, 4]` with zeros","np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)",2678,59,6,10,0
+35253971,"How to check if all values of a dictionary are 0, in Python?",check if all values of a dictionary `your_dict` are zero `0`,all(value == 0 for value in list(your_dict.values())),2689,60,1,10,0
+36296993,avoiding regex in pandas str.replace,replace string 'in.' with ' in. ' in dataframe `df` column 'a',"df['a'] = df['a'].str.replace('in.', ' in. ')",2708,60,3,10,0
+39277638,Element-wise minimum of multiple vectors in numpy,get a numpy array that contains the element wise minimum of three 3x1 arrays,"np.array([np.arange(3), np.arange(2, -1, -1), np.ones((3,))]).min(axis=0)",2757,61,6,10,0

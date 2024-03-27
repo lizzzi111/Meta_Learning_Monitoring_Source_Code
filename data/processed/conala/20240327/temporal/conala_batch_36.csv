@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+13418405,Get name of primary field of Django model,get name of primary field `name` of django model `CustomPK`,CustomPK._meta.pk.name,1744,36
+13438574,Sorting JSON data by keys value,sort list `results` by keys value 'year',"sorted(results, key=itemgetter('year'))",1745,36
+13462365,Python 2.7 Counting number of dictionary items with given value,count the number of values in `d` dictionary that are predicate to function `some_condition`,sum(1 for x in list(d.values()) if some_condition(x)),1746,36
+13462365,Python 2.7 Counting number of dictionary items with given value,count the number of pairs in dictionary `d` whose value equal to `chosen_value`,sum(x == chosen_value for x in list(d.values())),1747,36
+13480031,How do I zip keys with individual values in my lists in python?,zip keys with individual values in lists `k` and `v`,"[dict(zip(k, x)) for x in v]",1748,36
+13490292,Format number using LaTeX notation in Python,format number 1000000000.0 using latex notation,print('\\num{{{0:.2g}}}'.format(1000000000.0)),1749,36
+13496087,Python: How to generate a 12-digit random number?,generate a random 12-digit number,"int(''.join(str(random.randint(0, 9)) for _ in range(12)))",1750,36
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"random.randint(100000000000, 999999999999)",1751,36
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"'%0.12d' % random.randint(0, 999999999999)",1752,36
+13496087,Python: How to generate a 12-digit random number?,generate a random 12-digit number,""""""""""""".join(str(random.randint(0, 9)) for _ in range(12))",1753,36
+13550423,Python printing without commas,concatenate items of list `l` with a space ' ',"print(' '.join(map(str, l)))",1754,36
+13557937,How to convert decimal to binary list in python,convert decimal 8 to a list of its binary values,list('{0:0b}'.format(8)),1755,36
+13557937,How to convert decimal to binary list in python,convert decimal `8` to binary list,[int(x) for x in bin(8)[2:]],1756,36
+13557937,How to convert decimal to binary list in python,convert decimal integer 8 to a list of its binary values as elements,[int(x) for x in list('{0:0b}'.format(8))],1757,36
+13567345,How to calculate the sum of all columns of a 2D numpy array (efficiently),Calculate sum over all rows of 2D numpy array,a.sum(axis=1),1758,36
+13571134,recursively go through all subdirectories and read files,recursively go through all subdirectories and files in `rootdir`,"for (root, subFolders, files) in os.walk(rootdir):
+    pass",1759,36
+13598363,How to dynamically select template directory to be used in flask?,Flask set folder 'wherever' as the default template folder,"Flask(__name__, template_folder='wherever')",1760,36
+13627865,Is it possible to define global variables in a function in Python,define global variable `something` with value `bob`,globals()['something'] = 'bob',1761,36
+13628725,How to generate random numbers that are different?,generate six unique random numbers in the range of 1 to 49.,"random.sample(range(1, 50), 6)",1762,36
+13628725,How to generate random numbers that are different?,generate 6 random numbers between 1 and 50,"random.sample(range(1, 50), 6)",1763,36
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame according to column `Peak` in ascending and `Weeks` in descending order,"df.sort_values(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1764,36
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame by column `Peak` in ascending and `Weeks` in descending order,"df.sort(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1765,36
+13655392,Python- insert a character into a string,concatenate items from list `parts` into a string starting from the second element,""""""""""""".join(parts[1:])",1766,36
+13655392,Python- insert a character into a string,"insert a character ',' into a string in front of '+' character in second part of the string",""""""",+"""""".join(c.rsplit('+', 1))",1767,36
+13656519,Python . How to get rid of '\r' in string?,strip a string `line` of all carriage returns and newlines,line.strip(),1768,36
+13668393,python sorting two lists,sort two lists `list1` and `list2` together using lambda function,"[list(x) for x in zip(*sorted(zip(list1, list2), key=lambda pair: pair[0]))]",1769,36
+13704860,zip lists in python,"zip two lists `[1, 2]` and `[3, 4]` into a list of two tuples containing elements at the same index in each list","zip([1, 2], [3, 4])",1770,36
+13717463,Find the indices of elements greater than x,create a list containing the indices of elements greater than 4 in list `a`,"[i for i, v in enumerate(a) if v > 4]",1771,36
+13728486,How to sum elements in functional way,get a list containing the sum of each element `i` in list `l` plus the previous elements,"[sum(l[:i]) for i, _ in enumerate(l)]",1772,36
+13740672,in pandas how can I groupby weekday() for a datetime column?,create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`,data['weekday'] = data['my_dt'].apply(lambda x: x.weekday()),1773,36
+13745648,Running bash script from within python,running bash script 'sleep.sh',"subprocess.call('sleep.sh', shell=True)",1774,36
+13781828,Replace a string in list of lists,Truncate `\r\n` from each string in a list of string `example`,"example = [x.replace('\r\n', '') for x in example]",1775,36
+13793321,Joining Table/DataFrames with common Column in Python,joining data from dataframe `df1` with data from dataframe `df2` based on matching values of column 'Date_Time' in both dataframes,"df1.merge(df2, on='Date_Time')",1776,36
+13793973,Easiest way to remove unicode representations from a string in python 3?,Print string `t` with proper unicode representations,print(t.decode('unicode_escape')),1777,36
+13794532,Python regular expression for Beautiful Soup,Find all `div` tags whose classes has the value `comment-` in a beautiful soup object `soup`,"soup.find_all('div', class_=re.compile('comment-'))",1778,36
+13837848,Converting byte string in unicode string,converting byte string `c` in unicode string,c.decode('unicode_escape'),1779,36
+13838405,Custom sorting in pandas dataframe,sort column `m` in panda dataframe `df`,df.sort('m'),1780,36
+13840379,How can I multiply all items in a list together with Python?,"multiply all items in a list `[1, 2, 3, 4, 5, 6]` together","from functools import reduce
+reduce(lambda x, y: x * y, [1, 2, 3, 4, 5, 6])",1781,36
+13840883,Use of findall and parenthesis in Python,Find all words containing letters between A and Z in string `formula`,"re.findall('\\b[A-Z]', formula)",1782,36

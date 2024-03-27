@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+647515,How can I know python's path under windows?,get the path of Python executable under windows,os.path.dirname(sys.executable),261,0,9,45,1,19,0,19,0
+674519,How can I convert a Python dictionary to a list of tuples?,convert a python dictionary 'a' to a list of tuples,"[(k, v) for k, v in a.items()]",276,0,1,10,0,56,0,19,0
+761804,Trimming a string,Trimming a string `str`,str.strip(),316,0,8,0,0,55,0,19,0
+798854,All combinations of a list of lists,create a list containing all cartesian products of elements in list `a`,list(itertools.product(*a)),329,0,7,46,1,43,0,19,0
+843277,check if a variable exists,check if object `obj` has attribute 'attr_name',"hasattr(obj, 'attr_name')",341,0,4,45,1,26,1,19,0
+2108126,How to run two functions simultaneously,run function 'SudsMove' simultaneously,threading.Thread(target=SudsMove).start(),552,5,4,25,1,48,1,19,0
+2527892,Parsing a tweet to extract hashtags into an array in Python,pars a string 'http://example.org/#comments' to extract hashtags into an array,"re.findall('#(\\w+)', 'http://example.org/#comments')",610,6,0,11,0,15,0,19,0
+3160752,Removing backslashes from a string in Python,replace backslashes in string `result` with empty string '',"result = result.replace('\\', '')",710,9,8,0,0,15,0,19,0
+3294889,Iterating over dictionaries using for loops,Iterating over a dictionary `d` using for loops,"for (key, value) in list(d.items()):
+    pass",741,10,1,51,0,64,0,19,0
+3925614,How do you read a file into a list in Python?,read a file 'C:/name/MyDocuments/numbers' into a list `data`,"data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]",840,12,9,23,1,50,0,19,0
+4810537,how to clear the screen in python,clear terminal screen on windows,os.system('cls'),992,16,4,55,1,25,1,19,0
+5137497,Find current directory,Find name of current directory,dir_path = os.path.dirname(os.path.realpath(__file__)),1036,17,9,35,1,17,0,19,0
+5183533,How to make List from Numpy Matrix in Python,Convert the first row of numpy matrix `a` to a list,numpy.array(a)[0].tolist(),1044,18,6,1,0,55,0,19,0
+6159900,write line to file,"write line ""hi there"" to file `f`","print('hi there', file=f)",1126,20,9,59,1,65,0,19,0
+6480441,2D array of objects in Python,create a 2D array of `Node` objects with dimensions `cols` columns and `rows` rows,nodes = [[Node() for j in range(cols)] for i in range(rows)],1151,20,6,5,0,15,0,19,0
+8139797,How do I extract table data in pairs using BeautifulSoup?,extract table data from table `rows` using beautifulsoup,[[td.findNext(text=True) for td in tr.findAll('td')] for tr in rows],1284,24,4,46,1,11,1,19,0
+8751653,How can I convert a binary to a float number,convert a binary `b8` to a float number,"struct.unpack('d', b8)[0]",1360,26,5,32,0,60,0,19,0
+10115967,What's the most memory efficient way to generate the combinations of a set in python?,"generate the combinations of 3 from a set `{1, 2, 3, 4}`","print(list(itertools.combinations({1, 2, 3, 4}, 3)))",1468,28,7,38,1,44,0,19,0
+12307099,Modifying a subset of rows in a pandas dataframe,set the value in column 'B' to NaN if the corresponding value in column 'A' is equal to 0 in pandas dataframe `df`,"df.ix[df.A == 0, 'B'] = np.nan",1635,33,3,3,0,22,0,19,0
+12337583,"Saving dictionary whose keys are tuples with json, python",Serialize dictionary `data` and its keys to a JSON formatted string,"json.dumps({str(k): v for k, v in data.items()})",1642,33,1,10,0,34,0,19,0
+13462365,Python 2.7 Counting number of dictionary items with given value,count the number of values in `d` dictionary that are predicate to function `some_condition`,sum(1 for x in list(d.values()) if some_condition(x)),1746,36,1,4,0,7,0,19,0
+13860026,update dictionary with dynamic keys and values in python,update the dictionary `mydic` with dynamic keys `i` and values with key 'name' from dictionary `o`,mydic.update({i: o['name']}),1784,37,1,63,0,57,0,19,0
+14111705,Displaying a grayscale Image,display a grayscale image from array of pixels `imageArray`,"imshow(imageArray, cmap='Greys_r')",1806,37,6,23,0,14,0,19,0
+16114244,Get contents of entire page using Selenium,Selenium get the entire `driver` page text,driver.page_source,1965,41,4,36,1,46,1,19,0
+17812978,How to plot two columns of a pandas data frame using points?,How to plot two columns of a pandas data frame using points?,"df.plot(x='col_name_1', y='col_name_2', style='o')",2084,44,3,63,0,39,0,19,0
+17888152,Parse string to int when string contains a number + extra characters,parse string `s` to int when string contains a number,int(''.join(c for c in s if c.isdigit())),2089,44,0,8,0,53,0,19,0
+17972020,How to execute raw SQL in SQLAlchemy-flask app,execute raw sql queue '<sql here>' in database `db` in sqlalchemy-flask app,result = db.engine.execute('<sql here>'),2096,45,4,26,1,11,1,19,0
+18453566,Python dictionary: Get list of values for list of keys,get list of values from dictionary 'mydict' w.r.t. list of keys 'mykeys',[mydict[x] for x in mykeys],2130,45,1,14,0,17,0,19,0
+18637651,Most pythonic way to convert a list of tuples,group a list `list_of_tuples` of tuples by values,zip(*list_of_tuples),2146,46,7,54,1,48,0,19,0
+19794051,Regex for removing data in parenthesis,Remove word characters in parenthesis from string `item` with a regex,"item = re.sub(' ?\\(\\w+\\)', '', item)",2225,48,0,42,0,23,0,19,0
+20211942,Insert Null into SQLite3 in Python,Insert a 'None' value into a SQLite3 table.,"db.execute(""INSERT INTO present VALUES('test2', ?, 10)"", (None,))",2253,49,4,57,1,47,1,19,0
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((?:(?!cat).)*cat(?:(?!cat).)*)cat', '\\1Bull', s)",2466,54,0,45,0,34,0,19,0
+28667684,Python Requests getting SSLerror,request url 'https://www.reporo.com/' without verifying SSL certificates,"requests.get('https://www.reporo.com/', verify=False)",2494,55,4,59,1,27,1,19,0
+31405409,How to remove parentheses only around single words in a string,remove parentheses only around single words in a string `s` using regex,"re.sub('\\((\\w+)\\)', '\\1', s)",2583,57,0,5,0,58,0,19,0
+32743479,pandas read csv with extra commas in column,read pandas data frame csv `comma.csv` with extra commas in column specifying string delimiter `'`,"df = pd.read_csv('comma.csv', quotechar=""'"")",2629,58,3,62,0,23,0,19,0
+33078554,Mapping dictionary value to list,get a list from a list `lst` with values mapped into a dictionary `dct`,[dct[k] for k in lst],2642,59,7,59,1,34,0,19,0
+34468983,How to check if all elements in a tuple or list are in another?,"check if all elements in a tuple `(1, 6)` are in another `(1, 2, 3, 4, 5)`","all(i in (1, 2, 3, 4, 5) for i in (1, 6))",2668,59,7,52,1,56,0,19,0
+40851413,MITM proxy over SSL hangs on wrap_socket with client,send data 'HTTP/1.0 200 OK\r\n\r\n' to socket `connection`,connection.send('HTTP/1.0 200 established\r\n\r\n'),2815,63,4,24,1,26,1,19,0
+41083229,Removing characters from string Python,removing vowel characters 'aeiouAEIOU' from string `text`,""""""""""""".join(c for c in text if c not in 'aeiouAEIOU')",2825,63,8,0,0,23,0,19,0

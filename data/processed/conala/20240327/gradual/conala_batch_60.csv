@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+237079,get file creation & modification date/times in,get modification time of file `path`,os.path.getmtime(path),102,0,9,60,1
+674764,string find,find the index of sub string 's' in string `str` starting from index 11 and ending at index 14,"str.find('s', 11, 14)",282,0,0,60,0
+698223,How can I parse a time string containing milliseconds in it with python?,How can I parse a time string containing milliseconds in it with python?,"time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')",291,0,2,60,0
+930397,gets the nth-to-last element,gets the `n` th-to-last element in list `some_list`,some_list[(- n)],362,0,7,60,1
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = dict((k, v) for k, v in kwargs.items() if v is not None)",611,6,1,60,0
+3724551,Python: Uniqueness for list of lists,remove duplicated items from list of lists `testdata`,"list(map(list, set(map(lambda i: tuple(i), testdata))))",802,11,7,60,1
+4906977,Access environment variables,get value of the environment variable 'KEY_THAT_MIGHT_EXIST' with default value `default_value`,"print(os.getenv('KEY_THAT_MIGHT_EXIST', default_value))",1012,17,4,60,1
+5625524,How to Close a program using python?,execute os command ''TASKKILL /F /IM firefox.exe'',os.system('TASKKILL /F /IM firefox.exe'),1085,19,4,60,1
+6494508,"How do you pick ""x"" number of unique numbers from a list in Python?",Get `3` unique items from a list,"random.sample(list(range(1, 16)), 3)",1153,20,7,60,1
+6633523,How can I convert a string with dot and comma into a float number in Python,"convert a string `123,456.908` with dot and comma into a floating number","float('123,456.908'.replace(',', ''))",1166,21,5,60,0
+6696027,split elements of a list in python,split strings in list `l` on the first occurring tab `\t` and enter only the first resulting substring in a new list,"[i.split('\t', 1)[0] for i in l]",1170,21,7,60,1
+6726636,splitting and concatenating a string,"concatenate a list of strings `['a', 'b', 'c']`",""""""""""""".join(['a', 'b', 'c'])",1174,21,7,60,1
+6900955,python convert list to dictionary,convert list `l` to dictionary having each two adjacent elements as key/value pair,"dict(zip(l[::2], l[1::2]))",1187,21,1,60,0
+8199398,Extracting only characters from a string in Python,extract only alphabetic characters from a string `your string`,""""""" """""".join(re.split('[^a-zA-Z]*', 'your string'))",1295,24,0,60,0
+8214932,How to check if a value exists in a dictionary (python),Check if value 'one' is among the values of dictionary `d`,'one' in iter(d.values()),1299,24,1,60,0
+8936030,Using BeautifulSoup to search html for string,searche in HTML string for elements that have text 'Python',soup.body.findAll(text='Python'),1374,26,0,60,0
+9053260,Removing one list from another,remove elements in list `b` from list `a`,[x for x in a if x not in b],1386,26,7,60,1
+9609375,how to call multiple bash functions using | in python,call multiple bash function ‘vasp’ and ‘tee tee_output’ using ‘|’,"subprocess.check_call('vasp | tee tee_output', shell=True)",1432,28,9,60,1
+9880173,How to decode encodeURIComponent in GAE (python)?,decode encodeuricomponent in GAE,urllib.parse.unquote(h.path.encode('utf-8')).decode('utf-8'),1455,28,4,60,1
+11280536,How can I add the corresponding elements of several lists of numbers?,sum elements at the same index of each list in list `lists`,"map(sum, zip(*lists))",1558,31,7,60,1
+12579061,Python Selenium: Find object attributes using xpath,find all the values in attribute `value` for the tags whose `type` attribute is `submit` in selenium,"browser.find_elements_by_xpath(""//*[@type='submit']"").get_attribute('value')",1659,33,4,60,1
+13954840,How do I convert LF to CRLF?,open the file 'words.txt' in 'rU' mode,"f = open('words.txt', 'rU')",1795,37,9,60,1
+14931769,get all combination of n binary value,get all combination of n binary values,"lst = map(list, itertools.product([0, 1], repeat=n))",1874,39,7,60,1
+15148684,"List of Tuples (string, float)with NaN How to get the min value?",Get a minimum value from a list of tuples `list` with values of type `string` and `float` with nan,"min(list, key=lambda x: float('inf') if math.isnan(x[1]) else x[1])",1896,39,7,60,1
+15286401,Print multiple arguments in python,"print the string `Total score for`, the value of the variable `name`, the string `is` and the value of the variable `score` in one print call.","print(('Total score for', name, 'is', score))",1909,40,4,60,1
+15509617,How to obtain the day of the week in a 3 letter format from a datetime object in python?,obtain the current day of the week in a 3 letter format from a datetime object,datetime.datetime.now().strftime('%a'),1931,40,2,60,0
+15852295,list of ints into a list of tuples python,"convert a flat list into a list of tuples of every two items in the list, in order","print(zip(my_list[0::2], my_list[1::2]))",1950,41,7,60,1
+18897261,pandas plot dataframe barplot with colors by category,make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`,"df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])",2169,46,3,60,0
+18938276,How to convert nested list of lists into a list of tuples in python 3.3?,"convert nested list of lists `[['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]` into a list of tuples","list(map(tuple, [['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]))",2170,46,7,60,1
+21360028,NumPy List Comprehension Syntax,Get a list comprehension in list of lists `X`,[[X[i][j] for j in range(len(X[i]))] for i in range(len(X))],2306,50,7,60,1
+22625616,listing files from a directory using glob python,List all the files that doesn't contain the name `hello`,glob.glob('[!hello]*.txt'),2358,51,9,60,1
+22702760,how to multiply multiple columns by a column in Pandas,multiply column 'A' and column 'B' by column 'C' in datafram `df`,"df[['A', 'B']].multiply(df['C'], axis='index')",2359,51,3,60,0
+25474338,regex for repeating words in a string in Python,regex for repeating words in a string `s`,"re.sub('(?<!\\S)((\\S+)(?:\\s+\\2))(?:\\s+\\2)+(?!\\S)', '\\1', s)",2424,53,0,60,0
+28669459,How to print variables without spaces between values,print variable `value ` without spaces,"print('Value is ""' + str(value) + '""')",2495,55,8,60,0
+29565452,Averaging the values in a dictionary based on the key,get the average of a list values for each key in dictionary `d`),"[(i, sum(j) / len(j)) for i, j in list(d.items())]",2525,56,1,60,0
+29836836,How do I filter a pandas DataFrame based on value counts?,filter dataframe `df` by values in column `A` that appear more than once,df.groupby('A').filter(lambda x: len(x) > 1),2532,56,3,60,0
+36190533,python: check if an numpy array contains any element of another array,check if a numpy array `a1` contains any element of another array `a2`,"np.any(np.in1d(a1, a2))",2707,60,6,60,0
+36542169,Extract first and last row of a dataframe in pandas,extract first and last row of a dataframe `df`,"pd.concat([df.head(1), df.tail(1)])",2713,60,3,60,0
+38081866,Is there a way to run powershell code in python,execute script 'script.ps1' using 'powershell.exe' shell,"os.system('powershell.exe', 'script.ps1')",2731,61,4,60,1

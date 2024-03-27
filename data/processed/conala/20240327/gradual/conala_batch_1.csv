@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `d` in sorted order,it = iter(sorted(d.items())),159,0,1,1,0
+415511,get current time,get current time in pretty format,"strftime('%Y-%m-%d %H:%M:%S', gmtime())",185,0,2,1,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,print(('{0:.2f}'.format(a))),205,0,5,1,0
+940822,"Regular expression syntax for ""match nothing""?",regular expression match nothing,re.compile('$^'),377,0,0,1,0
+3108042,Get max key in dictionary,get max key in dictionary `MyCount`,"max(list(MyCount.keys()), key=int)",705,9,1,1,0
+3166619,python regex: match a string with only one instance of a character,match regex pattern '\\$[0-9]+[^\\$]*$' on string '$1 off delicious $5 ham.',"re.match('\\$[0-9]+[^\\$]*$', '$1 off delicious $5 ham.')",711,9,0,1,0
+3668964,How to check if a character is upper-case in Python?,check if all string elements in list `words` are upper-cased,print(all(word[0].isupper() for word in words)),797,11,0,1,0
+5183533,How to make List from Numpy Matrix in Python,Convert the first row of numpy matrix `a` to a list,numpy.array(a)[0].tolist(),1044,18,6,1,0
+5508352,Indexing numpy array with another numpy array,Get index of numpy array `a` with another numpy array `b`,a[tuple(b)],1075,18,6,1,0
+6677332,Using %f with strftime() in Python to get microseconds,Using %f with strftime() in Python to get microseconds,datetime.datetime.now().strftime('%H:%M:%S.%f'),1169,21,2,1,0
+6740311,Combining NumPy arrays,join Numpy array `b` with Numpy array 'a' along axis 0,"b = np.concatenate((a, a), axis=0)",1175,21,6,1,0
+7351270,Control a print format when printing a list in Python,format print output of list of floats `l` to print only up to 3 decimal points,"print('[' + ', '.join('%5.3f' % v for v in l) + ']')",1228,22,5,1,0
+8519599,"python: dictionary to string, custom format?","dictionary `d` to string, custom format","""""""<br/>"""""".join([('%s:: %s' % (key, value)) for key, value in list(d.items())])",1334,25,1,1,0
+9875964,Python: converting radians to degrees,convert radians 1 to degrees,math.cos(math.radians(1)),1454,28,5,1,0
+10365225,extract digits in a simple way from a python string,extract digits in a simple way from a python string,"map(int, re.findall('\\d+', s))",1483,29,5,1,0
+11264005,Using a RegEx to match IP addresses in Python,Validate IP address using Regex,"pat = re.compile('^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$')",1555,31,0,1,0
+11811392,How to generate a list from a pandas DataFrame with the column name and column values?,generate a list from a pandas dataframe `df` with the column name and column values,df.values.tolist(),1607,32,3,1,0
+12182744,python pandas: apply a function with arguments to a series,python pandas: apply a function with arguments to a series,"my_series.apply(your_function, args=(2, 3, 4), extra_kw=1)",1627,33,3,1,0
+13237941,sorting list of nested dictionaries in python,sort list of nested dictionaries `yourdata` in reverse based on values associated with each dictionary's key 'subkey',"sorted(yourdata, key=lambda d: d.get('key', {}).get('subkey'), reverse=True)",1715,35,1,1,0
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"'%0.12d' % random.randint(0, 999999999999)",1752,36,5,1,0
+14247586,Python Pandas How to select rows with one or more nulls from a DataFrame without listing columns explicitly?,get data of columns with Null values in dataframe `df`,df[pd.isnull(df).any(axis=1)],1816,37,3,1,0
+14301913,Convert pandas group by object to multi-indexed Dataframe,convert pandas group by object to multi-indexed dataframe with indices 'Name' and 'Destination',"df.set_index(['Name', 'Destination'])",1823,38,3,1,0
+15661013,Python: most efficient way to convert date to datetime,convert date `my_date` to datetime,"datetime.datetime.combine(my_date, datetime.time.min)",1938,40,2,1,0
+15863066,Python regular expression match whole word,Python regular expression match whole word,"re.search('\\bis\\b', your_string)",1952,41,0,1,0
+16127862,"in Python, how to convert list of float numbers to string with certain format?",convert list of sublists `lst` of floats to a list of sublists `str_list` of strings of integers in scientific notation with 8 decimal points,str_list = [['{0:.8e}'.format(flt) for flt in sublist] for sublist in lst],1968,41,5,1,0
+20638006,Convert list of dictionaries to Dataframe,convert a list of dictionaries `d` to pandas data frame,pd.DataFrame(d),2273,49,3,1,0
+22799300,How to unpack a Series of tuples in Pandas?,unpack a series of tuples in pandas into a DataFrame with column names 'out-1' and 'out-2',"pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)",2364,51,3,1,0
+25440008,python pandas flatten a dataframe to a list,flatten a dataframe df to a list,df.values.flatten(),2423,53,3,1,0
+26640145,Python Pandas: How to get the row names from index of a dataframe?,get the row names from index in a pandas data frame,df.index,2445,53,3,1,0
+29218750,What is the best way to remove a dictionary item by value in python?,Remove all items from a dictionary `myDict` whose values are `42`,"{key: val for key, val in list(myDict.items()) if val != 42}",2510,55,1,1,0
+29815129,Pandas DataFrame to List of Dictionaries,Create list of dictionaries from pandas dataframe `df`,df.to_dict('records'),2530,56,3,1,0
+30009948,How to reorder indexed rows based on a list in Pandas data frame,"reorder indexed rows `['Z', 'C', 'A']` based on a list in pandas data frame `df`","df.reindex(['Z', 'C', 'A'])",2539,56,3,1,0
+30328646,Python Pandas : group by in group by and average?,Do group by on `cluster` column in `df` and get its mean,df.groupby(['cluster']).mean(),2547,56,3,1,0
+30628176,Switch every pair of characters in a string,switch positions of each two adjacent characters in string `a`,"print(''.join(''.join(i) for i in zip(a2, a1)) + a[-1] if len(a) % 2 else '')",2557,56,8,1,0
+35622945,"Regex, find pattern only in middle of string","regex, find ""n""s only in the middle of string `s`","re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)",2697,60,0,1,0
+40156469,How to check if any value of a column is in a range in Pandas?,select all rows in dataframe `df` where the values of column 'columnX' is bigger than or equal to `x` and smaller than or equal to `y`,df[(x <= df['columnX']) & (df['columnX'] <= y)],2788,62,3,1,0
+40963347,Find Average of Every Three Columns in Pandas dataframe,Get average for every three columns in `df` dataframe,"df.groupby(np.arange(len(df.columns)) // 3, axis=1).mean()",2820,63,3,1,0
+42142756,How can I change a specific row label in a Pandas dataframe?,rename `last` row index label in dataframe `df` to `a`,df = df.rename(index={last: 'a'}),2860,64,3,1,0
+42731970,Regex add character to matched string,replace periods `.` that are not followed by periods or spaces with a period and a space `. `,"re.sub('\\.(?=[^ .])', '. ', para)",2876,65,8,1,0

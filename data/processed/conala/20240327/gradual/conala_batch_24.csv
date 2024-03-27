@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+44778,How would you make a comma-separated string from a list?,"Join elements of list `l` with a comma `,`",""""""","""""".join(l)",33,0,7,24,1
+51520,How to get an absolute file path in Python,get an absolute file path of file 'mydir/myfile.txt',os.path.abspath('mydir/myfile.txt'),34,0,9,24,1
+179369,How do I abort the execution of a Python script?,terminate the script using status value 0,sys.exit(0),80,0,4,24,1
+209840,Map two lists into a dictionary in Python,map two lists `keys` and `values` into a dictionary,"dict([(k, v) for k, v in zip(keys, values)])",94,0,1,24,0
+517355,String formatting in Python,"print '[1, 2, 3]'","print('[%s, %s, %s]' % (1, 2, 3))",220,0,7,24,1
+678236,How to get the filename without the extension from a path in Python?,get the filename without the extension from file 'hemanth.txt',print(os.path.splitext(os.path.basename('hemanth.txt'))[0]),289,0,9,24,1
+1303243,find out if a Python object is a string,check if object `o` is a string,(type(o) is str),442,2,0,24,0
+1892339,How to make a window jump to the front?,make a window `root` jump to the front,root.lift(),520,4,4,24,1
+2798627,How can I detect DOS line breaks in a file?,read file 'myfile.txt' using universal newline mode 'U',"print(open('myfile.txt', 'U').read())",666,8,9,24,1
+2878084,Sort a list of dicts by dict values,sort a list of dictionary `mylist` by the key `title`,mylist.sort(key=lambda x: x['title']),678,8,1,24,0
+3278850,"Doc, rtf and txt reader in python",read the contents of the file 'file.txt' into `txt`,txt = open('file.txt').read(),732,10,9,24,1
+3895874,"Regex to match 'lol' to 'lolllll' and 'omg' to 'omggg', etc",Write a regex statement to match 'lol' to 'lolllll'.,"re.sub('l+', 'l', 'lollll')",835,12,0,24,0
+3961581,"In Python, how to display current time in readable format",display current time in readable format,"time.strftime('%l:%M%p %z on %b %d, %Y')",857,13,2,24,0
+4112265,How to zip lists in a list,"zip lists in a list [[1, 2], [3, 4], [5, 6]]","zip(*[[1, 2], [3, 4], [5, 6]])",878,13,7,24,1
+4574509,Remove duplicate chars using regex?,remove duplicate characters from string 'ffffffbbbbbbbqqq',"re.sub('([a-z])\\1+', '\\1', 'ffffffbbbbbbbqqq')",947,15,8,24,0
+4690094,Sorting dictionary keys based on their values,sort keys of dictionary 'd' based on their values,"sorted(d, key=lambda k: d[k][1])",971,16,1,24,0
+4879641,Python: How to use a list comprehension here?,create a list containing all values associated with key 'baz' in dictionaries of list `foos` using list comprehension,[y['baz'] for x in foos for y in x['bar']],1003,17,1,24,0
+5218948,How to auto-scroll a gtk.scrolledwindow?,Make a auto scrolled window to the end of the list in gtk,"self.treeview.connect('size-allocate', self.treeview_changed)",1047,18,4,24,1
+5871168,How can I subtract or add 100 years to a datetime field in the database in Django?,Update datetime field in `MyModel` to be the existing `timestamp` plus 100 years,MyModel.objects.update(timestamp=F('timestamp') + timedelta(days=36524.25)),1105,19,2,24,0
+5900683,Using variables in Python regular expression,regular expression for validating string 'user' containing a sequence of characters ending with '-' followed by any number of digits.,re.compile('{}-\\d*'.format(user)),1108,19,0,24,0
+6569528,Python float to int conversion,round off the float that is the product of `2.52 * 100` and convert it to an int,int(round(2.51 * 100)),1159,21,5,24,0
+7961363,Removing duplicates in lists,Removing duplicates in list `abracadabra`,list(OrderedDict.fromkeys('abracadabra')),1272,23,7,24,1
+8639973,How to plot with x-axis at the top of the figure?,How to plot with x-axis at the top of the figure?,ax.xaxis.set_ticks_position('top'),1343,25,4,24,1
+9637838,Convert string date to timestamp in Python,convert date string `s` in format pattern '%d/%m/%Y' into a timestamp,"time.mktime(datetime.datetime.strptime(s, '%d/%m/%Y').timetuple())",1437,28,2,24,0
+12201577,How can I convert an RGB image into grayscale in Python?,convert an rgb image 'messi5.jpg' into grayscale `img`,"img = cv2.imread('messi5.jpg', 0)",1628,33,4,24,1
+12897374,Get unique values from a list in python,"get unique values from the list `['a', 'b', 'c', 'd']`","set(['a', 'b', 'c', 'd'])",1685,34,7,24,1
+14734750,How to get multiple parameters with same name from a URL in Pylons?,get multiple parameters with same name from a url in pylons,request.params.getall('c'),1853,38,4,24,1
+15769246,Pythonic way to print list items,print list of items `myList`,print('\n'.join(str(p) for p in myList)),1943,41,7,24,1
+17038639,sorting a list with objects of a class as its items,sort a list `your_list` of class objects by their values for the attribute `anniversary_score`,your_list.sort(key=operator.attrgetter('anniversary_score')),2019,43,7,24,1
+17141558,How to sort a dataFrame in python pandas by two or more columns?,"sort a pandas data frame by column `a` in ascending, and by column `b` in descending order","df.sort(['a', 'b'], ascending=[True, False])",2037,43,3,24,0
+17438096,FTP upload files Python,upload file using FTP,"ftp.storlines('STOR ' + filename, open(filename, 'r'))",2057,44,9,24,1
+19601086,Click a href button with selenium and python?,click a href button with text 'Send InMail' with selenium,driver.find_element_by_link_text('Send InMail').click(),2208,47,4,24,1
+19819863,Converting hex to int in python,convert hex '\xff' to integer,ord('\xff'),2227,48,5,24,0
+22859493,Order list by date (String and datetime),sort list `li` in descending order based on the date value in second element of each list in list `li`,"sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)",2365,51,7,24,1
+23286254,Convert List to a list of tuples python,pair each element in list `it` 3 times into a tuple,"zip(it, it, it)",2373,52,7,24,1
+38251245,Create a list of tuples with adjacent list elements if a condition is true,"create a list of tuples which contains number 9 and the number before it, for each occurrence of 9 in the list 'myList'","[(x, y) for x, y in zip(myList, myList[1:]) if y == 9]",2738,61,7,24,1
+39821166,How to reverse the elements in a sublist?,"given list `to_reverse`, reverse the all sublists and the list itself",[sublist[::-1] for sublist in to_reverse[::-1]],2776,62,7,24,1
+40016359,Index the first and the last n elements of a list,Get the first and last 3 elements of list `l`,l[:3] + l[-3:],2781,62,7,24,1
+40851413,MITM proxy over SSL hangs on wrap_socket with client,send data 'HTTP/1.0 200 OK\r\n\r\n' to socket `connection`,connection.send('HTTP/1.0 200 established\r\n\r\n'),2815,63,4,24,1

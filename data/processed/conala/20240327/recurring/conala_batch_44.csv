@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+546321,How do I calculate the date six months from the current date,get the date 1 month from today,"(date(2010, 12, 31) + relativedelta(months=(+ 1)))",233,0,2,31,0,44,0
+943809,String manipulation in Cython,replace occurrences of two whitespaces or more with one whitespace ' ' in string `s`,"re.sub(' +', ' ', s)",378,0,8,0,0,44,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'c' in `d`,('c' in d),481,3,0,29,0,44,0
+2372573,How do I remove whitespace from the end of a string in Python?,"remove white spaces from the end of string ""    xyz     ""","""""""    xyz     """""".rstrip()",593,6,8,11,0,44,0
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = dict((k, v) for k, v in kwargs.items() if v is not None)",611,6,1,60,0,44,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (letter, number) in list(d.items()):
+    pass",736,10,1,28,0,44,0
+3582601,How to call an element in an numpy array?,"get an element at index `[1,1]`in a numpy array `arr`","print(arr[1, 1])",792,11,6,16,0,44,0
+4915920,How to delete an item in a list if it exists?,delete an item `thing` in a list `some_list` if it exists,cleaned_list = [x for x in some_list if x is not thing],1015,17,7,31,1,44,0
+4918425,Subtract a value from every number in a list in Python?,subtract 13 from every number in a list `a`,a[:] = [(x - 13) for x in a],1016,17,7,34,1,44,0
+5868374,Convert a string to datetime object in python,Parse string `datestr` into a datetime object using format pattern '%Y-%m-%d',"dateobj = datetime.datetime.strptime(datestr, '%Y-%m-%d').date()",1104,19,2,2,0,44,0
+6429638,How to split a string into integers in Python?,How to split a string into integers in Python?,"map(int, '42 0'.split())",1150,20,5,31,0,44,0
+6879364,Print file age in seconds using Python,Get the age of directory (or file) `/tmp` in seconds.,print(os.path.getmtime('/tmp')),1181,21,9,23,1,44,0
+7271482,python getting a list of value from list of dict,python getting a list of value from list of dict,[d['value'] for d in l],1216,22,1,36,0,44,0
+7287996,Python: Get relative path from comparing two absolute paths,get the common prefix from comparing two absolute paths '/usr/var' and '/usr/var2/log',"os.path.commonprefix(['/usr/var', '/usr/var2/log'])",1221,22,9,46,1,44,0
+8687018,Python string replace two things at once?,replace each 'a' with 'b' and each 'b' with 'a' in the string 'obama' in a single pass.,"""""""obama"""""".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')",1348,25,8,0,0,44,0
+9905471,string to list conversion in python,"split string `s` to list conversion by ','","[x.strip() for x in s.split(',')]",1458,28,8,0,0,44,0
+10115967,What's the most memory efficient way to generate the combinations of a set in python?,"generate the combinations of 3 from a set `{1, 2, 3, 4}`","print(list(itertools.combinations({1, 2, 3, 4}, 3)))",1468,28,7,38,1,44,0
+10677350,Convert float to comma-separated string,Convert float 24322.34 to comma-separated string,"""""""{0:,.2f}"""""".format(24322.34)",1519,30,5,6,0,44,0
+10996140,How to remove specific elements in a numpy array,remove specific elements in a numpy array `a`,"numpy.delete(a, index)",1539,30,6,26,0,44,0
+11041411,How to write/read a Pandas DataFrame with MultiIndex from/to an ASCII file?,export a pandas data frame `df` to a file `mydf.tsv` and retain the indices,"df.to_csv('mydf.tsv', sep='\t')",1543,30,3,62,0,44,0
+11174790,Convert unicode string to byte string,convert unicode string '\xd0\xbc\xd0\xb0\xd1\x80\xd0\xba\xd0\xb0' to byte string,'\xd0\xbc\xd0\xb0\xd1\x80\xd0\xba\xd0\xb0'.encode('latin-1'),1550,31,8,0,0,44,0
+11840111,Divide the values of two dictionaries in python,divide the value for each key `k` in dict `d2` by the value for the same key `k` in dict `d1`,{k: (d2[k] / d1[k]) for k in list(d1.keys()) & d2},1614,32,1,7,0,44,0
+12330522,Reading a file without newlines,read a file `file` without newlines,[line.rstrip('\n') for line in file],1641,33,9,14,1,44,0
+13462365,Python 2.7 Counting number of dictionary items with given value,count the number of pairs in dictionary `d` whose value equal to `chosen_value`,sum(x == chosen_value for x in list(d.values())),1747,36,1,9,0,44,0
+13557937,How to convert decimal to binary list in python,convert decimal 8 to a list of its binary values,list('{0:0b}'.format(8)),1755,36,5,57,0,44,0
+13840883,Use of findall and parenthesis in Python,Find all words containing letters between A and Z in string `formula`,"re.findall('\\b[A-Z]', formula)",1782,36,0,7,0,44,0
+14043934,time offset,subtract 5 hours from the time object `dt`,dt -= datetime.timedelta(hours=5),1800,37,2,2,0,44,0
+14858916,True for all characters of a string,check characters of string `string` are true predication of function `predicate`,all(predicate(x) for x in string),1868,39,0,51,0,44,0
+14931769,get all combination of n binary value,get all combination of 3 binary values,"bin = [0, 1]
+[(x, y, z) for x in bin for y in bin for z in bin]",1872,39,7,54,1,44,0
+15579649,python dict to numpy structured array,convert dict `result` to numpy structured array,"numpy.array([(key, val) for key, val in result.items()], dtype)",1936,40,6,36,0,44,0
+17552997,How to update a subset of a MultiIndexed pandas DataFrame,add a column 'day' with value 'sat' to dataframe `df`,"df.xs('sat', level='day', drop_level=False)",2065,44,3,26,0,44,0
+18432823,how to create similarity matrix in numpy python?,Convert array `x` into a correlation matrix,np.corrcoef(x),2128,45,6,15,0,44,0
+18689823,pandas DataFrame: replace nan values with average of columns,replace nan values in a pandas data frame with the average of columns,"df.apply(lambda x: x.fillna(x.mean()), axis=0)",2153,46,3,4,0,44,0
+21804935,How to use the mv command in Python with subprocess,How to use the mv command in Python with subprocess,"subprocess.call('mv /home/somedir/subdir/* somedir/', shell=True)",2325,50,9,49,1,44,0
+28161356,Sort Pandas Dataframe by Date,Sort Pandas Dataframe by Date,df.sort_values(by='Date'),2483,54,3,11,0,44,0
+30787901,How to get a value from a Pandas DataFrame and not the index and object type,get the first value from dataframe `df` where column 'Letters' is equal to 'C',"df.loc[df['Letters'] == 'C', 'Letters'].values[0]",2567,57,3,29,0,44,0
+35097130,Django order by highest number of likes,sort objects in `Articles` in descending order of counts of `likes`,Article.objects.annotate(like_count=Count('likes')).order_by('-like_count'),2686,60,7,44,1,44,0
+40582103,using regular expression to split string in python,use regex pattern '((.+?)\\2+)' to split string '44442(2)2(2)44',[m[0] for m in re.compile('((.+?)\\2+)').findall('44442(2)2(2)44')],2807,63,8,0,0,44,0
+41067960,How to convert a list of multiple integers into a single integer?,convert a list of integers into a single integer,"r = int(''.join(map(str, x)))",2822,63,5,7,0,44,0

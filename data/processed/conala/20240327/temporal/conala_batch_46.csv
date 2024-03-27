@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,From multiIndexed dataframe `data` select columns `a` and `c` within each higher order column `one` and `two`,"data.loc[:, (list(itertools.product(['one', 'two'], ['a', 'c'])))]",2134,46
+18493677,how do i return a string from a regex match in python,return a string from a regex match with pattern '<img.*?>' in string 'line',"imtag = re.match('<img.*?>', line).group(0)",2135,46
+18500541,How to flatten a tuple in python,flatten a tuple `l`,"[(a, b, c) for a, (b, c) in l]",2136,46
+18504967,pandas dataframe create new columns and fill with calculated values from same df,create new column `A_perc` in dataframe `df` with row values equal to the value in column `A` divided by the value in column `sum`,df['A_perc'] = df['A'] / df['sum'],2137,46
+18524112,Norm along row in pandas,normalize the dataframe `df` along the rows,np.sqrt(np.square(df).sum(axis=1)),2138,46
+18524642,Convert list of lists to list of integers,combine elements of each list in list `L` into digits of a single integer,[''.join(str(d) for d in x) for x in L],2139,46
+18524642,Convert list of lists to list of integers,convert list of lists `L` to list of integers,[int(''.join(str(d) for d in x)) for x in L],2140,46
+18524642,Convert list of lists to list of integers,convert a list of lists `L` to list of integers,L = [int(''.join([str(y) for y in x])) for x in L],2141,46
+18551752,Python - split sentence after words but with maximum of n characters in result,split string `text` into chunks of 16 characters each,"re.findall('.{,16}\\b', text)",2142,46
+18594469,Normalizing a pandas DataFrame by row,normalize a pandas dataframe `df` by row,"df.div(df.sum(axis=1), axis=0)",2143,46
+18609153,Format() in Python Regex,"format parameters 'b' and 'a' into plcaeholders in string ""{0}\\w{{2}}b{1}\\w{{2}}quarter""","""""""{0}\\w{{2}}b{1}\\w{{2}}quarter"""""".format('b', 'a')",2144,46
+18624039,Pandas reset index on series to remove multiindex,reset index of series `s`,s.reset_index(0).reset_index(drop=True),2145,46
+18637651,Most pythonic way to convert a list of tuples,group a list `list_of_tuples` of tuples by values,zip(*list_of_tuples),2146,46
+18637651,Most pythonic way to convert a list of tuples,to convert a list of tuples `list_of_tuples` into list of lists,[list(t) for t in zip(*list_of_tuples)],2147,46
+18649884,Python list comprehension for loops,Get a list from two strings `12345` and `ab` with values as each character concatenated,[(x + y) for x in '12345' for y in 'ab'],2148,46
+18663026,How do I pythonically set a value in a dictionary if it is None?,Set value for key `a` in dict `count` to `0` if key `a` does not exist or if value is `none`,"count.setdefault('a', 0)",2149,46
+18663644,How to account for accent characters for regex in Python?,"match a sharp, followed by letters (including accent characters) in string `str1` using a regex","hashtags = re.findall('#(\\w+)', str1, re.UNICODE)",2150,46
+18684076,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,"[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]",2151,46
+18684397,"How to create datetime object from ""16SEP2012"" in python","create datetime object from ""16sep2012""","datetime.datetime.strptime('16Sep2012', '%d%b%Y')",2152,46
+18689823,pandas DataFrame: replace nan values with average of columns,replace nan values in a pandas data frame with the average of columns,"df.apply(lambda x: x.fillna(x.mean()), axis=0)",2153,46
+18695605,python pandas dataframe to dictionary,"convert pandas dataframe `df` with fields 'id', 'value' to dictionary",df.set_index('id')['value'].to_dict(),2154,46
+18695605,python pandas dataframe to dictionary,convert pandas DataFrame `df` to a dictionary using `id` field as the key,df.set_index('id').to_dict(),2155,46
+18711384,how to split a unicode string into list,split a `utf-8` encoded string `stru` into a list of characters,list(stru.decode('utf-8')),2156,46
+18722196,How to set UTC offset for datetime?,set UTC offset by 9 hrs ahead for date '2013/09/11 00:17',dateutil.parser.parse('2013/09/11 00:17 +0900'),2157,46
+18723580,"python: rstrip one exact string, respecting order",strip the string `.txt` from anywhere in the string `Boat.txt.txt`,"""""""Boat.txt.txt"""""".replace('.txt', '')",2158,46
+18724607,Python date string formatting,Python date string formatting,"""""""{0.month}/{0.day}/{0.year}"""""".format(my_date)",2159,46
+18730044,Converting two lists into a matrix,"converting two lists `[1, 2, 3]` and `[4, 5, 6]` into a matrix","np.column_stack(([1, 2, 3], [4, 5, 6]))",2160,46
+18742657,Execute Shell Script from python with variable,Execute Shell Script from python with variable,"subprocess.call(['test.sh', str(domid)])",2161,46
+18785032,Replace a substring when it is a separate word,Replace a separate word 'H3' by 'H1' in a string 'text',"re.sub('\\bH3\\b', 'H1', text)",2162,46
+18789262,python dict comprehension with two ranges,"convert the zip of range `(1, 5)` and range `(7, 11)` into a dictionary","dict(zip(list(range(1, 5)), list(range(7, 11))))",2163,46
+18816297,How can I get the index value of a list comprehension?,Get the index value in list `p_list` using enumerate in list comprehension,"{p.id: {'id': p.id, 'position': ind} for ind, p in enumerate(p_list)}",2164,46
+18837262,Convert Python dict into a dataframe,converting dictionary `d` into a dataframe `pd` with keys as data for column 'Date' and the corresponding values as data for column 'DateValue',"pd.DataFrame(list(d.items()), columns=['Date', 'DateValue'])",2165,46
+18837607,Remove multiple items from list in Python,remove elements from list `oldlist` that have an index number mentioned in list `removelist`,"newlist = [v for i, v in enumerate(oldlist) if i not in removelist]",2166,46
+18872717,Merging a list with a list of lists,"For each index `x` from 0 to 3, append the element at index `x` of list `b` to the list at index `x` of list a.",[a[x].append(b[x]) for x in range(3)],2167,46
+18886596,Replace all quotes in a string with escaped quotes?,double backslash escape all double quotes in string `s`,"print(s.encode('unicode-escape').replace('""', '\\""'))",2168,46
+18897261,pandas plot dataframe barplot with colors by category,make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`,"df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])",2169,46
+18938276,How to convert nested list of lists into a list of tuples in python 3.3?,"convert nested list of lists `[['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]` into a list of tuples","list(map(tuple, [['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]))",2170,46
+18979111,Sending post data from angularjs to django as JSON and not as raw content,decode json string `request.body` to python dict,json.loads(request.body),2171,46
+18990069,how to get tuples from lists using list comprehension in python,get tuples from lists `lst` and `lst2` using list comprehension in python 2,"[(lst[i], lst2[i]) for i in range(len(lst))]",2172,46

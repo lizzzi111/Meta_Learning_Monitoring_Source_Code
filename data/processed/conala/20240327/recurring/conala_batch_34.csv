@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+300445,How to unquote a urlencoded unicode string in python?,unquote a urlencoded unicode string '%0a',urllib.parse.unquote('%0a'),133,0,8,37,0,34,0
+354038,check if a string is a number (float),check if string `a` is an integer,a.isdigit(),151,0,0,31,0,34,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,"print(('{0:.2f}'.format(round(a, 2))))",203,0,5,62,0,34,0
+579856,What's the Pythonic way to combine two sequences into a dictionary?,combine two sequences into a dictionary,"dict(zip(keys, values))",237,0,1,2,0,34,0
+1270951,Python - how to refer to relative paths of resources when working with code repository,get a relative path of file 'my_file' into variable `fn`,"fn = os.path.join(os.path.dirname(__file__), 'my_file')",438,2,9,47,1,34,0
+1592158,Convert hex to float,convert hex string '470FC614' to a float number,"struct.unpack('!f', '470FC614'.decode('hex'))[0]",477,3,5,11,0,34,0
+3728017,Sorting while preserving order in python,Sorting while preserving order in python,"sorted(enumerate(a), key=lambda x: x[1])",804,11,7,59,1,34,0
+4230000,Creating a 2d matrix in python,creating a 5x6 matrix filled with `None` and save it as `x`,x = [[None for _ in range(5)] for _ in range(6)],898,14,6,12,0,34,0
+4690366,Creating a list from a Scipy matrix,"create a matrix from a list `[1, 2, 3]`","x = scipy.matrix([1, 2, 3]).transpose()",972,16,6,9,0,34,0
+5352546,best way to extract subset of key-value pairs from python dictionary object,"extract subset of key-value pairs with keys as `('l', 'm', 'n')` from dictionary object `bigdict`","dict((k, bigdict[k]) for k in ('l', 'm', 'n'))",1061,18,1,51,0,34,0
+5555063,Unescaping Characters in a String with Python,un-escaping characters in a string with python,"""""""\\u003Cp\\u003E"""""".decode('unicode-escape')",1076,18,8,35,0,34,0
+5917537,"In Python, why won't something print without a newline?",immediately see output of print statement that doesn't end in a newline,sys.stdout.flush(),1109,19,8,0,0,34,0
+7253803,How to get everything after last slash in a URL?,get everything after last slash in a url stored in variable 'url',"url.rsplit('/', 1)[-1]",1208,22,8,0,0,34,0
+7961363,Removing duplicates in lists,Removing duplicates in list `t`,list(set(t)),1271,23,7,34,1,34,0
+8908287,Base64 encoding in Python 3,encode a string `data to be encoded` to `ascii` encoding,encoded = 'data to be encoded'.encode('ascii'),1370,26,8,0,0,34,0
+9323749,Python: Check if one dictionary is a subset of another larger dictionary,check if dictionary `subset` is a subset of dictionary `superset`,all(item in list(superset.items()) for item in list(subset.items())),1406,27,1,5,0,34,0
+10373660,Converting a Pandas GroupBy object to DataFrame,convert a pandas `df1` groupby object to dataframe,"DataFrame({'count': df1.groupby(['Name', 'City']).size()}).reset_index()",1484,29,3,30,0,34,0
+11064917,Generate a sequence of numbers in Python,generate a string of numbers separated by comma which is divisible by `4` with remainder `1` or `2`.,""""""","""""".join(str(i) for i in range(100) if i % 4 in (1, 2))",1544,30,5,16,0,34,0
+12005558,Python - find digits in a string,get digits in string `my_string`,""""""""""""".join(c for c in my_string if c.isdigit())",1621,32,5,9,0,34,0
+12337583,"Saving dictionary whose keys are tuples with json, python",Serialize dictionary `data` and its keys to a JSON formatted string,"json.dumps({str(k): v for k, v in data.items()})",1642,33,1,10,0,34,0
+13496087,Python: How to generate a 12-digit random number?,generate a random 12-digit number,""""""""""""".join(str(random.randint(0, 9)) for _ in range(12))",1753,36,5,61,0,34,0
+13550423,Python printing without commas,concatenate items of list `l` with a space ' ',"print(' '.join(map(str, l)))",1754,36,7,19,1,34,0
+13954840,How do I convert LF to CRLF?,open the file 'words.txt' in 'rU' mode,"f = open('words.txt', 'rU')",1795,37,9,60,1,34,0
+14745022,"Pandas DataFrame, how do i split a column into two",split column 'AB' in dataframe `df` into two columns by first whitespace ' ',"df['AB'].str.split(' ', 1, expand=True)",1856,38,3,63,0,34,0
+15269161,"in Python, How to join a list of tuples into one list?",convert list `a` from being consecutive sequences of tuples into a single sequence of elements,list(itertools.chain(*a)),1904,40,7,16,1,34,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,select rows whose column value in column `column_name` does not equal `some_value` in pandas data frame,df.loc[df['column_name'] != some_value],2025,43,3,47,0,34,0
+18200052,How to convert ndarray to array?,convert ndarray with shape 3x3 to array,"np.zeros((3, 3)).ravel()",2113,45,6,16,0,34,0
+18224991,how to set global const variables in python,assign float 9.8 to variable `GRAVITY`,GRAVITY = 9.8,2114,45,5,14,0,34,0
+21018612,How to download to a specific directory with Python?,download to a directory '/path/to/dir/filename.ext' from source 'http://example.com/file.ext',"urllib.request.urlretrieve('http://example.com/file.ext', '/path/to/dir/filename.ext')",2293,50,9,48,1,34,0
+25474338,regex for repeating words in a string in Python,regex for repeating words in a string `s`,"re.sub('(?<!\\S)((\\S+)(?:\\s+\\2))(?:\\s+\\2)+(?!\\S)', '\\1', s)",2424,53,0,60,0,34,0
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((?:(?!cat).)*cat(?:(?!cat).)*)cat', '\\1Bull', s)",2466,54,0,45,0,34,0
+28664103,How to transform a time series pandas dataframe using the index attributes?,transform time series `df` into a pivot table aggregated by column 'Close' using column `df.index.date` as index and values of column `df.index.time` as columns,"pd.pivot_table(df, index=df.index.date, columns=df.index.time, values='Close')",2493,55,3,11,0,34,0
+32675861,Copy all values in a column to a new column in a pandas dataframe,copy all values in a column 'B' to a new column 'D' in a pandas data frame 'df',df['D'] = df['B'],2627,58,3,44,0,34,0
+32926587,How to capture the entire string while using 'lookaround' with chars in regex?,find all substrings in string `mystring` composed only of letters `a` and `b` where each `a` is directly preceded and succeeded by `b`,"re.findall('\\b(?:b+a)+b+\\b', mystring)",2636,58,0,2,0,34,0
+33078554,Mapping dictionary value to list,get a list from a list `lst` with values mapped into a dictionary `dct`,[dct[k] for k in lst],2642,59,7,59,1,34,0
+38147447,How to remove square bracket from pandas dataframe,set data in column 'value' of dataframe `df` equal to first element of each list,df['value'] = df['value'].str[0],2734,61,3,62,0,34,0
+40311987,Pandas: Mean of columns with the same names,calculate the mean of columns with same name in dataframe `df`,"df.groupby(by=df.columns, axis=1).mean()",2794,62,3,5,0,34,0
+40512124,convert dictionaries into string python,"concatenate key/value pairs in dictionary `a` with string ', ' into a single string",""""""", """""".join([(str(k) + ' ' + str(v)) for k, v in list(a.items())])",2803,63,1,54,0,34,0
+42100344,How to convert efficiently a dataframe column of string type into datetime in Python?,"convert a dataframe `df`'s column `ID` into datetime, after removing the first and last 3 letters",pd.to_datetime(df.ID.str[1:-3]),2859,64,3,46,0,34,0

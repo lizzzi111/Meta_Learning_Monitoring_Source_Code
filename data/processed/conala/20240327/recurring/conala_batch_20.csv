@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+209513,Convert hex string to int,"Convert hex string ""0xa"" to integer","int('0xa', 16)",92,0,5,23,0,20,0
+209840,Map two lists into a dictionary in Python,map two lists `keys` and `values` into a dictionary,"dict([(k, v) for k, v in zip(keys, values)])",94,0,1,24,0,20,0
+275018,remove (chomp) a newline,"remove newline in string ""Hello\n\n\n"" on the right side",'Hello\n\n\n'.rstrip('\n'),126,0,8,0,0,20,0
+930397,Getting the last element of a list,Getting the last element of list `some_list`,some_list[(-1)],364,0,7,17,1,20,0
+1179305,Expat parsing in python 3,Parse a file `sample.xml` using expat parsing in python 3,"parser.ParseFile(open('sample.xml', 'rb'))",420,2,9,39,1,20,0
+1185524,trim whitespace (including tabs),trim characters ' \t\n\r' in `s`,s = s.strip(' \t\n\r'),424,2,8,0,0,20,0
+1546226,A simple way to remove multiple spaces in a string in Python,remove multiple spaces in a string `foo`,""""""" """""".join(foo.split())",470,3,8,0,0,20,0
+1602934,Check if a given key already exists in a dictionary,Check if a given key `key` exists in dictionary `d`,"if (key in d):
+    pass",479,3,1,25,0,20,0
+1823058,print number with commas as thousands separators,print number 1255000 as thousands separators,"locale.setlocale(locale.LC_ALL, 'en_US')
+locale.format('%d', 1255000, grouping=True)",512,4,5,52,0,20,0
+2111163,Selecting specific column in each row from array,"subset numpy array `a` by column and row, returning the values from the first row, first column and the second row, second column and the third row, first column.","a[np.arange(3), (0, 1, 0)]",553,5,6,4,0,20,0
+2173797,how to sort 2d array by row in python?,sort 2d array `matrix` by row with index 1,"sorted(matrix, key=itemgetter(1))",566,5,6,53,0,20,0
+3329386,Limit the number of sentences in a string,"Extract first two substrings in string `phrase` that end in `.`, `?` or `!`","re.match('(.*?[.?!](?:\\s+.*?[.?!]){0,1})', phrase).group(1)",748,10,0,32,0,20,0
+4126227,Appending tuples to lists,append a tuple of elements from list `a` with indexes '[0][0] [0][2]' to list `b`,"b.append((a[0][0], a[0][2]))",881,13,7,45,1,20,0
+4135344,generate pdf from markdown file,generate pdf file `output_filename` from markdown file `input_filename`,"with open(input_filename, 'r') as f:
+    html_text = markdown(f.read(), output_format='html4')
+pdfkit.from_string(html_text, output_filename)",884,13,9,57,1,20,0
+4664850,Find all occurrences of a substring in Python,find indexes of all occurrences of a substring `tt` in a string `ttt`,"[m.start() for m in re.finditer('(?=tt)', 'ttt')]",965,16,0,52,0,20,0
+5110352,How do I display current time using Python + Django?,display current time,now = datetime.datetime.now().strftime('%H:%M:%S'),1033,17,2,3,0,20,0
+6996603,Delete a file or folder,delete an empty directory,os.rmdir(),1191,21,9,54,1,20,0
+7371935,Sort a string in lexicographic order python,"get a sorted list of the characters of string `s` in lexicographic order, with lowercase letters first","sorted(s, key=str.lower)",1230,22,0,50,0,20,0
+7745260,Iterate through words of a file in Python,get a list of words `words` of a file 'myfile',words = open('myfile').read().split(),1257,23,9,23,1,20,0
+7794208,How can I remove duplicate words in a string with Python?,Keep only unique words in list of words `words` and join into string,"print(' '.join(sorted(set(words), key=words.index)))",1261,23,0,12,0,20,0
+9001509,sort a dictionary by key,sort a dictionary `d` by key,"OrderedDict(sorted(list(d.items()), key=(lambda t: t[0])))",1381,26,1,8,0,20,0
+9590965,Convert an IP string to a number and vice versa,convert a number 2130706433 to ip string,"socket.inet_ntoa(struct.pack('!L', 2130706433))",1431,27,5,21,0,20,0
+9969684,How do I add space between two variables after a print in Python,Print variable `count` and variable `conv` with space string '    ' in between,print(str(count) + '    ' + str(conv)),1462,28,8,0,0,20,0
+12096252,use a list of values to select rows from a pandas dataframe,"use a list of values `[3,6]` to select rows from a pandas dataframe `df`'s column 'A'","df[df['A'].isin([3, 6])]",1624,32,3,51,0,20,0
+12211944,How to match beginning of string or character in Python,find float number proceeding sub-string `par` in string `dir`,"float(re.findall('(?:^|_)' + par + '(\\d+\\.\\d*)', dir)[0])",1630,33,5,9,0,20,0
+13093727,How to replace unicode characters in string with something else python?,replace unicode character '\u2022' in string 'str' with '*',"str.decode('utf-8').replace('\u2022', '*').encode('utf-8')",1701,34,8,0,0,20,0
+13277440,How can I get Python to use upper case letters to print hex values?,use upper case letters to print hex value `value`,print('0x%X' % value),1722,35,5,4,0,20,0
+13628725,How to generate random numbers that are different?,generate six unique random numbers in the range of 1 to 49.,"random.sample(range(1, 50), 6)",1762,36,5,12,0,20,0
+13793321,Joining Table/DataFrames with common Column in Python,joining data from dataframe `df1` with data from dataframe `df2` based on matching values of column 'Date_Time' in both dataframes,"df1.merge(df2, on='Date_Time')",1776,36,3,62,0,20,0
+16412563,Python: sorting dictionary of dictionaries,sort dictionary of dictionaries `dic` according to the key 'Fisher',"sorted(list(dic.items()), key=lambda x: x[1]['Fisher'], reverse=True)",1989,42,1,61,0,20,0
+18116235,Removing letters from a list of both numbers and letters,Get only digits from a string `strs`,""""""""""""".join([c for c in strs if c.isdigit()])",2105,45,0,5,0,20,0
+19894478,Regex punctuation split [Python],"split string 'Words, words, words.' on punctuation","re.split('\\W+', 'Words, words, words.')",2231,48,8,0,0,20,0
+20894525,How to remove parentheses and all data within using Pandas/Python?,replace parentheses and all data within it with empty string '' in column 'name' of dataframe `df`,"df['name'].str.replace('\\(.*\\)', '')",2287,49,3,7,0,20,0
+23306653,Python Accessing Nested JSON Data,get value of key `post code` associated with first index of key `places` of dictionary `data`,print(data['places'][0]['post code']),2374,52,1,31,0,20,0
+24242433,"Python - how to convert a ""raw"" string into a normal string","decode string ""\\x89\\n"" into a normal string","""""""\\x89\\n"""""".decode('string_escape')",2404,52,8,0,0,20,0
+25355705,count how many of an object type there are in a list Python,count the number of integers in list `a`,"sum(isinstance(x, int) for x in a)",2421,53,7,62,1,20,0
+25440008,python pandas flatten a dataframe to a list,flatten a dataframe df to a list,df.values.flatten(),2423,53,3,1,0,20,0
+39870642,Matplotlib - How to plot a high resolution graph?,Save plot `plt` as png file 'filename.png',plt.savefig('filename.png'),2777,62,9,21,1,20,0
+41923906,Align numpy array according to another array,align values in array `b` to the order of corresponding values in array `a`,"a[np.in1d(a, b)]",2854,64,6,9,0,20,0

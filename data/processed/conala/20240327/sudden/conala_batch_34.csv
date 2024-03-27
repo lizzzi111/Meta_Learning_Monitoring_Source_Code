@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+187455,Counting array elements in Python,count the number of elements in array `myArray`,len(myArray),85,0,6,20,0,2,0,34,0
+510348,make a time delay,make a 60 seconds time delay,time.sleep(60),214,0,4,32,1,28,1,34,0
+674509,"How do I iterate over a Python dictionary, ordered by values?",sort dictionary `dictionary` in ascending order by its values,"sorted(list(dictionary.items()), key=operator.itemgetter(1))",272,0,1,10,0,32,0,34,0
+674764,string find,find the index of sub string 's' in string `str` starting from index 11,"str.find('s', 11)",285,0,0,14,0,1,0,34,0
+715550,Best way to encode tuples with json,"serialize dictionary `d` as a JSON formatted string with each key formatted to pattern '%d,%d'","simplejson.dumps(dict([('%d,%d' % k, v) for k, v in list(d.items())]))",294,0,1,15,0,48,0,34,0
+764235,Dictionary to lowercase in Python,lowercase keys and values in dictionary `{'My Key': 'My Value'}`,"{k.lower(): v.lower() for k, v in list({'My Key': 'My Value'}.items())}",323,0,1,3,0,48,0,34,0
+861190,Ordering a list of dictionaries in python,"Sort a list of dictionaries `mylist` by keys ""weight"" and ""factor""","mylist.sort(key=operator.itemgetter('weight', 'factor'))",348,0,1,10,0,29,0,34,0
+1007481,How do I replace whitespaces with underscore and vice versa?,replace spaces with underscore,"mystring.replace(' ', '_')",395,1,8,3,0,35,0,34,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'a' in `d`,('a' in d),482,3,0,23,0,52,0,34,0
+1823058,print number with commas as thousands separators,print number `value` as thousands separators,"'{:,}'.format(value)",511,4,5,7,0,41,0,34,0
+2077897,Substitute multiple whitespace with single whitespace in Python,substitute multiple whitespace with single whitespace in string `mystring`,""""""" """""".join(mystring.split())",549,5,8,0,0,38,0,34,0
+2823472,Is there a method that tells my program to quit?,quit program,sys.exit(0),672,8,4,53,1,26,1,34,0
+2917372,How to search a list of tuples in Python,get the indices of tuples in list of tuples `L` where the first value is 53,"[i for i, v in enumerate(L) if v[0] == 53]",681,8,7,33,1,8,0,34,0
+3277503,read a file line by line into a list,read file 'filename' line by line into a list `lines`,"with open('filename') as f:
+    lines = f.readlines()",731,10,9,20,1,54,0,34,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (letter, number) in list(d.items()):
+    pass",736,10,1,28,0,44,0,34,0
+4324790,Removing control characters from a string in python,removing control characters from a string `s`,return ''.join(ch for ch in s if unicodedata.category(ch)[0] != 'C'),919,14,8,0,0,14,0,34,0
+4642501,How to sort dictionaries by keys in Python,Sort dictionary `o` in ascending order based on its keys and items,sorted(o.items()),962,15,1,4,0,43,0,34,0
+4703390,How to extract a floating number from a string,extract floating number from string 'Current Level: 13.4 db.',"re.findall('\\d+\\.\\d+', 'Current Level: 13.4 db.')",976,16,5,3,0,52,0,34,0
+4901483,How to apply django/jinja2 template filters 'escape' and 'linebreaks' correctly?,apply jinja2 filters `forceescape` and `linebreaks` on variable `my_variable`,{{my_variable | forceescape | linebreaks}},1006,17,4,29,1,47,1,34,0
+5625524,How to Close a program using python?,execute os command ''TASKKILL /F /IM firefox.exe'',os.system('TASKKILL /F /IM firefox.exe'),1085,19,4,60,1,46,1,34,0
+6797984,convert string to lowercase,convert utf-8 string `s` to lowercase,s.decode('utf-8').lower(),1179,21,8,0,0,1,0,34,0
+7351270,Control a print format when printing a list in Python,print numbers in list `list` with precision of 3 decimal places,"print('[%s]' % ', '.join('%.3f' % val for val in list))",1226,22,5,29,0,60,0,34,0
+8270092,remove all whitespace in a string,remove all whitespace in a string `sentence`,"pattern = re.compile('\\s+')
+sentence = re.sub(pattern, '', sentence)",1313,24,8,0,0,15,0,34,0
+9550867,Python Pandas Pivot Table,produce a pivot table as dataframe using column 'Y' in datafram `df` to form the axes of the resulting dataframe,"df.pivot_table('Y', rows='X', cols='X2')",1422,27,3,35,0,33,0,34,0
+9573244,Most elegant way to check if the string is empty,check if string `my_string` is empty,"if (not my_string):
+    pass",1428,27,0,5,0,24,0,34,0
+9733638,Post JSON using Python Requests,Execute a post request to url `http://httpbin.org/post` with json data `{'test': 'cheers'}`,"requests.post('http://httpbin.org/post', json={'test': 'cheers'})",1441,28,4,33,1,48,1,34,0
+9760588,How do you extract a url from a string using python?,extract a url from a string `myString`,"print(re.findall('(https?://[^\\s]+)', myString))",1448,28,8,0,0,31,0,34,0
+10586778,test a boolean expression in a Python string,evaluate the expression '20<30',eval('20<30'),1507,29,5,61,0,24,0,34,0
+12345387,Removing _id element from Pymongo results,Find all records from collection `collection` without extracting mongo id `_id`,"db.collection.find({}, {'_id': False})",1643,33,4,64,1,12,1,34,0
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame according to column `Peak` in ascending and `Weeks` in descending order,"df.sort_values(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1764,36,3,9,0,57,0,34,0
+14657241,How do I get a list of all the duplicate items using pandas in python?,get a list of all the duplicate items in dataframe `df` using pandas,"pd.concat(g for _, g in df.groupby('ID') if len(g) > 1)",1845,38,3,26,0,63,0,34,0
+14793098,How to use Flask-Security register view?,change flask security register url to `/create_account`,app.config['SECURITY_REGISTER_URL'] = '/create_account',1865,39,4,40,1,12,1,34,0
+15579649,python dict to numpy structured array,convert dict `result` to numpy structured array,"numpy.array([(key, val) for key, val in result.items()], dtype)",1936,40,6,36,0,44,0,34,0
+15741759,Find maximum value of a column and return the corresponding row values using Pandas,Return rows of data associated with the maximum value of column 'Value' in dataframe `df`,df.loc[df['Value'].idxmax()],1941,41,3,3,0,37,0,34,0
+16387069,Open images,Open image 'picture.jpg',"img = Image.open('picture.jpg')
+img.show()",1986,42,9,45,1,2,0,34,0
+19490064,Merge DataFrames in Pandas using the mean,merge rows from dataframe `df1` with rows from dataframe `df2` and calculate the mean for rows that have the same value of axis 1,"pd.concat((df1, df2), axis=1).mean(axis=1)",2200,47,3,25,0,51,0,34,0
+26441253,how to reverse a priority queue in Python without using classes?,reverse a priority queue `q` in python without using classes,"q.put((-n, n))",2442,53,4,27,1,28,1,34,0
+28773683,Combine two Pandas dataframes with the same index,combine  dataframe `df1` and dataframe `df2` by index number,"pd.merge(df1, df2, left_index=True, right_index=True, how='outer')",2500,55,3,4,0,3,0,34,0
+42765620,How to sort a dictionary in python by value when the value is a list and I want to sort it by the first index of that list,How to sort a dictionary in python by value when the value is a list and I want to sort it by the first index of that list,"sorted(list(data.items()), key=lambda x: x[1][0])",2878,65,1,34,0,21,0,34,0

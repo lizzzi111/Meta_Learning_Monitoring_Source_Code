@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+200738,How can I unpack binary hex formatted data in Python?,encode string `data` as `hex`,data.encode('hex'),87,0,8,0,0,29,0,15,0
+237079,get file creation & modification date/times in,get creation time of file `file`,time.ctime(os.path.getctime(file)),104,0,9,28,1,5,0,15,0
+312443,How do you split a list into evenly sized chunks?,split a list `l` into evenly sized chunks `n`,"[l[i:i + n] for i in range(0, len(l), n)]",140,0,7,59,1,31,0,15,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `d` in sorted order,"for (key, value) in sorted(d.items()):
+    pass",158,0,1,2,0,23,0,15,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,print(('{0:.2f}'.format(a))),205,0,5,1,0,53,0,15,0
+902408,How to use variables in SQL statement in Python?,"Execute a sql statement using variables `var1`, `var2` and `var3`","cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))",356,0,4,56,1,27,1,15,0
+1299855,upload file with Python Mechanize,upload file with Python Mechanize,"br.form.add_file(open(filename), 'text/plain', filename)",439,2,9,45,1,14,0,15,0
+1303243,find out if a Python object is a string,check if object `obj` is a string,"isinstance(obj, str)",441,2,0,22,0,1,0,15,0
+1883980,Find the nth occurrence of substring in a string,find the index of the second occurrence of the substring `bar` in string `foo bar bar bar`,"""""""foo bar bar bar"""""".replace('bar', 'XXX', 1).find('bar')",518,4,0,2,0,8,0,15,0
+2052390,Manually raising (throwing) an exception,throw an Exception with message 'This is the exception you expect to handle',raise Exception('This is the exception you expect to handle'),542,5,4,52,1,10,1,15,0
+2878084,Sort a list of dicts by dict values,sort a list `l` of dicts by dict value 'title',l.sort(key=lambda x: x['title']),676,8,1,47,0,19,0,15,0
+2918362,writing string to a file on a new line everytime?,writing string 'text to write\n' to file `f`,f.write('text to write\n'),682,8,9,43,1,17,0,15,0
+4476373,Simple URL GET/POST function,request http url `url` with parameters `payload`,"r = requests.get(url, params=payload)",936,15,4,26,1,27,1,15,0
+4697006,Python: Split string by list of separators,"split a string `a , b; cdf`  using both commas and semicolons as delimeters","re.split('\\s*,\\s*|\\s*;\\s*', 'a , b; cdf')",974,16,8,0,0,51,0,15,0
+5577501,How to tell if string starts with a number?,check if string `string` starts with a number,string[0].isdigit(),1078,18,0,7,0,49,0,15,0
+7657457,Finding key from value in Python dictionary:,Find all keys from a dictionary `d` whose values are `desired_value`,"[k for k, v in d.items() if v == desired_value]",1248,23,1,13,0,50,0,15,0
+7831371,Is there a way to get a list of column names in sqlite?,SQLite get a list of column names from cursor object `cursor`,"names = list(map(lambda x: x[0], cursor.description))",1262,23,4,44,1,45,1,15,0
+8905864,URL encoding in python,URL encoding in python,urllib.parse.quote_plus('a b'),1368,26,4,35,1,11,1,15,0
+10078470,Sort numpy matrix row values in ascending order,sort rows of numpy matrix `arr` in ascending order according to all column values,"numpy.sort(arr, axis=0)",1466,28,6,27,0,43,0,15,0
+11114358,How do I remove dicts from a list with duplicate fields in python?,Filter duplicate entries w.r.t. value in 'id' from a list of dictionaries 'L',"list(dict((x['id'], x) for x in L).values())",1548,30,1,11,0,23,0,15,0
+11621165,Indexing a pandas dataframe by integer,Reset the indexes of a pandas data frame,df2 = df.reset_index(),1591,32,3,3,0,57,0,15,0
+12330522,Reading a file without newlines,read a file `file` without newlines,[line.rstrip('\n') for line in file],1641,33,9,14,1,44,0,15,0
+12768504,Python: an efficient way to slice a list with a index list,create list `c` containing items from list `b` whose index is in list `index`,c = [b[i] for i in index],1670,34,7,12,1,33,0,15,0
+13838405,Custom sorting in pandas dataframe,sort column `m` in panda dataframe `df`,df.sort('m'),1780,36,3,52,0,55,0,15,0
+14401047,Numpy - Averaging multiple columns of a 2D array,average each two columns of array `data`,"data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)",1827,38,6,6,0,36,0,15,0
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""","separate numbers from characters in string ""30m1000n20m""","re.findall('(([0-9]+)([A-Z]))', '20M10000N80M')",1893,39,5,64,0,6,0,15,0
+17141558,How to sort a dataFrame in python pandas by two or more columns?,sort dataframe `df` based on column 'b' in ascending and column 'c' in descending,"df.sort_values(['b', 'c'], ascending=[True, False], inplace=True)",2039,43,3,27,0,7,0,15,0
+17352321,Python splitting string by parentheses,"find all occurrences of the pattern '\\[[^\\]]*\\]|\\([^\\)]*\\)|""[^""]*""|\\S+' within `strs`","re.findall('\\[[^\\]]*\\]|\\([^\\)]*\\)|""[^""]*""|\\S+', strs)",2053,43,0,13,0,7,0,15,0
+18524112,Norm along row in pandas,normalize the dataframe `df` along the rows,np.sqrt(np.square(df).sum(axis=1)),2138,46,3,58,0,2,0,15,0
+19601086,Click a href button with selenium and python?,click a href button having text `Send InMail` with selenium,driver.findElement(By.linkText('Send InMail')).click(),2206,47,4,45,1,48,1,15,0
+19618912,Finding common rows (intersection) in two Pandas dataframes,Join data of dataframe `df1` with data in dataframe `df2` based on similar values of column 'user_id' in both dataframes,"s1 = pd.merge(df1, df2, how='inner', on=['user_id'])",2213,48,3,55,0,35,0,15,0
+22702760,how to multiply multiple columns by a column in Pandas,multiply column 'A' and column 'B' by column 'C' in datafram `df`,"df[['A', 'B']].multiply(df['C'], axis='index')",2359,51,3,60,0,37,0,15,0
+24242433,"Python - how to convert a ""raw"" string into a normal string",convert a raw string `raw_byte_string` into a normal string,raw_byte_string.decode('unicode_escape'),2403,52,8,0,0,16,0,15,0
+24492327,Python Embedding in C++ : ImportError: No module named pyfunction,insert directory './path/to/your/modules/' to current directory,"sys.path.insert(0, './path/to/your/modules/')",2405,52,9,16,1,32,0,15,0
+29370211,pandas split string into columns,"pandas split strings in column 'stats' by ',' into columns in dataframe `df`","df['stats'].str[1:-1].str.split(',', expand=True).astype(float)",2516,55,3,61,0,6,0,15,0
+30759776,Extracting specific src attributes from script tags,"extract attributes 'src=""js/([^""]*\\bjquery\\b[^""]*)""' from string `data`","re.findall('src=""js/([^""]*\\bjquery\\b[^""]*)""', data)",2565,57,0,61,0,59,0,15,0
+34197047,sorting list of list in python,sorting the lists in list of lists `data`,[sorted(item) for item in data],2659,59,7,51,1,7,0,15,0
+36875258,copying one file's contents to another in python,copy the content of file 'file.txt' to file 'file2.txt',"shutil.copy('file.txt', 'file2.txt')",2717,60,9,63,1,60,0,15,0
+38081866,Is there a way to run powershell code in python,execute script 'script.ps1' using 'powershell.exe' shell,"os.system('powershell.exe', 'script.ps1')",2731,61,4,60,1,12,1,15,0

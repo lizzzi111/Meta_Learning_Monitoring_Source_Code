@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+17960441,"in Numpy, how to zip two 2-D arrays?",zip two 2-d arrays `a` and `b`,"np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)",2095,45
+17972020,How to execute raw SQL in SQLAlchemy-flask app,execute raw sql queue '<sql here>' in database `db` in sqlalchemy-flask app,result = db.engine.execute('<sql here>'),2096,45
+17977584,How to read data from Excel and write it to text file line by line?,open a file `Output.txt` in append mode,"file = open('Output.txt', 'a')",2097,45
+18022241,'List of lists' to 'list' without losing empty lists from the original list of lists,convert a list of lists `list_of_lists` into a list of strings keeping empty sub-lists as empty string '',[''.join(l) for l in list_of_lists],2098,45
+18050937,How can I execute shell command with a | pipe in it,execute shell command 'grep -r PASSED *.log | sort -u | wc -l' with a | pipe in it,"subprocess.call('grep -r PASSED *.log | sort -u | wc -l', shell=True)",2099,45
+18071222,Working with set_index in Pandas DataFrame,"set columns `['race_date', 'track_code', 'race_number']` as indexes in dataframe `rdata`","rdata.set_index(['race_date', 'track_code', 'race_number'])",2100,45
+18079029,Index of element in Numpy array,get the indexes of the x and y axes in Numpy array `np` where variable `a` is equal to variable `value`,"i, j = np.where(a == value)",2101,45
+18079563,Finding the intersection between two series in Pandas,find intersection data between series `s1` and series `s2`,pd.Series(list(set(s1).intersection(set(s2)))),2102,45
+18082130,Python regex to remove all words which contains number,remove all words which contains number from a string `words` using regex,"re.sub('\\w*\\d\\w*', '', words).strip()",2103,45
+18102109,How do I implement a null coalescing operator in SQLAlchemy?,query all data from table `Task` where the value of column `time_spent` is bigger than 3 hours,session.query(Task).filter(Task.time_spent > timedelta(hours=3)).all(),2104,45
+18116235,Removing letters from a list of both numbers and letters,Get only digits from a string `strs`,""""""""""""".join([c for c in strs if c.isdigit()])",2105,45
+18131367,python - iterating over a subset of a list of tuples,Get all the items from a list of tuple 'l' where second item in tuple is '1'.,[x for x in l if x[1] == 1],2106,45
+18131741,Python: find out whether a list of integers is coherent,check if elements in list `my_list` are coherent in order,"return my_list == list(range(my_list[0], my_list[-1] + 1))",2107,45
+18137341,applying functions to groups in pandas dataframe,apply function `log2` to the grouped values by 'type' in dataframe `df`,df.groupby('type').apply(lambda x: np.mean(np.log2(x['v']))),2108,45
+18142090,python: sort a list of lists by an item in the sublist,Sort list `li` in descending order based on the second element of each list inside list`li`,"sorted(li, key=operator.itemgetter(1), reverse=True)",2109,45
+18168684,Parsing XML in Python with regex,search for occurrences of regex pattern '>.*<' in xml string `line`,"print(re.search('>.*<', line).group(0))",2110,45
+18170459,How to check if a dictionary is in another dictionary in python,check if dictionary `L[0].f.items()` is in dictionary `a3.f.items()`,set(L[0].f.items()).issubset(set(a3.f.items())),2111,45
+18176933,Create an empty data frame with index from another data frame,create an empty data frame `df2` with index from another data frame `df1`,df2 = pd.DataFrame(index=df1.index),2112,45
+18200052,How to convert ndarray to array?,convert ndarray with shape 3x3 to array,"np.zeros((3, 3)).ravel()",2113,45
+18224991,how to set global const variables in python,assign float 9.8 to variable `GRAVITY`,GRAVITY = 9.8,2114,45
+18229082,Python pickle/unpickle a list to/from a file,python pickle/unpickle a list to/from a file 'afile',"pickle.load(open('afile', 'rb'))",2115,45
+18253210,Creating a numpy array of 3D coordinates from three 1D arrays,"creating a numpy array of 3d coordinates from three 1d arrays `x_p`, `y_p` and `z_p`","np.vstack(np.meshgrid(x_p, y_p, z_p)).reshape(3, -1).T",2116,45
+18265935,Python - Create list with numbers between 2 values?,create a list of integers between 2 values `11` and `17`,"list(range(11, 17))",2117,45
+18272066,Easy way to convert a unicode list to a list containing python strings?,Encode each value to 'UTF8' in the list `EmployeeList`,[x.encode('UTF8') for x in EmployeeList],2118,45
+18292500,Python logging typeerror,Log message 'test' on the root logger.,logging.info('test'),2119,45
+18312447,How can I split a string into tokens?,split string 'x+13.5*10x-4e1' into tokens,"print([i for i in re.split('([\\d.]+|\\W+)', 'x+13.5*10x-4e1') if i])",2120,45
+18319101,What's the best way to generate random strings of a specific length in Python?,generate random upper-case ascii string of 12 characters length,print(''.join(choice(ascii_uppercase) for i in range(12))),2121,45
+18351951,Check if string ends with one of the strings from a list,"check if string `test.mp3` ends with one of the strings from a tuple `('.mp3', '.avi')`","""""""test.mp3"""""".endswith(('.mp3', '.avi'))",2122,45
+18358938,Get index values of Pandas DataFrame as list?,get index values of pandas dataframe `df` as list,df.index.values.tolist(),2123,45
+18366797,pandas.read_csv: how to skip comment lines,pandas read comma-separated CSV file `s` and skip commented lines starting with '#',"pd.read_csv(StringIO(s), sep=',', comment='#')",2124,45
+18367007,Python how to write to a binary file?,write `newFileBytes` to a binary file `newFile`,"newFile.write(struct.pack('5B', *newFileBytes))",2125,45
+18391059,python - How to format variable number of arguments into a string?,how to format a list of arguments `my_args` into a string,"'Hello %s' % ', '.join(my_args)",2126,45
+18397805,How do I delete a row in a numpy array which contains a zero?,delete all rows in a numpy array `a` where any value in a row is zero `0`,"a[np.all(a != 0, axis=1)]",2127,45
+18432823,how to create similarity matrix in numpy python?,Convert array `x` into a correlation matrix,np.corrcoef(x),2128,45
+18448469,Python: filter list of list with another list,create a list `result` containing elements form list `list_a` if first element of list `list_a` is in list `list_b`,result = [x for x in list_a if x[0] in list_b],2129,45
+18453566,Python dictionary: Get list of values for list of keys,get list of values from dictionary 'mydict' w.r.t. list of keys 'mykeys',[mydict[x] for x in mykeys],2130,45
+18454570,How can i subtract two strings in python?,"remove substring 'bag,' from a string 'lamp, bag, mirror'","print('lamp, bag, mirror'.replace('bag,', ''))",2131,45
+18461623,Average values in two Numpy arrays,Get the average values from two numpy arrays `old_set` and `new_set`,"np.mean(np.array([old_set, new_set]), axis=0)",2132,45
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,select only specific columns 'a' and 'c' from a dataframe 'data' with multiindex columns,"data.loc[:, ([('one', 'a'), ('one', 'c'), ('two', 'a'), ('two', 'c')])]",2133,45

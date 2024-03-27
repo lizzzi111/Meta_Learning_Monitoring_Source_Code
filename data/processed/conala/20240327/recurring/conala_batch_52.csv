@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+42950,Get Last Day of the Month,Get Last Day of the second month in 2002,"calendar.monthrange(2008, 2)",27,0,2,41,0,52,0
+356483,Python regex findall numbers and dots,python regex  to find all numbers and dots from 'text',"re.findall('Test([\\d.]*\\d+)', text)",153,0,0,25,0,52,0
+761804,Trimming a string,"Trimming a string ""          Hello        """,'          Hello        '.strip(),321,0,8,0,0,52,0
+961632,Converting integer to string,convert `i` to string,str(i),385,1,8,0,0,52,0
+1101508,How to parse dates with -0400 timezone string in python?,parse date string '2009/05/13 19:19:30 -0400' using format '%Y/%m/%d %H:%M:%S %z',"datetime.strptime('2009/05/13 19:19:30 -0400', '%Y/%m/%d %H:%M:%S %z')",418,2,2,54,0,52,0
+1303243,find out if a Python object is a string,check if object `o` is a string,"isinstance(o, str)",440,2,0,37,0,52,0
+1450393,read from stdin,read line by line from stdin,"for line in fileinput.input():
+    pass",459,3,9,26,1,52,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'a' in `d`,('a' in d),482,3,0,23,0,52,0
+1747817,Create a dictionary with list comprehension,Create a dictionary `d` from list `iterable`,"d = {key: value for (key, value) in iterable}",497,4,1,43,0,52,0
+1960516,Python JSON serialize a Decimal object,encode `Decimal('3.9')` to a JSON string,json.dumps(Decimal('3.9')),530,4,5,40,0,52,0
+2231663,Slicing a list into a list of sub-lists,Slicing a list into a list of sub-lists,"[input[i:i + n] for i in range(0, len(input), n)]",577,6,7,20,1,52,0
+3411025,Summarizing a dictionary of arrays in Python,get top `3` items from a dictionary `mydict` with largest sum of values,"heapq.nlargest(3, iter(mydict.items()), key=lambda tup: sum(tup[1]))",759,10,1,32,0,52,0
+4574509,Remove duplicate chars using regex?,remove duplicate characters from string 'ffffffbbbbbbbqqq',"re.sub('([a-z])\\1+', '\\1', 'ffffffbbbbbbbqqq')",947,15,8,24,0,52,0
+4703390,How to extract a floating number from a string,extract floating number from string 'Current Level: 13.4 db.',"re.findall('\\d+\\.\\d+', 'Current Level: 13.4 db.')",976,16,5,3,0,52,0
+4703390,How to extract a floating number from a string,extract floating point numbers from a string 'Current Level: -13.2 db or 14.2 or 3',"re.findall('[-+]?\\d*\\.\\d+|\\d+', 'Current Level: -13.2 db or 14.2 or 3')",977,16,5,50,0,52,0
+4880960,Sum of all values in a Python dict,Sum of all values in a Python dict,sum(d.values()),1005,17,1,18,0,52,0
+5486725,How to execute a command prompt command from python,execute a command in the command prompt to list directory contents of the c drive `c:\\',os.system('dir c:\\'),1070,18,9,36,1,52,0
+5891453,Is there a Python Library that contains a list of all the ascii characters?,Create a list containing all ascii characters as its elements,[chr(i) for i in range(127)],1107,19,8,0,0,52,0
+6416131,add new item to dictionary,"add key ""item3"" and value ""3"" to dictionary `default_data `","default_data.update({'item3': 3, })",1144,20,1,29,0,52,0
+7128153,Multiple 'in' operators in Python?,"check if  dictionary `d` contains all keys in list `['somekey', 'someotherkey', 'somekeyggg']`","all(word in d for word in ['somekey', 'someotherkey', 'somekeyggg'])",1197,21,1,11,0,52,0
+12030074,Generate list of numbers in specific format,generate list of numbers in specific format using string formatting precision.,[('%.2d' % i) for i in range(16)],1622,32,5,26,0,52,0
+13078751,Merge Columns within a DataFrame that have the Same Name,Get pandas GroupBy object with sum over the rows with same column names within  dataframe `df`,"df.groupby(df.columns, axis=1).sum()",1697,34,3,19,0,52,0
+13837848,Converting byte string in unicode string,converting byte string `c` in unicode string,c.decode('unicode_escape'),1779,36,8,0,0,52,0
+13945749,String Formatting in Python 3,"format string ""({} goals, ${})"" with variables `goals` and `penalties`","""""""({} goals, ${})"""""".format(self.goals, self.penalties)",1793,37,8,0,0,52,0
+14227561,Find a value within nested json dictionary in python,find a value within nested json 'data' where the key inside another key 'B' is unknown.,list(data['A']['B'].values())[0]['maindata'][0]['Info'],1815,37,1,34,0,52,0
+16766643,Convert Date String to Day of Week,"convert date string 'January 11, 2010'  into day of week","datetime.datetime.strptime('January 11, 2010', '%B %d, %Y').strftime('%A')",2002,42,2,43,0,52,0
+17846545,Python: comprehension to compose two dictionaries,Compose keys from dictionary `d1` with respective values in dictionary `d2`,"result = {k: d2.get(v) for k, v in list(d1.items())}",2087,44,1,55,0,52,0
+20504881,simple/efficient way to expand a pandas dataframe,merge pandas dataframe `x` with columns 'a' and 'b' and dataframe `y` with column 'y',"pd.merge(y, x, on='k')[['a', 'b', 'y']]",2267,49,3,39,0,52,0
+21822054,How to force os.system() to use bash instead of shell,force bash interpreter '/bin/bash' to be used instead of shell,"os.system('GREPDB=""echo 123""; /bin/bash -c ""$GREPDB""')",2327,50,9,37,1,52,0
+21887754,numpy concatenate two arrays vertically,numpy concatenate two arrays `a` and `b` along the first axis,"c = np.r_[(a[None, :], b[None, :])]",2331,51,6,23,0,52,0
+23638638,numpy array assignment using slicing,assign an array of floats in range from 0 to 100 to a variable `values`,"values = np.array([i for i in range(100)], dtype=np.float64)",2384,52,5,57,0,52,0
+26053849,Counting non zero values in each column of a dataframe in python,count non zero values in each column in pandas data frame,df.astype(bool).sum(axis=1),2435,53,3,6,0,52,0
+27587127,How to convert datetime.date.today() to UTC time?,return a DateTime object with the current UTC date,today = datetime.datetime.utcnow().date(),2465,54,2,2,0,52,0
+30026815,Add Multiple Columns to Pandas Dataframe from Function,"add multiple columns `hour`, `weekday`, `weeknum` to pandas data frame `df` from lambda function `lambdafunc`","df[['hour', 'weekday', 'weeknum']] = df.apply(lambdafunc, axis=1)",2541,56,3,4,0,52,0
+30357276,Pandas - FillNa with another column,fill missing value in one column 'Cat1' with the value of another column 'Cat2',df['Cat1'].fillna(df['Cat2']),2548,56,3,17,0,52,0
+31029560,Plotting categorical data with pandas and matplotlib,plot categorical data in series `df` with kind `bar` using pandas and matplotlib,df.groupby('colour').size().plot(kind='bar'),2572,57,3,51,0,52,0
+32283692,Adding a 1-D Array to a 3-D array in Numpy,"adding a 1-d array `[1, 2, 3, 4, 5, 6, 7, 8, 9]` to a 3-d array `np.zeros((6, 9, 20))`","np.zeros((6, 9, 20)) + np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])[(None), :, (None)]",2616,58,6,18,0,52,0
+38152389,Coalesce values from 2 columns into a single column in a pandas dataframe,combine values from column 'b' and column 'a' of dataframe `df`  into column 'c' of datafram `df`,"df['c'] = np.where(df['a'].isnull, df['b'], df['a'])",2736,61,3,9,0,52,0
+41469647,Outer product of each column of a 2D array to form a 3D array - NumPy,outer product of each column of a 2d `X` array to form a 3d array `X`,"np.einsum('ij,kj->jik', X, X)",2837,64,6,40,0,52,0

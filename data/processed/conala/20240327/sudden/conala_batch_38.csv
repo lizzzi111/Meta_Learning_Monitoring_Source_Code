@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+89228,Calling an external command,"Calling an external command ""echo Hello World""","return_code = subprocess.call('echo Hello World', shell=True)",63,0,9,14,1,38,0,38,0
+627435,remove an element from a list by index,remove the element in list `a` at index `index`,a.pop(index),251,0,7,34,1,37,0,38,0
+640001,How can I remove text within parentheses with a regex?,remove parentheses and text within it in string `filename`,"re.sub('\\([^)]*\\)', '', filename)",257,0,8,0,0,58,0,38,0
+674519,How can I convert a Python dictionary to a list of tuples?,convert dictionary of pairs `d` to a list of tuples,"[(v, k) for k, v in d.items()]",277,0,1,8,0,33,0,38,0
+931092,Reverse a string,Reverse string 'foo',''.join(reversed('foo')),374,0,8,0,0,9,0,38,0
+1143379,Removing duplicates from list of lists in Python,remove duplicate elements from list 'L',"list(dict((x[0], x) for x in L).values())",419,2,7,36,1,51,0,38,0
+1800187,replace values in an array,replace NaN values in array `a` with zeros,"b = np.where(np.isnan(a), 0, a)",506,4,6,34,0,17,0,38,0
+2152898,Filtering a list of strings based on contents,filtering out strings that contain 'ab' from a list of strings `lst`,[k for k in lst if 'ab' in k],560,5,0,34,0,53,0,38,0
+2428092,Creating a JSON response using Django and Python,create a json response `response_data`,"return HttpResponse(json.dumps(response_data), content_type='application/json')",605,6,4,28,1,47,1,38,0
+3008992,case sensitive string replacement in Python,replace a string `Abc` in case sensitive way using maketrans,"""""""Abc"""""".translate(maketrans('abcABC', 'defDEF'))",693,9,8,0,0,24,0,38,0
+3367288,insert variable values into a string in python,use `%s` operator to print variable values `str1` inside a string,"'first string is: %s, second one is: %s' % (str1, 'geo.tif')",752,10,8,0,0,21,0,38,0
+3431825,Generating an MD5 checksum of a file,Generate MD5 checksum of file in the path `full_path` in hashlib,"print(hashlib.md5(open(full_path, 'rb').read()).hexdigest())",762,10,9,45,1,9,0,38,0
+4223923,how to change the case of first letter of a string?,change the case of the first letter in string `s`,return s[0].upper() + s[1:],897,14,8,0,0,62,0,38,0
+4605439,What is the simplest way to swap char in a string with Python?,swap each pair of characters in string `s`,""""""""""""".join([s[x:x + 2][::-1] for x in range(0, len(s), 2)])",953,15,8,0,0,58,0,38,0
+4914277,How to empty a file using Python,erase all the contents of a file `filename`,"open(filename, 'w').close()",1014,17,9,62,1,50,0,38,0
+5508352,Indexing numpy array with another numpy array,Get index of numpy array `a` with another numpy array `b`,a[tuple(b)],1075,18,6,1,0,51,0,38,0
+5844672,Delete an element from a dictionary,Delete an element with key `key` dictionary `r`,del r[key],1097,19,1,9,0,13,0,38,0
+7371935,Sort a string in lexicographic order python,Sort a string `s` in lexicographic order,"sorted(s, key=str.upper)",1232,22,0,5,0,32,0,38,0
+7522533,How can I turn a string into a list in Python?,Convert a string into a list,list('hello'),1239,23,8,17,0,55,0,38,0
+7974442,lambda in python,make a function `f` that calculates the sum of two integer variables `x` and `y`,"f = lambda x, y: x + y",1273,23,4,49,1,27,1,38,0
+8199398,Extracting only characters from a string in Python,Extract only characters from a string as a list,"re.split('[^a-zA-Z]*', 'your string')",1296,24,0,0,0,0,0,38,0
+8305518,switching keys and values in a dictionary in python,switch keys and values in a dictionary `my_dict`,"dict((v, k) for k, v in my_dict.items())",1317,25,1,19,0,33,0,38,0
+9590965,Convert an IP string to a number and vice versa,convert a number 2130706433 to ip string,"socket.inet_ntoa(struct.pack('!L', 2130706433))",1431,27,5,21,0,20,0,38,0
+10675054,How to import a module in Python with importlib.import_module,import a nested module `c.py` within `b` within `a` with importlib,"importlib.import_module('.c', 'a.b')",1517,30,4,17,1,47,1,38,0
+10675054,How to import a module in Python with importlib.import_module,import a module 'a.b.c' with importlib.import_module in python 2,importlib.import_module('a.b.c'),1518,30,4,26,1,26,1,38,0
+11692613,Python - sum values in dictionary,get a sum of all values from key `gold` in a list of dictionary `example_list`,sum([item['gold'] for item in example_list]),1595,32,1,15,0,59,0,38,0
+11924135,How to use Beautiful Soup to find a tag with changing id?,select `div` tags whose `id`s begin with `value_xxx_c_1_f_8_a_`,"soup.select('div[id^=""value_xxx_c_1_f_8_a_""]')",1618,32,4,32,1,25,1,38,0
+13740672,in pandas how can I groupby weekday() for a datetime column?,create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`,data['weekday'] = data['my_dt'].apply(lambda x: x.weekday()),1773,36,3,27,0,58,0,38,0
+14306852,How do I modify the width of a TextCtrl in wxPython?,modify the width of a text control as `300` keeping default height in wxpython,"wx.TextCtrl(self, -1, size=(300, -1))",1824,38,4,40,1,27,1,38,0
+14853243,Parsing XML with namespace in Python via 'ElementTree',find all `owl:Class` tags by parsing xml with namespace,root.findall('{http://www.w3.org/2002/07/owl#}Class'),1867,39,4,53,1,48,1,38,0
+16374540,Efficient way to convert a list to dictionary,"Convert a list `['A:1', 'B:2', 'C:3', 'D:4']` to dictionary","dict(map(lambda s: s.split(':'), ['A:1', 'B:2', 'C:3', 'D:4']))",1985,42,1,45,0,42,0,38,0
+17604837,"Python - Combine two dictionaries, concatenate string values?","combine two dictionaries `d ` and `d1`, concatenate string values with identical `keys`","dict((k, d.get(k, '') + d1.get(k, '')) for k in keys)",2070,44,1,26,0,2,0,38,0
+22749706,How to get the length of words in a sentence?,How to get the length of words in a sentence?,[len(x) for x in s.split()],2363,51,0,17,0,18,0,38,0
+23887881,How to repeat Pandas data frame?,Get a repeated pandas data frame object `x` by `5` times,pd.concat([x] * 5),2393,52,3,34,0,1,0,38,0
+28538536,Deleting mulitple columns in Pandas,"Delete mulitple columns `columnheading1`, `columnheading2` in pandas data frame `yourdf`","yourdf.drop(['columnheading1', 'columnheading2'], axis=1, inplace=True)",2491,55,3,2,0,57,0,38,0
+29360607,How does this function to remove duplicate characters from a string in python work?,create a set from string `s` to remove duplicate characters,print(' '.join(set(s))),2512,55,8,0,0,37,0,38,0
+36661837,How to retrieve only arabic texts from a string using regular expression?,retrieve arabic texts from string `my_string`,"print(re.findall('[\\u0600-\\u06FF]+', my_string))",2715,60,0,9,0,16,0,38,0
+38273353,How to repeat individual characters in strings in Python,repeat every character for 7 times in string 'map',""""""""""""".join(map(lambda x: x * 7, 'map'))",2739,61,8,0,0,33,0,38,0
+39268928,Python: how to get rid of spaces in str(dict)?,convert dictionary `dict` into a string formatted object,"'{' + ','.join('{0!r}:{1!r}'.format(*x) for x in list(dct.items())) + '}'",2755,61,1,63,0,50,0,38,0

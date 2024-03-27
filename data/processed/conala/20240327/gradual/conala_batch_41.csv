@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+42950,Get Last Day of the Month,Get Last Day of the second month in 2002,"calendar.monthrange(2008, 2)",27,0,2,41,0
+73663,Terminating a Python script,terminate the program,sys.exit(),44,0,4,41,1
+163542,pass a string into subprocess.Popen,set the stdin of the process 'grep f' to be b'one\ntwo\nthree\nfour\nfive\nsix\n',"p = Popen(['grep', 'f'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)
+grep_stdout = p.communicate(input='one\ntwo\nthree\nfour\nfive\nsix\n')[0]",76,0,9,41,1
+403421,"How to sort a list of objects , based on an attribute of the objects?",reverse list `ut` based on the `count` attribute of each object,"ut.sort(key=lambda x: x.count, reverse=True)",181,0,7,41,1
+455612,Limiting floats to two decimal points,limit float 13.949999999999999 to two decimal points,float('{0:.2f}'.format(13.95)),206,0,5,41,0
+533398,"In python 2.4, how can I execute external commands with csh instead of bash?",execute command 'echo $0' in Z shell,"os.system(""zsh -c 'echo $0'"")",228,0,9,41,1
+674519,How can I convert a Python dictionary to a list of tuples?,convert a python dictionary `d` to a list of tuples,"[(v, k) for k, v in list(d.items())]",275,0,1,41,0
+1388818,How can I compare two lists in python and return matches,How can I compare two lists in python and return matches,"[i for i, j in zip(a, b) if i == j]",449,2,7,41,1
+1400608,empty a list,empty a list `lst`,del lst1[:],453,2,7,41,1
+1807026,Initialize a list of objects in Python,initialize a list `lst` of 100 objects Object(),lst = [Object() for _ in range(100)],508,4,7,41,1
+1949318,Checking if a website is up,"Check the status code of url ""http://www.stackoverflow.com""",urllib.request.urlopen('http://www.stackoverflow.com').getcode(),527,4,4,41,1
+2151517,Create Union of All Values Contained in Multiple Lists,get the union of values in list of lists `result_list`,return list(set(itertools.chain(*result_list))),558,5,7,41,1
+2793324,delete a list element by value,delete the element 6 from list `a`,a.remove(6),660,8,7,41,1
+3471999,How do I merge two lists into a single list?,merge two lists `a` and `b` into a single list,"[j for i in zip(a, b) for j in i]",771,11,7,41,1
+4289331,Python: Extract numbers from a string,Python: Extract numbers from a string,"[int(s) for s in re.findall('\\b\\d+\\b', ""he33llo 42 I'm a 32 string 30"")]",910,14,5,41,0
+5201191,Method to sort a list of lists?,sort list of lists `L` by the second item in each list,L.sort(key=operator.itemgetter(1)),1045,18,7,41,1
+5212870,Sorting a Python list by two criteria,Sorting a Python list by two criteria,"sorted(list, key=lambda x: (x[0], -x[1]))",1046,18,7,41,1
+5384570,What's the shortest way to count the number of items in a generator/iterator?,count the number of items in a generator/iterator `it`,sum(1 for i in it),1064,18,7,41,1
+6018916,Find max length of each column in a list of lists,Get the value with the maximum length in each column in array `foo`,[max(len(str(x)) for x in line) for line in zip(*foo)],1118,19,6,41,0
+6612769,"Is there a more elegant way for unpacking keys and values of a dictionary into two lists, without losing consistence?",unpack keys and values of a dictionary `d` into two lists,"keys, values = zip(*list(d.items()))",1162,21,1,41,0
+7349646,Sorting a dictionary of tuples in Python,Sort a list of tuples `b` by third item in the tuple,b.sort(key=lambda x: x[1][2]),1225,22,7,41,1
+9035479,Python - Access object attributes as in a dictionary,Get attribute `my_str` of object `my_object`,"getattr(my_object, my_str)",1383,26,4,41,1
+9224385,"In dictionary, converting the value from string to integer",convert values in dictionary `d` into integers,"{k: int(v) for k, v in d.items()}",1399,27,1,41,0
+9534608,get path from a module name,get complete path of a module named `os`,imp.find_module('os')[1],1420,27,9,41,1
+11205386,Python: BeautifulSoup - get an attribute value based on the name attribute,BeautifulSoup get value associated with attribute 'content' where attribute 'name' is equal to 'City' in tag 'meta' in HTML parsed string `soup`,"soup.find('meta', {'name': 'City'})['content']",1551,31,4,41,1
+11348347,Find non-common elements in lists,"create a set that is the exclusive or of [1, 2, 3] and [3, 4, 5]","set([1, 2, 3]) ^ set([3, 4, 5])",1566,31,7,41,1
+11361985,Output data from all columns in a dataframe in pandas,output data of the first 7 columns of Pandas dataframe,"pandas.set_option('display.max_columns', 7)",1571,31,3,41,0
+15158599,Removing entries from a dictionary based on values,remove false entries from a dictionary `hand`,"{k: v for k, v in list(hand.items()) if v}",1898,39,1,41,0
+15315452,Selecting with complex criteria from pandas.DataFrame,"select values from column 'A' for which corresponding values in column 'B' will be greater than 50, and in column 'C' - equal 900 in dataframe `df`",df['A'][(df['B'] > 50) & (df['C'] == 900)],1913,40,3,41,0
+15352457,How can I sum a column of a list?,sum columns of a list `array`,[sum(row[i] for row in array) for i in range(len(array[0]))],1917,40,6,41,0
+15666169,python + pymongo: how to insert a new field on an existing document in mongo from a for loop,insert a new field 'geolocCountry' on an existing document  'b' using pymongo,"db.Doc.update({'_id': b['_id']}, {'$set': {'geolocCountry': myGeolocCountry}})",1939,41,4,41,1
+16176996,Keep only date part when using pandas.to_datetime,get date from dataframe `df` column 'dates' to column 'just_date',df['just_date'] = df['dates'].dt.date,1973,41,3,41,0
+16772071,sort dict by value python,sort dict `data` by value,"sorted(data, key=data.get)",2005,42,1,41,0
+17457793,Sorting a set of values,sort a set `s` by numerical value,"sorted(s, key=float)",2059,44,7,41,1
+18142090,python: sort a list of lists by an item in the sublist,Sort list `li` in descending order based on the second element of each list inside list`li`,"sorted(li, key=operator.itemgetter(1), reverse=True)",2109,45,7,41,1
+19068269,how to convert a string date into datetime format in python?,convert a string into datetime using the format '%Y-%m-%d %H:%M:%S.%f',"datetime.datetime.strptime(string_date, '%Y-%m-%d %H:%M:%S.%f')",2177,47,2,41,0
+19410585,Add headers in a Flask app with unicode_literals,"add header 'WWWAuthenticate' in a flask app with value 'Basic realm=""test""'","response.headers['WWW-Authenticate'] = 'Basic realm=""test""'",2196,47,4,41,1
+29881993,How can I access elements inside a list within a dictionary python?,"join together with "","" elements inside a list indexed with 'category' within a dictionary `trans`",""""""","""""".join(trans['category'])",2534,56,1,41,0
+32458541,Django can't find URL pattern,Configure url in django properly,"url('^', include('sms.urls')),",2621,58,4,41,1

@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+13145368,Find the maximum value in a list of tuples in Python,get the item at index 0 from the tuple that has maximum value at index 1 in list `lis`,"max(lis, key=itemgetter(1))[0]",1705,35
+13145368,Find the maximum value in a list of tuples in Python,find the first element of the tuple with the maximum second element in a list of tuples `lis`,"max(lis, key=lambda item: item[1])[0]",1706,35
+13156395,Python load json file with UTF-8 BOM header,Open file 'sample.json' in read mode with encoding of 'utf-8-sig',"json.load(codecs.open('sample.json', 'r', 'utf-8-sig'))",1707,35
+13156395,Python load json file with UTF-8 BOM header,load json file 'sample.json' with utf-8 bom header,json.loads(open('sample.json').read().decode('utf-8-sig')),1708,35
+13163145,Multiplying Rows and Columns of Python Sparse Matrix by elements in an Array,multiply the columns of sparse matrix `m` by array `a` then multiply the rows of the resulting matrix by array `a`,"numpy.dot(numpy.dot(a, m), a)",1709,35
+13167391,filtering grouped df in pandas,filter dataframe `grouped` where the length of each group `x` is bigger than 1,grouped.filter(lambda x: len(x) > 1),1710,35
+13168252,Comparing elements between elements in two lists of tuples,Get a list comparing two lists of tuples `l1` and `l2` if any first value in `l1` matches with first value in `l2`,[x[0] for x in l1 if any(x[0] == y[0] for y in l2)],1711,35
+13209288,Python split string based on regex,Split string `input` at every space followed by an upper-case letter,"re.split('[ ](?=[A-Z])', input)",1712,35
+13209288,Python split string based on regex,split string `input` based on occurrences of regex pattern '[ ](?=[A-Z]+\\b)',"re.split('[ ](?=[A-Z]+\\b)', input)",1713,35
+13223737,how to read a file in other directory in python,open file '5_1.txt' in directory `direct`,"x_file = open(os.path.join(direct, '5_1.txt'), 'r')",1714,35
+13237941,sorting list of nested dictionaries in python,sort list of nested dictionaries `yourdata` in reverse based on values associated with each dictionary's key 'subkey',"sorted(yourdata, key=lambda d: d.get('key', {}).get('subkey'), reverse=True)",1715,35
+13237941,sorting list of nested dictionaries in python,reverse list `yourdata`,"sorted(yourdata, reverse=True)",1716,35
+13237941,sorting list of nested dictionaries in python,sort list of nested dictionaries `yourdata` in reverse order of 'key' and 'subkey',"yourdata.sort(key=lambda e: e['key']['subkey'], reverse=True)",1717,35
+13252333,Python check if all elements of a list are the same type,check if all elements in a list 'lst' are the same type 'int',"all(isinstance(x, int) for x in lst)",1718,35
+13252333,Python check if all elements of a list are the same type,Check if all elements in list `lst` are tupples of long and int,"all(isinstance(x, int) for x in lst)",1719,35
+13254241,Removing key values pairs from a list of dictionaries,Removing key values pairs from a list of dictionaries,"[dict((k, v) for k, v in d.items() if k != 'mykey1') for d in mylist]",1720,35
+13254241,Removing key values pairs from a list of dictionaries,removing key values pairs with key 'mykey1' from a list of dictionaries `mylist`,"[{k: v for k, v in d.items() if k != 'mykey1'} for d in mylist]",1721,35
+13277440,How can I get Python to use upper case letters to print hex values?,use upper case letters to print hex value `value`,print('0x%X' % value),1722,35
+13279399,How to obtain values of request variables using Python and Flask,Flask get value of request variable 'firstname',first_name = request.args.get('firstname'),1723,35
+13279399,How to obtain values of request variables using Python and Flask,Flask get posted form data 'firstname',first_name = request.form.get('firstname'),1724,35
+13283689,python sum the values of lists of list,return list `result` of sum of elements of each list `b` in list of lists `a`,result = [sum(b) for b in a],1725,35
+13291539,convert double to float in Python,convert double 0.00582811585976 to float,"struct.unpack('f', struct.pack('f', 0.00582811585976))",1726,35
+13295735,How can I replace all the NaN values with Zero's in a column of a pandas dataframe,replace all the nan values with 0 in a pandas dataframe `df`,df.fillna(0),1727,35
+13303100,how to access the class variable by string in Python?,access the class variable `a_string` from a class object `test`,"getattr(test, a_string)",1728,35
+13324554,Python: Want to use a string as a slice specifier,create a slice object using string `string_slice`,slice(*[(int(i.strip()) if i else None) for i in string_slice.split(':')]),1729,35
+13331419,Prepend the same string to all items in a list,prepend string 'hello' to all items in list 'a',['hello{0}'.format(i) for i in a],1730,35
+13353233,Best way to split a DataFrame given an edge,split dataframe `df` where the value of column `a` is equal to 'B',df.groupby((df.a == 'B').shift(1).fillna(0).cumsum()),1731,35
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for i in range(256):
+    for j in range(256):
+        ip = ('192.168.%d.%d' % (i, j))
+        print(ip)",1732,35
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)",1733,35
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for (i, j) in product(list(range(256)), list(range(256))):
+    pass",1734,35
+13368723,Python split a list into subsets based on pattern,split list `mylist` into a list of lists whose elements have the same first five characters,"[list(v) for k, v in itertools.groupby(mylist, key=lambda x: x[:5])]",1735,35
+13384841,swap values in a tuple/list inside a list in python?,swap values in a tuple/list inside a list `mylist`,"map(lambda t: (t[1], t[0]), mylist)",1736,35
+13384841,swap values in a tuple/list inside a list in python?,Swap values in a tuple/list in list `mylist`,"[(t[1], t[0]) for t in mylist]",1737,35
+13395888,How can I get the color of the last figure in matplotlib?,"make a line plot with errorbars, `ebar`, from data `x, y, err` and set color of the errorbars to `y` (yellow)","ebar = plt.errorbar(x, y, yerr=err, ecolor='y')",1738,35
+13408919,sorting list of tuples by arbitrary key,sort list `mylist` of tuples by arbitrary key from list `order`,"sorted(mylist, key=lambda x: order.index(x[1]))",1739,35
+13411544,Delete column from pandas DataFrame,delete a column `column_name` without having to reassign from pandas data frame `df`,"df.drop('column_name', axis=1, inplace=True)",1740,35
+13411544,Delete column from pandas DataFrame,delete column 'column_name' from dataframe `df`,"df = df.drop('column_name', 1)",1741,35
+13411544,Delete column from pandas DataFrame,"delete 1st, 2nd and 4th columns from dataframe `df`","df.drop(df.columns[[0, 1, 3]], axis=1)",1742,35
+13413590,How to drop rows of Pandas DataFrame whose value in certain columns is NaN,"Drop rows of pandas dataframe `df` having NaN in column at index ""1""",df.dropna(subset=[1]),1743,35

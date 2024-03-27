@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+209840,Map two lists into a dictionary in Python,map two lists `keys` and `values` into a dictionary,"dict((k, v) for k, v in zip(keys, values))",95,0,1,4,0,22,0
+227459,"get the <a href=""http://en.wikipedia.org/wiki/ASCII"" rel=""nofollow noreferrer"">ASCII</a> value of a character as an int",get the ASCII value of a character 'a' as an int,ord('a'),98,0,5,42,0,22,0
+306400,randomly select an item from a list,randomly select an item from list `foo`,random.choice(foo),136,0,7,30,1,22,0
+1747817,Create a dictionary with list comprehension,Create a dictionary `d` from list of key value pairs `iterable`,"d = {k: v for (k, v) in iterable}",496,4,1,18,0,22,0
+1885181,How do I un-escape a backslash-escaped string in python?,"un-escape a backslash-escaped string in `Hello,\\nworld!`","print('""Hello,\\nworld!""'.decode('string_escape'))",519,4,8,0,0,22,0
+1966207,Converting NumPy array into Python List structure?,convert numpy array into python list structure,"np.array([[1, 2, 3], [4, 5, 6]]).tolist()",532,4,6,15,0,22,0
+2158347,"How do I turn a python datetime into a string, with readable format date?","Convert a datetime object `my_datetime` into readable format `%B %d, %Y`","my_datetime.strftime('%B %d, %Y')",562,5,2,47,0,22,0
+2556108,rreplace - How to replace the last occurence of an expression in a string?,replace the last occurence of an expression '</div>' with '</bad>' in a string `s`,"re.sub('(.*)</div>', '\\1</bad>', s)",616,7,8,0,0,22,0
+3277503,read a file line by line into a list,"read file ""file.txt"" line by line into a list `array`","with open('file.txt', 'r') as ins:
+    array = []
+    for line in ins:
+        array.append(line)",730,10,9,40,1,22,0
+3519125,Converting a hex-string representation to actual bytes in Python,convert a hex-string representation to actual bytes,"""""""\\xF3\\xBE\\x80\\x80"""""".replace('\\x', '').decode('hex')",786,11,5,8,0,22,0
+3743222,How do I convert datetime to date (in Python)?,convert datetime object to date object in python,datetime.datetime.now().date(),809,12,2,27,0,22,0
+3855093,"How to make a Python string out of non-ascii ""bytes""",convert list `myintegers` into a unicode string,""""""""""""".join(chr(i) for i in myintegers)",825,12,5,0,0,22,0
+4490961,Numpy: Multiplying a matrix with a 3d tensor -- Suggestion,Multiply a matrix `P` with a 3d tensor `T` in scipy,"scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)",941,15,6,13,0,22,0
+5180365,Python Add Comma Into Number String,format floating point number  `TotalAmount` to be rounded off to two decimal places and have a comma thousands' seperator,"print('Total cost is: ${:,.2f}'.format(TotalAmount))",1042,18,5,10,0,22,0
+6532881,How to make a copy of a 2D array in Python?,make a row-by-row copy `y` of array `x`,y = [row[:] for row in x],1156,20,6,13,0,22,0
+6539881,Python: Converting from ISO-8859-1/latin1 to UTF-8,convert string `apple` from iso-8859-1/latin1 to utf-8,apple.decode('iso-8859-1').encode('utf8'),1157,20,8,0,0,22,0
+7286365,Print a list in reverse order with range()?,reverse the list that contains 1 to 10,list(reversed(list(range(10)))),1219,22,7,30,1,22,0
+9012008,python's re: return True if regex contains in the string,return `True` if string `foobarrrr` contains regex `ba[rzd]`,"bool(re.search('ba[rzd]', 'foobarrrr'))",1382,26,0,64,0,22,0
+9210525,convert hex to decimal,"convert hex string ""0xff"" to decimal","int('0xff', 16)",1397,27,5,27,0,22,0
+9652832,How to I load a tsv file into a Pandas DataFrame?,load a tsv file `c:/~/trainSetRel3.txt` into a pandas data frame,"DataFrame.from_csv('c:/~/trainSetRel3.txt', sep='\t')",1439,28,3,53,0,22,0
+10972410,pandas: combine two columns in a DataFrame,combine two columns `foo` and `bar` in a pandas data frame,"pandas.concat([df['foo'].dropna(), df['bar'].dropna()]).reindex_like(df)",1534,30,3,10,0,22,0
+12307099,Modifying a subset of rows in a pandas dataframe,set the value in column 'B' to NaN if the corresponding value in column 'A' is equal to 0 in pandas dataframe `df`,"df.ix[df.A == 0, 'B'] = np.nan",1635,33,3,3,0,22,0
+12485244,Tuple conversion to a string,convert list of tuples `L` to a string,""""""", """""".join('(' + ', '.join(i) + ')' for i in L)",1651,33,7,59,1,22,0
+12604909,Pandas: how to change all the values of a column?,"pandas: change all the values of a column 'Date' into ""int(str(x)[-4:])""",df['Date'] = df['Date'].apply(lambda x: int(str(x)[-4:])),1661,33,3,40,0,22,0
+12692135,Create dictionary from lists of keys and multiple values,"convert list `[('Name', 'Joe'), ('Age', 22)]` into a dictionary","dict([('Name', 'Joe'), ('Age', 22)])",1665,33,1,20,0,22,0
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame by column `Peak` in ascending and `Weeks` in descending order,"df.sort(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1765,36,3,5,0,22,0
+17467504,Python re.findall print all patterns,Get all matching patterns 'a.*?a' from a string 'a 1 a 2 a 3 a 4 a'.,"re.findall('(?=(a.*?a))', 'a 1 a 2 a 3 a 4 a')",2061,44,0,10,0,22,0
+17794266,How to get the highest element in absolute value in a numpy matrix?,get the highest element in absolute value in a numpy matrix `x`,"max(x.min(), x.max(), key=abs)",2083,44,6,18,0,22,0
+18897261,pandas plot dataframe barplot with colors by category,make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`,"df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])",2169,46,3,60,0,22,0
+19410018,How to count the number of words in a sentence?,count the number of words in a string `s`,len(s.split()),2195,47,0,28,0,22,0
+21164910,Delete Column in Pandas based on Condition,delete all columns in  DataFrame `df` that do not hold a non-zero value in its records,"df.loc[:, ((df != 0).any(axis=0))]",2297,50,3,9,0,22,0
+21771133,finding non-numeric rows in dataframe in pandas?,replace values of dataframe `df` with True if numeric,"df.applymap(lambda x: isinstance(x, (int, float)))",2316,50,3,38,0,22,0
+21787496,converting epoch time with milliseconds to datetime,parse milliseconds epoch time '1236472051807' to format '%Y-%m-%d %H:%M:%S',"time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))",2319,50,2,39,0,22,0
+26153795,Python -Remove Time from Datetime String,Format a datetime string `when` to extract date only,"then = datetime.datetime.strptime(when, '%Y-%m-%d').date()",2438,53,2,58,0,22,0
+31888871,Pandas - replacing column values,replace value 0 with 'Female' and value 1 with 'Male' in column 'sex' of dataframe `data`,"data['sex'].replace([0, 1], ['Female', 'Male'], inplace=True)",2609,58,3,20,0,22,0
+32950347,Cleanest way to get a value from a list element,get value in string `line` matched by regex pattern '\\bLOG_ADDR\\s+(\\S+)',"print(re.search('\\bLOG_ADDR\\s+(\\S+)', line).group(1))",2637,58,0,35,0,22,0
+35561743,python comprehension loop for dictionary,count `True` values associated with key 'one' in dictionary `tadas`,sum(item['one'] for item in list(tadas.values())),2696,60,1,49,0,22,0
+36623789,How to convert unicode text to normal text,convert unicode text from list `elems` with index 0 to normal text 'utf-8',elems[0].getText().encode('utf-8'),2714,60,8,0,0,22,0
+40273313,How to extract first two characters from string using regex,use regex pattern '^12(?=.{4}$)' to remove digit 12 if followed by 4 other digits in column `c_contofficeID` of dataframe `df`,"df.c_contofficeID.str.replace('^12(?=.{4}$)', '')",2793,62,3,59,0,22,0

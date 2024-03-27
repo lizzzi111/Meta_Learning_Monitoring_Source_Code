@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+36139,How do I sort a list of strings in Python?,sort a list of strings 'mylist'.,mylist.sort(),22,0,7,56,1
+82831,check whether a file exists,check whether file `file_path` exists,os.path.exists(file_path),50,0,9,56,1
+311627,print date in a regular format,print current date and time in a regular format,time.strftime('%Y-%m-%d %H:%M'),139,0,2,56,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"[i for (i, x) in enumerate(testlist) if (x == 1)]",161,0,7,56,1
+610883,know if an object has an attribute,check if object `a` has property 'property',"if hasattr(a, 'property'):
+    pass",245,0,4,56,1
+773814,Plot logarithmic axes with matplotlib in python,plot logarithmic axes with matplotlib,ax.set_yscale('log'),325,0,4,56,1
+902408,How to use variables in SQL statement in Python?,"Execute a sql statement using variables `var1`, `var2` and `var3`","cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))",356,0,4,56,1
+2231663,Slicing a list into a list of sub-lists,"slice list `[1, 2, 3, 4, 5, 6, 7]` into lists of two elements each","list(grouper(2, [1, 2, 3, 4, 5, 6, 7]))",578,6,7,56,1
+2233917,How to input an integer tuple from user?,input an integer tuple from user,"tuple(map(int, input().split(',')))",580,6,5,56,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (letter, number) in list(d.items()):
+    pass",738,10,1,56,0
+3724551,Python: Uniqueness for list of lists,uniqueness for list of lists `testdata`,[list(i) for i in set(tuple(i) for i in testdata)],803,11,7,56,1
+4174941,sort a list of lists by a specific index of the inner list,sort a list of lists `l` by index 2 of the inner list,l.sort(key=(lambda x: x[2])),893,14,7,56,1
+6886493,Get all object attributes,Get all object attributes of an object,dir(),1182,21,4,56,1
+8081545,convert list of tuples to multiple lists in Python,"convert tuple elements in list `[(1,2),(3,4),(5,6),]` into lists","map(list, zip(*[(1, 2), (3, 4), (5, 6)]))",1277,24,7,56,1
+8556076,Python - How to extract the last x elements from a list,get the last 10 elements from a list `my_list`,my_list[-10:],1338,25,7,56,1
+8785554,How do I insert a list at the front of another list?,insert a list `k` at the front of list `a`,"a.insert(0, k)",1363,26,7,56,1
+9402255,Drawing a huge graph with networkX and matplotlib,save current figure to file 'graph.png' with resolution of 1000 dpi,"plt.savefig('graph.png', dpi=1000)",1412,27,9,56,1
+9573244,Most elegant way to check if the string is empty,check if string `some_string` is empty,"if (not some_string):
+    pass",1429,27,0,56,0
+10408927,How to get all sub-elements of an element tree with Python ElementTree?,get all sub-elements of an element tree `a` excluding the root element,[elem.tag for elem in a.iter() if elem is not a],1489,29,7,56,1
+11533274,How can I combine dictionaries with the same keys in python?,combine list of dictionaries `dicts` with the same keys in each list to a single dictionary,"dict((k, [d[k] for d in dicts]) for k in dicts[0])",1584,31,1,56,0
+13252333,Python check if all elements of a list are the same type,check if all elements in a list 'lst' are the same type 'int',"all(isinstance(x, int) for x in lst)",1718,35,7,56,1
+13902805,List of all unique characters in a string?,create a list of all unique characters in string 'aaabcabccd',""""""""""""".join(list(OrderedDict.fromkeys('aaabcabccd').keys()))",1786,37,0,56,0
+14859458,How to check if all values in the columns of a numpy matrix are the same?,check if all values in the columns of a numpy matrix `a` are same,"np.all(a == a[(0), :], axis=0)",1869,39,6,56,0
+15248272,python list comprehension with multiple 'if's,list comprehension that produces integers between 11 and 19,[i for i in range(100) if i > 10 if i < 20],1903,40,5,56,0
+16096754,remove None value from a list without removing the 0 value,remove None value from list `L`,[x for x in L if x is not None],1963,41,7,56,1
+17589590,Can I get a list of the variables that reference an other in Python 2.7?,"Define a list with string values `['a', 'c', 'b', 'obj']`","['a', 'c', 'b', 'obj']",2069,44,7,56,1
+18022241,'List of lists' to 'list' without losing empty lists from the original list of lists,convert a list of lists `list_of_lists` into a list of strings keeping empty sub-lists as empty string '',[''.join(l) for l in list_of_lists],2098,45,7,56,1
+19328874,Python - read text file with weird utf-16 format,open a text file `data.txt` in io module with encoding `utf-16-le`,"file = io.open('data.txt', 'r', encoding='utf-16-le')",2190,47,9,56,1
+21800169,Python Pandas: Get index of rows which column matches certain value,get index of rows in column 'BoolCol',df.loc[df['BoolCol']],2323,50,6,56,0
+24958010,get key by value in dictionary with same value in python?,get keys with same value in dictionary `d`,print([key for key in d if d[key] == 1]),2414,53,1,56,0
+26727314,Multiple files for one argument in argparse Python 2.7,argparse associate zero or more arguments with flag 'file',"parser.add_argument('file', nargs='*')",2449,54,9,56,1
+29471884,Get the immediate minimum among a list of numbers in python,get the next value greatest to `2` from a list of numbers `num_list`,min([x for x in num_list if x > 2]),2522,55,7,56,1
+31258561,get current directory - Python,Get the current directory of a script,os.path.basename(os.path.dirname(os.path.realpath(__file__))),2577,57,9,56,1
+31818050,round number to nearest integer,round number 1.0005 up to 3 decimal places,"round(1.0005, 3)",2599,57,5,56,0
+34527388,How to click on the text button using selenium python,click on the text button 'section-select-all' using selenium python,browser.find_element_by_class_name('section-select-all').click(),2669,59,4,56,1
+34543513,Find maximum with limited length in a list,find maximum with lookahead = 4 in a list `arr`,"[max(abs(x) for x in arr[i:i + 4]) for i in range(0, len(arr), 4)]",2670,59,7,56,1
+36518800,Sort a list in python based on another sorted list,sort a list `unsorted_list` based on another sorted list `presorted_list`,"sorted(unsorted_list, key=presorted_list.index)",2712,60,7,56,1
+37934969,Creating a Pandas dataframe from elements of a dictionary,create a pandas dataframe `df` from elements of a dictionary `nvalues`,"df = pd.DataFrame.from_dict({k: v for k, v in list(nvalues.items()) if k != 'y3'})",2730,61,3,56,0
+40384599,Sorting a list of tuples by the addition of second and third element of the tuple,sort list `a` in ascending order based on the addition of the second and third elements of each tuple in it,"sorted(a, key=lambda x: (sum(x[1:3]), x[0]))",2797,63,7,56,1

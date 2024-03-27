@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+1406145,How do I get rid of Python Tkinter root window?,How do I get rid of Python Tkinter root window?,root.destroy(),457,3
+1447575,Symlinks on windows?,create a symlink directory `D:\\testdirLink` for directory `D:\\testdir` with unicode support using ctypes library,"kdll.CreateSymbolicLinkW('D:\\testdirLink', 'D:\\testdir', 1)",458,3
+1450393,read from stdin,read line by line from stdin,"for line in fileinput.input():
+    pass",459,3
+1450393,read from stdin,read line by line from stdin,"for line in sys.stdin:
+    pass",460,3
+1450897,Python: removing characters except digits from string,substitute ASCII letters in string 'aas30dsa20' with empty string '',"re.sub('\\D', '', 'aas30dsa20')",461,3
+1450897,Python: removing characters except digits from string,get digits only from a string `aas30dsa20` using lambda function,""""""""""""".join([x for x in 'aas30dsa20' if x.isdigit()])",462,3
+1456617,Return a random word from a word list in python,return a random word from a word list 'words',print(random.choice(words)),463,3
+1482308,what's a good way to combinate through a set?,create a list with permutations of string 'abcd',list(powerset('abcd')),464,3
+1514553,declare an array,declare an array `variable`,variable = [],465,3
+1514553,declare an array,declare an array with element 'i',intarray = array('i'),466,3
+1516795,"In Django, how do I filter based on all entities in a many-to-many relation instead of any?","In Django, filter `Task.objects` based on all entities in ['A', 'P', 'F']","Task.objects.exclude(prerequisites__status__in=['A', 'P', 'F'])",467,3
+1532810,How to read lines from a file into a multidimensional array (or an array of lists) in python,read lines from a csv file `./urls-eu.csv` into a list of lists `arr`,"arr = [line.split(',') for line in open('./urls-eu.csv')]",468,3
+1534542,Can I sort text by its numeric value in Python?,Can I sort text by its numeric value in Python?,"sorted(list(mydict.items()), key=lambda a: map(int, a[0].split('.')))",469,3
+1546226,A simple way to remove multiple spaces in a string in Python,remove multiple spaces in a string `foo`,""""""" """""".join(foo.split())",470,3
+1547733,How to sort this list in Python?,reverse sort list of dicts `l` by value for key `time`,"l = sorted(l, key=itemgetter('time'), reverse=True)",471,3
+1547733,How to sort this list in Python?,Sort a list of dictionary `l` based on key `time` in descending order,"l = sorted(l, key=lambda a: a['time'], reverse=True)",472,3
+1555968,Efficient way to find the largest key in a dictionary with non-zero value,get the largest key whose not associated with value of 0 in dictionary `x`,"(k for k, v in x.items() if v != 0)",473,3
+1555968,Efficient way to find the largest key in a dictionary with non-zero value,get the largest key in a dictionary `x` with non-zero value,"max(k for k, v in x.items() if v != 0)",474,3
+1555968,Efficient way to find the largest key in a dictionary with non-zero value,find the key associated with the largest value in dictionary `x` whilst key is non-zero value,"max(k for k, v in x.items() if v != 0)",475,3
+1580270,What's the best way to search for a Python dictionary value in a list of dictionaries?,What's the best way to search for a Python dictionary value in a list of dictionaries?,any(d['site'] == 'Superuser' for d in data),476,3
+1592158,Convert hex to float,convert hex string '470FC614' to a float number,"struct.unpack('!f', '470FC614'.decode('hex'))[0]",477,3
+1602934,Check if a given key already exists in a dictionary,Check if key 'key1' in `dict`,('key1' in dict),478,3
+1602934,Check if a given key already exists in a dictionary,Check if a given key `key` exists in dictionary `d`,"if (key in d):
+    pass",479,3
+1602934,Check if a given key already exists in a dictionary,Check if a given key 'key1' exists in dictionary `dict`,"if ('key1' in dict):
+    pass",480,3
+1602934,Check if a given key already exists in a dictionary,Check if key 'c' in `d`,('c' in d),481,3
+1602934,Check if a given key already exists in a dictionary,Check if key 'a' in `d`,('a' in d),482,3
+1614236,"In Python, how do I convert all of the items in a list to floats?",convert all of the items in a list `lst` to float,[float(i) for i in lst],483,3
+1666700,How to count the number of times something occurs inside a certain string?,count number of times string 'brown' occurred in string 'The big brown fox is brown',"""""""The big brown fox is brown"""""".count('brown')",484,3
+1679798,How to open a file with the standard application?,"open a file ""$file"" under Unix","os.system('start ""$file""')",485,3
+1683775,Sort a multidimensional list by a variable number of keys,sort a multidimensional list `a` by second and third column,"a.sort(key=operator.itemgetter(2, 3))",486,3
+1712227,get the size of a list,get the size of list `items`,len(items),487,3
+1712227,get the size of a list,"get the size of a list `[1,2,3]`","len([1, 2, 3])",488,3
+1712227,get the size of a list,get the size of object `items`,items.__len__(),489,3
+1712227,get the size of a list,function to get the size of object,len(),490,3
+1712227,get the size of a list,get the size of list `s`,len(s),491,3
+1713594,Parse a string with a date to a datetime object,parse string '01-Jan-1995' into a datetime object using format '%d-%b-%Y',"datetime.datetime.strptime('01-Jan-1995', '%d-%b-%Y')",492,3
+1720421,concatenate lists,iterate items in lists `listone` and `listtwo`,"for item in itertools.chain(listone, listtwo):
+    pass",493,3
+1720421,concatenate lists,concatenate lists `listone` and `listtwo`,(listone + listtwo),494,3
+1731346,How to get two random records with Django,get two random records from model 'MyModel' in Django,MyModel.objects.order_by('?')[:2],495,3

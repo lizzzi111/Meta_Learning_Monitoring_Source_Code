@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+42950,Get Last Day of the Month,Get Last Day of the month `month` in year `year`,"calendar.monthrange(year, month)[1]",28,0,2,42,0,53,0,12,1
+42950,Get Last Day of the Month,Get Last Day of the second month in 2100,"calendar.monthrange(2100, 2)",29,0,2,20,0,62,0,12,1
+466345,Converting string into datetime,"parse string ""Jun 1 2005  1:33PM"" into datetime by format ""%b %d %Y %I:%M%p""","datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')",208,0,2,6,0,36,0,12,1
+546321,calculate the date six months from the current date,calculate the date six months from the current date,print((datetime.date.today() + datetime.timedelta(((6 * 365) / 12))).isoformat()),231,0,2,38,0,29,0,12,1
+748491,How do I create a datetime in Python from milliseconds?,convert `ms` milliseconds to a datetime object,datetime.datetime.fromtimestamp(ms / 1000.0),308,0,2,6,0,43,0,12,1
+2040038,Sorting datetime objects while ignoring the year?,sort datetime objects `birthdays` by `month` and `day`,"birthdays.sort(key=lambda d: (d.month, d.day))",535,5,2,18,0,14,0,12,1
+2150739,ISO Time (ISO 8601) in Python,get UTC datetime in ISO format,datetime.datetime.utcnow().isoformat(),556,5,2,53,0,16,0,12,1
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = dict((k, v) for k, v in kwargs.items() if v is not None)",611,6,1,60,0,44,0,12,0
+3276180,Extracting date from a string in Python,extract date from a string `monkey 10/01/1980 love banana`,"dparser.parse('monkey 10/01/1980 love banana', fuzzy=True)",727,9,2,7,0,18,0,12,1
+3475251,Split a string by a delimiter in python,Split a string by a delimiter in python,[x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')],772,11,8,0,0,2,0,12,0
+3743222,How do I convert datetime to date (in Python)?,convert datetime object to date object in python,datetime.datetime.now().date(),809,12,2,27,0,22,0,12,1
+4170655,how to convert a datetime string back to datetime object?,convert a DateTime string back to a DateTime object of format '%Y-%m-%d %H:%M:%S.%f',"datetime.strptime('2010-11-13 10:33:54.227806', '%Y-%m-%d %H:%M:%S.%f')",889,14,2,18,0,39,0,12,1
+4530069,"Python: How to get a value of datetime.today() that is ""timezone aware""?",get a value of datetime.today() in the UTC time zone,datetime.now(pytz.utc),945,15,2,38,0,64,0,12,1
+4830535,Python: How do I format a date in Jinja2?,Jinja parse datetime object `car.date_of_manufacture` to use format pattern `datetime`,{{car.date_of_manufacture | datetime}},995,16,2,11,0,37,0,12,1
+5868374,Convert a string to datetime object in python,Parse string `datestr` into a datetime object using format pattern '%Y-%m-%d',"dateobj = datetime.datetime.strptime(datestr, '%Y-%m-%d').date()",1104,19,2,2,0,44,0,12,1
+5882405,Get date from ISO week number in Python,convert string '2011221' into a DateTime object using format '%Y%W%w',"datetime.strptime('2011221', '%Y%W%w')",1106,19,2,14,0,53,0,12,1
+6378889,How to convert a string list into an integer in python,convert string `user_input` into a list of integers `user_list`,"user_list = [int(number) for number in user_input.split(',')]",1140,20,5,3,0,3,0,12,0
+6677332,Using %f with strftime() in Python to get microseconds,Using %f with strftime() in Python to get microseconds,datetime.datetime.now().strftime('%H:%M:%S.%f'),1169,21,2,1,0,39,0,12,1
+8777753,Converting datetime.date to UTC timestamp in Python,convert datetime.date `dt` to utc timestamp,"timestamp = (dt - datetime(1970, 1, 1)).total_seconds()",1362,26,2,8,0,50,0,12,1
+9609375,how to call multiple bash functions using | in python,call multiple bash function ‘vasp’ and ‘tee tee_output’ using ‘|’,"subprocess.check_call('vasp | tee tee_output', shell=True)",1432,28,9,60,1,30,0,12,0
+9621388,(Django) how to get month name?,how to get month name of datetime `today`,today.strftime('%B'),1434,28,2,61,0,60,0,12,1
+10624937,Convert datetime object to a String of date only in Python,format datetime in `dt` as string in format `'%m/%d/%Y`,dt.strftime('%m/%d/%Y'),1511,30,2,12,0,32,0,12,1
+10974932,python split string based on regular expression,python split string based on regular expression,"re.findall('\\S+', str1)",1538,30,0,9,0,9,0,12,0
+12772057,how to format date in ISO using python?,Format a date object `str_data` into iso fomrat,"datetime.datetime.strptime(str_date, '%m/%d/%Y').date().isoformat()",1671,34,2,63,0,40,0,12,1
+15158599,Removing entries from a dictionary based on values,remove false entries from a dictionary `hand`,"{k: v for k, v in list(hand.items()) if v}",1898,39,1,41,0,29,0,12,0
+15509617,How to obtain the day of the week in a 3 letter format from a datetime object in python?,obtain the current day of the week in a 3 letter format from a datetime object,datetime.datetime.now().strftime('%a'),1931,40,2,60,0,16,0,12,1
+16766643,Convert Date String to Day of Week,Convert Date String to Day of Week,"datetime.datetime.strptime('January 11, 2010', '%B %d, %Y').strftime('%a')",2003,42,2,38,0,63,0,12,1
+16994696,python get time stamp on file in mm/dd/yyyy format,python get time stamp on file `file` in '%m/%d/%Y' format,"time.strftime('%m/%d/%Y', time.gmtime(os.path.getmtime(file)))",2015,42,2,30,0,38,0,12,1
+18724607,Python date string formatting,Python date string formatting,"""""""{0.month}/{0.day}/{0.year}"""""".format(my_date)",2159,46,2,5,0,33,0,12,1
+21618351,Format time string in Python 3.3,format current date to pattern '{%Y-%m-%d %H:%M:%S}',time.strftime('{%Y-%m-%d %H:%M:%S}'),2312,50,2,2,0,49,0,12,1
+21787496,converting epoch time with milliseconds to datetime,parse milliseconds epoch time '1236472051807' to format '%Y-%m-%d %H:%M:%S',"time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))",2319,50,2,39,0,22,0,12,1
+23797491,Parse_dates in Pandas,convert date strings in pandas dataframe column`df['date']` to pandas timestamps using the format '%d%b%Y',"df['date'] = pd.to_datetime(df['date'], format='%d%b%Y')",2388,52,2,48,0,53,0,12,1
+25279993,Parsing non-zero padded timestamps in Python,parse string '2015/01/01 12:12am' to DateTime object using format '%Y/%m/%d %I:%M%p',"datetime.strptime('2015/01/01 12:12am', '%Y/%m/%d %I:%M%p')",2419,53,2,4,0,23,0,12,1
+26153795,Python -Remove Time from Datetime String,Format a datetime string `when` to extract date only,"then = datetime.datetime.strptime(when, '%Y-%m-%d').date()",2438,53,2,58,0,22,0,12,1
+27587127,How to convert datetime.date.today() to UTC time?,return a DateTime object with the current UTC date,today = datetime.datetime.utcnow().date(),2465,54,2,2,0,52,0,12,1
+29311354,How to set the timezone in Django?,Set time zone `Europe/Istanbul` in Django,TIME_ZONE = 'Europe/Istanbul',2511,55,2,13,0,36,0,12,1
+29530232,Python pandas: check if any value is NaN in DataFrame,check if datafram `df` has any NaN vlaues,df.isnull().values.any(),2523,55,3,12,0,51,0,12,0
+30483977,Python - Get Yesterday's date as a string in YYYY-MM-DD format,get yesterday's date as a string in `YYYY-MM-DD` format using timedelta,(datetime.now() - timedelta(1)).strftime('%Y-%m-%d'),2552,56,2,5,0,16,0,12,1
+32490629,Getting today's date in YYYY-MM-DD in Python?,Getting today's date in YYYY-MM-DD,datetime.datetime.today().strftime('%Y-%m-%d'),2624,58,2,8,0,38,0,12,1

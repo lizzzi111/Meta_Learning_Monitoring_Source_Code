@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+2225564,Get a filtered list of files in a directory,create a list `files` containing all files in directory '.' that starts with numbers between 0 and 9 and ends with the extension '.jpg',"files = [f for f in os.listdir('.') if re.match('[0-9]+.*\\.jpg', f)]",574,6
+2229827,Django urlsafe base64 decoding with decryption,django urlsafe base64 decode string `uenc` with decryption,base64.urlsafe_b64decode(uenc.encode('ascii')),575,6
+2231663,Slicing a list into a list of sub-lists,"get a list of tuples of every three consecutive items in list `[1, 2, 3, 4, 5, 6, 7, 8, 9]`","list(zip(*((iter([1, 2, 3, 4, 5, 6, 7, 8, 9]),) * 3)))",576,6
+2231663,Slicing a list into a list of sub-lists,Slicing a list into a list of sub-lists,"[input[i:i + n] for i in range(0, len(input), n)]",577,6
+2231663,Slicing a list into a list of sub-lists,"slice list `[1, 2, 3, 4, 5, 6, 7]` into lists of two elements each","list(grouper(2, [1, 2, 3, 4, 5, 6, 7]))",578,6
+2233917,How to input an integer tuple from user?,input a tuple of integers from user,"tuple(int(x.strip()) for x in input().split(','))",579,6
+2233917,How to input an integer tuple from user?,input an integer tuple from user,"tuple(map(int, input().split(',')))",580,6
+2261011,How can I resize the root window in Tkinter?,How can I resize the root window in Tkinter?,root.geometry('500x500'),581,6
+2269827,convert an int to a hex string,convert an int 65 to hex string,hex(65),582,6
+2276416,Extending a list of lists in Python?,create list `y` containing two empty lists,y = [[] for n in range(2)],583,6
+2300756,Get the nth item of a generator in Python,get the 5th item of a generator,"next(itertools.islice(range(10), 5, 5 + 1))",584,6
+2317134,How do I use a regular expression to match a name?,Match regex '[a-zA-Z][\\w-]*\\Z' on string 'A\n',"re.match('[a-zA-Z][\\w-]*\\Z', 'A\n')",585,6
+2317134,How do I use a regular expression to match a name?,match regex '[a-zA-Z][\\w-]*$' on string '!A_B',"re.match('[a-zA-Z][\\w-]*$', '!A_B')",586,6
+2331943,decode JSON,decode JSON string `u` to a dictionary,json.load(u),587,6
+2338531,Python sorting - A list of objects,sort a list of objects 'somelist' where the object has member number variable `resultType`,somelist.sort(key=lambda x: x.resultType),588,6
+2338531,Python sorting - A list of objects,sort a list of objects `s` by a member variable 'resultType',s.sort(key=operator.attrgetter('resultType')),589,6
+2338531,Python sorting - A list of objects,sort list `L` based on the value of variable 'resultType' for each object in list `L`,"sorted(L, key=operator.itemgetter('resultType'))",590,6
+2354166,How do you modify sys.path in Google App Engine (Python)?,Insert directory 'apps' into directory `__file__`,"sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))",591,6
+2354166,How do you modify sys.path in Google App Engine (Python)?,modify sys.path for python module `subdir`,"sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))",592,6
+2372573,How do I remove whitespace from the end of a string in Python?,"remove white spaces from the end of string ""    xyz     ""","""""""    xyz     """""".rstrip()",593,6
+2375335,"In Django, how do I clear a sessionkey?",clear session key 'mykey',del request.session['mykey'],594,6
+2389846,Python Decimals format,format a string `num` using string formatting,"""""""{0:.3g}"""""".format(num)",595,6
+2397687,What's the easiest way to convert a list of hex byte strings to a list of hex integers?,"convert a list of hex byte strings `['BB', 'A7', 'F6', '9E']` to a list of hex integers","[int(x, 16) for x in ['BB', 'A7', 'F6', '9E']]",596,6
+2397687,What's the easiest way to convert a list of hex byte strings to a list of hex integers?,convert the elements of list `L` from hex byte strings to hex integers,"[int(x, 16) for x in L]",597,6
+2406700,Accented characters in Matplotlib,"set an array of unicode characters `[u'\xe9', u'\xe3', u'\xe2']` as labels in Matplotlib `ax`","ax.set_yticklabels(['\xe9', '\xe3', '\xe2'])",598,6
+2407398,merge lists into a list of tuples,merge lists `list_a` and `list_b` into a list of tuples,"zip(list_a, list_b)",599,6
+2407398,merge lists into a list of tuples,merge lists `a` and `a` into a list of tuples,"list(zip(a, b))",600,6
+2416823,How to get the content of a Html page in Python,Get all the texts without tags from beautiful soup object `soup`,""""""""""""".join(soup.findAll(text=True))",601,6
+2424412,What is the easiest way to convert list with str into list with int?,convert list with str into list with int,"list(map(int, ['1', '2', '3']))",602,6
+2424412,What is the easiest way to convert list with str into list with int?,"convert a list with string `['1', '2', '3']` into list with integers","map(int, ['1', '2', '3'])",603,6
+2424412,What is the easiest way to convert list with str into list with int?,convert list of strings `str_list` into list of integers,[int(i) for i in str_list],604,6
+2428092,Creating a JSON response using Django and Python,create a json response `response_data`,"return HttpResponse(json.dumps(response_data), content_type='application/json')",605,6
+2430539,How do I get all the keys that are stored in the Cassandra column family with pycassa?,get a list of all keys in Cassandra database `cf` with pycassa,list(cf.get_range().get_keys()),606,6
+2497027,read a binary file (python),read a binary file 'test/test.pdf',"f = open('test/test.pdf', 'rb')",607,6
+2508861,Python: Convert a string to an integer,Python: Convert a string to an integer,int('  23  '),608,6
+2514961,Remove all values within one list from another list in python,"remove all values within one list `[2, 3, 7]` from another list `a`","[x for x in a if x not in [2, 3, 7]]",609,6
+2527892,Parsing a tweet to extract hashtags into an array in Python,pars a string 'http://example.org/#comments' to extract hashtags into an array,"re.findall('#(\\w+)', 'http://example.org/#comments')",610,6
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = dict((k, v) for k, v in kwargs.items() if v is not None)",611,6
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = {k: v for k, v in list(kwargs.items()) if v is not None}",612,6

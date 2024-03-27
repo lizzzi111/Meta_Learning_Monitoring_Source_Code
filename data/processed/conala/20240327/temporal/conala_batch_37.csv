@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+13842088,Set value for particular cell in pandas DataFrame,set the value of cell `['x']['C']` equal to 10 in dataframe `df`,df['x']['C'] = 10,1783,37
+13860026,update dictionary with dynamic keys and values in python,update the dictionary `mydic` with dynamic keys `i` and values with key 'name' from dictionary `o`,mydic.update({i: o['name']}),1784,37
+13891559,Is there a more pythonic way of exploding a list over a function's arguments?,unpack elements of list `i` as arguments into function `foo`,foo(*i),1785,37
+13902805,List of all unique characters in a string?,create a list of all unique characters in string 'aaabcabccd',""""""""""""".join(list(OrderedDict.fromkeys('aaabcabccd').keys()))",1786,37
+13902805,List of all unique characters in a string?,get list of all unique characters in a string 'aaabcabccd',list(set('aaabcabccd')),1787,37
+13902805,List of all unique characters in a string?,List of all unique characters in a string?,""""""""""""".join(set('aaabcabccd'))",1788,37
+13905936,converting integer to list in python,create a list containing digits of number 123 as its elements,list(str(123)),1789,37
+13905936,converting integer to list in python,converting integer `num` to list,[int(x) for x in str(num)],1790,37
+13945749,String Formatting in Python 3,format the variables `self.goals` and `self.penalties` using string formatting,"""""""({:d} goals, ${:d})"""""".format(self.goals, self.penalties)",1791,37
+13945749,String Formatting in Python 3,"format string ""({0.goals} goals, ${0.penalties})""","""""""({0.goals} goals, ${0.penalties})"""""".format(self)",1792,37
+13945749,String Formatting in Python 3,"format string ""({} goals, ${})"" with variables `goals` and `penalties`","""""""({} goals, ${})"""""".format(self.goals, self.penalties)",1793,37
+13954222,How to join mixed list (array) (with integers in it) in Python?,"concatenate elements of list `b` by a colon "":""",""""""":"""""".join(str(x) for x in b)",1794,37
+13954840,How do I convert LF to CRLF?,open the file 'words.txt' in 'rU' mode,"f = open('words.txt', 'rU')",1795,37
+13999850,How to specify date format when using pandas.to_csv?,write dataframe `df` to csv file `filename` with dates formatted as yearmonthday  `%Y%m%d`,"df.to_csv(filename, date_format='%Y%m%d')",1796,37
+14026704,How do I get the url parameter in a Flask view,How do I get the url parameter in a Flask view,request.args['myParam'],1797,37
+14041791,print variable and a string in python,Print a string `card` with string formatting,print('I have: {0.price}'.format(card)),1798,37
+14043080,"Using Python's datetime module, can I get the year that UTC-11 is currently in?","using python's datetime module, get the year that utc-11 is currently in",(datetime.datetime.utcnow() - datetime.timedelta(hours=11)).year,1799,37
+14043934,time offset,subtract 5 hours from the time object `dt`,dt -= datetime.timedelta(hours=5),1800,37
+14043934,time offset,add 1 hour and 2 minutes to time object `t`,"dt = datetime.datetime.combine(datetime.date.today(), t)",1801,37
+14043934,time offset,subtract 1 hour and 10 minutes from time object `t`,"(t - datetime.timedelta(hours=1, minutes=10))",1802,37
+14043934,time offset,substract 1 hour and 10 minutes from current time,"t = datetime.datetime.now()
+(t - datetime.timedelta(hours=1, minutes=10))",1803,37
+14050824,Add SUM of values of two LISTS into new LIST,sum each element `x` in list `first` with element `y` at the same index in list `second`.,"[(x + y) for x, y in zip(first, second)]",1804,37
+14104778,Set execute bit for a file using python,Change the mode of file 'my_script.sh' to permission number 484,"os.chmod('my_script.sh', 484)",1805,37
+14111705,Displaying a grayscale Image,display a grayscale image from array of pixels `imageArray`,"imshow(imageArray, cmap='Greys_r')",1806,37
+14159753,how to change the size of the sci notation above the y axis in matplotlib?,change the size of the sci notation to '30' above the y axis in matplotlib `plt`,"plt.rc('font', **{'size': '30'})",1807,37
+14162026,How to get the values from a NumPy array using multiple indices,"get the first row, second column; second row, first column, and first row third column values of numpy array `arr`","arr[[0, 1, 1], [1, 0, 2]]",1808,37
+14169122,Generating all unique pair permutations,generate a list of all unique pairs of integers in `range(9)`,"list(permutations(list(range(9)), 2))",1809,37
+14180866,sum each value in a list of tuples,create a list with the sum of respective elements of the tuples of list `l`,[sum(x) for x in zip(*l)],1810,37
+14180866,sum each value in a list of tuples,sum each value in a list `l` of tuples,"map(sum, zip(*l))",1811,37
+14182339,Matching multiple regex patterns with the alternation operator?,"get whatever is between parentheses as a single match, and any char outside as an individual match in string '(zyx)bc'","re.findall('\\(.+?\\)|\\w', '(zyx)bc')",1812,37
+14182339,Matching multiple regex patterns with the alternation operator?,match multiple regex patterns with the alternation operator `|` in a string `(zyx)bc`,"re.findall('\\(.*?\\)|\\w', '(zyx)bc')",1813,37
+14182339,Matching multiple regex patterns with the alternation operator?,match regex '\\((.*?)\\)|(\\w)' with string '(zyx)bc',"re.findall('\\((.*?)\\)|(\\w)', '(zyx)bc')",1814,37
+14227561,Find a value within nested json dictionary in python,find a value within nested json 'data' where the key inside another key 'B' is unknown.,list(data['A']['B'].values())[0]['maindata'][0]['Info'],1815,37
+14247586,Python Pandas How to select rows with one or more nulls from a DataFrame without listing columns explicitly?,get data of columns with Null values in dataframe `df`,df[pd.isnull(df).any(axis=1)],1816,37
+14262654,Numpy: Get random set of rows from 2D array,create a new 2 dimensional array containing two random rows from array `A`,"A[(np.random.randint(A.shape[0], size=2)), :]",1817,37
+14262654,Numpy: Get random set of rows from 2D array,create a new 2D array with 2 random rows from array `A`,"A[(np.random.choice(A.shape[0], 2, replace=False)), :]",1818,37
+14295673,Convert string into datetime.time object,Convert string '03:55' into datetime.time object,"datetime.datetime.strptime('03:55', '%H:%M').time()",1819,37
+14299978,How to use lxml to find an element by text?,Find the`a` tag in html `root` which starts with the text `TEXT A`  and assign it to `e`,"e = root.xpath('.//a[starts-with(text(),""TEXT A"")]')",1820,37
+14299978,How to use lxml to find an element by text?,find the element that holds string 'TEXT A' in file `root`,"e = root.xpath('.//a[text()=""TEXT A""]')",1821,37

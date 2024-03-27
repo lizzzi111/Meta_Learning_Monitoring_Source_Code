@@ -1,0 +1,46 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+2990121,loop through a Python list by twos,loop through `mylist` with step 2,"for i in mylist[::2]:
+    pass",691,9
+2990121,loop through a Python list by twos,loop through 0 to 10 with step 2,"for i in range(0, 10, 2):
+    pass",692,9
+3008992,case sensitive string replacement in Python,replace a string `Abc` in case sensitive way using maketrans,"""""""Abc"""""".translate(maketrans('abcABC', 'defDEF'))",693,9
+3034014,How to apply itertools.product to elements of a list of lists?,apply itertools.product to elements of a list of lists `arrays`,list(itertools.product(*arrays)),694,9
+3040904,Save JSON outputed from a URL to a file,save json output from a url ‘http://search.twitter.com/search.json?q=hi’ to file ‘hi.json’ in Python 2,"urllib.request.urlretrieve('http://search.twitter.com/search.json?q=hi', 'hi.json')",695,9
+3059301,Manipulating binary data in Python,Return the decimal value for each hex character in data `data`,print(' '.join([str(ord(a)) for a in data])),696,9
+3059301,Manipulating binary data in Python,encode string `data` using hex 'hex' encoding,print(data.encode('hex')),697,9
+3061761,Numpy array dimensions,get the dimensions of numpy array `a`,a.shape,698,9
+3061761,Numpy array dimensions,get the dimensions of array `a`,N.shape(a),699,9
+3061761,Numpy array dimensions,get the dimensions of numpy array `a`,N.shape(a),700,9
+3061761,Numpy array dimensions,get the dimensions of numpy array `a`,a.shape,701,9
+3090175,Python - Find the greatest number in a set of numbers,"Find the greatest number in set `(1, 2, 3)`","print(max(1, 2, 3))",702,9
+3097866,Access an arbitrary element in a dictionary in Python,Retrieve an arbitrary value from dictionary `dict`,next(iter(dict.values())),703,9
+3097866,Access an arbitrary element in a dictionary in Python,access an arbitrary value from dictionary `dict`,next(iter(list(dict.values()))),704,9
+3108042,Get max key in dictionary,get max key in dictionary `MyCount`,"max(list(MyCount.keys()), key=int)",705,9
+3108285,"In Python script, how do I set PYTHONPATH?",set pythonpath in python script.,sys.path.append('/path/to/whatever'),706,9
+3151146,Replace the single quote (') character from a string,"replace single quote character in string ""didn't"" with empty string ''","""""""didn't"""""".replace(""'"", '')",707,9
+3159155,How to remove all integer values from a list in python,get a list `no_integers` of all the items in list `mylist` that are not of type `int`,"no_integers = [x for x in mylist if not isinstance(x, int)]",708,9
+3160752,Removing backslashes from a string in Python,remove backslashes from string `result`,"result.replace('\\', '')",709,9
+3160752,Removing backslashes from a string in Python,replace backslashes in string `result` with empty string '',"result = result.replace('\\', '')",710,9
+3166619,python regex: match a string with only one instance of a character,match regex pattern '\\$[0-9]+[^\\$]*$' on string '$1 off delicious $5 ham.',"re.match('\\$[0-9]+[^\\$]*$', '$1 off delicious $5 ham.')",711,9
+3182716,Python unicode string with UTF-8?,Encode a latin character in string `Sopet\xc3\xb3n` properly,'Sopet\xc3\xb3n'.encode('latin-1').decode('utf-8'),712,9
+3182716,Python unicode string with UTF-8?,print unicode string '\xd0\xbf\xd1\x80\xd0\xb8' with utf-8,print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('raw_unicode_escape')),713,9
+3207219,list all files of a directory,"list all "".txt"" files of a directory ""/home/adam/""",print(glob.glob('/home/adam/*.txt')),714,9
+3207219,list all files of a directory,list all files of a directory `mypath`,"f = []
+for (dirpath, dirnames, filenames) in walk(mypath):
+    f.extend(filenames)
+    break",715,9
+3207219,list all files of a directory,"list all files of a directory ""somedirectory""",os.listdir('somedirectory'),716,9
+3207219,list all files of a directory,list all files of a directory `mypath`,"onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]",717,9
+3220284,How to Customize the time format for Python logging?,customize the time format in python logging,formatter = logging.Formatter('%(asctime)s;%(levelname)s;%(message)s'),718,9
+3220755,how to find the target file's full(absolute path) of the symbolic link or soft link in python,get canonical path of the filename `path`,os.path.realpath(path),719,9
+3227624,Cross-platform addressing of the config file,get file '~/foo.ini',config_file = os.path.expanduser('~/foo.ini'),720,9
+3241594,Printing numbers in python,printing numbers rounding up to third decimal place,print('%.3f' % 3.1415),721,9
+3252590,Python: Finding a (string) key in a dictionary that contains a substring,Find all the items from a dictionary `D` if the key contains the string `Light`,"[(k, v) for k, v in D.items() if 'Light' in k]",722,9
+3258573,Pythonic way to insert every 2 elements in a string,Insert a character `-` after every two elements in a string `s`,"""""""-"""""".join(a + b for a, b in zip(s[::2], s[1::2]))",723,9
+3262437,Finding missing values in a numpy array,get the non-masked values of array `m`,m[~m.mask],724,9
+3276180,Extracting date from a string in Python,extract date from a string 'monkey 2010-07-32 love banana',"dparser.parse('monkey 2010-07-32 love banana', fuzzy=True)",725,9
+3276180,Extracting date from a string in Python,extract date from a string 'monkey 20/01/1980 love banana',"dparser.parse('monkey 20/01/1980 love banana', fuzzy=True)",726,9
+3276180,Extracting date from a string in Python,extract date from a string `monkey 10/01/1980 love banana`,"dparser.parse('monkey 10/01/1980 love banana', fuzzy=True)",727,9
+3277503,read a file line by line into a list,read file `fname` line by line into a list `content`,"with open(fname) as f:
+    content = f.readlines()",728,9
+3277503,read a file line by line into a list,read file 'filename' line by line into a list `lines`,lines = [line.rstrip('\n') for line in open('filename')],729,9

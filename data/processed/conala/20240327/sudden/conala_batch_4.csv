@@ -1,0 +1,46 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+73663,Terminating a Python script,terminate the program,quit(),46,0,4,42,1,12,1,4,0
+179369,How do I abort the execution of a Python script?,terminate the script using status value 0,sys.exit(0),80,0,4,24,1,10,1,4,0
+379906,Parse String to Float or Int,Parse String `s` to Float or Int,"try:
+    return int(s)
+except ValueError:
+    return float(s)",173,0,5,11,0,1,0,4,0
+773814,Plot logarithmic axes with matplotlib in python,plot logarithmic axes with matplotlib,ax.set_yscale('log'),325,0,4,56,1,28,1,4,0
+962619,How to pull a random record using Django's ORM?,get a random record from model 'MyModel' using django's orm,MyModel.objects.order_by('?').first(),386,1,4,48,1,46,1,4,0
+1885181,How do I un-escape a backslash-escaped string in python?,"un-escape a backslash-escaped string in `Hello,\\nworld!`","print('""Hello,\\nworld!""'.decode('string_escape'))",519,4,8,0,0,22,0,4,0
+2597166,Make dictionary from list with python,create a dictionary by adding each two adjacent elements in tuple `x` as key/value pair to it,"dict(x[i:i + 2] for i in range(0, len(x), 2))",623,7,1,33,0,31,0,4,0
+2990121,loop through a Python list by twos,loop through 0 to 10 with step 2,"for i in range(0, 10, 2):
+    pass",692,9,5,65,0,33,0,4,0
+3376534,how do I halt execution in a python script?,Exit script,sys.exit(),753,10,4,39,1,12,1,4,0
+3817529,syntax for creating a dictionary into another dictionary in python,"create a dictionary `{'spam': 5, 'ham': 6}` into another dictionary `d` field 'dict3'","d['dict3'] = {'spam': 5, 'ham': 6}",819,12,1,27,0,56,0,4,0
+4126227,Appending tuples to lists,append a tuple of elements from list `a` with indexes '[0][0] [0][2]' to list `b`,"b.append((a[0][0], a[0][2]))",881,13,7,45,1,20,0,4,0
+4859292,How to get a random value in python dictionary,get a random key `country` and value `capital` form a dictionary `d`,"country, capital = random.choice(list(d.items()))",1001,16,1,48,0,9,0,4,0
+5927180,removing data from a numpy.array,Extract values not equal to 0 from numpy array `a`,a[a != 0],1110,19,6,53,0,24,0,4,0
+6429638,How to split a string into integers in Python?,How to split a string into integers in Python?,"map(int, '42 0'.split())",1150,20,5,31,0,44,0,4,0
+7670226,python/numpy: how to get 2D array column length?,get second array column length of array `a`,a.shape[1],1251,23,6,37,0,8,0,4,0
+10194713,Sorting a defaultdict by value in python,reverse sort items in default dictionary `cityPopulation` by the third item in each key's list of values,"sorted(iter(cityPopulation.items()), key=lambda k_v: k_v[1][2], reverse=True)",1470,28,1,21,0,16,0,4,0
+11533274,How can I combine dictionaries with the same keys in python?,combine list of dictionaries `dicts` with the same keys in each list to a single dictionary,"dict((k, [d[k] for d in dicts]) for k in dicts[0])",1584,31,1,56,0,54,0,4,0
+11801309,loop over files,loop over files in directory '.',"for fn in os.listdir('.'):
+    if os.path.isfile(fn):
+        pass",1605,32,9,42,1,24,0,4,0
+12005558,Python - find digits in a string,get digits in string `my_string`,""""""""""""".join(c for c in my_string if c.isdigit())",1621,32,5,9,0,34,0,4,0
+12224778,How to filter by sub-level index in Pandas,filter dataframe `df` by sub-level index '0630' in pandas,df[df.index.map(lambda x: x[1].endswith('0630'))],1632,33,3,14,0,16,0,4,0
+12492137,Python sum of ASCII values of all characters in a string,python sum of ascii values of all characters in a string `string`,"sum(map(ord, string))",1652,33,8,0,0,1,0,4,0
+12496531,Sort NumPy float array column by column,sort numpy float array `A` column by column,"A = np.array(sorted(A, key=tuple))",1653,33,6,42,0,64,0,4,0
+13145368,Find the maximum value in a list of tuples in Python,get the item at index 0 from the tuple that has maximum value at index 1 in list `lis`,"max(lis, key=itemgetter(1))[0]",1705,35,7,25,1,31,0,4,0
+13395888,How can I get the color of the last figure in matplotlib?,"make a line plot with errorbars, `ebar`, from data `x, y, err` and set color of the errorbars to `y` (yellow)","ebar = plt.errorbar(x, y, yerr=err, ecolor='y')",1738,35,4,15,1,10,1,4,0
+13557937,How to convert decimal to binary list in python,convert decimal `8` to binary list,[int(x) for x in bin(8)[2:]],1756,36,5,39,0,7,0,4,0
+14299978,How to use lxml to find an element by text?,"find element `a` that contains string ""TEXT A"" in file `root`","e = root.xpath('.//a[contains(text(),""TEXT A"")]')",1822,38,0,43,0,42,0,4,0
+14571103,Capturing emoticons using regular expression in python,match the pattern '[:;][)(](?![)(])' to the string `str`,"re.match('[:;][)(](?![)(])', str)",1842,38,0,11,0,33,0,4,0
+14661701,How to drop a list of rows from Pandas dataframe?,"drop rows whose index value in list `[1, 3]` in dataframe `df`","df.drop(df.index[[1, 3]], inplace=True)",1847,38,3,15,0,19,0,4,0
+15451958,Simple way to create matrix of random numbers,create 3 by 3 matrix of random numbers,"numpy.random.random((3, 3))",1925,40,6,38,0,64,0,4,0
+16330838,Python split a string using regex,Python split a string using regex,"re.findall('(.+?):(.+?)\\b ?', text)",1983,42,0,25,0,35,0,4,0
+17284947,regex to get all text outside of brackets,Use a regex to get all text in a string `example_str` that is not surrounded by square brackets,"re.findall('(.*?)(?:\\[.*?\\]|$)', example_str)",2049,43,0,27,0,62,0,4,0
+17306755,How can I format a float using matplotlib's LaTeX formatter?,format float `3.5e+20`  to `$3.5 \\times 10^{20}$` and set as title of matplotlib plot `ax`,"ax.set_title('$%s \\times 10^{%s}$' % ('3.5', '+20'))",2050,43,4,54,1,27,1,4,0
+24748445,Beautiful Soup Using Regex to Find Tags?,Find all the tags `a` and `div` from Beautiful Soup object `soup`,"soup.find_all(['a', 'div'])",2410,53,4,33,1,47,1,4,0
+26541968,Delete every non utf-8 symbols froms string,delete every non `utf-8` characters from a string `line`,"line = line.decode('utf-8', 'ignore').encode('utf-8')",2444,53,8,0,0,56,0,4,0
+30693804,Python: trying to lower a string and remove non-alphanumeric characters aside from space,lower a string `text` and remove non-alphanumeric characters aside from space,"re.sub('[^\\sa-zA-Z0-9]', '', text).lower().strip()",2560,56,8,0,0,29,0,4,0
+31267493,Remove list of indices from a list in Python,remove elements from list `centroids` the indexes of which are in array `index`,"[element for i, element in enumerate(centroids) if i not in index]",2578,57,6,42,0,6,0,4,0
+34543513,Find maximum with limited length in a list,find maximum with lookahead = 4 in a list `arr`,"[max(abs(x) for x in arr[i:i + 4]) for i in range(0, len(arr), 4)]",2670,59,7,56,1,37,0,4,0
+35178812,Counting unique index values in Pandas groupby,count unique index values in column 'A' in pandas dataframe `ex`,ex.groupby(level='A').agg(lambda x: x.index.get_level_values(1).nunique()),2688,60,3,30,0,17,0,4,0
+40311987,Pandas: Mean of columns with the same names,calculate the mean of columns with same name in dataframe `df`,"df.groupby(by=df.columns, axis=1).mean()",2794,62,3,5,0,34,0,4,0

@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+364621,get item's position in a list,get the position of item `element` in list `testlist`,print(testlist.index(element)),164,0,7,32,1,6,0,17,0
+373459,split string on a number of different characters,"split string 'a b.c' on space "" "" and dot character "".""","re.split('[ .]', 'a b.c')",171,0,8,0,0,17,0,17,0
+740287,How to check if one of the following items is in a list?,check if any item from list `b` is in list `a`,print(any(x in a for x in b)),301,0,7,17,1,14,0,17,0
+783897,Truncating floats in Python,truncate float 1.923328437452 to 3 decimal places,"round(1.923328437452, 3)",327,0,5,9,0,8,0,17,0
+852055,Build a GQL query (for Google App Engine) that has a condition on ReferenceProperty,Google App Engine execute GQL query 'SELECT * FROM Schedule WHERE station = $1' with parameter `foo.key()`,"db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())",346,0,4,17,1,10,1,17,0
+1450897,Python: removing characters except digits from string,get digits only from a string `aas30dsa20` using lambda function,""""""""""""".join([x for x in 'aas30dsa20' if x.isdigit()])",462,3,5,31,0,51,0,17,0
+1602934,Check if a given key already exists in a dictionary,Check if a given key `key` exists in dictionary `d`,"if (key in d):
+    pass",479,3,1,25,0,20,0,17,0
+1960516,Python JSON serialize a Decimal object,encode `Decimal('3.9')` to a JSON string,json.dumps(Decimal('3.9')),530,4,5,40,0,52,0,17,0
+2755950,How to use regular expression in lxml xpath?,Get all `a` tags where the text starts with value `some text` using regex,"doc.xpath(""//a[starts-with(text(),'some text')]"")",650,7,0,10,0,18,0,17,0
+3040904,Save JSON outputed from a URL to a file,save json output from a url ‘http://search.twitter.com/search.json?q=hi’ to file ‘hi.json’ in Python 2,"urllib.request.urlretrieve('http://search.twitter.com/search.json?q=hi', 'hi.json')",695,9,4,19,1,47,1,17,0
+3097866,Access an arbitrary element in a dictionary in Python,Retrieve an arbitrary value from dictionary `dict`,next(iter(dict.values())),703,9,1,29,0,1,0,17,0
+3704731,Replace non-ascii chars from a unicode string in Python,replace non-ascii chars from a unicode string u'm\xfasica',"unicodedata.normalize('NFKD', 'm\xfasica').encode('ascii', 'ignore')",800,11,8,0,0,3,0,17,0
+3886669,Tuple to string,convert tuple `tst` to string `tst2`,tst2 = str(tst),832,12,8,0,0,29,0,17,0
+4302027,how to open a url in python,webbrowser open url `url`,webbrowser.open_new(url),916,14,4,13,1,28,1,17,0
+4641765,Add to integers in a list,append 4 to list `foo`,foo.append(4),957,15,7,23,1,64,0,17,0
+5229425,Precision in python,print a digit `your_number` with exactly 2 digits after decimal,print('{0:.2f}'.format(your_number)),1048,18,5,26,0,58,0,17,0
+5864485,How can I split this comma-delimited string in Python?,"Create list  by splitting string `mystring` using "","" as delimiter","mystring.split(',')",1103,19,8,0,0,29,0,17,0
+7745260,Iterate through words of a file in Python,get a list of words `words` of a file 'myfile',words = open('myfile').read().split(),1257,23,9,23,1,20,0,17,0
+8081545,convert list of tuples to multiple lists in Python,"convert tuple elements in list `[(1,2),(3,4),(5,6),]` into lists","map(list, zip(*[(1, 2), (3, 4), (5, 6)]))",1277,24,7,56,1,50,0,17,0
+9035479,Python - Access object attributes as in a dictionary,Get attribute `my_str` of object `my_object`,"getattr(my_object, my_str)",1383,26,4,41,1,11,1,17,0
+9507819,Can I have a non-greedy regex with dotall?,match regex pattern 'a*?bc*?' on string 'aabcc' with DOTALL enabled,"re.findall('a*?bc*?', 'aabcc', re.DOTALL)",1419,27,0,49,0,35,0,17,0
+10346336,List of lists into numpy array,List of lists into numpy array,"numpy.array([[1, 2], [3, 4]])",1480,29,6,15,0,63,0,17,0
+10716796,How to convert a string to its Base-10 representation?,convert a string `s` to its base-10 representation,"int(s.encode('hex'), 16)",1521,30,5,7,0,35,0,17,0
+11351874,Converting a dict into a list,convert dictionary `dict` into a flat list,print([y for x in list(dict.items()) for y in x]),1567,31,1,21,0,14,0,17,0
+13496087,Python: How to generate a 12-digit random number?,generate a random 12-digit number,"int(''.join(str(random.randint(0, 9)) for _ in range(12)))",1750,36,5,18,0,17,0,17,0
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""",separate numbers and characters in string '20M10000N80M',"re.findall('([0-9]+)([A-Z])', '20M10000N80M')",1895,39,5,14,0,4,0,17,0
+16772071,sort dict by value python,Get a list of pairs of key-value sorted by values in dictionary `data`,"sorted(list(data.items()), key=lambda x: x[1])",2006,42,1,29,0,35,0,17,0
+17794266,How to get the highest element in absolute value in a numpy matrix?,get the highest element in absolute value in a numpy matrix `x`,"max(x.min(), x.max(), key=abs)",2083,44,6,18,0,22,0,17,0
+18461623,Average values in two Numpy arrays,Get the average values from two numpy arrays `old_set` and `new_set`,"np.mean(np.array([old_set, new_set]), axis=0)",2132,45,6,48,0,37,0,17,0
+18990069,how to get tuples from lists using list comprehension in python,create tuples containing elements that are at the same index of list `lst` and list `lst2`,"[(i, j) for i, j in zip(lst, lst2)]",2173,47,7,19,1,64,0,17,0
+20206615,How can a pandas merge preserve order?,do a `left` merge of dataframes `x` and `y` on the column `state` and sort by `index`,"x.reset_index().merge(y, how='left', on='state', sort=False).sort('index')",2252,49,3,26,0,7,0,17,0
+20400135,Simple way to append a pandas series with same index,append a pandas series `b` to the series `a` and get a continuous index,a.append(b).reset_index(drop=True),2259,49,3,64,0,21,0,17,0
+22365172,Ending with a for loop in python,"Iterate ove list `[1, 2, 3]` using list comprehension","print([item for item in [1, 2, 3]])",2350,51,7,18,1,63,0,17,0
+23855976,Middle point of each pair of an numpy.array,get an array of the mean of each two consecutive values in numpy array `x`,x[:-1] + (x[1:] - x[:-1]) / 2,2390,52,6,4,0,17,0,17,0
+24722212,Python cant find module in the same folder,add a path `/path/to/2014_07_13_test` to system path,sys.path.append('/path/to/2014_07_13_test'),2409,53,9,42,1,41,0,17,0
+29760130,What is the proper way to print a nested list with the highest value in Python,get the list with the highest sum value in list `x`,"print(max(x, key=sum))",2528,56,7,50,1,1,0,17,0
+30787901,How to get a value from a Pandas DataFrame and not the index and object type,get the first value from dataframe `df` where column 'Letters' is equal to 'C',"df.loc[df['Letters'] == 'C', 'Letters'].values[0]",2567,57,3,29,0,44,0,17,0
+31818050,round number to nearest integer,round number 1.005 up to 2 decimal places,"round(1.005, 2)",2606,58,5,42,0,64,0,17,0
+34410358,Splitting a string based on a certain set of words,"Split string 'sad_pandas_and_happy_cats_for_people' based on string 'and', 'or' or 'for'","re.split('_(?:for|or|and)_', 'sad_pandas_and_happy_cats_for_people')",2664,59,8,0,0,40,0,17,0

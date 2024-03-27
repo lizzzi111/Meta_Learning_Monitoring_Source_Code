@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+15183084,how to create a dictionary using two lists in python?,create a dictionary using two lists`x` and `y`,"dict(zip(x, y))",1900,40
+15210485,python regex get first part of an email address,split string `s` by '@' and get the first element,s.split('@')[0],1901,40
+15247628,How to find duplicate names using pandas?,find duplicate names in column 'name' of the dataframe `x`,x.set_index('name').index.get_duplicates(),1902,40
+15248272,python list comprehension with multiple 'if's,list comprehension that produces integers between 11 and 19,[i for i in range(100) if i > 10 if i < 20],1903,40
+15269161,"in Python, How to join a list of tuples into one list?",convert list `a` from being consecutive sequences of tuples into a single sequence of elements,list(itertools.chain(*a)),1904,40
+15271907,"Python mySQL Update, Working but not updating table",commit all the changes after executing a query.,dbb.commit(),1905,40
+15282189,Setting matplotlib colorbar range,Set colorbar range from `0` to `15` for pyplot object `quadmesh` in matplotlib,"quadmesh.set_clim(vmin=0, vmax=15)",1906,40
+15286401,Print multiple arguments in python,print multiple arguments 'name' and 'score'.,"print('Total score for {} is {}'.format(name, score))",1907,40
+15286401,Print multiple arguments in python,print string including multiple variables `name` and `score`,"print(('Total score for', name, 'is', score))",1908,40
+15286401,Print multiple arguments in python,"print the string `Total score for`, the value of the variable `name`, the string `is` and the value of the variable `score` in one print call.","print(('Total score for', name, 'is', score))",1909,40
+15286401,Print multiple arguments in python,print a string using multiple strings `name` and `score`,"print('Total score for %s is %s  ' % (name, score))",1910,40
+15313250,Python BeautifulSoup Extract specific URLs,find all anchors with a hyperlink that matches the pattern '^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))',"soup.find_all('a', href=re.compile('^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))'))",1911,40
+15313250,Python BeautifulSoup Extract specific URLs,find all anchor tags in html `soup` whose url begins with `http://www.iwashere.com`,"soup.find_all('a', href=re.compile('http://www\\.iwashere\\.com/'))",1912,40
+15315452,Selecting with complex criteria from pandas.DataFrame,"select values from column 'A' for which corresponding values in column 'B' will be greater than 50, and in column 'C' - equal 900 in dataframe `df`",df['A'][(df['B'] > 50) & (df['C'] == 900)],1913,40
+15325182,How to filter rows in pandas by regex,filter rows in pandas starting with alphabet 'f' using regular expression.,df.b.str.contains('^f'),1914,40
+15334783,Multiplying values from two different dictionaries together in Python,multiply values of dictionary `dict` with their respective values in dictionary `dict2`,"dict((k, v * dict2[k]) for k, v in list(dict1.items()) if k in dict2)",1915,40
+15352457,How can I sum a column of a list?,sum elements at index `column` of each list in list `data`,print(sum(row[column] for row in data)),1916,40
+15352457,How can I sum a column of a list?,sum columns of a list `array`,[sum(row[i] for row in array) for i in range(len(array[0]))],1917,40
+15390374,Python 3: How do I get a string literal representation of a byte string?,get a utf-8 string literal representation of byte string `x`,"""""""x = {}"""""".format(x.decode('utf8')).encode('utf8')",1918,40
+15392730,"In Python, is it possible to escape newline characters when printing a string?",Print new line character as `\n` in a string `foo\nbar`,print('foo\nbar'.encode('string_escape')),1919,40
+15405636,Python's argparse to show program's version with prog and version string formatting,argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`,"parser.add_argument('--version', action='version', version='%(prog)s 2.0')",1920,40
+15411107,Delete a dictionary item if the key exists,Delete an item with key `key` from `mydict`,del mydict[key],1921,40
+15411107,Delete a dictionary item if the key exists,Delete an item with key `key` from `mydict`,"try:
+    del mydict[key]
+except KeyError:
+    pass
+try:
+    del mydict[key]
+except KeyError:
+    pass",1922,40
+15411107,Delete a dictionary item if the key exists,"Delete an item with key ""key"" from `mydict`","mydict.pop('key', None)",1923,40
+15445981,How do I disable the security certificate check in Python requests,disable the certificate check in https requests for url `https://kennethreitz.com`,"requests.get('https://kennethreitz.com', verify=False)",1924,40
+15451958,Simple way to create matrix of random numbers,create 3 by 3 matrix of random numbers,"numpy.random.random((3, 3))",1925,40
+15455388,Dict of dicts of dicts to DataFrame,Create a pandas dataframe of values from a dictionary `d` which contains dictionaries of dictionaries,"pd.concat(map(pd.DataFrame, iter(d.values())), keys=list(d.keys())).stack().unstack(0)",1926,40
+15457504,How to set the font size of a Canvas' text item?,set the font 'Purisa' of size 12 for a canvas' text item `k`,"canvas.create_text(x, y, font=('Purisa', 12), text=k)",1927,40
+15459217,how to set cookie in python mechanize,"Add header `('Cookie', 'cookiename=cookie value')` to mechanize browser `br`","br.addheaders = [('Cookie', 'cookiename=cookie value')]",1928,40
+15465204,Easier way to add multiple list items?,"Sum of sums of each list, in a list of lists named 'lists'.",sum(sum(x) for x in lists),1929,40
+15474933,List comprehension with if statement,get items from list `a` that don't appear in list `b`,[y for y in a if y not in b],1930,40
+15509617,How to obtain the day of the week in a 3 letter format from a datetime object in python?,obtain the current day of the week in a 3 letter format from a datetime object,datetime.datetime.now().strftime('%a'),1931,40
+15530399,Finding the surrounding sentence of a char/word in a string,"split string `text` by the occurrences of regex pattern '(?<=\\?|!|\\.)\\s{0,2}(?=[A-Z]|$)'","re.split('(?<=\\?|!|\\.)\\s{0,2}(?=[A-Z]|$)', text)",1932,40
+15534223,Python match string if it does not start with X,search for string that matches regular expression pattern '(?<!Distillr)\\\\AcroTray\\.exe' in string 'C:\\SomeDir\\AcroTray.exe',"re.search('(?<!Distillr)\\\\AcroTray\\.exe', 'C:\\SomeDir\\AcroTray.exe')",1933,40
+15548506,Node labels using networkx,Draw node labels `labels` on networkx graph `G ` at position `pos`,"networkx.draw_networkx_labels(G, pos, labels)",1934,40
+15571267,Python: A4 size for a plot,"set size of `figure` to landscape A4 i.e. `11.69, 8.27` inches","figure(figsize=(11.69, 8.27))",1935,40
+15579649,python dict to numpy structured array,convert dict `result` to numpy structured array,"numpy.array([(key, val) for key, val in result.items()], dtype)",1936,40
+15650538,Sub matrix of a list of lists (without numpy),"Create sub matrix of a list of lists `[[2, 3, 4], [2, 3, 4], [2, 3, 4]]` (without numpy)","[[2, 3, 4], [2, 3, 4], [2, 3, 4]]",1937,40
+15661013,Python: most efficient way to convert date to datetime,convert date `my_date` to datetime,"datetime.datetime.combine(my_date, datetime.time.min)",1938,40

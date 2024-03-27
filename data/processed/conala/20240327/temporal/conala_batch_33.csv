@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+12182744,python pandas: apply a function with arguments to a series,python pandas: apply a function with arguments to a series,"my_series.apply(your_function, args=(2, 3, 4), extra_kw=1)",1627,33
+12201577,How can I convert an RGB image into grayscale in Python?,convert an rgb image 'messi5.jpg' into grayscale `img`,"img = cv2.imread('messi5.jpg', 0)",1628,33
+12211944,How to match beginning of string or character in Python,Get all the matches from a string `abcd` if it begins with a character `a`,"re.findall('[^a]', 'abcd')",1629,33
+12211944,How to match beginning of string or character in Python,find float number proceeding sub-string `par` in string `dir`,"float(re.findall('(?:^|_)' + par + '(\\d+\\.\\d*)', dir)[0])",1630,33
+12218112,Sum the second value of each tuple in a list,get the sum of each second value from a list of tuple `structure`,sum(x[1] for x in structure),1631,33
+12224778,How to filter by sub-level index in Pandas,filter dataframe `df` by sub-level index '0630' in pandas,df[df.index.map(lambda x: x[1].endswith('0630'))],1632,33
+12280143,How to move to one folder back in python,Change the current directory one level up,os.chdir('..'),1633,33
+12300912,transpose dictionary (extract all the values for one key from a list of dictionaries),extract all the values with keys 'x' and 'y' from a list of dictionaries `d` to list of tuples,"[(x['x'], x['y']) for x in d]",1634,33
+12307099,Modifying a subset of rows in a pandas dataframe,set the value in column 'B' to NaN if the corresponding value in column 'A' is equal to 0 in pandas dataframe `df`,"df.ix[df.A == 0, 'B'] = np.nan",1635,33
+12309976,convert list into string with spaces in python,convert a list `my_list` into string with values separated by spaces,""""""" """""".join(my_list)",1636,33
+12310141,Python counting elements of a list within a list,check if all lists in list `L` have three elements of integer 1,all(x.count(1) == 3 for x in L),1637,33
+12323403,How do I find an element that contains specific text in Selenium Webdriver (Python)?,How do I find an element that contains specific text in Selenium Webdriver (Python)?,"driver.find_elements_by_xpath(""//*[contains(text(), 'My Button')]"")",1638,33
+12324456,How to keep a list of lists sorted as it is created,keep a list `dataList` of lists sorted as it is created by second element,dataList.sort(key=lambda x: x[1]),1639,33
+12329853,How to rearrange Pandas column sequence?,"Rearrange the columns 'a','b','x','y' of pandas DataFrame `df` in mentioned sequence 'x' ,'y','a' ,'b'","df = df[['x', 'y', 'a', 'b']]",1640,33
+12330522,Reading a file without newlines,read a file `file` without newlines,[line.rstrip('\n') for line in file],1641,33
+12337583,"Saving dictionary whose keys are tuples with json, python",Serialize dictionary `data` and its keys to a JSON formatted string,"json.dumps({str(k): v for k, v in data.items()})",1642,33
+12345387,Removing _id element from Pymongo results,Find all records from collection `collection` without extracting mongo id `_id`,"db.collection.find({}, {'_id': False})",1643,33
+12362542,"Python server ""Only one usage of each socket address is normally permitted""",Enable the SO_REUSEADDR socket option in socket object `s` to fix the error `only one usage of each socket address is normally permitted`,"s.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)",1644,33
+12376863,Adding calculated column(s) to a dataframe in pandas,use operations like max/min within a row to a dataframe 'd' in pandas,"d.apply(lambda row: min([row['A'], row['B']]) - row['C'], axis=1)",1645,33
+12400256,Python: Converting Epoch time into the datetime,Convert unix timestamp '1347517370' to formatted string '%Y-%m-%d %H:%M:%S',"time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))",1646,33
+12402561,How to set font size of Matplotlib axis Legend?,set font size of axis legend of plot `plt` to 'xx-small',"plt.setp(legend.get_title(), fontsize='xx-small')",1647,33
+12426043,Can I read and write file in one line with Python?,write the content of file `xxx.mp4` to file `f`,"f.write(open('xxx.mp4', 'rb').read())",1648,33
+12440342,Best way to get the nth element of each tuple from a list of tuples in Python,get the first element of each tuple from a list of tuples `G`,[x[0] for x in G],1649,33
+12476452,How can I return HTTP status code 204 from a Django view?,return http status code 204 from a django view,return HttpResponse(status=204),1650,33
+12485244,Tuple conversion to a string,convert list of tuples `L` to a string,""""""", """""".join('(' + ', '.join(i) + ')' for i in L)",1651,33
+12492137,Python sum of ASCII values of all characters in a string,python sum of ascii values of all characters in a string `string`,"sum(map(ord, string))",1652,33
+12496531,Sort NumPy float array column by column,sort numpy float array `A` column by column,"A = np.array(sorted(A, key=tuple))",1653,33
+12527959,Passing the '+' character in a POST request in Python,replace percent-encoded code in request `f` to their single-character equivalent,"f = urllib.request.urlopen(url, urllib.parse.unquote(urllib.parse.urlencode(params)))",1654,33
+12557612,Calling a parent class constructor from a child class in python,call parent class `Instructor` of child class constructor,"super(Instructor, self).__init__(name, year)",1655,33
+12572362,Get a string after a specific substring,"print a string after a specific substring ', ' in string `my_string `","print(my_string.split(', ', 1)[1])",1656,33
+12575421,Convert a 1D array to a 2D array in numpy,convert a 1d `A` array to a 2d array `B`,"B = np.reshape(A, (-1, 2))",1657,33
+12579061,Python Selenium: Find object attributes using xpath,"get the text of multiple elements found by xpath ""//*[@type='submit']/@value""","browser.find_elements_by_xpath(""//*[@type='submit']/@value"").text",1658,33
+12579061,Python Selenium: Find object attributes using xpath,find all the values in attribute `value` for the tags whose `type` attribute is `submit` in selenium,"browser.find_elements_by_xpath(""//*[@type='submit']"").get_attribute('value')",1659,33
+12589481,Python Pandas: Multiple aggregations of the same column,apply two different aggregating functions `mean` and `sum` to the same column `dummy` in pandas data frame `df`,"df.groupby('dummy').agg({'returns': [np.mean, np.sum]})",1660,33
+12604909,Pandas: how to change all the values of a column?,"pandas: change all the values of a column 'Date' into ""int(str(x)[-4:])""",df['Date'] = df['Date'].apply(lambda x: int(str(x)[-4:])),1661,33
+12655007,Python: elegant way of creating a list of tuples?,"zip list `a`, `b`, `c` into a list of tuples","[(x + tuple(y)) for x, y in zip(zip(a, b), c)]",1662,33
+12666897,Removing an item from list matching a substring - Python,Remove all strings from a list a strings `sents` where the values starts with `@$\t` or `#`,[x for x in sents if not x.startswith('@$\t') and not x.startswith('#')],1663,33
+12681945,Reversing bits of Python integer,revers correlating bits of integer `n`,"int('{:08b}'.format(n)[::-1], 2)",1664,33
+12692135,Create dictionary from lists of keys and multiple values,"convert list `[('Name', 'Joe'), ('Age', 22)]` into a dictionary","dict([('Name', 'Joe'), ('Age', 22)])",1665,33

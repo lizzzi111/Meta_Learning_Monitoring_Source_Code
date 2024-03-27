@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+6569528,Python float to int conversion,round off the float that is the product of `2.52 * 100` and convert it to an int,int(round(2.51 * 100)),1159,21
+6586310,Python: Convert list of key-value tuples into dictionary?,"convert list of key-value tuples `[('A', 1), ('B', 2), ('C', 3)]` into dictionary","dict([('A', 1), ('B', 2), ('C', 3)])",1160,21
+6591931,Getting file size in Python?,get the  size of file 'C:\\Python27\\Lib\\genericpath.py',os.stat('C:\\Python27\\Lib\\genericpath.py').st_size,1161,21
+6612769,"Is there a more elegant way for unpacking keys and values of a dictionary into two lists, without losing consistence?",unpack keys and values of a dictionary `d` into two lists,"keys, values = zip(*list(d.items()))",1162,21
+6618515,Sorting list based on values from another list?,sorting list 'X' based on values from another list 'Y',"[x for y, x in sorted(zip(Y, X))]",1163,21
+6618515,Sorting list based on values from another list?,sort list `X` based on values from another list `Y`,"[x for y, x in sorted(zip(Y, X))]",1164,21
+6633523,How can I convert a string with dot and comma into a float number in Python,convert a string `my_string` with dot and comma into a float number `my_float`,"my_float = float(my_string.replace(',', ''))",1165,21
+6633523,How can I convert a string with dot and comma into a float number in Python,"convert a string `123,456.908` with dot and comma into a floating number","float('123,456.908'.replace(',', ''))",1166,21
+6633678,Finding words after keyword in python,finding words in string `s` after keyword 'name',"re.search('name (.*)', s)",1167,21
+6667201,How to define two-dimensional array in python,"create a list `matrix` containing 5 lists, each of 5 items  all set to 0",matrix = [([0] * 5) for i in range(5)],1168,21
+6677332,Using %f with strftime() in Python to get microseconds,Using %f with strftime() in Python to get microseconds,datetime.datetime.now().strftime('%H:%M:%S.%f'),1169,21
+6696027,split elements of a list in python,split strings in list `l` on the first occurring tab `\t` and enter only the first resulting substring in a new list,"[i.split('\t', 1)[0] for i in l]",1170,21
+6696027,split elements of a list in python,Split each string in list `myList` on the tab character,myList = [i.split('\t')[0] for i in myList],1171,21
+6710684,Remove one column for a numpy array,delete the last column of numpy array `a` and assign resulting array to `b`,"b = np.delete(a, -1, 1)",1172,21
+6714826,How can I determine the byte length of a utf-8 encoded string in Python?,Determine the byte length of a utf-8 encoded string `s`,return len(s.encode('utf-8')),1173,21
+6726636,splitting and concatenating a string,"concatenate a list of strings `['a', 'b', 'c']`",""""""""""""".join(['a', 'b', 'c'])",1174,21
+6740311,Combining NumPy arrays,join Numpy array `b` with Numpy array 'a' along axis 0,"b = np.concatenate((a, a), axis=0)",1175,21
+6740865,Convert Unicode to UTF-8 Python,print a unicode string `text`,print(text.encode('windows-1252')),1176,21
+6764909,Python: How to remove all duplicate items from a list,remove all duplicate items from a list `lseperatedOrblist`,woduplicates = list(set(lseperatedOrblist)),1177,21
+6797984,convert string to lowercase,convert string `s` to lowercase,s.lower(),1178,21
+6797984,convert string to lowercase,convert utf-8 string `s` to lowercase,s.decode('utf-8').lower(),1179,21
+6856119,Can I use an alias to execute a program from a python script,execute command 'source .bashrc; shopt -s expand_aliases; nuke -x scriptPath' from python script,os.system('source .bashrc; shopt -s expand_aliases; nuke -x scriptPath'),1180,21
+6879364,Print file age in seconds using Python,Get the age of directory (or file) `/tmp` in seconds.,print(os.path.getmtime('/tmp')),1181,21
+6886493,Get all object attributes,Get all object attributes of an object,dir(),1182,21
+6886493,Get all object attributes,Get all object attributes of an object,dir(),1183,21
+6886493,Get all object attributes,Get all object attributes of object `obj`,print((obj.__dict__)),1184,21
+6889785,python how to search an item in a nested list,get a list of items form nested list `li` where third element of each item contains string 'ar',[x for x in li if 'ar' in x[2]],1185,21
+6900955,python convert list to dictionary,"build a dictionary containing the conversion of each list in list `[['two', 2], ['one', 1]]` to a key/value pair as its items","dict([['two', 2], ['one', 1]])",1186,21
+6900955,python convert list to dictionary,convert list `l` to dictionary having each two adjacent elements as key/value pair,"dict(zip(l[::2], l[1::2]))",1187,21
+6916542,Writing List of Strings to Excel CSV File in Python,write a list of strings `row` to csv object `csvwriter`,csvwriter.writerow(row),1188,21
+6996603,Delete a file or folder,recursively delete all contents in directory `path`,"shutil.rmtree(path, ignore_errors=False, onerror=None)",1189,21
+6996603,Delete a file or folder,recursively remove folder `name`,os.removedirs(name),1190,21
+6996603,Delete a file or folder,delete an empty directory,os.rmdir(),1191,21
+7011291,how to get a single result from a SQLite query in python?,how to get a single result from a SQLite query in python?,cursor.fetchone()[0],1192,21
+7026131,Padding a list in python with particular value,fill list `myList` with 4 0's,self.myList.extend([0] * (4 - len(self.myList))),1193,21
+7125009,How to change legend size with matplotlib.pyplot,change legend font size with matplotlib.pyplot to 6,"plot.legend(loc=2, prop={'size': 6})",1194,21
+7125009,How to change legend size with matplotlib.pyplot,change legend size to 'x-small' in upper-left location,"pyplot.legend(loc=2, fontsize='x-small')",1195,21
+7126916,Perform a string operation for every element in a Python list,formate each string cin list `elements` into pattern '%{0}%',elements = ['%{0}%'.format(element) for element in elements],1196,21
+7128153,Multiple 'in' operators in Python?,"check if  dictionary `d` contains all keys in list `['somekey', 'someotherkey', 'somekeyggg']`","all(word in d for word in ['somekey', 'someotherkey', 'somekeyggg'])",1197,21

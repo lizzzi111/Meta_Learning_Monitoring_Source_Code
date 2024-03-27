@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+22676,download a file over HTTP,"download a file ""http://www.example.com/songs/mp3.mp3"" over HTTP and save to ""mp3.mp3""","urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')",19,0,9,54,1,48,0
+587345,Python regular expression matching a multiline block of text,create a regular expression that matches the pattern '^(.+)(?:\\n|\\r\\n?)((?:(?:\\n|\\r\\n?).+)+)' over multiple lines of text,"re.compile('^(.+)(?:\\n|\\r\\n?)((?:(?:\\n|\\r\\n?).+)+)', re.MULTILINE)",239,0,0,36,0,48,0
+715550,Best way to encode tuples with json,"serialize dictionary `d` as a JSON formatted string with each key formatted to pattern '%d,%d'","simplejson.dumps(dict([('%d,%d' % k, v) for k, v in list(d.items())]))",294,0,1,15,0,48,0
+764235,Dictionary to lowercase in Python,lowercase keys and values in dictionary `{'My Key': 'My Value'}`,"{k.lower(): v.lower() for k, v in list({'My Key': 'My Value'}.items())}",323,0,1,3,0,48,0
+817122,Delete digits in Python (Regex),delete digits at the end of string `s`,"re.sub('\\b\\d+\\b', '', s)",333,0,8,0,0,48,0
+973473,Getting a list of all subdirectories in the current directory,getting a list of all subdirectories in the directory `directory`,os.walk(directory),388,1,9,31,1,48,0
+2108126,How to run two functions simultaneously,run function 'SudsMove' simultaneously,threading.Thread(target=SudsMove).start(),552,5,4,25,1,48,1
+2407398,merge lists into a list of tuples,merge lists `a` and `a` into a list of tuples,"list(zip(a, b))",600,6,7,21,1,48,0
+2744795,Background color for Tk in Python,Change background color in Tkinter,root.configure(background='black'),649,7,4,17,1,48,1
+4356842,How do I return a 401 Unauthorized in Django?,return a 401 unauthorized in django,"return HttpResponse('Unauthorized', status=401)",921,14,4,44,1,48,1
+6278847,Is it possible to kill a process on Windows from within Python?,kill a process `make.exe` from python script on windows,os.system('taskkill /im make.exe'),1132,20,4,43,1,48,1
+6510477,How can i list only the folders in zip archive in Python?,list folders in zip file 'file' that ends with '/',[x for x in file.namelist() if x.endswith('/')],1155,20,9,39,1,48,0
+7284952,Django redirect to root from a view,django redirect to view 'Home.views.index',redirect('Home.views.index'),1218,22,4,37,1,48,1
+8081545,convert list of tuples to multiple lists in Python,convert list of tuples to multiple lists in Python,"zip(*[(1, 2), (3, 4), (5, 6)])",1279,24,7,57,1,48,0
+8214932,How to check if a value exists in a dictionary (python),check if string `one` exists in the values of dictionary `d`,'one' in list(d.values()),1298,24,1,14,0,48,0
+8671702,Passing list of parameters to SQL in psycopg2,"pass a list of parameters `((1, 2, 3),) to sql queue 'SELECT * FROM table WHERE column IN %s;'","cur.mogrify('SELECT * FROM table WHERE column IN %s;', ((1, 2, 3),))",1347,25,7,48,1,48,0
+8936030,Using BeautifulSoup to search html for string,BeautifulSoup find string 'Python Jobs' in HTML body `body`,soup.body.findAll(text='Python Jobs'),1375,26,4,63,1,48,1
+9733638,Post JSON using Python Requests,Execute a post request to url `http://httpbin.org/post` with json data `{'test': 'cheers'}`,"requests.post('http://httpbin.org/post', json={'test': 'cheers'})",1441,28,4,33,1,48,1
+12362542,"Python server ""Only one usage of each socket address is normally permitted""",Enable the SO_REUSEADDR socket option in socket object `s` to fix the error `only one usage of each socket address is normally permitted`,"s.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)",1644,33,4,48,1,48,1
+12717716,Python: updating a large dictionary using another large dictionary,"update dictionary `b`, overwriting values where keys are identical, with contents of dictionary `d`",b.update(d),1666,34,1,27,0,48,0
+13163145,Multiplying Rows and Columns of Python Sparse Matrix by elements in an Array,multiply the columns of sparse matrix `m` by array `a` then multiply the rows of the resulting matrix by array `a`,"numpy.dot(numpy.dot(a, m), a)",1709,35,6,10,0,48,0
+14853243,Parsing XML with namespace in Python via 'ElementTree',find all `owl:Class` tags by parsing xml with namespace,root.findall('{http://www.w3.org/2002/07/owl#}Class'),1867,39,4,53,1,48,1
+16125229,Last Key in Python Dictionary,get the last key of dictionary `dict`,list(dict.keys())[-1],1967,41,1,21,0,48,0
+18637651,Most pythonic way to convert a list of tuples,group a list `list_of_tuples` of tuples by values,zip(*list_of_tuples),2146,46,7,54,1,48,0
+19601086,Click a href button with selenium and python?,click a href button having text `Send InMail` with selenium,driver.findElement(By.linkText('Send InMail')).click(),2206,47,4,45,1,48,1
+19863964,fastest way to find the magnitude (length) squared of a vector field,find the magnitude (length) squared of a vector `vf` field,"np.einsum('...j,...j->...', vf, vf)",2228,48,4,61,1,48,1
+20400135,Simple way to append a pandas series with same index,simple way to append a pandas series `a` and `b` with same index,"pd.concat([a, b], ignore_index=True)",2258,49,3,40,0,48,0
+20876077,Python: unescape special characters without splitting data,"unescape special characters without splitting data in array of strings `['I ', u'<', '3s U ', u'&', ' you luvz me']`",""""""""""""".join(['I ', '<', '3s U ', '&', ' you luvz me'])",2286,49,8,0,0,48,0
+21104592,JSON to pandas DataFrame,read json `elevations` to pandas dataframe `df`,pd.read_json(elevations),2295,50,3,8,0,48,0
+21414159,login to a site using python and opening the login site in the browser,open the login site 'http://somesite.com/adminpanel/index.php' in the browser,webbrowser.open('http://somesite.com/adminpanel/index.php'),2308,50,4,17,1,48,1
+21974169,How to disable query cache with mysql.connector,Mysql commit current transaction,con.commit(),2336,51,4,43,1,48,1
+30015665,How to check whether the system is FreeBSD in a python script?,get the platform OS name,platform.system(),2540,56,4,40,1,48,1
+30190459,How to gracefully fallback to `NaN` value while reading integers from a CSV with Pandas?,convert nan values to ‘n/a’ while reading rows from a csv `read_csv` with pandas,"df = pd.read_csv('my.csv', na_values=['n/a'])",2544,56,3,4,0,48,0
+31771758,"Concatenating Unicode with string: print '£' + '1' works, but print '£' + u'1' throws UnicodeDecodeError",add unicode string '1' to UTF-8 decoded string '\xc2\xa3',print('\xc2\xa3'.decode('utf8') + '1'),2594,57,8,0,0,48,0
+33711985,Flattening a list of NumPy arrays?,concatenate a list of numpy arrays `input_list` together into a flattened list of values,np.concatenate(input_list).ravel().tolist(),2649,59,6,8,0,48,0
+39277638,Element-wise minimum of multiple vectors in numpy,get a numpy array that contains the element wise minimum of three 3x1 arrays,"np.array([np.arange(3), np.arange(2, -1, -1), np.ones((3,))]).min(axis=0)",2757,61,6,10,0,48,0
+39600161,Regular expression matching all but a string,regular expression matching all but 'aa' and 'bb',"re.findall('-(?!aa|bb)([^-]+)', string)",2766,62,0,62,0,48,0
+41251391,Can a list of all member-dict keys be created from a dict of dicts using a list comprehension?,get a list of the keys in each dictionary in a dictionary of dictionaries `foo`,[k for d in list(foo.values()) for k in d],2832,63,1,11,0,48,0
+42387471,How to add a colorbar for a hist2d plot,add a colorbar to plot `plt` using image `im` on axes `ax`,"plt.colorbar(im, ax=ax)",2870,64,4,44,1,48,1

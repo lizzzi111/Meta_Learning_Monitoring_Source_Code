@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+163542,pass a string into subprocess.Popen,set the stdin of the process 'grep f' to be 'one\ntwo\nthree\nfour\nfive\nsix\n',"p = subprocess.Popen(['grep', 'f'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+p.stdin.write('one\ntwo\nthree\nfour\nfive\nsix\n')
+p.communicate()[0]
+p.stdin.close()",75,0,9,31,1
+251464,How to get a function name as a string in Python?,get a name of function `my_function` as a string,my_function.__name__,112,0,4,31,1
+354038,check if a string is a number (float),check if string `a` is an integer,a.isdigit(),151,0,0,31,0
+546321,How do I calculate the date six months from the current date,get the date 1 month from today,"(date(2010, 12, 31) + relativedelta(months=(+ 1)))",233,0,2,31,0
+973473,Getting a list of all subdirectories in the current directory,getting a list of all subdirectories in the directory `directory`,os.walk(directory),388,1,9,31,1
+1450897,Python: removing characters except digits from string,get digits only from a string `aas30dsa20` using lambda function,""""""""""""".join([x for x in 'aas30dsa20' if x.isdigit()])",462,3,5,31,0
+1614236,"In Python, how do I convert all of the items in a list to floats?",convert all of the items in a list `lst` to float,[float(i) for i in lst],483,3,7,31,1
+2276416,Extending a list of lists in Python?,create list `y` containing two empty lists,y = [[] for n in range(2)],583,6,7,31,1
+2406700,Accented characters in Matplotlib,"set an array of unicode characters `[u'\xe9', u'\xe3', u'\xe2']` as labels in Matplotlib `ax`","ax.set_yticklabels(['\xe9', '\xe3', '\xe2'])",598,6,4,31,1
+2587402,Sorting Python list based on the length of the string,sort list of strings `xs` by the length of string,xs.sort(key=lambda s: len(s)),620,7,7,31,1
+2606976,How to replace empty string with zero in comma-separated string?,"split string `s` into a list of strings based on ',' then replace empty strings with zero",""""""","""""".join(x or '0' for x in s.split(','))",632,7,8,31,0
+3252590,Python: Finding a (string) key in a dictionary that contains a substring,Find all the items from a dictionary `D` if the key contains the string `Light`,"[(k, v) for k, v in D.items() if 'Light' in k]",722,9,1,31,0
+3964681,Find all files in directory with extension .txt,"Find all files in directory ""/mydir"" with extension "".txt""","for file in os.listdir('/mydir'):
+    if file.endswith('.txt'):
+        pass",858,13,9,31,1
+4508155,How do I use a MD5 hash (or other binary data) as a key name?,Get a md5 hash from string `thecakeisalie`,k = hashlib.md5('thecakeisalie').hexdigest(),942,15,4,31,1
+4915920,How to delete an item in a list if it exists?,delete an item `thing` in a list `some_list` if it exists,cleaned_list = [x for x in some_list if x is not thing],1015,17,7,31,1
+5944630,sort a list of dicts by x then by y,sort a list of dictionary `list` first by key `points` and then by `time`,"list.sort(key=lambda item: (item['points'], item['time']))",1112,19,1,31,0
+6429638,How to split a string into integers in Python?,How to split a string into integers in Python?,"map(int, '42 0'.split())",1150,20,5,31,0
+6618515,Sorting list based on values from another list?,sort list `X` based on values from another list `Y`,"[x for y, x in sorted(zip(Y, X))]",1164,21,7,31,1
+6633678,Finding words after keyword in python,finding words in string `s` after keyword 'name',"re.search('name (.*)', s)",1167,21,0,31,0
+7138686,How to write a list to a file with newlines in Python3,write the elements of list `lines` concatenated by special character '\n' to file `myfile`,myfile.write('\n'.join(lines)),1198,22,9,31,1
+7270321,Finding the index of elements based on a condition using python list comprehension,Get all indexes of a list `a` where each value is greater than `2`,[i for i in range(len(a)) if a[i] > 2],1212,22,7,31,1
+10632111,How to flatten a hetrogenous list of list into a single list in python?,Convert list of lists `data` into a flat list,"[y for x in data for y in (x if isinstance(x, list) else [x])]",1512,30,7,31,1
+10839719,"How to set ""step"" on axis X in my figure in matplotlib python 2.6.6?","set labels `[1, 2, 3, 4, 5]` on axis X in plot `plt`","plt.xticks([1, 2, 3, 4, 5])",1527,30,4,31,1
+12440342,Best way to get the nth element of each tuple from a list of tuples in Python,get the first element of each tuple from a list of tuples `G`,[x[0] for x in G],1649,33,7,31,1
+13283689,python sum the values of lists of list,return list `result` of sum of elements of each list `b` in list of lists `a`,result = [sum(b) for b in a],1725,35,7,31,1
+13411544,Delete column from pandas DataFrame,"delete 1st, 2nd and 4th columns from dataframe `df`","df.drop(df.columns[[0, 1, 3]], axis=1)",1742,35,3,31,0
+13655392,Python- insert a character into a string,concatenate items from list `parts` into a string starting from the second element,""""""""""""".join(parts[1:])",1766,36,7,31,1
+14043080,"Using Python's datetime module, can I get the year that UTC-11 is currently in?","using python's datetime module, get the year that utc-11 is currently in",(datetime.datetime.utcnow() - datetime.timedelta(hours=11)).year,1799,37,2,31,0
+15080500,How can I send a signal from a python program?,send a signal `signal.SIGUSR1` to the current process,"os.kill(os.getpid(), signal.SIGUSR1)",1889,39,4,31,1
+15325182,How to filter rows in pandas by regex,filter rows in pandas starting with alphabet 'f' using regular expression.,df.b.str.contains('^f'),1914,40,3,31,0
+15465204,Easier way to add multiple list items?,"Sum of sums of each list, in a list of lists named 'lists'.",sum(sum(x) for x in lists),1929,40,7,31,1
+16389188,How to center a window with PyGObject,pygobject center window `window`,window.set_position(Gtk.WindowPosition.CENTER),1988,42,4,31,1
+18397805,How do I delete a row in a numpy array which contains a zero?,delete all rows in a numpy array `a` where any value in a row is zero `0`,"a[np.all(a != 0, axis=1)]",2127,45,6,31,0
+20457174,"python, locating and clicking a specific button with selenium",find button that is in li class `next` and assign it to variable `next`,next = driver.find_element_by_css_selector('li.next>a'),2261,49,4,31,1
+20546419,Shuffle columns of an array with Numpy,shuffle columns of an numpy array 'r',np.random.shuffle(np.transpose(r)),2269,49,6,31,0
+22904654,How to save Xlsxwriter file in certain path?,save xlsxwriter file in 'app/smth1/smth2/Expenses01.xlsx' path and assign to variable `workbook`,workbook = xlsxwriter.Workbook('app/smth1/smth2/Expenses01.xlsx'),2368,52,9,31,1
+23306653,Python Accessing Nested JSON Data,get value of key `post code` associated with first index of key `places` of dictionary `data`,print(data['places'][0]['post code']),2374,52,1,31,0
+27659153,How to group similar items in a list?,How to group similar items in a list?,"[list(g) for _, g in itertools.groupby(test, lambda x: x.partition('_')[0])]",2469,54,7,31,1
+32191029,Getting the indices of several elements in a NumPy array at once,Get the indices in array `b` of each element appearing in array `a`,"np.in1d(b, a).nonzero()[0]",2615,58,6,31,0

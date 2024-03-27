@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `d` in sorted order,"for (key, value) in sorted(d.items()):
+    pass",158,0,1,2,0
+415511,get current time,get current time in string format,str(datetime.now()),184,0,2,2,0
+579856,What's the Pythonic way to combine two sequences into a dictionary?,combine two sequences into a dictionary,"dict(zip(keys, values))",237,0,1,2,0
+764235,Dictionary to lowercase in Python,lowercase all keys and values in dictionary `{'My Key': 'My Value'}`,"dict((k.lower(), v) for k, v in {'My Key': 'My Value'}.items())",324,0,1,2,0
+1883980,Find the nth occurrence of substring in a string,find the index of the second occurrence of the substring `bar` in string `foo bar bar bar`,"""""""foo bar bar bar"""""".replace('bar', 'XXX', 1).find('bar')",518,4,0,2,0
+2233917,How to input an integer tuple from user?,input a tuple of integers from user,"tuple(int(x.strip()) for x in input().split(','))",579,6,5,2,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (k, v) in list(d.items()):
+    pass",737,10,1,2,0
+3501382,Checking whether a variable is an integer,check if `x` is an integer,"isinstance(x, int)",778,11,5,2,0
+4668619,Django database query: How to filter objects by date range?,filter the objects in django model 'Sample' between date range `2011-01-01` and `2011-01-31`,"Sample.objects.filter(date__range=['2011-01-01', '2011-01-31'])",968,16,2,2,0
+4940032,Search for string in txt file,Search for string 'blabla' in txt file 'example.txt',"f = open('example.txt')
+s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
+if (s.find('blabla') != (-1)):
+    pass",1022,17,0,2,0
+5010536,Python: Perform an operation on each dictionary value,Multiple each value by `2` for all keys in a dictionary `my_dict`,"my_dict.update((x, y * 2) for x, y in list(my_dict.items()))",1027,17,1,2,0
+5868374,Convert a string to datetime object in python,Parse string `datestr` into a datetime object using format pattern '%Y-%m-%d',"dateobj = datetime.datetime.strptime(datestr, '%Y-%m-%d').date()",1104,19,2,2,0
+6710684,Remove one column for a numpy array,delete the last column of numpy array `a` and assign resulting array to `b`,"b = np.delete(a, -1, 1)",1172,21,6,2,0
+7154739,How can I get an array of alternating values in python?,set every two-stride far element to -1 starting from second element in array `a`,a[1::2] = -1,1202,22,6,2,0
+7658932,Finding index of the same elements in a list,Get all indexes of a letter `e` from a string `word`,"[index for index, letter in enumerate(word) if letter == 'e']",1249,23,0,2,0
+8153631,Js Date object to python datetime,"convert js date object 'Tue, 22 Nov 2011 06:00:00 GMT' to python datetime","datetime.strptime('Tue, 22 Nov 2011 06:00:00 GMT', '%a, %d %b %Y %H:%M:%S %Z')",1285,24,2,2,0
+12168648,Pandas (python): How to add column to dataframe for index?,add a column 'new_col' to dataframe `df` for index in range,"df['new_col'] = list(range(1, len(df) + 1))",1626,32,3,2,0
+12845112,Python: Make last item of array become the first,move last item of array `a` to the first position,a[-1:] + a[:-1],1682,34,6,2,0
+13905936,converting integer to list in python,create a list containing digits of number 123 as its elements,list(str(123)),1789,37,5,2,0
+14043934,time offset,subtract 5 hours from the time object `dt`,dt -= datetime.timedelta(hours=5),1800,37,2,2,0
+16114333,getting the opposite diagonal of a numpy array,get the opposite diagonal of a numpy array `array`,np.diag(np.rot90(array)),1966,41,6,2,0
+17117912,Python Accessing Values in A List of Dictionaries,create a list where each element is a value of the key 'Name' for each dictionary `d` in the list `thisismylist`,[d['Name'] for d in thisismylist],2033,43,1,2,0
+19758364,python: rename single column header in pandas dataframe,rename column 'gdp' in dataframe `data` to 'log(gdp)',"data.rename(columns={'gdp': 'log(gdp)'}, inplace=True)",2221,48,3,2,0
+20461165,How to convert pandas index in a dataframe to a column?,Add indexes in a data frame `df` to a column `index1`,df['index1'] = df.index,2262,49,3,2,0
+20677660,python string format() with dict with integer keys,format string with dict `{'5': 'you'}` with integer keys,'hello there %(5)s' % {'5': 'you'},2275,49,1,2,0
+21618351,Format time string in Python 3.3,format current date to pattern '{%Y-%m-%d %H:%M:%S}',time.strftime('{%Y-%m-%d %H:%M:%S}'),2312,50,2,2,0
+21887754,numpy concatenate two arrays vertically,numpy concatenate two arrays `a` and `b` along the second axis,"print(concatenate((a, b), axis=1))",2333,51,6,2,0
+22086116,how do you filter pandas dataframes by multiple columns,create dataframe `males` containing data of dataframe `df` where column `Gender` is equal to 'Male' and column `Year` is equal to 2014,males = df[(df[Gender] == 'Male') & (df[Year] == 2014)],2338,51,3,2,0
+23855976,Middle point of each pair of an numpy.array,calculate the mean of each element in array `x` with the element previous to it,(x[1:] + x[:-1]) / 2,2391,52,6,2,0
+27060098,Replacing few values in a pandas dataframe column with another value,"replace values `['ABC', 'AB']` in a column 'BrandName' of  pandas dataframe `df` with another value 'A'","df['BrandName'] = df['BrandName'].replace(['ABC', 'AB'], 'A')",2454,54,3,2,0
+27587127,How to convert datetime.date.today() to UTC time?,return a DateTime object with the current UTC date,today = datetime.datetime.utcnow().date(),2465,54,2,2,0
+27758657,How do I find the largest integer less than x?,find the largest integer less than `x`,int(math.ceil(x)) - 1,2471,54,5,2,0
+28538536,Deleting mulitple columns in Pandas,"Delete mulitple columns `columnheading1`, `columnheading2` in pandas data frame `yourdf`","yourdf.drop(['columnheading1', 'columnheading2'], axis=1, inplace=True)",2491,55,3,2,0
+32283692,Adding a 1-D Array to a 3-D array in Numpy,"add array of shape `(6, 9, 20)` to array `[1, 2, 3, 4, 5, 6, 7, 8, 9]`","np.zeros((6, 9, 20)) + np.array([1, 2, 3, 4, 5, 6, 7, 8, 9]).reshape((1, 9, 1))",2617,58,6,2,0
+32926587,How to capture the entire string while using 'lookaround' with chars in regex?,find all substrings in string `mystring` composed only of letters `a` and `b` where each `a` is directly preceded and succeeded by `b`,"re.findall('\\b(?:b+a)+b+\\b', mystring)",2636,58,0,2,0
+35883459,Creating a list of dictionaries in python,"creating a list of dictionaries [{'A': 1, 'C': 4, 'B': 2, 'D': 4}, {'A': 1, 'C': 4, 'B': 1, 'D': 5}]","[{'A': 1, 'C': 4, 'B': 2, 'D': 4}, {'A': 1, 'C': 4, 'B': 1, 'D': 5}]",2702,60,1,2,0
+40903174,Sorting data in DataFrame Pandas,Sorting data in DataFrame Pandas,"df.sort_values(['System_num', 'Dis'])",2818,63,3,2,0
+41192805,Pandas - Sorting By Column,Concatenate dataframe `df_1` to dataframe `df_2` sorted by values of the column 'y',"pd.concat([df_1, df_2.sort_values('y')])",2830,63,3,2,0
+42178481,How to count the number of a specific character at the end of a string ignoring duplicates?,count the number of trailing question marks in string `my_text`,len(my_text) - len(my_text.rstrip('?')),2862,64,0,2,0

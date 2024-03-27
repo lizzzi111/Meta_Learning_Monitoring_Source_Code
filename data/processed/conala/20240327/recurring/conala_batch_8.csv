@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+82831,check whether a file exists,check whether file `file_path` exists,os.path.exists(file_path),50,0,9,56,1,8,0
+663171,substring a string,select a substring of `s` beginning at `beginning` of length `LENGTH`,s = s[beginning:(beginning + LENGTH)],268,0,0,8,0,8,0
+783897,Truncating floats in Python,truncate float 1.923328437452 to 3 decimal places,"round(1.923328437452, 3)",327,0,5,9,0,8,0
+940822,"Regular expression syntax for ""match nothing""?",regular expression match nothing,re.compile('$^'),377,0,0,1,0,8,0
+1450393,read from stdin,read line by line from stdin,"for line in sys.stdin:
+    pass",460,3,9,51,1,8,0
+1450897,Python: removing characters except digits from string,substitute ASCII letters in string 'aas30dsa20' with empty string '',"re.sub('\\D', '', 'aas30dsa20')",461,3,8,0,0,8,0
+1773805,parse a YAML file,"parse a YAML file ""example.yaml""","with open('example.yaml') as stream:
+    try:
+        print((yaml.load(stream)))
+    except yaml.YAMLError as exc:
+        print(exc)",501,4,9,30,1,8,0
+1780174,Split dictionary of lists into list of dictionaries,Split dictionary of lists into list of dictionaries,"map(dict, zip(*[[(k, v) for v in value] for k, value in list(d.items())]))",504,4,1,17,0,8,0
+1883980,Find the nth occurrence of substring in a string,find the index of the second occurrence of the substring `bar` in string `foo bar bar bar`,"""""""foo bar bar bar"""""".replace('bar', 'XXX', 1).find('bar')",518,4,0,2,0,8,0
+2917372,How to search a list of tuples in Python,get the indices of tuples in list of tuples `L` where the first value is 53,"[i for i, v in enumerate(L) if v[0] == 53]",681,8,7,33,1,8,0
+3207219,list all files of a directory,"list all files of a directory ""somedirectory""",os.listdir('somedirectory'),716,9,9,46,1,8,0
+4265988,Generate random numbers with a given (numerical) distribution,"generate a random number in 1 to 7 with a given distribution [0.1, 0.05, 0.05, 0.2, 0.4, 0.2]","numpy.random.choice(numpy.arange(1, 7), p=[0.1, 0.05, 0.05, 0.2, 0.4, 0.2])",903,14,5,44,0,8,0
+4290716,How to write bytes to a file in Python 3 without knowing the encoding?,write bytes `bytes_` to a file `filename` in python 3,"open('filename', 'wb').write(bytes_)",911,14,9,16,1,8,0
+4697006,Python: Split string by list of separators,"Split a string `string` by multiple separators `,` and `;`","[t.strip() for s in string.split(',') for t in s.split(';')]",975,16,8,0,0,8,0
+4768151,How to perform double sort inside an array?,sort list `bar` by each element's attribute `attrb1` and attribute `attrb2` in reverse order,"bar.sort(key=lambda x: (x.attrb1, x.attrb2), reverse=True)",986,16,7,50,1,8,0
+4965159,Python: How to Redirect Output with Subprocess?,execute os command `my_cmd`,os.system(my_cmd),1024,17,9,23,1,8,0
+5826427,Can a python script execute a function inside a bash script?,call a function `otherfunc` inside a bash script `test.sh` using subprocess,subprocess.call('test.sh otherfunc'),1093,19,9,55,1,8,0
+6266727,Python: Cut off the last word of a sentence?,cut off the last word of a sentence `content`,""""""" """""".join(content.split(' ')[:-1])",1130,20,8,0,0,8,0
+6378889,How to convert a string list into an integer in python,Get a list of integers by splitting  a string `user` with comma,"[int(s) for s in user.split(',')]",1141,20,5,6,0,8,0
+6696027,split elements of a list in python,Split each string in list `myList` on the tab character,myList = [i.split('\t')[0] for i in myList],1171,21,8,0,0,8,0
+7670226,python/numpy: how to get 2D array column length?,get second array column length of array `a`,a.shape[1],1251,23,6,37,0,8,0
+9775731,Clamping floating numbers in Python?,clamping floating number `my_value` to be between `min_value` and `max_value`,"max(min(my_value, max_value), min_value)",1451,28,5,9,0,8,0
+11144513,Numpy: cartesian product of x and y array points into single array of 2D points,cartesian product of `x` and `y` array points into single array of 2d points,"numpy.dstack(numpy.meshgrid(x, y)).reshape(-1, 2)",1549,31,6,6,0,8,0
+12329853,How to rearrange Pandas column sequence?,"Rearrange the columns 'a','b','x','y' of pandas DataFrame `df` in mentioned sequence 'x' ,'y','a' ,'b'","df = df[['x', 'y', 'a', 'b']]",1640,33,3,61,0,8,0
+12589481,Python Pandas: Multiple aggregations of the same column,apply two different aggregating functions `mean` and `sum` to the same column `dummy` in pandas data frame `df`,"df.groupby('dummy').agg({'returns': [np.mean, np.sum]})",1660,33,3,35,0,8,0
+13842088,Set value for particular cell in pandas DataFrame,set the value of cell `['x']['C']` equal to 10 in dataframe `df`,df['x']['C'] = 10,1783,37,3,8,0,8,0
+15043326,getting string between 2 characters in python,getting the string between 2 '$' characters in '$sin (x)$ is an function of x',"re.findall('\\$(.*?)\\$', '$sin (x)$ is an function of x')",1886,39,8,0,0,8,0
+15183084,how to create a dictionary using two lists in python?,create a dictionary using two lists`x` and `y`,"dict(zip(x, y))",1900,40,1,20,0,8,0
+17960441,"in Numpy, how to zip two 2-D arrays?",join each element in array `a` with element at the same index in array `b` as a tuple,"np.array([zip(x, y) for x, y in zip(a, b)])",2094,44,6,33,0,8,0
+18071222,Working with set_index in Pandas DataFrame,"set columns `['race_date', 'track_code', 'race_number']` as indexes in dataframe `rdata`","rdata.set_index(['race_date', 'track_code', 'race_number'])",2100,45,3,13,0,8,0
+25698710,Replace all occurrences of a string in a pandas dataframe (Python),replace all occurrences of a string `\n` by string `<br>` in a pandas data frame `df`,"df.replace({'\n': '<br>'}, regex=True)",2429,53,3,4,0,8,0
+27975069,How to filter rows containing a string pattern from a Pandas dataframe,filter rows containing key word `ball` in column `ids`,df[df['ids'].str.contains('ball')],2481,54,0,12,0,8,0
+28431359,How to decode a 'url-encoded' string in python,decode url-encoded string `some_string` to its character equivalents,urllib.parse.unquote(urllib.parse.unquote(some_string)),2490,55,8,0,0,8,0
+32751229,"Pandas sum by groupby, but exclude certain columns","Get sum of values of columns  'Y1961', 'Y1962', 'Y1963' after group by on columns ""Country"" and ""Item_code"" in dataframe `df`.","df.groupby(['Country', 'Item_Code'])[['Y1961', 'Y1962', 'Y1963']].sum()",2630,58,3,52,0,8,0
+33147992,how to turn a string of letters embedded in squared brackets into embedded lists,convert a string `a` of letters embedded in squared brackets into embedded lists,"[i.split() for i in re.findall('\\[([^\\[\\]]+)\\]', a)]",2644,59,8,0,0,8,0
+36190533,python: check if an numpy array contains any element of another array,check if a numpy array `a1` contains any element of another array `a2`,"np.any(np.in1d(a1, a2))",2707,60,6,60,0,8,0
+39159475,pandas: how to do multiple groupby-apply operations,"Use multiple groupby and agg operations `sum`, `count`, `std` for pandas data frame `df`","df.groupby(level=0).agg(['sum', 'count', 'std'])",2753,61,3,48,0,8,0
+39804375,Python - Sort a list of dics by value of dict`s dict value,sort a list of dictionary `persons` according to the key `['passport']['birth_info']['date']`,"sorted(persons, key=lambda x: x['passport']['birth_info']['date'])",2774,62,1,23,0,8,0
+41821112,How can I sum the product of two list items using for loop in python?,sum the products of each two elements at the same index of list `a` and list `b`,"list(x * y for x, y in list(zip(a, b)))",2847,64,7,48,1,8,0

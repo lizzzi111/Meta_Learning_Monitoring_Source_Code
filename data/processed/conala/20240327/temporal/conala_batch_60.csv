@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+35005907,re.split with spaces in python,split string `s` based on white spaces,"re.findall('\\s+|\\S+', s)",2680,60
+35015693,How do I transform a multi-level list into a list of strings in Python?,join items of each tuple in list of tuples `a` into a list of strings,"list(map(''.join, a))",2681,60
+35015693,How do I transform a multi-level list into a list of strings in Python?,join elements of each tuple in list `a` into one string,[''.join(x) for x in a],2682,60
+35017035,Compare elements of a list of lists and return a list,convert a list of lists `a` into list of tuples of appropriate elements form nested lists,zip(*a),2683,60
+35044115,Replacing characters in a regex,replace dot characters  '.' associated with ascii letters in list `s` with space ' ',"[re.sub('(?<!\\d)\\.(?!\\d)', ' ', i) for i in s]",2684,60
+35078261,Sort a list of dictionary provided an order,sort a list of dictionaries `list_of_dct` by values in an order `order`,"sorted(list_of_dct, key=lambda x: order.index(list(x.values())[0]))",2685,60
+35097130,Django order by highest number of likes,sort objects in `Articles` in descending order of counts of `likes`,Article.objects.annotate(like_count=Count('likes')).order_by('-like_count'),2686,60
+35118265,Dot notation string manipulation,remove the last dot and all text beyond it in string `s`,"re.sub('\\.[^.]+$', '', s)",2687,60
+35178812,Counting unique index values in Pandas groupby,count unique index values in column 'A' in pandas dataframe `ex`,ex.groupby(level='A').agg(lambda x: x.index.get_level_values(1).nunique()),2688,60
+35253971,"How to check if all values of a dictionary are 0, in Python?",check if all values of a dictionary `your_dict` are zero `0`,all(value == 0 for value in list(your_dict.values())),2689,60
+35269374,get count of values associated with key in dict python,count the number of True values associated with key 'success' in dictionary `d`,sum(1 if d['success'] else 0 for d in s),2690,60
+35269374,get count of values associated with key in dict python,get the sum of values associated with the key ‘success’ for a list of dictionaries `s`,sum(d['success'] for d in s),2691,60
+35414625,pandas: how to run a pivot with a multi-index?,"Convert dataframe `df` to a pivot table using column 'year', 'month', and 'item' as indexes","df.set_index(['year', 'month', 'item']).unstack(level=-1)",2692,60
+35414625,pandas: how to run a pivot with a multi-index?,run a pivot with a multi-index `year` and `month` in a pandas data frame,"df.pivot_table(values='value', index=['year', 'month'], columns='item')",2693,60
+35420052,Adding Colorbar to a Spectrogram,add color bar with image `mappable` to plot `plt`,"plt.colorbar(mappable=mappable, cax=ax3)",2694,60
+35427814,Get the number of all keys in a dictionary of dictionaries in Python,get the number of all keys in the nested dictionary `dict_list`,len(dict_test) + sum(len(v) for v in dict_test.values()),2695,60
+35561743,python comprehension loop for dictionary,count `True` values associated with key 'one' in dictionary `tadas`,sum(item['one'] for item in list(tadas.values())),2696,60
+35622945,"Regex, find pattern only in middle of string","regex, find ""n""s only in the middle of string `s`","re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)",2697,60
+35707224,Functional statement in Python to return the sum of certain lists in a list of lists,sum the length of lists in list `x` that are more than 1 item in length,sum(len(y) for y in x if len(y) > 1),2698,60
+35711059,Extract dictionary value from column in data frame,extract dictionary values by key 'Feature3' from data frame `df`,feature3 = [d.get('Feature3') for d in df.dic],2699,60
+35797523,"Create new list by taking first item from first list, and last item from second list",create a list by appending components from list `a` and reversed list `b` interchangeably,"[value for pair in zip(a, b[::-1]) for value in pair]",2700,60
+35837346,Is there a one line code to find maximal value in a matrix?,find maximal value in matrix `matrix`,max([max(i) for i in matrix]),2701,60
+35883459,Creating a list of dictionaries in python,"creating a list of dictionaries [{'A': 1, 'C': 4, 'B': 2, 'D': 4}, {'A': 1, 'C': 4, 'B': 1, 'D': 5}]","[{'A': 1, 'C': 4, 'B': 2, 'D': 4}, {'A': 1, 'C': 4, 'B': 1, 'D': 5}]",2702,60
+35883459,Creating a list of dictionaries in python,Creating a list of dictionaries in python,"[{'A': 1, 'C': 4, 'B': 2, 'D': 4}, {'A': 1, 'C': 4, 'B': 1, 'D': 5}]",2703,60
+35945473,How to reverse a dictionary in Python?,reverse the keys and values in a dictionary `myDictionary`,{i[1]: i[0] for i in list(myDictionary.items())},2704,60
+36003967,Sum of multiple list of lists index wise,sum elements at the same index in list `data`,[[sum(item) for item in zip(*items)] for items in zip(*data)],2705,60
+36113747,How to declare an array in python,Initialize a list `a` with `10000` items and each item's value `0`,a = [0] * 10000,2706,60
+36190533,python: check if an numpy array contains any element of another array,check if a numpy array `a1` contains any element of another array `a2`,"np.any(np.in1d(a1, a2))",2707,60
+36296993,avoiding regex in pandas str.replace,replace string 'in.' with ' in. ' in dataframe `df` column 'a',"df['a'] = df['a'].str.replace('in.', ' in. ')",2708,60
+36381230,How to find row of 2d array in 3d numpy array,"find rows of 2d array in 3d numpy array 'arr' if the row has value '[[0, 3], [3, 0]]'","np.argwhere(np.all(arr == [[0, 3], [3, 0]], axis=(1, 2)))",2709,60
+36402748,How to sort a Dataframe by the ocurrences in a column in Python (pandas),How to sort a Dataframe by the ocurrences in a column in Python (pandas),"df.groupby('prots').sum().sort('scores', ascending=False)",2710,60
+36454494,Calcuate mean for selected rows for selected columns in pandas data frame,"get mean of columns `2, 5, 6, 7, 8` for all rows in dataframe `df`","df.iloc[:, ([2, 5, 6, 7, 8])].mean(axis=1)",2711,60
+36518800,Sort a list in python based on another sorted list,sort a list `unsorted_list` based on another sorted list `presorted_list`,"sorted(unsorted_list, key=presorted_list.index)",2712,60
+36542169,Extract first and last row of a dataframe in pandas,extract first and last row of a dataframe `df`,"pd.concat([df.head(1), df.tail(1)])",2713,60
+36623789,How to convert unicode text to normal text,convert unicode text from list `elems` with index 0 to normal text 'utf-8',elems[0].getText().encode('utf-8'),2714,60
+36661837,How to retrieve only arabic texts from a string using regular expression?,retrieve arabic texts from string `my_string`,"print(re.findall('[\\u0600-\\u06FF]+', my_string))",2715,60
+36674519,How to get a daterange of the 2nd Fridays of each month?,create a DatetimeIndex containing 13 periods of the second friday of each month starting from date '2016-01-01',"pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)",2716,60
+36875258,copying one file's contents to another in python,copy the content of file 'file.txt' to file 'file2.txt',"shutil.copy('file.txt', 'file2.txt')",2717,60
+36957908,Removing white space from txt with python,substitute two or more whitespace characters with character '|' in string `line`,"re.sub('\\s{2,}', '|', line.strip())",2718,60

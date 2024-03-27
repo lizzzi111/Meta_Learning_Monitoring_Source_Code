@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+4659524,how to sort by length of string followed by alphabetical order?,sort list `the_list` by the length of string followed by alphabetical order,"the_list.sort(key=lambda item: (-len(item), item))",964,16
+4664850,Find all occurrences of a substring in Python,find indexes of all occurrences of a substring `tt` in a string `ttt`,"[m.start() for m in re.finditer('(?=tt)', 'ttt')]",965,16
+4664850,Find all occurrences of a substring in Python,find all occurrences of a substring in a string,"[m.start() for m in re.finditer('test', 'test test test test')]",966,16
+4668619,Django database query: How to filter objects by date range?,filter objects month wise in django model `Sample` for year `2011`,"Sample.objects.filter(date__year='2011', date__month='01')",967,16
+4668619,Django database query: How to filter objects by date range?,filter the objects in django model 'Sample' between date range `2011-01-01` and `2011-01-31`,"Sample.objects.filter(date__range=['2011-01-01', '2011-01-31'])",968,16
+4682088,Call Perl script from Python,invoke perl script './uireplace.pl' using perl interpeter '/usr/bin/perl' and send argument `var` to it,"subprocess.call(['/usr/bin/perl', './uireplace.pl', var])",969,16
+4685571,Generic reverse of list items in Python,Get reverse of list items from list 'b' using extended slicing,[x[::-1] for x in b],970,16
+4690094,Sorting dictionary keys based on their values,sort keys of dictionary 'd' based on their values,"sorted(d, key=lambda k: d[k][1])",971,16
+4690366,Creating a list from a Scipy matrix,"create a matrix from a list `[1, 2, 3]`","x = scipy.matrix([1, 2, 3]).transpose()",972,16
+4695143,Regex. Match words that contain special characters or 'http://',replace each occurrence of the pattern '(http://\\S+|\\S*[^\\w\\s]\\S*)' within `a` with '',"re.sub('(http://\\S+|\\S*[^\\w\\s]\\S*)', '', a)",973,16
+4697006,Python: Split string by list of separators,"split a string `a , b; cdf`  using both commas and semicolons as delimeters","re.split('\\s*,\\s*|\\s*;\\s*', 'a , b; cdf')",974,16
+4697006,Python: Split string by list of separators,"Split a string `string` by multiple separators `,` and `;`","[t.strip() for s in string.split(',') for t in s.split(';')]",975,16
+4703390,How to extract a floating number from a string,extract floating number from string 'Current Level: 13.4 db.',"re.findall('\\d+\\.\\d+', 'Current Level: 13.4 db.')",976,16
+4703390,How to extract a floating number from a string,extract floating point numbers from a string 'Current Level: -13.2 db or 14.2 or 3',"re.findall('[-+]?\\d*\\.\\d+|\\d+', 'Current Level: -13.2 db or 14.2 or 3')",977,16
+4706499,append to a file,"append line ""cool beans..."" to file ""foo""","with open('foo', 'a') as f:
+    f.write('cool beans...')",978,16
+4706499,append to a file,append to file 'test1' content 'koko',"with open('test1', 'ab') as f:
+    pass",979,16
+4706499,append to a file,"append line ""appended text"" to file ""test.txt""","with open('test.txt', 'a') as myfile:
+    myfile.write('appended text')",980,16
+4706499,append to a file,append to file 'test' content 'koko',"open('test', 'a+b').write('koko')",981,16
+4710067,Deleting a specific line in a file (python),Open a file `yourfile.txt` in write mode,"f = open('yourfile.txt', 'w')",982,16
+4716533,How to attach debugger to a python subproccess?,attach debugger pdb to class `ForkedPdb`,ForkedPdb().set_trace(),983,16
+4741537,Append elements of a set to a list in Python,append elements of a set `b` to a list `a`,a.extend(b),984,16
+4741537,Append elements of a set to a list in Python,Append elements of a set to a list in Python,a.extend(list(b)),985,16
+4768151,How to perform double sort inside an array?,sort list `bar` by each element's attribute `attrb1` and attribute `attrb2` in reverse order,"bar.sort(key=lambda x: (x.attrb1, x.attrb2), reverse=True)",986,16
+4789021,"In Django, how do I check if a user is in a certain group?","in django, check if a user is in a group 'Member'",return user.groups.filter(name='Member').exists(),987,16
+4789021,"In Django, how do I check if a user is in a certain group?","check if a user `user` is in a group from list of groups `['group1', 'group2']`","return user.groups.filter(name__in=['group1', 'group2']).exists()",988,16
+4793617,How to derive the week start for a given (iso) weeknumber / year in python,"derive the week start for the given week number and year ‘2011, 4, 0’","datetime.datetime.strptime('2011, 4, 0', '%Y, %U, %w')",989,16
+4800419,Sorting or Finding Max Value by the second element in a nested list. Python,Find the list in a list of lists `alkaline_earth_values` with the max value of the second element.,"max(alkaline_earth_values, key=lambda x: x[1])",990,16
+4800811,Accessing a value in a tuple that is in a list,get the value at index 1 for each tuple in the list of tuples `L`,[x[1] for x in L],991,16
+4810537,how to clear the screen in python,clear terminal screen on windows,os.system('cls'),992,16
+4810537,how to clear the screen in python,clear the terminal screen in Linux,os.system('clear'),993,16
+4830535,Python: How do I format a date in Jinja2?,Get the date object `date_of_manufacture` of object `car` in string  format '%Y-%m-%d',{{car.date_of_manufacture.strftime('%Y-%m-%d')}},994,16
+4830535,Python: How do I format a date in Jinja2?,Jinja parse datetime object `car.date_of_manufacture` to use format pattern `datetime`,{{car.date_of_manufacture | datetime}},995,16
+4842956,Python: How to remove empty lists from a list?,Get a new list `list2`by removing empty list from a list of lists `list1`,list2 = [x for x in list1 if x != []],996,16
+4842956,Python: How to remove empty lists from a list?,Create `list2` to contain the lists from list `list1` excluding the empty lists from `list1`,list2 = [x for x in list1 if x],997,16
+4843158,Check if a Python list item contains a string inside another string,get a list of items from the list `some_list` that contain string 'abc',matching = [s for s in some_list if 'abc' in s],998,16
+4843173,How to check if type of a variable is string?,check if type of variable `s` is a string,"isinstance(s, str)",999,16
+4843173,How to check if type of a variable is string?,check if type of a variable `s` is string,"isinstance(s, str)",1000,16
+4859292,How to get a random value in python dictionary,get a random key `country` and value `capital` form a dictionary `d`,"country, capital = random.choice(list(d.items()))",1001,16
+4877844,How would I check a string for a certain letter in Python?,"check if string 'x' is  in list `['x', 'd', 'a', 's', 'd', 's']`","'x' in ['x', 'd', 'a', 's', 'd', 's']",1002,16

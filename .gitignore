@@ -2,4 +2,4 @@
 .conda
 src/__pycache__
 notebooks/reports
-data/processed
+data/processed/conala/20240326

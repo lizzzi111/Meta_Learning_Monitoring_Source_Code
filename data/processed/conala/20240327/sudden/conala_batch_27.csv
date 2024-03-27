@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+209513,Convert hex string to int,"Convert hex string ""deadbeef"" to integer","int('deadbeef', 16)",90,0,5,22,0,29,0,27,0
+209513,Convert hex string to int,"Convert hex string ""0xa"" to integer","int('0xa', 16)",92,0,5,23,0,20,0,27,0
+306400,randomly select an item from a list,randomly select an item from list `foo`,random.choice(foo),136,0,7,30,1,22,0,27,0
+663171,substring a string,get a new string including the last two characters of string `x`,x[(-2):],270,0,8,0,0,9,0,27,0
+1179305,Expat parsing in python 3,Parse a file `sample.xml` using expat parsing in python 3,"parser.ParseFile(open('sample.xml', 'rb'))",420,2,9,39,1,20,0,27,0
+4004550,Converting string series to float list,Converting string lists `s` to float list,"floats = map(float, s.split())",867,13,5,7,0,36,0,27,0
+4175686,python: Is this a wrong way to remove an element from a dict?,remove key 'ele' from dictionary `d`,del d['ele'],895,14,1,30,0,13,0,27,0
+4265988,Generate random numbers with a given (numerical) distribution,"generate a random number in 1 to 7 with a given distribution [0.1, 0.05, 0.05, 0.2, 0.4, 0.2]","numpy.random.choice(numpy.arange(1, 7), p=[0.1, 0.05, 0.05, 0.2, 0.4, 0.2])",903,14,5,44,0,8,0,27,0
+4356842,How do I return a 401 Unauthorized in Django?,return a 401 unauthorized in django,"return HttpResponse('Unauthorized', status=401)",921,14,4,44,1,48,1,27,0
+4879641,Python: How to use a list comprehension here?,create a list containing all values associated with key 'baz' in dictionaries of list `foos` using list comprehension,[y['baz'] for x in foos for y in x['bar']],1003,17,1,24,0,13,0,27,0
+4906977,Access environment variables,print all environment variables,print(os.environ),1008,17,4,33,1,46,1,27,0
+4906977,Access environment variables,"Access environment variable ""HOME""",os.environ['HOME'],1009,17,4,47,1,12,1,27,0
+4934806,How can I find script's directory with Python?,print script's directory,print(os.path.dirname(os.path.realpath(__file__))),1020,17,9,55,1,33,0,27,0
+6429638,How to split a string into integers in Python?,split a string `s` into integers,l = (int(x) for x in s.split()),1148,20,5,18,0,17,0,27,0
+6633678,Finding words after keyword in python,finding words in string `s` after keyword 'name',"re.search('name (.*)', s)",1167,21,0,31,0,33,0,27,0
+6996603,Delete a file or folder,recursively remove folder `name`,os.removedirs(name),1190,21,9,47,1,17,0,27,0
+7173850,Possible to get user input without inserting a new line?,"get user input using message 'Enter name here: ' and insert it to the first placeholder in string 'Hello, {0}, how do you do?'","print('Hello, {0}, how do you do?'.format(input('Enter name here: ')))",1204,22,8,0,0,41,0,27,0
+9153527,"Import module in another directory from a ""parallel"" sub-directory",append a path `/path/to/main_folder` in system path,sys.path.append('/path/to/main_folder'),1391,26,9,48,1,4,0,27,0
+9759820,How to get a list of variables in specific Python module?,get a list of variables from module 'adfix.py' in current module.,print([item for item in dir(adfix) if not item.startswith('__')]),1447,28,4,37,1,12,1,27,0
+10365225,extract digits in a simple way from a python string,extract digits in a simple way from a python string,"map(int, re.findall('\\d+', s))",1483,29,5,1,0,58,0,27,0
+10668585,How to get max value in django ORM,Django get maximum value associated with field 'added' in model `AuthorizedEmail`,AuthorizedEmail.objects.filter(group=group).order_by('-added')[0],1516,30,4,15,1,46,1,27,0
+13167391,filtering grouped df in pandas,filter dataframe `grouped` where the length of each group `x` is bigger than 1,grouped.filter(lambda x: len(x) > 1),1710,35,3,30,0,59,0,27,0
+13905936,converting integer to list in python,converting integer `num` to list,[int(x) for x in str(num)],1790,37,5,34,0,64,0,27,0
+14358567,Finding consecutive segments in a pandas data frame,find consecutive segments from a column 'A' in a pandas data frame 'df',df.reset_index().groupby('A')['index'].apply(np.array),1826,38,3,9,0,64,0,27,0
+15080500,How can I send a signal from a python program?,send a signal `signal.SIGUSR1` to the current process,"os.kill(os.getpid(), signal.SIGUSR1)",1889,39,4,31,1,46,1,27,0
+18168684,Parsing XML in Python with regex,search for occurrences of regex pattern '>.*<' in xml string `line`,"print(re.search('>.*<', line).group(0))",2110,45,0,26,0,63,0,27,0
+18312447,How can I split a string into tokens?,split string 'x+13.5*10x-4e1' into tokens,"print([i for i in re.split('([\\d.]+|\\W+)', 'x+13.5*10x-4e1') if i])",2120,45,5,14,0,40,0,27,0
+19384532,How to count number of rows in a group in pandas group by object?,count number of rows in a group `key_columns` in pandas groupby object `df`,df.groupby(key_columns).size(),2194,47,3,46,0,23,0,27,0
+19601086,Click a href button with selenium and python?,click a href button 'Send' with selenium,driver.find_element_by_partial_link_text('Send').click(),2207,47,4,11,1,11,1,27,0
+21800169,Python Pandas: Get index of rows which column matches certain value,get index of rows in column 'BoolCol',df.loc[df['BoolCol']],2323,50,6,56,0,37,0,27,0
+21804935,How to use the mv command in Python with subprocess,execute a mv command `mv /home/somedir/subdir/* somedir/` in subprocess,"subprocess.call('mv /home/somedir/subdir/* somedir/', shell=True)",2324,50,9,58,1,3,0,27,0
+21947035,Print string as hex literal python,"print string ""ABC"" as hex literal","""""""ABC"""""".encode('hex')",2335,51,8,0,0,18,0,27,0
+23887592,Find next sibling element in Python Selenium?,Find next sibling element in Python Selenium?,"driver.find_element_by_xpath(""//p[@id, 'one']/following-sibling::p"")",2392,52,4,45,1,47,1,27,0
+27966626,how to clear/delete the Textbox in tkinter python on Ubuntu,clear the textbox `text` in tkinter,"tex.delete('1.0', END)",2480,54,4,36,1,47,1,27,0
+31247198,"Python, Pandas : write content of DataFrame into text File",write the data of dataframe `df` into text file `np.txt`,"np.savetxt('c:\\data\\np.txt', df.values, fmt='%d')",2575,57,3,50,0,16,0,27,0
+34776651,Concatenate rows of pandas DataFrame with same id,group rows of pandas dataframe `df` with same 'id',df.groupby('id').agg(lambda x: x.tolist()),2676,59,3,37,0,4,0,27,0
+39870642,Matplotlib - How to plot a high resolution graph?,Save matplotlib graph to image file `filename.png` at a resolution of `300 dpi`,"plt.savefig('filename.png', dpi=300)",2778,62,9,22,1,6,0,27,0
+40076861,How to merge two DataFrames into single matching the column values,merge a pandas data frame `distancesDF` and column `dates` in pandas data frame `datesDF` into single,"pd.concat([distancesDF, datesDF.dates], axis=1)",2783,62,3,4,0,4,0,27,0
+40963347,Find Average of Every Three Columns in Pandas dataframe,Get average for every three columns in `df` dataframe,"df.groupby(np.arange(len(df.columns)) // 3, axis=1).mean()",2820,63,3,1,0,5,0,27,0

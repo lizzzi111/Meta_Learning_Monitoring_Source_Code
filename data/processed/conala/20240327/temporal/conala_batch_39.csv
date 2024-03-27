@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",logoff computer having windows operating system using python,"subprocess.call(['shutdown', '/l '])",1861,39
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",restart a computer after `900` seconds using subprocess,"subprocess.call(['shutdown', '/r', '/t', '900'])",1862,39
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",shutdown a computer using subprocess,"subprocess.call(['shutdown', '/s'])",1863,39
+14766194,testing whether a Numpy array contains a given row,"Check whether a numpy array `a` contains a given row `[1, 2]`","any(np.equal(a, [1, 2]).all(1))",1864,39
+14793098,How to use Flask-Security register view?,change flask security register url to `/create_account`,app.config['SECURITY_REGISTER_URL'] = '/create_account',1865,39
+14850853,How to include third party Python libraries in Google App Engine?,insert directory 'libs' at the 0th index of current directory,"sys.path.insert(0, 'libs')",1866,39
+14853243,Parsing XML with namespace in Python via 'ElementTree',find all `owl:Class` tags by parsing xml with namespace,root.findall('{http://www.w3.org/2002/07/owl#}Class'),1867,39
+14858916,True for all characters of a string,check characters of string `string` are true predication of function `predicate`,all(predicate(x) for x in string),1868,39
+14859458,How to check if all values in the columns of a numpy matrix are the same?,check if all values in the columns of a numpy matrix `a` are same,"np.all(a == a[(0), :], axis=0)",1869,39
+14914615,"In Python, find out number of differences between two ordered lists",find out the number of non-matched elements at the same index of list `a` and list `b`,"sum(1 for i, j in zip(a, b) if i != j)",1870,39
+14925239,Python: How to get attribute of attribute of an object with getattr?,Evaluate a nested dictionary `myobject.id.number` to get `number` if `myobject` is present with getattr,"getattr(getattr(myobject, 'id', None), 'number', None)",1871,39
+14931769,get all combination of n binary value,get all combination of 3 binary values,"bin = [0, 1]
+[(x, y, z) for x in bin for y in bin for z in bin]",1872,39
+14931769,get all combination of n binary value,get all combination of n binary values,"lst = list(itertools.product([0, 1], repeat=n))",1873,39
+14931769,get all combination of n binary value,get all combination of n binary values,"lst = map(list, itertools.product([0, 1], repeat=n))",1874,39
+14931769,get all combination of n binary value,get all combination of 3 binary values,"lst = list(itertools.product([0, 1], repeat=3))",1875,39
+14932247,variable number of digit in format string,"variable number of digits `digits` in variable `value` in format string ""{0:.{1}%}""","""""""{0:.{1}%}"""""".format(value, digits)",1876,39
+14950260,Convert unicode string dictionary into dictionary in python,"convert unicode string u""{'code1':1,'code2':1}"" into dictionary","d = ast.literal_eval(""{'code1':1,'code2':1}"")",1877,39
+14956683,Finding the minimum value in a numpy array and the corresponding values for the rest of that array's row,Get the value of the minimum element in the second column of array `a`,"a[np.argmin(a[:, (1)])]",1878,39
+14961014,Removing items from unnamed lists in Python,Remove the string value `item` from a list of strings `my_sequence`,[item for item in my_sequence if item != 'item'],1879,39
+14961562,How do I convert a string of hexadecimal values to a list of integers?,unpack hexadecimal string `s` to a list of integer values,"struct.unpack('11B', s)",1880,39
+14971373,Python: how to get the final output of multiple system commands?,capture final output of a chain of system commands `ps -ef | grep something | wc -l`,"subprocess.check_output('ps -ef | grep something | wc -l', shell=True)",1881,39
+14986218,From a list of lists to a dictionary,Convert a list of lists `lol` to a dictionary with key as second value of a list and value as list itself,{x[1]: x for x in lol},1882,39
+14991195,How to remove rows with null values from kth column onward in python,"remove all null values from columns 'three', 'four' and 'five' of dataframe `df2`","df2.dropna(subset=['three', 'four', 'five'], how='all')",1883,39
+15012228,Splitting on last delimiter in Python string?,split a string `s` on last delimiter,"s.rsplit(',', 1)",1884,39
+15014276,Python: Sum values in a dictionary based on condition,sum values greater than 0 in dictionary `d`,sum(v for v in list(d.values()) if v > 0),1885,39
+15043326,getting string between 2 characters in python,getting the string between 2 '$' characters in '$sin (x)$ is an function of x',"re.findall('\\$(.*?)\\$', '$sin (x)$ is an function of x')",1886,39
+15043326,getting string between 2 characters in python,get all characters between two `$` characters in string `string`,"re.findall('\\$([^$]*)\\$', string)",1887,39
+15049182,Write value to hidden element with selenium python script,add one to the hidden web element with id 'XYZ' with selenium python script,"browser.execute_script(""document.getElementById('XYZ').value+='1'"")",1888,39
+15080500,How can I send a signal from a python program?,send a signal `signal.SIGUSR1` to the current process,"os.kill(os.getpid(), signal.SIGUSR1)",1889,39
+15096021,Python list of tuples to list of int,convert list `x` into a flat list,"y = map(operator.itemgetter(0), x)",1890,39
+15096021,Python list of tuples to list of int,Flatten list `x`,x = [i[0] for i in x],1891,39
+15096021,Python list of tuples to list of int,get a list `y` of the first element of every tuple in list `x`,y = [i[0] for i in x],1892,39
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""","separate numbers from characters in string ""30m1000n20m""","re.findall('(([0-9]+)([A-Z]))', '20M10000N80M')",1893,39
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""",separate numbers and characters in string '20M10000N80M',"re.findall('([0-9]+|[A-Z])', '20M10000N80M')",1894,39
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""",separate numbers and characters in string '20M10000N80M',"re.findall('([0-9]+)([A-Z])', '20M10000N80M')",1895,39
+15148684,"List of Tuples (string, float)with NaN How to get the min value?",Get a minimum value from a list of tuples `list` with values of type `string` and `float` with nan,"min(list, key=lambda x: float('inf') if math.isnan(x[1]) else x[1])",1896,39
+15158599,Removing entries from a dictionary based on values,Get a dictionary from a dictionary `hand` where the values are present,"dict((k, v) for k, v in hand.items() if v)",1897,39
+15158599,Removing entries from a dictionary based on values,remove false entries from a dictionary `hand`,"{k: v for k, v in list(hand.items()) if v}",1898,39
+15175142,How can I do multiple substitutions using regex in python?,double each character in string `text.read()`,"re.sub('(.)', '\\1\\1', text.read(), 0, re.S)",1899,39

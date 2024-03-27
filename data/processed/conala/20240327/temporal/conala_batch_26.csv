@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+8704952,How to convert a tuple to a string in Python?,convert a list of tuples `queryresult` to a string from the first indexes.,emaillist = '\n'.join([item[0] for item in queryresult]),1354,26
+8712332,Array indexing in numpy,retrieve all items in an numpy array 'x' except the item of the index 1,"x[(np.arange(x.shape[0]) != 1), :, :]",1355,26
+8724352,Getting the nth element using BeautifulSoup,BeautifulSoup find all 'tr' elements in HTML string `soup` at the five stride starting from the fourth element,rows = soup.findAll('tr')[4::5],1356,26
+8735312,How to change folder names in python?,"Rename a folder `Joe Blow` to `Blow, Joe`","os.rename('Joe Blow', 'Blow, Joe')",1357,26
+8740353,How to convert a string data to a JSON object in python?,convert a urllib unquoted string `unescaped` to a json data `json_data`,json_data = json.loads(unescaped),1358,26
+8751653,How can I convert a binary to a float number,convert string representation `s2` of binary string rep of integer to floating point number,"struct.unpack('d', struct.pack('Q', int(s2, 0)))[0]",1359,26
+8751653,How can I convert a binary to a float number,convert a binary `b8` to a float number,"struct.unpack('d', b8)[0]",1360,26
+8751653,How can I convert a binary to a float number,convert a binary '-0b1110' to a float number,"float(int('-0b1110', 0))",1361,26
+8777753,Converting datetime.date to UTC timestamp in Python,convert datetime.date `dt` to utc timestamp,"timestamp = (dt - datetime(1970, 1, 1)).total_seconds()",1362,26
+8785554,How do I insert a list at the front of another list?,insert a list `k` at the front of list `a`,"a.insert(0, k)",1363,26
+8785554,How do I insert a list at the front of another list?,insert elements of list `k` into list `a` at position `n`,a = a[:n] + k + a[n:],1364,26
+8898294,Convert UTF-8 with BOM to UTF-8 with no BOM in Python,convert utf-8 with bom string `s` to utf-8 with no bom `u`,u = s.decode('utf-8-sig'),1365,26
+8899905,Count number of occurrences of a given substring in a string,"count number of occurrences of a substring 'ab' in a string ""abcdabcva""","""""""abcdabcva"""""".count('ab')",1366,26
+8901996,How to print container object with unicode-containing values?,decode utf-8 code `x` into a raw unicode literal,print(str(x).decode('raw_unicode_escape')),1367,26
+8905864,URL encoding in python,URL encoding in python,urllib.parse.quote_plus('a b'),1368,26
+8905864,URL encoding in python,Replace special characters in utf-8 encoded string `s` using the %xx escape,urllib.parse.quote(s.encode('utf-8')),1369,26
+8908287,Base64 encoding in Python 3,encode a string `data to be encoded` to `ascii` encoding,encoded = 'data to be encoded'.encode('ascii'),1370,26
+8908287,Base64 encoding in Python 3,encode string 'data to be encoded',encoded = base64.b64encode('data to be encoded'),1371,26
+8916302,selecting across multiple columns with python pandas?,select all rows from pandas DataFrame 'df' where the value in column 'A' is greater than 1 or less than -1 in column 'B'.,df[(df['A'] > 1) | (df['B'] < -1)],1372,26
+8924173,How do I print bold text in Python?,print bold text 'Hello',print('\x1b[1m' + 'Hello'),1373,26
+8936030,Using BeautifulSoup to search html for string,searche in HTML string for elements that have text 'Python',soup.body.findAll(text='Python'),1374,26
+8936030,Using BeautifulSoup to search html for string,BeautifulSoup find string 'Python Jobs' in HTML body `body`,soup.body.findAll(text='Python Jobs'),1375,26
+8938449,How to extract data from matplotlib plot,Get data from matplotlib plot,gca().get_lines()[n].get_xydata(),1376,26
+8970524,Python regex search AND split,search and split string 'aaa bbb ccc ddd eee fff' by delimiter '(ddd)',"re.split('(ddd)', 'aaa bbb ccc ddd eee fff', 1)",1377,26
+8970524,Python regex search AND split,regex search and split string 'aaa bbb ccc ddd eee fff' by delimiter '(d(d)d)',"re.split('(d(d)d)', 'aaa bbb ccc ddd eee fff', 1)",1378,26
+8993904,Python regex split case insensitive in 2.6,split string 'fooxyzbar' based on case-insensitive matching using string 'XYZ',"re.compile('XYZ', re.IGNORECASE).split('fooxyzbar')",1379,26
+9001509,sort a dictionary by key,sort dictionary `d` by key,od = collections.OrderedDict(sorted(d.items())),1380,26
+9001509,sort a dictionary by key,sort a dictionary `d` by key,"OrderedDict(sorted(list(d.items()), key=(lambda t: t[0])))",1381,26
+9012008,python's re: return True if regex contains in the string,return `True` if string `foobarrrr` contains regex `ba[rzd]`,"bool(re.search('ba[rzd]', 'foobarrrr'))",1382,26
+9035479,Python - Access object attributes as in a dictionary,Get attribute `my_str` of object `my_object`,"getattr(my_object, my_str)",1383,26
+9039961,Finding the average of a list,find the mean of elements in list `l`,sum(l) / float(len(l)),1384,26
+9040939,How to find all possible sequences of elements in a list?,"find all possible sequences of elements in a list `[2, 3, 4]`","map(list, permutations([2, 3, 4]))",1385,26
+9053260,Removing one list from another,remove elements in list `b` from list `a`,[x for x in a if x not in b],1386,26
+9072844,How can I check if a string contains ANY letters from the alphabet?,check if string `the_string` contains any upper or lower-case ASCII letters,"re.search('[a-zA-Z]', the_string)",1387,26
+9079540,"how to get around ""Single '}' encountered in format string"" when using .format and formatting in printing","Escape character '}' in string '{0}:<15}}{1}:<15}}{2}:<8}}' while using function `format` with arguments `('1', '2', '3')`","print('{0}:<15}}{1}:<15}}{2}:<8}}'.format('1', '2', '3'))",1388,26
+9089043,Get list item by attribute in Python,Get a list of items in the list `container` with attribute equal to `value`,items = [item for item in container if item.attribute == value],1389,26
+9138112,Looping over a list in Python,loop over a list `mylist` if sublists length equals 3,[x for x in mylist if len(x) == 3],1390,26
+9153527,"Import module in another directory from a ""parallel"" sub-directory",append a path `/path/to/main_folder` in system path,sys.path.append('/path/to/main_folder'),1391,26
+9206964,How to split string into words that do not contain whitespaces in python?,"split string ""This     is a     string"" into words that does not contain whitespaces","""""""This     is a     string"""""".split()",1392,26

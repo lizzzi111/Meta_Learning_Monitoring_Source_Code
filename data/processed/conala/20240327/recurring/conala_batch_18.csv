@@ -1,0 +1,52 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+89228,Calling an external command,"Calling an external command ""ls""","p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+for line in p.stdout.readlines():
+    print(line, end=' ')
+retval = p.wait()",59,0,9,27,1,18,0
+237079,get file creation & modification date/times in,get modified time of file `file`,time.ctime(os.path.getmtime(file)),107,0,9,28,1,18,0
+546321,How do I calculate the date six months from the current date,get the date 6 months from today,six_months = (date.today() + relativedelta(months=(+ 6))),230,0,2,36,0,18,0
+613183,Sort a Python dictionary by value,Sort dictionary `dict1` by value in ascending order,"sorted(dict1, key=dict1.get)",247,0,1,5,0,18,0
+678236,How to get the filename without the extension from a path in Python?,get the filename without the extension from file 'hemanth.txt',print(os.path.splitext(os.path.basename('hemanth.txt'))[0]),289,0,9,24,1,18,0
+761804,Trimming a string,"left trimming ""\n\r"" from string `myString`",myString.lstrip('\n\r'),312,0,8,0,0,18,0
+817122,Delete digits in Python (Regex),Delete self-contained digits from string `s`,"s = re.sub('^\\d+\\s|\\s\\d+\\s|\\s\\d+$', ' ', s)",334,0,8,0,0,18,0
+845058,get line count,get line count of file `filename`,"def bufcount(filename):
+    f = open(filename)
+    lines = 0
+    buf_size = (1024 * 1024)
+    read_f = f.read
+    buf = read_f(buf_size)
+    while buf:
+        lines += buf.count('\n')
+        buf = read_f(buf_size)
+    return lines",342,0,9,46,1,18,0
+931092,Reverse a string,Reverse a string 'hello world','hello world'[::(-1)],371,0,8,0,0,18,0
+1883604,Reading utf-8 characters from a gzip file in python,Open gzip-compressed file encoded as utf-8 'file.gz' in text mode,"gzip.open('file.gz', 'rt', encoding='utf-8')",517,4,9,35,1,18,0
+2407398,merge lists into a list of tuples,merge lists `list_a` and `list_b` into a list of tuples,"zip(list_a, list_b)",599,6,7,19,1,18,0
+2755950,How to use regular expression in lxml xpath?,Get all `a` tags where the text starts with value `some text` using regex,"doc.xpath(""//a[starts-with(text(),'some text')]"")",650,7,0,10,0,18,0
+3090175,Python - Find the greatest number in a set of numbers,"Find the greatest number in set `(1, 2, 3)`","print(max(1, 2, 3))",702,9,7,48,1,18,0
+3276180,Extracting date from a string in Python,extract date from a string `monkey 10/01/1980 love banana`,"dparser.parse('monkey 10/01/1980 love banana', fuzzy=True)",727,9,2,7,0,18,0
+4270742,How to remove whitespace in BeautifulSoup,remove newlines and whitespace from string `yourstring`,"re.sub('[\\ \\n]{2,}', '', yourstring)",905,14,8,0,0,18,0
+4588628,Find indices of elements equal to zero from numpy array,Find indices of elements equal to zero from numpy array `x`,numpy.where((x == 0))[0],952,15,6,27,0,18,0
+6275762,Escaping quotes in string,escaping quotes in string,"replace('""', '\\""')",1131,20,8,0,0,18,0
+7332841,Add single element to array in numpy,append the first element of array `a` to array `a`,"numpy.append(a, a[0])",1224,22,6,6,0,18,0
+7635237,"numpy: syntax/idiom to cast (n,) array to a (n, 1) array?",add a new axis to array `a`,"a[:, (np.newaxis)]",1247,23,6,50,0,18,0
+8270092,remove all whitespace in a string,remove all whitespaces in string `sentence`,"sentence = re.sub('\\s+', '', sentence, flags=re.UNICODE)",1311,24,8,0,0,18,0
+8650415,get keys correspond to a value in dictionary,Reverse key-value pairs in a dictionary `map`,"dict((v, k) for k, v in map.items())",1344,25,1,6,0,18,0
+8916302,selecting across multiple columns with python pandas?,select all rows from pandas DataFrame 'df' where the value in column 'A' is greater than 1 or less than -1 in column 'B'.,df[(df['A'] > 1) | (df['B'] < -1)],1372,26,3,5,0,18,0
+11816315,How to rename all folders?,rename file `dir` to `dir` + '!',"os.rename(dir, dir + '!')",1608,32,9,32,1,18,0
+11833266,How do I read the first line of a string?,How do I read the first line of a string?,"my_string.split('\n', 1)[0]",1610,32,8,0,0,18,0
+13291539,convert double to float in Python,convert double 0.00582811585976 to float,"struct.unpack('f', struct.pack('f', 0.00582811585976))",1726,35,5,30,0,18,0
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"'%0.12d' % random.randint(0, 999999999999)",1752,36,5,1,0,18,0
+14743454,Counting values in dictionary,Get a list of all keys from dictionary `dictA` where the number of occurrences of value `duck` in that key is more than `1`,"[k for k, v in dictA.items() if v.count('duck') > 1]",1855,38,1,35,0,18,0
+18131741,Python: find out whether a list of integers is coherent,check if elements in list `my_list` are coherent in order,"return my_list == list(range(my_list[0], my_list[-1] + 1))",2107,45,7,54,1,18,0
+19973489,Pandas remove column by index,"remove column by index `[:, 0:2]` in dataframe `df`","df = df.ix[:, 0:2]",2236,48,3,22,0,18,0
+20180210,Python how to combine two matrices in numpy,Create new matrix object  by concatenating data from matrix A and matrix B,"np.concatenate((A, B))",2249,48,6,9,0,18,0
+20796355,change current working directory in python,change current working directory to directory 'chapter3',os.chdir('chapter3'),2282,49,9,27,1,18,0
+21947035,Print string as hex literal python,"print string ""ABC"" as hex literal","""""""ABC"""""".encode('hex')",2335,51,8,0,0,18,0
+22625616,listing files from a directory using glob python,list all files in a current directory,glob.glob('*'),2356,51,9,36,1,18,0
+22749706,How to get the length of words in a sentence?,How to get the length of words in a sentence?,[len(x) for x in s.split()],2363,51,0,17,0,18,0
+36402748,How to sort a Dataframe by the ocurrences in a column in Python (pandas),How to sort a Dataframe by the ocurrences in a column in Python (pandas),"df.groupby('prots').sum().sort('scores', ascending=False)",2710,60,3,55,0,18,0
+40173569,python - convert datetime to varchar/string,Parse DateTime object `datetimevariable` using format '%Y-%m-%d',datetimevariable.strftime('%Y-%m-%d'),2789,62,2,4,0,18,0
+40620804,How do I sort a list with positives coming before negatives with values sorted respectively?,sort list `lst` with positives coming before negatives with values sorted respectively,"sorted(lst, key=lambda x: (x < 0, x))",2808,63,7,53,1,18,0
+41192805,Pandas - Sorting By Column,Concatenate dataframe `df_1` to dataframe `df_2` sorted by values of the column 'y',"pd.concat([df_1, df_2.sort_values('y')])",2830,63,3,2,0,18,0
+42364593,Python - Move elements in a list of dictionaries to the end of the list,move dictionaries in list `lst` to the end of the list if value of key 'language' in each dictionary is not equal to 'en',"sorted(lst, key=lambda x: x['language'] != 'en')",2868,64,1,5,0,18,0

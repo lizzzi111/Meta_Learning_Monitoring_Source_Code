@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+455612,Limiting floats to two decimal points,limit float 3.14159 to two decimal points,('%.2f' % 3.14159),200,0,5,6,0
+466345,Converting string into datetime,"parse string ""Jun 1 2005  1:33PM"" into datetime by format ""%b %d %Y %I:%M%p""","datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')",208,0,2,6,0
+613183,Sort a Python dictionary by value,Sort dictionary `d` by value in ascending order,"sorted(list(d.items()), key=(lambda x: x[1]))",249,0,1,6,0
+674764,string find,find the index of sub string 's' in string `str` starting from index 15,"str.find('s', 15)",281,0,0,6,0
+674764,string find,find the index of sub string 'World' in `x`,x.find('World'),283,0,0,6,0
+748491,How do I create a datetime in Python from milliseconds?,convert `ms` milliseconds to a datetime object,datetime.datetime.fromtimestamp(ms / 1000.0),308,0,2,6,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'key1' in `dict`,('key1' in dict),478,3,1,6,0
+3437059,string contains substring method,"check if string `s` contains ""is""","if (s.find('is') == (-1)):
+    print(""No 'is' here!"")
+else:
+    print(""Found 'is' in the string."")",764,10,0,6,0
+4363072,what would be the python code to add time to a specific timestamp?,Parse string '21/11/06 16:30' according to format '%d/%m/%y %H:%M',"datetime.strptime('21/11/06 16:30', '%d/%m/%y %H:%M')",925,15,2,6,0
+4928274,Iterate through PyMongo Cursor as key-value pair,get a dictionary `records` of key-value pairs in PyMongo cursor `cursor`,"records = dict((record['_id'], record) for record in cursor)",1018,17,1,6,0
+6375343,Reading unicode elements into numpy array,load data containing `utf-8` from file `new.txt` into numpy array `arr`,"arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')",1138,20,6,6,0
+6378889,How to convert a string list into an integer in python,Get a list of integers by splitting  a string `user` with comma,"[int(s) for s in user.split(',')]",1141,20,5,6,0
+6586310,Python: Convert list of key-value tuples into dictionary?,"convert list of key-value tuples `[('A', 1), ('B', 2), ('C', 3)]` into dictionary","dict([('A', 1), ('B', 2), ('C', 3)])",1160,21,1,6,0
+7332841,Add single element to array in numpy,append the first element of array `a` to array `a`,"numpy.append(a, a[0])",1224,22,6,6,0
+7356042,Pythonic way to populate numpy array,Create 2D numpy array from the data provided in 'somefile.csv' with each row in the file having same number of values,"X = numpy.loadtxt('somefile.csv', delimiter=',')",1229,22,6,6,0
+8650415,get keys correspond to a value in dictionary,Reverse key-value pairs in a dictionary `map`,"dict((v, k) for k, v in map.items())",1344,25,1,6,0
+10677350,Convert float to comma-separated string,Convert float 24322.34 to comma-separated string,"""""""{0:,.2f}"""""".format(24322.34)",1519,30,5,6,0
+11144513,Numpy: cartesian product of x and y array points into single array of 2D points,cartesian product of `x` and `y` array points into single array of 2d points,"numpy.dstack(numpy.meshgrid(x, y)).reshape(-1, 2)",1549,31,6,6,0
+11416772,Find all words in a string that start with the $ sign in Python,find all words in a string `mystring` that start with the `$` sign,[word for word in mystring.split() if word.startswith('$')],1579,31,0,6,0
+14401047,Numpy - Averaging multiple columns of a 2D array,average each two columns of array `data`,"data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)",1827,38,6,6,0
+14524322,How to convert a date string to different format,How to convert a date string '2013-1-25' in format '%Y-%m-%d' to different format '%m/%d/%y',"datetime.datetime.strptime('2013-1-25', '%Y-%m-%d').strftime('%m/%d/%y')",1838,38,2,6,0
+17315881,How can I check if a Pandas dataframe's index is sorted,check if a pandas dataframe `df`'s index is sorted,all(df.index[:-1] <= df.index[1:]),2051,43,3,6,0
+17462994,Python getting a string (key + value) from Python Dictionary,Get a string with string formatting from dictionary `d`,""""""", """""".join(['{}_{}'.format(k, v) for k, v in d.items()])",2060,44,1,6,0
+18082130,Python regex to remove all words which contains number,remove all words which contains number from a string `words` using regex,"re.sub('\\w*\\d\\w*', '', words).strip()",2103,45,0,6,0
+18366797,pandas.read_csv: how to skip comment lines,pandas read comma-separated CSV file `s` and skip commented lines starting with '#',"pd.read_csv(StringIO(s), sep=',', comment='#')",2124,45,3,6,0
+18730044,Converting two lists into a matrix,"converting two lists `[1, 2, 3]` and `[4, 5, 6]` into a matrix","np.column_stack(([1, 2, 3], [4, 5, 6]))",2160,46,6,6,0
+19156472,Sorting numpy array on multiple columns in Python,"Sort a structured numpy array 'df' on multiple columns 'year', 'month' and 'day'.","df.sort(['year', 'month', 'day'])",2184,47,3,6,0
+19334374,Python - converting a string of numbers into a list of int,Convert a string of numbers 'example_string' separated by comma into a list of numbers,"[int(s) for s in example_string.split(',')]",2191,47,5,6,0
+19334374,Python - converting a string of numbers into a list of int,"Convert a string of numbers `example_string` separated by `,` into a list of integers","map(int, example_string.split(','))",2192,47,5,6,0
+19555472,Change a string of integers separated by spaces to a list of int,convert a string of integers `x` separated by spaces to a list of integers,x = [int(i) for i in x.split()],2204,47,5,6,0
+24841306,Python - Sum 4D Array,get a sum of 4d array `M`,M.sum(axis=0).sum(axis=0),2411,53,6,6,0
+26053849,Counting non zero values in each column of a dataframe in python,count non zero values in each column in pandas data frame,df.astype(bool).sum(axis=1),2435,53,3,6,0
+29035168,How to use a dot in Python format strings?,Print a dictionary `{'user': {'name': 'Markus'}}` with string formatting,"""""""Hello {user[name]}"""""".format(**{'user': {'name': 'Markus'}})",2507,55,1,6,0
+31650399,find all digits between a character in python,find all digits between two characters `\xab` and `\xbb`in a string `text`,"print(re.findall('\\d+', '\n'.join(re.findall('\xab([\\s\\S]*?)\xbb', text))))",2588,57,0,6,0
+31793195,Most efficient way to get the integer index of a key in pandas,Get the integer location of a key `bob` in a pandas data frame,df.index.get_loc('bob'),2595,57,3,6,0
+31818050,round number to nearest integer,round number 32.268907563 up to 3 decimal points,"round(32.268907563, 3)",2605,58,5,6,0
+32792602,Find string with regular expression in python,search for occurrences of regex pattern `pattern` in string `url`,print(pattern.search(url).group(1)),2631,58,0,6,0
+38231591,Splitting dictionary/list inside a Pandas Column into Separate Columns,split dictionary/list inside a pandas column 'b' into separate columns in dataframe `df`,"pd.concat([df.drop('b', axis=1), pd.DataFrame(df['b'].tolist())], axis=1)",2737,61,3,6,0
+42172204,Replace value in any column in pandas dataframe,"replace value '-' in any column of pandas dataframe to ""NaN""","df.replace('-', 'NaN')",2861,64,3,6,0

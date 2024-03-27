@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+3743222,How do I convert datetime to date (in Python)?,How do I convert datetime to date (in Python)?,datetime.datetime.now().date(),808,12
+3743222,How do I convert datetime to date (in Python)?,convert datetime object to date object in python,datetime.datetime.now().date(),809,12
+3766633,How to sort with lambda in Python,Sort a data `a` in descending order based on the `modified` attribute of elements using lambda function,"a = sorted(a, key=lambda x: x.modified, reverse=True)",810,12
+3774571,Get data from the meta tags using BeautifulSoup,BeautifulSoup find all tags with attribute 'name' equal to 'description',soup.findAll(attrs={'name': 'description'}),811,12
+3777301,How to call a shell script from python code?,call a shell script `notepad` using subprocess,subprocess.call(['notepad']),812,12
+3777301,How to call a shell script from python code?,call a shell script `./test.sh` using subprocess,subprocess.call(['./test.sh']),813,12
+3780403,Python: Sum string lengths,sum the length of all strings in a list `strings`,length = sum(len(s) for s in strings),814,12
+3781851,"Run a python script from another python script, passing in args","run python script 'script2.py' from another python script, passing in 1 as an argument",os.system('script2.py 1'),815,12
+3804727,"python, subprocess: reading output from subprocess",flush output of python print,sys.stdout.flush(),816,12
+3805958,How to delete a record in Django models?,How to delete a record in Django models?,SomeModel.objects.filter(id=id).delete(),817,12
+3809265,numpy matrix multiplication,scalar multiply matrix `a` by `b`,(a.T * b).T,818,12
+3817529,syntax for creating a dictionary into another dictionary in python,"create a dictionary `{'spam': 5, 'ham': 6}` into another dictionary `d` field 'dict3'","d['dict3'] = {'spam': 5, 'ham': 6}",819,12
+3820312,Python: Write a list of tuples to a file,create a file 'filename' with each tuple in the list `mylist` written to a line,"open('filename', 'w').write('\n'.join('%s %s' % x for x in mylist))",820,12
+3842155,Is there a way to make the Tkinter text widget read only?,change the state of the Tkinter `Text` widget to read only i.e. `disabled`,text.config(state=DISABLED),821,12
+3844801,check if all elements in a list are identical,check if all elements in list `myList` are identical,all(x == myList[0] for x in myList),822,12
+3845423,Remove empty strings from a list of strings,remove empty strings from list `str_list`,str_list = list([_f for _f in str_list if _f]),823,12
+3847472,get index of character in python list,"get index of character 'b' in list '['a', 'b']'","['a', 'b'].index('b')",824,12
+3855093,"How to make a Python string out of non-ascii ""bytes""",convert list `myintegers` into a unicode string,""""""""""""".join(chr(i) for i in myintegers)",825,12
+3862010,Is there a generator version of `string.split()` in Python?,split string `string` on whitespaces using a generator,"return (x.group(0) for x in re.finditer(""[A-Za-z']+"", string))",826,12
+3877491,deleting rows in numpy array,delete first row of array `x`,"x = numpy.delete(x, 0, axis=0)",827,12
+3877491,deleting rows in numpy array,Delete third row in a numpy array `x`,"x = numpy.delete(x, 2, axis=1)",828,12
+3878555,How to replace repeated instances of a character with a single instance of that character in python,"replace repeated instances of ""*"" with a single instance of ""*""","re.sub('\\*+', '*', text)",829,12
+3878555,How to replace repeated instances of a character with a single instance of that character in python,Replace repeated instances of a character '*' with a single instance in a string 'text',"re.sub('\\*\\*+', '*', text)",830,12
+3880399,how to send the output of pprint module to a log file,send the output of pprint object `dataobject` to file `logFile`,"pprint.pprint(dataobject, logFile)",831,12
+3886669,Tuple to string,convert tuple `tst` to string `tst2`,tst2 = str(tst),832,12
+3887469,python: how to convert currency to decimal?,convert currency string `dollars` to decimal `cents_int`,cents_int = int(round(float(dollars.strip('$')) * 100)),833,12
+3895424,what is a quick way to delete all elements from a list that do not satisfy a constraint?,delete all elements from a list `x` if a function `fn` taking value as parameter returns `0`,[x for x in lst if fn(x) != 0],834,12
+3895874,"Regex to match 'lol' to 'lolllll' and 'omg' to 'omggg', etc",Write a regex statement to match 'lol' to 'lolllll'.,"re.sub('l+', 'l', 'lollll')",835,12
+3899782,How to check whether elements appears in the list only once in python?,check whether elements in list `a` appear only once,len(set(a)) == len(a),836,12
+3899980,How to change the font size on a matplotlib plot,change the font size on plot `matplotlib` to 22,matplotlib.rcParams.update({'font.size': 22}),837,12
+3925096,How to get only the last part of a path in Python?,How to get only the last part of a path in Python?,os.path.basename(os.path.normpath('/folderA/folderB/folderC/folderD/')),838,12
+3925465,Repeating elements in list comprehension,get list of duplicated elements in range of 3,"[y for x in range(3) for y in [x, x]]",839,12
+3925614,How do you read a file into a list in Python?,read a file 'C:/name/MyDocuments/numbers' into a list `data`,"data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]",840,12
+3931541,Python Check if all of the following items is in a list,"Check if all the items in a list `['a', 'b']` exists in another list `l`","set(['a', 'b']).issubset(set(l))",841,12
+3931541,Python Check if all of the following items is in a list,"check if all of the following items in list `['a', 'b']` are in a list `['a', 'b', 'c']`","set(['a', 'b']).issubset(['a', 'b', 'c'])",842,12
+3933478,accessing python dictionary,get the value associated with unicode key 'from_user' of first dictionary in list `result`,result[0]['from_user'],843,12
+3939361,Remove specific characters from a string,Remove character `char` from a string `a`,"a = a.replace(char, '')",844,12
+3939361,Remove specific characters from a string,Remove characters in `b` from a string `a`,"a = a.replace(char, '')",845,12
+3939361,Remove specific characters from a string,Remove characters in '!@#$' from a string `line`,"line = line.translate(string.maketrans('', ''), '!@#$')",846,12

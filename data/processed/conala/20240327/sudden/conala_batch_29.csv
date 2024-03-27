@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+209840,Map two lists into a dictionary in Python,map two lists `keys` and `values` into a dictionary,"new_dict = {k: v for k, v in zip(keys, values)}",96,0,1,9,0,21,0,29,0
+276052,get current CPU and RAM usage,get current CPU and RAM usage,"psutil.cpu_percent()
+psutil.virtual_memory()",129,0,4,36,1,46,1,29,0
+303200,How do I remove/delete a folder that is not empty with Python?,remove directory tree '/folder_name',shutil.rmtree('/folder_name'),135,0,9,64,1,21,0,29,0
+354038,check if a string is a number (float),check if string `a` is an integer,a.isdigit(),151,0,0,31,0,34,0,29,0
+940822,"Regular expression syntax for ""match nothing""?",create a regular expression object with a pattern that will match nothing,re.compile('a^'),376,0,0,7,0,43,0,29,0
+1303243,find out if a Python object is a string,check if object `o` is a string,"isinstance(o, str)",440,2,0,37,0,52,0,29,0
+1447575,Symlinks on windows?,create a symlink directory `D:\\testdirLink` for directory `D:\\testdir` with unicode support using ctypes library,"kdll.CreateSymbolicLinkW('D:\\testdirLink', 'D:\\testdir', 1)",458,3,9,57,1,51,0,29,0
+1849375,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,session.execute('INSERT INTO t1 (SELECT * FROM t2)'),513,4,4,16,1,28,1,29,0
+2783079,How do I convert a unicode to a string at the Python level?,convert a unicode 'Andr\xc3\xa9' to a string,""""""""""""".join(chr(ord(c)) for c in 'Andr\xc3\xa9').decode('utf8')",659,8,8,0,0,16,0,29,0
+3348825,How to round integers in python,round 1123.456789 to be an integer,"print(round(1123.456789, -1))",749,10,5,18,0,63,0,29,0
+4484690,How to filter a dictionary in Python?,update all values associated with key `i` to string 'updated' if value `j` is not equal to 'None' in dictionary `d`,"{i: 'updated' for i, j in list(d.items()) if j != 'None'}",940,15,1,9,0,31,0,29,0
+4768151,How to perform double sort inside an array?,sort list `bar` by each element's attribute `attrb1` and attribute `attrb2` in reverse order,"bar.sort(key=lambda x: (x.attrb1, x.attrb2), reverse=True)",986,16,7,50,1,8,0,29,0
+5137497,Find current directory and file's directory,get the canonical path of file `path`,os.path.realpath(path),1035,17,9,38,1,29,0,29,0
+5218948,How to auto-scroll a gtk.scrolledwindow?,Make a auto scrolled window to the end of the list in gtk,"self.treeview.connect('size-allocate', self.treeview_changed)",1047,18,4,24,1,25,1,29,0
+5404068,How to read keyboard-input?,read keyboard-input,input('Enter your input:'),1066,18,4,51,1,27,1,29,0
+5501641,How to create a list with the characters of a string?,create a list with the characters of a string `5+6`,list('5+6'),1071,18,5,46,0,14,0,29,0
+6407780,How to extract data from JSON Object in Python?,extract data field 'bar' from json object,"json.loads('{""foo"": 42, ""bar"": ""baz""}')['bar']",1143,20,4,22,1,27,1,29,0
+7125009,How to change legend size with matplotlib.pyplot,change legend font size with matplotlib.pyplot to 6,"plot.legend(loc=2, prop={'size': 6})",1194,21,4,44,1,12,1,29,0
+7794208,How can I remove duplicate words in a string with Python?,Keep only unique words in list of words `words` and join into string,"print(' '.join(sorted(set(words), key=words.index)))",1261,23,0,12,0,20,0,29,0
+7856296,Parsing CSV / tab-delimited txt file with Python,parse tab-delimited CSV file 'text.txt' into a list,"lol = list(csv.reader(open('text.txt', 'rb'), delimiter='\t'))",1264,23,8,0,0,54,0,29,0
+9206964,How to split string into words that do not contain whitespaces in python?,"split string ""This is a string"" into words that do not contain whitespaces","""""""This is a string"""""".split()",1393,27,8,47,0,53,0,29,0
+9336270,Using a Python dict for a SQL INSERT statement,Execute SQL statement `sql` with values of dictionary `myDict` as parameters,"cursor.execute(sql, list(myDict.values()))",1407,27,1,12,0,38,0,29,0
+12329853,How to rearrange Pandas column sequence?,"Rearrange the columns 'a','b','x','y' of pandas DataFrame `df` in mentioned sequence 'x' ,'y','a' ,'b'","df = df[['x', 'y', 'a', 'b']]",1640,33,3,61,0,8,0,29,0
+12739911,How to split a string within a list to create key-value pairs in Python,create a dictionary containing each string in list `my_list` split by '=' as a key/value pairs,print(dict([s.split('=') for s in my_list])),1668,34,1,63,0,16,0,29,0
+13237941,sorting list of nested dictionaries in python,sort list of nested dictionaries `yourdata` in reverse order of 'key' and 'subkey',"yourdata.sort(key=lambda e: e['key']['subkey'], reverse=True)",1717,35,1,9,0,58,0,29,0
+13252333,Python check if all elements of a list are the same type,Check if all elements in list `lst` are tupples of long and int,"all(isinstance(x, int) for x in lst)",1719,35,7,34,1,2,0,29,0
+13902805,List of all unique characters in a string?,create a list of all unique characters in string 'aaabcabccd',""""""""""""".join(list(OrderedDict.fromkeys('aaabcabccd').keys()))",1786,37,0,56,0,61,0,29,0
+14262654,Numpy: Get random set of rows from 2D array,create a new 2 dimensional array containing two random rows from array `A`,"A[(np.random.randint(A.shape[0], size=2)), :]",1817,37,6,32,0,43,0,29,0
+16233593,How to strip comma in Python string,replace comma in string `s` with empty string '',"s = s.replace(',', '')",1978,42,8,0,0,39,0,29,0
+17665809,Remove key from dictionary in Python returning new dictionary,remove key 'c' from dictionary `d`,{i: d[i] for i in d if i != 'c'},2074,44,1,35,0,24,0,29,0
+19445682,How do I increase the timeout for imaplib requests?,handle the `urlfetch_errors ` exception for imaplib request to url `url`,"urlfetch.fetch(url, deadline=10 * 60)",2198,47,4,49,1,12,1,29,0
+21212706,Python Convert String Literal to Float,split string `s` into float values and write sum to `total`,"total = sum(float(item) for item in s.split(','))",2301,50,5,42,0,62,0,29,0
+25678689,How does python do string magic?,"append array of strings `['x', 'x', 'x']` into one string",""""""""""""".join(['x', 'x', 'x'])",2427,53,8,0,0,62,0,29,0
+28657018,Remove string from list if from substring list,get last element of string splitted by '\\' from list of strings `list_dirs`,[l.split('\\')[-1] for l in list_dirs],2492,55,8,48,0,56,0,29,0
+29983106,How can i set proxy with authentication in selenium chrome web driver using python,navigate to webpage given by url `http://www.python.org` using Selenium,driver.get('http://www.google.com.br'),2538,56,4,57,1,12,1,29,0
+30009948,How to reorder indexed rows based on a list in Pandas data frame,"reorder indexed rows `['Z', 'C', 'A']` based on a list in pandas data frame `df`","df.reindex(['Z', 'C', 'A'])",2539,56,3,1,0,36,0,29,0
+31371879,Split by suffix with Python regular expression,split string `s` by words that ends with 'd',"re.findall('\\b(\\w+)d\\b', s)",2580,57,8,0,0,42,0,29,0
+34015615,Python reversing an UTF-8 string,reverse a UTF-8 string 'a',b = a.decode('utf8')[::-1].encode('utf8'),2653,59,8,0,0,38,0,29,0
+39159475,pandas: how to do multiple groupby-apply operations,"Use multiple groupby and agg operations `sum`, `count`, `std` for pandas data frame `df`","df.groupby(level=0).agg(['sum', 'count', 'std'])",2753,61,3,48,0,8,0,29,0

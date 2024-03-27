@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+72899,How do I sort a list of dictionaries by values of the dictionary in Python?,Sort a list of dictionaries `list_to_be_sorted` by the value of the dictionary key `name`,"newlist = sorted(list_to_be_sorted, key=lambda k: k['name'])",41,0,1,38,0
+546321,calculate the date six months from the current date,calculate the date six months from the current date,print((datetime.date.today() + datetime.timedelta(((6 * 365) / 12))).isoformat()),231,0,2,38,0
+575819,Sorting dictionary keys in python,create a list containing keys of dictionary `d` and sort it alphabetically,"sorted(d, key=d.get)",235,0,1,38,0
+638360,Python - How to calculate equal parts of two dictionaries?,get set intersection between dictionaries `d1` and `d2`,"dict((x, set(y) & set(d1.get(x, ()))) for x, y in d2.items())",256,0,1,38,0
+988228,Convert a String representation of a Dictionary to a dictionary?,"build a dict of key:value pairs from a string representation of a dict, `{'muffin' : 'lolz', 'foo' : 'kitty'}`","ast.literal_eval(""{'muffin' : 'lolz', 'foo' : 'kitty'}"")",394,1,1,38,0
+1400608,empty a list,empty a list `alist`,alist[:] = [],454,2,7,38,1
+1892339,How to make a window jump to the front?,make a window `root` jump to the front,"root.attributes('-topmost', True)",521,4,4,38,1
+2173087,How to create nested lists in python?,"Create 3d array of zeroes of size `(3,3,3)`","numpy.zeros((3, 3, 3))",565,5,6,38,0
+2375335,"In Django, how do I clear a sessionkey?",clear session key 'mykey',del request.session['mykey'],594,6,4,38,1
+2742784,Python: How to round 123 to 100 instead of 100.0?,round 123 to 100,"int(round(123, -2))",648,7,5,38,0
+3108285,"In Python script, how do I set PYTHONPATH?",set pythonpath in python script.,sys.path.append('/path/to/whatever'),706,9,9,38,1
+3207219,list all files of a directory,list all files of a directory `mypath`,"onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]",717,9,9,38,1
+3820312,Python: Write a list of tuples to a file,create a file 'filename' with each tuple in the list `mylist` written to a line,"open('filename', 'w').write('\n'.join('%s %s' % x for x in mylist))",820,12,9,38,1
+4152376,How to get the n next values of a generator in a list (python),get list of n next values of a generator `it`,"list(itertools.islice(it, 0, n, 1))",887,14,7,38,1
+4530069,"Python: How to get a value of datetime.today() that is ""timezone aware""?",get a value of datetime.today() in the UTC time zone,datetime.now(pytz.utc),945,15,2,38,0
+4906977,Access environment variables,get all environment variables,os.environ,1010,17,4,38,1
+5137497,Find current directory and file's directory,get the canonical path of file `path`,os.path.realpath(path),1035,17,9,38,1
+7011291,how to get a single result from a SQLite query in python?,how to get a single result from a SQLite query in python?,cursor.fetchone()[0],1192,21,4,38,1
+7142227,How do I sort a zipped list in Python?,How do I sort a zipped list in Python?,zipped.sort(key=lambda t: t[1]),1200,22,7,38,1
+7458689,Best / most pythonic way to get an ordered list of unique items,Remove duplicates elements from list `sequences` and sort it in ascending order,sorted(set(itertools.chain.from_iterable(sequences))),1237,23,7,38,1
+7732125,Clear text from textarea with selenium,"if Selenium textarea element `foo` is not empty, clear the field",driver.find_element_by_id('foo').clear(),1254,23,4,38,1
+7996940,What is the best way to sort list with custom sorting parameters in Python?,What is the best way to sort list with custom sorting parameters in Python?,li1.sort(key=lambda x: not x.startswith('b.')),1274,23,7,38,1
+9089043,Get list item by attribute in Python,Get a list of items in the list `container` with attribute equal to `value`,items = [item for item in container if item.attribute == value],1389,26,7,38,1
+10115967,What's the most memory efficient way to generate the combinations of a set in python?,"generate the combinations of 3 from a set `{1, 2, 3, 4}`","print(list(itertools.combinations({1, 2, 3, 4}, 3)))",1468,28,7,38,1
+10155684,Add entry to list and remove first one in Python,add an entry 'wuggah' at the beginning of list `myList`,"myList.insert(0, 'wuggah')",1469,28,7,38,1
+11073609,How to group DataFrame by a period of time?,group dataframe `df` based on minute interval,df.groupby(df.index.map(lambda t: t.minute)),1547,30,3,38,0
+11479392,What does a for loop within a list do in Python?,Get a list `myList` from 1 to 10,myList = [i for i in range(10)],1581,31,7,38,1
+13279399,How to obtain values of request variables using Python and Flask,Flask get posted form data 'firstname',first_name = request.form.get('firstname'),1724,35,4,38,1
+13717463,Find the indices of elements greater than x,create a list containing the indices of elements greater than 4 in list `a`,"[i for i, v in enumerate(a) if v > 4]",1771,36,7,38,1
+14262654,Numpy: Get random set of rows from 2D array,create a new 2D array with 2 random rows from array `A`,"A[(np.random.choice(A.shape[0], 2, replace=False)), :]",1818,37,6,38,0
+15451958,Simple way to create matrix of random numbers,create 3 by 3 matrix of random numbers,"numpy.random.random((3, 3))",1925,40,6,38,0
+16766643,Convert Date String to Day of Week,Convert Date String to Day of Week,"datetime.datetime.strptime('January 11, 2010', '%B %d, %Y').strftime('%a')",2003,42,2,38,0
+21771133,finding non-numeric rows in dataframe in pandas?,replace values of dataframe `df` with True if numeric,"df.applymap(lambda x: isinstance(x, (int, float)))",2316,50,3,38,0
+22397058,Dropping a single (sub-) column from a MultiIndex,"dropping all columns named 'a' from a multiindex 'df', across all level.","df.drop('a', level=1, axis=1)",2352,51,3,38,0
+27175400,How to find the index of a value in 2d array in Python?,find all the indexes in a Numpy 2D array where the value is 1,zip(*np.where(a == 1)),2458,54,6,38,0
+28253102,Python 3: Multiply a vector by a matrix without NumPy,"Get the dot product of matrix `[1,0,0,1,0,0]` and matrix `[[0,1],[1,1],[1,0],[1,0],[1,1],[0,1]]`","np.dot([1, 0, 0, 1, 0, 0], [[0, 1], [1, 1], [1, 0], [1, 0], [1, 1], [0, 1]])",2487,55,6,38,0
+36113747,How to declare an array in python,Initialize a list `a` with `10000` items and each item's value `0`,a = [0] * 10000,2706,60,7,38,1
+37619348,Summing 2nd list items in a list of lists of lists,summing the second item in a list of lists of lists,[sum([x[1] for x in i]) for i in data],2727,61,7,38,1
+38457059,Pandas changing cell values based on another cell,change NaN values in dataframe `df` using preceding values in the frame,"df.fillna(method='ffill', inplace=True)",2744,61,3,38,0

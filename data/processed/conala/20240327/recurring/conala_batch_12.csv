@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+73663,Terminating a Python script,terminate the program,quit(),46,0,4,42,1,12,1
+247770,Retrieving python module path,get the path of the current python module,print(os.getcwd()),110,0,4,29,1,12,1
+521502,How to get the concrete class name as a string?,How to get the concrete class name as a string?,instance.__class__.__name__,227,0,4,42,1,12,1
+755857,Default value for field in Django model,Django set default value of field `b` equal to '0000000',"b = models.CharField(max_length=7, default='0000000', editable=False)",310,0,4,50,1,12,1
+969285,How do I translate a ISO 8601 datetime string into a Python datetime object?,,"datetime.datetime.strptime('2007-03-04T21:08:12', '%Y-%m-%dT%H:%M:%S')",387,1,4,49,1,12,1
+1516795,"In Django, how do I filter based on all entities in a many-to-many relation instead of any?","In Django, filter `Task.objects` based on all entities in ['A', 'P', 'F']","Task.objects.exclude(prerequisites__status__in=['A', 'P', 'F'])",467,3,4,32,1,12,1
+1949318,Checking if a website is up,"Check the status code of url ""www.python.org""","conn = httplib.HTTPConnection('www.python.org')
+conn.request('HEAD', '/')
+r1 = conn.getresponse()
+print(r1.status, r1.reason)",528,4,4,15,1,12,1
+2668909,How to find the real user home directory using python?,find the real user home directory using python,os.path.expanduser('~user'),643,7,4,34,1,12,1
+3376534,how do I halt execution in a python script?,Exit script,sys.exit(),753,10,4,39,1,12,1
+3506678,"In Django, how do I select 100 random records from the database?","in Django, select 100 random records from the database `Content.objects`",Content.objects.all().order_by('?')[:100],781,11,4,58,1,12,1
+4116061,Importing everything ( * ) dynamically from a module,import all classes from module `some.package`,globals().update(importlib.import_module('some.package').__dict__),880,13,4,15,1,12,1
+4618373,How do I use the HTMLUnit driver with Selenium from Python?,Load the url `http://www.google.com` in selenium webdriver `driver`,driver.get('http://www.google.com'),954,15,4,46,1,12,1
+4810537,how to clear the screen in python,clear the terminal screen in Linux,os.system('clear'),993,16,4,45,1,12,1
+4906977,Access environment variables,"Access environment variable ""HOME""",os.environ['HOME'],1009,17,4,47,1,12,1
+6250046,How can I remove the fragment identifier from a URL?,remove the fragment identifier `#something` from a url `http://www.address.com/something#something`,urlparse.urldefrag('http://www.address.com/something#something'),1129,20,4,30,1,12,1
+6886493,Get all object attributes,Get all object attributes of an object,dir(),1183,21,4,23,1,12,1
+7125009,How to change legend size with matplotlib.pyplot,change legend font size with matplotlib.pyplot to 6,"plot.legend(loc=2, prop={'size': 6})",1194,21,4,44,1,12,1
+7373219,Attribute getters in python,get attribute 'attr' from object `obj`,"getattr(obj, 'attr')",1234,22,4,44,1,12,1
+8215686,Python - Bulk Select then Insert from one DB to another,"Insert records in bulk from ""table1"" of ""master"" DB to ""table1"" of  sqlite3 `cursor` object",cursor.execute('INSERT OR REPLACE INTO master.table1 SELECT * FROM table1'),1300,24,4,33,1,12,1
+9647586,Getting a request parameter in Jinja2,get a request parameter `a` in jinja2,{{request.args.get('a')}},1438,28,4,27,1,12,1
+9759820,How to get a list of variables in specific Python module?,get a list of variables from module 'adfix.py' in current module.,print([item for item in dir(adfix) if not item.startswith('__')]),1447,28,4,37,1,12,1
+10040143,How to do a less than or equal to filter in Django queryset?,filter `Users` by field `userprofile` with level greater than or equal to `0`,User.objects.filter(userprofile__level__gte=0),1465,28,4,63,1,12,1
+10569438,How to print Unicode character in Python?,print 'here is your checkmark: ' plus unicode character u'\u2713',print('here is your checkmark: ' + '\u2713'),1505,29,4,50,1,12,1
+12345387,Removing _id element from Pymongo results,Find all records from collection `collection` without extracting mongo id `_id`,"db.collection.find({}, {'_id': False})",1643,33,4,64,1,12,1
+13022385,How to properly quit a program in python,properly quit a program,sys.exit(0),1691,34,4,37,1,12,1
+13303100,how to access the class variable by string in Python?,access the class variable `a_string` from a class object `test`,"getattr(test, a_string)",1728,35,4,45,1,12,1
+14406214,Moving x-axis to the top of a plot in matplotlib,move an x-axis label to the top of a plot `ax` in matplotlib,ax.xaxis.set_label_position('top'),1828,38,4,18,1,12,1
+14793098,How to use Flask-Security register view?,change flask security register url to `/create_account`,app.config['SECURITY_REGISTER_URL'] = '/create_account',1865,39,4,40,1,12,1
+15548506,Node labels using networkx,Draw node labels `labels` on networkx graph `G ` at position `pos`,"networkx.draw_networkx_labels(G, pos, labels)",1934,40,4,54,1,12,1
+16128833,Using inheritance in python,inherit from class `Executive`,"super(Executive, self).__init__(*args)",1970,41,4,21,1,12,1
+16739319,Selenium Webdriver - NoSuchElementExceptions,selenium webdriver switch to frame 'frameName',driver.switch_to_frame('frameName'),2001,42,4,54,1,12,1
+18979111,Sending post data from angularjs to django as JSON and not as raw content,decode json string `request.body` to python dict,json.loads(request.body),2171,46,4,13,1,12,1
+19445682,How do I increase the timeout for imaplib requests?,handle the `urlfetch_errors ` exception for imaplib request to url `url`,"urlfetch.fetch(url, deadline=10 * 60)",2198,47,4,49,1,12,1
+19617355,Dynamically changing log level in python without restarting the application,Change log level dynamically to 'DEBUG' without restarting the application,logging.getLogger().setLevel(logging.DEBUG),2212,48,4,18,1,12,1
+27867754,Python get focused entry name,get the widget which has currently the focus in tkinter instance `window2`,"print(('focus object class:', window2.focus_get().__class__))",2472,54,4,34,1,12,1
+29877663,Finding multiple attributes within the span tag in Python,BeautifulSoup find all 'span' elements in HTML string `soup` with class of 'starGryB sp',"soup.find_all('span', {'class': 'starGryB sp'})",2533,56,4,35,1,12,1
+29983106,How can i set proxy with authentication in selenium chrome web driver using python,navigate to webpage given by url `http://www.python.org` using Selenium,driver.get('http://www.google.com.br'),2538,56,4,57,1,12,1
+38081866,Is there a way to run powershell code in python,execute script 'script.ps1' using 'powershell.exe' shell,"os.system('powershell.exe', 'script.ps1')",2731,61,4,60,1,12,1
+40079728,Get models ordered by an attribute that belongs to its OneToOne model,Django get first 10 records of model `User` ordered by criteria 'age' of model 'pet',User.objects.order_by('-pet__age')[:10],2784,62,4,21,1,12,1

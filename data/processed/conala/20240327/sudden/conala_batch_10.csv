@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+42950,Get Last Day of the Month,Get Last Day of the first month in year 2000,"(datetime.date(2000, 2, 1) - datetime.timedelta(days=1))",26,0,2,40,0,64,0,10,1
+42950,Get Last Day of the Month,Get Last Day of the first month in 2002,"calendar.monthrange(2002, 1)",30,0,2,0,0,53,0,10,1
+42950,Get Last Day of the Month,Get Last Day of the second month in year 2012,"monthrange(2012, 2)",31,0,2,45,0,54,0,10,1
+415511,get current time,get current time in pretty format,"strftime('%Y-%m-%d %H:%M:%S', gmtime())",185,0,2,1,0,29,0,10,1
+415511,get current time,get current time,datetime.datetime.now().time(),186,0,2,0,0,0,0,10,1
+415511,get current time,get current date and time,datetime.datetime.now(),187,0,2,34,0,56,0,10,1
+415511,get current time,get current time,datetime.datetime.time(datetime.datetime.now()),188,0,2,3,0,14,0,10,1
+546321,How do I calculate the date six months from the current date,get the date 6 months from today,six_months = (date.today() + relativedelta(months=(+ 6))),230,0,2,36,0,18,0,10,1
+546321,How do I calculate the date six months from the current date,get the date 1 month from today,"(date(2010, 12, 31) + relativedelta(months=(+ 1)))",233,0,2,31,0,44,0,10,1
+1101508,How to parse dates with -0400 timezone string in python?,parse date string '2009/05/13 19:19:30 -0400' using format '%Y/%m/%d %H:%M:%S %z',"datetime.strptime('2009/05/13 19:19:30 -0400', '%Y/%m/%d %H:%M:%S %z')",418,2,2,54,0,52,0,10,1
+2150739,ISO Time (ISO 8601) in Python,get current datetime in ISO format,datetime.datetime.now().isoformat(),557,5,2,9,0,43,0,10,1
+2600775,How to get week number in Python?,get equivalent week number from a date `2010/6/16` using  isocalendar,"datetime.date(2010, 6, 16).isocalendar()[1]",630,7,2,16,0,54,0,10,1
+2803852,Python date string to date object,convert date string '24052010' to date object in format '%d%m%Y',"datetime.datetime.strptime('24052010', '%d%m%Y').date()",667,8,2,19,0,7,0,10,1
+2984751,Django filter by hour,django filter by hour,Entry.objects.filter(pub_date__contains='08:00'),690,8,2,7,0,29,0,10,1
+3276180,Extracting date from a string in Python,extract date from a string 'monkey 2010-07-32 love banana',"dparser.parse('monkey 2010-07-32 love banana', fuzzy=True)",725,9,2,36,0,15,0,10,1
+3743222,How do I convert datetime to date (in Python)?,How do I convert datetime to date (in Python)?,datetime.datetime.now().date(),808,12,2,4,0,32,0,10,1
+4363072,what would be the python code to add time to a specific timestamp?,Parse string '21/11/06 16:30' according to format '%d/%m/%y %H:%M',"datetime.strptime('21/11/06 16:30', '%d/%m/%y %H:%M')",925,15,2,6,0,7,0,10,1
+4668619,Django database query: How to filter objects by date range?,filter objects month wise in django model `Sample` for year `2011`,"Sample.objects.filter(date__year='2011', date__month='01')",967,16,2,19,0,9,0,10,1
+4793617,How to derive the week start for a given (iso) weeknumber / year in python,"derive the week start for the given week number and year ‘2011, 4, 0’","datetime.datetime.strptime('2011, 4, 0', '%Y, %U, %w')",989,16,2,32,0,38,0,10,1
+4830535,Python: How do I format a date in Jinja2?,Get the date object `date_of_manufacture` of object `car` in string  format '%Y-%m-%d',{{car.date_of_manufacture.strftime('%Y-%m-%d')}},994,16,2,5,0,21,0,10,1
+5110352,How do I display current time using Python + Django?,display current time,now = datetime.datetime.now().strftime('%H:%M:%S'),1033,17,2,3,0,20,0,10,1
+7852855,How to convert a Python datetime object to seconds,"convert datetime object `(1970, 1, 1)` to seconds","(t - datetime.datetime(1970, 1, 1)).total_seconds()",1263,23,2,51,0,58,0,10,1
+7999935,Python datetime to string without microsecond component,Formate current date and time to a string using pattern '%Y-%m-%d %H:%M:%S',datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),1275,23,2,10,0,14,0,10,1
+10541640,Convert date format python,Represent DateTime object '10/05/2012' with format '%d/%m/%Y' into format '%Y-%m-%d',"datetime.datetime.strptime('10/05/2012', '%d/%m/%Y').strftime('%Y-%m-%d')",1498,29,2,62,0,31,0,10,1
+10607688,how to create a file name with the current date & time in python?,create a datetime with the current date & time,datetime.datetime.now(),1509,29,2,7,0,63,0,10,1
+10805589,Converting JSON date string to python datetime,convert JSON string '2012-05-29T19:30:03.283Z' into a DateTime object using format '%Y-%m-%dT%H:%M:%S.%fZ',"datetime.datetime.strptime('2012-05-29T19:30:03.283Z', '%Y-%m-%dT%H:%M:%S.%fZ')",1523,30,2,49,0,57,0,10,1
+11619169,How do I convert a datetime.date object into datetime.datetime in python?,convert Date object `dateobject` into a DateTime object,"datetime.datetime.combine(dateobject, datetime.time())",1589,32,2,13,0,41,0,10,1
+12400256,Python: Converting Epoch time into the datetime,Convert unix timestamp '1347517370' to formatted string '%Y-%m-%d %H:%M:%S',"time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))",1646,33,2,40,0,7,0,10,1
+12843099,Python: Logging TypeError: not all arguments converted during string formatting,Log message of level 'info' with value of `date` in the message,logging.info('date={}'.format(date)),1680,34,2,21,0,19,0,10,1
+14043934,time offset,add 1 hour and 2 minutes to time object `t`,"dt = datetime.datetime.combine(datetime.date.today(), t)",1801,37,2,63,0,62,0,10,1
+14043934,time offset,substract 1 hour and 10 minutes from current time,"t = datetime.datetime.now()
+(t - datetime.timedelta(hours=1, minutes=10))",1803,37,2,0,0,0,0,10,1
+14295673,Convert string into datetime.time object,Convert string '03:55' into datetime.time object,"datetime.datetime.strptime('03:55', '%H:%M').time()",1819,37,2,57,0,4,0,10,1
+14524322,How to convert a date string to different format,How to convert a date string '2013-1-25' in format '%Y-%m-%d' to different format '%m/%d/%y',"datetime.datetime.strptime('2013-1-25', '%Y-%m-%d').strftime('%m/%d/%y')",1838,38,2,6,0,31,0,10,1
+14524322,How to convert a date string to different format,convert a date string '2013-1-25' in format '%Y-%m-%d' to different format '%-m/%d/%y',"datetime.datetime.strptime('2013-1-25', '%Y-%m-%d').strftime('%-m/%d/%y')",1839,38,2,59,0,5,0,10,1
+15940280,How to get UTC time in Python?,get current utc time,datetime.utcnow(),1956,41,2,26,0,40,0,10,1
+17690738,In Pandas how do I convert a string of date strings to datetime objects and put them in a DataFrame?,convert a string of date strings `date_stngs ` to datetime objects and put them in a dataframe,pd.to_datetime(pd.Series(date_stngs)),2076,44,2,54,0,9,0,10,1
+18684076,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,"[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]",2151,46,2,27,0,65,0,10,1
+19779790,How to get yesterday in python,How to get yesterday in python,datetime.datetime.now() - datetime.timedelta(days=1),2222,48,2,20,0,36,0,10,1
+36674519,How to get a daterange of the 2nd Fridays of each month?,create a DatetimeIndex containing 13 periods of the second friday of each month starting from date '2016-01-01',"pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)",2716,60,2,35,0,56,0,10,1

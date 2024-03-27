@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+36139,How do I sort a list of strings in Python?,sort a list of strings `list`,list.sort(),21,0,7,58,1
+82831,check whether a file exists,"check whether file ""/path/to/file"" exists","my_file = Path('/path/to/file')
+if my_file.is_file():
+    pass",47,0,9,58,1
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,"print(('%.2f' % round(a, 2)))",202,0,5,58,0
+533398,"In python 2.4, how can I execute external commands with csh instead of bash?",execute external commands/script `your_own_script` with csh instead of bash,os.system('tcsh your_own_script'),229,0,9,58,1
+849674,Simple threading in Python 2.6 using thread.start_new_thread(),start a new thread for `myfunction` with parameters 'MyStringHere' and 1,"thread.start_new_thread(myfunction, ('MyStringHere', 1))",345,0,4,58,1
+2229827,Django urlsafe base64 decoding with decryption,django urlsafe base64 decode string `uenc` with decryption,base64.urlsafe_b64decode(uenc.encode('ascii')),575,6,4,58,1
+2424412,What is the easiest way to convert list with str into list with int?,convert list of strings `str_list` into list of integers,[int(i) for i in str_list],604,6,5,58,0
+3506678,"In Django, how do I select 100 random records from the database?","in Django, select 100 random records from the database `Content.objects`",Content.objects.all().order_by('?')[:100],781,11,4,58,1
+4299741,Merging items in a list - Python,"merge a list of integers `[1, 2, 3, 4, 5]` into a single integer","from functools import reduce
+reduce(lambda x, y: 10 * x + y, [1, 2, 3, 4, 5])",913,14,7,58,1
+4576115,Convert a list to a dictionary in Python,"convert a list 'a' to a dictionary where each even element represents the key to the dictionary, and the following odd element is the value","b = {a[i]: a[i + 1] for i in range(0, len(a), 2)}",948,15,1,58,0
+5123839,Fastest way to get the first object from a queryset in django?,get the first object from a queryset in django model `Entry`,Entry.objects.filter()[:1].get(),1034,17,4,58,1
+5971312,How to set environment variables in Python,set environment variable 'DEBUSSY' to '1',os.environ['DEBUSSY'] = '1',1115,19,4,58,1
+7717380,how to convert 2d list to 2d numpy array?,Convert array `a` to numpy array,a = np.array(a),1252,23,6,58,0
+8177079,take the content of a list and append it to another list,append list `mylog` to `list1`,list1.extend(mylog),1291,24,7,58,1
+9554544,"Python, running command line tools in parallel",subprocess run command 'start command -flags arguments' through the shell,"subprocess.call('start command -flags arguments', shell=True)",1423,27,9,58,1
+9746522,How can I use sum() function for a list in Python?,convert int values in list `numlist` to float,numlist = [float(x) for x in numlist],1443,28,5,58,0
+10998621,Rotate axis text in python matplotlib,rotate x-axis text labels of plot `ax` 45 degrees,"ax.set_xticklabels(ax.xaxis.get_majorticklabels(), rotation=45)",1540,30,4,58,1
+13070461,Get index of the top n values of a list in python,get indexes of the largest `2` values from a list `a` using itemgetter,"zip(*sorted(enumerate(a), key=operator.itemgetter(1)))[0][-2:]",1693,34,7,58,1
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for (i, j) in product(list(range(256)), list(range(256))):
+    pass",1734,35,4,58,1
+14159753,how to change the size of the sci notation above the y axis in matplotlib?,change the size of the sci notation to '30' above the y axis in matplotlib `plt`,"plt.rc('font', **{'size': '30'})",1807,37,4,58,1
+14950260,Convert unicode string dictionary into dictionary in python,"convert unicode string u""{'code1':1,'code2':1}"" into dictionary","d = ast.literal_eval(""{'code1':1,'code2':1}"")",1877,39,1,58,0
+15096021,Python list of tuples to list of int,get a list `y` of the first element of every tuple in list `x`,y = [i[0] for i in x],1892,39,7,58,1
+16677816,Printing lists onto tables in python,print list `t` into a table-like shape,"print('\n'.join('  '.join(map(str, row)) for row in t))",1997,42,7,58,1
+18524112,Norm along row in pandas,normalize the dataframe `df` along the rows,np.sqrt(np.square(df).sum(axis=1)),2138,46,3,58,0
+19546911,How to get a 16bit Unsigned integer in python,Convert integer `number` into an unassigned integer,"struct.unpack('H', struct.pack('h', number))",2202,47,5,58,0
+20025882,Append string to the start of each value in a said column of a pandas dataframe (elegantly),append string 'str' at the beginning of each value in column 'col' of dataframe `df`,df['col'] = 'str' + df['col'].astype(str),2237,48,3,58,0
+20986631,How can I scroll a web page using selenium webdriver in python?,scroll to the bottom of a web page using selenium webdriver,"driver.execute_script('window.scrollTo(0, Y)')",2291,50,4,58,1
+21350605,python selenium click on button,python selenium click on button '.button.c_button.s_button',driver.find_element_by_css_selector('.button.c_button.s_button').click(),2304,50,4,58,1
+21804935,How to use the mv command in Python with subprocess,execute a mv command `mv /home/somedir/subdir/* somedir/` in subprocess,"subprocess.call('mv /home/somedir/subdir/* somedir/', shell=True)",2324,50,9,58,1
+22741068,How do I remove identical items from a list and sort it in Python?,remove identical items from list `my_list` and sort it alphabetically,sorted(set(my_list)),2362,51,7,58,1
+23531030,MultiValueDictKeyError in Django,"Get value for  ""username"" parameter in GET request  in Django","request.GET.get('username', '')",2380,52,4,58,1
+24525111,How can I get the output of a matplotlib plot as an SVG?,Save plot `plt` as svg file 'test.svg',plt.savefig('test.svg'),2406,52,9,58,1
+26153795,Python -Remove Time from Datetime String,Format a datetime string `when` to extract date only,"then = datetime.datetime.strptime(when, '%Y-%m-%d').date()",2438,53,2,58,0
+29034928,Pandas convert a column of list to dummies,convert a column of list in series `s` to dummies,pd.get_dummies(s.apply(pd.Series).stack()).sum(level=0),2506,55,7,58,1
+32874539,Using a variable in xpath in Python Selenium,find a tag `option` whose `value` attribute is `state` in selenium,"driver.find_element_by_xpath(""//option[@value='"" + state + ""']"").click()",2635,58,4,58,1
+32996293,Comparing values in two lists in Python,create a list which indicates whether each element in `x` and `y` is identical,[(x[i] == y[i]) for i in range(len(x))],2639,58,7,58,1
+35707224,Functional statement in Python to return the sum of certain lists in a list of lists,sum the length of lists in list `x` that are more than 1 item in length,sum(len(y) for y in x if len(y) > 1),2698,60,7,58,1
+39602824,pandas: replace string with another string,Replace each value in column 'prod_type' of dataframe `df` with string 'responsive',df['prod_type'] = 'responsive',2768,62,3,58,0
+42211584,How do I compare values in a dictionary?,get the maximum of 'salary' and 'bonus' values in a dictionary,"print(max(d, key=lambda x: (d[x]['salary'], d[x]['bonus'])))",2864,64,1,58,0

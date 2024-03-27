@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+70797,user input and commandline arguments,"print ""Please enter something: "" to console, and read user input to `var`",var = input('Please enter something: '),39,0,4,53,1,28,1
+402504,determine the variable type,get the type of variable `variable_name`,print(type(variable_name)),176,0,4,53,1,28,1
+510348,make a time delay,make a 60 seconds time delay,time.sleep(60),214,0,4,32,1,28,1
+748028,How to get output of exe in python script?,get output from process `p1`,p1.communicate()[0],306,0,4,57,1,28,1
+773814,Plot logarithmic axes with matplotlib in python,plot logarithmic axes with matplotlib,ax.set_yscale('log'),325,0,4,56,1,28,1
+843277,check if a variable exists,check if a local variable 'myVar' exists,"if ('myVar' in locals()):
+    pass",339,0,4,30,1,28,1
+843277,check if a variable exists,check if a global variable 'myVar' exists,"if ('myVar' in globals()):
+    pass",340,0,4,47,1,28,1
+1093322,check what version of Python is running,check python version,sys.version,414,1,4,62,1,28,1
+1849375,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,session.execute('INSERT INTO t1 (SELECT * FROM t2)'),513,4,4,16,1,28,1
+1892339,How to make a window jump to the front?,make a window `root` jump to the front,root.lift(),520,4,4,24,1,28,1
+1892339,How to make a window jump to the front?,make a window `root` jump to the front,"root.attributes('-topmost', True)",521,4,4,38,1,28,1
+2406700,Accented characters in Matplotlib,"set an array of unicode characters `[u'\xe9', u'\xe3', u'\xe2']` as labels in Matplotlib `ax`","ax.set_yticklabels(['\xe9', '\xe3', '\xe2'])",598,6,4,31,1,28,1
+2631935,SQLAlchemy: a better way for update with declarative?,Update a user's name as `Bob Marley` having id `123` in SQLAlchemy,session.query(User).filter_by(id=123).update({'name': 'Bob Marley'}),639,7,4,53,1,28,1
+3804727,"python, subprocess: reading output from subprocess",flush output of python print,sys.stdout.flush(),816,12,4,22,1,28,1
+4143502,How to do a scatter plot with empty circles in Python?,do a scatter plot with empty circles,"plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')",886,14,4,40,1,28,1
+4302027,how to open a url in python,webbrowser open url `url`,webbrowser.open_new(url),916,14,4,13,1,28,1
+4552380,How to get current date and time from DB using SQLAlchemy,SQLAlchemy select records of columns of table `my_table` in addition to current date column,"print(select([my_table, func.current_date()]).execute())",946,15,4,18,1,28,1
+5373474,Multiple positional arguments with Python and argparse,specify multiple positional arguments with argparse,"parser.add_argument('input', nargs='+')",1063,18,4,19,1,28,1
+6086047,Get output of python script from within python script,get output of script `proc`,print(proc.communicate()[0]),1120,20,4,51,1,28,1
+6146778,matplotlib Legend Markers Only Once,make matplotlib plot legend put marker in legend only once,legend(numpoints=1),1122,20,4,50,1,28,1
+7011291,how to get a single result from a SQLite query in python?,how to get a single result from a SQLite query in python?,cursor.fetchone()[0],1192,21,4,38,1,28,1
+8724352,Getting the nth element using BeautifulSoup,BeautifulSoup find all 'tr' elements in HTML string `soup` at the five stride starting from the fourth element,rows = soup.findAll('tr')[4::5],1356,26,4,43,1,28,1
+11205386,Python: BeautifulSoup - get an attribute value based on the name attribute,BeautifulSoup get value associated with attribute 'content' where attribute 'name' is equal to 'City' in tag 'meta' in HTML parsed string `soup`,"soup.find('meta', {'name': 'City'})['content']",1551,31,4,41,1,28,1
+11269575,How to hide output of subprocess in Python 2.7,"hide output of subprocess `['espeak', text]`","subprocess.check_output(['espeak', text], stderr=subprocess.STDOUT)",1556,31,4,40,1,28,1
+12030179,Issue sending email with python?,setup a smtp mail server to `smtp.gmail.com` with port `587`,"server = smtplib.SMTP('smtp.gmail.com', 587)",1623,32,4,20,1,28,1
+12476452,How can I return HTTP status code 204 from a Django view?,return http status code 204 from a django view,return HttpResponse(status=204),1650,33,4,32,1,28,1
+12579061,Python Selenium: Find object attributes using xpath,find all the values in attribute `value` for the tags whose `type` attribute is `submit` in selenium,"browser.find_elements_by_xpath(""//*[@type='submit']"").get_attribute('value')",1659,33,4,60,1,28,1
+13745648,Running bash script from within python,running bash script 'sleep.sh',"subprocess.call('sleep.sh', shell=True)",1774,36,4,47,1,28,1
+13794532,Python regular expression for Beautiful Soup,Find all `div` tags whose classes has the value `comment-` in a beautiful soup object `soup`,"soup.find_all('div', class_=re.compile('comment-'))",1778,36,4,62,1,28,1
+14406214,Moving x-axis to the top of a plot in matplotlib,Move x-axis of the pyplot object `ax` to the top of a plot in matplotlib,ax.xaxis.set_ticks_position('top'),1829,38,4,20,1,28,1
+15882395,Matplotlib.animation: how to remove white margin,"set the size of figure `fig` in inches to width height of `w`, `h`","fig.set_size_inches(w, h, forward=True)",1953,41,4,43,1,28,1
+16344756,Auto reloading python Flask app upon code changes,enable debug mode on Flask application `app`,app.run(debug=True),1984,42,4,16,1,28,1
+17498027,Clicking a link using selenium using python,Clicking a link using selenium using python,driver.find_element_by_xpath('xpath').click(),2064,44,4,19,1,28,1
+19153328,How to dynamically assign values to class properties in Python?,assign value in `group` dynamically to class property `attr`,"setattr(self, attr, group)",2183,47,4,42,1,28,1
+19433630,How to use 'User' as foreign key in Django 1.5,django create a foreign key column `user` and link it to table 'User',"user = models.ForeignKey('User', unique=True)",2197,47,4,45,1,28,1
+19954469,How to get the resolution of a monitor in Pygame?,Set the resolution of a monitor as `FULLSCREEN` in pygame,"pygame.display.set_mode((0, 0), pygame.FULLSCREEN)",2234,48,4,53,1,28,1
+26441253,how to reverse a priority queue in Python without using classes?,reverse a priority queue `q` in python without using classes,"q.put((-n, n))",2442,53,4,27,1,28,1
+29945684,Django - How to simply get domain name?,get domain/host name from request object in Django,request.META['HTTP_HOST'],2537,56,4,21,1,28,1
+35420052,Adding Colorbar to a Spectrogram,add color bar with image `mappable` to plot `plt`,"plt.colorbar(mappable=mappable, cax=ax3)",2694,60,4,39,1,28,1

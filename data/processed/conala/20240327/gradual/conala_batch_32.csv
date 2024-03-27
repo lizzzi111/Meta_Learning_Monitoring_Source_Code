@@ -1,0 +1,46 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+82831,check whether a file exists,"check whether a path ""/etc/password.txt"" exists",print(os.path.exists('/etc/password.txt')),54,0,9,32,1
+273192,check if a directory exists and create it if necessary,check if a directory `path` exists and create it if necessary,"try:
+    os.makedirs(path)
+except OSError as exception:
+    if (exception.errno != errno.EEXIST):
+        raise",119,0,9,32,1
+276052,get current CPU and RAM usage,print cpu and memory usage,"print((psutil.cpu_percent()))
+print((psutil.virtual_memory()))",130,0,4,32,1
+364621,get item's position in a list,get the position of item `element` in list `testlist`,print(testlist.index(element)),164,0,7,32,1
+510348,make a time delay,make a 60 seconds time delay,time.sleep(60),214,0,4,32,1
+1516795,"In Django, how do I filter based on all entities in a many-to-many relation instead of any?","In Django, filter `Task.objects` based on all entities in ['A', 'P', 'F']","Task.objects.exclude(prerequisites__status__in=['A', 'P', 'F'])",467,3,4,32,1
+1712227,get the size of a list,get the size of list `s`,len(s),491,3,7,32,1
+2597099,Sorting numbers in string format with Python,Sort a list of integers `keys` where each value is in string format,keys.sort(key=lambda x: [int(y) for y in x.split('.')]),621,7,1,32,0
+3059301,Manipulating binary data in Python,Return the decimal value for each hex character in data `data`,print(' '.join([str(ord(a)) for a in data])),696,9,5,32,0
+3277503,read a file line by line into a list,read file `fname` line by line into a list `content`,"with open(fname) as f:
+    content = f.readlines()",728,9,9,32,1
+3329386,Limit the number of sentences in a string,"Extract first two substrings in string `phrase` that end in `.`, `?` or `!`","re.match('(.*?[.?!](?:\\s+.*?[.?!]){0,1})', phrase).group(1)",748,10,0,32,0
+3411025,Summarizing a dictionary of arrays in Python,get top `3` items from a dictionary `mydict` with largest sum of values,"heapq.nlargest(3, iter(mydict.items()), key=lambda tup: sum(tup[1]))",759,10,1,32,0
+3430372,How to get full path of current file's directory in Python?,get full path of current directory,os.path.dirname(os.path.abspath(__file__)),761,10,9,32,1
+3996904,Generate random integers between 0 and 9,Generate a random integer between `a` and `b`,"random.randint(a, b)",866,13,5,32,0
+4302027,how to open a url in python,webbrowser open url 'http://example.com',webbrowser.open('http://example.com'),915,14,4,32,1
+4793617,How to derive the week start for a given (iso) weeknumber / year in python,"derive the week start for the given week number and year ‘2011, 4, 0’","datetime.datetime.strptime('2011, 4, 0', '%Y, %U, %w')",989,16,2,32,0
+5137497,Find current directory and file's directory,get the directory name of `path`,os.path.dirname(path),1040,17,9,32,1
+8217613,How to get data from command line from within a Python program?,"get the output of a subprocess command `echo ""foo""` in command line","subprocess.check_output('echo ""foo""', shell=True)",1301,24,9,32,1
+8751653,How can I convert a binary to a float number,convert a binary `b8` to a float number,"struct.unpack('d', b8)[0]",1360,26,5,32,0
+11816315,How to rename all folders?,rename file `dir` to `dir` + '!',"os.rename(dir, dir + '!')",1608,32,9,32,1
+11924135,How to use Beautiful Soup to find a tag with changing id?,select `div` tags whose `id`s begin with `value_xxx_c_1_f_8_a_`,"soup.select('div[id^=""value_xxx_c_1_f_8_a_""]')",1618,32,4,32,1
+12476452,How can I return HTTP status code 204 from a Django view?,return http status code 204 from a django view,return HttpResponse(status=204),1650,33,4,32,1
+13070461,Get index of the top n values of a list in python,get index of the biggest 2 values of a list `a`,"sorted(list(range(len(a))), key=lambda i: a[i])[-2:]",1695,34,7,32,1
+13114512,Calculating difference between two rows in Python / Pandas,calculat the difference between each row and the row previous to it in dataframe `data`,data.set_index('Date').diff(),1702,34,3,32,0
+13557937,How to convert decimal to binary list in python,convert decimal integer 8 to a list of its binary values as elements,[int(x) for x in list('{0:0b}'.format(8))],1757,36,5,32,0
+13628725,How to generate random numbers that are different?,generate 6 random numbers between 1 and 50,"random.sample(range(1, 50), 6)",1763,36,5,32,0
+13704860,zip lists in python,"zip two lists `[1, 2]` and `[3, 4]` into a list of two tuples containing elements at the same index in each list","zip([1, 2], [3, 4])",1770,36,7,32,1
+14180866,sum each value in a list of tuples,create a list with the sum of respective elements of the tuples of list `l`,[sum(x) for x in zip(*l)],1810,37,7,32,1
+14262654,Numpy: Get random set of rows from 2D array,create a new 2 dimensional array containing two random rows from array `A`,"A[(np.random.randint(A.shape[0], size=2)), :]",1817,37,6,32,0
+14914615,"In Python, find out number of differences between two ordered lists",find out the number of non-matched elements at the same index of list `a` and list `b`,"sum(1 for i, j in zip(a, b) if i != j)",1870,39,7,32,1
+15103484,"How to use regular expression to separate numbers and characters in strings like ""30M1000N20M""",separate numbers and characters in string '20M10000N80M',"re.findall('([0-9]+|[A-Z])', '20M10000N80M')",1894,39,5,32,0
+17977584,How to read data from Excel and write it to text file line by line?,open a file `Output.txt` in append mode,"file = open('Output.txt', 'a')",2097,45,9,32,1
+18872717,Merging a list with a list of lists,"For each index `x` from 0 to 3, append the element at index `x` of list `b` to the list at index `x` of list a.",[a[x].append(b[x]) for x in range(3)],2167,46,7,32,1
+19602931,http file downloading and saving,download file from http url `file_url`,file_name = wget.download(file_url),2209,47,9,32,1
+21519203,"Plotting a list of (x, y) coordinates in python matplotlib",Make a scatter plot using unpacked values of list `li`,plt.scatter(*zip(*li)),2309,50,7,32,1
+27146262,Create variable key/value pairs with argparse (python),create variable key/value pairs with argparse,"parser.add_argument('--conf', nargs=2, action='append')",2456,54,4,32,1
+27946742,Regular expression in Python sentence extractor,Get all the sentences from a string `text` using regex,"re.split('\\.\\s', text)",2479,54,0,32,0
+31743603,Create a list of integers with duplicate values in Python,create a list of integers from 1 to 5 with each value duplicated,[(i // 2) for i in range(10)],2590,57,7,32,1
+40208429,sorting dictionary by numeric value,sort dictionary `tag_weight` in reverse order by values cast to integers,"sorted(list(tag_weight.items()), key=lambda x: int(x[1]), reverse=True)",2791,62,1,32,0

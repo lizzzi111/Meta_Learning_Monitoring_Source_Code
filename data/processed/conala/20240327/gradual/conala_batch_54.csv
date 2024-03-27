@@ -1,0 +1,49 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+22676,download a file over HTTP,"download a file ""http://www.example.com/songs/mp3.mp3"" over HTTP and save to ""mp3.mp3""","urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')",19,0,9,54,1
+364621,get item's position in a list,get the position of item 1 in `testlist`,"gen = (i for (i, x) in enumerate(testlist) if (x == 1))
+for i in gen:
+    pass",163,0,7,54,1
+610883,know if an object has an attribute,check if object `a` has property 'property',"if hasattr(a, 'property'):
+    pass",244,0,4,54,1
+1101508,How to parse dates with -0400 timezone string in python?,parse date string '2009/05/13 19:19:30 -0400' using format '%Y/%m/%d %H:%M:%S %z',"datetime.strptime('2009/05/13 19:19:30 -0400', '%Y/%m/%d %H:%M:%S %z')",418,2,2,54,0
+2338531,Python sorting - A list of objects,sort a list of objects 'somelist' where the object has member number variable `resultType`,somelist.sort(key=lambda x: x.resultType),588,6,7,54,1
+2397687,What's the easiest way to convert a list of hex byte strings to a list of hex integers?,"convert a list of hex byte strings `['BB', 'A7', 'F6', '9E']` to a list of hex integers","[int(x, 16) for x in ['BB', 'A7', 'F6', '9E']]",596,6,5,54,0
+2587402,Sorting Python list based on the length of the string,sort list `xs` in ascending order of length of elements,"xs.sort(lambda x, y: cmp(len(x), len(y)))",619,7,7,54,1
+2612802,copy a list,deep copy list `old_list` as `new_list`,new_list = copy.deepcopy(old_list),633,7,7,54,1
+3294889,Iterating over dictionaries using for loops,get keys and items of dictionary `d`,list(d.items()),739,10,1,54,0
+4940032,Search for string in txt file,Search for string `blabla` in txt file 'example.txt',"datafile = file('example.txt')
+found = False
+for line in datafile:
+    if (blabla in line):
+        return True
+return False",1021,17,0,54,0
+6243460,Python lambda function,lambda function that adds two operands,"lambda x, y: x + y",1128,20,4,54,1
+6996603,Delete a file or folder,delete an empty directory,os.rmdir(),1191,21,9,54,1
+7378180,Generate all subsets of size k (containing k elements) in Python,"generate all 2-element subsets of tuple `(1, 2, 3)`","list(itertools.combinations((1, 2, 3), 2))",1235,22,7,54,1
+7745562,Appending to 2D lists in Python,Create list `listy` containing 3 empty lists,listy = [[] for i in range(3)],1258,23,7,54,1
+8369219,How do I read a text file into a string variable in Python,read a text file 'very_Important.txt' into a string variable `str`,"str = open('very_Important.txt', 'r').read()",1322,25,9,54,1
+9376384,Sort a list of tuples depending on two elements,"sort a list of tuples 'unsorted' based on two elements, second and third","sorted(unsorted, key=lambda element: (element[1], element[2]))",1410,27,7,54,1
+10666163,How to check if all elements of a list matches a condition?,Find all the lists from a lists of list 'items' if third element in all sub-lists is '0',[x for x in items if x[2] == 0],1515,30,7,54,1
+11351874,Converting a dict into a list,Convert a dictionary `dict` into a list with key and values as list items.,[y for x in list(dict.items()) for y in x],1568,31,1,54,0
+14931769,get all combination of n binary value,get all combination of 3 binary values,"bin = [0, 1]
+[(x, y, z) for x in bin for y in bin for z in bin]",1872,39,7,54,1
+15548506,Node labels using networkx,Draw node labels `labels` on networkx graph `G ` at position `pos`,"networkx.draw_networkx_labels(G, pos, labels)",1934,40,4,54,1
+16127862,"in Python, how to convert list of float numbers to string with certain format?",convert list `lst` of tuples of floats to list `str_list` of tuples of strings of floats in scientific notation with eight decimal point precision,str_list = [tuple('{0:.8e}'.format(flt) for flt in sublist) for sublist in lst],1969,41,5,54,0
+16739319,Selenium Webdriver - NoSuchElementExceptions,selenium webdriver switch to frame 'frameName',driver.switch_to_frame('frameName'),2001,42,4,54,1
+17306755,How can I format a float using matplotlib's LaTeX formatter?,format float `3.5e+20`  to `$3.5 \\times 10^{20}$` and set as title of matplotlib plot `ax`,"ax.set_title('$%s \\times 10^{%s}$' % ('3.5', '+20'))",2050,43,4,54,1
+17690738,In Pandas how do I convert a string of date strings to datetime objects and put them in a DataFrame?,convert a string of date strings `date_stngs ` to datetime objects and put them in a dataframe,pd.to_datetime(pd.Series(date_stngs)),2076,44,2,54,0
+18131741,Python: find out whether a list of integers is coherent,check if elements in list `my_list` are coherent in order,"return my_list == list(range(my_list[0], my_list[-1] + 1))",2107,45,7,54,1
+18637651,Most pythonic way to convert a list of tuples,group a list `list_of_tuples` of tuples by values,zip(*list_of_tuples),2146,46,7,54,1
+20056548,printing double quotes around a variable,Print a string `word` with string format,"print('""{}""'.format(word))",2239,48,8,54,0
+21361604,Specific sort a list of numbers separated by dots,sort a list `L` by number after second '.',"print(sorted(L, key=lambda x: int(x.split('.')[2])))",2307,50,7,54,1
+22229255,Confusing with the usage of regex in Python,match zero-or-more instances of lower case alphabet characters in a string `f233op `,"re.findall('([a-z])*', 'f233op')",2345,51,0,54,0
+23748995,Pandas DataFrame to list,Get a list of all values in column `a` in pandas data frame `df`,df['a'].tolist(),2387,52,3,54,0
+26809954,Splinter or Selenium: Can we get current html page after clicking a button?,get the html from the current web page of a Selenium driver,driver.execute_script('return document.documentElement.outerHTML;'),2450,54,4,54,1
+27896214,"Reading tab-delimited file with Pandas - works on Windows, but not on Mac",reading tab-delimited csv file `filename` with pandas on mac,"pandas.read_csv(filename, sep='\t', lineterminator='\r')",2476,54,3,54,0
+32792874,"Searching if the values on a list is in the dictionary whose format is key-string, value-list(strings)",get list of keys in dictionary `my_dict` whose values contain values from list `lst`,"[key for item in lst for key, value in list(my_dict.items()) if item in value]",2632,58,1,54,0
+33065588,How to execute a command in the terminal from a Python script?,execute a command `command ` in the terminal from a python script,os.system(command),2641,59,4,54,1
+34097281,How can I convert a tensor into a numpy array in TensorFlow?,"convert a tensor with list of constants `[1, 2, 3]` into a numpy array in tensorflow","print(type(tf.Session().run(tf.constant([1, 2, 3]))))",2655,59,6,54,0
+35837346,Is there a one line code to find maximal value in a matrix?,find maximal value in matrix `matrix`,max([max(i) for i in matrix]),2701,60,6,54,0
+37125495,How to get the N maximum values per row in a numpy ndarray?,get the maximum 2 values per row in array `A`,"A[:, -2:]",2723,61,6,54,0
+40319433,Numpy: find the euclidean distance between two 3-D arrays,find the euclidean distance between two 3-d arrays `A` and `B`,np.sqrt(((A - B) ** 2).sum(-1)),2796,62,6,54,0
+40512124,convert dictionaries into string python,"concatenate key/value pairs in dictionary `a` with string ', ' into a single string",""""""", """""".join([(str(k) + ' ' + str(v)) for k, v in list(a.items())])",2803,63,1,54,0

@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+53513,check if a list is empty,check if list `li` is empty,"if (len(li) == 0):
+    pass",36,0,7,25,1
+123198,copy a file,copy file '/dir/file.ext' to '/new/dir',"shutil.copy2('/dir/file.ext', '/new/dir')",74,0,9,25,1
+209513,Convert hex string to int,"Convert hex string ""a"" to integer","int('a', 16)",91,0,5,25,0
+356483,Python regex findall numbers and dots,python regex  to find all numbers and dots from 'text',"re.findall('Test([\\d.]*\\d+)', text)",153,0,0,25,0
+930397,Getting the last element of a list,Getting the second to last element of list `some_list`,some_list[(-2)],365,0,7,25,1
+1602934,Check if a given key already exists in a dictionary,Check if a given key `key` exists in dictionary `d`,"if (key in d):
+    pass",479,3,1,25,0
+1773805,parse a YAML file,"parse a YAML file ""example.yaml""","with open('example.yaml', 'r') as stream:
+    try:
+        print((yaml.load(stream)))
+    except yaml.YAMLError as exc:
+        print(exc)",502,4,9,25,1
+2108126,How to run two functions simultaneously,run function 'SudsMove' simultaneously,threading.Thread(target=SudsMove).start(),552,5,4,25,1
+2191699,Find an element in a list of tuples,find all the elements that consists value '1' in a list of tuples 'a',[item for item in a if 1 in item],569,5,7,25,1
+2545397,Converting a string into a list in Python,append each line in file `myfile` into a list,[x for x in myfile.splitlines() if x != ''],613,7,9,25,1
+2600191,count the occurrences of a list item,"count the occurrences of item ""a"" in list `l`",l.count('a'),628,7,7,25,1
+2721782,How to convert a Date string to a DateTime object?,convert a date string `s` to a datetime object,"datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')",647,7,2,25,0
+2813806,How do you check the presence of many keys in a Python dictinary?,check if key 'stackoverflow' and key 'google' are presented in dictionary `sites`,"set(['stackoverflow', 'google']).issubset(sites)",670,8,1,25,0
+3685265,How to write a multidimensional array to a text file?,save numpy array `x` into text file 'test.txt',"np.savetxt('test.txt', x)",799,11,6,25,0
+4060221,How to reliably open a file in the same directory as a Python script,open a file 'bundled-resource.jpg' in the same directory as a python script,"f = open(os.path.join(__location__, 'bundled-resource.jpg'))",874,13,9,25,1
+4338032,replacing all regex matches in single line,"match string 'this is my string' with regex '\\b(this|string)\\b'
+then replace it with regex '<markup>\\1</markup>'","re.sub('\\b(this|string)\\b', '<markup>\\1</markup>', 'this is my string')",920,14,0,25,0
+4682088,Call Perl script from Python,invoke perl script './uireplace.pl' using perl interpeter '/usr/bin/perl' and send argument `var` to it,"subprocess.call(['/usr/bin/perl', './uireplace.pl', var])",969,16,9,25,1
+4685571,Generic reverse of list items in Python,Get reverse of list items from list 'b' using extended slicing,[x[::-1] for x in b],970,16,7,25,1
+4741537,Append elements of a set to a list in Python,Append elements of a set to a list in Python,a.extend(list(b)),985,16,7,25,1
+4842956,Python: How to remove empty lists from a list?,Get a new list `list2`by removing empty list from a list of lists `list1`,list2 = [x for x in list1 if x != []],996,16,7,25,1
+7125009,How to change legend size with matplotlib.pyplot,change legend size to 'x-small' in upper-left location,"pyplot.legend(loc=2, fontsize='x-small')",1195,21,4,25,1
+7253803,How to get everything after last slash in a URL?,get every thing after last `/`,"url.rsplit('/', 1)",1207,22,4,25,1
+7741878,How to apply numpy.linalg.norm to each row of a matrix?,apply `numpy.linalg.norm` to each row of a matrix `a`,"numpy.apply_along_axis(numpy.linalg.norm, 1, a)",1255,23,6,25,0
+8192379,How to read stdin to a 2d python array of integers?,Create array `a` containing integers from stdin,a.fromlist([int(val) for val in stdin.read().split()]),1293,24,6,25,0
+9236926,Concatenating two one-dimensional NumPy arrays,Concatenating two one-dimensional NumPy arrays 'a' and 'b'.,"numpy.concatenate([a, b])",1400,27,6,25,0
+11584773,sorting a graph by its edge weight. python,sort list `lst` in descending order based on the second item of each tuple in it,"lst.sort(key=lambda x: x[2], reverse=True)",1587,31,7,25,1
+11677860,Subtract values in one list from corresponding values in another list - Python,Get a list `C` by subtracting values in one list `B` from corresponding values in another list `A`,"C = [(a - b) for a, b in zip(A, B)]",1592,32,7,25,1
+12897374,Get unique values from a list in python,remove duplicates from list `myset`,mynewlist = list(myset),1684,34,7,25,1
+13145368,Find the maximum value in a list of tuples in Python,get the item at index 0 from the tuple that has maximum value at index 1 in list `lis`,"max(lis, key=itemgetter(1))[0]",1705,35,7,25,1
+14169122,Generating all unique pair permutations,generate a list of all unique pairs of integers in `range(9)`,"list(permutations(list(range(9)), 2))",1809,37,7,25,1
+14435268,"How to access a tag called ""name"" in BeautifulSoup","access a tag called ""name"" in beautifulsoup `soup`",print(soup.find('name').string),1833,38,4,25,1
+15852295,list of ints into a list of tuples python,group a list of ints into a list of tuples of each 2 elements,"my_new_list = zip(my_list[0::2], my_list[1::2])",1949,41,7,25,1
+16193578,How do I perform secondary sorting in python?,How do I perform secondary sorting in python?,"sorted(list5, key=lambda vertex: (degree(vertex), vertex))",1974,41,7,25,1
+16330838,Python split a string using regex,Python split a string using regex,"re.findall('(.+?):(.+?)\\b ?', text)",1983,42,0,25,0
+18524642,Convert list of lists to list of integers,convert a list of lists `L` to list of integers,L = [int(''.join([str(y) for y in x])) for x in L],2141,46,7,25,1
+19490064,Merge DataFrames in Pandas using the mean,merge rows from dataframe `df1` with rows from dataframe `df2` and calculate the mean for rows that have the same value of axis 1,"pd.concat((df1, df2), axis=1).mean(axis=1)",2200,47,3,25,0
+31385363,how to export a table dataframe in pyspark to csv?,export a table dataframe `df` in pyspark to csv 'mycsv.csv',df.toPandas().to_csv('mycsv.csv'),2582,57,3,25,0
+39605640,How do I pull a recurring key from a JSON?,pull a value with key 'name' from a json object `item`,print(item['name']),2770,62,4,25,1
+40744328,How to order a list of lists by the first value,"order a list of lists `[[1, 'mike'], [1, 'bob']]` by the first value of individual list","sorted([[1, 'mike'], [1, 'bob']])",2814,63,7,25,1

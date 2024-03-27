@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+1854,What OS am I running on,get os name,"import platform
+platform.system()",6,0,4,63,1,10,1
+179369,How do I abort the execution of a Python script?,terminate the script using status value 0,sys.exit(0),80,0,4,24,1,10,1
+251464,How to get a function name as a string in Python?,get a name of function `my_function` as a string,my_function.__name__,112,0,4,31,1,10,1
+510348,make a time delay,make a 0.1 seconds time delay,sleep(0.1),218,0,4,49,1,10,1
+741877,How do I tell matplotlib that I am done with a plot?,Matplotlib clear the current axes.,plt.cla(),302,0,4,52,1,10,1
+849674,Simple threading in Python 2.6 using thread.start_new_thread(),start a new thread for `myfunction` with parameters 'MyStringHere' and 1,"thread.start_new_thread(myfunction, ('MyStringHere', 1))",345,0,4,58,1,10,1
+852055,Build a GQL query (for Google App Engine) that has a condition on ReferenceProperty,Google App Engine execute GQL query 'SELECT * FROM Schedule WHERE station = $1' with parameter `foo.key()`,"db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())",346,0,4,17,1,10,1
+1358977,How to make several plots on a single page using matplotlib?,"Return a subplot axes positioned by the grid definition `1,1,1` using matpotlib","fig.add_subplot(1, 1, 1)",446,2,4,51,1,10,1
+1731346,How to get two random records with Django,get two random records from model 'MyModel' in Django,MyModel.objects.order_by('?')[:2],495,3,4,39,1,10,1
+1810743,How to set the current working directory in Python?,set the current working directory to 'c:\\Users\\uname\\desktop\\python',os.chdir('c:\\Users\\uname\\desktop\\python'),509,4,4,44,1,10,1
+1908741,How to do this GROUP BY query in Django's ORM with annotate and aggregate,Group the values from django model `Article` with group by value `pub_date` and annotate by `title`,Article.objects.values('pub_date').annotate(article_count=Count('title')),522,4,4,64,1,10,1
+1949318,Checking if a website is up,"Checking if website ""http://www.stackoverflow.com"" is up",print(urllib.request.urlopen('http://www.stackoverflow.com').getcode()),525,4,4,63,1,10,1
+2052390,Manually raising (throwing) an exception,throw an Exception with message 'This is the exception you expect to handle',raise Exception('This is the exception you expect to handle'),542,5,4,52,1,10,1
+3781851,"Run a python script from another python script, passing in args","run python script 'script2.py' from another python script, passing in 1 as an argument",os.system('script2.py 1'),815,12,4,50,1,10,1
+4143502,How to do a scatter plot with empty circles in Python?,"scatter a plot with x, y position of `np.random.randn(100)` and face color equal to none","plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')",885,13,4,16,1,10,1
+4476373,Simple URL GET/POST function,post request url `url` with parameters `payload`,"r = requests.post(url, data=payload)",933,15,4,27,1,10,1
+4906977,Access environment variables,get value of the environment variable 'KEY_THAT_MIGHT_EXIST' with default value `default_value`,"print(os.getenv('KEY_THAT_MIGHT_EXIST', default_value))",1012,17,4,60,1,10,1
+5971312,How to set environment variables in Python,set environment variable 'DEBUSSY' to '1',os.environ['DEBUSSY'] = '1',1115,19,4,58,1,10,1
+6243460,Python lambda function,lambda function that adds two operands,"lambda x, y: x + y",1128,20,4,54,1,10,1
+7574841,open a terminal from python,open a 'gnome' terminal from python script and run  'sudo apt-get update' command.,"os.system('gnome-terminal -e \'bash -c ""sudo apt-get update; exec bash""\'')",1244,23,4,55,1,10,1
+8440117,How do I print a Celsius symbol with matplotlib?,print a celsius symbol on x axis of a plot `ax`,ax.set_xlabel('Temperature (\u2103)'),1332,25,4,13,1,10,1
+9262278,Django view returning json without using template,Django response with JSON `data`,"return HttpResponse(data, mimetype='application/json')",1402,27,4,39,1,10,1
+10822635,Get the number of rows in table using SQLAlchemy,SQLAlchemy count the number of rows in table `Congress`,rows = session.query(Congress).count(),1524,30,4,49,1,10,1
+12402561,How to set font size of Matplotlib axis Legend?,set font size of axis legend of plot `plt` to 'xx-small',"plt.setp(legend.get_title(), fontsize='xx-small')",1647,33,4,64,1,10,1
+12579061,Python Selenium: Find object attributes using xpath,"get the text of multiple elements found by xpath ""//*[@type='submit']/@value""","browser.find_elements_by_xpath(""//*[@type='submit']/@value"").text",1658,33,4,28,1,10,1
+12804801,Django - How to sort queryset by number of character in a field,sort query set by number of characters in a field `length` in django model `MyModel`,MyModel.objects.extra(select={'length': 'Length(name)'}).order_by('length'),1674,34,4,52,1,10,1
+13395888,How can I get the color of the last figure in matplotlib?,"make a line plot with errorbars, `ebar`, from data `x, y, err` and set color of the errorbars to `y` (yellow)","ebar = plt.errorbar(x, y, yerr=err, ecolor='y')",1738,35,4,15,1,10,1
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",shutdown and restart a computer running windows from script,"subprocess.call(['shutdown', '/r'])",1860,38,4,18,1,10,1
+15974730,How do I get the different parts of a Flask request's url?,retrieve the path from a Flask request,request.url,1957,41,4,30,1,10,1
+16739319,Selenium Webdriver - NoSuchElementExceptions,selenium wait for driver `driver` 60 seconds before throwing a NoSuchElementExceptions exception,driver.implicitly_wait(60),2000,42,4,48,1,10,1
+17558552,How do I add custom field to Python log format string?,Log info message 'Log message' with attributes `{'app_name': 'myapp'}`,"logging.info('Log message', extra={'app_name': 'myapp'})",2067,44,4,35,1,10,1
+19205916,How to call Base Class's __init__ method from the child class?,call base class's __init__ method from the child class `ChildClass`,"super(ChildClass, self).__init__(*args, **kwargs)",2186,47,4,47,1,10,1
+20986631,How can I scroll a web page using selenium webdriver in python?,scroll to the bottom of a web page using selenium webdriver,"driver.execute_script('window.scrollTo(0, Y)')",2291,50,4,58,1,10,1
+20986631,How can I scroll a web page using selenium webdriver in python?,scroll a to the bottom of a web page using selenium webdriver,"driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')",2292,50,4,59,1,10,1
+23931444,Selenium open pop up window [Python],"Selenium `driver` click a hyperlink with the pattern ""a[href^='javascript']""","driver.find_element_by_css_selector(""a[href^='javascript']"").click()",2396,52,4,44,1,10,1
+23970693,How To Format a JSON Text In Python?,load a json data `json_string` into variable `json_data`,json_data = json.loads(json_string),2397,52,4,46,1,10,1
+32063985,Deleting a div with a particlular class using BeautifulSoup,remove a div with a id `main-content` using beautifulsoup,"soup.find('div', id='main-content').decompose()",2614,58,4,43,1,10,1
+32458541,Django can't find URL pattern,Confirm urls in Django properly,"url('^$', include('sms.urls')),",2622,58,4,61,1,10,1
+40851413,MITM proxy over SSL hangs on wrap_socket with client,send data 'HTTP/1.0 200 OK\r\n\r\n' to socket `connection`,connection.send('HTTP/1.0 200 OK\r\n\r\n'),2816,63,4,23,1,10,1

@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+1476,express binary literals,convert binary string '010101' to integer,"int('010101', 2)",3,0,5,50,0,50,0
+163542,pass a string into subprocess.Popen,set the stdin of the process 'grep f' to be 'one\ntwo\nthree\nfour\nfive\nsix\n',"p = subprocess.Popen(['grep', 'f'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+p.stdin.write('one\ntwo\nthree\nfour\nfive\nsix\n')
+p.communicate()[0]
+p.stdin.close()",75,0,9,31,1,50,0
+674764,string find,find the index of sub string 'df' in string 'sdfasdf','sdfasdf'.index('df'),279,0,3,9,0,50,0
+817122,Delete digits in Python (Regex),delete all digits in string `s` that are not directly attached to a word character,"re.sub('$\\d+\\W+|\\b\\d+\\b|\\W+\\d+$', '', s)",332,0,8,0,0,50,0
+961263,Two values from one input in python?,"assign values to two variables, `var1` and `var2` from user input response to `'Enter two numbers here: ` split on whitespace","var1, var2 = input('Enter two numbers here: ').split()",382,1,8,0,0,50,0
+1303243,find out if a Python object is a string,check if object `o` is a string,"isinstance(o, str)",443,2,0,59,0,50,0
+1534542,Can I sort text by its numeric value in Python?,Can I sort text by its numeric value in Python?,"sorted(list(mydict.items()), key=lambda a: map(int, a[0].split('.')))",469,3,5,29,0,50,0
+3220755,how to find the target file's full(absolute path) of the symbolic link or soft link in python,get canonical path of the filename `path`,os.path.realpath(path),719,9,9,49,1,50,0
+3925614,How do you read a file into a list in Python?,read a file 'C:/name/MyDocuments/numbers' into a list `data`,"data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]",840,12,9,23,1,50,0
+4664850,Find all occurrences of a substring in Python,find all occurrences of a substring in a string,"[m.start() for m in re.finditer('test', 'test test test test')]",966,16,0,29,0,50,0
+4914277,How to empty a file using Python,erase all the contents of a file `filename`,"open(filename, 'w').close()",1014,17,9,62,1,50,0
+4928526,"python, format string","python, format string ""{} %s {}"" to have 'foo' and 'bar' in the first and second positions","""""""{} %s {}"""""".format('foo', 'bar')",1019,17,8,0,0,50,0
+5744980,Taking the results of a bash command and using it in python,"Taking the results of a bash command ""awk '{print $10, $11}' test.txt > test2.txt""","os.system(""awk '{print $10, $11}' test.txt > test2.txt"")",1086,19,9,19,1,50,0
+6416131,add new item to dictionary,"add key ""item3"" and value ""3"" to dictionary `default_data `",default_data['item3'] = 3,1146,20,1,21,0,50,0
+6429638,How to split a string into integers in Python?,split a string `42 0` by white spaces.,"""""""42 0"""""".split()",1149,20,8,0,0,50,0
+7657457,Finding key from value in Python dictionary:,Find all keys from a dictionary `d` whose values are `desired_value`,"[k for k, v in d.items() if v == desired_value]",1248,23,1,13,0,50,0
+7768859,Python: for loop in index assignment,Convert integer elements in list `wordids` to strings,[str(wi) for wi in wordids],1260,23,5,63,0,50,0
+8081545,convert list of tuples to multiple lists in Python,"convert tuple elements in list `[(1,2),(3,4),(5,6),]` into lists","map(list, zip(*[(1, 2), (3, 4), (5, 6)]))",1277,24,7,56,1,50,0
+8777753,Converting datetime.date to UTC timestamp in Python,convert datetime.date `dt` to utc timestamp,"timestamp = (dt - datetime(1970, 1, 1)).total_seconds()",1362,26,2,8,0,50,0
+10697757,Python regular expression split() string,Split a string `s` by space with `4` splits,"s.split(' ', 4)",1520,30,8,0,0,50,0
+10750802,Disable abbreviation in argparse,disable abbreviation in argparse,parser = argparse.ArgumentParser(allow_abbrev=False),1522,30,8,0,0,50,0
+11066874,beautifulsoup can't find href in file using regular expression,find href value that has string 'follow?page' inside it,"print(soup.find('a', href=re.compile('.*follow\\?page.*')))",1546,30,0,16,0,50,0
+11354544,Read lines containing integers from a file in Python?,strip and split each line `line` on white spaces,line.strip().split(' '),1569,31,8,0,0,50,0
+11811392,How to generate a list from a pandas DataFrame with the column name and column values?,generate a list from a pandas dataframe `df` with the column name and column values,df.values.tolist(),1607,32,3,1,0,50,0
+13628725,How to generate random numbers that are different?,generate 6 random numbers between 1 and 50,"random.sample(range(1, 50), 6)",1763,36,5,32,0,50,0
+14041791,print variable and a string in python,Print a string `card` with string formatting,print('I have: {0.price}'.format(card)),1798,37,8,0,0,50,0
+15390374,Python 3: How do I get a string literal representation of a byte string?,get a utf-8 string literal representation of byte string `x`,"""""""x = {}"""""".format(x.decode('utf8')).encode('utf8')",1918,40,8,0,0,50,0
+17731822,Elegant way to convert list to hex string,Convert list of booleans `walls` into a hex string,"hex(int(''.join([str(int(b)) for b in walls]), 2))",2078,44,8,0,0,50,0
+19334374,Python - converting a string of numbers into a list of int,Convert a string of numbers 'example_string' separated by comma into a list of numbers,"[int(s) for s in example_string.split(',')]",2191,47,5,6,0,50,0
+28767642,How to compare two lists in python,Compare if each value in list `a` is less than respective index value in list `b`,"all(i < j for i, j in zip(a, b))",2499,55,7,52,1,50,0
+29836836,How do I filter a pandas DataFrame based on value counts?,filter dataframe `df` by values in column `A` that appear more than once,df.groupby('A').filter(lambda x: len(x) > 1),2532,56,3,60,0,50,0
+30551576,Using Regular Expressions to extract specific urls in python,Get all urls within text `s`,"re.findall('""(http.*?)""', s, re.MULTILINE | re.DOTALL)",2555,56,0,16,0,50,0
+32191029,Getting the indices of several elements in a NumPy array at once,Get the indices in array `b` of each element appearing in array `a`,"np.in1d(b, a).nonzero()[0]",2615,58,6,31,0,50,0
+32792602,Find string with regular expression in python,search for occurrences of regex pattern `pattern` in string `url`,print(pattern.search(url).group(1)),2631,58,0,6,0,50,0
+32792874,"Searching if the values on a list is in the dictionary whose format is key-string, value-list(strings)",get list of keys in dictionary `my_dict` whose values contain values from list `lst`,"[key for item in lst for key, value in list(my_dict.items()) if item in value]",2632,58,1,54,0,50,0
+36454494,Calcuate mean for selected rows for selected columns in pandas data frame,"get mean of columns `2, 5, 6, 7, 8` for all rows in dataframe `df`","df.iloc[:, ([2, 5, 6, 7, 8])].mean(axis=1)",2711,60,3,57,0,50,0
+39268928,Python: how to get rid of spaces in str(dict)?,convert dictionary `dict` into a string formatted object,"'{' + ','.join('{0!r}:{1!r}'.format(*x) for x in list(dct.items())) + '}'",2755,61,1,63,0,50,0
+41648246,Efficient computation of the least-squares algorithm in NumPy,solve for the least squares' solution of matrices `a` and `b`,"np.linalg.solve(np.dot(a.T, a), np.dot(a.T, b))",2843,64,6,13,0,50,0
+41861705,Merging two pandas dataframes,"Create new DataFrame object by merging columns ""key"" of  dataframes `split_df` and `csv_df` and rename the columns from dataframes `split_df` and `csv_df` with suffix `_left` and `_right` respectively","pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))",2850,64,3,7,0,50,0

@@ -1,0 +1,46 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+11613284,Add items to a dictionary of lists,get a dictionary with keys from one list `keys` and values from other list `data`,"dict(zip(keys, zip(*data)))",1588,32
+11619169,How do I convert a datetime.date object into datetime.datetime in python?,convert Date object `dateobject` into a DateTime object,"datetime.datetime.combine(dateobject, datetime.time())",1589,32
+11620914,Removing nan values from an array,remove Nan values from array `x`,x = x[numpy.logical_not(numpy.isnan(x))],1590,32
+11621165,Indexing a pandas dataframe by integer,Reset the indexes of a pandas data frame,df2 = df.reset_index(),1591,32
+11677860,Subtract values in one list from corresponding values in another list - Python,Get a list `C` by subtracting values in one list `B` from corresponding values in another list `A`,"C = [(a - b) for a, b in zip(A, B)]",1592,32
+11692613,Python - sum values in dictionary,Get all the values in key `gold` summed from a list of dictionary `myLIst`,sum(item['gold'] for item in myLIst),1593,32
+11692613,Python - sum values in dictionary,sum values in list of dictionaries `example_list` with key 'gold',sum(item['gold'] for item in example_list),1594,32
+11692613,Python - sum values in dictionary,get a sum of all values from key `gold` in a list of dictionary `example_list`,sum([item['gold'] for item in example_list]),1595,32
+11697709,Comparing two lists in Python,list duplicated elements in two lists `listA` and `listB`,list(set(listA) & set(listB)),1596,32
+11703064,How do i add two lists' elements into one list?,append the sum of each tuple pair in the grouped list `list1` and list `list2` elements to list `list3`,"list3 = [(a + b) for a, b in zip(list1, list2)]",1597,32
+11709079,Parsing HTML,Parsing webpage 'http://www.google.com/' using BeautifulSoup,"page = urllib.request.urlopen('http://www.google.com/')
+soup = BeautifulSoup(page)",1598,32
+11709079,Parsing HTML,Parsing HTML string `html` using BeautifulSoup,"parsed_html = BeautifulSoup(html)
+print(parsed_html.body.find('div', attrs={'class': 'container', }).text)",1599,32
+11755208,How to remove ^M from a text file and replace it with the next line,replace carriage return in string `somestring` with empty string '',"somestring.replace('\\r', '')",1600,32
+11760095,convert binary string to numpy array,convert binary string '\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@' to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='<f4')",1601,32
+11760095,convert binary string to numpy array,convert binary string to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='>f4')",1602,32
+11764260,How to find the minimum value in a numpy matrix?,find the minimum value in a numpy array `arr` excluding 0,arr[arr != 0].min(),1603,32
+11791568,What is the most pythonic way to exclude elements of a list that start with a specific character?,What is the most pythonic way to exclude elements of a list that start with a specific character?,[x for x in my_list if not x.startswith('#')],1604,32
+11801309,loop over files,loop over files in directory '.',"for fn in os.listdir('.'):
+    if os.path.isfile(fn):
+        pass",1605,32
+11801309,loop over files,loop over files in directory `source`,"for (root, dirs, filenames) in os.walk(source):
+    for f in filenames:
+        pass",1606,32
+11811392,How to generate a list from a pandas DataFrame with the column name and column values?,generate a list from a pandas dataframe `df` with the column name and column values,df.values.tolist(),1607,32
+11816315,How to rename all folders?,rename file `dir` to `dir` + '!',"os.rename(dir, dir + '!')",1608,32
+11833266,How do I read the first line of a string?,read the first line of a string `my_string`,my_string.splitlines()[0],1609,32
+11833266,How do I read the first line of a string?,How do I read the first line of a string?,"my_string.split('\n', 1)[0]",1610,32
+11837979,Removing white space around a saved image in matplotlib,remove white space padding around a saved image `test.png` in matplotlib,"plt.savefig('test.png', bbox_inches='tight')",1611,32
+11840111,Divide the values of two dictionaries in python,divide values associated with each key in dictionary `d1` from values associated with the same key in dictionary `d2`,"dict((k, float(d2[k]) / d1[k]) for k in d2)",1612,32
+11840111,Divide the values of two dictionaries in python,divide the values with same keys of two dictionary `d1` and `d2`,{k: (float(d2[k]) / d1[k]) for k in d2},1613,32
+11840111,Divide the values of two dictionaries in python,divide the value for each key `k` in dict `d2` by the value for the same key `k` in dict `d1`,{k: (d2[k] / d1[k]) for k in list(d1.keys()) & d2},1614,32
+11850425,Custom Python list sorting,Sort list `alist` in ascending order based on each of its elements' attribute `foo`,alist.sort(key=lambda x: x.foo),1615,32
+11921649,What is the most pythonic way to avoid specifying the same value in a string,"Format string `hello {name}, how are you {name}, welcome {name}` to be interspersed by `name` three times, specifying the value as `john` only once","""""""hello {name}, how are you {name}, welcome {name}"""""".format(name='john')",1616,32
+11924135,How to use Beautiful Soup to find a tag with changing id?,BeautifulSoup find a tag whose id ends with string 'para',soup.findAll(id=re.compile('para$')),1617,32
+11924135,How to use Beautiful Soup to find a tag with changing id?,select `div` tags whose `id`s begin with `value_xxx_c_1_f_8_a_`,"soup.select('div[id^=""value_xxx_c_1_f_8_a_""]')",1618,32
+11932729,How to sort a Python dictionary by value?,sort a python dictionary `a_dict` by element `1` of the value,"sorted(list(a_dict.items()), key=lambda item: item[1][1])",1619,32
+11985628,Python regex - Ignore parenthesis as indexing?,Match regex pattern '((?:A|B|C)D)' on string 'BDE',"re.findall('((?:A|B|C)D)', 'BDE')",1620,32
+12005558,Python - find digits in a string,get digits in string `my_string`,""""""""""""".join(c for c in my_string if c.isdigit())",1621,32
+12030074,Generate list of numbers in specific format,generate list of numbers in specific format using string formatting precision.,[('%.2d' % i) for i in range(16)],1622,32
+12030179,Issue sending email with python?,setup a smtp mail server to `smtp.gmail.com` with port `587`,"server = smtplib.SMTP('smtp.gmail.com', 587)",1623,32
+12096252,use a list of values to select rows from a pandas dataframe,"use a list of values `[3,6]` to select rows from a pandas dataframe `df`'s column 'A'","df[df['A'].isin([3, 6])]",1624,32
+12141150,"from list of integers, get number closest to a given value",get number in list `myList` closest in value to number `myNumber`,"min(myList, key=lambda x: abs(x - myNumber))",1625,32
+12168648,Pandas (python): How to add column to dataframe for index?,add a column 'new_col' to dataframe `df` for index in range,"df['new_col'] = list(range(1, len(df) + 1))",1626,32

@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+19339,inverse of zip,"unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]` and fill empty results with None","map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])",11,0,7,64,1,63,0,48,0
+518021,Getting the length of an array,Getting the length of array `l`,len(l),223,0,6,37,0,57,0,48,0
+678236,How to get the filename without the extension from a path in Python?,get the filename without the extension from file 'hemanth.txt',print(os.path.splitext(os.path.basename('hemanth.txt'))[0]),289,0,9,24,1,18,0,48,0
+761804,Trimming a string,"Trimming a string ""Bob has a cat""",'Bob has a cat'.strip(),311,0,8,0,0,15,0,48,0
+817122,Delete digits in Python (Regex),delete all digits in string `s` that are not directly attached to a word character,"re.sub('$\\d+\\W+|\\b\\d+\\b|\\W+\\d+$', '', s)",332,0,8,0,0,50,0,48,0
+902761,Saving a Numpy array as an image,save a numpy array `image_array` as an image 'outfile.jpg',"scipy.misc.imsave('outfile.jpg', image_array)",358,0,6,8,0,53,0,48,0
+1024847,Add key to a dictionary,Add key 'a' to dictionary `data` with value 1,data.update(dict(a=1)),399,1,1,5,0,39,0,48,0
+1217251,Python: sorting a dictionary of lists,sort dictionary of lists `myDict` by the third item in each list,"sorted(list(myDict.items()), key=lambda e: e[1][2])",432,2,1,39,0,21,0,48,0
+1580270,What's the best way to search for a Python dictionary value in a list of dictionaries?,What's the best way to search for a Python dictionary value in a list of dictionaries?,any(d['site'] == 'Superuser' for d in data),476,3,1,40,0,16,0,48,0
+2668909,How to find the real user home directory using python?,find the real user home directory using python,os.path.expanduser('~user'),643,7,4,34,1,12,1,48,0
+2674391,Python - Locating the position of a regex match in a string?,Get the position of a regex match for word `is` in a string `String`,"re.search('\\bis\\b', String).start()",644,7,0,49,0,16,0,48,0
+3277503,read a file line by line into a list,"read file ""file.txt"" line by line into a list `array`","with open('file.txt', 'r') as ins:
+    array = []
+    for line in ins:
+        array.append(line)",730,10,9,40,1,22,0,48,0
+3329386,Limit the number of sentences in a string,"Extract first two substrings in string `phrase` that end in `.`, `?` or `!`","re.match('(.*?[.?!](?:\\s+.*?[.?!]){0,1})', phrase).group(1)",748,10,0,32,0,20,0,48,0
+5183533,How to make List from Numpy Matrix in Python,Convert array `a` into a list,numpy.array(a).reshape(-1).tolist(),1043,18,6,43,0,40,0,48,0
+5373474,Multiple positional arguments with Python and argparse,specify multiple positional arguments with argparse,"parser.add_argument('input', nargs='+')",1063,18,4,19,1,28,1,48,0
+5826427,Can a python script execute a function inside a bash script?,call a function `otherfunc` inside a bash script `test.sh` using subprocess,subprocess.call('test.sh otherfunc'),1093,19,9,55,1,8,0,48,0
+6561653,how to get the index of dictionary with the highest value in a list of dictionary,Get an item from a list of dictionary `lst` which has maximum value in the key `score` using lambda function,"max(lst, key=lambda x: x['score'])",1158,20,1,27,0,43,0,48,0
+8724352,Getting the nth element using BeautifulSoup,BeautifulSoup find all 'tr' elements in HTML string `soup` at the five stride starting from the fourth element,rows = soup.findAll('tr')[4::5],1356,26,4,43,1,28,1,48,0
+9210525,convert hex to decimal,convert hex string '0xdeadbeef' to decimal,ast.literal_eval('0xdeadbeef'),1395,27,5,34,0,35,0,48,0
+9647586,Getting a request parameter in Jinja2,get a request parameter `a` in jinja2,{{request.args.get('a')}},1438,28,4,27,1,12,1,48,0
+11406091,Selecting Element followed by text with Selenium WebDriver,"Selecting Element ""//li/label/input"" followed by text ""polishpottery"" with Selenium WebDriver `driver`","driver.find_element_by_xpath(""//li/label/input[contains(..,'polishpottery')]"")",1577,31,4,14,1,25,1,48,0
+11811392,How to generate a list from a pandas DataFrame with the column name and column values?,generate a list from a pandas dataframe `df` with the column name and column values,df.values.tolist(),1607,32,3,1,0,50,0,48,0
+12905999,Python dict how to create key or append an element to key?,Create a key `key` if it does not exist in dict `dic` and append element `value` to value.,"dic.setdefault(key, []).append(value)",1686,34,1,53,0,63,0,48,0
+13279399,How to obtain values of request variables using Python and Flask,Flask get posted form data 'firstname',first_name = request.form.get('firstname'),1724,35,4,38,1,25,1,48,0
+14737222,How to split a word into letters in Python,"Split string `Hello` into a string of letters seperated by `,`",""""""","""""".join('Hello')",1854,38,8,0,0,7,0,48,0
+17555218,Python - How to sort a list of lists by the fourth element in each list?,Sort lists in the list `unsorted_list` by the element at index 3 of each list,unsorted_list.sort(key=lambda x: x[3]),2066,44,7,17,1,14,0,48,0
+18170459,How to check if a dictionary is in another dictionary in python,check if dictionary `L[0].f.items()` is in dictionary `a3.f.items()`,set(L[0].f.items()).issubset(set(a3.f.items())),2111,45,1,13,0,55,0,48,0
+18272066,Easy way to convert a unicode list to a list containing python strings?,Encode each value to 'UTF8' in the list `EmployeeList`,[x.encode('UTF8') for x in EmployeeList],2118,45,8,0,0,16,0,48,0
+19011613,Using BeautifulSoup to select div blocks within HTML,using beautifulsoup to select div blocks within html `soup`,"soup.find_all('div', class_='crBlock ')",2175,47,4,21,1,27,1,48,0
+19334374,Python - converting a string of numbers into a list of int,"Convert a string of numbers `example_string` separated by `,` into a list of integers","map(int, example_string.split(','))",2192,47,5,6,0,40,0,48,0
+19555472,Change a string of integers separated by spaces to a list of int,convert a string of integers `x` separated by spaces to a list of integers,x = [int(i) for i in x.split()],2204,47,5,6,0,49,0,48,0
+22093471,pandas Subtract Dataframe with a row from another dataframe,pandas subtract a row from dataframe `df2` from dataframe `df`,"pd.DataFrame(df.values - df2.values, columns=df.columns)",2339,51,3,33,0,62,0,48,0
+26097916,"python, best way to convert a pandas series into a pandas dataframe",convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`,"pd.DataFrame({'email': sf.index, 'list': sf.values})",2437,53,3,20,0,32,0,48,0
+28431359,How to decode a 'url-encoded' string in python,decode url-encoded string `some_string` to its character equivalents,urllib.parse.unquote(urllib.parse.unquote(some_string)),2490,55,8,0,0,8,0,48,0
+29370211,pandas split string into columns,Unpack column 'stats' in dataframe `df` into a series of columns,df['stats'].apply(pd.Series),2514,55,3,9,0,59,0,48,0
+39277638,Element-wise minimum of multiple vectors in numpy,get a numpy array that contains the element wise minimum of three 3x1 arrays,"np.array([np.arange(3), np.arange(2, -1, -1), np.ones((3,))]).min(axis=0)",2757,61,6,10,0,48,0,48,0
+39381222,How to print/show an expression in rational number form in python,print a rational number `3/2`,print('\n\x1b[4m' + '3' + '\x1b[0m' + '\n2'),2762,62,5,15,0,35,0,48,0
+39600161,Regular expression matching all but a string,regular expression matching all but 'aa' and 'bb',"re.findall('-(?!aa|bb)([^-]+)', string)",2766,62,0,62,0,48,0,48,0
+42012589,Pandas: aggregate based on filter on another column,group dataframe `df` by columns 'Month' and 'Fruit',"df.groupby(['Month', 'Fruit']).sum().unstack(level=0)",2856,64,3,49,0,33,0,48,0

@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+89228,Calling an external command,"Calling an external command ""ls -l""",from subprocess import call,57,0,9,26,1,17,0,25,0
+227459,"get the <a href=""http://en.wikipedia.org/wiki/ASCII"" rel=""nofollow noreferrer"">ASCII</a> value of a character as an int",get the ASCII value of a character u'あ' as an int,ord('\u3042'),99,0,8,0,0,9,0,25,0
+251464,How to get a function name as a string in Python?,How to get a function name as a string in Python?,my_function.__name__,113,0,4,30,1,25,1,25,0
+402504,determine the variable type,determine the type of variable `v`,type(v),177,0,4,13,1,47,1,25,0
+861190,Ordering a list of dictionaries in python,ordering a list of dictionaries `mylist` by elements 'weight' and 'factor',"mylist.sort(key=lambda d: (d['weight'], d['factor']))",347,0,1,19,0,43,0,25,0
+1406145,How do I get rid of Python Tkinter root window?,How do I get rid of Python Tkinter root window?,root.destroy(),457,3,4,49,1,45,1,25,0
+1602934,Check if a given key already exists in a dictionary,Check if key 'key1' in `dict`,('key1' in dict),478,3,1,6,0,43,0,25,0
+2052390,Manually raising (throwing) an exception,"throw an assertion error with message ""Unexpected value of 'distance'!"", distance","raise AssertionError(""Unexpected value of 'distance'!"", distance)",541,5,4,17,1,46,1,25,0
+2186656,How can I remove all instances of an element from a list in Python?,"remove all instances of `[1, 1]` from a list `a`","[x for x in a if x != [1, 1]]",568,5,7,14,1,58,0,25,0
+2637760,How do I match contents of an element in XPath (lxml)?,match contents of an element to 'Example' in xpath (lxml),"tree.xpath("".//a[text()='Example']"")[0].tag",641,7,0,4,0,9,0,25,0
+2793324,delete a list element by value,remove item `c` in list `a`,a.remove(c),665,8,7,13,1,57,0,25,0
+2972212,Creating an empty list,Creating an empty list `l`,l = list(),688,8,7,21,1,24,0,25,0
+3182716,Python unicode string with UTF-8?,Encode a latin character in string `Sopet\xc3\xb3n` properly,'Sopet\xc3\xb3n'.encode('latin-1').decode('utf-8'),712,9,8,0,0,38,0,25,0
+3964681,Find all files in directory with extension .txt,"Find all files in directory ""/mydir"" with extension "".txt""","for file in os.listdir('/mydir'):
+    if file.endswith('.txt'):
+        pass",858,13,9,31,1,36,0,25,0
+4490961,Numpy: Multiplying a matrix with a 3d tensor -- Suggestion,Multiply a matrix `P` with a 3d tensor `T` in scipy,"scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)",941,15,6,13,0,22,0,25,0
+4789021,"In Django, how do I check if a user is in a certain group?","in django, check if a user is in a group 'Member'",return user.groups.filter(name='Member').exists(),987,16,4,28,1,27,1,25,0
+5137497,Find current directory,Find the full path of current directory,full_path = os.path.realpath(__file__),1037,17,9,44,1,17,0,25,0
+5137497,Find current directory,Find current directory,cwd = os.getcwd(),1038,17,9,42,1,37,0,25,0
+5245058,Python: Filter lines from a text file which contain a particular word,filter lines from a text file 'textfile' which contain a word 'apple',[line for line in open('textfile') if 'apple' in line],1049,18,0,23,0,38,0,25,0
+5352546,best way to extract subset of key-value pairs from python dictionary object,"extract subset of key-value pairs with keys as `('l', 'm', 'n')` from dictionary object `bigdict`","dict((k, bigdict[k]) for k in ('l', 'm', 'n'))",1061,18,1,51,0,34,0,25,0
+7429118,how to get all the values from a numpy array excluding a certain index?,get all the values from a numpy array `a` excluding index 3,a[np.arange(len(a)) != 3],1236,22,6,44,0,1,0,25,0
+7574841,open a terminal from python,open a 'gnome' terminal from python script and run  'sudo apt-get update' command.,"os.system('gnome-terminal -e \'bash -c ""sudo apt-get update; exec bash""\'')",1244,23,4,55,1,10,1,25,0
+8209568,How do I draw a grid onto a plot in Python?,draw a grid line on every tick of plot `plt`,plt.grid(True),1297,24,4,55,1,45,1,25,0
+8569201,Get the string within brackets in Python,find the string matches within parenthesis from a string `s` using regex,"m = re.search('\\[(\\w+)\\]', s)",1340,25,0,27,0,4,0,25,0
+9775297,Append a NumPy array to a NumPy array,append a numpy array 'b' to a numpy array 'a',"np.vstack((a, b))",1450,28,6,30,0,56,0,25,0
+12201577,How can I convert an RGB image into grayscale in Python?,convert an rgb image 'messi5.jpg' into grayscale `img`,"img = cv2.imread('messi5.jpg', 0)",1628,33,4,24,1,45,1,25,0
+12280143,How to move to one folder back in python,Change the current directory one level up,os.chdir('..'),1633,33,9,43,1,30,0,25,0
+13331419,Prepend the same string to all items in a list,prepend string 'hello' to all items in list 'a',['hello{0}'.format(i) for i in a],1730,35,7,50,1,14,0,25,0
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"'%0.12d' % random.randint(0, 999999999999)",1752,36,5,1,0,18,0,25,0
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",shutdown and restart a computer running windows from script,"subprocess.call(['shutdown', '/r'])",1860,38,4,18,1,10,1,25,0
+14961562,How do I convert a string of hexadecimal values to a list of integers?,unpack hexadecimal string `s` to a list of integer values,"struct.unpack('11B', s)",1880,39,5,28,0,23,0,25,0
+16739319,Selenium Webdriver - NoSuchElementExceptions,selenium wait for driver `driver` 60 seconds before throwing a NoSuchElementExceptions exception,driver.implicitly_wait(60),2000,42,4,48,1,10,1,25,0
+17138464,Subscripting text in matplotlib labels,subscript text 'H20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.,"plt.plot(x, y, label='$H_2O$')",2036,43,4,51,1,26,1,25,0
+17238587,python regular expression to remove repeated words,Remove duplicate words from a string `text` using regex,"text = re.sub('\\b(\\w+)( \\1\\b)+', '\\1', text)",2046,43,0,48,0,23,0,25,0
+19454970,Is there a Python dict without values?,create dict of squared int values in range of 100,{(x ** 2) for x in range(100)},2199,47,5,16,0,37,0,25,0
+20183069,How to sort multidimensional array by column?,sort a multidimensional array `a` by column with index 1,"sorted(a, key=lambda x: x[1])",2250,48,6,10,0,6,0,25,0
+31818050,round number to nearest integer,round number 2.0005 up to 3 decimal places,"round(2.0005, 3)",2597,57,5,52,0,6,0,25,0
+39998424,How to delete a file without an extension?,delete file `filename`,os.remove(filename),2780,62,9,18,1,19,0,25,0
+41154648,How to remove 0's converting pandas dataframe to record,convert dataframe `df` to integer-type sparse object,df.to_sparse(0),2828,63,3,45,0,19,0,25,0

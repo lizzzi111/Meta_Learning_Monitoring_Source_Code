@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+444591,convert a string of bytes into an int (python),convert string of bytes `y\xcc\xa6\xbb` into an int,"struct.unpack('<L', 'y\xcc\xa6\xbb')[0]",198,0,5,47,0
+652291,sorting a list of dictionary values by date in python,sort a list of dictionary values by 'date' in reverse order,"list.sort(key=lambda item: item['date'], reverse=True)",262,0,1,47,0
+843277,check if a variable exists,check if a global variable 'myVar' exists,"if ('myVar' in globals()):
+    pass",340,0,4,47,1
+849674,Simple threading in Python 2.6 using thread.start_new_thread(),start a new thread for `myfunction` with parameters 'MyStringHere' and 1,"thread.start_new_thread(myfunction, ('MyStringHere', 1))",344,0,4,47,1
+902408,How to use variables in SQL statement in Python?,"insert variables `(var1, var2, var3)` into sql statement 'INSERT INTO table VALUES (?, ?, ?)'","cursor.execute('INSERT INTO table VALUES (?, ?, ?)', (var1, var2, var3))",355,0,8,47,0
+1270951,Python - how to refer to relative paths of resources when working with code repository,get a relative path of file 'my_file' into variable `fn`,"fn = os.path.join(os.path.dirname(__file__), 'my_file')",438,2,9,47,1
+1532810,How to read lines from a file into a multidimensional array (or an array of lists) in python,read lines from a csv file `./urls-eu.csv` into a list of lists `arr`,"arr = [line.split(',') for line in open('./urls-eu.csv')]",468,3,9,47,1
+1807026,Initialize a list of objects in Python,create list `lst` containing 100 instances of object `Object`,lst = [Object() for i in range(100)],507,4,7,47,1
+1866343,Removing an element from a list based on a predicate,removing an element from a list based on a predicate 'X' or 'N',"[x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]",514,4,7,47,1
+2158347,"How do I turn a python datetime into a string, with readable format date?","Convert a datetime object `my_datetime` into readable format `%B %d, %Y`","my_datetime.strftime('%B %d, %Y')",562,5,2,47,0
+2195340,Determining the unmatched portion of a string using a regex in Python,"split string 'Words, words, words.' using a regex '(\\W+)'","re.split('(\\W+)', 'Words, words, words.')",571,5,0,47,0
+2763750,How to replace only part of the match with python re.sub,insert `_suff` before the file extension in `long.file.name.jpg` or replace `_a` with `suff` if it precedes the extension.,"re.sub('(\\_a)?\\.([^\\.]*)$', '_suff.\\2', 'long.file.name.jpg')",654,8,9,47,1
+2878084,Sort a list of dicts by dict values,sort a list `l` of dicts by dict value 'title',l.sort(key=lambda x: x['title']),676,8,1,47,0
+3809265,numpy matrix multiplication,scalar multiply matrix `a` by `b`,(a.T * b).T,818,12,6,47,0
+3880399,how to send the output of pprint module to a log file,send the output of pprint object `dataobject` to file `logFile`,"pprint.pprint(dataobject, logFile)",831,12,9,47,1
+4111412,How do I get a list of indices of non zero elements in a list?,get a list of indices of non zero elements in a list `a`,"[i for i, e in enumerate(a) if e != 0]",877,13,7,47,1
+4710067,Deleting a specific line in a file (python),Open a file `yourfile.txt` in write mode,"f = open('yourfile.txt', 'w')",982,16,9,47,1
+4906977,Access environment variables,"Access environment variable ""HOME""",os.environ['HOME'],1009,17,4,47,1
+5507948,How can I insert NULL data into MySQL database with Python?,insert row into mysql database with column 'column1' set to the value `value`,"cursor.execute('INSERT INTO table (`column1`) VALUES (%s)', (value,))",1074,18,4,47,1
+5838735,Open file in Python,open file `path` with mode 'r',"open(path, 'r')",1094,19,9,47,1
+6996603,Delete a file or folder,recursively remove folder `name`,os.removedirs(name),1190,21,9,47,1
+8785554,How do I insert a list at the front of another list?,insert elements of list `k` into list `a` at position `n`,a = a[:n] + k + a[n:],1364,26,7,47,1
+9138112,Looping over a list in Python,loop over a list `mylist` if sublists length equals 3,[x for x in mylist if len(x) == 3],1390,26,7,47,1
+9206964,How to split string into words that do not contain whitespaces in python?,"split string ""This is a string"" into words that do not contain whitespaces","""""""This is a string"""""".split()",1393,27,8,47,0
+9754729,Remove object from a list of objects in python,remove index 2 element from a list `my_list`,my_list.pop(2),1444,28,7,47,1
+10592674,"Updating a list of python dictionaries with a key, value pair from another list",update a list `l1` dictionaries with a key `count` and value from list `l2`,"[dict(d, count=n) for d, n in zip(l1, l2)]",1508,29,1,47,0
+10618586,hex string to character in python,Convert a hex string `437c2123 ` according to ascii value.,"""""""437c2123"""""".decode('hex')",1510,30,5,47,0
+13324554,Python: Want to use a string as a slice specifier,create a slice object using string `string_slice`,slice(*[(int(i.strip()) if i else None) for i in string_slice.split(':')]),1729,35,8,47,0
+13745648,Running bash script from within python,running bash script 'sleep.sh',"subprocess.call('sleep.sh', shell=True)",1774,36,4,47,1
+14442636,How can I check if a checkbox is checked in Selenium Python Webdriver?,check if a checkbox is checked in selenium python webdriver,driver.find_element_by_name('<check_box_name>').is_selected(),1835,38,4,47,1
+17071871,Select rows from a DataFrame based on values in a column in pandas,select rows whose column value in column `column_name` does not equal `some_value` in pandas data frame,df.loc[df['column_name'] != some_value],2025,43,3,47,0
+17277100,Python: slicing a multi-dimensional array,get a list `slice` of array slices of the first two rows and columns from array `arr`,"slice = [arr[i][0:2] for i in range(0, 2)]",2047,43,6,47,0
+19205916,How to call Base Class's __init__ method from the child class?,call base class's __init__ method from the child class `ChildClass`,"super(ChildClass, self).__init__(*args, **kwargs)",2186,47,4,47,1
+25540259,Remove or adapt border of frame of legend using matplotlib,remove frame of legend in plot `plt`,plt.legend(frameon=False),2425,53,4,47,1
+29784889,"Python, how to enable all warnings?",enable warnings using action 'always',warnings.simplefilter('always'),2529,56,4,47,1
+30405804,How do I permanently set the current directory to the Desktop in Python?,permanently set the current directory to the 'C:/Users/Name/Desktop',os.chdir('C:/Users/Name/Desktop'),2550,56,9,47,1
+31617845,"How to select rows in a DataFrame between two values, in Python Pandas?",select rows in a dataframe `df` column 'closing_price' between two values 99 and 101,df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)],2587,57,3,47,0
+39129846,Sort list of mixed strings based on digits,sort list `l` based on its elements' digits,"sorted(l, key=lambda x: int(re.search('\\d+', x).group(0)))",2752,61,7,47,1
+39187788,Find rows with non zero values in a subset of columns in pandas dataframe,find rows with non zero values in a subset of columns where `df.dtypes` is not equal to `object` in pandas dataframe,"df.loc[(df.loc[:, (df.dtypes != object)] != 0).any(1)]",2754,61,3,47,0

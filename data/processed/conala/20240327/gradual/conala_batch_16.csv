@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+179369,How do I abort the execution of a Python script?,abort the execution of the script using message 'aa! errors!',sys.exit('aa! errors!'),81,0,4,16,1
+319426,case insensitive string comparison,case insensitive string comparison between `string1` and `string2`,"if (string1.lower() == string2.lower()):
+    pass",145,0,0,16,0
+402504,determine the variable type,determine the type of variable `v`,type(v),174,0,4,16,1
+403421,"How to sort a list of objects , based on an attribute of the objects?","sort a list of objects `ut`, based on a function `cmpfun` in descending order","ut.sort(key=cmpfun, reverse=True)",182,0,7,16,1
+903853,How do you extract a column from a multi-dimensional array?,Get all the second values from a list of lists `A`,[row[1] for row in A],359,0,7,16,1
+974678,How to create single Python dict from a list of dicts by summing values with common keys?,create a flat dictionary by summing values associated with similar keys in each dictionary of list `dictlist`,"dict((key, sum(d[key] for d in dictList)) for key in dictList[0])",390,1,1,16,0
+1720421,concatenate lists,concatenate lists `listone` and `listtwo`,(listone + listtwo),494,3,7,16,1
+1849375,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?,session.execute('INSERT INTO t1 (SELECT * FROM t2)'),513,4,4,16,1
+2052390,Manually raising (throwing) an exception,throw a runtime error with message 'specific message',raise RuntimeError('specific message'),544,5,4,16,1
+2338531,Python sorting - A list of objects,sort a list of objects `s` by a member variable 'resultType',s.sort(key=operator.attrgetter('resultType')),589,6,7,16,1
+2600775,How to get week number in Python?,get equivalent week number from a date `2010/6/16` using  isocalendar,"datetime.date(2010, 6, 16).isocalendar()[1]",630,7,2,16,0
+3548673,How to replace (or strip) an extension from a filename in Python?,replace extension '.txt' in basename '/home/user/somefile.txt' with extension '.jpg',print(os.path.splitext('/home/user/somefile.txt')[0] + '.jpg'),789,11,9,16,1
+3582601,How to call an element in an numpy array?,"get an element at index `[1,1]`in a numpy array `arr`","print(arr[1, 1])",792,11,6,16,0
+4143502,How to do a scatter plot with empty circles in Python?,"scatter a plot with x, y position of `np.random.randn(100)` and face color equal to none","plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')",885,13,4,16,1
+4233476,Sort a list by multiple attributes?,sort a list `s` by first and second attributes,"s = sorted(s, key=lambda x: (x[1], x[2]))",900,14,7,16,1
+4290716,How to write bytes to a file in Python 3 without knowing the encoding?,write bytes `bytes_` to a file `filename` in python 3,"open('filename', 'wb').write(bytes_)",911,14,9,16,1
+5301996,How to do many-to-many Django query to find book with 2 given authors?,Filter Django objects by `author` with ids `1` and `2`,Book.objects.filter(author__id=1).filter(author__id=2),1055,18,4,16,1
+5503925,How do I use a dictionary to update fields in Django models?,update the fields in django model `Book` using dictionary `d`,Book.objects.create(**d),1073,18,1,16,0
+6490560,How do I move the last item in a list to the front in python?,move the last item in list `a` to the beginning,a = a[-1:] + a[:-1],1152,20,7,16,1
+7571635,check if a value exist in a list,check if 'a' is in list `a`,('a' in a),1242,23,7,16,1
+8081545,convert list of tuples to multiple lists in Python,convert list of tuples to multiple lists in Python,"map(list, zip(*[(1, 2), (3, 4), (5, 6)]))",1278,24,7,16,1
+11064917,Generate a sequence of numbers in Python,generate a string of numbers separated by comma which is divisible by `4` with remainder `1` or `2`.,""""""","""""".join(str(i) for i in range(100) if i % 4 in (1, 2))",1544,30,5,16,0
+11066874,beautifulsoup can't find href in file using regular expression,find href value that has string 'follow?page' inside it,"print(soup.find('a', href=re.compile('.*follow\\?page.*')))",1546,30,0,16,0
+14716342,How do I find the string between two special characters?,"find the string in `your_string` between two special characters ""["" and ""]""","re.search('\\[(.*)\\]', your_string).group(1)",1851,38,0,16,0
+14931769,get all combination of n binary value,get all combination of 3 binary values,"lst = list(itertools.product([0, 1], repeat=3))",1875,39,7,16,1
+15269161,"in Python, How to join a list of tuples into one list?",convert list `a` from being consecutive sequences of tuples into a single sequence of elements,list(itertools.chain(*a)),1904,40,7,16,1
+15985339,How do I get current URL in Selenium Webdriver 2 Python?,get current url in selenium webdriver `browser`,print(browser.current_url),1958,41,4,16,1
+16344756,Auto reloading python Flask app upon code changes,enable debug mode on Flask application `app`,app.run(debug=True),1984,42,4,16,1
+16418415,Divide two lists in python,Divide elements in list `a` from elements at the same index in list `b`,"[(x / y) for x, y in zip(a, b)]",1990,42,7,16,1
+17166601,Summing across rows of Pandas Dataframe,"sum the column `positions` along the  other columns `stock`, `same1`, `same2` in a pandas data frame `df`","df.groupby(['stock', 'same1', 'same2'], as_index=False)['positions'].sum()",2043,43,3,16,0
+18200052,How to convert ndarray to array?,convert ndarray with shape 3x3 to array,"np.zeros((3, 3)).ravel()",2113,45,6,16,0
+19454970,Is there a Python dict without values?,create dict of squared int values in range of 100,{(x ** 2) for x in range(100)},2199,47,5,16,0
+20490274,How to reset index in a pandas data frame?,reset index to default in dataframe `df`,df = df.reset_index(drop=True),2266,49,3,16,0
+22412258,Get the first element of each tuple in a list in Python,get a list `res_list` of the first elements of each tuple in a list of tuples `rows`,res_list = [x[0] for x in rows],2353,51,7,16,1
+24492327,Python Embedding in C++ : ImportError: No module named pyfunction,insert directory './path/to/your/modules/' to current directory,"sys.path.insert(0, './path/to/your/modules/')",2405,52,9,16,1
+26724275,Removing the first folder in a path,remove first directory from path '/First/Second/Third/Fourth/Fifth',os.path.join(*x.split(os.path.sep)[2:]),2448,54,9,16,1
+30551576,Using Regular Expressions to extract specific urls in python,Get all urls within text `s`,"re.findall('""(http.*?)""', s, re.MULTILINE | re.DOTALL)",2555,56,0,16,0
+30650254,Is it possible to serve a static html page at the root of a django project?,serve a static html page 'your_template.html' at the root of a django project,"url('^$', TemplateView.as_view(template_name='your_template.html'))",2558,56,4,16,1
+34696853,Convert list of strings to int,convert a list of strings `lst` to list of integers,"[map(int, sublist) for sublist in lst]",2672,59,7,16,1

@@ -1,0 +1,5 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+3108285,"In Python script, how do I set PYTHONPATH?",set pythonpath in python script.,sys.path.append('/path/to/whatever'),706,9,9,38,1,65,0
+6159900,write line to file,"write line ""hi there"" to file `f`","print('hi there', file=f)",1126,20,9,59,1,65,0
+18684076,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,"[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]",2151,46,2,27,0,65,0
+29703793,Python Regex Get String Between Two Substrings,"get a string `randomkey123xyz987` between two substrings in a string `api('randomkey123xyz987', 'key', 'text')` using regex","re.findall(""api\\('(.*?)'"", ""api('randomkey123xyz987', 'key', 'text')"")",2527,56,0,12,0,65,0

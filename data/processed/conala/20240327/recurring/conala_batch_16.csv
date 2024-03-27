@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+82831,check whether a file exists,"check whether a path ""/etc/password.txt"" exists",print(os.path.exists('/etc/password.txt')),54,0,9,32,1,16,0
+82831,check whether a file exists,"check whether a path ""/does/not/exist"" exists",print(os.path.exists('/does/not/exist')),55,0,9,34,1,16,0
+258746,Slicing URL with Python,"Slice `url` with '&' as delimiter  to get  ""http://www.domainname.com/page?CONTENT_ITEM_ID=1234"" from url ""http://www.domainname.com/page?CONTENT_ITEM_ID=1234&param2&param3
+""",url.split('&'),114,0,8,0,0,16,0
+509742,Change directory to the directory of a Python script,change directory to the directory of a python script,os.chdir(os.path.dirname(__file__)),213,0,9,40,1,16,0
+674764,string find,find the index of sub string 's' in string `str` starting from index 15,"str.find('s', 15)",281,0,0,6,0,16,0
+715417,Converting from a string to boolean in Python?,Convert string to boolean from defined set of strings,"s in ['true', '1', 't', 'y', 'yes', 'yeah', 'yup', 'certainly', 'uh-huh']",293,0,0,62,0,16,0
+1094717,Convert a string to integer with decimal in Python,convert a string `s` containing a decimal to an integer,int(Decimal(s)),416,1,5,10,0,16,0
+1249388,Removing all non-numeric characters from string in Python,remove all non-numeric characters from string `sdkjh987978asd098as0980a98sd `,"re.sub('[^0-9]', '', 'sdkjh987978asd098as0980a98sd')",435,2,8,0,0,16,0
+1580270,What's the best way to search for a Python dictionary value in a list of dictionaries?,What's the best way to search for a Python dictionary value in a list of dictionaries?,any(d['site'] == 'Superuser' for d in data),476,3,1,40,0,16,0
+2150739,ISO Time (ISO 8601) in Python,get UTC datetime in ISO format,datetime.datetime.utcnow().isoformat(),556,5,2,53,0,16,0
+2233917,How to input an integer tuple from user?,input an integer tuple from user,"tuple(map(int, input().split(',')))",580,6,5,56,0,16,0
+2674391,Python - Locating the position of a regex match in a string?,Get the position of a regex match for word `is` in a string `String`,"re.search('\\bis\\b', String).start()",644,7,0,49,0,16,0
+2783079,How do I convert a unicode to a string at the Python level?,convert a unicode 'Andr\xc3\xa9' to a string,""""""""""""".join(chr(ord(c)) for c in 'Andr\xc3\xa9').decode('utf8')",659,8,8,0,0,16,0
+3392354,python: append values to a set,"append values `[3, 4]` to a set `a`","a.update([3, 4])",754,10,6,3,0,16,0
+3487377,How can I check a Python unicode string to see that it *actually* is proper Unicode?,check if string `foo` is UTF-8 encoded,foo.decode('utf8').encode('utf8'),775,11,0,42,0,16,0
+4301069,Any way to properly pretty-print ordered dictionaries in Python?,pretty-print ordered dictionary `o`,pprint(dict(list(o.items()))),914,14,1,8,0,16,0
+7371935,Sort a string in lexicographic order python,sort string `s` in lexicographic order,"sorted(sorted(s), key=str.upper)",1231,22,0,11,0,16,0
+8192379,How to read stdin to a 2d python array of integers?,Create array `a` containing integers from stdin,a.fromlist([int(val) for val in stdin.read().split()]),1293,24,6,25,0,16,0
+9206964,How to split string into words that do not contain whitespaces in python?,"split string ""This     is a     string"" into words that does not contain whitespaces","""""""This     is a     string"""""".split()",1392,26,8,0,0,16,0
+10194713,Sorting a defaultdict by value in python,reverse sort items in default dictionary `cityPopulation` by the third item in each key's list of values,"sorted(iter(cityPopulation.items()), key=lambda k_v: k_v[1][2], reverse=True)",1470,28,1,21,0,16,0
+12224778,How to filter by sub-level index in Pandas,filter dataframe `df` by sub-level index '0630' in pandas,df[df.index.map(lambda x: x[1].endswith('0630'))],1632,33,3,14,0,16,0
+12739911,How to split a string within a list to create key-value pairs in Python,create a dictionary containing each string in list `my_list` split by '=' as a key/value pairs,print(dict([s.split('=') for s in my_list])),1668,34,1,63,0,16,0
+15509617,How to obtain the day of the week in a 3 letter format from a datetime object in python?,obtain the current day of the week in a 3 letter format from a datetime object,datetime.datetime.now().strftime('%a'),1931,40,2,60,0,16,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,"Select rows whose value of the ""B"" column is ""one"" or ""three"" in the DataFrame `df`","print(df.loc[df['B'].isin(['one', 'three'])])",2027,43,3,9,0,16,0
+18272066,Easy way to convert a unicode list to a list containing python strings?,Encode each value to 'UTF8' in the list `EmployeeList`,[x.encode('UTF8') for x in EmployeeList],2118,45,8,0,0,16,0
+18367007,Python how to write to a binary file?,write `newFileBytes` to a binary file `newFile`,"newFile.write(struct.pack('5B', *newFileBytes))",2125,45,9,39,1,16,0
+19585280,Convert a row in pandas into list,convert rows in pandas data frame `df` into list,"df.apply(lambda x: x.tolist(), axis=1)",2205,47,3,19,0,16,0
+19602931,http file downloading and saving,"download ""http://randomsite.com/file.gz"" from http and save as ""file.gz""","testfile = urllib.request.URLopener()
+testfile.retrieve('http://randomsite.com/file.gz', 'file.gz')",2211,47,9,43,1,16,0
+22397058,Dropping a single (sub-) column from a MultiIndex,drop a single subcolumn 'a' in column 'col1' from a dataframe `df`,"df.drop(('col1', 'a'), axis=1)",2351,51,3,27,0,16,0
+22882922,Splitting a string with repeated characters into a list using regex,split a string `s` with into all strings of repeated characters,"[m.group(0) for m in re.finditer('(\\d)\\1*', s)]",2366,51,8,0,0,16,0
+23855976,Middle point of each pair of an numpy.array,calculate the mean of each element in array `x` with the element previous to it,(x[1:] + x[:-1]) / 2,2391,52,6,2,0,16,0
+24242433,"Python - how to convert a ""raw"" string into a normal string",convert a raw string `raw_byte_string` into a normal string,raw_byte_string.decode('unicode_escape'),2403,52,8,0,0,16,0
+30483977,Python - Get Yesterday's date as a string in YYYY-MM-DD format,get yesterday's date as a string in `YYYY-MM-DD` format using timedelta,(datetime.now() - timedelta(1)).strftime('%Y-%m-%d'),2552,56,2,5,0,16,0
+31247198,"Python, Pandas : write content of DataFrame into text File",write the data of dataframe `df` into text file `np.txt`,"np.savetxt('c:\\data\\np.txt', df.values, fmt='%d')",2575,57,3,50,0,16,0
+33565643,how to slice a dataframe having date field as index?,Set index equal to field 'TRX_DATE' in dataframe `df`,df = df.set_index(['TRX_DATE']),2647,59,3,11,0,16,0
+36661837,How to retrieve only arabic texts from a string using regular expression?,retrieve arabic texts from string `my_string`,"print(re.findall('[\\u0600-\\u06FF]+', my_string))",2715,60,0,9,0,16,0
+40208429,sorting dictionary by numeric value,sort dictionary `tag_weight` in reverse order by values cast to integers,"sorted(list(tag_weight.items()), key=lambda x: int(x[1]), reverse=True)",2791,62,1,32,0,16,0
+40517350,How to sum the nlargest() integers in groupby,sum the 3 largest integers in groupby by 'STNAME' and 'COUNTY_POP',df.groupby('STNAME')['COUNTY_POP'].agg(lambda x: x.nlargest(3).sum()),2804,63,3,36,0,16,0
+41463763,Merge 2 dataframes with same values in a column,merge 2 dataframes `df1` and `df2` with same values in a column 'revenue' with and index 'date',df2['revenue'] = df2.CET.map(df1.set_index('date')['revenue']),2836,64,3,55,0,16,0

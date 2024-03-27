@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+186857,"Splitting a semicolon-separated string to a dictionary, in Python",split a string `s` by ';' and convert to a dictionary,dict(item.split('=') for item in s.split(';')),84,0,8,0,0,21,0,32,0
+317413,Get Element value with minidom with Python,get value of first child of xml node `name`,name[0].firstChild.nodeValue,142,0,4,17,1,26,1,32,0
+319426,case insensitive string comparison,case insensitive string comparison between `string1` and `string2`,(string1.lower() == string2.lower()),144,0,0,7,0,21,0,32,0
+439115,random Decimal in python,generate random Decimal,decimal.Decimal(random.randrange(10000)) / 100,196,0,5,55,0,5,0,32,0
+577234,"Python ""extend"" for a dictionary",extend dictionary `a` with key/value pairs of dictionary `b`,a.update(b),236,0,1,4,0,21,0,32,0
+1249786,Is there a string-collapse library function in python?,split string `my_string` on white spaces,""""""" """""".join(my_string.split())",436,2,8,48,0,59,0,32,0
+1534542,Can I sort text by its numeric value in Python?,Can I sort text by its numeric value in Python?,"sorted(list(mydict.items()), key=lambda a: map(int, a[0].split('.')))",469,3,5,29,0,50,0,32,0
+2742784,Python: How to round 123 to 100 instead of 100.0?,round 123 to 100,"int(round(123, -2))",648,7,5,38,0,53,0,32,0
+3294889,Iterating over dictionaries using for loops,get keys and items of dictionary `d` as a list,list(d.items()),742,10,1,64,0,33,0,32,0
+3486384,Output first 100 characters in a string,output first 100 characters in a string `my_string`,print(my_string[0:100]),774,11,8,0,0,62,0,32,0
+3668964,How to check if a character is upper-case in Python?,check if all string elements in list `words` are upper-cased,print(all(word[0].isupper() for word in words)),797,11,0,1,0,63,0,32,0
+3805958,How to delete a record in Django models?,How to delete a record in Django models?,SomeModel.objects.filter(id=id).delete(),817,12,4,22,1,27,1,32,0
+3820312,Python: Write a list of tuples to a file,create a file 'filename' with each tuple in the list `mylist` written to a line,"open('filename', 'w').write('\n'.join('%s %s' % x for x in mylist))",820,12,9,38,1,35,0,32,0
+4476373,Simple URL GET/POST function,request http url `url`,r = requests.get(url),935,15,4,13,1,45,1,32,0
+4716533,How to attach debugger to a python subproccess?,attach debugger pdb to class `ForkedPdb`,ForkedPdb().set_trace(),983,16,4,29,1,45,1,32,0
+5301996,How to do many-to-many Django query to find book with 2 given authors?,Filter Django objects by `author` with ids `1` and `2`,Book.objects.filter(author__id=1).filter(author__id=2),1055,18,4,16,1,25,1,32,0
+5864485,How can I split this comma-delimited string in Python?,"print a string `s` by splitting with comma `,`","print(s.split(','))",1102,19,8,0,0,19,0,32,0
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a list of strings,[item[0] for item in queryresult],1352,25,7,21,1,41,0,32,0
+9396706,How can I use a string with the same name of an object in Python to access the object itself?,get the attribute `x` from object `your_obj`,"getattr(your_obj, x)",1411,27,4,14,1,25,1,32,0
+12476452,How can I return HTTP status code 204 from a Django view?,return http status code 204 from a django view,return HttpResponse(status=204),1650,33,4,32,1,28,1,32,0
+12579061,Python Selenium: Find object attributes using xpath,find all the values in attribute `value` for the tags whose `type` attribute is `submit` in selenium,"browser.find_elements_by_xpath(""//*[@type='submit']"").get_attribute('value')",1659,33,4,60,1,28,1,32,0
+13076560,Get the indexes of truthy elements of a boolean list as a list/tuple,get indexes of all true boolean values from a list `bool_list`,"[i for i, elem in enumerate(bool_list, 1) if elem]",1696,34,7,39,1,23,0,32,0
+13418405,Get name of primary field of Django model,get name of primary field `name` of django model `CustomPK`,CustomPK._meta.pk.name,1744,36,4,27,1,47,1,32,0
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"random.randint(100000000000, 999999999999)",1751,36,5,59,0,13,0,32,0
+14182339,Matching multiple regex patterns with the alternation operator?,match multiple regex patterns with the alternation operator `|` in a string `(zyx)bc`,"re.findall('\\(.*?\\)|\\w', '(zyx)bc')",1813,37,0,45,0,21,0,32,0
+14262654,Numpy: Get random set of rows from 2D array,create a new 2D array with 2 random rows from array `A`,"A[(np.random.choice(A.shape[0], 2, replace=False)), :]",1818,37,6,38,0,63,0,32,0
+14301913,Convert pandas group by object to multi-indexed Dataframe,convert pandas group by object to multi-indexed dataframe with indices 'Name' and 'Destination',"df.set_index(['Name', 'Destination'])",1823,38,3,1,0,9,0,32,0
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",logoff computer having windows operating system using python,"subprocess.call(['shutdown', '/l '])",1861,39,4,59,1,46,1,32,0
+14850853,How to include third party Python libraries in Google App Engine?,insert directory 'libs' at the 0th index of current directory,"sys.path.insert(0, 'libs')",1866,39,9,55,1,62,0,32,0
+15411107,Delete a dictionary item if the key exists,Delete an item with key `key` from `mydict`,del mydict[key],1921,40,1,9,0,58,0,32,0
+15851568,how to get the last part of a string before a certain character?,get the last part of a string before the character '-',"print(x.rsplit('-', 1)[0])",1948,41,8,0,0,56,0,32,0
+18897261,pandas plot dataframe barplot with colors by category,make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`,"df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])",2169,46,3,60,0,22,0,32,0
+19745091,Accessing dictionary by key in Django template,lookup dictionary key `key1` in Django template `json`,{{json.key1}},2220,48,1,18,0,55,0,32,0
+20400135,Simple way to append a pandas series with same index,simple way to append a pandas series `a` and `b` with same index,"pd.concat([a, b], ignore_index=True)",2258,49,3,40,0,48,0,32,0
+22397058,Dropping a single (sub-) column from a MultiIndex,"dropping all columns named 'a' from a multiindex 'df', across all level.","df.drop('a', level=1, axis=1)",2352,51,3,38,0,29,0,32,0
+28431359,How to decode a 'url-encoded' string in python,"decode a double URL encoded string 
+'FireShot3%2B%25282%2529.png' to
+'FireShot3+(2).png'",urllib.parse.unquote(urllib.parse.unquote('FireShot3%2B%25282%2529.png')),2489,55,8,0,0,35,0,32,0
+29035168,How to use a dot in Python format strings?,Print a dictionary `{'user': {'name': 'Markus'}}` with string formatting,"""""""Hello {user[name]}"""""".format(**{'user': {'name': 'Markus'}})",2507,55,1,6,0,40,0,32,0
+31818050,round number to nearest integer,round number 8.005 up to 2 decimal places,"round(8.005, 2)",2602,58,5,12,0,62,0,32,0
+40512124,convert dictionaries into string python,"concatenate key/value pairs in dictionary `a` with string ', ' into a single string",""""""", """""".join([(str(k) + ' ' + str(v)) for k, v in list(a.items())])",2803,63,1,54,0,34,0,32,0

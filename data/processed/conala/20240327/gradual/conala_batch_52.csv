@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+19339,inverse of zip,"unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`","zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])",15,0,7,52,1
+276052,get current CPU and RAM usage,get current RAM usage of current program,"pid = os.getpid()
+py = psutil.Process(pid)
+memoryUse = (py.memory_info()[0] / (2.0 ** 30))",131,0,4,52,1
+741877,How do I tell matplotlib that I am done with a plot?,Matplotlib clear the current axes.,plt.cla(),302,0,4,52,1
+952914,Making a flat list out of list of lists,make a flat list from list of lists `list2d`,list(itertools.chain.from_iterable(list2d)),380,1,7,52,1
+1186789,call a Python script from another Python script,"call a Python script ""test1.py""","subprocess.call('test1.py', shell=True)",427,2,4,52,1
+1303243,find out if a Python object is a string,check if `obj_to_test` is a string,"isinstance(obj_to_test, str)",444,2,0,52,0
+1456617,Return a random word from a word list in python,return a random word from a word list 'words',print(random.choice(words)),463,3,7,52,1
+1790520,How to apply a logical operator to all elements in a python list,apply logical operator 'AND' to all elements in list `a_list`,all(a_list),505,4,7,52,1
+1823058,print number with commas as thousands separators,print number 1255000 as thousands separators,"locale.setlocale(locale.LC_ALL, 'en_US')
+locale.format('%d', 1255000, grouping=True)",512,4,5,52,0
+2052390,Manually raising (throwing) an exception,throw an Exception with message 'This is the exception you expect to handle',raise Exception('This is the exception you expect to handle'),542,5,4,52,1
+2317134,How do I use a regular expression to match a name?,match regex '[a-zA-Z][\\w-]*$' on string '!A_B',"re.match('[a-zA-Z][\\w-]*$', '!A_B')",586,6,0,52,0
+3398589,Sorting a list of lists in Python,Sorting a list of lists in Python,"c2.sort(key=lambda row: (row[2], row[1], row[0]))",755,10,7,52,1
+4284648,Converting lists of tuples to strings Python,convert elements of each tuple in list `l` into a string  separated by character `@`,""""""" """""".join([('%d@%d' % t) for t in l])",907,14,7,52,1
+4628618,Replace first occurence of string,replace only first occurence of string `TEST` from a string `longlongTESTstringTEST`,"'longlongTESTstringTEST'.replace('TEST', '?', 1)",956,15,0,52,0
+4644025,Python how to sort this list?,Sort a list 'lst' in descending order.,"sorted(lst, reverse=True)",963,15,7,52,1
+4664850,Find all occurrences of a substring in Python,find indexes of all occurrences of a substring `tt` in a string `ttt`,"[m.start() for m in re.finditer('(?=tt)', 'ttt')]",965,16,0,52,0
+5333244,How to display a jpg file in Python?,Display a image file `pathToFile`,Image.open('pathToFile').show(),1058,18,9,52,1
+5971312,How to set environment variables in Python,set environment variable 'DEBUSSY' equal to 1,os.environ['DEBUSSY'] = '1',1113,19,4,52,1
+6027690,How to avoid line color repetition in matplotlib.pyplot?,Plot using the color code `#112233` in matplotlib pyplot,"pyplot.plot(x, y, color='#112233')",1119,19,4,52,1
+6280978,how to uniqify a list of dict in python,how to uniqify a list of dict in python,[dict(y) for y in set(tuple(x.items()) for x in d)],1133,20,1,52,0
+11985628,Python regex - Ignore parenthesis as indexing?,Match regex pattern '((?:A|B|C)D)' on string 'BDE',"re.findall('((?:A|B|C)D)', 'BDE')",1620,32,0,52,0
+12804801,Django - How to sort queryset by number of character in a field,sort query set by number of characters in a field `length` in django model `MyModel`,MyModel.objects.extra(select={'length': 'Length(name)'}).order_by('length'),1674,34,4,52,1
+13384841,swap values in a tuple/list inside a list in python?,swap values in a tuple/list inside a list `mylist`,"map(lambda t: (t[1], t[0]), mylist)",1736,35,7,52,1
+13668393,python sorting two lists,sort two lists `list1` and `list2` together using lambda function,"[list(x) for x in zip(*sorted(zip(list1, list2), key=lambda pair: pair[0]))]",1769,36,7,52,1
+13838405,Custom sorting in pandas dataframe,sort column `m` in panda dataframe `df`,df.sort('m'),1780,36,3,52,0
+15907200,How to add a header to a csv file in Python?,add a header to a csv file,writer.writeheader(),1955,41,9,52,1
+17484631,Format string - spaces between every three digit,"insert ' ' between every three digit before '.' and replace ',' with '.' in 12345678.46","format(12345678.46, ',').replace(',', ' ').replace('.', ',')",2063,44,5,52,0
+20668060,PyQt QPushButton Background color,change the background colour of the button `pushbutton` to red,self.pushButton.setStyleSheet('background-color: red'),2274,49,4,52,1
+21899953,How to set window size using phantomjs and selenium webdriver in python,"Set a window size to `1400, 1000` using selenium webdriver","driver.set_window_size(1400, 1000)",2334,51,4,52,1
+21986194,How to pass dictionary items as function arguments in python?,pass dictionary items `data` as keyword arguments in function `my_function`,my_function(**data),2337,51,1,52,0
+23668427,pandas joining multiple dataframes on columns,"join multiple dataframes `d1`, `d2`, and `d3` on column 'name'","df1.merge(df2, on='name').merge(df3, on='name')",2385,52,3,52,0
+25823608,Find matching rows in 2 dimensional numpy array,"find rows matching `(0,1)` in a 2 dimensional numpy array `vals`","np.where((vals == (0, 1)).all(axis=1))",2432,53,6,52,0
+28767642,How to compare two lists in python,Compare if each value in list `a` is less than respective index value in list `b`,"all(i < j for i, j in zip(a, b))",2499,55,7,52,1
+31676133,Python: transform a list of lists of tuples,Convert each list in list `main_list` into a tuple,"map(list, zip(*main_list))",2589,57,7,52,1
+31818050,round number to nearest integer,round number 2.0005 up to 3 decimal places,"round(2.0005, 3)",2597,57,5,52,0
+32751229,"Pandas sum by groupby, but exclude certain columns","Get sum of values of columns  'Y1961', 'Y1962', 'Y1963' after group by on columns ""Country"" and ""Item_code"" in dataframe `df`.","df.groupby(['Country', 'Item_Code'])[['Y1961', 'Y1962', 'Y1963']].sum()",2630,58,3,52,0
+34468983,How to check if all elements in a tuple or list are in another?,"check if all elements in a tuple `(1, 6)` are in another `(1, 2, 3, 4, 5)`","all(i in (1, 2, 3, 4, 5) for i in (1, 6))",2668,59,7,52,1
+40133826,Python save list and read data from file,python save list `mylist` to file object 'save.txt',"pickle.dump(mylist, open('save.txt', 'wb'))",2786,62,9,52,1
+41127441,"Why can you loop through an implicit tuple in a for loop, but not a comprehension in Python?",get a list each value `i` in the implicit tuple `range(3)`,list(i for i in range(3)),2826,63,7,52,1

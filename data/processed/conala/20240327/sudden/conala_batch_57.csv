@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+3061,Calling a function of a module from a string with the function's name in Python,calling a function named 'myfunction' in the module,globals()['myfunction'](),9,0,4,57,1,46,1,57,0
+22676,download a file over HTTP,"download a file `url` over HTTP and save to ""10MB""","response = requests.get(url, stream=True)
+with open('10MB', 'wb') as handle:
+    for data in tqdm(response.iter_content()):
+        handle.write(data)",16,0,9,53,1,51,0,57,0
+89228,Calling an external command,"Calling an external command ""ls -l""","call(['ls', '-l'])",56,0,9,50,1,17,0,57,0
+510348,make a time delay,"delay for ""5"" seconds",time.sleep(5),217,0,4,42,1,45,1,57,0
+743806,Split string into a list,"split string `text` by "",""","text.split(',')",304,0,8,0,0,4,0,57,0
+1186789,call a Python script from another Python script,"call a Python script ""test2.py""","exec(compile(open('test2.py').read(), 'test2.py', 'exec'))",426,2,4,46,1,25,1,57,0
+3108285,"In Python script, how do I set PYTHONPATH?",set pythonpath in python script.,sys.path.append('/path/to/whatever'),706,9,9,38,1,65,0,57,0
+3241594,Printing numbers in python,printing numbers rounding up to third decimal place,print('%.3f' % 3.1415),721,9,5,23,0,36,0,57,0
+3411025,Summarizing a dictionary of arrays in Python,get top `3` items from a dictionary `mydict` with largest sum of values,"heapq.nlargest(3, iter(mydict.items()), key=lambda tup: sum(tup[1]))",759,10,1,32,0,52,0,57,0
+4301069,Any way to properly pretty-print ordered dictionaries in Python?,pretty-print ordered dictionary `o`,pprint(dict(list(o.items()))),914,14,1,8,0,16,0,57,0
+4383082,Python regex separate space-delimited words into a list,separate words delimited by one or more spaces into a list,"re.split(' +', 'hello world sample text')",927,15,8,10,0,64,0,57,0
+4581646,How to count all elements in a nested dictionary?,count all elements in a nested dictionary `food_colors`,sum(len(v) for v in food_colors.values()),949,15,1,43,0,63,0,57,0
+5999747,Beautifulsoup - nextSibling,"In `soup`, get the content of the sibling of the `td`  tag with text content `Address:`",print(soup.find(text='Address:').findNext('td').contents[0]),1116,19,4,65,1,45,1,57,0
+8369219,How do I read a text file into a string variable in Python,read a text file 'very_Important.txt' into a string variable `str`,"str = open('very_Important.txt', 'r').read()",1322,25,9,54,1,2,0,57,0
+8712332,Array indexing in numpy,retrieve all items in an numpy array 'x' except the item of the index 1,"x[(np.arange(x.shape[0]) != 1), :, :]",1355,26,6,29,0,41,0,57,0
+10592674,"Updating a list of python dictionaries with a key, value pair from another list",update a list `l1` dictionaries with a key `count` and value from list `l2`,"[dict(d, count=n) for d, n in zip(l1, l2)]",1508,29,1,47,0,9,0,57,0
+10974932,python split string based on regular expression,split string `str1` on one or more spaces with a regular expression,"re.split(' +', str1)",1537,30,8,0,0,13,0,57,0
+11840111,Divide the values of two dictionaries in python,divide the value for each key `k` in dict `d2` by the value for the same key `k` in dict `d1`,{k: (d2[k] / d1[k]) for k in list(d1.keys()) & d2},1614,32,1,7,0,44,0,57,0
+13223737,how to read a file in other directory in python,open file '5_1.txt' in directory `direct`,"x_file = open(os.path.join(direct, '5_1.txt'), 'r')",1714,35,9,45,1,32,0,57,0
+13840883,Use of findall and parenthesis in Python,Find all words containing letters between A and Z in string `formula`,"re.findall('\\b[A-Z]', formula)",1782,36,0,7,0,44,0,57,0
+13945749,String Formatting in Python 3,"format string ""({0.goals} goals, ${0.penalties})""","""""""({0.goals} goals, ${0.penalties})"""""".format(self)",1792,37,8,0,0,38,0,57,0
+14162026,How to get the values from a NumPy array using multiple indices,"get the first row, second column; second row, first column, and first row third column values of numpy array `arr`","arr[[0, 1, 1], [1, 0, 2]]",1808,37,6,42,0,62,0,57,0
+14637696,Length of longest word in a list,length of longest element in list `words`,"len(max(words, key=len))",1844,38,7,36,1,33,0,57,0
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",restart a computer after `900` seconds using subprocess,"subprocess.call(['shutdown', '/r', '/t', '900'])",1862,39,4,39,1,25,1,57,0
+14859458,How to check if all values in the columns of a numpy matrix are the same?,check if all values in the columns of a numpy matrix `a` are same,"np.all(a == a[(0), :], axis=0)",1869,39,6,56,0,40,0,57,0
+15863066,Python regular expression match whole word,Python regular expression match whole word,"re.search('\\bis\\b', your_string)",1952,41,0,1,0,40,0,57,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,select rows from a dataframe `df` whose value for column `column_name` is not in `some_values`,df.loc[~df['column_name'].isin(some_values)],2026,43,3,19,0,31,0,57,0
+18789262,python dict comprehension with two ranges,"convert the zip of range `(1, 5)` and range `(7, 11)` into a dictionary","dict(zip(list(range(1, 5)), list(range(7, 11))))",2163,46,1,64,0,3,0,57,0
+20950650,How to sort Counter by value? - python,reverse sort Counter `x` by values,"sorted(x, key=x.get, reverse=True)",2288,49,7,20,1,13,0,57,0
+21188504,python pandas: apply a function with arguments to a series. Update,"Add 100 to each element of column ""x"" in dataframe `a`","a['x'].apply(lambda x, y: x + y, args=(100,))",2298,50,3,12,0,54,0,57,0
+25817930,Fastest way to sort each row in a pandas dataframe,sort each row in a pandas dataframe `df` in descending order,"df.sort(axis=1, ascending=False)",2431,53,3,7,0,36,0,57,0
+27318022,Read a File from redirected stdin with python,read a file from redirected stdin and save to variable `result`,result = sys.stdin.read(),2460,54,9,29,1,59,0,57,0
+29454773,How can I tell if a string only contains letter AND spaces,Check if string 'a b' only contains letters and spaces,"""""""a b"""""".replace(' ', '').isalpha()",2520,55,0,29,0,42,0,57,0
+30015665,How to check whether the system is FreeBSD in a python script?,get the platform OS name,platform.system(),2540,56,4,40,1,48,1,57,0
+30551576,Using Regular Expressions to extract specific urls in python,match urls whose domain doesn't start with `t` from string `document` using regex,"re.findall('http://[^t][^s""]+\\.html', document)",2554,56,0,8,0,31,0,57,0
+30650254,Is it possible to serve a static html page at the root of a django project?,serve a static html page 'your_template.html' at the root of a django project,"url('^$', TemplateView.as_view(template_name='your_template.html'))",2558,56,4,16,1,26,1,57,0
+33824334,How to convert this list into a dictionary,"convert list `lst` of key, value pairs into a dictionary","dict([(e[0], int(e[1])) for e in lst])",2652,59,1,8,0,14,0,57,0
+37125495,How to get the N maximum values per row in a numpy ndarray?,get the maximum 2 values per row in array `A`,"A[:, -2:]",2723,61,6,54,0,33,0,57,0
+39604780,How can I print the Truth value of a variable?,print the truth value of `a`,print(bool(a)),2769,62,5,27,0,29,0,57,0

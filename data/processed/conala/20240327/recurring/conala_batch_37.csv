@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+72899,How do I sort a list of dictionaries by values of the dictionary in Python?,sort a list of dictionaries `l` by values in key `name` in descending order,"newlist = sorted(l, key=itemgetter('name'), reverse=True)",40,0,1,40,0,37,0
+89228,Calling an external command,"Calling an external command ""echo Hello World""",print(os.popen('echo Hello World').read()),60,0,9,11,1,37,0
+367155,Splitting a string into words and punctuation,split a unicode string `text` into a list of words and punctuation characters with a regex,"re.findall('\\w+|[^\\w\\s]', text, re.UNICODE)",168,0,8,0,0,37,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,print(('%.2f' % a)),204,0,5,4,0,37,0
+466345,Converting string into datetime,"parse string ""Aug 28 1999 12:00AM"" into datetime",parser.parse('Aug 28 1999 12:00AM'),209,0,2,44,0,37,0
+627435,remove an element from a list by index,remove the element in list `a` at index `index`,a.pop(index),251,0,7,34,1,37,0
+761804,Trimming a string,trim string `myString `,myString.strip(),319,0,8,0,0,37,0
+931092,Reverse a string,Reverse a string `a_string`,"def reversed_string(a_string):
+    return a_string[::(-1)]",368,0,8,0,0,37,0
+1747817,Create a dictionary with list comprehension,Create a dictionary `d` from list `iterable`,"d = dict(((key, value) for (key, value) in iterable))",498,4,1,4,0,37,0
+3059301,Manipulating binary data in Python,Return the decimal value for each hex character in data `data`,print(' '.join([str(ord(a)) for a in data])),696,9,5,32,0,37,0
+3809265,numpy matrix multiplication,scalar multiply matrix `a` by `b`,(a.T * b).T,818,12,6,47,0,37,0
+4020539,Process escape sequences in a string,decode escape sequences in string `myString`,myString.decode('string_escape'),870,13,8,0,0,37,0
+4830535,Python: How do I format a date in Jinja2?,Jinja parse datetime object `car.date_of_manufacture` to use format pattern `datetime`,{{car.date_of_manufacture | datetime}},995,16,2,11,0,37,0
+4928274,Iterate through PyMongo Cursor as key-value pair,get a dictionary `records` of key-value pairs in PyMongo cursor `cursor`,"records = dict((record['_id'], record) for record in cursor)",1018,17,1,6,0,37,0
+5137497,Find current directory,Find current directory,cwd = os.getcwd(),1038,17,9,42,1,37,0
+5864271,Reverse a string in Python two characters at a time (Network byte order),reverse a string `a` by 2 characters at a time,""""""""""""".join(reversed([a[i:i + 2] for i in range(0, len(a), 2)]))",1101,19,8,0,0,37,0
+6018340,Capturing group with findall?,match regex 'abc(de)fg(123)' on string 'abcdefg123 and again abcdefg123',"re.findall('abc(de)fg(123)', 'abcdefg123 and again abcdefg123')",1117,19,0,3,0,37,0
+7356042,Pythonic way to populate numpy array,Create 2D numpy array from the data provided in 'somefile.csv' with each row in the file having same number of values,"X = numpy.loadtxt('somefile.csv', delimiter=',')",1229,22,6,6,0,37,0
+12829889,Find Max in Nested Dictionary,Find a max value of the key `count` in a nested dictionary `d`,"max(d, key=lambda x: d[x]['count'])",1678,34,1,51,0,37,0
+13324554,Python: Want to use a string as a slice specifier,create a slice object using string `string_slice`,slice(*[(int(i.strip()) if i else None) for i in string_slice.split(':')]),1729,35,8,47,0,37,0
+14104778,Set execute bit for a file using python,Change the mode of file 'my_script.sh' to permission number 484,"os.chmod('my_script.sh', 484)",1805,37,9,63,1,37,0
+14571103,Capturing emoticons using regular expression in python,fetch smilies matching regex pattern '(?::|;|=)(?:-)?(?:\\)|\\(|D|P)' in string `s`,"re.findall('(?::|;|=)(?:-)?(?:\\)|\\(|D|P)', s)",1841,38,0,12,0,37,0
+14931769,get all combination of n binary value,get all combination of n binary values,"lst = list(itertools.product([0, 1], repeat=n))",1873,39,7,61,1,37,0
+15741759,Find maximum value of a column and return the corresponding row values using Pandas,Return rows of data associated with the maximum value of column 'Value' in dataframe `df`,df.loc[df['Value'].idxmax()],1941,41,3,3,0,37,0
+18461623,Average values in two Numpy arrays,Get the average values from two numpy arrays `old_set` and `new_set`,"np.mean(np.array([old_set, new_set]), axis=0)",2132,45,6,48,0,37,0
+19454970,Is there a Python dict without values?,create dict of squared int values in range of 100,{(x ** 2) for x in range(100)},2199,47,5,16,0,37,0
+21022865,Pandas: Elementwise multiplication of two dataframes,create a dataframe containing the multiplication of element-wise in dataframe `df` and dataframe `df2` using index name and column labels of dataframe `df`,"pd.DataFrame(df.values * df2.values, columns=df.columns, index=df.index)",2294,50,3,40,0,37,0
+21360028,NumPy List Comprehension Syntax,Get a list comprehension in list of lists `X`,[[X[i][j] for j in range(len(X[i]))] for i in range(len(X))],2306,50,7,60,1,37,0
+21800169,Python Pandas: Get index of rows which column matches certain value,get index of rows in column 'BoolCol',df.loc[df['BoolCol']],2323,50,6,56,0,37,0
+22702760,how to multiply multiple columns by a column in Pandas,multiply column 'A' and column 'B' by column 'C' in datafram `df`,"df[['A', 'B']].multiply(df['C'], axis='index')",2359,51,3,60,0,37,0
+23668427,pandas joining multiple dataframes on columns,"join multiple dataframes `d1`, `d2`, and `d3` on column 'name'","df1.merge(df2, on='name').merge(df3, on='name')",2385,52,3,52,0,37,0
+23914774,Python 2.7: making a dictionary object from a specially-formatted list object,"Make a dictionary from list `f` which is in the format of four sets of  ""val, key, val""","{f[i + 1]: [f[i], f[i + 2]] for i in range(0, len(f), 3)}",2395,52,1,14,0,37,0
+29360607,How does this function to remove duplicate characters from a string in python work?,create a set from string `s` to remove duplicate characters,print(' '.join(set(s))),2512,55,8,0,0,37,0
+32533944,Preserving Column Order - Python Pandas and Column Concat,Convert CSV file `Result.csv` to Pandas dataframe using separator ' ',"df.to_csv('Result.csv', index=False, sep=' ')",2626,58,3,44,0,37,0
+34543513,Find maximum with limited length in a list,find maximum with lookahead = 4 in a list `arr`,"[max(abs(x) for x in arr[i:i + 4]) for i in range(0, len(arr), 4)]",2670,59,7,56,1,37,0
+36518800,Sort a list in python based on another sorted list,sort a list `unsorted_list` based on another sorted list `presorted_list`,"sorted(unsorted_list, key=presorted_list.index)",2712,60,7,56,1,37,0
+40319433,Numpy: find the euclidean distance between two 3-D arrays,find the euclidean distance between two 3-d arrays `A` and `B`,np.sqrt(((A - B) ** 2).sum(-1)),2796,62,6,54,0,37,0
+40582103,using regular expression to split string in python,use regular expression '((\\d)(?:[()]*\\2*[()]*)*)' to split string `s`,"[i[0] for i in re.findall('((\\d)(?:[()]*\\2*[()]*)*)', s)]",2806,63,0,13,0,37,0
+42364992,Python - Insert numbers in string between quotes,Enclose numbers in quotes in a string `This is number 1 and this is number 22`,"re.sub('(\\d+)', '""\\1""', 'This is number 1 and this is number 22')",2869,64,8,15,0,37,0

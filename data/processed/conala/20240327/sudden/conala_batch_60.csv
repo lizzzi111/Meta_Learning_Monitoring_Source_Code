@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+275018,remove (chomp) a newline,remove newline in string 'Mac EOL\r','Mac EOL\r'.rstrip('\r\n'),120,0,8,0,0,31,0,60,0
+674764,string find,find the index of sub string 'World' in `x`,x.find('World'),283,0,0,6,0,33,0,60,0
+687295,How do I do a not equal in Django queryset filtering?,Filter model 'Entry' where 'id' is not equal to 3 in Django,Entry.objects.filter(~Q(id=3)),290,0,4,48,1,45,1,60,0
+849674,Simple threading in Python 2.6 using thread.start_new_thread(),start a new thread for `myfunction` with parameters 'MyStringHere' and 1,"thread.start_new_thread(myfunction, ('MyStringHere', 1))",344,0,4,47,1,47,1,60,0
+2612802,copy a list,deep copy list `old_list` as `new_list`,new_list = copy.deepcopy(old_list),633,7,7,54,1,19,0,60,0
+3964681,Find all files in directory with extension .txt,"Find all files in directory ""/mydir"" with extension "".txt""","for (root, dirs, files) in os.walk('/mydir'):
+    for file in files:
+        if file.endswith('.txt'):
+            pass",860,13,9,42,1,19,0,60,0
+5558418,list of dicts to/from dict of lists,group a list of dicts `LD` into one dict by key,"print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))",1077,18,1,63,0,51,0,60,0
+6429638,How to split a string into integers in Python?,split a string `42 0` by white spaces.,"""""""42 0"""""".split()",1149,20,8,0,0,50,0,60,0
+7142227,How do I sort a zipped list in Python?,sort a zipped list `zipped` using lambda function,"sorted(zipped, key=lambda x: x[1])",1201,22,7,55,1,35,0,60,0
+7270321,Finding the index of elements based on a condition using python list comprehension,Get all indexes of a list `a` where each value is greater than `2`,[i for i in range(len(a)) if a[i] > 2],1212,22,7,31,1,60,0,60,0
+7271482,python getting a list of value from list of dict,python getting a list of value from list of dict,[d['value'] for d in l],1216,22,1,36,0,44,0,60,0
+7271482,python getting a list of value from list of dict,generate a list containing values associated with the key 'value' of each dictionary inside list `list_of_dicts`,[x['value'] for x in list_of_dicts],1217,22,1,7,0,9,0,60,0
+7351270,Control a print format when printing a list in Python,format print output of list of floats `l` to print only up to 3 decimal points,"print('[' + ', '.join('%5.3f' % v for v in l) + ']')",1228,22,5,1,0,60,0,60,0
+8650415,get keys correspond to a value in dictionary,Reverse key-value pairs in a dictionary `map`,"dict((v, k) for k, v in map.items())",1344,25,1,6,0,18,0,60,0
+8654637,"Pythonic way to fetch all elements in a dictionary, falling between two keys?",fetch all elements in a dictionary 'parent_dict' where the key is between the range of 2 to 4,"dict((k, v) for k, v in parent_dict.items() if k > 2 and k < 4)",1346,25,1,12,0,35,0,60,0
+9495262,create dictionary from list of variables,create dictionary from list of variables 'foo' and 'bar' already defined,"dict((k, globals()[k]) for k in ('foo', 'bar'))",1416,27,1,11,0,29,0,60,0
+9573244,check if the string is empty,check if the string `myString` is empty,"if (not myString):
+    pass",1430,27,0,51,0,64,0,60,0
+10258584,How to get text for a root element using lxml?,Get all texts and tags from a tag `strong` from etree tag `some_tag` using lxml,print(etree.tostring(some_tag.find('strong'))),1477,29,4,28,1,26,1,60,0
+10565598,Numpy: How to check if array contains certain numbers?,check if array `b` contains all elements of array `a`,"numpy.in1d(b, a).all()",1503,29,6,30,0,4,0,60,0
+11760095,convert binary string to numpy array,convert binary string to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='>f4')",1602,32,6,19,0,56,0,60,0
+13093727,How to replace unicode characters in string with something else python?,replace unicode character '\u2022' in string 'str' with '*',"str.decode('utf-8').replace('\u2022', '*').encode('utf-8')",1701,34,8,0,0,20,0,60,0
+14694482,Converting html to text with Python,convert a beautiful soup html `soup` to text,print(soup.get_text()),1849,38,4,17,1,47,1,60,0
+15445981,How do I disable the security certificate check in Python requests,disable the certificate check in https requests for url `https://kennethreitz.com`,"requests.get('https://kennethreitz.com', verify=False)",1924,40,4,46,1,45,1,60,0
+15852295,list of ints into a list of tuples python,"convert a flat list into a list of tuples of every two items in the list, in order","print(zip(my_list[0::2], my_list[1::2]))",1950,41,7,60,1,59,0,60,0
+16125229,Last Key in Python Dictionary,get the last key of dictionary `dict`,list(dict.keys())[-1],1967,41,1,21,0,48,0,60,0
+16412563,Python: sorting dictionary of dictionaries,sort dictionary of dictionaries `dic` according to the key 'Fisher',"sorted(list(dic.items()), key=lambda x: x[1]['Fisher'], reverse=True)",1989,42,1,61,0,20,0,60,0
+16772071,sort dict by value python,Sort a dictionary `data` by its values,sorted(data.values()),2004,42,1,45,0,38,0,60,0
+19758364,python: rename single column header in pandas dataframe,rename column 'gdp' in dataframe `data` to 'log(gdp)',"data.rename(columns={'gdp': 'log(gdp)'}, inplace=True)",2221,48,3,2,0,63,0,60,0
+19781609,How do you remove the column name row from a pandas DataFrame?,Exclude column names when writing dataframe `df` to a csv file `filename.csv`,"df.to_csv('filename.csv', header=False)",2223,48,3,4,0,24,0,60,0
+22245171,How to lowercase a python dataframe string column if it has missing values?,lowercase a python dataframe string in column 'x' if it has missing values in dataframe `df`,df['x'].str.lower(),2348,51,3,17,0,63,0,60,0
+24082784,pandas dataframe groupby datetime month,Group a pandas data frame by monthly frequenct `M` using groupby,df.groupby(pd.TimeGrouper(freq='M')),2400,52,3,7,0,9,0,60,0
+24189150,Pandas writing dataframe to other postgresql schema,write records in dataframe `df` to table 'test' in schema 'a_schema',"df.to_sql('test', engine, schema='a_schema')",2401,52,3,51,0,6,0,60,0
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((.*?cat.*?){1})cat', '\\1Bull', s)",2467,54,0,3,0,5,0,60,0
+29394552,Move radial tick labels on a polar plot in matplotlib,place the radial ticks in plot `ax` at 135 degrees,ax.set_rlabel_position(135),2518,55,4,22,1,47,1,60,0
+30190459,How to gracefully fallback to `NaN` value while reading integers from a CSV with Pandas?,convert nan values to ‘n/a’ while reading rows from a csv `read_csv` with pandas,"df = pd.read_csv('my.csv', na_values=['n/a'])",2544,56,3,4,0,48,0,60,0
+30357276,Pandas - FillNa with another column,fill missing value in one column 'Cat1' with the value of another column 'Cat2',df['Cat1'].fillna(df['Cat2']),2548,56,3,17,0,52,0,60,0
+36957908,Removing white space from txt with python,substitute two or more whitespace characters with character '|' in string `line`,"re.sub('\\s{2,}', '|', line.strip())",2718,60,8,0,0,62,0,60,0
+37584492,Regular expression substitution in Python,remove all instances of parenthesesis containing text beginning with `as ` from string `line`,"line = re.sub('\\(+as .*?\\) ', '', line)",2725,61,8,0,0,57,0,60,0
+38704545,How to binarize the values in a pandas DataFrame?,binarize the values in columns of list `order` in a pandas data frame,"pd.concat([df, pd.get_dummies(df, '', '').astype(int)], axis=1)[order]",2747,61,3,22,0,29,0,60,0

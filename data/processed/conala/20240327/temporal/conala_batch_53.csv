@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+24642040,Using Python Requests to send file and JSON in single request,send multipart encoded file `files` to url `url` with headers `headers` and metadata `data`,"r = requests.post(url, files=files, headers=headers, data=data)",2407,53
+24659239,How to change QPushButton text and background color,set text color as `red` and background color as `#A3C1DA` in qpushbutton,setStyleSheet('QPushButton {background-color: #A3C1DA; color: red;}'),2408,53
+24722212,Python cant find module in the same folder,add a path `/path/to/2014_07_13_test` to system path,sys.path.append('/path/to/2014_07_13_test'),2409,53
+24748445,Beautiful Soup Using Regex to Find Tags?,Find all the tags `a` and `div` from Beautiful Soup object `soup`,"soup.find_all(['a', 'div'])",2410,53
+24841306,Python - Sum 4D Array,get a sum of 4d array `M`,M.sum(axis=0).sum(axis=0),2411,53
+24958010,get key by value in dictionary with same value in python?,Get keys from a dictionary 'd' where the value is '1'.,"print([key for key, value in list(d.items()) if value == 1])",2412,53
+24958010,get key by value in dictionary with same value in python?,get keys with same value in dictionary `d`,"print([key for key, value in d.items() if value == 1])",2413,53
+24958010,get key by value in dictionary with same value in python?,get keys with same value in dictionary `d`,print([key for key in d if d[key] == 1]),2414,53
+25040875,Get a list of values from a list of dictionaries in python,get a list of values with key 'key' from a list of dictionaries `l`,[d['key'] for d in l if 'key' in d],2415,53
+25040875,Get a list of values from a list of dictionaries in python,"get a list of values for key ""key"" from a list of dictionaries in `l`",[d['key'] for d in l],2416,53
+25040875,Get a list of values from a list of dictionaries in python,get a list of values for key 'key' from a list of dictionaries `l`,[d['key'] for d in l],2417,53
+25148611,How do I extract all the values of a specific key from a list of dictionaries?,extract all the values of a specific key named 'values' from a list of dictionaries,results = [item['value'] for item in test_data],2418,53
+25279993,Parsing non-zero padded timestamps in Python,parse string '2015/01/01 12:12am' to DateTime object using format '%Y/%m/%d %I:%M%p',"datetime.strptime('2015/01/01 12:12am', '%Y/%m/%d %I:%M%p')",2419,53
+25292838,applying regex to a pandas dataframe,Update row values for a column `Season` using vectorized string operation in pandas,df['Season'].str.split('-').str[0].astype(int),2420,53
+25355705,count how many of an object type there are in a list Python,count the number of integers in list `a`,"sum(isinstance(x, int) for x in a)",2421,53
+25388796,Most efficient way to convert items of a list to int and sum them up,"Sum integers contained in strings in list `['', '3.4', '', '', '1.0']`","sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if _f])",2422,53
+25440008,python pandas flatten a dataframe to a list,flatten a dataframe df to a list,df.values.flatten(),2423,53
+25474338,regex for repeating words in a string in Python,regex for repeating words in a string `s`,"re.sub('(?<!\\S)((\\S+)(?:\\s+\\2))(?:\\s+\\2)+(?!\\S)', '\\1', s)",2424,53
+25540259,Remove or adapt border of frame of legend using matplotlib,remove frame of legend in plot `plt`,plt.legend(frameon=False),2425,53
+25651990,OSError: [WinError 193] %1 is not a valid Win32 application,run script 'hello.py' with argument 'htmlfilename.htm' on terminal using python executable,"subprocess.call(['python.exe', 'hello.py', 'htmlfilename.htm'])",2426,53
+25678689,How does python do string magic?,"append array of strings `['x', 'x', 'x']` into one string",""""""""""""".join(['x', 'x', 'x'])",2427,53
+25698710,Replace all occurrences of a string in a pandas dataframe (Python),replace all occurences of newlines `\n` with `<br>` in dataframe `df`,"df.replace({'\n': '<br>'}, regex=True)",2428,53
+25698710,Replace all occurrences of a string in a pandas dataframe (Python),replace all occurrences of a string `\n` by string `<br>` in a pandas data frame `df`,"df.replace({'\n': '<br>'}, regex=True)",2429,53
+25817930,Fastest way to sort each row in a pandas dataframe,Fastest way to sort each row in a pandas dataframe,"df.sort(df.columns, axis=1, ascending=False)",2430,53
+25817930,Fastest way to sort each row in a pandas dataframe,sort each row in a pandas dataframe `df` in descending order,"df.sort(axis=1, ascending=False)",2431,53
+25823608,Find matching rows in 2 dimensional numpy array,"find rows matching `(0,1)` in a 2 dimensional numpy array `vals`","np.where((vals == (0, 1)).all(axis=1))",2432,53
+25991612,Python / Remove special character from string,Python / Remove special character from string,"re.sub('[^a-zA-Z0-9-_*.]', '', my_string)",2433,53
+26033239,List of objects to JSON with Python,convert a list of objects `list_name` to json string `json_string`,json_string = json.dumps([ob.__dict__ for ob in list_name]),2434,53
+26053849,Counting non zero values in each column of a dataframe in python,count non zero values in each column in pandas data frame,df.astype(bool).sum(axis=1),2435,53
+26081300,Pandas: Subtract row mean from each element in row,Subtract the mean of each row in dataframe `df` from the corresponding row's elements,"df.sub(df.mean(axis=1), axis=0)",2436,53
+26097916,"python, best way to convert a pandas series into a pandas dataframe",convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`,"pd.DataFrame({'email': sf.index, 'list': sf.values})",2437,53
+26153795,Python -Remove Time from Datetime String,Format a datetime string `when` to extract date only,"then = datetime.datetime.strptime(when, '%Y-%m-%d').date()",2438,53
+26155985,Is there a way to refer to the entire matched expression in re.sub without the use of a group?,place '\' infront of each non-letter char in string `line`,"print(re.sub('[_%^$]', '\\\\\\g<0>', line))",2439,53
+26266362,How to count the Nan values in the column in Panda Data frame,Get the number of NaN values in each column of dataframe `df`,df.isnull().sum(),2440,53
+26367812,Appending to list in Python dictionary,"append `date` to list value of `key` in dictionary `dates_dict`, or create key `key` with value `date` in a list if it does not exist","dates_dict.setdefault(key, []).append(date)",2441,53
+26441253,how to reverse a priority queue in Python without using classes?,reverse a priority queue `q` in python without using classes,"q.put((-n, n))",2442,53
+26443308,Find last occurrence of character,"Find last occurrence of character '}' in string ""abcd}def}""",'abcd}def}'.rfind('}'),2443,53
+26541968,Delete every non utf-8 symbols froms string,delete every non `utf-8` characters from a string `line`,"line = line.decode('utf-8', 'ignore').encode('utf-8')",2444,53
+26640145,Python Pandas: How to get the row names from index of a dataframe?,get the row names from index in a pandas data frame,df.index,2445,53

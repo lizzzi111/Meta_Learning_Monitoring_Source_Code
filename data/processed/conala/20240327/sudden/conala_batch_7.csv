@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+82831,check whether a file exists,"check whether a path ""/etc"" exists",print(os.path.exists('/etc')),49,0,9,63,1,3,0,7,0
+275018,remove (chomp) a newline,"remove newline in string ""Hello\n\n\n"" on the right side",'Hello\n\n\n'.rstrip('\n'),126,0,8,0,0,20,0,7,0
+276052,get current CPU and RAM usage,print cpu and memory usage,"print((psutil.cpu_percent()))
+print((psutil.virtual_memory()))",130,0,4,32,1,11,1,7,0
+319426,case insensitive string comparison,case insensitive string comparison between `string1` and `string2`,"if (string1.lower() == string2.lower()):
+    pass",145,0,0,16,0,43,0,7,0
+403421,"How to sort a list of objects , based on an attribute of the objects?",sort a list of objects `ut` in reverse order by their `count` property,"ut.sort(key=lambda x: x.count, reverse=True)",180,0,7,59,1,3,0,7,0
+642154,convert strings into integers,"convert string ""1"" into integer",int('1'),258,0,5,9,0,33,0,7,0
+761804,Trimming a string,"trim string "" Hello """,' Hello '.strip(),320,0,8,0,0,32,0,7,0
+817122,Delete digits in Python (Regex),delete digits at the end of string `s`,"re.sub('\\b\\d+\\b', '', s)",333,0,8,0,0,48,0,7,0
+961632,Converting integer to string,convert `i` to string,str(i),385,1,8,0,0,52,0,7,0
+1038824,remove a substring from the end of a string,"remove a substring "".com"" from the end of string `url`","print(url.replace('.com', ''))",406,1,8,0,0,30,0,7,0
+1185524,trim whitespace (including tabs),trim whitespace (including tabs) in `s` on the left side,s = s.lstrip(),422,2,8,0,0,43,0,7,0
+1810743,How to set the current working directory in Python?,set the current working directory to path `path`,os.chdir(path),510,4,9,28,1,63,0,7,0
+2111163,Selecting specific column in each row from array,"subset numpy array `a` by column and row, returning the values from the first row, first column and the second row, second column and the third row, first column.","a[np.arange(3), (0, 1, 0)]",553,5,6,4,0,20,0,7,0
+2806611,What's the best way to aggregate the boolean values of a Python dictionary?,check if all boolean values in a python dictionary `dict` are true,all(dict.values()),669,8,1,5,0,17,0,7,0
+3283984,Decode Hex String in Python 3,decode a hex string '4a4b4c' to UTF-8.,bytes.fromhex('4a4b4c').decode('utf-8'),734,10,8,0,0,51,0,7,0
+3355822,python http request with token,request page 'https://www.mysite.com/' with credentials of username 'username' and password 'pwd',"requests.get('https://www.mysite.com/', auth=('username', 'pwd'))",750,10,4,17,1,45,1,7,0
+3518778,read csv into record array in numpy,read csv file 'myfile.csv' into array,"df = pd.read_csv('myfile.csv', sep=',', header=None)",782,11,6,8,0,38,0,7,0
+3940128,reverse a list,reverse a list `L`,L[::(-1)],852,13,7,62,1,51,0,7,0
+3940128,reverse a list,reverse a list `array`,reversed(array),853,13,7,55,1,15,0,7,0
+3989016,How to find all positions of the maximum value in a list?,get index of the first biggest element in list `a`,a.index(max(a)),863,13,7,15,1,6,0,7,0
+5453026,String to list in Python,split string 'QH QD JC KD JS' into a list on white spaces,"""""""QH QD JC KD JS"""""".split()",1069,18,8,0,0,61,0,7,0
+6416131,add new item to dictionary,"add key ""item3"" and value ""3"" to dictionary `default_data `","default_data.update({'item3': 3, })",1144,20,1,29,0,52,0,7,0
+7253803,How to get everything after last slash in a URL?,get everything after last slash in a url stored in variable 'url',"url.rsplit('/', 1)[-1]",1208,22,8,0,0,34,0,7,0
+8247792,Python - How to cut a string in Python?,cut a string by delimiter '&',s.rfind('&'),1306,24,8,0,0,32,0,7,0
+8577137,creating a tmp file in python,Open a file `path/to/FILE_NAME.ext` in write mode,"new_file = open('path/to/FILE_NAME.ext', 'w')",1341,25,9,20,1,55,0,7,0
+11760095,convert binary string to numpy array,convert binary string '\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@' to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='<f4')",1601,32,5,5,0,5,0,7,0
+12168648,Pandas (python): How to add column to dataframe for index?,add a column 'new_col' to dataframe `df` for index in range,"df['new_col'] = list(range(1, len(df) + 1))",1626,32,3,2,0,6,0,7,0
+12211944,How to match beginning of string or character in Python,find float number proceeding sub-string `par` in string `dir`,"float(re.findall('(?:^|_)' + par + '(\\d+\\.\\d*)', dir)[0])",1630,33,5,9,0,20,0,7,0
+14431731,Replacing the empty strings in a string,insert string `string1` after each character of `string2`,"string2.replace('', string1)[len(string1):-len(string1)]",1832,38,8,0,0,60,0,7,0
+15752422,Python Pandas - Date Column to Column index,set dataframe `df` index using column 'month',df.set_index('month'),1942,41,3,9,0,5,0,7,0
+16296643,Convert tuple to list,Convert list `t` to tuple,tuple(l),1982,42,7,36,1,6,0,7,0
+16436133,How can i create the empty json object in python,Create a default empty json object if no json is available in request parameter `mydata`,"json.loads(request.POST.get('mydata', '{}'))",1991,42,4,18,1,26,1,7,0
+20059427,Python: using a dict to speed sorting of a list of tuples,create a dictionary `list_dict` containing each tuple in list `tuple_list` as values and the tuple's first element as the corresponding key,list_dict = {t[0]: t for t in tuple_list},2240,48,1,36,0,30,0,7,0
+20986631,How can I scroll a web page using selenium webdriver in python?,scroll a to the bottom of a web page using selenium webdriver,"driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')",2292,50,4,59,1,10,1,7,0
+24642040,Using Python Requests to send file and JSON in single request,send multipart encoded file `files` to url `url` with headers `headers` and metadata `data`,"r = requests.post(url, files=files, headers=headers, data=data)",2407,53,9,44,1,64,0,7,0
+26809954,Splinter or Selenium: Can we get current html page after clicking a button?,get the html from the current web page of a Selenium driver,driver.execute_script('return document.documentElement.outerHTML;'),2450,54,4,54,1,25,1,7,0
+34962104,Pandas: How can I use the apply() function for a single column?,Pandas: How can I use the apply() function for a single column?,df['a'] = df['a'].apply(lambda x: x + 1),2679,59,3,5,0,63,0,7,0
+36381230,How to find row of 2d array in 3d numpy array,"find rows of 2d array in 3d numpy array 'arr' if the row has value '[[0, 3], [3, 0]]'","np.argwhere(np.all(arr == [[0, 3], [3, 0]], axis=(1, 2)))",2709,60,6,15,0,17,0,7,0
+40055835,Removing elements from an array that are in another array,remove elements from an array `A` that are in array `B`,"A[np.all(np.any(A - B[:, (None)], axis=2), axis=0)]",2782,62,6,26,0,13,0,7,0

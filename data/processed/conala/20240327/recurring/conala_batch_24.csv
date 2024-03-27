@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+209513,Convert hex string to int,Convert hex string `s` to integer,"int(s, 16)",89,0,5,33,0,24,0
+265960,Best way to strip punctuation from a string in Python,Strip punctuation from string `s`,"s.translate(None, string.punctuation)",115,0,8,0,0,24,0
+307305,Play a Sound with Python,play the wav file 'sound.wav',"winsound.PlaySound('sound.wav', winsound.SND_FILENAME)",137,0,9,15,1,24,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"gen = (i for (i, x) in enumerate(testlist) if (x == 1))
+for i in gen:
+    pass",163,0,7,54,1,24,0
+372102,UTF in Python Regex,create a regular expression object with the pattern '\xe2\x80\x93',re.compile('\xe2\x80\x93'),169,0,0,3,0,24,0
+961632,Converting integer to string,convert `a` to string,a.__str__(),384,1,8,0,0,24,0
+1024847,Add key to a dictionary,Add key 'a' to dictionary `data` with value 1,"data.update({'a': 1, })",400,1,1,29,0,24,0
+1185524,trim whitespace (including tabs),trim whitespaces (including tabs) in string `s`,"print(re.sub('[\\s+]', '', s))",425,2,8,0,0,24,0
+2354166,How do you modify sys.path in Google App Engine (Python)?,Insert directory 'apps' into directory `__file__`,"sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))",591,6,9,64,1,24,0
+2972212,Creating an empty list,Creating an empty list `l`,l = list(),688,8,7,21,1,24,0
+3008992,case sensitive string replacement in Python,replace a string `Abc` in case sensitive way using maketrans,"""""""Abc"""""".translate(maketrans('abcABC', 'defDEF'))",693,9,8,0,0,24,0
+3662142,How to remove tags from a string in python using regular expressions? (NOT in HTML),remove tags from a string `mystring`,"re.sub('<[^>]*>', '', mystring)",796,11,8,0,0,24,0
+3685265,How to write a multidimensional array to a text file?,save numpy array `x` into text file 'test.txt',"np.savetxt('test.txt', x)",799,11,6,25,0,24,0
+3939361,Remove specific characters from a string,Remove characters in '!@#$' from a string `line`,"line = line.translate(string.maketrans('', ''), '!@#$')",846,12,8,11,0,24,0
+4004550,Converting string series to float list,Converting string lists `s` to float list,floats = [float(x) for x in s.split()],868,13,5,64,0,24,0
+4682088,Call Perl script from Python,invoke perl script './uireplace.pl' using perl interpeter '/usr/bin/perl' and send argument `var` to it,"subprocess.call(['/usr/bin/perl', './uireplace.pl', var])",969,16,9,25,1,24,0
+5618878,convert list to string,concatenating values in `list1` to a string,str1 = ''.join(list1),1081,19,7,50,1,24,0
+5927180,removing data from a numpy.array,Extract values not equal to 0 from numpy array `a`,a[a != 0],1110,19,6,53,0,24,0
+7253907,Python - how to convert int to string represent a 32bit Hex number,convert 3652458 to string represent a 32bit hex number,"""""""0x{0:08X}"""""".format(3652458)",1209,22,5,33,0,24,0
+7741878,How to apply numpy.linalg.norm to each row of a matrix?,apply `numpy.linalg.norm` to each row of a matrix `a`,"numpy.apply_along_axis(numpy.linalg.norm, 1, a)",1255,23,6,25,0,24,0
+9257094,change a string into uppercase,change string `s` to upper case,s.upper(),1401,27,8,0,0,24,0
+9573244,Most elegant way to check if the string is empty,check if string `my_string` is empty,"if (not my_string):
+    pass",1428,27,0,5,0,24,0
+10586778,test a boolean expression in a Python string,evaluate the expression '20<30',eval('20<30'),1507,29,5,61,0,24,0
+11339210,How to get integer values from a string in Python?,get multiple integer values from a string 'string1',"map(int, re.findall('\\d+', string1))",1564,31,5,48,0,24,0
+11801309,loop over files,loop over files in directory '.',"for fn in os.listdir('.'):
+    if os.path.isfile(fn):
+        pass",1605,32,9,42,1,24,0
+13002848,How do I convert an array to string using the jinja template engine?,Jinja join elements of array `tags` with space string ' ',{{tags | join(' ')}},1690,34,8,0,0,24,0
+13999850,How to specify date format when using pandas.to_csv?,write dataframe `df` to csv file `filename` with dates formatted as yearmonthday  `%Y%m%d`,"df.to_csv(filename, date_format='%Y%m%d')",1796,37,3,3,0,24,0
+14925239,Python: How to get attribute of attribute of an object with getattr?,Evaluate a nested dictionary `myobject.id.number` to get `number` if `myobject` is present with getattr,"getattr(getattr(myobject, 'id', None), 'number', None)",1871,39,1,9,0,24,0
+16249440,Changing file permission in python,changing permission of file `path` to `stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH`,"os.chmod(path, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)",1979,42,9,18,1,24,0
+17665809,Remove key from dictionary in Python returning new dictionary,remove key 'c' from dictionary `d`,{i: d[i] for i in d if i != 'c'},2074,44,1,35,0,24,0
+19095796,How to print backslash with Python?,print backslash,print('\\'),2179,47,8,0,0,24,0
+19781609,How do you remove the column name row from a pandas DataFrame?,Exclude column names when writing dataframe `df` to a csv file `filename.csv`,"df.to_csv('filename.csv', header=False)",2223,48,3,4,0,24,0
+21129020,"How to fix: ""UnicodeDecodeError: 'ascii' codec can't decode byte""",set the default encoding to 'utf-8',sys.setdefaultencoding('utf8'),2296,50,8,0,0,24,0
+25040875,Get a list of values from a list of dictionaries in python,"get a list of values for key ""key"" from a list of dictionaries in `l`",[d['key'] for d in l],2416,53,1,13,0,24,0
+28199524,Best way to count the number of rows with missing values in a pandas DataFrame,count the number of rows with missing values in a pandas dataframe `df`,"sum(df.apply(lambda x: sum(x.isnull().values), axis=1) > 0)",2484,54,3,13,0,24,0
+30605909,Pandas to_csv call is prepending a comma,write pandas dataframe `df` to the file 'c:\\data\\t.csv' without row names,"df.to_csv('c:\\data\\t.csv', index=False)",2556,56,3,49,0,24,0
+30766151,Regular Expression to find brackets in a string,Extract brackets from string `s`,"brackets = re.sub('[^(){}[\\]]', '', s)",2566,57,8,0,0,24,0
+30843103,How to get the index of an integer from a list if the list contains a boolean?,get the index of an integer `1` from a list `lst` if the list also contains boolean items,"next(i for i, x in enumerate(lst) if not isinstance(x, bool) and x == 1)",2568,57,7,22,1,24,0
+32032836,Select everything but a list of columns from pandas dataframe,get all column name of dataframe `df` except for column 'T1_V6',df[df.columns - ['T1_V6']],2613,58,3,15,0,24,0

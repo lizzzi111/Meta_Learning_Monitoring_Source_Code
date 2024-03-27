@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+72899,How do I sort a list of dictionaries by values of the dictionary in Python?,How do I sort a list of dictionaries by values of the dictionary in Python?,list_of_dicts.sort(key=operator.itemgetter('age')),43,0,1,64,0,56,0,41,0
+113655,Is there a function in python to split a word into a list?,split string `Word to Split` into a list of characters,list('Word to Split'),68,0,8,0,0,40,0,41,0
+237079,get file creation & modification date/times in,get modification time of file `filename`,t = os.path.getmtime(filename),103,0,9,44,1,5,0,41,0
+498106,How do I compile a Visual Studio project from the command-line?,compile Visual Studio project `project.sln` from the command line through python,os.system('msbuild project.sln /p:Configuration=Debug'),211,0,4,21,1,11,1,41,0
+521502,How to get the concrete class name as a string?,How to get the concrete class name as a string?,instance.__class__.__name__,227,0,4,42,1,12,1,41,0
+613183,Sort a Python dictionary by value,Sort dictionary `x` by value in ascending order,"sorted(list(x.items()), key=operator.itemgetter(1))",248,0,1,27,0,31,0,41,0
+674764,string find,find the index of sub string 's' in string `str` starting from index 15,"str.find('s', 15)",281,0,0,6,0,16,0,41,0
+1082413,Sort a list of strings based on regular expression match or something similar,sort list `strings` in alphabetical order based on the letter after percent character `%` in each element,"strings.sort(key=lambda str: re.sub('.*%(.).*', '\\1', str))",413,1,0,20,0,41,0,41,0
+1094717,Convert a string to integer with decimal in Python,Convert a string to integer with decimal in Python,int(s.split('.')[0]),417,1,5,28,0,54,0,41,0
+1679798,How to open a file with the standard application?,"open a file ""$file"" under Unix","os.system('start ""$file""')",485,3,9,61,1,15,0,41,0
+1883604,Reading utf-8 characters from a gzip file in python,Open gzip-compressed file encoded as utf-8 'file.gz' in text mode,"gzip.open('file.gz', 'rt', encoding='utf-8')",517,4,9,35,1,18,0,41,0
+2052390,Manually raising (throwing) an exception,"throw a ValueError with message 'represents a hidden bug, do not catch this'","raise ValueError('represents a hidden bug, do not catch this')",546,5,4,28,1,27,1,41,0
+3097866,Access an arbitrary element in a dictionary in Python,access an arbitrary value from dictionary `dict`,next(iter(list(dict.values()))),704,9,1,18,0,61,0,41,0
+3878555,How to replace repeated instances of a character with a single instance of that character in python,"replace repeated instances of ""*"" with a single instance of ""*""","re.sub('\\*+', '*', text)",829,12,0,11,0,6,0,41,0
+4706499,append to a file,"append line ""cool beans..."" to file ""foo""","with open('foo', 'a') as f:
+    f.write('cool beans...')",978,16,9,33,1,35,0,41,0
+5917537,"In Python, why won't something print without a newline?",immediately see output of print statement that doesn't end in a newline,sys.stdout.flush(),1109,19,8,0,0,34,0,41,0
+5932059,Partitioning a string in Python by a regular expression,split a string into a list of words and whitespace,"re.split('(\\W+)', s)",1111,19,8,36,0,30,0,41,0
+6159900,write line to file,"write line ""Hello"" to file `somefile.txt`","with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')",1127,20,9,61,1,35,0,41,0
+6710684,Remove one column for a numpy array,delete the last column of numpy array `a` and assign resulting array to `b`,"b = np.delete(a, -1, 1)",1172,21,6,2,0,39,0,41,0
+7253907,Python - how to convert int to string represent a 32bit Hex number,convert 3652458 to string represent a 32bit hex number,"""""""0x{0:08X}"""""".format(3652458)",1209,22,5,33,0,24,0,41,0
+7768859,Python: for loop in index assignment,Convert integer elements in list `wordids` to strings,[str(wi) for wi in wordids],1260,23,5,63,0,50,0,41,0
+9573244,check if the string is empty,check if string `my_string` is empty,"if some_string:
+    pass",1427,27,0,12,0,38,0,41,0
+9760588,How do you extract a url from a string using python?,extract a url from a string `myString`,"print(re.search('(?P<url>https?://[^\\s]+)', myString).group('url'))",1449,28,8,0,0,32,0,41,0
+9938130,plotting stacked barplots on a panda data frame,plotting stacked barplots on a panda data frame,"df.plot(kind='barh', stacked=True)",1460,28,3,34,0,56,0,41,0
+11709079,Parsing HTML,Parsing webpage 'http://www.google.com/' using BeautifulSoup,"page = urllib.request.urlopen('http://www.google.com/')
+soup = BeautifulSoup(page)",1598,32,4,22,1,47,1,41,0
+11833266,How do I read the first line of a string?,read the first line of a string `my_string`,my_string.splitlines()[0],1609,32,8,0,0,14,0,41,0
+11840111,Divide the values of two dictionaries in python,divide the values with same keys of two dictionary `d1` and `d2`,{k: (float(d2[k]) / d1[k]) for k in d2},1613,32,1,40,0,9,0,41,0
+15882395,Matplotlib.animation: how to remove white margin,"set the size of figure `fig` in inches to width height of `w`, `h`","fig.set_size_inches(w, h, forward=True)",1953,41,4,43,1,28,1,41,0
+16128833,Using inheritance in python,inherit from class `Executive`,"super(Executive, self).__init__(*args)",1970,41,4,21,1,12,1,41,0
+16249440,Changing file permission in python,changing permission of file `path` to `stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH`,"os.chmod(path, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)",1979,42,9,18,1,24,0,41,0
+16568056,Python Nested List Comprehension with two Lists,create a list of aggregation of each element from list `l2` to all elements of list `l1`,[(x + y) for x in l2 for y in l1],1995,42,7,55,1,61,0,41,0
+17134716,Convert DataFrame column type from string to datetime,convert the dataframe column 'col' from string types to datetime types,df['col'] = pd.to_datetime(df['col']),2034,43,3,8,0,31,0,41,0
+17618981,How to sort pandas data frame using values from several columns?,sort pandas data frame `df` using values from columns `c1` and `c2` in ascending order,"df.sort(['c1', 'c2'], ascending=[True, True])",2072,44,3,26,0,40,0,41,0
+18391059,python - How to format variable number of arguments into a string?,how to format a list of arguments `my_args` into a string,"'Hello %s' % ', '.join(my_args)",2126,45,8,0,0,32,0,41,0
+19100540,Rounding entries in a Pandas DafaFrame,"round off entries in dataframe `df` column `Alabama_exp` to two decimal places, and entries in column `Credit_exp` to three decimal places","df.round({'Alabama_exp': 2, 'Credit_exp': 3})",2180,47,3,12,0,59,0,41,0
+19894478,Regex punctuation split [Python],"split string 'Words, words, words.' on punctuation","re.split('\\W+', 'Words, words, words.')",2231,48,8,0,0,20,0,41,0
+20110170,Turn Pandas Multi-Index into column,reset index of dataframe `df`so that existing index values are transferred into `df`as columns,df.reset_index(inplace=True),2246,48,3,26,0,33,0,41,0
+30546889,"Python list of dicts, get max value index",get dictionary with max value of key 'size' in list of dicts `ld`,"max(ld, key=lambda d: d['size'])",2553,56,1,46,0,55,0,41,0
+32751229,"Pandas sum by groupby, but exclude certain columns","Get sum of values of columns  'Y1961', 'Y1962', 'Y1963' after group by on columns ""Country"" and ""Item_code"" in dataframe `df`.","df.groupby(['Country', 'Item_Code'])[['Y1961', 'Y1962', 'Y1963']].sum()",2630,58,3,52,0,8,0,41,0

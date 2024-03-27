@@ -1,0 +1,395 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+19339,inverse of zip,unzip list `original`,"result = ([a for (a, b) in original], [b for (a, b) in original])",10,0,7,48,1,0,0,0,0
+19339,inverse of zip,"unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]`","zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])",12,0,7,57,1,0,0,0,0
+19339,inverse of zip,unzip list `original` and return a generator,"result = ((a for (a, b) in original), (b for (a, b) in original))",13,0,7,51,1,0,0,0,0
+19339,inverse of zip,"unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`","zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])",15,0,7,52,1,0,0,0,0
+36139,How do I sort a list of strings in Python?,sort a list of strings `list`,list.sort(),21,0,7,58,1,0,0,0,0
+36139,How do I sort a list of strings in Python?,sort a list of strings 'mylist'.,mylist.sort(),22,0,7,56,1,0,0,0,0
+36139,How do I sort a list of strings in Python?,sort list `mylist` in alphabetical order,mylist.sort(key=str.lower),24,0,7,35,1,0,0,0,0
+44778,How would you make a comma-separated string from a list?,make a comma-separated string from a list `myList`,"myList = ','.join(map(str, myList))",32,0,7,23,1,0,0,0,0
+44778,How would you make a comma-separated string from a list?,"Join elements of list `l` with a comma `,`",""""""","""""".join(l)",33,0,7,24,1,0,0,0,0
+59825,How to retrieve an element from a set without removing it?,retrieve an element from a set `s` without removing it,e = next(iter(s)),38,0,7,59,1,0,0,0,0
+82831,check whether a file exists,"check whether file ""/path/to/file"" exists","my_file = Path('/path/to/file')
+if my_file.is_file():
+    pass",47,0,9,58,1,0,0,0,0
+104420,How to generate all permutations of a list in Python,"generate all permutations of list `[1, 2, 3]` and list `[4, 5, 6]`","print(list(itertools.product([1, 2, 3], [4, 5, 6])))",65,0,7,30,1,0,0,0,0
+104420,How to generate all permutations of a list in Python,"generate all permutations of a list `[1, 2, 3]`","itertools.permutations([1, 2, 3])",66,0,7,36,1,0,0,0,0
+176918,Finding the index of an item given a list containing it in Python,"finding the index of an item 'foo' given a list `['foo', 'bar', 'baz']` containing it","[i for i, j in enumerate(['foo', 'bar', 'baz']) if j == 'foo']",79,0,7,37,1,0,0,0,0
+180606,How do I convert a list of ascii values to a string in python?,convert a list `L` of ascii values to a string,""""""""""""".join(chr(i) for i in L)",83,0,7,15,1,0,0,0,0
+312443,How do you split a list into evenly sized chunks?,split list `l` into `n` sized lists,"[l[i:i + n] for i in range(0, len(l), n)]",141,0,7,53,1,0,0,0,0
+329886,"In Python, is there a concise way to use a list comprehension with multiple iterators?",Get a list of tuples with multiple iterators using list comprehension,"[(i, j) for i in range(1, 3) for j in range(1, 5)]",148,0,7,18,1,0,0,0,0
+348196,Creating a list of objects in Python,Create list `instancelist` containing 29 objects of type MyClass,instancelist = [MyClass() for i in range(29)],149,0,7,17,1,0,0,0,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `foo` sorted by the key,"for k in sorted(foo.keys()):
+    pass",156,0,1,0,0,0,0,0,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"[i for (i, x) in enumerate(testlist) if (x == 1)]",161,0,7,56,1,0,0,0,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"for i in (i for (i, x) in enumerate(testlist) if (x == 1)):
+    pass",162,0,7,20,1,0,0,0,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"for i in [i for (i, x) in enumerate(testlist) if (x == 1)]:
+    pass",165,0,7,61,1,0,0,0,0
+364621,get item's position in a list,get the position of item 1 in `testlist`,"[i for (i, x) in enumerate(testlist) if (x == 1)]",166,0,7,21,1,0,0,0,0
+364621,get item's position in a list,get the position of item `element` in list `testlist`,"try:
+    print(testlist.index(element))
+except ValueError:
+    pass",167,0,7,33,1,0,0,0,0
+403421,"How to sort a list of objects , based on an attribute of the objects?",reverse list `ut` based on the `count` attribute of each object,"ut.sort(key=lambda x: x.count, reverse=True)",181,0,7,41,1,0,0,0,0
+432842,get the logical xor of two variables,get logical xor of `a` and `b`,(bool(a) != bool(b)),193,0,0,0,0,0,0,0,0
+438684,How to convert a list of longs into a comma separated string in python,convert list `list_of_ints` into a comma separated string,""""""","""""".join([str(i) for i in list_of_ints])",195,0,7,13,1,0,0,0,0
+444058,python - readable list of objects,display attribute `attr` for each object `obj` in list `my_list_of_objs`,print([obj.attr for obj in my_list_of_objs]),197,0,7,14,1,0,0,0,0
+510348,make a time delay,make a 0.1 seconds time delay,sleep(0.1),218,0,4,49,1,10,1,0,0
+517355,String formatting in Python,"print '[1, 2, 3]'","print('[%s, %s, %s]' % (1, 2, 3))",220,0,7,24,1,0,0,0,0
+518021,Getting the length of an array,Get the length of list `my_list`,len(my_list),222,0,7,44,1,0,0,0,0
+598398,Searching a list of objects in Python,"get elements from list `myList`, that have a field `n` value 30",[x for x in myList if x.n == 30],242,0,7,37,1,0,0,0,0
+627435,remove an element from a list by index,remove the element in list `a` at index `index`,del a[index],252,0,7,45,1,0,0,0,0
+627435,remove an element from a list by index,remove the last element in list `a`,a.pop(),253,0,7,36,1,0,0,0,0
+638048,How do I sum the first value in each tuple in a list of tuples in Python?,How do I sum the first value in each tuple in a list of tuples in Python?,sum([pair[0] for pair in list_of_pairs]),255,0,7,15,1,0,0,0,0
+674509,"How do I iterate over a Python dictionary, ordered by values?",Iterate over dictionary `d` in ascending order of values,"sorted(iter(d.items()), key=lambda x: x[1])",273,0,1,0,0,0,0,0,0
+716477,join list of lists in python,Convert nested list `x` into a flat list,[j for i in x for j in i],295,0,7,34,1,0,0,0,0
+741877,How do I tell matplotlib that I am done with a plot?,Matplotlib clear the current axes.,plt.cla(),302,0,4,52,1,10,1,0,0
+867866,Convert unicode codepoint to UTF8 hex in python,convert Unicode codepoint to utf8 hex,"chr(int('fd9b', 16)).encode('utf-8')",349,0,8,0,0,0,0,0,0
+903853,How do you extract a column from a multi-dimensional array?,Get all the second values from a list of lists `A`,[row[1] for row in A],359,0,7,16,1,0,0,0,0
+930397,Getting the last element of a list,get the last element in list `alist`,alist[(-1)],361,0,7,30,1,0,0,0,0
+930397,gets the nth-to-last element,gets the `n` th-to-last element in list `some_list`,some_list[(- n)],362,0,7,60,1,0,0,0,0
+930397,Getting the last element of a list,get the last element in list `astr`,astr[(-1)],363,0,7,28,1,0,0,0,0
+930397,Getting the last element of a list,Getting the second to last element of list `some_list`,some_list[(-2)],365,0,7,25,1,0,0,0,0
+931092,Reverse a string,Reverse list `s`,s[::(-1)],373,0,7,22,1,0,0,0,0
+952914,Making a flat list out of list of lists,make a flat list from list of lists `list2d`,list(itertools.chain(*list2d)),381,1,7,42,1,0,0,0,0
+1222677,List Comprehensions in Python : efficient selection in a list,create a list containing elements from list `list` that are predicate to function `f`,[f(x) for x in list],433,2,7,51,1,0,0,0,0
+1358977,How to make several plots on a single page using matplotlib?,"Return a subplot axes positioned by the grid definition `1,1,1` using matpotlib","fig.add_subplot(1, 1, 1)",446,2,4,51,1,10,1,0,0
+1388818,How can I compare two lists in python and return matches,compare two lists in python `a` and `b` and return matches,set(a).intersection(b),448,2,7,15,1,0,0,0,0
+1388818,How can I compare two lists in python and return matches,How can I compare two lists in python and return matches,"[i for i, j in zip(a, b) if i == j]",449,2,7,41,1,0,0,0,0
+1400608,empty a list,empty a list `lst`,del lst[:],452,2,7,61,1,0,0,0,0
+1400608,empty a list,empty a list `lst`,del lst1[:],453,2,7,41,1,0,0,0,0
+1400608,empty a list,empty a list `lst`,lst[:] = [],455,2,7,27,1,0,0,0,0
+1456617,Return a random word from a word list in python,return a random word from a word list 'words',print(random.choice(words)),463,3,7,52,1,0,0,0,0
+1482308,what's a good way to combinate through a set?,create a list with permutations of string 'abcd',list(powerset('abcd')),464,3,7,48,1,0,0,0,0
+1614236,"In Python, how do I convert all of the items in a list to floats?",convert all of the items in a list `lst` to float,[float(i) for i in lst],483,3,7,31,1,0,0,0,0
+1683775,Sort a multidimensional list by a variable number of keys,sort a multidimensional list `a` by second and third column,"a.sort(key=operator.itemgetter(2, 3))",486,3,7,14,1,0,0,0,0
+1712227,get the size of a list,get the size of list `items`,len(items),487,3,7,33,1,0,0,0,0
+1712227,get the size of a list,"get the size of a list `[1,2,3]`","len([1, 2, 3])",488,3,7,23,1,0,0,0,0
+1712227,get the size of a list,get the size of list `s`,len(s),491,3,7,32,1,0,0,0,0
+1720421,concatenate lists,concatenate lists `listone` and `listtwo`,(listone + listtwo),494,3,7,16,1,0,0,0,0
+1731346,How to get two random records with Django,get two random records from model 'MyModel' in Django,MyModel.objects.order_by('?')[:2],495,3,4,39,1,10,1,0,0
+1762484,"How to find the position of an element in a list , in Python?",find the index of an element 'MSFT' in a list `stocks_list`,[x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT'],500,4,7,48,1,0,0,0,0
+1780174,Split dictionary of lists into list of dictionaries,create a list where each element is a dictionary with keys 'key1' and 'key2' and values corresponding to each value in the lists referenced by keys 'key1' and 'key2' in dictionary `d`,"[{'key1': a, 'key2': b} for a, b in zip(d['key1'], d['key2'])]",503,4,1,0,0,0,0,0,0
+1790520,How to apply a logical operator to all elements in a python list,apply logical operator 'AND' to all elements in list `a_list`,all(a_list),505,4,7,52,1,0,0,0,0
+1807026,Initialize a list of objects in Python,create list `lst` containing 100 instances of object `Object`,lst = [Object() for i in range(100)],507,4,7,47,1,0,0,0,0
+1866343,Removing an element from a list based on a predicate,removing an element from a list based on a predicate 'X' or 'N',"[x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]",514,4,7,47,1,0,0,0,0
+1874194,Pythonic way to get the largest item in a list,get the tuple in list `a_list` that has the largest item in the second index,"max_item = max(a_list, key=operator.itemgetter(1))",516,4,7,22,1,0,0,0,0
+2011048,how to check the character count of a file in python,Get the characters count in a file `filepath`,os.stat(filepath).st_size,533,4,9,45,1,0,0,0,0
+2054416,Getting the first elements per row in an array in Python?,Create a tuple `t` containing first element of each tuple in tuple `s`,t = tuple(x[0] for x in s),547,5,7,49,1,0,0,0,0
+2133571,Most Pythonic way to concatenate strings,Concat a list of strings `lst` using string formatting,""""""""""""".join(lst)",555,5,7,21,1,0,0,0,0
+2151517,Create Union of All Values Contained in Multiple Lists,get the union set from list of lists `results_list`,results_union = set().union(*results_list),559,5,7,12,1,0,0,0,0
+2153444,Python: Finding average of a nested list,Find average of a nested list `a`,a = [(sum(x) / len(x)) for x in zip(*a)],561,5,7,19,1,0,0,0,0
+2186656,How can I remove all instances of an element from a list in Python?,"remove all instances of [1, 1] from list `a`","a[:] = [x for x in a if x != [1, 1]]",567,5,7,37,1,0,0,0,0
+2191699,Find an element in a list of tuples,find all the elements that consists value '1' in a list of tuples 'a',[item for item in a if 1 in item],569,5,7,25,1,0,0,0,0
+2191699,Find an element in a list of tuples,find all elements in a list of tuples `a` where the first element of each tuple equals 1,[item for item in a if item[0] == 1],570,5,7,20,1,0,0,0,0
+2212433,Counting the Number of keywords in a dictionary in python,get number of keys in dictionary `yourdict`,len(list(yourdict.keys())),572,5,1,0,0,0,0,0,0
+2276416,Extending a list of lists in Python?,create list `y` containing two empty lists,y = [[] for n in range(2)],583,6,7,31,1,0,0,0,0
+2338531,Python sorting - A list of objects,sort a list of objects 'somelist' where the object has member number variable `resultType`,somelist.sort(key=lambda x: x.resultType),588,6,7,54,1,0,0,0,0
+2338531,Python sorting - A list of objects,sort a list of objects `s` by a member variable 'resultType',s.sort(key=operator.attrgetter('resultType')),589,6,7,16,1,0,0,0,0
+2424412,What is the easiest way to convert list with str into list with int?,convert list with str into list with int,"list(map(int, ['1', '2', '3']))",602,6,7,46,1,0,0,0,0
+2424412,What is the easiest way to convert list with str into list with int?,"convert a list with string `['1', '2', '3']` into list with integers","map(int, ['1', '2', '3'])",603,6,7,21,1,0,0,0,0
+2514961,Remove all values within one list from another list in python,"remove all values within one list `[2, 3, 7]` from another list `a`","[x for x in a if x not in [2, 3, 7]]",609,6,7,44,1,0,0,0,0
+2587402,Sorting Python list based on the length of the string,sort list `xs` based on the length of its elements,"print(sorted(xs, key=len))",618,7,7,48,1,0,0,0,0
+2587402,Sorting Python list based on the length of the string,sort list of strings `xs` by the length of string,xs.sort(key=lambda s: len(s)),620,7,7,31,1,0,0,0,0
+2597099,Sorting numbers in string format with Python,Sort list `keys` based on its elements' dot-seperated numbers,"keys.sort(key=lambda x: map(int, x.split('.')))",622,7,7,17,1,0,0,0,0
+2600191,count the occurrences of a list item,count the occurrences of items in list `l`,"[[x, l.count(x)] for x in set(l)]",625,7,7,62,1,0,0,0,0
+2600191,count the occurrences of a list item,"count the occurrences of item ""b"" in list `l`",l.count('b'),626,7,7,29,1,0,0,0,0
+2600191,count the occurrences of a list item,count the occurrences of items in list `l`,Counter(l),627,7,7,44,1,0,0,0,0
+2600191,count the occurrences of a list item,"count the occurrences of item ""a"" in list `l`",l.count('a'),628,7,7,25,1,0,0,0,0
+2612802,copy a list,copy list `old_list` as `new_list`,new_list = copy.copy(old_list),634,7,7,34,1,0,0,0,0
+2612802,copy a list,copy list `old_list` as `new_list`,new_list = old_list[:],635,7,7,28,1,0,0,0,0
+2612802,copy a list,make a copy of list `old_list`,[i for i in old_list],636,7,7,63,1,0,0,0,0
+2612802,copy a list,copy list `old_list` as `new_list`,new_list = list(old_list),637,7,7,23,1,0,0,0,0
+2621674,how to extract elements from a list in python?,"extract elements at indices (1, 2, 5) from a list `a`","[a[i] for i in (1, 2, 5)]",638,7,7,30,1,0,0,0,0
+2793324,delete a list element by value,delete the element `c` from list `a`,"try:
+    a.remove(c)
+except ValueError:
+    pass",661,8,7,26,1,0,0,0,0
+2793324,delete a list element by value,"remove item ""b"" in list `a`",a.remove('b'),663,8,7,61,1,0,0,0,0
+2793324,delete a list element by value,delete the element 6 from list `a`,a.remove(6),664,8,7,15,1,0,0,0,0
+2972212,Creating an empty list,Creating an empty list,[],687,8,7,36,1,0,0,0,0
+2972212,Creating an empty list,Creating an empty list `l`,l = [],689,8,7,42,1,0,0,0,0
+2990121,loop through a Python list by twos,loop through `mylist` with step 2,"for i in mylist[::2]:
+    pass",691,9,7,34,1,0,0,0,0
+3034014,How to apply itertools.product to elements of a list of lists?,apply itertools.product to elements of a list of lists `arrays`,list(itertools.product(*arrays)),694,9,7,20,1,0,0,0,0
+3159155,How to remove all integer values from a list in python,get a list `no_integers` of all the items in list `mylist` that are not of type `int`,"no_integers = [x for x in mylist if not isinstance(x, int)]",708,9,7,62,1,0,0,0,0
+3308102,How to extract the n-th elements from a list of tuples in python?,extract the 2nd elements from a list of tuples,[x[1] for x in elements],745,10,7,22,1,0,0,0,0
+3398589,Sorting a list of lists in Python,Sorting a list of lists in Python,"c2.sort(key=lambda row: (row[2], row[1], row[0]))",755,10,7,52,1,0,0,0,0
+3398589,Sorting a list of lists in Python,Sorting a list of lists in Python,"c2.sort(key=lambda row: (row[2], row[1]))",756,10,7,53,1,0,0,0,0
+3398589,Sorting a list of lists in Python,sort a list of lists 'c2' such that third row comes first,c2.sort(key=lambda row: row[2]),757,10,7,46,1,0,0,0,0
+3428769,Finding the largest delta between two integers in a list in python,Finding the largest delta between two integers in a list in python,"max(abs(x - y) for x, y in zip(values[1:], values[:-1]))",760,10,7,49,1,0,0,0,0
+3460161,Remove adjacent duplicate elements from a list,"remove adjacent duplicate elements from a list `[1, 2, 2, 3, 2, 2, 4]`","[k for k, g in itertools.groupby([1, 2, 2, 3, 2, 2, 4])]",768,10,7,37,1,0,0,0,0
+3471999,How do I merge two lists into a single list?,interleave the elements of two lists `a` and `b`,"[j for i in zip(a, b) for j in i]",770,11,7,64,1,0,0,0,0
+3523048,Add another tuple to a tuple,Add a tuple with value `another_choice` to a tuple `my_choices`,"final_choices = ((another_choice,) + my_choices)",787,11,7,19,1,0,0,0,0
+3523048,Add another tuple to a tuple,Add a tuple with value `another_choice` to a tuple `my_choices`,"final_choices = ((another_choice,) + my_choices)",788,11,7,49,1,0,0,0,0
+3724551,Python: Uniqueness for list of lists,remove duplicated items from list of lists `testdata`,"list(map(list, set(map(lambda i: tuple(i), testdata))))",802,11,7,60,1,0,0,0,0
+3724551,Python: Uniqueness for list of lists,uniqueness for list of lists `testdata`,[list(i) for i in set(tuple(i) for i in testdata)],803,11,7,56,1,0,0,0,0
+3731426,How do I divide the members of a list by the corresponding members of another list in Python?,divide the members of a list `conversions` by the corresponding members of another list `trials`,"[(c / t) for c, t in zip(conversions, trials)]",805,11,7,26,1,0,0,0,0
+3766633,How to sort with lambda in Python,Sort a data `a` in descending order based on the `modified` attribute of elements using lambda function,"a = sorted(a, key=lambda x: x.modified, reverse=True)",810,12,7,23,1,0,0,0,0
+3899782,How to check whether elements appears in the list only once in python?,check whether elements in list `a` appear only once,len(set(a)) == len(a),836,12,7,20,1,0,0,0,0
+3931541,Python Check if all of the following items is in a list,"Check if all the items in a list `['a', 'b']` exists in another list `l`","set(['a', 'b']).issubset(set(l))",841,12,7,34,1,0,0,0,0
+3940128,reverse a list,reverse a list `array`,list(reversed(array)),850,13,7,27,1,0,0,0,0
+3940128,reverse a list,reverse a list `L`,L.reverse(),851,13,7,53,1,0,0,0,0
+4029436,Subtracting the current and previous item in a list,create a list containing the subtraction of each item in list `L` from the item prior to it,"[(y - x) for x, y in zip(L, L[1:])]",871,13,7,18,1,0,0,0,0
+4048964,printing tab-separated values of a list,print elements of list `list` seperated by tabs `\t`,"print('\t'.join(map(str, list)))",872,13,7,37,1,0,0,0,0
+4059550,Generate all possible strings from a list of token,"generate all possible string permutations of each two elements in list `['hel', 'lo', 'bye']`","print([''.join(a) for a in combinations(['hel', 'lo', 'bye'], 2)])",873,13,7,29,1,0,0,0,0
+4065737,Python/Numpy: Convert list of bools to unsigned int,Sum the corresponding decimal values for binary values of each boolean element in list `x`,"sum(1 << i for i, b in enumerate(x) if b)",875,13,7,30,1,0,0,0,0
+4111412,How do I get a list of indices of non zero elements in a list?,get a list of indices of non zero elements in a list `a`,"[i for i, e in enumerate(a) if e != 0]",877,13,7,47,1,0,0,0,0
+4112265,How to zip lists in a list,"zip lists in a list [[1, 2], [3, 4], [5, 6]]","zip(*[[1, 2], [3, 4], [5, 6]])",878,13,7,24,1,0,0,0,0
+4152376,How to get the n next values of a generator in a list (python),get list of n next values of a generator `it`,"list(itertools.islice(it, 0, n, 1))",887,14,7,38,1,0,0,0,0
+4152376,How to get the n next values of a generator in a list (python),create a list containing the `n` next values of generator `it`,[next(it) for _ in range(n)],888,14,7,20,1,0,0,0,0
+4172131,Create random list of integers in Python,create a random list of integers,[int(1000 * random.random()) for i in range(10000)],890,14,7,17,1,0,0,0,0
+4174941,sort a list of lists by a specific index,sort list `l` by index 2 of the item,"sorted(l, key=(lambda x: x[2]))",891,14,7,30,1,0,0,0,0
+4174941,sort a list of lists by a specific index,"sort a list of lists `list_to_sort` by indices 2,0,1 of the inner list","sorted_list = sorted(list_to_sort, key=itemgetter(2, 0, 1))",892,14,7,15,1,0,0,0,0
+4174941,sort a list of lists by a specific index of the inner list,sort a list of lists `l` by index 2 of the inner list,l.sort(key=(lambda x: x[2])),893,14,7,56,1,0,0,0,0
+4233476,Sort a list by multiple attributes?,sort a list `s` by first and second attributes,"s = sorted(s, key=lambda x: (x[1], x[2]))",900,14,7,16,1,0,0,0,0
+4287209,Sort list of strings by integer suffix in python,sort list of strings in list `the_list` by integer suffix,"sorted(the_list, key=lambda k: int(k.split('_')[1]))",908,14,7,34,1,0,0,0,0
+4287209,Sort list of strings by integer suffix in python,"sort list of strings `the_list` by integer suffix before ""_""","sorted(the_list, key=lambda x: int(x.split('_')[1]))",909,14,7,63,1,0,0,0,0
+4299741,Merging items in a list - Python,"merge a list of integers `[1, 2, 3, 4, 5]` into a single integer","from functools import reduce
+reduce(lambda x, y: 10 * x + y, [1, 2, 3, 4, 5])",913,14,7,58,1,0,0,0,0
+4362586,sum a list of numbers in Python,sum a list of numbers `list_of_nums`,sum(list_of_nums),924,14,7,64,1,0,0,0,0
+4587915,Return list of items in list greater than some value,get a list of all items in list `j` with values greater than `5`,[x for x in j if x >= 5],951,15,7,50,1,0,0,0,0
+4641765,Add to integers in a list,"append a list [8, 7] to list `foo`","foo.append([8, 7])",958,15,7,46,1,0,0,0,0
+4641765,Add to integers in a list,insert 77 to index 2 of list `x`,"x.insert(2, 77)",959,15,7,18,1,0,0,0,0
+4685571,Generic reverse of list items in Python,Get reverse of list items from list 'b' using extended slicing,[x[::-1] for x in b],970,16,7,25,1,0,0,0,0
+4741537,Append elements of a set to a list in Python,append elements of a set `b` to a list `a`,a.extend(b),984,16,7,17,1,0,0,0,0
+4741537,Append elements of a set to a list in Python,Append elements of a set to a list in Python,a.extend(list(b)),985,16,7,25,1,0,0,0,0
+4800811,Accessing a value in a tuple that is in a list,get the value at index 1 for each tuple in the list of tuples `L`,[x[1] for x in L],991,16,7,39,1,0,0,0,0
+4842956,Python: How to remove empty lists from a list?,Get a new list `list2`by removing empty list from a list of lists `list1`,list2 = [x for x in list1 if x != []],996,16,7,25,1,0,0,0,0
+4842956,Python: How to remove empty lists from a list?,Create `list2` to contain the lists from list `list1` excluding the empty lists from `list1`,list2 = [x for x in list1 if x],997,16,7,12,1,0,0,0,0
+4843158,Check if a Python list item contains a string inside another string,get a list of items from the list `some_list` that contain string 'abc',matching = [s for s in some_list if 'abc' in s],998,16,7,22,1,0,0,0,0
+4877844,How would I check a string for a certain letter in Python?,"check if string 'x' is  in list `['x', 'd', 'a', 's', 'd', 's']`","'x' in ['x', 'd', 'a', 's', 'd', 's']",1002,16,0,0,0,0,0,0,0
+5251663,determine if a list contains other lists,check if any values in a list `input_list` is a list,"any(isinstance(el, list) for el in input_list)",1050,18,7,53,1,0,0,0,0
+5306079,Python: How do I convert an array of strings to an array of numbers?,"convert a list of strings `['1', '-1', '1']` to a list of numbers","map(int, ['1', '-1', '1'])",1056,18,7,20,1,0,0,0,0
+5384570,What's the shortest way to count the number of items in a generator/iterator?,count the number of items in a generator/iterator `it`,sum(1 for i in it),1064,18,7,41,1,0,0,0,0
+5618878,convert list to string,"concatenating values in list `L` to a string, separate by space",' '.join((str(x) for x in L)),1082,19,7,11,1,0,0,0,0
+5618878,convert list to string,concatenating values in list `L` to a string,"makeitastring = ''.join(map(str, L))",1083,19,7,40,1,0,0,0,0
+6133434,Find the sum of subsets of a list in python,find the sums of length 7 subsets of a list `daily`,"weekly = [sum(visitors[x:x + 7]) for x in range(0, len(daily), 7)]",1121,20,7,50,1,0,0,0,0
+6294179,How to find all occurrences of an element in a list?,How to find all occurrences of an element in a list?,"indices = [i for i, x in enumerate(my_list) if x == 'whatever']",1134,20,7,13,1,0,0,0,0
+6376886,What is the best way to create a string array in python?,create list of 'size' empty strings,strs = ['' for x in range(size)],1139,20,7,27,1,0,0,0,0
+6490560,How do I move the last item in a list to the front in python?,move the last item in list `a` to the beginning,a = a[-1:] + a[:-1],1152,20,7,16,1,0,0,0,0
+6618515,Sorting list based on values from another list?,sorting list 'X' based on values from another list 'Y',"[x for y, x in sorted(zip(Y, X))]",1163,21,7,43,1,0,0,0,0
+6696027,split elements of a list in python,split strings in list `l` on the first occurring tab `\t` and enter only the first resulting substring in a new list,"[i.split('\t', 1)[0] for i in l]",1170,21,7,60,1,0,0,0,0
+6726636,splitting and concatenating a string,"concatenate a list of strings `['a', 'b', 'c']`",""""""""""""".join(['a', 'b', 'c'])",1174,21,7,60,1,0,0,0,0
+6889785,python how to search an item in a nested list,get a list of items form nested list `li` where third element of each item contains string 'ar',[x for x in li if 'ar' in x[2]],1185,21,7,34,1,0,0,0,0
+7026131,Padding a list in python with particular value,fill list `myList` with 4 0's,self.myList.extend([0] * (4 - len(self.myList))),1193,21,7,21,1,0,0,0,0
+7142227,How do I sort a zipped list in Python?,How do I sort a zipped list in Python?,zipped.sort(key=lambda t: t[1]),1200,22,7,38,1,0,0,0,0
+7378180,Generate all subsets of size k (containing k elements) in Python,"generate all 2-element subsets of tuple `(1, 2, 3)`","list(itertools.combinations((1, 2, 3), 2))",1235,22,7,54,1,0,0,0,0
+7458689,Best / most pythonic way to get an ordered list of unique items,Remove duplicates elements from list `sequences` and sort it in ascending order,sorted(set(itertools.chain.from_iterable(sequences))),1237,23,7,38,1,0,0,0,0
+7571635,check if a value exist in a list,check if 'a' is in list `a`,('a' in a),1242,23,7,16,1,0,0,0,0
+7745562,Appending to 2D lists in Python,Create list `listy` containing 3 empty lists,listy = [[] for i in range(3)],1258,23,7,54,1,0,0,0,0
+7895449,Merging a list of lists,"create a list containing flattened list `[['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]`","values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])",1265,23,7,59,1,0,0,0,0
+7946798,Interleaving two lists in Python,combine lists `l1` and `l2`  by alternating their elements,"[val for pair in zip(l1, l2) for val in pair]",1269,23,7,53,1,0,0,0,0
+7961363,Removing duplicates in lists,Removing duplicates in list `source_list`,list(set(source_list)),1270,23,7,20,1,0,0,0,0
+7996940,What is the best way to sort list with custom sorting parameters in Python?,What is the best way to sort list with custom sorting parameters in Python?,li1.sort(key=lambda x: not x.startswith('b.')),1274,23,7,38,1,0,0,0,0
+8081545,convert list of tuples to multiple lists in Python,convert list of tuples to multiple lists in Python,"map(list, zip(*[(1, 2), (3, 4), (5, 6)]))",1278,24,7,16,1,0,0,0,0
+8092877,Split a list of tuples into sub-lists of the same tuple field,split a list of tuples `data` into sub-lists of the same tuple field using itertools,"[list(group) for key, group in itertools.groupby(data, operator.itemgetter(1))]",1280,24,7,37,1,0,0,0,0
+8171751,How do I convert tuple of tuples to list in one line (pythonic)?,"convert tuple of tuples `(('aa',), ('bb',), ('cc',))` to list in one line","map(lambda a: a[0], (('aa',), ('bb',), ('cc',)))",1287,24,7,18,1,0,0,0,0
+8177079,take the content of a list and append it to another list,append list `a` to `c`,c.extend(a),1289,24,7,15,1,0,0,0,0
+8177079,take the content of a list and append it to another list,append list `mylog` to `list1`,list1.extend(mylog),1291,24,7,58,1,0,0,0,0
+8177079,take the content of a list and append it to another list,append items in list `mylog` to `list1`,"for line in mylog:
+    list1.append(line)",1292,24,7,62,1,0,0,0,0
+8194156,How to subtract two lists in python,subtract elements of list `List1` from elements of list `List2`,"[(x1 - x2) for x1, x2 in zip(List1, List2)]",1294,24,7,37,1,0,0,0,0
+8243188,Inserting a string into a list without getting split into characters,append string `foo` to list `list`,list.append('foo'),1304,24,7,57,1,0,0,0,0
+8282553,Removing character in list of strings,delete all occureces of `8` in each string `s` in list `lst`,"print([s.replace('8', '') for s in lst])",1315,25,7,50,1,0,0,0,0
+8372399,Zip with list output instead of tuple,"Get the zip output as list from the lists `[1, 2, 3]`, `[4, 5, 6]`, `[7, 8, 9]`","[list(a) for a in zip([1, 2, 3], [4, 5, 6], [7, 8, 9])]",1323,25,7,64,1,0,0,0,0
+8459231,Sort tuples based on second parameter,sort a list of tuples `my_list` by second parameter in the tuple,my_list.sort(key=lambda x: x[1]),1333,25,7,49,1,0,0,0,0
+8528178,List of zeros in python,create a list `listofzeros` of `n` zeros,listofzeros = [0] * n,1336,25,7,17,1,0,0,0,0
+8556076,Python - How to extract the last x elements from a list,get the last 10 elements from a list `my_list`,my_list[-10:],1338,25,7,56,1,0,0,0,0
+8556076,Python - How to extract the last x elements from a list,create list `new_list` containing the last 10 elements of list `my_list`,new_list = my_list[-10:],1339,25,7,40,1,0,0,0,0
+8687568,How to write a tuple of tuples to a CSV file using Python,write a tuple of tuples `A` to a csv file using python,writer.writerow(A),1349,25,7,35,1,0,0,0,0
+8687568,How to write a tuple of tuples to a CSV file using Python,Write all tuple of tuples `A` at once into csv file,writer.writerows(A),1350,25,7,36,1,0,0,0,0
+8704952,How to convert a tuple to a string in Python?,convert a list of tuples `queryresult` to a string from the first indexes.,emaillist = '\n'.join([item[0] for item in queryresult]),1354,26,7,22,1,0,0,0,0
+8785554,How do I insert a list at the front of another list?,insert elements of list `k` into list `a` at position `n`,a = a[:n] + k + a[n:],1364,26,7,47,1,0,0,0,0
+9039961,Finding the average of a list,find the mean of elements in list `l`,sum(l) / float(len(l)),1384,26,7,34,1,0,0,0,0
+9053260,Removing one list from another,remove elements in list `b` from list `a`,[x for x in a if x not in b],1386,26,7,60,1,0,0,0,0
+9089043,Get list item by attribute in Python,Get a list of items in the list `container` with attribute equal to `value`,items = [item for item in container if item.attribute == value],1389,26,7,38,1,0,0,0,0
+9138112,Looping over a list in Python,loop over a list `mylist` if sublists length equals 3,[x for x in mylist if len(x) == 3],1390,26,7,47,1,0,0,0,0
+9262278,Django view returning json without using template,Django response with JSON `data`,"return HttpResponse(data, mimetype='application/json')",1402,27,4,39,1,10,1,0,0
+9304908,django filter with list of values,"create a django query for a list of values `1, 4, 7`","Blog.objects.filter(pk__in=[1, 4, 7])",1404,27,7,30,1,0,0,0,0
+9323159,finding n largest differences between two lists,find 10 largest differences between each respective elements of list `l1` and list `l2`,"heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))",1405,27,7,55,1,0,0,0,0
+9466017,Sorting files in a list,sort list `files` based on variable `file_number`,files.sort(key=file_number),1414,27,7,30,1,0,0,0,0
+9505526,Split string into strings of repeating elements,split string `s` into strings of repeating elements,"print([a for a, b in re.findall('((\\w)\\2*)', s)])",1418,27,8,0,0,0,0,0,0
+9542738,Python: Find in list,"check if 3 is inside list `[1, 2, 3]`","3 in [1, 2, 3]",1421,27,7,46,1,0,0,0,0
+9706041,finding index of an item closest to the value in a list that's not entirely sorted,find the index of element closest to number 11.5 in list `a`,"min(enumerate(a), key=lambda x: abs(x[1] - 11.5))",1440,28,7,63,1,0,0,0,0
+9754729,Remove object from a list of objects in python,remove index 2 element from a list `my_list`,my_list.pop(2),1444,28,7,47,1,0,0,0,0
+9758959,Python - how to sort a list of numerical values in ascending order,"sort list `['10', '3', '2']` in ascending order based on the integer value of its elements","sorted(['10', '3', '2'], key=int)",1446,28,7,35,1,0,0,0,0
+9962293,Python turning a list into a list of tuples,"create list `done` containing permutations of each element in list `[a, b, c, d]` with variable `x` as tuples","done = [(el, x) for el in [a, b, c, d]]",1461,28,7,57,1,0,0,0,0
+10155684,Add entry to list and remove first one in Python,add an entry 'wuggah' at the beginning of list `myList`,"myList.insert(0, 'wuggah')",1469,28,7,38,1,0,0,0,0
+10201977,How to reverse tuples in Python?,Reverse list `x`,x[::-1],1474,29,7,21,1,0,0,0,0
+10213994,sorting a list of tuples in Python,sorting a list of tuples `list_of_tuples` where each tuple is reversed,"sorted(list_of_tuples, key=lambda tup: tup[::-1])",1476,29,7,46,1,0,0,0,0
+10351772,converting list of string to list of integer,converting list of strings `intstringlist` to list of integer `nums`,nums = [int(x) for x in intstringlist],1481,29,5,0,0,0,0,0,0
+10406130,Check if something is not in a list,"Check if 3 is not in the list [4,5,6]","(3 not in [4, 5, 6])",1486,29,7,50,1,0,0,0,0
+10406130,Check if something is not in a list,"Check if tuple (2, 3) is not in a list [(2, 7), (7, 3), ""hi""]","((2, 3) not in [(2, 7), (7, 3), 'hi'])",1487,29,7,42,1,0,0,0,0
+10406130,Check if something is not in a list,"Check if tuple (2, 3) is not in a list [(2, 3), (5, 6), (9, 1)]","((2, 3) not in [(2, 3), (5, 6), (9, 1)])",1488,29,7,57,1,0,0,0,0
+10543303,number of values in a list greater than a certain number,get the number of values in list `j` that is greater than 5,len([1 for i in j if (i > 5)]),1499,29,7,37,1,0,0,0,0
+10543303,number of values in a list greater than a certain number,get the number of values in list `j` that is greater than `i`,"j = np.array(j)
+sum((j > i))",1501,29,7,37,1,0,0,0,0
+10632111,How to flatten a hetrogenous list of list into a single list in python?,Convert list of lists `data` into a flat list,"[y for x in data for y in (x if isinstance(x, list) else [x])]",1512,30,7,31,1,0,0,0,0
+10666163,How to check if all elements of a list matches a condition?,"check if the third element of all the lists in a list ""items"" is equal to zero.",any(item[2] == 0 for item in items),1514,30,7,43,1,0,0,0,0
+10666163,How to check if all elements of a list matches a condition?,Find all the lists from a lists of list 'items' if third element in all sub-lists is '0',[x for x in items if x[2] == 0],1515,30,7,54,1,0,0,0,0
+10941229,Convert list of tuples to list?,flatten list of tuples `a`,list(chain.from_iterable(a)),1532,30,7,48,1,0,0,0,0
+11040626,Pandas DataFrame Add column to index without resetting,add column `d` to index of dataframe `df`,"df.set_index(['d'], append=True)",1542,30,3,0,0,0,0,0,0
+11219949,Python : how to append new elements in a list of list?,append 3 lists in one list,[[] for i in range(3)],1552,31,7,12,1,0,0,0,0
+11219949,Python : how to append new elements in a list of list?,Initialize a list of empty lists `a` of size 3,a = [[] for i in range(3)],1553,31,7,21,1,0,0,0,0
+11236006,Identify duplicate values in a list in Python,identify duplicate values in list `mylist`,"[k for k, v in list(Counter(mylist).items()) if v > 1]",1554,31,7,13,1,0,0,0,0
+11344827,Summing elements in a list,Sum numbers in a list 'your_list',sum(your_list),1565,31,7,20,1,0,0,0,0
+11348347,Find non-common elements in lists,"create a set that is the exclusive or of [1, 2, 3] and [3, 4, 5]","set([1, 2, 3]) ^ set([3, 4, 5])",1566,31,7,41,1,0,0,0,0
+11530799,Python Finding Index of Maximum in List,find the index of the element with the maximum value from a list 'a'.,"max(enumerate(a), key=lambda x: x[1])[0]",1582,31,7,20,1,0,0,0,0
+11574195,How to merge multiple lists into one list in python?,merge list `['it']` and list `['was']` and list `['annoying']` into one list,['it'] + ['was'] + ['annoying'],1586,31,7,43,1,0,0,0,0
+11584773,sorting a graph by its edge weight. python,sort list `lst` in descending order based on the second item of each tuple in it,"lst.sort(key=lambda x: x[2], reverse=True)",1587,31,7,25,1,0,0,0,0
+11677860,Subtract values in one list from corresponding values in another list - Python,Get a list `C` by subtracting values in one list `B` from corresponding values in another list `A`,"C = [(a - b) for a, b in zip(A, B)]",1592,32,7,25,1,0,0,0,0
+11697709,Comparing two lists in Python,list duplicated elements in two lists `listA` and `listB`,list(set(listA) & set(listB)),1596,32,7,19,1,0,0,0,0
+11703064,How do i add two lists' elements into one list?,append the sum of each tuple pair in the grouped list `list1` and list `list2` elements to list `list3`,"list3 = [(a + b) for a, b in zip(list1, list2)]",1597,32,7,46,1,0,0,0,0
+11850425,Custom Python list sorting,Sort list `alist` in ascending order based on each of its elements' attribute `foo`,alist.sort(key=lambda x: x.foo),1615,32,7,40,1,0,0,0,0
+12218112,Sum the second value of each tuple in a list,get the sum of each second value from a list of tuple `structure`,sum(x[1] for x in structure),1631,33,7,29,1,0,0,0,0
+12310141,Python counting elements of a list within a list,check if all lists in list `L` have three elements of integer 1,all(x.count(1) == 3 for x in L),1637,33,7,15,1,0,0,0,0
+12324456,How to keep a list of lists sorted as it is created,keep a list `dataList` of lists sorted as it is created by second element,dataList.sort(key=lambda x: x[1]),1639,33,7,49,1,0,0,0,0
+12723751,Replacing instances of a character in a string,Replace `;` with `:` in a string `line`,"line = line.replace(';', ':')",1667,34,8,0,0,0,0,0,0
+12765833,Counting the number of True Booleans in a Python List,"counting the number of true booleans in a python list `[True, True, False, False, False, True]`","sum([True, True, False, False, False, True])",1669,34,7,57,1,0,0,0,0
+12791501,Python initializing a list of lists,Initialize a list of empty lists `x` of size 3,x = [[] for i in range(3)],1673,34,7,29,1,0,0,0,0
+12808420,split items in list,Create new list `result` by splitting each item in list `words`,"result = [item for word in words for item in word.split(',')]",1675,34,7,20,1,0,0,0,0
+12842997,How to copy a file using python?,copy file `srcfile` to directory `dstdir`,"shutil.copy(srcfile, dstdir)",1679,34,9,28,1,0,0,0,0
+12897374,Get unique values from a list in python,remove duplicates from list `myset`,mynewlist = list(myset),1684,34,7,25,1,0,0,0,0
+12897374,Get unique values from a list in python,"get unique values from the list `['a', 'b', 'c', 'd']`","set(['a', 'b', 'c', 'd'])",1685,34,7,24,1,0,0,0,0
+12974474,How to unzip a list of tuples into individual lists?,Unzip a list of tuples `l` into a list of lists,zip(*l),1687,34,7,35,1,0,0,0,0
+13070461,Get index of the top n values of a list in python,get indexes of the largest `2` values from a list `a` using itemgetter,"zip(*sorted(enumerate(a), key=operator.itemgetter(1)))[0][-2:]",1693,34,7,58,1,0,0,0,0
+13070461,Get index of the top n values of a list in python,get the indexes of the largest `2` values from a list of integers `a`,"sorted(list(range(len(a))), key=lambda i: a[i], reverse=True)[:2]",1694,34,7,21,1,0,0,0,0
+13070461,Get index of the top n values of a list in python,get index of the biggest 2 values of a list `a`,"sorted(list(range(len(a))), key=lambda i: a[i])[-2:]",1695,34,7,32,1,0,0,0,0
+13145368,Find the maximum value in a list of tuples in Python,find the first element of the tuple with the maximum second element in a list of tuples `lis`,"max(lis, key=lambda item: item[1])[0]",1706,35,7,30,1,0,0,0,0
+13168252,Comparing elements between elements in two lists of tuples,Get a list comparing two lists of tuples `l1` and `l2` if any first value in `l1` matches with first value in `l2`,[x[0] for x in l1 if any(x[0] == y[0] for y in l2)],1711,35,7,37,1,0,0,0,0
+13237941,sorting list of nested dictionaries in python,reverse list `yourdata`,"sorted(yourdata, reverse=True)",1716,35,7,28,1,0,0,0,0
+13252333,Python check if all elements of a list are the same type,check if all elements in a list 'lst' are the same type 'int',"all(isinstance(x, int) for x in lst)",1718,35,7,56,1,0,0,0,0
+13283689,python sum the values of lists of list,return list `result` of sum of elements of each list `b` in list of lists `a`,result = [sum(b) for b in a],1725,35,7,31,1,0,0,0,0
+13368723,Python split a list into subsets based on pattern,split list `mylist` into a list of lists whose elements have the same first five characters,"[list(v) for k, v in itertools.groupby(mylist, key=lambda x: x[:5])]",1735,35,7,19,1,0,0,0,0
+13384841,swap values in a tuple/list inside a list in python?,Swap values in a tuple/list in list `mylist`,"[(t[1], t[0]) for t in mylist]",1737,35,7,14,1,0,0,0,0
+13408919,sorting list of tuples by arbitrary key,sort list `mylist` of tuples by arbitrary key from list `order`,"sorted(mylist, key=lambda x: order.index(x[1]))",1739,35,7,29,1,0,0,0,0
+13480031,How do I zip keys with individual values in my lists in python?,zip keys with individual values in lists `k` and `v`,"[dict(zip(k, x)) for x in v]",1748,36,7,57,1,0,0,0,0
+13655392,Python- insert a character into a string,concatenate items from list `parts` into a string starting from the second element,""""""""""""".join(parts[1:])",1766,36,7,31,1,0,0,0,0
+13668393,python sorting two lists,sort two lists `list1` and `list2` together using lambda function,"[list(x) for x in zip(*sorted(zip(list1, list2), key=lambda pair: pair[0]))]",1769,36,7,52,1,0,0,0,0
+13704860,zip lists in python,"zip two lists `[1, 2]` and `[3, 4]` into a list of two tuples containing elements at the same index in each list","zip([1, 2], [3, 4])",1770,36,7,32,1,0,0,0,0
+13717463,Find the indices of elements greater than x,create a list containing the indices of elements greater than 4 in list `a`,"[i for i, v in enumerate(a) if v > 4]",1771,36,7,38,1,0,0,0,0
+13728486,How to sum elements in functional way,get a list containing the sum of each element `i` in list `l` plus the previous elements,"[sum(l[:i]) for i, _ in enumerate(l)]",1772,36,7,50,1,0,0,0,0
+13954222,How to join mixed list (array) (with integers in it) in Python?,"concatenate elements of list `b` by a colon "":""",""""""":"""""".join(str(x) for x in b)",1794,37,7,64,1,0,0,0,0
+14050824,Add SUM of values of two LISTS into new LIST,sum each element `x` in list `first` with element `y` at the same index in list `second`.,"[(x + y) for x, y in zip(first, second)]",1804,37,7,48,1,0,0,0,0
+14169122,Generating all unique pair permutations,generate a list of all unique pairs of integers in `range(9)`,"list(permutations(list(range(9)), 2))",1809,37,7,25,1,0,0,0,0
+14180866,sum each value in a list of tuples,create a list with the sum of respective elements of the tuples of list `l`,[sum(x) for x in zip(*l)],1810,37,7,32,1,0,0,0,0
+14180866,sum each value in a list of tuples,sum each value in a list `l` of tuples,"map(sum, zip(*l))",1811,37,7,57,1,0,0,0,0
+14465279,Delete all objects in a list,delete all values in a list `mylist`,del mylist[:],1836,38,7,23,1,0,0,0,0
+14914615,"In Python, find out number of differences between two ordered lists",find out the number of non-matched elements at the same index of list `a` and list `b`,"sum(1 for i, j in zip(a, b) if i != j)",1870,39,7,32,1,0,0,0,0
+15096021,Python list of tuples to list of int,convert list `x` into a flat list,"y = map(operator.itemgetter(0), x)",1890,39,7,34,1,0,0,0,0
+15096021,Python list of tuples to list of int,Flatten list `x`,x = [i[0] for i in x],1891,39,7,39,1,0,0,0,0
+15096021,Python list of tuples to list of int,get a list `y` of the first element of every tuple in list `x`,y = [i[0] for i in x],1892,39,7,58,1,0,0,0,0
+15148684,"List of Tuples (string, float)with NaN How to get the min value?",Get a minimum value from a list of tuples `list` with values of type `string` and `float` with nan,"min(list, key=lambda x: float('inf') if math.isnan(x[1]) else x[1])",1896,39,7,60,1,0,0,0,0
+15352457,How can I sum a column of a list?,sum elements at index `column` of each list in list `data`,print(sum(row[column] for row in data)),1916,40,7,29,1,0,0,0,0
+15465204,Easier way to add multiple list items?,"Sum of sums of each list, in a list of lists named 'lists'.",sum(sum(x) for x in lists),1929,40,7,31,1,0,0,0,0
+15740236,Stdout encoding in python,encode unicode string '\xc5\xc4\xd6' to utf-8 code,print('\xc5\xc4\xd6'.encode('UTF8')),1940,41,8,0,0,0,0,0,0
+15852295,list of ints into a list of tuples python,group a list of ints into a list of tuples of each 2 elements,"my_new_list = zip(my_list[0::2], my_list[1::2])",1949,41,7,25,1,0,0,0,0
+15856127,Finding the sum of a nested list of ints,sum all elements of nested list `L`,"sum(sum(i) if isinstance(i, list) else i for i in L)",1951,41,7,17,1,0,0,0,0
+16040156,Rearrange tuple of tuples in Python,rearrange tuple of tuples `t`,tuple(zip(*t)),1959,41,7,46,1,0,0,0,0
+16084642,Remove strings from a list that contains numbers in python,"From a list of strings `my_list`, remove the values that contains numbers.",[x for x in my_list if not any(c.isdigit() for c in x)],1962,41,7,23,1,0,0,0,0
+16096754,remove None value from a list without removing the 0 value,remove None value from list `L`,[x for x in L if x is not None],1963,41,7,56,1,0,0,0,0
+16138015,Checking if any elements in one list are in another,check if any elements in one list `list1` are in another list `list2`,len(set(list1).intersection(list2)) > 0,1971,41,7,37,1,0,0,0,0
+16193578,How do I perform secondary sorting in python?,How do I perform secondary sorting in python?,"sorted(list5, key=lambda vertex: (degree(vertex), vertex))",1974,41,7,25,1,0,0,0,0
+16193578,How do I perform secondary sorting in python?,Sort lis `list5` in ascending order based on the degrees value of its elements,"sorted(list5, lambda x: (degree(x), x))",1975,41,7,42,1,0,0,0,0
+16418415,Divide two lists in python,Divide elements in list `a` from elements at the same index in list `b`,"[(x / y) for x, y in zip(a, b)]",1990,42,7,16,1,0,0,0,0
+16734590,How to get every element in a list of list of lists?,convert nested list 'Cards' into a flat list,[a for c in Cards for b in c for a in b],1998,42,7,45,1,0,0,0,0
+16874598,How do I calculate the md5 checksum of a file in Python?,calculate the md5 checksum of a file named  'filename.exe',"hashlib.md5(open('filename.exe', 'rb').read()).hexdigest()",2011,42,9,35,1,0,0,0,0
+17038639,sorting a list with objects of a class as its items,sort a list `your_list` of class objects by their values for the attribute `anniversary_score`,your_list.sort(key=operator.attrgetter('anniversary_score')),2019,43,7,24,1,0,0,0,0
+17038639,sorting a list with objects of a class as its items,sort list `your_list` by the `anniversary_score` attribute of each object,your_list.sort(key=lambda x: x.anniversary_score),2020,43,7,36,1,0,0,0,0
+17193850,How to get column by number in Pandas?,get all the values in column `b` from pandas data frame `df`,df['b'],2044,43,3,0,0,0,0,0,0
+17457793,Sorting a set of values,sort a set `s` by numerical value,"sorted(s, key=float)",2059,44,7,41,1,0,0,0,0
+17474211,How to sort python list of strings of numbers,sort list `a` in ascending order based on its elements' float values,"a = sorted(a, key=lambda x: float(x))",2062,44,7,51,1,0,0,0,0
+17713873,How do I sort a Python list of time values?,"sort list `['14:10:01', '03:12:08']`","sorted(['14:10:01', '03:12:08'])",2077,44,7,63,1,0,0,0,0
+17731822,Elegant way to convert list to hex string,convert the sum of list `walls` into a hex presentation,"hex(sum(b << i for i, b in enumerate(reversed(walls))))",2079,44,7,63,1,0,0,0,0
+17757450,"How to print a list with integers without the brackets, commas and no quotes?",convert list `data` into a string of its elements,"print(''.join(map(str, data)))",2082,44,7,55,1,0,0,0,0
+18022241,'List of lists' to 'list' without losing empty lists from the original list of lists,convert a list of lists `list_of_lists` into a list of strings keeping empty sub-lists as empty string '',[''.join(l) for l in list_of_lists],2098,45,7,56,1,0,0,0,0
+18079563,Finding the intersection between two series in Pandas,find intersection data between series `s1` and series `s2`,pd.Series(list(set(s1).intersection(set(s2)))),2102,45,7,43,1,0,0,0,0
+18131367,python - iterating over a subset of a list of tuples,Get all the items from a list of tuple 'l' where second item in tuple is '1'.,[x for x in l if x[1] == 1],2106,45,7,12,1,0,0,0,0
+18142090,python: sort a list of lists by an item in the sublist,Sort list `li` in descending order based on the second element of each list inside list`li`,"sorted(li, key=operator.itemgetter(1), reverse=True)",2109,45,7,41,1,0,0,0,0
+18448469,Python: filter list of list with another list,create a list `result` containing elements form list `list_a` if first element of list `list_a` is in list `list_b`,result = [x for x in list_a if x[0] in list_b],2129,45,7,65,1,0,0,0,0
+18500541,How to flatten a tuple in python,flatten a tuple `l`,"[(a, b, c) for a, (b, c) in l]",2136,46,7,33,1,0,0,0,0
+18524642,Convert list of lists to list of integers,convert list of lists `L` to list of integers,[int(''.join(str(d) for d in x)) for x in L],2140,46,7,29,1,0,0,0,0
+18624039,Pandas reset index on series to remove multiindex,reset index of series `s`,s.reset_index(0).reset_index(drop=True),2145,46,7,59,1,0,0,0,0
+18637651,Most pythonic way to convert a list of tuples,to convert a list of tuples `list_of_tuples` into list of lists,[list(t) for t in zip(*list_of_tuples)],2147,46,7,48,1,0,0,0,0
+18837607,Remove multiple items from list in Python,remove elements from list `oldlist` that have an index number mentioned in list `removelist`,"newlist = [v for i, v in enumerate(oldlist) if i not in removelist]",2166,46,7,23,1,0,0,0,0
+18872717,Merging a list with a list of lists,"For each index `x` from 0 to 3, append the element at index `x` of list `b` to the list at index `x` of list a.",[a[x].append(b[x]) for x in range(3)],2167,46,7,32,1,0,0,0,0
+18938276,How to convert nested list of lists into a list of tuples in python 3.3?,"convert nested list of lists `[['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]` into a list of tuples","list(map(tuple, [['tom', 'cat'], ['jerry', 'mouse'], ['spark', 'dog']]))",2170,46,7,60,1,0,0,0,0
+18990069,how to get tuples from lists using list comprehension in python,get tuples from lists `lst` and `lst2` using list comprehension in python 2,"[(lst[i], lst2[i]) for i in range(len(lst))]",2172,46,7,39,1,0,0,0,0
+18990069,how to get tuples from lists using list comprehension in python,get tuples of the corresponding elements from lists `lst` and `lst2`,"[(x, lst2[i]) for i, x in enumerate(lst)]",2174,47,7,50,1,0,0,0,0
+19112735,Python - print tuple elements with no brackets,print each first value from a list of tuples `mytuple` with string formatting,"print(', ,'.join([str(i[0]) for i in mytuple]))",2181,47,7,43,1,0,0,0,0
+19300174,Python: Assign each element of a List to a separate Variable,"destruct elements of list `[1, 2, 3]` to variables `a`, `b` and `c`","a, b, c = [1, 2, 3]",2188,47,7,51,1,0,0,0,0
+19729928,Python sort a List by length of value in tuple,sort a list `l` by length of value in tuple,"l.sort(key=lambda t: len(t[1]), reverse=True)",2218,48,7,63,1,0,0,0,0
+19794051,Regex for removing data in parenthesis,Remove anything in parenthesis from string `item` with a regex,"item = re.sub(' ?\\([^)]+\\)', '', item)",2226,48,0,0,0,0,0,0,0
+20222485,List comprehension with an accumulator,List comprehension with an accumulator in range of 10,list(accumulate(list(range(10)))),2254,49,7,59,1,0,0,0,0
+20950650,How to sort Counter by value? - python,reverse sort counter `x` by value,"sorted(list(x.items()), key=lambda pair: pair[1], reverse=True)",2289,49,7,43,1,0,0,0,0
+21519203,"Plotting a list of (x, y) coordinates in python matplotlib",Make a scatter plot using unpacked values of list `li`,plt.scatter(*zip(*li)),2309,50,7,32,1,0,0,0,0
+21800169,Python Pandas: Get index of rows which column matches certain value,get list of indexes of rows where column 'BoolCol' values match True,df[df['BoolCol'] == True].index.tolist(),2321,50,7,36,1,0,0,0,0
+21887754,numpy concatenate two arrays vertically,numpy concatenate two arrays `a` and `b` along the first axis,"print(concatenate((a, b), axis=0))",2332,51,6,0,0,0,0,0,0
+22240602,How do I check if all elements in a list are the same?,check if all elements in list `mylist` are the same,len(set(mylist)) == 1,2347,51,7,49,1,0,0,0,0
+22412258,Get the first element of each tuple in a list in Python,get a list `res_list` of the first elements of each tuple in a list of tuples `rows`,res_list = [x[0] for x in rows],2353,51,7,16,1,0,0,0,0
+22412258,Get the first element of each tuple in a list in Python,get the first element of each tuple in a list `rows`,[x[0] for x in rows],2354,51,7,42,1,0,0,0,0
+22520932,"Python, remove all non-alphabet chars from string",remove all non-alphabet chars from string `s`,""""""""""""".join([i for i in s if i.isalpha()])",2355,51,8,0,0,0,0,0,0
+22741068,How do I remove identical items from a list and sort it in Python?,remove identical items from list `my_list` and sort it alphabetically,sorted(set(my_list)),2362,51,7,58,1,0,0,0,0
+22859493,Order list by date (String and datetime),sort list `li` in descending order based on the date value in second element of each list in list `li`,"sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)",2365,51,7,24,1,0,0,0,0
+23286254,Convert List to a list of tuples python,pair each element in list `it` 3 times into a tuple,"zip(it, it, it)",2373,52,7,24,1,0,0,0,0
+23422542,Slicing a list in Django template,django jinja slice list `mylist` by '3:8',{{(mylist | slice): '3:8'}},2379,52,7,29,1,0,0,0,0
+23887881,How to repeat Pandas data frame?,duplicate data in pandas dataframe `x` for 5 times,"pd.concat([x] * 5, ignore_index=True)",2394,52,3,0,0,0,0,0,0
+26033239,List of objects to JSON with Python,convert a list of objects `list_name` to json string `json_string`,json_string = json.dumps([ob.__dict__ for ob in list_name]),2434,53,7,21,1,0,0,0,0
+27436748,Python: reduce (list of strings) -> string,"reduce the first element of list of strings `data` to a string, separated by '.'",print('.'.join([item[0] for item in data])),2461,54,7,22,1,0,0,0,0
+27659153,How to group similar items in a list?,make a list of lists in which each list `g` are the elements from list `test` which have the same characters up to the first `_` character,"[list(g) for _, g in itertools.groupby(test, lambda x: x.split('_')[0])]",2468,54,7,23,1,0,0,0,0
+27659153,How to group similar items in a list?,How to group similar items in a list?,"[list(g) for _, g in itertools.groupby(test, lambda x: x.partition('_')[0])]",2469,54,7,31,1,0,0,0,0
+28742436,Combining two numpy arrays to form an array with the largest value from each array,"create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]`","np.maximum([2, 3, 4], [1, 5, 2])",2498,55,6,0,0,0,0,0,0
+29034928,Pandas convert a column of list to dummies,convert a column of list in series `s` to dummies,pd.get_dummies(s.apply(pd.Series).stack()).sum(level=0),2506,55,7,58,1,0,0,0,0
+29422691,How to count the number of occurences of `None` in a list?,print the number of occurences of not `none` in a list `lst` in Python 2,print(len([x for x in lst if x is not None])),2519,55,7,29,1,0,0,0,0
+29471884,Get the immediate minimum among a list of numbers in python,get the next value greatest to `2` from a list of numbers `num_list`,min([x for x in num_list if x > 2]),2522,55,7,56,1,0,0,0,0
+30385151,Numpy convert scalars to arrays,convert scalar `x` to array,"x = np.asarray(x).reshape(1, -1)[(0), :]",2549,56,6,0,0,0,0,0,0
+31302904,How to index nested lists in Python?,get first element of each tuple in list `A`,[tup[0] for tup in A],2579,57,7,64,1,0,0,0,0
+31676133,Python: transform a list of lists of tuples,Convert each list in list `main_list` into a tuple,"map(list, zip(*main_list))",2589,57,7,52,1,0,0,0,0
+31743603,Create a list of integers with duplicate values in Python,create a list of integers from 1 to 5 with each value duplicated,[(i // 2) for i in range(10)],2590,57,7,32,1,0,0,0,0
+31743603,Create a list of integers with duplicate values in Python,"create a list of integers with duplicate values `[0, 0, 1, 1, 2, 2, 3, 3, 4, 4]`","[0, 0, 1, 1, 2, 2, 3, 3, 4, 4]",2591,57,7,49,1,0,0,0,0
+31743603,Create a list of integers with duplicate values in Python,make a list of integers from 0 to `5` where each second element is a duplicate of the previous element,"print([u for v in [[i, i] for i in range(5)] for u in v])",2592,57,7,33,1,0,0,0,0
+31818050,round number to nearest integer,round number `value` up to `significantDigit` decimal places,"round(value, significantDigit)",2598,57,5,0,0,0,0,0,0
+31818050,round number to nearest integer,round number 7.005 up to 2 decimal places,"round(7.005, 2)",2603,58,5,0,0,0,0,0,0
+32063985,Deleting a div with a particlular class using BeautifulSoup,remove a div with a id `main-content` using beautifulsoup,"soup.find('div', id='main-content').decompose()",2614,58,4,43,1,10,1,0,0
+32292554,Is there a cleaner way to iterate through all binary 4-tuples?,create a list containing a four elements long tuples of permutations of binary values,"itertools.product(list(range(2)), repeat=4)",2618,58,7,63,1,0,0,0,0
+32511444,Sum all values of a counter in Python,sum all the values in a counter variable `my_counter`,sum(my_counter.values()),2625,58,7,39,1,0,0,0,0
+32996293,Comparing values in two lists in Python,get a list of booleans `z` that shows wether the corresponding items in list `x` and `y` are equal,"z = [(i == j) for i, j in zip(x, y)]",2638,58,7,53,1,0,0,0,0
+34280147,How to print an entire list while not starting by the first item,print a list `l` and move first 3 elements to the end of the list,print(l[3:] + l[:3]),2660,59,7,50,1,0,0,0,0
+34437284,Sum of product of combinations in a list,sum of product of combinations in a list `l`,"sum([(i * j) for i, j in list(itertools.combinations(l, 2))])",2666,59,7,37,1,0,0,0,0
+34438901,finding the last occurrence of an item in a list python,assign the index of the last occurence of `x` in list `s` to the variable `last`,last = len(s) - s[::-1].index(x) - 1,2667,59,7,43,1,0,0,0,0
+34696853,Convert list of strings to int,convert a list of strings `lst` to list of integers,"[map(int, sublist) for sublist in lst]",2672,59,7,16,1,0,0,0,0
+35015693,How do I transform a multi-level list into a list of strings in Python?,join items of each tuple in list of tuples `a` into a list of strings,"list(map(''.join, a))",2681,60,7,33,1,0,0,0,0
+35015693,How do I transform a multi-level list into a list of strings in Python?,join elements of each tuple in list `a` into one string,[''.join(x) for x in a],2682,60,7,50,1,0,0,0,0
+35017035,Compare elements of a list of lists and return a list,convert a list of lists `a` into list of tuples of appropriate elements form nested lists,zip(*a),2683,60,7,55,1,0,0,0,0
+35269374,get count of values associated with key in dict python,count the number of True values associated with key 'success' in dictionary `d`,sum(1 if d['success'] else 0 for d in s),2690,60,1,0,0,0,0,0,0
+35707224,Functional statement in Python to return the sum of certain lists in a list of lists,sum the length of lists in list `x` that are more than 1 item in length,sum(len(y) for y in x if len(y) > 1),2698,60,7,58,1,0,0,0,0
+35797523,"Create new list by taking first item from first list, and last item from second list",create a list by appending components from list `a` and reversed list `b` interchangeably,"[value for pair in zip(a, b[::-1]) for value in pair]",2700,60,7,18,1,0,0,0,0
+36003967,Sum of multiple list of lists index wise,sum elements at the same index in list `data`,[[sum(item) for item in zip(*items)] for items in zip(*data)],2705,60,7,39,1,0,0,0,0
+36113747,How to declare an array in python,Initialize a list `a` with `10000` items and each item's value `0`,a = [0] * 10000,2706,60,7,38,1,0,0,0,0
+37004138,How to eliminate all strings from a list,get all the elements except strings from the list 'lst'.,"[element for element in lst if not isinstance(element, str)]",2719,61,7,49,1,0,0,0,0
+37004138,How to eliminate all strings from a list,eliminate all strings from list `lst`,"[element for element in lst if isinstance(element, int)]",2720,61,7,51,1,0,0,0,0
+38147259,How to work with surrogate pairs in Python?,Print a emoji from a string `\\ud83d\\ude4f` having surrogate pairs,"""""""\\ud83d\\ude4f"""""".encode('utf-16', 'surrogatepass').decode('utf-16')",2732,61,8,0,0,0,0,0,0
+38251245,Create a list of tuples with adjacent list elements if a condition is true,"create a list of tuples which contains number 9 and the number before it, for each occurrence of 9 in the list 'myList'","[(x, y) for x, y in zip(myList, myList[1:]) if y == 9]",2738,61,7,24,1,0,0,0,0
+38388799,Sort A list of Strings Based on certain field,sort list `list_of_strings` based on second index of each string `s`,"sorted(list_of_strings, key=lambda s: s.split(',')[1])",2742,61,7,43,1,0,0,0,0
+38549915,Merging data frame columns of strings into one single column in Pandas,Merge all columns in dataframe `df` into one column,"df.apply(' '.join, axis=0)",2746,61,3,0,0,0,0,0,0
+39129846,Sort list of mixed strings based on digits,sort list `l` based on its elements' digits,"sorted(l, key=lambda x: int(re.search('\\d+', x).group(0)))",2752,61,7,47,1,0,0,0,0
+39373620,How to get a max string length in nested lists,get the maximum string length in nested list `i`,"len(max(i, key=len))",2760,62,7,57,1,0,0,0,0
+39373620,How to get a max string length in nested lists,get the max string length in list `i`,max(len(word) for word in i),2761,62,7,43,1,0,0,0,0
+39646401,How to merge the elements in a list sequentially in python,merge the elements in a list `lst` sequentially,"[''.join(seq) for seq in zip(lst, lst[1:])]",2772,62,7,27,1,0,0,0,0
+39988589,"How to pass through a list of queries to a pandas dataframe, and output the list of results?","get rows of dataframe `df` where column `Col1` has values `['men', 'rocks', 'mountains']`","df[df.Col1.isin(['men', 'rocks', 'mountains'])]",2779,62,3,0,0,0,0,0,0
+40016359,Index the first and the last n elements of a list,Get the first and last 3 elements of list `l`,l[:3] + l[-3:],2781,62,7,24,1,0,0,0,0
+40313203,Add tuple to a list of tuples,Sum elements of tuple `b` to their respective elements of each tuple in list `a`,"c = [[(i + j) for i, j in zip(e, b)] for e in a]",2795,62,7,35,1,0,0,0,0
+40384599,Sorting a list of tuples by the addition of second and third element of the tuple,sort list `a` in ascending order based on the addition of the second and third elements of each tuple in it,"sorted(a, key=lambda x: (sum(x[1:3]), x[0]))",2797,63,7,56,1,0,0,0,0
+40384599,Sorting a list of tuples by the addition of second and third element of the tuple,"sorting a list of tuples `lst` by the sum of the second elements onwards, and third element of the tuple","sorted(lst, key=lambda x: (sum(x[1:]), x[0]))",2800,63,7,19,1,0,0,0,0
+40535203,How to slice a list of strings with space delimiter?,get a list of last trailing words from another list  of strings`Original_List`,new_list = [x.split()[-1] for x in Original_List],2805,63,7,27,1,0,0,0,0
+40639071,How to sum the values of list to the power of their indices,Get the sum of values to the power of their indices in a list `l`,"sum(j ** i for i, j in enumerate(l, 1))",2809,63,7,46,1,0,0,0,0
+40744328,How to order a list of lists by the first value,order a list of lists `l1` by the first value,l1.sort(key=lambda x: int(x[0])),2813,63,7,42,1,0,0,0,0
+40744328,How to order a list of lists by the first value,"order a list of lists `[[1, 'mike'], [1, 'bob']]` by the first value of individual list","sorted([[1, 'mike'], [1, 'bob']])",2814,63,7,25,1,0,0,0,0
+40852575,Slicing a multidimensional list,Get only first element in each of the innermost of the multidimensional list `listD`,[[[x[0]] for x in listD[i]] for i in range(len(listD))],2817,63,7,22,1,0,0,0,0
+41313232,delete items from list of list: pythonic way,delete items from list `my_list` if the item exist in list `to_dell`,my_list = [[x for x in sublist if x not in to_del] for sublist in my_list],2834,63,7,20,1,0,0,0,0
+41821112,How can I sum the product of two list items using for loop in python?,get the sum of the products of each pair of corresponding elements in lists `a` and `b`,"sum(x * y for x, y in zip(a, b))",2846,64,7,30,1,0,0,0,0
+41821112,How can I sum the product of two list items using for loop in python?,sum the product of each two items at the same index of list `a` and list `b`,"sum(i * j for i, j in zip(a, b))",2848,64,7,33,1,0,0,0,0
+41821112,How can I sum the product of two list items using for loop in python?,sum the product of elements of two lists named `a` and `b`,"sum(x * y for x, y in list(zip(a, b)))",2849,64,7,43,1,0,0,0,0
+42394627,python How do you sort list by occurrence with out removing elements from the list?,sort list `lst` based on each element's number of occurrences,"sorted(lst, key=lambda x: (-1 * c[x], lst.index(x)))",2871,64,7,40,1,0,0,0,0

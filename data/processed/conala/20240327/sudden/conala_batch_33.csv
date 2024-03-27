@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+179369,How do I abort the execution of a Python script?,abort the execution of the script using message 'aa! errors!',sys.exit('aa! errors!'),81,0,4,16,1,45,1,33,0
+247770,Retrieving python module path,get the path of the python module `amodule`,path = os.path.abspath(amodule.__file__),111,0,4,26,1,47,1,33,0
+455612,Limiting floats to two decimal points,limit float 3.14159 to two decimal points,('%.2f' % 3.14159),200,0,5,6,0,6,0,33,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,"print(('{0:.2f}'.format(round(a, 2))))",203,0,5,62,0,34,0,33,0
+817087,Call a function with argument list in python,call a function with argument list `args`,func(*args),331,0,4,46,1,45,1,33,0
+1185524,trim whitespace (including tabs),trim whitespace (including tabs) in `s` on the right side,s = s.rstrip(),423,2,8,0,0,14,0,33,0
+1514553,declare an array,declare an array with element 'i',intarray = array('i'),466,3,6,51,0,55,0,33,0
+2763750,How to replace only part of the match with python re.sub,insert `_suff` before the file extension in `long.file.name.jpg` or replace `_a` with `suff` if it precedes the extension.,"re.sub('(\\_a)?\\.([^\\.]*)$', '_suff.\\2', 'long.file.name.jpg')",654,8,9,47,1,49,0,33,0
+3258573,Pythonic way to insert every 2 elements in a string,Insert a character `-` after every two elements in a string `s`,"""""""-"""""".join(a + b for a, b in zip(s[::2], s[1::2]))",723,9,8,0,0,7,0,33,0
+5180365,Python Add Comma Into Number String,format floating point number  `TotalAmount` to be rounded off to two decimal places and have a comma thousands' seperator,"print('Total cost is: ${:,.2f}'.format(TotalAmount))",1042,18,5,10,0,22,0,33,0
+5503925,How do I use a dictionary to update fields in Django models?,update the fields in django model `Book` using dictionary `d`,Book.objects.create(**d),1073,18,1,16,0,38,0,33,0
+5577501,How to tell if string starts with a number?,"Check if string `strg` starts with any of the elements in list ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')","strg.startswith(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))",1079,18,0,29,0,38,0,33,0
+7595148,Python - Converting Hex to INT/CHAR,converting hex string `s` to its integer representations,[ord(c) for c in s.decode('hex')],1245,23,5,10,0,42,0,33,0
+7900882,extract item from list of dictionaries,extract dictionary from list of dictionaries based on a key's value.,[d for d in a if d['name'] == 'pluto'],1267,23,1,7,0,35,0,33,0
+8671702,Passing list of parameters to SQL in psycopg2,"pass a list of parameters `((1, 2, 3),) to sql queue 'SELECT * FROM table WHERE column IN %s;'","cur.mogrify('SELECT * FROM table WHERE column IN %s;', ((1, 2, 3),))",1347,25,7,48,1,48,0,33,0
+10408927,How to get all sub-elements of an element tree with Python ElementTree?,get all sub-elements of an element tree `a` excluding the root element,[elem.tag for elem in a.iter() if elem is not a],1489,29,7,56,1,13,0,33,0
+10972410,pandas: combine two columns in a DataFrame,combine two columns `foo` and `bar` in a pandas data frame,"pandas.concat([df['foo'].dropna(), df['bar'].dropna()]).reindex_like(df)",1534,30,3,10,0,22,0,33,0
+11924135,How to use Beautiful Soup to find a tag with changing id?,BeautifulSoup find a tag whose id ends with string 'para',soup.findAll(id=re.compile('para$')),1617,32,4,59,1,11,1,33,0
+12717716,Python: updating a large dictionary using another large dictionary,"update dictionary `b`, overwriting values where keys are identical, with contents of dictionary `d`",b.update(d),1666,34,1,27,0,48,0,33,0
+13081090,Convert binary to list of digits Python,create a list containing the digits values from binary string `x` as elements,[int(d) for d in str(bin(x))[2:]],1699,34,5,14,0,51,0,33,0
+13279399,How to obtain values of request variables using Python and Flask,Flask get value of request variable 'firstname',first_name = request.args.get('firstname'),1723,35,4,23,1,46,1,33,0
+15043326,getting string between 2 characters in python,getting the string between 2 '$' characters in '$sin (x)$ is an function of x',"re.findall('\\$(.*?)\\$', '$sin (x)$ is an function of x')",1886,39,8,0,0,8,0,33,0
+15315452,Selecting with complex criteria from pandas.DataFrame,"select values from column 'A' for which corresponding values in column 'B' will be greater than 50, and in column 'C' - equal 900 in dataframe `df`",df['A'][(df['B'] > 50) & (df['C'] == 900)],1913,40,3,41,0,58,0,33,0
+18816297,How can I get the index value of a list comprehension?,Get the index value in list `p_list` using enumerate in list comprehension,"{p.id: {'id': p.id, 'position': ind} for ind, p in enumerate(p_list)}",2164,46,7,21,1,64,0,33,0
+19410018,How to count the number of words in a sentence?,count the number of words in a string `s`,len(s.split()),2195,47,0,28,0,22,0,33,0
+20048987,How to print floating point numbers as it is without any truncation in python?,print a floating point number 2.345e-67 without any truncation,print('{:.100f}'.format(2.345e-67)),2238,48,5,45,0,58,0,33,0
+21360028,NumPy List Comprehension Syntax,Get a list comprehension in list of lists `X`,[[X[i][j] for j in range(len(X[i]))] for i in range(len(X))],2306,50,7,60,1,37,0,33,0
+21822054,How to force os.system() to use bash instead of shell,force bash interpreter '/bin/bash' to be used instead of shell,"os.system('GREPDB=""echo 123""; /bin/bash -c ""$GREPDB""')",2327,50,9,37,1,52,0,33,0
+23748995,Pandas DataFrame to list,pandas dataframe `df` column 'a' to list,df['a'].values.tolist(),2386,52,3,53,0,40,0,33,0
+27060098,Replacing few values in a pandas dataframe column with another value,replacing 'ABC' and 'AB' values in column 'BrandName' of dataframe `df` with 'A',"df['BrandName'].replace(['ABC', 'AB'], 'A')",2455,54,3,11,0,7,0,33,0
+29218750,What is the best way to remove a dictionary item by value in python?,Remove all items from a dictionary `myDict` whose values are `42`,"{key: val for key, val in list(myDict.items()) if val != 42}",2510,55,1,1,0,55,0,33,0
+31650399,find all digits between a character in python,find all digits between two characters `\xab` and `\xbb`in a string `text`,"print(re.findall('\\d+', '\n'.join(re.findall('\xab([\\s\\S]*?)\xbb', text))))",2588,57,0,6,0,54,0,33,0
+31818050,round number to nearest integer,round number 32.268907563 up to 3 decimal points,"round(32.268907563, 3)",2605,58,5,6,0,54,0,33,0
+31828240,First non-null value per row from a list of Pandas columns,get first non-null value per each row from dataframe `df`,df.stack().groupby(level=0).first(),2608,58,3,40,0,51,0,33,0
+35253971,"How to check if all values of a dictionary are 0, in Python?",check if all values of a dictionary `your_dict` are zero `0`,all(value == 0 for value in list(your_dict.values())),2689,60,1,10,0,13,0,33,0
+38231591,Splitting dictionary/list inside a Pandas Column into Separate Columns,split dictionary/list inside a pandas column 'b' into separate columns in dataframe `df`,"pd.concat([df.drop('b', axis=1), pd.DataFrame(df['b'].tolist())], axis=1)",2737,61,3,6,0,35,0,33,0
+40498088,"List comprehension - converting strings in one list, to integers in another",get list of sums of neighboring integers in string `example`,"[sum(map(int, s)) for s in example.split()]",2802,63,7,50,1,32,0,33,0
+40682209,Pandas: Fill missing values by mean in each group faster than transfrom,Replace NaN values in  column 'value' with the mean of data in column 'group' of dataframe `df`,df[['value']].fillna(df.groupby('group').transform('mean')),2811,63,3,12,0,49,0,33,0
+42060144,Conditionally fill a column of a pandas df with values of a different df,Merge column  'word' in dataframe `df2` with column 'word' on dataframe `df1`,"df1.merge(df2, how='left', on='word')",2857,64,3,12,0,5,0,33,0

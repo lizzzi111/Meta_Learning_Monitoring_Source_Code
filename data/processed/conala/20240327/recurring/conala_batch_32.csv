@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+275018,remove (chomp) a newline,remove newline in string `s` on the right side,s.rstrip(),123,0,8,0,0,32,0
+432842,get the logical xor of two variables,get logical xor of `a` and `b`,((a and (not b)) or ((not a) and b)),192,0,0,57,0,32,0
+674509,"How do I iterate over a Python dictionary, ordered by values?",sort dictionary `dictionary` in ascending order by its values,"sorted(list(dictionary.items()), key=operator.itemgetter(1))",272,0,1,10,0,32,0
+761804,Trimming a string,"trim string "" Hello """,' Hello '.strip(),320,0,8,0,0,32,0
+902408,How to use variables in SQL statement in Python?,"insert variables `(var1, var2, var3)` into sql statement 'INSERT INTO table VALUES (?, ?, ?)'","cursor.execute('INSERT INTO table VALUES (?, ?, ?)', (var1, var2, var3))",355,0,8,47,0,32,0
+988228,Convert a String representation of a Dictionary to a dictionary?,"build a dict of key:value pairs from a string representation of a dict, `{'muffin' : 'lolz', 'foo' : 'kitty'}`","ast.literal_eval(""{'muffin' : 'lolz', 'foo' : 'kitty'}"")",394,1,1,38,0,32,0
+1196074,How to start a background process in Python?,run shell command 'rm -r some.file' in the background,"subprocess.Popen(['rm', '-r', 'some.file'])",428,2,9,34,1,32,0
+3276180,Extracting date from a string in Python,extract date from a string 'monkey 20/01/1980 love banana',"dparser.parse('monkey 20/01/1980 love banana', fuzzy=True)",726,9,2,36,0,32,0
+3743222,How do I convert datetime to date (in Python)?,How do I convert datetime to date (in Python)?,datetime.datetime.now().date(),808,12,2,4,0,32,0
+3877491,deleting rows in numpy array,delete first row of array `x`,"x = numpy.delete(x, 0, axis=0)",827,12,6,46,0,32,0
+3964681,Find all files in directory with extension .txt,"Find all files in directory ""/mydir"" with extension "".txt""","os.chdir('/mydir')
+for file in glob.glob('*.txt'):
+    pass",859,13,9,39,1,32,0
+4411811,Python: define multiple variables of same type?,create list `levels` containing 3 empty dictionaries,"levels = [{}, {}, {}]",929,15,1,49,0,32,0
+4695143,Regex. Match words that contain special characters or 'http://',replace each occurrence of the pattern '(http://\\S+|\\S*[^\\w\\s]\\S*)' within `a` with '',"re.sub('(http://\\S+|\\S*[^\\w\\s]\\S*)', '', a)",973,16,0,37,0,32,0
+6407362,How can I check if a date is the same day as datetime.today()?,check if date `yourdatetime` is equal to today's date,yourdatetime.date() == datetime.today().date(),1142,20,2,61,0,32,0
+7323859,Python - How to call bash commands with pipe?,call bash command 'tar c my_dir | md5sum' with pipe,"subprocess.call('tar c my_dir | md5sum', shell=True)",1223,22,9,30,1,32,0
+7371935,Sort a string in lexicographic order python,Sort a string `s` in lexicographic order,"sorted(s, key=str.upper)",1232,22,0,5,0,32,0
+8247792,Python - How to cut a string in Python?,cut a string by delimiter '&',s.rfind('&'),1306,24,8,0,0,32,0
+9755538,How do I create a LIST of unique random numbers?,How do I create a LIST of unique random numbers?,"random.sample(list(range(100)), 10)",1445,28,7,63,1,32,0
+9760588,How do you extract a url from a string using python?,extract a url from a string `myString`,"print(re.search('(?P<url>https?://[^\\s]+)', myString).group('url'))",1449,28,8,0,0,32,0
+10624937,Convert datetime object to a String of date only in Python,format datetime in `dt` as string in format `'%m/%d/%Y`,dt.strftime('%m/%d/%Y'),1511,30,2,12,0,32,0
+11303225,How to remove multiple indexes from a list at the same time?,remove multiple values from a list `my_list` at the same time with index starting at `2` and ending just before `6`.,del my_list[2:6],1560,31,7,18,1,32,0
+13223737,how to read a file in other directory in python,open file '5_1.txt' in directory `direct`,"x_file = open(os.path.join(direct, '5_1.txt'), 'r')",1714,35,9,45,1,32,0
+13793973,Easiest way to remove unicode representations from a string in python 3?,Print string `t` with proper unicode representations,print(t.decode('unicode_escape')),1777,36,8,0,0,32,0
+14931769,get all combination of n binary value,get all combination of n binary values,"lst = map(list, itertools.product([0, 1], repeat=n))",1874,39,7,60,1,32,0
+16050952,How to remove all the punctuation in a string? (Python),"remove the punctuation '!', '.', ':' from a string `asking`","out = ''.join(c for c in asking if c not in ('!', '.', ':'))",1961,41,8,0,0,32,0
+16114333,getting the opposite diagonal of a numpy array,get the opposite diagonal of a numpy array `array`,np.diag(np.rot90(array)),1966,41,6,2,0,32,0
+17577727,"Python, Encoding output to UTF-8",decode string `content` to UTF-8 code,print(content.decode('utf8')),2068,44,8,53,0,32,0
+18391059,python - How to format variable number of arguments into a string?,how to format a list of arguments `my_args` into a string,"'Hello %s' % ', '.join(my_args)",2126,45,8,0,0,32,0
+21833383,When the key is a tuple in dictionary in Python,make all keys lowercase in dictionary `d`,"d = {(a.lower(), b): v for (a, b), v in list(d.items())}",2329,51,1,39,0,32,0
+24041436,set multi index of an existing data frame in pandas,Set multi index on columns 'Company' and 'date' of data frame `df` in pandas.,"df.set_index(['Company', 'date'], inplace=True)",2398,52,3,14,0,32,0
+24492327,Python Embedding in C++ : ImportError: No module named pyfunction,insert directory './path/to/your/modules/' to current directory,"sys.path.insert(0, './path/to/your/modules/')",2405,52,9,16,1,32,0
+26097916,"python, best way to convert a pandas series into a pandas dataframe",convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`,"pd.DataFrame({'email': sf.index, 'list': sf.values})",2437,53,3,20,0,32,0
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data of dataframe `df` where the sum of column 'X' grouped by column 'User' is equal to 0,df.loc[df.groupby('User')['X'].transform(sum) == 0],2474,54,3,7,0,32,0
+31957364,Numpy elementwise product of 3d array,elementwise product of 3d arrays `A` and `B`,"np.einsum('ijk,ikl->ijl', A, B)",2611,58,6,22,0,32,0
+35427814,Get the number of all keys in a dictionary of dictionaries in Python,get the number of all keys in the nested dictionary `dict_list`,len(dict_test) + sum(len(v) for v in dict_test.values()),2695,60,1,22,0,32,0
+37084812,How to remove decimal points in pandas,remove decimal points in pandas data frame using round,df.round(),2722,61,3,28,0,32,0
+39602824,pandas: replace string with another string,Replace each value in column 'prod_type' of dataframe `df` with string 'responsive',df['prod_type'] = 'responsive',2768,62,3,58,0,32,0
+40498088,"List comprehension - converting strings in one list, to integers in another",get list of sums of neighboring integers in string `example`,"[sum(map(int, s)) for s in example.split()]",2802,63,7,50,1,32,0
+42142756,How can I change a specific row label in a Pandas dataframe?,rename `last` row index label in dataframe `df` to `a`,df = df.rename(index={last: 'a'}),2860,64,3,1,0,32,0

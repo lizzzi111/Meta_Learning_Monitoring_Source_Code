@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+19339,inverse of zip,"unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`","zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])",14,0,7,64,1,61,0
+354038,check if a string is a number,function to check if a string is a number,isdigit(),150,0,0,13,0,61,0
+444591,convert a string of bytes into an int (python),convert string of bytes `y\xcc\xa6\xbb` into an int,"struct.unpack('<L', 'y\xcc\xa6\xbb')[0]",198,0,5,47,0,61,0
+1027714,How to execute a file within the python interpreter?,execute file 'filename.py',"exec(compile(open('filename.py').read(), 'filename.py', 'exec'))",403,1,9,61,1,61,0
+1031851,Python: Best Way to Exchange Keys with Values in a Dictionary?,swap keys with values in a dictionary `a`,"res = dict((v, k) for k, v in a.items())",404,1,1,7,0,61,0
+1303243,find out if a Python object is a string,check if `obj_to_test` is a string,"isinstance(obj_to_test, str)",444,2,0,52,0,61,0
+1555968,Efficient way to find the largest key in a dictionary with non-zero value,find the key associated with the largest value in dictionary `x` whilst key is non-zero value,"max(k for k, v in x.items() if v != 0)",475,3,1,51,0,61,0
+2233917,How to input an integer tuple from user?,input a tuple of integers from user,"tuple(int(x.strip()) for x in input().split(','))",579,6,5,2,0,61,0
+2793324,delete a list element by value,delete the element 6 from list `a`,a.remove(6),660,8,7,41,1,61,0
+2798627,How can I detect DOS line breaks in a file?,read file 'myfile.txt' using universal newline mode 'U',"print(open('myfile.txt', 'U').read())",666,8,9,24,1,61,0
+3097866,Access an arbitrary element in a dictionary in Python,access an arbitrary value from dictionary `dict`,next(iter(list(dict.values()))),704,9,1,18,0,61,0
+3961581,"In Python, how to display current time in readable format",display current time in readable format,"time.strftime('%l:%M%p %z on %b %d, %Y')",857,13,2,24,0,61,0
+4444923,Get Filename Without Extension in Python,get filename without extension from file `filename`,os.path.splitext(filename)[0],931,15,9,27,1,61,0
+5453026,String to list in Python,split string 'QH QD JC KD JS' into a list on white spaces,"""""""QH QD JC KD JS"""""".split()",1069,18,8,0,0,61,0
+6764909,Python: How to remove all duplicate items from a list,remove all duplicate items from a list `lseperatedOrblist`,woduplicates = list(set(lseperatedOrblist)),1177,21,7,39,1,61,0
+7138686,How to write a list to a file with newlines in Python3,write the elements of list `lines` concatenated by special character '\n' to file `myfile`,myfile.write('\n'.join(lines)),1198,22,9,31,1,61,0
+8344905,Pythons fastest way of randomising case of a string,randomly switch letters' cases in string `s`,""""""""""""".join(x.upper() if random.randint(0, 1) else x for x in s)",1321,25,8,0,0,61,0
+9376384,Sort a list of tuples depending on two elements,"sort a list of tuples 'unsorted' based on two elements, second and third","sorted(unsorted, key=lambda element: (element[1], element[2]))",1410,27,7,54,1,61,0
+10194713,Sorting a defaultdict by value in python,sorting a defaultdict `d` by value,"sorted(list(d.items()), key=lambda k_v: k_v[1])",1473,29,1,46,0,61,0
+11361985,Output data from all columns in a dataframe in pandas,Display maximum output data of columns in dataframe `pandas` that will fit into the screen,"pandas.set_option('display.max_columns', None)",1570,31,3,10,0,61,0
+12440342,Best way to get the nth element of each tuple from a list of tuples in Python,get the first element of each tuple from a list of tuples `G`,[x[0] for x in G],1649,33,7,31,1,61,0
+13902805,List of all unique characters in a string?,create a list of all unique characters in string 'aaabcabccd',""""""""""""".join(list(OrderedDict.fromkeys('aaabcabccd').keys()))",1786,37,0,56,0,61,0
+14961014,Removing items from unnamed lists in Python,Remove the string value `item` from a list of strings `my_sequence`,[item for item in my_sequence if item != 'item'],1879,39,8,18,0,61,0
+15286401,Print multiple arguments in python,print a string using multiple strings `name` and `score`,"print('Total score for %s is %s  ' % (name, score))",1910,40,8,0,0,61,0
+15392730,"In Python, is it possible to escape newline characters when printing a string?",Print new line character as `\n` in a string `foo\nbar`,print('foo\nbar'.encode('string_escape')),1919,40,8,0,0,61,0
+16099694,How to remove empty string in a list?,get a list `cleaned` that contains all non-empty elements in list `your_list`,cleaned = [x for x in your_list if x],1964,41,7,57,1,61,0
+16568056,Python Nested List Comprehension with two Lists,create a list of aggregation of each element from list `l2` to all elements of list `l1`,[(x + y) for x in l2 for y in l1],1995,42,7,55,1,61,0
+17071871,Select rows from a DataFrame based on values in a column in pandas,select all rows whose values in a column `column_name` equals a scalar `some_value` in pandas data frame object `df`,df.loc[df['column_name'] == some_value],2023,43,3,14,0,61,0
+17106819,Accessing Python dict values with the key start characters,get values from a dictionary `my_dict` whose key contains the string `Date`,"[v for k, v in list(my_dict.items()) if 'Date' in k]",2030,43,1,64,0,61,0
+17315881,How can I check if a Pandas dataframe's index is sorted,check if a pandas dataframe `df`'s index is sorted,all(df.index[:-1] <= df.index[1:]),2051,43,3,6,0,61,0
+18265935,Python - Create list with numbers between 2 values?,create a list of integers between 2 values `11` and `17`,"list(range(11, 17))",2117,45,5,55,0,61,0
+19819863,Converting hex to int in python,convert hex '\xff' to integer,ord('\xff'),2227,48,5,24,0,61,0
+20735384,Regex Python adding characters after a certain word,add character '@' after word 'get' in string `text`,"text = re.sub('(\\bget\\b)', '\\1@', text)",2278,49,8,0,0,61,0
+21800169,Python Pandas: Get index of rows which column matches certain value,Create a list containing the indexes of rows where the value of column 'BoolCol' in dataframe `df` are equal to True,df.iloc[np.flatnonzero(df['BoolCol'])],2322,50,3,62,0,61,0
+22904654,How to save Xlsxwriter file in certain path?,save xlsxwriter file in 'app/smth1/smth2/Expenses01.xlsx' path and assign to variable `workbook`,workbook = xlsxwriter.Workbook('app/smth1/smth2/Expenses01.xlsx'),2368,52,9,31,1,61,0
+28207743,Convert string to numpy array,convert a string 'mystr' to numpy array of integer values,"print(np.array(list(mystr), dtype=int))",2486,55,6,33,0,61,0
+29370211,pandas split string into columns,"split string in column 'stats' by ',' into separate columns in dataframe `df`","df['stats'].str[1:-1].str.split(',').apply(pd.Series).astype(float)",2515,55,3,4,0,61,0
+30747705,Parsing string containing Unicode character names,Parse a unicode string `M\\N{AMPERSAND}M\\N{APOSTROPHE}s`,'M\\N{AMPERSAND}M\\N{APOSTROPHE}s'.decode('unicode-escape'),2564,57,8,0,0,61,0
+32464280,converting currency with $ to numbers in Python pandas,remove dollar sign '$' from second to last column data in dataframe 'df' and convert the data into floats,"df[df.columns[1:]].replace('[\\$,]', '', regex=True).astype(float)",2623,58,3,40,0,61,0

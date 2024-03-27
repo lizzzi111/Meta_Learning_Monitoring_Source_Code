@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+379906,Parse String to Float or Int,parse string `a` to float,float(a),172,0,5,5,0
+613183,Sort a Python dictionary by value,Sort dictionary `dict1` by value in ascending order,"sorted(dict1, key=dict1.get)",247,0,1,5,0
+940822,"Regular expression syntax for ""match nothing""?",regular expression syntax for not to match anything,re.compile('.\\A|.\\A*|.\\A+'),375,0,0,5,0
+1024847,Add key to a dictionary,Add key 'a' to dictionary `data` with value 1,data.update(dict(a=1)),399,1,1,5,0
+1555968,Efficient way to find the largest key in a dictionary with non-zero value,get the largest key in a dictionary `x` with non-zero value,"max(k for k, v in x.items() if v != 0)",474,3,1,5,0
+2508861,Python: Convert a string to an integer,Python: Convert a string to an integer,int('  23  '),608,6,5,5,0
+2806611,What's the best way to aggregate the boolean values of a Python dictionary?,check if all boolean values in a python dictionary `dict` are true,all(dict.values()),669,8,1,5,0
+4830535,Python: How do I format a date in Jinja2?,Get the date object `date_of_manufacture` of object `car` in string  format '%Y-%m-%d',{{car.date_of_manufacture.strftime('%Y-%m-%d')}},994,16,2,5,0
+5404665,Accessing elements of python dictionary,access value associated with key 'American' of key 'Apple' from dictionary `dict`,dict['Apple']['American'],1067,18,1,5,0
+5844672,Delete an element from a dictionary,Delete an element `key` from a dictionary `d`,del d[key],1099,19,1,5,0
+5858916,Find array item in a string,check if any of the items in  `search` appear in `string`,any(x in string for x in search),1100,19,0,5,0
+6480441,2D array of objects in Python,create a 2D array of `Node` objects with dimensions `cols` columns and `rows` rows,nodes = [[Node() for j in range(cols)] for i in range(rows)],1151,20,6,5,0
+7371935,Sort a string in lexicographic order python,Sort a string `s` in lexicographic order,"sorted(s, key=str.upper)",1232,22,0,5,0
+7571635,check if a value exist in a list,check if 7 is in `a`,(7 in a),1243,23,0,5,0
+8654637,"Pythonic way to fetch all elements in a dictionary, falling between two keys?","fetch all elements in a dictionary `parent_dict`, falling between two keys 2 and 4","dict((k, v) for k, v in parent_dict.items() if 2 < k < 4)",1345,25,1,5,0
+8916302,selecting across multiple columns with python pandas?,select all rows from pandas DataFrame 'df' where the value in column 'A' is greater than 1 or less than -1 in column 'B'.,df[(df['A'] > 1) | (df['B'] < -1)],1372,26,3,5,0
+9323749,Python: Check if one dictionary is a subset of another larger dictionary,check if dictionary `subset` is a subset of dictionary `superset`,all(item in list(superset.items()) for item in list(subset.items())),1406,27,1,5,0
+9573244,Most elegant way to check if the string is empty,check if string `my_string` is empty,"if (not my_string):
+    pass",1428,27,0,5,0
+10487278,Python - How to declare and add items to an array?,declare an array,my_list = [],1496,29,6,5,0
+10565598,Numpy: How to check if array contains certain numbers?,numpy:  check if array 'a' contains all the numbers in array 'b'.,numpy.array([(x in a) for x in b]),1504,29,6,5,0
+11399384,Extract all keys from a list of dictionaries,extract all keys from a list of dictionaries `LoD`,[i for s in [list(d.keys()) for d in LoD] for i in s],1573,31,1,5,0
+11430863,How to find overlapping matches with a regexp?,find overlapping matches from a string `hello` using regex,"re.findall('(?=(\\w\\w))', 'hello')",1580,31,0,5,0
+11760095,convert binary string to numpy array,convert binary string '\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@' to numpy array,"np.fromstring('\x00\x00\x80?\x00\x00\x00@\x00\x00@@\x00\x00\x80@', dtype='<f4')",1601,32,5,5,0
+13636592,How to sort a Pandas DataFrame according to multiple criteria?,sort a pandas data frame by column `Peak` in ascending and `Weeks` in descending order,"df.sort(['Peak', 'Weeks'], ascending=[True, False], inplace=True)",1765,36,3,5,0
+14986218,From a list of lists to a dictionary,Convert a list of lists `lol` to a dictionary with key as second value of a list and value as list itself,{x[1]: x for x in lol},1882,39,1,5,0
+17438906,Combining rows in pandas,combining rows in pandas by adding their values,df.groupby(df.index).sum(),2058,44,3,5,0
+18116235,Removing letters from a list of both numbers and letters,Get only digits from a string `strs`,""""""""""""".join([c for c in strs if c.isdigit()])",2105,45,0,5,0
+18358938,Get index values of Pandas DataFrame as list?,get index values of pandas dataframe `df` as list,df.index.values.tolist(),2123,45,3,5,0
+18493677,how do i return a string from a regex match in python,return a string from a regex match with pattern '<img.*?>' in string 'line',"imtag = re.match('<img.*?>', line).group(0)",2135,46,0,5,0
+18724607,Python date string formatting,Python date string formatting,"""""""{0.month}/{0.day}/{0.year}"""""".format(my_date)",2159,46,2,5,0
+20062565,Splitting a string by using two substrings in Python,search for regex pattern 'Test(.*)print' in string `testStr` including new line character '\n',"re.search('Test(.*)print', testStr, re.DOTALL)",2241,48,0,5,0
+20230211,Create a hierarchy from a dictionary of lists,sort a dictionary `a` by values that are list type,"t = sorted(list(a.items()), key=lambda x: x[1])",2255,49,1,5,0
+23354124,"How can I ""unpivot"" specific columns from a pandas DataFrame?",unpivot first 2 columns into new columns 'year' and 'value' from a pandas dataframe `x`,"pd.melt(x, id_vars=['farm', 'fruit'], var_name='year', value_name='value')",2377,52,3,5,0
+30483977,Python - Get Yesterday's date as a string in YYYY-MM-DD format,get yesterday's date as a string in `YYYY-MM-DD` format using timedelta,(datetime.now() - timedelta(1)).strftime('%Y-%m-%d'),2552,56,2,5,0
+31405409,How to remove parentheses only around single words in a string,remove parentheses only around single words in a string `s` using regex,"re.sub('\\((\\w+)\\)', '\\1', s)",2583,57,0,5,0
+34962104,Pandas: How can I use the apply() function for a single column?,Pandas: How can I use the apply() function for a single column?,df['a'] = df['a'].apply(lambda x: x + 1),2679,59,3,5,0
+40311987,Pandas: Mean of columns with the same names,calculate the mean of columns with same name in dataframe `df`,"df.groupby(by=df.columns, axis=1).mean()",2794,62,3,5,0
+40707158,type conversion in python from int to float,Change data type of data in column 'grade' of dataframe `data_df` into float and then to int,data_df['grade'] = data_df['grade'].astype(float).astype(int),2812,63,3,5,0
+42364593,Python - Move elements in a list of dictionaries to the end of the list,move dictionaries in list `lst` to the end of the list if value of key 'language' in each dictionary is not equal to 'en',"sorted(lst, key=lambda x: x['language'] != 'en')",2868,64,1,5,0

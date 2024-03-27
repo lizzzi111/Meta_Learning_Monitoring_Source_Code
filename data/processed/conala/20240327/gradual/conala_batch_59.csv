@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+59825,How to retrieve an element from a set without removing it?,retrieve an element from a set `s` without removing it,e = next(iter(s)),38,0,7,59,1
+208894,How to base64 encode a PDF file in Python,encode a pdf file `pdf_reference.pdf` with `base64` encoding,"a = open('pdf_reference.pdf', 'rb').read().encode('base64')",88,0,9,59,1
+227459,"get the <a href=""http://en.wikipedia.org/wiki/ASCII"" rel=""nofollow noreferrer"">ASCII</a> value of a character as an int",get the ASCII value of a character as an int,ord(),97,0,5,59,0
+312443,How do you split a list into evenly sized chunks?,split a list `l` into evenly sized chunks `n`,"[l[i:i + n] for i in range(0, len(l), n)]",140,0,7,59,1
+373194,Python regex for MD5 hash,find all matches of regex pattern '([a-fA-F\\d]{32})' in string `data`,"re.findall('([a-fA-F\\d]{32})', data)",170,0,0,59,0
+403421,"How to sort a list of objects , based on an attribute of the objects?",sort a list of objects `ut` in reverse order by their `count` property,"ut.sort(key=lambda x: x.count, reverse=True)",180,0,7,59,1
+716477,join list of lists in python,get each value from a list of lists `a` using itertools,print(list(itertools.chain.from_iterable(a))),296,0,7,59,1
+843277,check if a variable exists,check if a local variable `myVar` exists,('myVar' in locals()),338,0,4,59,1
+1303243,find out if a Python object is a string,check if object `o` is a string,"isinstance(o, str)",443,2,0,59,0
+3728017,Sorting while preserving order in python,Sorting while preserving order in python,"sorted(enumerate(a), key=lambda x: x[1])",804,11,7,59,1
+3996904,Generate random integers between 0 and 9,Generate random integers between 0 and 9,"print((random.randint(0, 9)))",865,13,5,59,0
+4979542,Python - use list as function parameters,unpack the arguments out of list `params` to function `some_func`,some_func(*params),1025,17,7,59,1
+6159900,write line to file,"write line ""hi there"" to file `f`","print('hi there', file=f)",1126,20,9,59,1
+7895449,Merging a list of lists,"create a list containing flattened list `[['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]`","values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])",1265,23,7,59,1
+10960463,Non-ASCII characters in Matplotlib,set font `Arial` to display non-ascii characters in matplotlib,"matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})",1533,30,4,59,1
+11399384,Extract all keys from a list of dictionaries,create a set containing all keys names from list of dictionaries `LoD`,set([i for s in [list(d.keys()) for d in LoD] for i in s]),1575,31,1,59,0
+11533274,How can I combine dictionaries with the same keys in python?,Merge a nested dictionary `dicts` into a flat dictionary by concatenating nested values with the same key `k`,{k: [d[k] for d in dicts] for k in dicts[0]},1583,31,1,59,0
+11613284,Add items to a dictionary of lists,get a dictionary with keys from one list `keys` and values from other list `data`,"dict(zip(keys, zip(*data)))",1588,32,1,59,0
+11924135,How to use Beautiful Soup to find a tag with changing id?,BeautifulSoup find a tag whose id ends with string 'para',soup.findAll(id=re.compile('para$')),1617,32,4,59,1
+12485244,Tuple conversion to a string,convert list of tuples `L` to a string,""""""", """""".join('(' + ', '.join(i) + ')' for i in L)",1651,33,7,59,1
+13042013,Adding url to mysql row in python,adding url `url` to mysql row,"cursor.execute('INSERT INTO index(url) VALUES(%s)', (url,))",1692,34,4,59,1
+13496087,Python: How to generate a 12-digit random number?,generate a 12-digit random number,"random.randint(100000000000, 999999999999)",1751,36,5,59,0
+14524322,How to convert a date string to different format,convert a date string '2013-1-25' in format '%Y-%m-%d' to different format '%-m/%d/%y',"datetime.datetime.strptime('2013-1-25', '%Y-%m-%d').strftime('%-m/%d/%y')",1839,38,2,59,0
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",logoff computer having windows operating system using python,"subprocess.call(['shutdown', '/l '])",1861,39,4,59,1
+15286401,Print multiple arguments in python,print string including multiple variables `name` and `score`,"print(('Total score for', name, 'is', score))",1908,40,8,59,0
+18624039,Pandas reset index on series to remove multiindex,reset index of series `s`,s.reset_index(0).reset_index(drop=True),2145,46,7,59,1
+18837262,Convert Python dict into a dataframe,converting dictionary `d` into a dataframe `pd` with keys as data for column 'Date' and the corresponding values as data for column 'DateValue',"pd.DataFrame(list(d.items()), columns=['Date', 'DateValue'])",2165,46,3,59,0
+19894365,Running R script from python,running r script '/pathto/MyrScript.r' from python,"subprocess.call(['/usr/bin/Rscript', '--vanilla', '/pathto/MyrScript.r'])",2229,48,9,59,1
+20222485,List comprehension with an accumulator,List comprehension with an accumulator in range of 10,list(accumulate(list(range(10)))),2254,49,7,59,1
+20986631,How can I scroll a web page using selenium webdriver in python?,scroll a to the bottom of a web page using selenium webdriver,"driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')",2292,50,4,59,1
+21778118,Counting the number of non-NaN elements in a numpy ndarray matrix in Python,count the number of non-nan elements in a numpy ndarray matrix `data`,np.count_nonzero(~np.isnan(data)),2317,50,6,59,0
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data from dataframe `df` where column 'X' is equal to 0,df.groupby('User')['X'].transform(sum) == 0,2475,54,3,59,0
+28667684,Python Requests getting SSLerror,request url 'https://www.reporo.com/' without verifying SSL certificates,"requests.get('https://www.reporo.com/', verify=False)",2494,55,4,59,1
+28773683,Combine two Pandas dataframes with the same index,Combine two Pandas dataframes with the same index,"pandas.concat([df1, df2], axis=1)",2501,55,3,59,0
+30729735,finding index of multiple items in a list,finding the index of elements containing substring 'how' and 'what' in a list of strings 'myList'.,"[i for i, j in enumerate(myList) if 'how' in j.lower() or 'what' in j.lower()]",2562,56,0,59,0
+32722143,Flask application traceback doesn't show up in server log,run flask application `app` in debug mode.,app.run(debug=True),2628,58,4,59,1
+33078554,Mapping dictionary value to list,get a list from a list `lst` with values mapped into a dictionary `dct`,[dct[k] for k in lst],2642,59,7,59,1
+33127636,PUT Request to REST API using Python,Execute a put request to the url `url`,"response = requests.put(url, data=json.dumps(data), headers=headers)",2643,59,4,59,1
+40273313,How to extract first two characters from string using regex,use regex pattern '^12(?=.{4}$)' to remove digit 12 if followed by 4 other digits in column `c_contofficeID` of dataframe `df`,"df.c_contofficeID.str.replace('^12(?=.{4}$)', '')",2793,62,3,59,0

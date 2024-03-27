@@ -1,0 +1,48 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+319426,case insensitive string comparison,case insensitive string comparison between `string1` and `string2`,(string1.lower() == string2.lower()),144,0,0,7,0
+518021,Getting the length of an array,Getting the length of array `s`,len(s),225,0,6,7,0
+642154,convert strings into integers,convert items in `T1` to integers,"T2 = [map(int, x) for x in T1]",259,0,5,7,0
+940822,"Regular expression syntax for ""match nothing""?",create a regular expression object with a pattern that will match nothing,re.compile('a^'),376,0,0,7,0
+1031851,Python: Best Way to Exchange Keys with Values in a Dictionary?,swap keys with values in a dictionary `a`,"res = dict((v, k) for k, v in a.items())",404,1,1,7,0
+1823058,print number with commas as thousands separators,print number `value` as thousands separators,"'{:,}'.format(value)",511,4,5,7,0
+2317134,How do I use a regular expression to match a name?,Match regex '[a-zA-Z][\\w-]*\\Z' on string 'A\n',"re.match('[a-zA-Z][\\w-]*\\Z', 'A\n')",585,6,0,7,0
+2984751,Django filter by hour,django filter by hour,Entry.objects.filter(pub_date__contains='08:00'),690,8,2,7,0
+3276180,Extracting date from a string in Python,extract date from a string `monkey 10/01/1980 love banana`,"dparser.parse('monkey 10/01/1980 love banana', fuzzy=True)",727,9,2,7,0
+4004550,Converting string series to float list,Converting string lists `s` to float list,"floats = map(float, s.split())",867,13,5,7,0
+4940032,Search for string in txt file,Search for string 'blabla' in txt file 'example.txt',"if ('blabla' in open('example.txt').read()):
+    pass",1023,17,0,7,0
+5577501,How to tell if string starts with a number?,check if string `string` starts with a number,string[0].isdigit(),1078,18,0,7,0
+7271482,python getting a list of value from list of dict,generate a list containing values associated with the key 'value' of each dictionary inside list `list_of_dicts`,[x['value'] for x in list_of_dicts],1217,22,1,7,0
+7555335,How to convert a string from CP-1251 to UTF-8?,How to convert a string from CP-1251 to UTF-8?,d.decode('cp1251').encode('utf8'),1240,23,8,7,0
+7900882,extract item from list of dictionaries,extract dictionary from list of dictionaries based on a key's value.,[d for d in a if d['name'] == 'pluto'],1267,23,1,7,0
+8380389,how to get day name in datetime in python,Get day name from a datetime object,date.today().strftime('%A'),1324,25,2,7,0
+8899905,Count number of occurrences of a given substring in a string,"count number of occurrences of a substring 'ab' in a string ""abcdabcva""","""""""abcdabcva"""""".count('ab')",1366,26,0,7,0
+9849192,sorting values of python dict using sorted builtin function,reverse sort items in dictionary `mydict` by value,"sorted(iter(mydict.items()), key=itemgetter(1), reverse=True)",1453,28,1,7,0
+10607688,how to create a file name with the current date & time in python?,create a datetime with the current date & time,datetime.datetime.now(),1509,29,2,7,0
+10716796,How to convert a string to its Base-10 representation?,convert a string `s` to its base-10 representation,"int(s.encode('hex'), 16)",1521,30,5,7,0
+11840111,Divide the values of two dictionaries in python,divide the value for each key `k` in dict `d2` by the value for the same key `k` in dict `d1`,{k: (d2[k] / d1[k]) for k in list(d1.keys()) & d2},1614,32,1,7,0
+13840883,Use of findall and parenthesis in Python,Find all words containing letters between A and Z in string `formula`,"re.findall('\\b[A-Z]', formula)",1782,36,0,7,0
+14043934,time offset,subtract 1 hour and 10 minutes from time object `t`,"(t - datetime.timedelta(hours=1, minutes=10))",1802,37,2,7,0
+15411107,Delete a dictionary item if the key exists,Delete an item with key `key` from `mydict`,"try:
+    del mydict[key]
+except KeyError:
+    pass
+try:
+    del mydict[key]
+except KeyError:
+    pass",1922,40,1,7,0
+17284947,regex to get all text outside of brackets,get all text that is not enclosed within square brackets in string `example_str`,"re.findall('(.*?)\\[.*?\\]', example_str)",2048,43,0,7,0
+17627531,Sort list of date strings,sort list of date strings 'd',"sorted(d, key=lambda x: datetime.datetime.strptime(x, '%m-%Y'))",2073,44,2,7,0
+17926273,How to count distinct values in a column of a pandas group by object?,How to count distinct values in a column of a pandas group by object?,"df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()",2092,44,3,7,0
+18695605,python pandas dataframe to dictionary,convert pandas DataFrame `df` to a dictionary using `id` field as the key,df.set_index('id').to_dict(),2155,46,3,7,0
+20894525,How to remove parentheses and all data within using Pandas/Python?,replace parentheses and all data within it with empty string '' in column 'name' of dataframe `df`,"df['name'].str.replace('\\(.*\\)', '')",2287,49,3,7,0
+21805490,Python Regex - checking for a capital letter with a lowercase after,python regex - check for a capital letter with a following lowercase in string `string`,"re.sub('^[A-Z0-9]*(?![a-z])', '', string)",2326,50,0,7,0
+24082784,pandas dataframe groupby datetime month,Group a pandas data frame by monthly frequenct `M` using groupby,df.groupby(pd.TimeGrouper(freq='M')),2400,52,3,7,0
+25817930,Fastest way to sort each row in a pandas dataframe,sort each row in a pandas dataframe `df` in descending order,"df.sort(axis=1, ascending=False)",2431,53,3,7,0
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data of dataframe `df` where the sum of column 'X' grouped by column 'User' is equal to 0,df.loc[df.groupby('User')['X'].transform(sum) == 0],2474,54,3,7,0
+29815129,Pandas DataFrame to List of Dictionaries,convert dataframe `df` to list of dictionaries including the index values,df.to_dict('index'),2531,56,3,7,0
+38535931,Pandas: Delete rows based on multiple columns values,pandas: delete rows in dataframe `df` based on multiple columns values,"df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()",2745,61,3,7,0
+38708621,How to calculate percentage of sparsity for a numpy array/matrix?,calculate ratio of sparsity in a numpy array `a`,np.isnan(a).sum() / np.prod(a.shape),2748,61,6,7,0
+38862349,Regex: How to match words without consecutive vowels?,Create a list containing words that contain vowel letter followed by the same vowel in file 'file.text',"[w for w in open('file.txt') if not re.search('[aeiou]{2}', w)]",2750,61,0,7,0
+41067960,How to convert a list of multiple integers into a single integer?,convert a list of integers into a single integer,"r = int(''.join(map(str, x)))",2822,63,5,7,0
+41861705,Merging two pandas dataframes,"Create new DataFrame object by merging columns ""key"" of  dataframes `split_df` and `csv_df` and rename the columns from dataframes `split_df` and `csv_df` with suffix `_left` and `_right` respectively","pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))",2850,64,3,7,0

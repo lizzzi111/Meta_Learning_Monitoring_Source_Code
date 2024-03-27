@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+72899,How do I sort a list of dictionaries by values of the dictionary in Python?,How do I sort a list of dictionaries by values of the dictionary in Python?,list_of_dicts.sort(key=operator.itemgetter('name')),42,0,1,39,0,41,0
+120656,Directory listing,list all files in directory `path`,os.listdir(path),70,0,9,13,1,41,0
+275018,remove (chomp) a newline,remove newline in string `s` on the left side,s.lstrip(),128,0,8,0,0,41,0
+587647,How to increment a value with leading zeroes?,increment a value with leading zeroes in a number `x`,str(int(x) + 1).zfill(len(x)),241,0,5,3,0,41,0
+627435,remove an element from a list by index,remove the last element in list `a`,del a[(-1)],250,0,7,40,1,41,0
+627435,remove an element from a list by index,remove the element in list `a` with index 1,a.pop(1),254,0,7,19,1,41,0
+716477,join list of lists in python,get each value from a list of lists `a` using itertools,print(list(itertools.chain.from_iterable(a))),296,0,7,59,1,41,0
+1082413,Sort a list of strings based on regular expression match or something similar,sort list `strings` in alphabetical order based on the letter after percent character `%` in each element,"strings.sort(key=lambda str: re.sub('.*%(.).*', '\\1', str))",413,1,0,20,0,41,0
+1823058,print number with commas as thousands separators,print number `value` as thousands separators,"'{:,}'.format(value)",511,4,5,7,0,41,0
+3437059,string contains substring,check if string `needle` is in `haystack`,"if (needle in haystack):
+    pass",763,10,0,62,0,41,0
+3673428,Convert int to ASCII and back in Python,convert ascii value 'a' to int,ord('a'),798,11,5,63,0,41,0
+3735814,Check for a key pattern in a dictionary in python,Check if any key in the dictionary `dict1` starts with the string `EMP$$`,any(key.startswith('EMP$$') for key in dict1),806,11,1,3,0,41,0
+4108561,How to exclude a character from a regex group?,How to exclude a character from a regex group?,re.compile('[^a-zA-Z0-9-]+'),876,13,0,22,0,41,0
+4267019,Double-decoding unicode in python,encode `u'X\xc3\xbcY\xc3\x9f'` as unicode and decode with utf-8,'X\xc3\xbcY\xc3\x9f'.encode('raw_unicode_escape').decode('utf-8'),904,14,8,0,0,41,0
+4644025,Python how to sort this list?,Sort a list 'lst' in descending order.,"sorted(lst, reverse=True)",963,15,7,52,1,41,0
+4668619,Django database query: How to filter objects by date range?,filter the objects in django model 'Sample' between date range `2011-01-01` and `2011-01-31`,"Sample.objects.filter(date__range=['2011-01-01', '2011-01-31'])",968,16,2,2,0,41,0
+6591931,Getting file size in Python?,get the  size of file 'C:\\Python27\\Lib\\genericpath.py',os.stat('C:\\Python27\\Lib\\genericpath.py').st_size,1161,21,9,36,1,41,0
+7173850,Possible to get user input without inserting a new line?,"get user input using message 'Enter name here: ' and insert it to the first placeholder in string 'Hello, {0}, how do you do?'","print('Hello, {0}, how do you do?'.format(input('Enter name here: ')))",1204,22,8,0,0,41,0
+8217613,How to get data from command line from within a Python program?,"get the output of a subprocess command `echo ""foo""` in command line","subprocess.check_output('echo ""foo""', shell=True)",1301,24,9,32,1,41,0
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a list of strings,[item[0] for item in queryresult],1352,25,7,21,1,41,0
+8712332,Array indexing in numpy,retrieve all items in an numpy array 'x' except the item of the index 1,"x[(np.arange(x.shape[0]) != 1), :, :]",1355,26,6,29,0,41,0
+8785554,How do I insert a list at the front of another list?,insert a list `k` at the front of list `a`,"a.insert(0, k)",1363,26,7,56,1,41,0
+10484261,Find dictionary items whose key matches a substring,create a list of values from the dictionary `programs` that have a key with a case insensitive match to 'new york',"[value for key, value in list(programs.items()) if 'new york' in key.lower()]",1493,29,1,28,0,41,0
+10562778,Replacing characters in a file,replace character 'a' with character 'e' and character 's' with character '3' in file `contents`,"newcontents = contents.replace('a', 'e').replace('s', '3')",1502,29,8,0,0,41,0
+11619169,How do I convert a datetime.date object into datetime.datetime in python?,convert Date object `dateobject` into a DateTime object,"datetime.datetime.combine(dateobject, datetime.time())",1589,32,2,13,0,41,0
+11620914,Removing nan values from an array,remove Nan values from array `x`,x = x[numpy.logical_not(numpy.isnan(x))],1590,32,6,4,0,41,0
+12883376,Remove the first word in a Python string?,remove first word in string `s`,"s.split(' ', 1)[1]",1683,34,8,0,0,41,0
+16566069,Url decode UTF-8 in Python,decode url `url` with utf8 and print it,print(urllib.parse.unquote(url).decode('utf8')),1994,42,8,0,0,41,0
+16735786,How to generate unique equal hash for equal dictionaries?,generate unique equal hash for equal dictionaries `a` and `b`,hash(pformat(a)) == hash(pformat(b)),1999,42,1,21,0,41,0
+16866261,Detecting non-ascii characters in unicode string,"Strip all non-ASCII characters from a unicode string, `\xa3\u20ac\xa3\u20ac`","print(set(re.sub('[\x00-\x7f]', '', '\xa3\u20ac\xa3\u20ac')))",2008,42,8,0,0,41,0
+17038426,splitting a string based on tab in the file,split a string `yas` based on tab '\t',"re.split('\\t+', yas.rstrip('\t'))",2018,43,8,0,0,41,0
+18454570,How can i subtract two strings in python?,"remove substring 'bag,' from a string 'lamp, bag, mirror'","print('lamp, bag, mirror'.replace('bag,', ''))",2131,45,8,0,0,41,0
+21206395,write to csv from DataFrame python pandas,Write column 'sum' of DataFrame `a` to csv file 'test.csv',"a.to_csv('test.csv', cols=['sum'])",2300,50,3,30,0,41,0
+21805490,Python Regex - checking for a capital letter with a lowercase after,python regex - check for a capital letter with a following lowercase in string `string`,"re.sub('^[A-Z0-9]*(?![a-z])', '', string)",2326,50,0,7,0,41,0
+24722212,Python cant find module in the same folder,add a path `/path/to/2014_07_13_test` to system path,sys.path.append('/path/to/2014_07_13_test'),2409,53,9,42,1,41,0
+28901311,Numpy: find index of elements in one array that occur in another array,get index of elements in array `A` that occur in another array `B`,"np.where(np.in1d(A, B))[0]",2503,55,6,14,0,41,0
+31767173,How do I vectorize this loop in numpy?,find the index of the maximum value in the array `arr` where the boolean condition in array `cond` is true,"np.ma.array(np.tile(arr, 2).reshape(2, 3), mask=~cond).argmax(axis=1)",2593,57,6,17,0,41,0
+41513324,Python Pandas: drop rows of a timeserie based on time range,Drop the rows in pandas timeseries `df` from the row containing index `start_remove` to the row containing index `end_remove`,df.loc[(df.index < start_remove) | (df.index > end_remove)],2838,64,3,8,0,41,0
+42178481,How to count the number of a specific character at the end of a string ignoring duplicates?,count the number of trailing question marks in string `my_text`,len(my_text) - len(my_text.rstrip('?')),2862,64,0,2,0,41,0

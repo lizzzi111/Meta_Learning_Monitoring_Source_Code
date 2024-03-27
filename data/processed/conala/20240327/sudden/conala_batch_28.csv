@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+209513,Convert hex string to int,"Convert hex string ""a"" to integer","int('a', 16)",91,0,5,25,0,30,0,28,0
+275018,remove (chomp) a newline,remove newline in string 'Unix EOL\n' on the right side,'Unix EOL\n'.rstrip('\r\n'),122,0,8,0,0,17,0,28,0
+275018,remove (chomp) a newline,remove trailing newline in string 'test string \n\n','test string \n\n'.rstrip('\n'),125,0,8,0,0,59,0,28,0
+849674,Simple threading in Python 2.6 using thread.start_new_thread(),start a new thread for `myfunction` with parameters 'MyStringHere' and 1,"thread.start_new_thread(myfunction, ('MyStringHere', 1))",345,0,4,58,1,10,1,28,0
+930865,how to sort by a computed value in django,sort objects in model `Profile` based on Theirs `reputation` attribute,"sorted(Profile.objects.all(), key=lambda p: p.reputation)",366,0,4,34,1,45,1,28,0
+973473,Getting a list of all subdirectories in the current directory,getting a list of all subdirectories in the directory `directory`,os.walk(directory),388,1,9,31,1,48,0,28,0
+1720421,concatenate lists,iterate items in lists `listone` and `listtwo`,"for item in itertools.chain(listone, listtwo):
+    pass",493,3,7,43,1,17,0,28,0
+1957273,"How do I generate a random string (of length X, a-z only) in Python?",generate a random string of length `x`  containing lower cased ASCII letters,""""""""""""".join(random.choice(string.lowercase) for x in range(X))",529,4,8,0,0,62,0,28,0
+2051744,Reverse Y-Axis in PyPlot,reverse all x-axis points in pyplot,plt.gca().invert_xaxis(),537,5,4,62,1,47,1,28,0
+2597099,Sorting numbers in string format with Python,Sort a list of integers `keys` where each value is in string format,keys.sort(key=lambda x: [int(y) for y in x.split('.')]),621,7,1,32,0,35,0,28,0
+2847272,"Python string formatting when string contains ""%s"" without escaping","replace fields delimited by braces {} in string ""Day old bread, 50% sale {0}"" with string 'today'","""""""Day old bread, 50% sale {0}"""""".format('today')",673,8,8,0,0,5,0,28,0
+3296499,Case insensitive dictionary search with Python,convert keys in dictionary `thedict` into case insensitive,theset = set(k.lower() for k in thedict),744,10,1,3,0,17,0,28,0
+3518778,read csv into record array,read csv file 'myfile.csv' into array,"np.genfromtxt('myfile.csv', delimiter=',', dtype=None)",785,11,6,11,0,35,0,28,0
+4270742,How to remove whitespace in BeautifulSoup,remove newlines and whitespace from string `yourstring`,"re.sub('[\\ \\n]{2,}', '', yourstring)",905,14,8,0,0,18,0,28,0
+5255657,How can I disable logging while running unit tests in Python Django?,disable logging while running unit tests in python django,logging.disable(logging.CRITICAL),1052,18,4,57,1,27,1,28,0
+7571635,check if a value exist in a list,check if 7 is in `a`,(7 in a),1243,23,0,5,0,13,0,28,0
+9554544,"Python, running command line tools in parallel",subprocess run command 'start command -flags arguments' through the shell,"subprocess.call('start command -flags arguments', shell=True)",1423,27,9,58,1,19,0,28,0
+10857924,Remove NULL columns in a dataframe Pandas?,remove null columns in a dataframe `df`,"df = df.dropna(axis=1, how='all')",1528,30,3,14,0,6,0,28,0
+11066400,Remove punctuation from Unicode formatted strings,substitute occurrences of unicode regex pattern u'\\p{P}+' with empty string '' in string `text`,"return re.sub('\\p{P}+', '', text)",1545,30,8,15,0,35,0,28,0
+13093727,How to replace unicode characters in string with something else python?,replace unicode characters ''\u2022' in string 'str' with '*',"str.decode('utf-8').replace('\u2022', '*')",1700,34,8,11,0,42,0,28,0
+13295735,How can I replace all the NaN values with Zero's in a column of a pandas dataframe,replace all the nan values with 0 in a pandas dataframe `df`,df.fillna(0),1727,35,3,3,0,38,0,28,0
+13627865,Is it possible to define global variables in a function in Python,define global variable `something` with value `bob`,globals()['something'] = 'bob',1761,36,4,29,1,26,1,28,0
+14247586,Python Pandas How to select rows with one or more nulls from a DataFrame without listing columns explicitly?,get data of columns with Null values in dataframe `df`,df[pd.isnull(df).any(axis=1)],1816,37,3,1,0,38,0,28,0
+15548506,Node labels using networkx,Draw node labels `labels` on networkx graph `G ` at position `pos`,"networkx.draw_networkx_labels(G, pos, labels)",1934,40,4,54,1,12,1,28,0
+16389188,How to center a window with PyGObject,pygobject center window `window`,window.set_position(Gtk.WindowPosition.CENTER),1988,42,4,31,1,25,1,28,0
+17149561,How to find a value in a list of python dictionaries?,"Check if the value of the key ""name"" is ""Test"" in a list of dictionaries `label`",any(d['name'] == 'Test' for d in label),2041,43,1,48,0,6,0,28,0
+17960441,"in Numpy, how to zip two 2-D arrays?",join each element in array `a` with element at the same index in array `b` as a tuple,"np.array([zip(x, y) for x, y in zip(a, b)])",2094,44,6,33,0,8,0,28,0
+18524642,Convert list of lists to list of integers,convert a list of lists `L` to list of integers,L = [int(''.join([str(y) for y in x])) for x in L],2141,46,7,25,1,54,0,28,0
+19601086,Click a href button with selenium and python?,click a href button with text 'Send InMail' with selenium,driver.find_element_by_link_text('Send InMail').click(),2208,47,4,24,1,27,1,28,0
+19939084,how to plot arbitrary markers on a pandas data series?,plot point marker '.' on series `ts`,ts.plot(marker='.'),2232,48,4,63,1,11,1,28,0
+19954469,How to get the resolution of a monitor in Pygame?,Set the resolution of a monitor as `FULLSCREEN` in pygame,"pygame.display.set_mode((0, 0), pygame.FULLSCREEN)",2234,48,4,53,1,28,1,28,0
+20084487,Use index in pandas to plot data,plot data of column 'index' versus column 'A' of dataframe `monthly_mean` after resetting its index,"monthly_mean.reset_index().plot(x='index', y='A')",2244,48,3,12,0,7,0,28,0
+21800169,Python Pandas: Get index of rows which column matches certain value,get index of rows in dataframe `df` which column 'BoolCol' matches value True,df[df['BoolCol']].index.tolist(),2320,50,3,35,0,1,0,28,0
+22712292,How to use `numpy.savez` in a loop for save more than one array?,"Save array at index 0, index 1 and index 8 of array `np` to tmp file `tmp`","np.savez(tmp, *[getarray[0], getarray[1], getarray[8]])",2360,51,6,36,0,43,0,28,0
+28767642,How to compare two lists in python,Compare if each value in list `a` is less than respective index value in list `b`,"all(i < j for i, j in zip(a, b))",2499,55,7,52,1,50,0,28,0
+38147447,How to remove square bracket from pandas dataframe,set data in column 'value' of dataframe `df` equal to first element of each list,df['value'] = df['value'].str[0],2734,61,3,62,0,34,0,28,0
+38331568,Return the column name(s) for a specific value in a pandas dataframe,return the column for value 38.15 in dataframe `df`,"df.ix[:, (df.loc[0] == 38.15)].columns",2740,61,3,14,0,3,0,28,0
+38708621,How to calculate percentage of sparsity for a numpy array/matrix?,calculate ratio of sparsity in a numpy array `a`,np.isnan(a).sum() / np.prod(a.shape),2748,61,6,7,0,5,0,28,0
+41923858,Mapping a string into a list of pairs,create a list containing each two adjacent letters in string `word` as its elements,"[(x + y) for x, y in zip(word, word[1:])]",2852,64,7,20,1,0,0,28,0

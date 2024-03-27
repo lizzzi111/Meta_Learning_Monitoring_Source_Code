@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+209513,Convert hex string to int,"Convert hex string ""a"" to integer","int('a', 16)",91,0,5,25,0,30,0
+436599,Python Split String,truncate string `s` up to character ':',"s.split(':', 1)[1]",194,0,8,0,0,30,0
+455612,Limiting floats to two decimal points,limit float 13.949999999999999 to two decimal points,'{0:.2f}'.format(13.95),199,0,5,48,0,30,0
+652291,sorting a list of dictionary values by date in python,sort a list of dictionary values by 'date' in reverse order,"list.sort(key=lambda item: item['date'], reverse=True)",262,0,1,47,0,30,0
+674764,string find,find the index of sub string 'a' in string `str`,str.find('a'),278,0,0,37,0,30,0
+1038824,remove a substring from the end of a string,"remove a substring "".com"" from the end of string `url`","print(url.replace('.com', ''))",406,1,8,0,0,30,0
+2030053,Random strings in Python,Get a random string of length `length`,return ''.join(random.choice(string.lowercase) for i in range(length)),534,4,8,0,0,30,0
+2075128,"Python, print all floats to 2 decimal places in output","Format all floating variables `var1`, `var2`, `var3`, `var1` to print to two decimal places.","print('%.2f kg = %.2f lb = %.2f gal = %.2f l' % (var1, var2, var3, var4))",548,5,5,53,0,30,0
+2759323,How can I list the contents of a directory in Python?,list the contents of a directory '/home/username/www/',os.listdir('/home/username/www/'),653,8,9,55,1,30,0
+3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (k, v) in list(d.items()):
+    pass",737,10,1,2,0,30,0
+3320406,How to check if a path is absolute path or relative path in cross platform way with Python?,check if path `my_path` is an absolute path,os.path.isabs(my_path),746,10,9,22,1,30,0
+3559559,How to delete a character from a string using python?,How to delete a character from a string using python?,"newstr = oldstr.replace('M', '')",791,11,8,45,0,30,0
+3925465,Repeating elements in list comprehension,get list of duplicated elements in range of 3,"[y for x in range(3) for y in [x, x]]",839,12,7,17,1,30,0
+5796238,Python convert decimal to hex,return the conversion of decimal `d` to hex without the '0x' prefix,hex(d).split('x')[1],1090,19,5,3,0,30,0
+5932059,Partitioning a string in Python by a regular expression,split a string into a list of words and whitespace,"re.split('(\\W+)', s)",1111,19,8,36,0,30,0
+7243750,Download file from web in Python 3,download the file from url `url` and save it under file `file_name`,"urllib.request.urlretrieve(url, file_name)",1206,22,9,28,1,30,0
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a string `emaillist`,emaillist = '\n'.join(item[0] for item in queryresult),1353,25,7,44,1,30,0
+8901996,How to print container object with unicode-containing values?,decode utf-8 code `x` into a raw unicode literal,print(str(x).decode('raw_unicode_escape')),1367,26,8,0,0,30,0
+9609375,how to call multiple bash functions using | in python,call multiple bash function ‘vasp’ and ‘tee tee_output’ using ‘|’,"subprocess.check_call('vasp | tee tee_output', shell=True)",1432,28,9,60,1,30,0
+9743134,Python Regex Split Keeps Split Pattern Characters,split a string `Docs/src/Scripts/temp` by `/` keeping `/` in the result,"""""""Docs/src/Scripts/temp"""""".replace('/', '/\x00/').split('\x00')",1442,28,8,0,0,30,0
+9841303,Removing duplicate characters from a string,"removing duplicate characters from a string variable ""foo""",""""""""""""".join(set(foo))",1452,28,8,0,0,30,0
+10408927,How to get all sub-elements of an element tree with Python ElementTree?,get all sub-elements of an element `a` in an elementtree,[elem.tag for elem in a.iter()],1490,29,7,49,1,30,0
+10472907,How to convert dictionary into string,convert dictionary `adict` into string,""""""""""""".join('{}{}'.format(key, val) for key, val in list(adict.items()))",1491,29,1,40,0,30,0
+12280143,How to move to one folder back in python,Change the current directory one level up,os.chdir('..'),1633,33,9,43,1,30,0
+13656519,Python . How to get rid of '\r' in string?,strip a string `line` of all carriage returns and newlines,line.strip(),1768,36,8,0,0,30,0
+14673394,python pandas extract unique dates from time series,extract unique dates from time series 'Date' in dataframe `df`,df['Date'].map(lambda t: t.date()).unique(),1848,38,3,61,0,30,0
+17117912,Python Accessing Values in A List of Dictionaries,create a list where each element is a value of the key 'Name' for each dictionary `d` in the list `thisismylist`,[d['Name'] for d in thisismylist],2033,43,1,2,0,30,0
+17141558,How to sort a dataFrame in python pandas by two or more columns?,sort a pandas data frame with column `a` in ascending and `b` in descending order,"df1.sort(['a', 'b'], ascending=[True, False], inplace=True)",2038,43,3,4,0,30,0
+17815945,Convert generator object to a dictionary,convert generator object to a dictionary,{i: (i * 2) for i in range(10)},2086,44,1,4,0,30,0
+17960441,"in Numpy, how to zip two 2-D arrays?",zip two 2-d arrays `a` and `b`,"np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)",2095,45,6,10,0,30,0
+18723580,"python: rstrip one exact string, respecting order",strip the string `.txt` from anywhere in the string `Boat.txt.txt`,"""""""Boat.txt.txt"""""".replace('.txt', '')",2158,46,8,0,0,30,0
+18837262,Convert Python dict into a dataframe,converting dictionary `d` into a dataframe `pd` with keys as data for column 'Date' and the corresponding values as data for column 'DateValue',"pd.DataFrame(list(d.items()), columns=['Date', 'DateValue'])",2165,46,3,59,0,30,0
+20059427,Python: using a dict to speed sorting of a list of tuples,create a dictionary `list_dict` containing each tuple in list `tuple_list` as values and the tuple's first element as the corresponding key,list_dict = {t[0]: t for t in tuple_list},2240,48,1,36,0,30,0
+21558999,Pandas: How can I remove duplicate rows from DataFrame and calculate their frequency?,remove duplicate rows from dataframe `df1` and calculate their frequency,"df1.groupby(['key', 'year']).size().reset_index()",2310,50,3,18,0,30,0
+21684346,How to display a pdf that has been downloaded in python,display a pdf  file that has been downloaded as `my_pdf.pdf`,webbrowser.open('file:///my_pdf.pdf'),2314,50,9,28,1,30,0
+26724275,Removing the first folder in a path,remove first directory from path '/First/Second/Third/Fourth/Fifth',os.path.join(*x.split(os.path.sep)[2:]),2448,54,9,16,1,30,0
+33058590,Pandas Dataframe: Replacing NaN with row average,replacing nan in the dataframe `df` with row average,"df.fillna(df.mean(axis=1), axis=1)",2640,58,3,10,0,30,0
+39187788,Find rows with non zero values in a subset of columns in pandas dataframe,find rows with non zero values in a subset of columns where `df.dtypes` is not equal to `object` in pandas dataframe,"df.loc[(df.loc[:, (df.dtypes != object)] != 0).any(1)]",2754,61,3,47,0,30,0
+39268928,Python: how to get rid of spaces in str(dict)?,"remove all spaces from a string converted from dictionary `{'a': 1, 'b': 'as df'}`","str({'a': 1, 'b': 'as df'}).replace(': ', ':').replace(', ', ',')",2756,61,1,21,0,30,0

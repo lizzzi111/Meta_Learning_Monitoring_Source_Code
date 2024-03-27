@@ -1,0 +1,43 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+647515,How can I know python's path under windows?,get the path of Python executable under windows,os.path.dirname(sys.executable),261,0,9,45,1,19,0
+804995,How to use subprocess when multiple arguments contain spaces?,Call a subprocess with arguments `c:\\Program Files\\VMware\\VMware Server\\vmware-cmd.bat` that may contain spaces,subprocess.Popen(['c:\\Program Files\\VMware\\VMware Server\\vmware-cmd.bat']),330,0,9,12,1,19,0
+2587402,Sorting Python list based on the length of the string,sort list `xs` in ascending order of length of elements,"xs.sort(lambda x, y: cmp(len(x), len(y)))",619,7,7,54,1,19,0
+2600191,count the occurrences of a list item,count the occurrences of items in list `l`,"dict(((x, l.count(x)) for x in set(l)))",629,7,7,20,1,19,0
+2606976,How to replace empty string with zero in comma-separated string?,"split string `s` into a list of strings based on ',' then replace empty strings with zero",""""""","""""".join(x or '0' for x in s.split(','))",632,7,8,31,0,19,0
+2612802,copy a list,deep copy list `old_list` as `new_list`,new_list = copy.deepcopy(old_list),633,7,7,54,1,19,0
+2878084,Sort a list of dicts by dict values,sort a list `l` of dicts by dict value 'title',l.sort(key=lambda x: x['title']),676,8,1,47,0,19,0
+3160752,Removing backslashes from a string in Python,remove backslashes from string `result`,"result.replace('\\', '')",709,9,8,0,0,19,0
+3252590,Python: Finding a (string) key in a dictionary that contains a substring,Find all the items from a dictionary `D` if the key contains the string `Light`,"[(k, v) for k, v in D.items() if 'Light' in k]",722,9,1,31,0,19,0
+3964681,Find all files in directory with extension .txt,"Find all files in directory ""/mydir"" with extension "".txt""","for (root, dirs, files) in os.walk('/mydir'):
+    for file in files:
+        if file.endswith('.txt'):
+            pass",860,13,9,42,1,19,0
+4357787,python reverse tokens in a string,"Reverse the order of words, delimited by `.`, in string `s`","""""""."""""".join(s.split('.')[::-1])",922,14,8,0,0,19,0
+4484690,How to filter a dictionary in Python?,Filter a dictionary `d` to remove keys with value None and replace other values with 'updated',"dict((k, 'updated') for k, v in d.items() if v is None)",939,15,1,10,0,19,0
+4523551,Python ASCII to binary,Convert ascii value 'P' to binary,bin(ord('P')),943,15,5,3,0,19,0
+4627981,Creating a dictionary from a string,"Create a dictionary from string `e` separated by `-` and `,`","dict((k, int(v)) for k, v in (e.split(' - ') for e in s.split(',')))",955,15,1,51,0,19,0
+5864485,How can I split this comma-delimited string in Python?,"print a string `s` by splitting with comma `,`","print(s.split(','))",1102,19,8,0,0,19,0
+6159313,Can Python test the membership of multiple values in a list?,"test if either of strings `a` or `b` are members of the set of strings, `['b', 'a', 'foo', 'bar']`","set(['a', 'b']).issubset(['b', 'a', 'foo', 'bar'])",1123,20,0,42,0,19,0
+6280978,how to uniqify a list of dict in python,how to uniqify a list of dict in python,[dict(y) for y in set(tuple(x.items()) for x in d)],1133,20,1,52,0,19,0
+6618515,Sorting list based on values from another list?,sort list `X` based on values from another list `Y`,"[x for y, x in sorted(zip(Y, X))]",1164,21,7,31,1,19,0
+7287996,Python: Get relative path from comparing two absolute paths,get relative path of path '/usr/var' regarding path '/usr/var/log/',"print(os.path.relpath('/usr/var/log/', '/usr/var'))",1222,22,9,17,1,19,0
+8153631,Js Date object to python datetime,"convert js date object 'Tue, 22 Nov 2011 06:00:00 GMT' to python datetime","datetime.strptime('Tue, 22 Nov 2011 06:00:00 GMT', '%a, %d %b %Y %H:%M:%S %Z')",1285,24,2,2,0,19,0
+9554544,"Python, running command line tools in parallel",subprocess run command 'start command -flags arguments' through the shell,"subprocess.call('start command -flags arguments', shell=True)",1423,27,9,58,1,19,0
+9554544,"Python, running command line tools in parallel",run command 'command -flags arguments &' on command line tools as separate processes,"subprocess.call('command -flags arguments &', shell=True)",1424,27,9,42,1,19,0
+12843099,Python: Logging TypeError: not all arguments converted during string formatting,Log message of level 'info' with value of `date` in the message,logging.info('date={}'.format(date)),1680,34,2,21,0,19,0
+13945749,String Formatting in Python 3,format the variables `self.goals` and `self.penalties` using string formatting,"""""""({:d} goals, ${:d})"""""".format(self.goals, self.penalties)",1791,37,8,0,0,19,0
+14661701,How to drop a list of rows from Pandas dataframe?,"drop rows whose index value in list `[1, 3]` in dataframe `df`","df.drop(df.index[[1, 3]], inplace=True)",1847,38,3,15,0,19,0
+14716342,How do I find the string between two special characters?,"find the string in `your_string` between two special characters ""["" and ""]""","re.search('\\[(.*)\\]', your_string).group(1)",1851,38,0,16,0,19,0
+15769246,Pythonic way to print list items,print list of items `myList`,print('\n'.join(str(p) for p in myList)),1943,41,7,24,1,19,0
+17284947,regex to get all text outside of brackets,get all text that is not enclosed within square brackets in string `example_str`,"re.findall('(.*?)\\[.*?\\]', example_str)",2048,43,0,7,0,19,0
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,select only specific columns 'a' and 'c' from a dataframe 'data' with multiindex columns,"data.loc[:, ([('one', 'a'), ('one', 'c'), ('two', 'a'), ('two', 'c')])]",2133,45,3,64,0,19,0
+18493677,how do i return a string from a regex match in python,return a string from a regex match with pattern '<img.*?>' in string 'line',"imtag = re.match('<img.*?>', line).group(0)",2135,46,0,5,0,19,0
+19267591,How to store os.system() output in a variable or a list in python,store the output of command 'ls' in variable `direct_output`,"direct_output = subprocess.check_output('ls', shell=True)",2187,47,9,33,1,19,0
+22187233,How to delete all instances of a character in a string in python?,delete all occurrences of character 'i' in string 'it is icy',""""""""""""".join([char for char in 'it is icy' if char != 'i'])",2344,51,8,0,0,19,0
+22963263,Creating a zero-filled pandas data frame,create a dataframe `d` filled with zeros with indices from 0 to length of `data` and column names from `feature_list`,"d = pd.DataFrame(0, index=np.arange(len(data)), columns=feature_list)",2370,52,3,63,0,19,0
+25040875,Get a list of values from a list of dictionaries in python,get a list of values with key 'key' from a list of dictionaries `l`,[d['key'] for d in l if 'key' in d],2415,53,1,57,0,19,0
+28134319,Fastest way to remove first and last lines from a Python string,remove first and last lines of string `s`,s[s.find('\n') + 1:s.rfind('\n')],2482,54,8,0,0,19,0
+29696641,Find a specific pattern (regular expression) in a list of strings (Python),Get all matches with regex pattern `\\d+[xX]` in list of string `teststr`,"[i for i in teststr if re.search('\\d+[xX]', i)]",2526,56,0,14,0,19,0
+30945784,How to remove all characters before a specific character in Python?,remove all characters from string `stri` upto character 'I',"re.sub('.*I', 'I', stri)",2569,57,8,0,0,19,0
+39998424,How to delete a file without an extension?,delete file `filename`,os.remove(filename),2780,62,9,18,1,19,0
+41154648,How to remove 0's converting pandas dataframe to record,convert dataframe `df` to integer-type sparse object,df.to_sparse(0),2828,63,3,45,0,19,0

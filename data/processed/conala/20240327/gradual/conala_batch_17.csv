@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+317413,Get Element value with minidom with Python,get value of first child of xml node `name`,name[0].firstChild.nodeValue,142,0,4,17,1
+348196,Creating a list of objects in Python,Create list `instancelist` containing 29 objects of type MyClass,instancelist = [MyClass() for i in range(29)],149,0,7,17,1
+740287,How to check if one of the following items is in a list?,check if any item from list `b` is in list `a`,print(any(x in a for x in b)),301,0,7,17,1
+852055,Build a GQL query (for Google App Engine) that has a condition on ReferenceProperty,Google App Engine execute GQL query 'SELECT * FROM Schedule WHERE station = $1' with parameter `foo.key()`,"db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())",346,0,4,17,1
+930397,Getting the last element of a list,Getting the last element of list `some_list`,some_list[(-1)],364,0,7,17,1
+1666700,How to count the number of times something occurs inside a certain string?,count number of times string 'brown' occurred in string 'The big brown fox is brown',"""""""The big brown fox is brown"""""".count('brown')",484,3,0,17,0
+1780174,Split dictionary of lists into list of dictionaries,Split dictionary of lists into list of dictionaries,"map(dict, zip(*[[(k, v) for v in value] for k, value in list(d.items())]))",504,4,1,17,0
+2052390,Manually raising (throwing) an exception,"throw an assertion error with message ""Unexpected value of 'distance'!"", distance","raise AssertionError(""Unexpected value of 'distance'!"", distance)",541,5,4,17,1
+2597099,Sorting numbers in string format with Python,Sort list `keys` based on its elements' dot-seperated numbers,"keys.sort(key=lambda x: map(int, x.split('.')))",622,7,7,17,1
+2744795,Background color for Tk in Python,Change background color in Tkinter,root.configure(background='black'),649,7,4,17,1
+2769061,How to erase the file contents of text file in Python?,How to erase the file contents of text file in Python?,"open('file.txt', 'w').close()",657,8,9,17,1
+3355822,python http request with token,request page 'https://www.mysite.com/' with credentials of username 'username' and password 'pwd',"requests.get('https://www.mysite.com/', auth=('username', 'pwd'))",750,10,4,17,1
+3501382,Checking whether a variable is an integer,check if `x` is an integer,(type(x) == int),779,11,5,17,0
+3925465,Repeating elements in list comprehension,get list of duplicated elements in range of 3,"[y for x in range(3) for y in [x, x]]",839,12,7,17,1
+4172131,Create random list of integers in Python,create a random list of integers,[int(1000 * random.random()) for i in range(10000)],890,14,7,17,1
+4741537,Append elements of a set to a list in Python,append elements of a set `b` to a list `a`,a.extend(b),984,16,7,17,1
+5137497,Find current directory and file's directory,find the current directory,os.path.realpath(__file__),1041,17,9,17,1
+7287996,Python: Get relative path from comparing two absolute paths,get relative path of path '/usr/var' regarding path '/usr/var/log/',"print(os.path.relpath('/usr/var/log/', '/usr/var'))",1222,22,9,17,1
+7522533,How can I turn a string into a list in Python?,Convert a string into a list,list('hello'),1239,23,8,17,0
+8528178,List of zeros in python,create a list `listofzeros` of `n` zeros,listofzeros = [0] * n,1336,25,7,17,1
+8938449,How to extract data from matplotlib plot,Get data from matplotlib plot,gca().get_lines()[n].get_xydata(),1376,26,4,17,1
+9621388,(Django) how to get month name?,get month name from a datetime object `today`,today.strftime('%B'),1435,28,2,17,0
+10194713,Sorting a defaultdict by value in python,Sort dictionary `u` in ascending order based on second elements of its values,"sorted(list(u.items()), key=lambda v: v[1])",1472,29,1,17,0
+10675054,How to import a module in Python with importlib.import_module,import a nested module `c.py` within `b` within `a` with importlib,"importlib.import_module('.c', 'a.b')",1517,30,4,17,1
+13079852,How do I stack two DataFrames next to each other in Pandas?,stack two dataframes next to each other in pandas,"pd.concat([GOOG, AAPL], keys=['GOOG', 'AAPL'], axis=1)",1698,34,3,17,0
+14694482,Converting html to text with Python,convert a beautiful soup html `soup` to text,print(soup.get_text()),1849,38,4,17,1
+15856127,Finding the sum of a nested list of ints,sum all elements of nested list `L`,"sum(sum(i) if isinstance(i, list) else i for i in L)",1951,41,7,17,1
+16883447,"How to read a ""C source, ISO-8859 text""",read file 'myfile' using encoding 'iso-8859-1',"codecs.open('myfile', 'r', 'iso-8859-1').read()",2012,42,9,17,1
+17555218,Python - How to sort a list of lists by the fourth element in each list?,Sort lists in the list `unsorted_list` by the element at index 3 of each list,unsorted_list.sort(key=lambda x: x[3]),2066,44,7,17,1
+18050937,How can I execute shell command with a | pipe in it,execute shell command 'grep -r PASSED *.log | sort -u | wc -l' with a | pipe in it,"subprocess.call('grep -r PASSED *.log | sort -u | wc -l', shell=True)",2099,45,9,17,1
+19555472,Change a string of integers separated by spaces to a list of int,change a string of integers `x` separated by spaces to a list of int,"x = map(int, x.split())",2203,47,5,17,0
+19602931,http file downloading and saving,"download file from http url ""http://randomsite.com/file.gz"" and save as ""file.gz""","urllib.request.urlretrieve('http://randomsite.com/file.gz', 'file.gz')",2210,47,9,17,1
+21414159,login to a site using python and opening the login site in the browser,open the login site 'http://somesite.com/adminpanel/index.php' in the browser,webbrowser.open('http://somesite.com/adminpanel/index.php'),2308,50,4,17,1
+22245171,How to lowercase a python dataframe string column if it has missing values?,lowercase a python dataframe string in column 'x' if it has missing values in dataframe `df`,df['x'].str.lower(),2348,51,3,17,0
+22749706,How to get the length of words in a sentence?,How to get the length of words in a sentence?,[len(x) for x in s.split()],2363,51,0,17,0
+28986489,Python Pandas: How to replace a characters in a column of a dataframe?,Python Pandas: How to replace a characters in a column of a dataframe?,"df['range'].replace(',', '-', inplace=True)",2505,55,3,17,0
+30357276,Pandas - FillNa with another column,fill missing value in one column 'Cat1' with the value of another column 'Cat2',df['Cat1'].fillna(df['Cat2']),2548,56,3,17,0
+31767173,How do I vectorize this loop in numpy?,find the index of the maximum value in the array `arr` where the boolean condition in array `cond` is true,"np.ma.array(np.tile(arr, 2).reshape(2, 3), mask=~cond).argmax(axis=1)",2593,57,6,17,0
+34338341,Regex for getting all digits in a string after a character,get all digits in a string `s` after a '[' character,"re.findall('\\d+(?=[^[]+$)', s)",2661,59,0,17,0

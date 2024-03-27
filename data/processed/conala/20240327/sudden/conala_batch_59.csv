@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+89228,Calling an external command,"Calling an external command ""ls""","p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+for line in p.stdout.readlines():
+    print(line, end=' ')
+retval = p.wait()",59,0,9,27,1,18,0,59,0
+247770,Retrieving python module path,get the path of the current python module,print(os.getcwd()),110,0,4,29,1,12,1,59,0
+273192,check if a directory exists and create it if necessary,check if a directory `path` exists and create it if necessary,"try:
+    os.makedirs(path)
+except OSError:
+    if (not os.path.isdir(path)):
+        raise",117,0,9,27,1,15,0,59,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `d` in sorted order,it = iter(sorted(d.items())),159,0,1,1,0,56,0,59,0
+455612,Limiting floats to two decimal points,limit float 13.9499999 to two decimal points,('%.2f' % 13.9499999),201,0,5,20,0,59,0,59,0
+493386,print in Python without newline or space,"print ""."" without newline",sys.stdout.write('.'),210,0,8,0,0,43,0,59,0
+727507,How can I convert Unicode to uppercase to print it?,print unicode string `ex\xe1mple` in uppercase,print('ex\xe1mple'.upper()),297,0,8,0,0,13,0,59,0
+761804,Trimming a string,"Trimming a string "" Hello""",' Hello'.strip(),317,0,8,39,0,39,0,59,0
+1038824,remove a substring from the end of a string,"remove a substring "".com"" from the end of string `url`","url = re.sub('\\.com$', '', url)",408,1,8,0,0,62,0,59,0
+3984539,Python: use regular expression to remove the white space from all lines,remove white spaces from all the lines using a regular expression in string 'a\n b\n c',"re.sub('(?m)^\\s+', '', 'a\n b\n c')",862,13,8,0,0,38,0,59,0
+4476373,Simple URL GET/POST,make an HTTP post request with data `post_data`,"post_response = requests.post(url='http://httpbin.org/post', json=post_data)",934,15,4,27,1,27,1,59,0
+5796238,Python convert decimal to hex,return the conversion of decimal `d` to hex without the '0x' prefix,hex(d).split('x')[1],1090,19,5,3,0,30,0,59,0
+6879364,Print file age in seconds using Python,Get the age of directory (or file) `/tmp` in seconds.,print(os.path.getmtime('/tmp')),1181,21,9,23,1,44,0,59,0
+8247792,Python - How to cut a string in Python?,cut a string using delimiter '&',s[:s.rfind('&')],1308,24,8,0,0,13,0,59,0
+11430863,How to find overlapping matches with a regexp?,find overlapping matches from a string `hello` using regex,"re.findall('(?=(\\w\\w))', 'hello')",1580,31,0,5,0,62,0,59,0
+11921649,What is the most pythonic way to avoid specifying the same value in a string,"Format string `hello {name}, how are you {name}, welcome {name}` to be interspersed by `name` three times, specifying the value as `john` only once","""""""hello {name}, how are you {name}, welcome {name}"""""".format(name='john')",1616,32,8,0,0,2,0,59,0
+12030074,Generate list of numbers in specific format,generate list of numbers in specific format using string formatting precision.,[('%.2d' % i) for i in range(16)],1622,32,5,26,0,52,0,59,0
+12211944,How to match beginning of string or character in Python,Get all the matches from a string `abcd` if it begins with a character `a`,"re.findall('[^a]', 'abcd')",1629,33,0,33,0,13,0,59,0
+12579061,Python Selenium: Find object attributes using xpath,"get the text of multiple elements found by xpath ""//*[@type='submit']/@value""","browser.find_elements_by_xpath(""//*[@type='submit']/@value"").text",1658,33,4,28,1,10,1,59,0
+13078751,Merge Columns within a DataFrame that have the Same Name,Get pandas GroupBy object with sum over the rows with same column names within  dataframe `df`,"df.groupby(df.columns, axis=1).sum()",1697,34,3,19,0,52,0,59,0
+13411544,Delete column from pandas DataFrame,delete column 'column_name' from dataframe `df`,"df = df.drop('column_name', 1)",1741,35,3,39,0,23,0,59,0
+14041791,print variable and a string in python,Print a string `card` with string formatting,print('I have: {0.price}'.format(card)),1798,37,8,0,0,50,0,59,0
+15012228,Splitting on last delimiter in Python string?,split a string `s` on last delimiter,"s.rsplit(',', 1)",1884,39,8,0,0,59,0,59,0
+15313250,Python BeautifulSoup Extract specific URLs,find all anchors with a hyperlink that matches the pattern '^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))',"soup.find_all('a', href=re.compile('^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))'))",1911,40,0,37,0,60,0,59,0
+16114333,getting the opposite diagonal of a numpy array,get the opposite diagonal of a numpy array `array`,np.diag(np.rot90(array)),1966,41,6,2,0,32,0,59,0
+19527279,Python - Unicode to ASCII conversion,convert unicode string `s` to ascii,s.encode('iso-8859-15'),2201,47,8,0,0,56,0,59,0
+19617355,Dynamically changing log level in python without restarting the application,Change log level dynamically to 'DEBUG' without restarting the application,logging.getLogger().setLevel(logging.DEBUG),2212,48,4,18,1,12,1,59,0
+20677660,python string format() with dict with integer keys,format string with dict `{'5': 'you'}` with integer keys,'hello there %(5)s' % {'5': 'you'},2275,49,1,2,0,5,0,59,0
+21205074,How to split a string at line breaks in python?,split a string `s` at line breaks `\r\n`,"[map(int, x.split('\t')) for x in s.rstrip().split('\r\n')]",2299,50,8,0,0,59,0,59,0
+21986194,How to pass dictionary items as function arguments in python?,pass dictionary items `data` as keyword arguments in function `my_function`,my_function(**data),2337,51,1,52,0,49,0,59,0
+22799300,How to unpack a Series of tuples in Pandas?,unpack a series of tuples in pandas into a DataFrame with column names 'out-1' and 'out-2',"pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)",2364,51,3,1,0,35,0,59,0
+28925267,delete every nth row or column in a matrix using Python,delete every 8th column in a numpy array 'a'.,"np.delete(a, list(range(0, a.shape[1], 8)), axis=1)",2504,55,6,4,0,57,0,59,0
+29370211,pandas split string into columns,"split string in column 'stats' by ',' into separate columns in dataframe `df`","df['stats'].str[1:-1].str.split(',').apply(pd.Series).astype(float)",2515,55,3,4,0,61,0,59,0
+29558007,How can I generate a list of consecutive numbers?,generate a list of consecutive integers from 0 to 8,list(range(9)),2524,56,5,53,0,13,0,59,0
+31247198,"Python, Pandas : write content of DataFrame into text File",write content of DataFrame `df` into text file 'c:\\data\\pandas.txt',"df.to_csv('c:\\data\\pandas.txt', header=None, index=None, sep=' ', mode='a')",2576,57,3,33,0,4,0,59,0
+32926587,How to capture the entire string while using 'lookaround' with chars in regex?,find all substrings in string `mystring` composed only of letters `a` and `b` where each `a` is directly preceded and succeeded by `b`,"re.findall('\\b(?:b+a)+b+\\b', mystring)",2636,58,0,2,0,34,0,59,0
+33711985,Flattening a list of NumPy arrays?,concatenate a list of numpy arrays `input_list` together into a flattened list of values,np.concatenate(input_list).ravel().tolist(),2649,59,6,8,0,48,0,59,0
+33724111,Python RegEx using re.sub with multiple patterns,remove colon character surrounded by vowels letters in string `word`,"word = re.sub('([aeiou]):(([aeiou][^aeiou]*){3})$', '\\1\\2', word)",2650,59,8,29,0,58,0,59,0
+40582103,using regular expression to split string in python,use regular expression '((\\d)(?:[()]*\\2*[()]*)*)' to split string `s`,"[i[0] for i in re.findall('((\\d)(?:[()]*\\2*[()]*)*)', s)]",2806,63,0,13,0,37,0,59,0

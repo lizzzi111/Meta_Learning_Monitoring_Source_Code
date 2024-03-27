@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+1476,express binary literals,convert binary string '11111111' to integer,"int('11111111', 2)",0,0,5,53,0,53,0,53,0
+22676,download a file over HTTP,download a file `url` over HTTP,r = requests.get(url),20,0,9,55,1,64,0,53,0
+38987,How to merge two Python dictionaries in a single expression?,merge dictionaries form array `dicts` in a single expression,"dict((k, v) for d in dicts for k, v in list(d.items()))",25,0,1,36,0,51,0,53,0
+89228,Calling an external command,"Calling an external command ""echo Hello World""",print(os.popen('echo Hello World').read()),60,0,9,11,1,37,0,53,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `foo` in sorted order,"for (k, v) in sorted(foo.items()):
+    pass",155,0,1,63,0,53,0,53,0
+364519,iterate over a dictionary in sorted order,iterate over a dictionary `dict` in sorted order,return iter(sorted(dict.items())),160,0,1,10,0,59,0,53,0
+455612,Limiting floats to two decimal points,print float `a` with two decimal points,print(('%.2f' % a)),204,0,5,4,0,37,0,53,0
+761804,Trimming a string,"Trimming ""\n"" from string `myString`",myString.strip('\n'),315,0,8,0,0,5,0,53,0
+1749466,What's the most pythonic way of normalizing lineends in a string?,Normalize line ends in a string 'mixed',"mixed.replace('\r\n', '\n').replace('\r', '\n')",499,4,8,0,0,6,0,53,0
+1892339,How to make a window jump to the front?,make a window `root` jump to the front,"root.attributes('-topmost', True)",521,4,4,38,1,28,1,53,0
+2045175,Regex match even number of letters,write a regex pattern to match even number of letter `A`,re.compile('^([^A]*)AA([^A]|AA)*$'),536,5,0,3,0,53,0,53,0
+2052390,manually throw/raise an exception,manually throw/raise a `ValueError` exception with the message 'A very specific bad thing happened',raise ValueError('A very specific bad thing happened'),540,5,4,28,1,25,1,53,0
+2052390,Manually raising (throwing) an exception,"throw a value error with message 'A very specific bad thing happened', 'foo', 'bar', 'baz'",raise ValueError('A very specific bad thing happened'),545,5,4,53,1,45,1,53,0
+2168123,Converting a String to List in Python,"convert the string '0,1,2' to a list of integers","[int(x) for x in '0,1,2'.split(',')]",563,5,5,4,0,7,0,53,0
+2890896,Extract IP address from an html string (python),extract ip address from an html string,"ip = re.findall('[0-9]+(?:\\.[0-9]+){3}', s)",679,8,4,61,1,27,1,53,0
+3207219,list all files of a directory,"list all "".txt"" files of a directory ""/home/adam/""",print(glob.glob('/home/adam/*.txt')),714,9,9,37,1,57,0,53,0
+3777301,How to call a shell script from python code?,call a shell script `./test.sh` using subprocess,subprocess.call(['./test.sh']),813,12,9,35,1,42,0,53,0
+4357787,python reverse tokens in a string,"Reverse the order of words, delimited by `.`, in string `s`","""""""."""""".join(s.split('.')[::-1])",922,14,8,0,0,19,0,53,0
+5971312,How to set environment variables in Python,set environment variable 'DEBUSSY' to '1',os.environ['DEBUSSY'] = '1',1115,19,4,58,1,10,1,53,0
+6504200,How to decode unicode raw literals to readable string?,decode unicode string `s` into a readable unicode literal,s.decode('unicode_escape'),1154,20,8,0,0,4,0,53,0
+6591931,Getting file size in Python?,get the  size of file 'C:\\Python27\\Lib\\genericpath.py',os.stat('C:\\Python27\\Lib\\genericpath.py').st_size,1161,21,9,36,1,41,0,53,0
+8122079,Python: How to check a string for substrings from a list?,check if any element of list `substring_list` are in string `string`,any(substring in string for substring in substring_list),1282,24,0,45,0,51,0,53,0
+8270092,remove all whitespace in a string,remove all whitespaces in string `sentence`,"sentence = re.sub('\\s+', '', sentence, flags=re.UNICODE)",1311,24,8,0,0,18,0,53,0
+8970524,Python regex search AND split,search and split string 'aaa bbb ccc ddd eee fff' by delimiter '(ddd)',"re.split('(ddd)', 'aaa bbb ccc ddd eee fff', 1)",1377,26,0,37,0,42,0,53,0
+10373660,Converting a Pandas GroupBy object to DataFrame,convert a pandas `df1` groupby object to dataframe,"DataFrame({'count': df1.groupby(['Name', 'City']).size()}).reset_index()",1484,29,3,30,0,34,0,53,0
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for i in range(256):
+    for j in range(256):
+        ip = ('192.168.%d.%d' % (i, j))
+        print(ip)",1732,35,4,42,1,26,1,53,0
+15390374,Python 3: How do I get a string literal representation of a byte string?,get a utf-8 string literal representation of byte string `x`,"""""""x = {}"""""".format(x.decode('utf8')).encode('utf8')",1918,40,8,0,0,50,0,53,0
+18265935,Python - Create list with numbers between 2 values?,create a list of integers between 2 values `11` and `17`,"list(range(11, 17))",2117,45,5,55,0,61,0,53,0
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,From multiIndexed dataframe `data` select columns `a` and `c` within each higher order column `one` and `two`,"data.loc[:, (list(itertools.product(['one', 'two'], ['a', 'c'])))]",2134,46,3,27,0,3,0,53,0
+20778951,Regex for location matching - Python,"find all occurrences of regex pattern '(?:\\w+(?:\\s+\\w+)*,\\s)+(?:\\w+(?:\\s\\w+)*)' in string `x`","re.findall('(?:\\w+(?:\\s+\\w+)*,\\s)+(?:\\w+(?:\\s\\w+)*)', x)",2280,49,0,8,0,58,0,53,0
+25540259,Remove or adapt border of frame of legend using matplotlib,remove frame of legend in plot `plt`,plt.legend(frameon=False),2425,53,4,47,1,27,1,53,0
+25991612,Python / Remove special character from string,Python / Remove special character from string,"re.sub('[^a-zA-Z0-9-_*.]', '', my_string)",2433,53,8,0,0,2,0,53,0
+30062429,Python How to get every first element in 2 Dimensional List,get value of first index of each element in list `a`,[x[0] for x in a],2542,56,7,23,1,1,0,53,0
+33435418,How to find the difference between 3 lists that may have duplicate numbers,"Get the difference between two lists `[1, 2, 2, 2, 3]` and `[1, 2]` that may have duplicate values","Counter([1, 2, 2, 2, 3]) - Counter([1, 2])",2646,59,7,57,1,2,0,53,0
+38379453,How to read only part of a list of strings in python,get a list of substrings consisting of the first 5 characters of every string in list `buckets`,[s[:5] for s in buckets],2741,61,0,29,0,53,0,53,0
+40517350,How to sum the nlargest() integers in groupby,sum the 3 largest integers in groupby by 'STNAME' and 'COUNTY_POP',df.groupby('STNAME')['COUNTY_POP'].agg(lambda x: x.nlargest(3).sum()),2804,63,3,36,0,16,0,53,0
+41067960,How to convert a list of multiple integers into a single integer?,convert a list of integers into a single integer,"r = int(''.join(map(str, x)))",2822,63,5,7,0,44,0,53,0
+41386443,Create Pandas DataFrame from txt file with specific pattern,create pandas data frame `df` from txt file `filename.txt` with column `Region Name` and separator `;`,"df = pd.read_csv('filename.txt', sep=';', names=['Region Name'])",2835,63,3,8,0,15,0,53,0
+41513324,Python Pandas: drop rows of a timeserie based on time range,drop rows of dataframe `df` whose index is smaller than the value of `start_remove` or bigger than the value of`end_remove`,df.query('index < @start_remove or index > @end_remove'),2839,64,3,39,0,31,0,53,0

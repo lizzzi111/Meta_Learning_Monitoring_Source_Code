@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+311627,print date in a regular format,print current date and time in a regular format,datetime.datetime.now().strftime('%Y-%m-%d %H:%M'),138,0,2,53,0,60,0
+674764,string find,find the index of sub string 's' in string `str` starting from index 11 and ending at index 14,"str.find('s', 11, 14)",282,0,0,60,0,60,0
+743806,Split string into a list,Split string `line` into a list by whitespace,line.split(),303,0,8,0,0,60,0
+952914,Making a flat list out of list of lists,make a flat list from list of lists `list2d`,list(itertools.chain.from_iterable(list2d)),380,1,7,52,1,60,0
+2544710,How I can get rid of None values in dictionary?,get rid of None values in dictionary `kwargs`,"res = {k: v for k, v in list(kwargs.items()) if v is not None}",612,6,1,35,0,60,0
+3780403,Python: Sum string lengths,sum the length of all strings in a list `strings`,length = sum(len(s) for s in strings),814,12,7,35,1,60,0
+5075247,Regular expression to remove line breaks,remove line breaks from string `textblock` using regex,"re.sub('(?<=[a-z])\\r?\\n', ' ', textblock)",1031,17,0,8,0,60,0
+5788891,Execute a file with arguments in Python shell,execute a file './abc.py' with arguments `arg1` and `arg2` in python shell,"subprocess.call(['./abc.py', arg1, arg2])",1089,19,9,53,1,60,0
+7154739,How can I get an array of alternating values in python?,set every two-stride far element to -1 starting from second element in array `a`,a[1::2] = -1,1202,22,6,2,0,60,0
+7270321,Finding the index of elements based on a condition using python list comprehension,Get all indexes of a list `a` where each value is greater than `2`,[i for i in range(len(a)) if a[i] > 2],1212,22,7,31,1,60,0
+7349646,Sorting a dictionary of tuples in Python,Sort a list of tuples `b` by third item in the tuple,b.sort(key=lambda x: x[1][2]),1225,22,7,41,1,60,0
+7351270,Control a print format when printing a list in Python,print numbers in list `list` with precision of 3 decimal places,"print('[%s]' % ', '.join('%.3f' % val for val in list))",1226,22,5,29,0,60,0
+7351270,Control a print format when printing a list in Python,format print output of list of floats `l` to print only up to 3 decimal points,"print('[' + ', '.join('%5.3f' % v for v in l) + ']')",1228,22,5,1,0,60,0
+8519599,"python: dictionary to string, custom format?","dictionary `d` to string, custom format","""""""<br/>"""""".join([('%s:: %s' % (key, value)) for key, value in list(d.items())])",1334,25,1,1,0,60,0
+8751653,How can I convert a binary to a float number,convert a binary `b8` to a float number,"struct.unpack('d', b8)[0]",1360,26,5,32,0,60,0
+9497290,How would I sum a multi-dimensional array in the most succinct python?,"sum all elements of two-dimensions list `[[1, 2, 3, 4], [2, 4, 5, 6]]]`","sum([sum(x) for x in [[1, 2, 3, 4], [2, 4, 5, 6]]])",1417,27,6,49,0,60,0
+9621388,(Django) how to get month name?,how to get month name of datetime `today`,today.strftime('%B'),1434,28,2,61,0,60,0
+10037742,Replace part of a string in Python?,replace string ' and ' in string `stuff` with character '/',"stuff.replace(' and ', '/')",1464,28,8,0,0,60,0
+10472907,How to convert dictionary into string,convert dictionary `adict` into string,""""""""""""".join('{}{}'.format(key, val) for key, val in sorted(adict.items()))",1492,29,1,43,0,60,0
+11479392,What does a for loop within a list do in Python?,Get a list `myList` from 1 to 10,myList = [i for i in range(10)],1581,31,7,38,1,60,0
+12777222,How can I zip file with a flattened directory structure using Zipfile in Python?,zip file `pdffile` using its basename as directory name,"archive.write(pdffile, os.path.basename(pdffile))",1672,34,9,29,1,60,0
+14431731,Replacing the empty strings in a string,insert string `string1` after each character of `string2`,"string2.replace('', string1)[len(string1):-len(string1)]",1832,38,8,0,0,60,0
+15313250,Python BeautifulSoup Extract specific URLs,find all anchors with a hyperlink that matches the pattern '^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))',"soup.find_all('a', href=re.compile('^(?!(?:[a-zA-Z][a-zA-Z0-9+.-]*:|//))'))",1911,40,0,37,0,60,0
+15534223,Python match string if it does not start with X,search for string that matches regular expression pattern '(?<!Distillr)\\\\AcroTray\\.exe' in string 'C:\\SomeDir\\AcroTray.exe',"re.search('(?<!Distillr)\\\\AcroTray\\.exe', 'C:\\SomeDir\\AcroTray.exe')",1933,40,0,3,0,60,0
+15907200,How to add a header to a csv file in Python?,add a header to a csv file,writer.writeheader(),1955,41,9,52,1,60,0
+16196712,wait for shell command to complete,wait for shell command `p` evoked by  subprocess.Popen to complete,p.wait(),1976,41,9,62,1,60,0
+16658068,How to use Unicode characters in a python string,print a character that has unicode value `\u25b2`,print('\u25b2'.encode('utf-8')),1996,42,5,3,0,60,0
+19156472,Sorting numpy array on multiple columns in Python,"Sort a structured numpy array 'df' on multiple columns 'year', 'month' and 'day'.","df.sort(['year', 'month', 'day'])",2184,47,3,6,0,60,0
+19328874,Python - read text file with weird utf-16 format,open a text file `data.txt` in io module with encoding `utf-16-le`,"file = io.open('data.txt', 'r', encoding='utf-16-le')",2190,47,9,56,1,60,0
+20796355,change current working directory in python,change current working directory,os.chdir('C:\\Users\\username\\Desktop\\headfirstpython\\chapter3'),2283,49,9,33,1,60,0
+22128218,Pandas how to apply multiple functions to dataframe,apply functions `mean` and `std` to each column in dataframe `df`,"df.groupby(lambda idx: 0).agg(['mean', 'std'])",2340,51,3,13,0,60,0
+22187233,How to delete all instances of a character in a string in python?,"delete all characters ""i"" in string ""it is icy""","""""""it is icy"""""".replace('i', '')",2342,51,8,0,0,60,0
+25698710,Replace all occurrences of a string in a pandas dataframe (Python),replace all occurences of newlines `\n` with `<br>` in dataframe `df`,"df.replace({'\n': '<br>'}, regex=True)",2428,53,3,8,0,60,0
+27457970,Python regex alternative for join,concatenate '-' in between characters of string `str`,"re.sub('(?<=.)(?=.)', '-', str)",2462,54,8,0,0,60,0
+28684154,Python copy a list of lists,Copy list `old_list` and name it `new_list`,new_list = [x[:] for x in old_list],2497,55,7,57,1,60,0
+28773683,Combine two Pandas dataframes with the same index,Combine two Pandas dataframes with the same index,"pandas.concat([df1, df2], axis=1)",2501,55,3,59,0,60,0
+34158494,Variants of string concatenation?,"concatenate array of strings `['A', 'B', 'C', 'D']` into a string",""""""""""""".join(['A', 'B', 'C', 'D'])",2658,59,8,0,0,60,0
+34705205,Sort a nested list by two elements,"sort a nested list by the inverse of element 2, then by element 1","sorted(l, key=lambda x: (-int(x[1]), x[0]))",2674,59,7,61,1,60,0
+36875258,copying one file's contents to another in python,copy the content of file 'file.txt' to file 'file2.txt',"shutil.copy('file.txt', 'file2.txt')",2717,60,9,63,1,60,0

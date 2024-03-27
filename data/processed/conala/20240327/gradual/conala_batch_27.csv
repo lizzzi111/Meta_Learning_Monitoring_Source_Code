@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+89228,Calling an external command,"Calling an external command ""ls""","p = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+for line in p.stdout.readlines():
+    print(line, end=' ')
+retval = p.wait()",59,0,9,27,1
+89228,Calling an external command,"Calling an external command ""some_command < input_file | another_command > output_file""",os.system('some_command < input_file | another_command > output_file'),64,0,9,27,1
+273192,check if a directory exists and create it if necessary,check if a directory `path` exists and create it if necessary,"try:
+    os.makedirs(path)
+except OSError:
+    if (not os.path.isdir(path)):
+        raise",117,0,9,27,1
+613183,Sort a Python dictionary by value,Sort dictionary `x` by value in ascending order,"sorted(list(x.items()), key=operator.itemgetter(1))",248,0,1,27,0
+1400608,empty a list,empty a list `lst`,lst[:] = [],455,2,7,27,1
+3743222,How do I convert datetime to date (in Python)?,convert datetime object to date object in python,datetime.datetime.now().date(),809,12,2,27,0
+3817529,syntax for creating a dictionary into another dictionary in python,"create a dictionary `{'spam': 5, 'ham': 6}` into another dictionary `d` field 'dict3'","d['dict3'] = {'spam': 5, 'ham': 6}",819,12,1,27,0
+3877491,deleting rows in numpy array,Delete third row in a numpy array `x`,"x = numpy.delete(x, 2, axis=1)",828,12,6,27,0
+3940128,reverse a list,reverse a list `array`,list(reversed(array)),850,13,7,27,1
+4444923,Get Filename Without Extension in Python,get filename without extension from file `filename`,os.path.splitext(filename)[0],931,15,9,27,1
+4476373,Simple URL GET/POST function,post request url `url` with parameters `payload`,"r = requests.post(url, data=payload)",933,15,4,27,1
+4476373,Simple URL GET/POST,make an HTTP post request with data `post_data`,"post_response = requests.post(url='http://httpbin.org/post', json=post_data)",934,15,4,27,1
+4588628,Find indices of elements equal to zero from numpy array,Find indices of elements equal to zero from numpy array `x`,numpy.where((x == 0))[0],952,15,6,27,0
+5618878,convert list to string,concatenating values in `list1` to a string,str1 = ''.join((str(e) for e in list1)),1084,19,7,27,1
+5971312,How to set environment variables in Python,Get a environment variable `DEBUSSY`,print(os.environ['DEBUSSY']),1114,19,4,27,1
+6376886,What is the best way to create a string array in python?,create list of 'size' empty strings,strs = ['' for x in range(size)],1139,20,7,27,1
+6561653,how to get the index of dictionary with the highest value in a list of dictionary,Get an item from a list of dictionary `lst` which has maximum value in the key `score` using lambda function,"max(lst, key=lambda x: x['score'])",1158,20,1,27,0
+8569201,Get the string within brackets in Python,find the string matches within parenthesis from a string `s` using regex,"m = re.search('\\[(\\w+)\\]', s)",1340,25,0,27,0
+9210525,convert hex to decimal,"convert hex string ""0xff"" to decimal","int('0xff', 16)",1397,27,5,27,0
+9647586,Getting a request parameter in Jinja2,get a request parameter `a` in jinja2,{{request.args.get('a')}},1438,28,4,27,1
+10078470,Sort numpy matrix row values in ascending order,sort rows of numpy matrix `arr` in ascending order according to all column values,"numpy.sort(arr, axis=0)",1466,28,6,27,0
+12717716,Python: updating a large dictionary using another large dictionary,"update dictionary `b`, overwriting values where keys are identical, with contents of dictionary `d`",b.update(d),1666,34,1,27,0
+13418405,Get name of primary field of Django model,get name of primary field `name` of django model `CustomPK`,CustomPK._meta.pk.name,1744,36,4,27,1
+13740672,in pandas how can I groupby weekday() for a datetime column?,create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`,data['weekday'] = data['my_dt'].apply(lambda x: x.weekday()),1773,36,3,27,0
+14661051,Convert Python dictionary to JSON array,convert python dictionary `your_data` to json array,"json.dumps(your_data, ensure_ascii=False)",1846,38,1,27,0
+17141558,How to sort a dataFrame in python pandas by two or more columns?,sort dataframe `df` based on column 'b' in ascending and column 'c' in descending,"df.sort_values(['b', 'c'], ascending=[True, False], inplace=True)",2039,43,3,27,0
+17284947,regex to get all text outside of brackets,Use a regex to get all text in a string `example_str` that is not surrounded by square brackets,"re.findall('(.*?)(?:\\[.*?\\]|$)', example_str)",2049,43,0,27,0
+18470323,How to select only specific columns from a DataFrame with MultiIndex columns?,From multiIndexed dataframe `data` select columns `a` and `c` within each higher order column `one` and `two`,"data.loc[:, (list(itertools.product(['one', 'two'], ['a', 'c'])))]",2134,46,3,27,0
+18684076,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,How to create a list of date string in 'yyyymmdd' format with Python Pandas?,"[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]",2151,46,2,27,0
+20796355,change current working directory in python,change current working directory,os.chdir('.\\chapter3'),2281,49,9,27,1
+20796355,change current working directory in python,change current working directory to directory 'chapter3',os.chdir('chapter3'),2282,49,9,27,1
+20970279,"how to do a left,right and mid of a string in a pandas dataframe",get the middle two characters of a string 'state' in a pandas dataframe `df`,df['state'].apply(lambda x: x[len(x) / 2 - 1:len(x) / 2 + 1]),2290,50,3,27,0
+22397058,Dropping a single (sub-) column from a MultiIndex,drop a single subcolumn 'a' in column 'col1' from a dataframe `df`,"df.drop(('col1', 'a'), axis=1)",2351,51,3,27,0
+26441253,how to reverse a priority queue in Python without using classes?,reverse a priority queue `q` in python without using classes,"q.put((-n, n))",2442,53,4,27,1
+30651487,Print a variable selected by a random number,get a random item from list `choices`,random_choice = random.choice(choices),2559,56,7,27,1
+34587346,Python: Check if a string contains chinese character?,Find all Chinese characters in string `ipath`,"re.findall('[\u4e00-\u9fff]+', ipath)",2671,59,0,27,0
+39604780,How can I print the Truth value of a variable?,print the truth value of `a`,print(bool(a)),2769,62,5,27,0
+39646401,How to merge the elements in a list sequentially in python,merge the elements in a list `lst` sequentially,"[''.join(seq) for seq in zip(lst, lst[1:])]",2772,62,7,27,1
+40535203,How to slice a list of strings with space delimiter?,get a list of last trailing words from another list  of strings`Original_List`,new_list = [x.split()[-1] for x in Original_List],2805,63,7,27,1

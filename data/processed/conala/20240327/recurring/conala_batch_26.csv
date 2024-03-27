@@ -1,0 +1,52 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+247724,How can I launch an instance of an application using Python?,How can I launch an instance of an application using Python?,os.system('start excel.exe <path/to/file>'),108,0,4,61,1,26,1
+276052,get current CPU and RAM usage,get current RAM usage of current program,"pid = os.getpid()
+py = psutil.Process(pid)
+memoryUse = (py.memory_info()[0] / (2.0 ** 30))",131,0,4,52,1,26,1
+317413,Get Element value with minidom with Python,get value of first child of xml node `name`,name[0].firstChild.nodeValue,142,0,4,17,1,26,1
+402504,determine the variable type,determine the type of variable `v`,type(v),179,0,4,37,1,26,1
+510348,make a time delay,make a 0.1 seconds time delay,time.sleep(0.1),215,0,4,15,1,26,1
+510348,make a time delay,make a 60 seconds time delay,time.sleep(60),216,0,4,26,1,26,1
+730764,do a try-except without handling the exception,call `doSomething()` in a try-except without handling the exception,"try:
+    doSomething()
+except:
+    pass",298,0,4,55,1,26,1
+730764,do a try-except without handling the exception,call `doSomething()` in a try-except without handling the exception,"try:
+    doSomething()
+except Exception:
+    pass",299,0,4,20,1,26,1
+843277,check if a variable exists,check if a global variable `myVar` exists,('myVar' in globals()),337,0,4,19,1,26,1
+843277,check if a variable exists,check if object `obj` has attribute 'attr_name',"hasattr(obj, 'attr_name')",341,0,4,45,1,26,1
+1712227,get the size of a list,function to get the size of object,len(),490,3,4,55,1,26,1
+2052390,Manually raising (throwing) an exception,throw a runtime error with message 'specific message',raise RuntimeError('specific message'),544,5,4,16,1,26,1
+2261011,How can I resize the root window in Tkinter?,How can I resize the root window in Tkinter?,root.geometry('500x500'),581,6,4,22,1,26,1
+2805231,"How can I do DNS lookups in Python, including referring to /etc/hosts?",fetch address information for host 'google.com' ion port 80,"print(socket.getaddrinfo('google.com', 80))",668,8,4,55,1,26,1
+2823472,Is there a method that tells my program to quit?,quit program,sys.exit(0),672,8,4,53,1,26,1
+5123839,Fastest way to get the first object from a queryset in django?,get the first object from a queryset in django model `Entry`,Entry.objects.filter()[:1].get(),1034,17,4,58,1,26,1
+5971312,How to set environment variables in Python,Get a environment variable `DEBUSSY`,print(os.environ['DEBUSSY']),1114,19,4,27,1,26,1
+6420361,How can I reload objects in my namespace in ipython,reload a module `module`,"import imp
+imp.reload(module)",1147,20,4,42,1,26,1
+6886493,Get all object attributes,Get all object attributes of an object,dir(),1182,21,4,56,1,26,1
+7125009,How to change legend size with matplotlib.pyplot,change legend size to 'x-small' in upper-left location,"pyplot.legend(loc=2, fontsize='x-small')",1195,21,4,25,1,26,1
+7503241,django models selecting single field,django return a QuerySet list containing the values of field 'eng_name' in model `Employees`,"Employees.objects.values_list('eng_name', flat=True)",1238,23,4,46,1,26,1
+10258584,How to get text for a root element using lxml?,Get all texts and tags from a tag `strong` from etree tag `some_tag` using lxml,print(etree.tostring(some_tag.find('strong'))),1477,29,4,28,1,26,1
+10675054,How to import a module in Python with importlib.import_module,import a module 'a.b.c' with importlib.import_module in python 2,importlib.import_module('a.b.c'),1518,30,4,26,1,26,1
+13368659,loop through an IP address range,"loop through the IP address range ""192.168.x.x""","for i in range(256):
+    for j in range(256):
+        ip = ('192.168.%d.%d' % (i, j))
+        print(ip)",1732,35,4,42,1,26,1
+13627865,Is it possible to define global variables in a function in Python,define global variable `something` with value `bob`,globals()['something'] = 'bob',1761,36,4,29,1,26,1
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",abort a computer shutdown using subprocess,"subprocess.call(['shutdown', '/a '])",1859,38,4,43,1,26,1
+14764126,"How to make a python script which can logoff, shutdown, and restart a computer?",shutdown a computer using subprocess,"subprocess.call(['shutdown', '/s'])",1863,39,4,33,1,26,1
+15282189,Setting matplotlib colorbar range,Set colorbar range from `0` to `15` for pyplot object `quadmesh` in matplotlib,"quadmesh.set_clim(vmin=0, vmax=15)",1906,40,4,37,1,26,1
+15313250,Python BeautifulSoup Extract specific URLs,find all anchor tags in html `soup` whose url begins with `http://www.iwashere.com`,"soup.find_all('a', href=re.compile('http://www\\.iwashere\\.com/'))",1912,40,4,61,1,26,1
+16436133,How can i create the empty json object in python,Create a default empty json object if no json is available in request parameter `mydata`,"json.loads(request.POST.get('mydata', '{}'))",1991,42,4,18,1,26,1
+17138464,Subscripting text in matplotlib labels,subscript text 'H20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.,"plt.plot(x, y, label='$H_2O$')",2036,43,4,51,1,26,1
+17223174,Returning distinct rows in SQLAlchemy with SQLite,SQLAlchemy count the number of rows with distinct values in column `name` of table `Tag`,session.query(Tag).distinct(Tag.name).group_by(Tag.name).count(),2045,43,4,53,1,26,1
+17856928,How to terminate process from Python using pid?,terminate process `p`,p.terminate(),2088,44,4,42,1,26,1
+18102109,How do I implement a null coalescing operator in SQLAlchemy?,query all data from table `Task` where the value of column `time_spent` is bigger than 3 hours,session.query(Task).filter(Task.time_spent > timedelta(hours=3)).all(),2104,45,4,35,1,26,1
+18292500,Python logging typeerror,Log message 'test' on the root logger.,logging.info('test'),2119,45,4,15,1,26,1
+20457174,"python, locating and clicking a specific button with selenium",find button that is in li class `next` and assign it to variable `next`,next = driver.find_element_by_css_selector('li.next>a'),2261,49,4,31,1,26,1
+23351183,Django - Filter queryset by CharField value length,Filter queryset for all objects in Django model `MyModel` where texts length are greater than `254`,MyModel.objects.filter(text__regex='^.{254}.*'),2375,52,4,61,1,26,1
+30650254,Is it possible to serve a static html page at the root of a django project?,serve a static html page 'your_template.html' at the root of a django project,"url('^$', TemplateView.as_view(template_name='your_template.html'))",2558,56,4,16,1,26,1
+40851413,MITM proxy over SSL hangs on wrap_socket with client,send data 'HTTP/1.0 200 OK\r\n\r\n' to socket `connection`,connection.send('HTTP/1.0 200 established\r\n\r\n'),2815,63,4,24,1,26,1

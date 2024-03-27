@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+19339,inverse of zip,unzip list `original`,"result = ([a for (a, b) in original], [b for (a, b) in original])",10,0,7,48,1
+455612,Limiting floats to two decimal points,limit float 13.949999999999999 to two decimal points,'{0:.2f}'.format(13.95),199,0,5,48,0
+687295,How do I do a not equal in Django queryset filtering?,Filter model 'Entry' where 'id' is not equal to 3 in Django,Entry.objects.filter(~Q(id=3)),290,0,4,48,1
+775296,Python MySQL Parameterized Queries,MySQL execute query 'SELECT * FROM foo WHERE bar = %s AND baz = %s' with parameters `param1` and `param2`,"c.execute('SELECT * FROM foo WHERE bar = %s AND baz = %s', (param1, param2))",326,0,4,48,1
+899103,Writing a list to a file with Python,writing items in list `itemlist` to file `outfile`,outfile.write('\n'.join(itemlist)),353,0,9,48,1
+962619,How to pull a random record using Django's ORM?,get a random record from model 'MyModel' using django's orm,MyModel.objects.order_by('?').first(),386,1,4,48,1
+1249786,Is there a string-collapse library function in python?,split string `my_string` on white spaces,""""""" """""".join(my_string.split())",436,2,8,48,0
+1482308,what's a good way to combinate through a set?,create a list with permutations of string 'abcd',list(powerset('abcd')),464,3,7,48,1
+1762484,"How to find the position of an element in a list , in Python?",find the index of an element 'MSFT' in a list `stocks_list`,[x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT'],500,4,7,48,1
+2582580,Python Mechanize select a form with no name,select a first form with no name in mechanize,br.select_form(nr=0),617,7,4,48,1
+2587402,Sorting Python list based on the length of the string,sort list `xs` based on the length of its elements,"print(sorted(xs, key=len))",618,7,7,48,1
+2953746,Python parse comma-separated number into int,"parse a comma-separated string number '1,000,000' into int","int('1,000,000'.replace(',', ''))",685,8,5,48,0
+3090175,Python - Find the greatest number in a set of numbers,"Find the greatest number in set `(1, 2, 3)`","print(max(1, 2, 3))",702,9,7,48,1
+4706499,append to a file,append to file 'test1' content 'koko',"with open('test1', 'ab') as f:
+    pass",979,16,9,48,1
+4859292,How to get a random value in python dictionary,get a random key `country` and value `capital` form a dictionary `d`,"country, capital = random.choice(list(d.items()))",1001,16,1,48,0
+5048841,How to alphabetically sort array of dictionaries on single key?,Sort list `my_list` in alphabetical order based on the values associated with key 'name' of each dictionary in the list,my_list.sort(key=operator.itemgetter('name')),1029,17,1,48,0
+5844672,Delete an element from a dictionary,Delete an element 0 from a dictionary `a`,{i: a[i] for i in a if (i != 0)},1098,19,1,48,0
+8244915,How do you divide each element in a list by an int?,divide each element in list `myList` by integer `myInt`,myList[:] = [(x / myInt) for x in myList],1305,24,7,48,1
+8671702,Passing list of parameters to SQL in psycopg2,"pass a list of parameters `((1, 2, 3),) to sql queue 'SELECT * FROM table WHERE column IN %s;'","cur.mogrify('SELECT * FROM table WHERE column IN %s;', ((1, 2, 3),))",1347,25,7,48,1
+9153527,"Import module in another directory from a ""parallel"" sub-directory",append a path `/path/to/main_folder` in system path,sys.path.append('/path/to/main_folder'),1391,26,9,48,1
+10941229,Convert list of tuples to list?,flatten list of tuples `a`,list(chain.from_iterable(a)),1532,30,7,48,1
+11339210,How to get integer values from a string in Python?,get multiple integer values from a string 'string1',"map(int, re.findall('\\d+', string1))",1564,31,5,48,0
+12362542,"Python server ""Only one usage of each socket address is normally permitted""",Enable the SO_REUSEADDR socket option in socket object `s` to fix the error `only one usage of each socket address is normally permitted`,"s.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)",1644,33,4,48,1
+12814667,How to sort a list according to another list?,How to sort a list according to another list?,a.sort(key=lambda x_y: b.index(x_y[0])),1677,34,7,48,1
+14050824,Add SUM of values of two LISTS into new LIST,sum each element `x` in list `first` with element `y` at the same index in list `second`.,"[(x + y) for x, y in zip(first, second)]",1804,37,7,48,1
+16739319,Selenium Webdriver - NoSuchElementExceptions,selenium wait for driver `driver` 60 seconds before throwing a NoSuchElementExceptions exception,driver.implicitly_wait(60),2000,42,4,48,1
+17149561,How to find a value in a list of python dictionaries?,"Check if the value of the key ""name"" is ""Test"" in a list of dictionaries `label`",any(d['name'] == 'Test' for d in label),2041,43,1,48,0
+17238587,python regular expression to remove repeated words,Remove duplicate words from a string `text` using regex,"text = re.sub('\\b(\\w+)( \\1\\b)+', '\\1', text)",2046,43,0,48,0
+18079029,Index of element in Numpy array,get the indexes of the x and y axes in Numpy array `np` where variable `a` is equal to variable `value`,"i, j = np.where(a == value)",2101,45,6,48,0
+18461623,Average values in two Numpy arrays,Get the average values from two numpy arrays `old_set` and `new_set`,"np.mean(np.array([old_set, new_set]), axis=0)",2132,45,6,48,0
+18637651,Most pythonic way to convert a list of tuples,to convert a list of tuples `list_of_tuples` into list of lists,[list(t) for t in zip(*list_of_tuples)],2147,46,7,48,1
+21018612,How to download to a specific directory with Python?,download to a directory '/path/to/dir/filename.ext' from source 'http://example.com/file.ext',"urllib.request.urlretrieve('http://example.com/file.ext', '/path/to/dir/filename.ext')",2293,50,9,48,1
+23797491,Parse_dates in Pandas,convert date strings in pandas dataframe column`df['date']` to pandas timestamps using the format '%d%b%Y',"df['date'] = pd.to_datetime(df['date'], format='%d%b%Y')",2388,52,2,48,0
+27175400,How to find the index of a value in 2d array in Python?,How to find the index of a value in 2d array in Python?,np.where(a == 1),2457,54,6,48,0
+28657018,Remove string from list if from substring list,get last element of string splitted by '\\' from list of strings `list_dirs`,[l.split('\\')[-1] for l in list_dirs],2492,55,8,48,0
+38831808,Reading hex to double-precision float python,unpack the binary data represented by the hexadecimal string '4081637ef7d0424a' to a float,"struct.unpack('d', binascii.unhexlify('4081637ef7d0424a'))",2749,61,5,48,0
+39159475,pandas: how to do multiple groupby-apply operations,"Use multiple groupby and agg operations `sum`, `count`, `std` for pandas data frame `df`","df.groupby(level=0).agg(['sum', 'count', 'std'])",2753,61,3,48,0
+39299703,How to check if character exists in DataFrame cell,check if character '-' exists in a dataframe `df` cell 'a',df['a'].str.contains('-'),2758,62,3,48,0
+41821112,How can I sum the product of two list items using for loop in python?,sum the products of each two elements at the same index of list `a` and list `b`,"list(x * y for x, y in list(zip(a, b)))",2847,64,7,48,1

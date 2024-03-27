@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+8282553,Removing character in list of strings,delete all occureces of `8` in each string `s` in list `lst`,"print([s.replace('8', '') for s in lst])",1315,25
+8303993,Elegant way to transform a list of dict into a dict of dicts,convert a list of dictionaries `listofdict into a dictionary of dictionaries,"dict((d['name'], d) for d in listofdict)",1316,25
+8305518,switching keys and values in a dictionary in python,switch keys and values in a dictionary `my_dict`,"dict((v, k) for k, v in my_dict.items())",1317,25
+8306171,Python: Extract variables out of namespace,update the `globals()` dictionary with the contents of the `vars(args)` dictionary,globals().update(vars(args)),1318,25
+8315209,Sending http headers with python,sending http headers to `client`,client.send('HTTP/1.0 200 OK\r\n'),1319,25
+8337004,"How to print +1 in Python, as +1 (with plus sign) instead of 1?",Print +1 using format '{0:+d}',print('{0:+d}'.format(score)),1320,25
+8344905,Pythons fastest way of randomising case of a string,randomly switch letters' cases in string `s`,""""""""""""".join(x.upper() if random.randint(0, 1) else x for x in s)",1321,25
+8369219,How do I read a text file into a string variable in Python,read a text file 'very_Important.txt' into a string variable `str`,"str = open('very_Important.txt', 'r').read()",1322,25
+8372399,Zip with list output instead of tuple,"Get the zip output as list from the lists `[1, 2, 3]`, `[4, 5, 6]`, `[7, 8, 9]`","[list(a) for a in zip([1, 2, 3], [4, 5, 6], [7, 8, 9])]",1323,25
+8380389,how to get day name in datetime in python,Get day name from a datetime object,date.today().strftime('%A'),1324,25
+8383213,Python Regex for hyphenated words,python regex for hyphenated words in `text`,"re.findall('\\w+(?:-\\w+)+', text)",1325,25
+8386675,Extracting specific columns in numpy array,extracting column `1` and `9` from array `data`,"data[:, ([1, 9])]",1326,25
+8409095,matplotlib: Set markers for individual points on a line,set color marker styles `--bo` in matplotlib,"plt.plot(list(range(10)), '--bo')",1327,25
+8409095,matplotlib: Set markers for individual points on a line,"set circle markers on plot for individual points  defined in list   `[1,2,3,4,5,6,7,8,9,10]` created by range(10)","plt.plot(list(range(10)), linestyle='--', marker='o', color='b')",1328,25
+8425046,The best way to filter a dictionary in Python,Remove all items from a dictionary `d` where the values are less than `1`,"d = dict((k, v) for k, v in d.items() if v > 0)",1329,25
+8425046,The best way to filter a dictionary in Python,Filter dictionary `d` to have items with value greater than 0,"d = {k: v for k, v in list(d.items()) if v > 0}",1330,25
+8440117,How do I print a Celsius symbol with matplotlib?,Print a celsius symbol with matplotlib,ax.set_xlabel('Temperature ($^\\circ$C)'),1331,25
+8440117,How do I print a Celsius symbol with matplotlib?,print a celsius symbol on x axis of a plot `ax`,ax.set_xlabel('Temperature (\u2103)'),1332,25
+8459231,Sort tuples based on second parameter,sort a list of tuples `my_list` by second parameter in the tuple,my_list.sort(key=lambda x: x[1]),1333,25
+8519599,"python: dictionary to string, custom format?","dictionary `d` to string, custom format","""""""<br/>"""""".join([('%s:: %s' % (key, value)) for key, value in list(d.items())])",1334,25
+8519922,Posting raw data with Python,Send a post request with raw data `DATA` and basic authentication with `username` and `password`,"requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))",1335,25
+8528178,List of zeros in python,create a list `listofzeros` of `n` zeros,listofzeros = [0] * n,1336,25
+8546245,Python concat string with list,join a list of strings `list` using a space ' ',""""""" """""".join(list)",1337,25
+8556076,Python - How to extract the last x elements from a list,get the last 10 elements from a list `my_list`,my_list[-10:],1338,25
+8556076,Python - How to extract the last x elements from a list,create list `new_list` containing the last 10 elements of list `my_list`,new_list = my_list[-10:],1339,25
+8569201,Get the string within brackets in Python,find the string matches within parenthesis from a string `s` using regex,"m = re.search('\\[(\\w+)\\]', s)",1340,25
+8577137,creating a tmp file in python,Open a file `path/to/FILE_NAME.ext` in write mode,"new_file = open('path/to/FILE_NAME.ext', 'w')",1341,25
+8586738,Get required fields from Document in mongoengine?,Get a list of all fields in class `User` that are marked `required`,"[k for k, v in User._fields.items() if v.required]",1342,25
+8639973,How to plot with x-axis at the top of the figure?,How to plot with x-axis at the top of the figure?,ax.xaxis.set_ticks_position('top'),1343,25
+8650415,get keys correspond to a value in dictionary,Reverse key-value pairs in a dictionary `map`,"dict((v, k) for k, v in map.items())",1344,25
+8654637,"Pythonic way to fetch all elements in a dictionary, falling between two keys?","fetch all elements in a dictionary `parent_dict`, falling between two keys 2 and 4","dict((k, v) for k, v in parent_dict.items() if 2 < k < 4)",1345,25
+8654637,"Pythonic way to fetch all elements in a dictionary, falling between two keys?",fetch all elements in a dictionary 'parent_dict' where the key is between the range of 2 to 4,"dict((k, v) for k, v in parent_dict.items() if k > 2 and k < 4)",1346,25
+8671702,Passing list of parameters to SQL in psycopg2,"pass a list of parameters `((1, 2, 3),) to sql queue 'SELECT * FROM table WHERE column IN %s;'","cur.mogrify('SELECT * FROM table WHERE column IN %s;', ((1, 2, 3),))",1347,25
+8687018,Python string replace two things at once?,replace each 'a' with 'b' and each 'b' with 'a' in the string 'obama' in a single pass.,"""""""obama"""""".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')",1348,25
+8687568,How to write a tuple of tuples to a CSV file using Python,write a tuple of tuples `A` to a csv file using python,writer.writerow(A),1349,25
+8687568,How to write a tuple of tuples to a CSV file using Python,Write all tuple of tuples `A` at once into csv file,writer.writerows(A),1350,25
+8691311,Python: How to write multiple strings in one line?,"write multiple strings `line1`, `line2` and `line3` in one line in a file `target`","target.write('%r\n%r\n%r\n' % (line1, line2, line3))",1351,25
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a list of strings,[item[0] for item in queryresult],1352,25
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a string `emaillist`,emaillist = '\n'.join(item[0] for item in queryresult),1353,25

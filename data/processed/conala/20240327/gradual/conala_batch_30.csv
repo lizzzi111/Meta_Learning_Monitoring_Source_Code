@@ -1,0 +1,45 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+82831,check whether a file exists,"check whether a file ""/does/not/exist"" exists",print(os.path.isfile('/does/not/exist')),51,0,9,30,1
+104420,How to generate all permutations of a list in Python,"generate all permutations of list `[1, 2, 3]` and list `[4, 5, 6]`","print(list(itertools.product([1, 2, 3], [4, 5, 6])))",65,0,7,30,1
+123198,copy a file,copy a file from `src` to `dst`,"copyfile(src, dst)",72,0,9,30,1
+251464,How to get a function name as a string in Python?,How to get a function name as a string in Python?,my_function.__name__,113,0,4,30,1
+306400,randomly select an item from a list,randomly select an item from list `foo`,random.choice(foo),136,0,7,30,1
+518021,Getting the length of an array,Getting the length of `my_tuple`,len(my_tuple),224,0,7,30,1
+843277,check if a variable exists,check if a local variable 'myVar' exists,"if ('myVar' in locals()):
+    pass",339,0,4,30,1
+930397,Getting the last element of a list,get the last element in list `alist`,alist[(-1)],361,0,7,30,1
+977491,Comparing two .txt files using difflib in Python,compare contents  at filehandles `file1` and `file2` using difflib,"difflib.SequenceMatcher(None, file1.read(), file2.read())",391,1,9,30,1
+1348026,How do I create a file in python without overwriting an existing file,create file 'x' if file 'x' does not exist,"fd = os.open('x', os.O_WRONLY | os.O_CREAT | os.O_EXCL)",445,2,9,30,1
+1773805,parse a YAML file,"parse a YAML file ""example.yaml""","with open('example.yaml') as stream:
+    try:
+        print((yaml.load(stream)))
+    except yaml.YAMLError as exc:
+        print(exc)",501,4,9,30,1
+2621674,how to extract elements from a list in python?,"extract elements at indices (1, 2, 5) from a list `a`","[a[i] for i in (1, 2, 5)]",638,7,7,30,1
+3061761,Numpy array dimensions,get the dimensions of numpy array `a`,a.shape,701,9,6,30,0
+3464359,Is it possible to wrap the text of xticks in matplotlib in python?,rotate the xtick labels of matplotlib plot `ax` by `45` degrees to make long labels readable,"ax.set_xticklabels(labels, rotation=45)",769,11,4,30,1
+4065737,Python/Numpy: Convert list of bools to unsigned int,Sum the corresponding decimal values for binary values of each boolean element in list `x`,"sum(1 << i for i, b in enumerate(x) if b)",875,13,7,30,1
+4174941,sort a list of lists by a specific index,sort list `l` by index 2 of the item,"sorted(l, key=(lambda x: x[2]))",891,14,7,30,1
+4175686,python: Is this a wrong way to remove an element from a dict?,remove key 'ele' from dictionary `d`,del d['ele'],895,14,1,30,0
+6250046,How can I remove the fragment identifier from a URL?,remove the fragment identifier `#something` from a url `http://www.address.com/something#something`,urlparse.urldefrag('http://www.address.com/something#something'),1129,20,4,30,1
+7271385,How do I combine two lists into a dictionary in Python?,"combine two lists `[1, 2, 3, 4]` and `['a', 'b', 'c', 'd']` into a dictionary","dict(zip([1, 2, 3, 4], ['a', 'b', 'c', 'd']))",1213,22,1,30,0
+7286365,Print a list in reverse order with range()?,reverse the list that contains 1 to 10,list(reversed(list(range(10)))),1219,22,7,30,1
+7323859,Python - How to call bash commands with pipe?,call bash command 'tar c my_dir | md5sum' with pipe,"subprocess.call('tar c my_dir | md5sum', shell=True)",1223,22,9,30,1
+9304908,django filter with list of values,"create a django query for a list of values `1, 4, 7`","Blog.objects.filter(pk__in=[1, 4, 7])",1404,27,7,30,1
+9466017,Sorting files in a list,sort list `files` based on variable `file_number`,files.sort(key=file_number),1414,27,7,30,1
+9775297,Append a NumPy array to a NumPy array,append a numpy array 'b' to a numpy array 'a',"np.vstack((a, b))",1450,28,6,30,0
+10373660,Converting a Pandas GroupBy object to DataFrame,convert a pandas `df1` groupby object to dataframe,"DataFrame({'count': df1.groupby(['Name', 'City']).size()}).reset_index()",1484,29,3,30,0
+10565598,Numpy: How to check if array contains certain numbers?,check if array `b` contains all elements of array `a`,"numpy.in1d(b, a).all()",1503,29,6,30,0
+10973614,Convert JSON array to Python list,Convert JSON array `array` to Python object,data = json.loads(array),1535,30,6,30,0
+13145368,Find the maximum value in a list of tuples in Python,find the first element of the tuple with the maximum second element in a list of tuples `lis`,"max(lis, key=lambda item: item[1])[0]",1706,35,7,30,1
+13167391,filtering grouped df in pandas,filter dataframe `grouped` where the length of each group `x` is bigger than 1,grouped.filter(lambda x: len(x) > 1),1710,35,3,30,0
+13291539,convert double to float in Python,convert double 0.00582811585976 to float,"struct.unpack('f', struct.pack('f', 0.00582811585976))",1726,35,5,30,0
+15839491,How to clear Tkinter Canvas?,clear Tkinter Canvas `canvas`,canvas.delete('all'),1946,41,4,30,1
+15974730,How do I get the different parts of a Flask request's url?,retrieve the path from a Flask request,request.url,1957,41,4,30,1
+16994696,python get time stamp on file in mm/dd/yyyy format,python get time stamp on file `file` in '%m/%d/%Y' format,"time.strftime('%m/%d/%Y', time.gmtime(os.path.getmtime(file)))",2015,42,2,30,0
+19894365,Running R script from python,run r script '/usr/bin/Rscript --vanilla /pathto/MyrScript.r',"subprocess.call('/usr/bin/Rscript --vanilla /pathto/MyrScript.r', shell=True)",2230,48,9,30,1
+21206395,write to csv from DataFrame python pandas,Write column 'sum' of DataFrame `a` to csv file 'test.csv',"a.to_csv('test.csv', cols=['sum'])",2300,50,3,30,0
+26367812,Appending to list in Python dictionary,"append `date` to list value of `key` in dictionary `dates_dict`, or create key `key` with value `date` in a list if it does not exist","dates_dict.setdefault(key, []).append(date)",2441,53,1,30,0
+35178812,Counting unique index values in Pandas groupby,count unique index values in column 'A' in pandas dataframe `ex`,ex.groupby(level='A').agg(lambda x: x.index.get_level_values(1).nunique()),2688,60,3,30,0
+41821112,How can I sum the product of two list items using for loop in python?,get the sum of the products of each pair of corresponding elements in lists `a` and `b`,"sum(x * y for x, y in zip(a, b))",2846,64,7,30,1
+42180455,How to get only div with id ending with a certain value in Beautiful Soup?,BeautifulSoup select 'div' elements with an id attribute value ending with sub-string '_answer' in HTML parsed string `soup`,soup.select('div[id$=_answer]'),2863,64,4,30,1

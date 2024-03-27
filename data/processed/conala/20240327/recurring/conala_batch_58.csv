@@ -1,0 +1,47 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new
+53513,check if a list is empty,check if list `seq` is empty,"if (not seq):
+    pass",35,0,7,57,1,58,0
+120656,Directory listing,"list all files in directory "".""","for (dirname, dirnames, filenames) in os.walk('.'):
+    for subdirname in dirnames:
+        print(os.path.join(dirname, subdirname))
+    for filename in filenames:
+        pass",71,0,9,14,1,58,0
+613183,Sort a Python dictionary by value,Sort dictionary `d` by value in descending order,"sorted(d, key=d.get, reverse=True)",246,0,1,50,0,58,0
+640001,How can I remove text within parentheses with a regex?,remove parentheses and text within it in string `filename`,"re.sub('\\([^)]*\\)', '', filename)",257,0,8,0,0,58,0
+931092,Reverse a string,"Reverse a string ""foo""",'foo'[::(-1)],370,0,8,0,0,58,0
+2186656,How can I remove all instances of an element from a list in Python?,"remove all instances of `[1, 1]` from a list `a`","[x for x in a if x != [1, 1]]",568,5,7,14,1,58,0
+2354166,How do you modify sys.path in Google App Engine (Python)?,modify sys.path for python module `subdir`,"sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))",592,6,9,45,1,58,0
+3548673,How to replace (or strip) an extension from a filename in Python?,replace extension '.txt' in basename '/home/user/somefile.txt' with extension '.jpg',print(os.path.splitext('/home/user/somefile.txt')[0] + '.jpg'),789,11,9,16,1,58,0
+4605439,What is the simplest way to swap char in a string with Python?,swap each pair of characters in string `s`,""""""""""""".join([s[x:x + 2][::-1] for x in range(0, len(s), 2)])",953,15,8,0,0,58,0
+4659524,how to sort by length of string followed by alphabetical order?,sort list `the_list` by the length of string followed by alphabetical order,"the_list.sort(key=lambda item: (-len(item), item))",964,16,7,22,1,58,0
+5229425,Precision in python,print a digit `your_number` with exactly 2 digits after decimal,print('{0:.2f}'.format(your_number)),1048,18,5,26,0,58,0
+6159900,write line to file,"write line ""hi there"" to file `myfile`","f = open('myfile', 'w')
+f.write('hi there\n')
+f.close()",1125,20,9,62,1,58,0
+7852855,How to convert a Python datetime object to seconds,"convert datetime object `(1970, 1, 1)` to seconds","(t - datetime.datetime(1970, 1, 1)).total_seconds()",1263,23,2,51,0,58,0
+8380389,how to get day name in datetime in python,Get day name from a datetime object,date.today().strftime('%A'),1324,25,2,7,0,58,0
+9932549,"Is it possible to take an ordered ""slice"" of a dictionary in Python based on a list of keys?",get key-value pairs in dictionary `my_dictionary` for all keys in list `my_list` in the order they appear in `my_list`,"dict(zip(my_list, map(my_dictionary.get, my_list)))",1459,28,1,35,0,58,0
+10365225,extract digits in a simple way from a python string,extract digits in a simple way from a python string,"map(int, re.findall('\\d+', s))",1483,29,5,1,0,58,0
+11414596,"dropping a row in pandas with dates indexes, python",return dataframe `df` with last row dropped,df.ix[:-1],1578,31,3,33,0,58,0
+13237941,sorting list of nested dictionaries in python,sort list of nested dictionaries `yourdata` in reverse order of 'key' and 'subkey',"yourdata.sort(key=lambda e: e['key']['subkey'], reverse=True)",1717,35,1,9,0,58,0
+13740672,in pandas how can I groupby weekday() for a datetime column?,create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`,data['weekday'] = data['my_dt'].apply(lambda x: x.weekday()),1773,36,3,27,0,58,0
+14734533,How to access pandas groupby dataframe by key,get data of column 'A' and column 'B' in dataframe `df` where column 'A' is equal to 'foo',"df.loc[gb.groups['foo'], ('A', 'B')]",1852,38,3,20,0,58,0
+15315452,Selecting with complex criteria from pandas.DataFrame,"select values from column 'A' for which corresponding values in column 'B' will be greater than 50, and in column 'C' - equal 900 in dataframe `df`",df['A'][(df['B'] > 50) & (df['C'] == 900)],1913,40,3,41,0,58,0
+15411107,Delete a dictionary item if the key exists,Delete an item with key `key` from `mydict`,del mydict[key],1921,40,1,9,0,58,0
+17166601,Summing across rows of Pandas Dataframe,Summing across rows of Pandas Dataframe,"df.groupby(['stock', 'same1', 'same2'])['positions'].sum().reset_index()",2042,43,3,63,0,58,0
+18722196,How to set UTC offset for datetime?,set UTC offset by 9 hrs ahead for date '2013/09/11 00:17',dateutil.parser.parse('2013/09/11 00:17 +0900'),2157,46,2,10,0,58,0
+19602931,http file downloading and saving,download file from http url `file_url`,file_name = wget.download(file_url),2209,47,9,32,1,58,0
+20048987,How to print floating point numbers as it is without any truncation in python?,print a floating point number 2.345e-67 without any truncation,print('{:.100f}'.format(2.345e-67)),2238,48,5,45,0,58,0
+20576618,Pandas datetime column to ordinal,Convert  DateTime column 'date' of pandas dataframe 'df' to ordinal,df['date'].apply(lambda x: x.toordinal()),2271,49,3,45,0,58,0
+20778951,Regex for location matching - Python,"find all occurrences of regex pattern '(?:\\w+(?:\\s+\\w+)*,\\s)+(?:\\w+(?:\\s\\w+)*)' in string `x`","re.findall('(?:\\w+(?:\\s+\\w+)*,\\s)+(?:\\w+(?:\\s\\w+)*)', x)",2280,49,0,8,0,58,0
+21317384,Pandas/Python: How to concatenate two dataframes without duplicates?,concatenate dataframe `df1` with `df2` whilst removing duplicates,"pandas.concat([df1, df2]).drop_duplicates().reset_index(drop=True)",2303,50,3,61,0,58,0
+22229255,Confusing with the usage of regex in Python,match zero-or-more instances of lower case alphabet characters in a string `f233op `,"re.findall('([a-z]*)', 'f233op')",2346,51,0,0,0,58,0
+23145240,Python: split elements of a list,split elements of a list `l` by '\t',[i.partition('\t')[-1] for i in l if '\t' in i],2371,52,7,63,1,58,0
+25040875,Get a list of values from a list of dictionaries in python,get a list of values for key 'key' from a list of dictionaries `l`,[d['key'] for d in l],2417,53,1,3,0,58,0
+26443308,Find last occurrence of character,"Find last occurrence of character '}' in string ""abcd}def}""",'abcd}def}'.rfind('}'),2443,53,0,15,0,58,0
+27905295,How to replace NaNs by preceding values in pandas DataFrame?,replace nans by preceding values in pandas dataframe `df`,"df.fillna(method='ffill', inplace=True)",2477,54,3,9,0,58,0
+31405409,How to remove parentheses only around single words in a string,remove parentheses only around single words in a string `s` using regex,"re.sub('\\((\\w+)\\)', '\\1', s)",2583,57,0,5,0,58,0
+31547657,How can I solve system of linear equations in SymPy?,"sympy solve matrix of linear equations `(([1, 1, 1, 1], [1, 1, 2, 3]))` with variables `(x, y, z)`","linsolve(Matrix(([1, 1, 1, 1], [1, 1, 2, 3])), (x, y, z))",2586,57,6,62,0,58,0
+33724111,Python RegEx using re.sub with multiple patterns,remove colon character surrounded by vowels letters in string `word`,"word = re.sub('([aeiou]):(([aeiou][^aeiou]*){3})$', '\\1\\2', word)",2650,59,8,29,0,58,0
+38147447,How to remove square bracket from pandas dataframe,remove square bracket '[]' from pandas dataframe `df` column 'value',df['value'] = df['value'].str.strip('[]'),2735,61,3,40,0,58,0
+42462530,How to replace the white space in a string in a pandas dataframe?,replace white spaces in dataframe `df` with '_',"df.replace(' ', '_', regex=True)",2874,64,3,63,0,58,0

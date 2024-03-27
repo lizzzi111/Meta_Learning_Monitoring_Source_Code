@@ -1,0 +1,44 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new
+42950,Get Last Day of the Month,Get Last Day of the first month in year 2000,"(datetime.date(2000, 2, 1) - datetime.timedelta(days=1))",26,0,2,40,0
+72899,How do I sort a list of dictionaries by values of the dictionary in Python?,sort a list of dictionaries `l` by values in key `name` in descending order,"newlist = sorted(l, key=itemgetter('name'), reverse=True)",40,0,1,40,0
+406121,Flattening a shallow list in Python,flatten list `list_of_menuitems`,[image for menuitem in list_of_menuitems for image in menuitem],183,0,7,40,1
+432842,get the logical xor of two variables,get the logical xor of two variables `str1` and `str2`,return (bool(str1) ^ bool(str2)),190,0,4,40,1
+509742,Change directory to the directory of a Python script,change directory to the directory of a python script,os.chdir(os.path.dirname(__file__)),213,0,9,40,1
+627435,remove an element from a list by index,remove the last element in list `a`,del a[(-1)],250,0,7,40,1
+701402,Best way to choose a random file from a directory,"choose a random file from the directory contents of the C drive, `C:\\`",random.choice(os.listdir('C:\\')),292,0,9,40,1
+1580270,What's the best way to search for a Python dictionary value in a list of dictionaries?,What's the best way to search for a Python dictionary value in a list of dictionaries?,any(d['site'] == 'Superuser' for d in data),476,3,1,40,0
+1960516,Python JSON serialize a Decimal object,encode `Decimal('3.9')` to a JSON string,json.dumps(Decimal('3.9')),530,4,5,40,0
+2397687,What's the easiest way to convert a list of hex byte strings to a list of hex integers?,convert the elements of list `L` from hex byte strings to hex integers,"[int(x, 16) for x in L]",597,6,5,40,0
+2918362,writing string to a file on a new line everytime?,Write a string `My String` to a file `file` including new line character,file.write('My String\n'),683,8,9,40,1
+3277503,read a file line by line into a list,"read file ""file.txt"" line by line into a list `array`","with open('file.txt', 'r') as ins:
+    array = []
+    for line in ins:
+        array.append(line)",730,10,9,40,1
+3945856,Converting string to tuple and adding to tuple,"converting string '(1,2,3,4)' to a tuple","ast.literal_eval('(1,2,3,4)')",856,13,5,40,0
+4143502,How to do a scatter plot with empty circles in Python?,do a scatter plot with empty circles,"plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')",886,14,4,40,1
+4484690,How to filter a dictionary in Python?,Filter a dictionary `d` to remove keys with value 'None' and replace other values with 'updated',"dict((k, 'updated') for k, v in d.items() if v != 'None')",938,15,1,40,0
+5618878,convert list to string,concatenating values in list `L` to a string,"makeitastring = ''.join(map(str, L))",1083,19,7,40,1
+7732125,Clear text from textarea with selenium,clear text from textarea 'foo' with selenium,driver.find_element_by_id('foo').clear(),1253,23,4,40,1
+8556076,Python - How to extract the last x elements from a list,create list `new_list` containing the last 10 elements of list `my_list`,new_list = my_list[-10:],1339,25,7,40,1
+10472907,How to convert dictionary into string,convert dictionary `adict` into string,""""""""""""".join('{}{}'.format(key, val) for key, val in list(adict.items()))",1491,29,1,40,0
+11269575,How to hide output of subprocess in Python 2.7,"hide output of subprocess `['espeak', text]`","subprocess.check_output(['espeak', text], stderr=subprocess.STDOUT)",1556,31,4,40,1
+11336548,Django - taking values from POST request,"django get the value of key 'title' from POST request `request` if exists, else return empty string ''","request.POST.get('title', '')",1563,31,4,40,1
+11840111,Divide the values of two dictionaries in python,divide the values with same keys of two dictionary `d1` and `d2`,{k: (float(d2[k]) / d1[k]) for k in d2},1613,32,1,40,0
+11850425,Custom Python list sorting,Sort list `alist` in ascending order based on each of its elements' attribute `foo`,alist.sort(key=lambda x: x.foo),1615,32,7,40,1
+12400256,Python: Converting Epoch time into the datetime,Convert unix timestamp '1347517370' to formatted string '%Y-%m-%d %H:%M:%S',"time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))",1646,33,2,40,0
+12604909,Pandas: how to change all the values of a column?,"pandas: change all the values of a column 'Date' into ""int(str(x)[-4:])""",df['Date'] = df['Date'].apply(lambda x: int(str(x)[-4:])),1661,33,3,40,0
+13571134,recursively go through all subdirectories and read files,recursively go through all subdirectories and files in `rootdir`,"for (root, subFolders, files) in os.walk(rootdir):
+    pass",1759,36,9,40,1
+14306852,How do I modify the width of a TextCtrl in wxPython?,modify the width of a text control as `300` keeping default height in wxpython,"wx.TextCtrl(self, -1, size=(300, -1))",1824,38,4,40,1
+14793098,How to use Flask-Security register view?,change flask security register url to `/create_account`,app.config['SECURITY_REGISTER_URL'] = '/create_account',1865,39,4,40,1
+20107570,Removing index column in pandas,"write dataframe `df`, excluding index, to a csv file","df.to_csv(filename, index=False)",2245,48,3,40,0
+20400135,Simple way to append a pandas series with same index,simple way to append a pandas series `a` and `b` with same index,"pd.concat([a, b], ignore_index=True)",2258,49,3,40,0
+21022865,Pandas: Elementwise multiplication of two dataframes,create a dataframe containing the multiplication of element-wise in dataframe `df` and dataframe `df2` using index name and column labels of dataframe `df`,"pd.DataFrame(df.values * df2.values, columns=df.columns, index=df.index)",2294,50,3,40,0
+30015665,How to check whether the system is FreeBSD in a python script?,get the platform OS name,platform.system(),2540,56,4,40,1
+30241279,Flask - How to make an app externally visible through a router?,run app `app` on host '192.168.0.58' and port 9000 in Flask,"app.run(host='192.168.0.58', port=9000, debug=False)",2546,56,4,40,1
+31828240,First non-null value per row from a list of Pandas columns,get first non-null value per each row from dataframe `df`,df.stack().groupby(level=0).first(),2608,58,3,40,0
+32464280,converting currency with $ to numbers in Python pandas,remove dollar sign '$' from second to last column data in dataframe 'df' and convert the data into floats,"df[df.columns[1:]].replace('[\\$,]', '', regex=True).astype(float)",2623,58,3,40,0
+38147447,How to remove square bracket from pandas dataframe,remove square bracket '[]' from pandas dataframe `df` column 'value',df['value'] = df['value'].str.strip('[]'),2735,61,3,40,0
+39538010,How can I execute Python code in a virtualenv from Matlab,execute python code `myscript.py` in a virtualenv `/path/to/my/venv` from matlab,system('/path/to/my/venv/bin/python myscript.py'),2765,62,4,40,1
+41469647,Outer product of each column of a 2D array to form a 3D array - NumPy,outer product of each column of a 2d `X` array to form a 3d array `X`,"np.einsum('ij,kj->jik', X, X)",2837,64,6,40,0
+42394627,python How do you sort list by occurrence with out removing elements from the list?,sort list `lst` based on each element's number of occurrences,"sorted(lst, key=lambda x: (-1 * c[x], lst.index(x)))",2871,64,7,40,1

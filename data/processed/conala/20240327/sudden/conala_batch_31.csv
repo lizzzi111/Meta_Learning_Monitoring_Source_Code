@@ -1,0 +1,41 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+234512,Splitting strings in python,split a string 's' by space while ignoring spaces within square braces and quotes.,"re.findall('\\[[^\\]]*\\]|""[^""]*""|\\S+', s)",100,0,8,0,0,13,0,31,0
+299446,How do I change directory back to my original working directory with Python?,change working directory to the directory `owd`,os.chdir(owd),132,0,9,46,1,21,0,31,0
+379906,Parse String to Float or Int,parse string `a` to float,float(a),172,0,5,5,0,53,0,31,0
+627435,remove an element from a list by index,remove the element in list `a` with index 1,a.pop(1),254,0,7,19,1,41,0,31,0
+930397,Getting the last element of a list,Getting the last element of list `some_list`,some_list[(-1)],364,0,7,17,1,20,0,31,0
+1207457,Convert a Unicode string to a string,Convert a Unicode string `title` to a 'ascii' string,"unicodedata.normalize('NFKD', title).encode('ascii', 'ignore')",430,2,8,0,0,17,0,31,0
+1450897,Python: removing characters except digits from string,substitute ASCII letters in string 'aas30dsa20' with empty string '',"re.sub('\\D', '', 'aas30dsa20')",461,3,8,0,0,8,0,31,0
+2317134,How do I use a regular expression to match a name?,match regex '[a-zA-Z][\\w-]*$' on string '!A_B',"re.match('[a-zA-Z][\\w-]*$', '!A_B')",586,6,0,52,0,42,0,31,0
+2508861,Python: Convert a string to an integer,Python: Convert a string to an integer,int('  23  '),608,6,5,5,0,14,0,31,0
+2689189,How do I simulate a progress counter in a command line application in Python?,Make a delay of 1 second,time.sleep(1),646,7,4,26,1,25,1,31,0
+2813806,How do you check the presence of many keys in a Python dictinary?,check if key 'stackoverflow' and key 'google' are presented in dictionary `sites`,"set(['stackoverflow', 'google']).issubset(sites)",670,8,1,25,0,39,0,31,0
+3437059,string contains substring,"check if string ""substring"" is in string",string.find('substring'),766,10,0,4,0,40,0,31,0
+4433017,Shortest way to convert these bytes to int in python?,convert bytes string `s`  to an unsigned integer,"struct.unpack('>q', s)[0]",930,15,5,45,0,4,0,31,0
+4906977,Access environment variables,get value of the environment variable 'KEY_THAT_MIGHT_EXIST' with default value `default_value`,"print(os.getenv('KEY_THAT_MIGHT_EXIST', default_value))",1012,17,4,60,1,10,1,31,0
+5618878,convert list to string,concatenating values in `list1` to a string,str1 = ''.join(list1),1081,19,7,50,1,24,0,31,0
+6633523,How can I convert a string with dot and comma into a float number in Python,convert a string `my_string` with dot and comma into a float number `my_float`,"my_float = float(my_string.replace(',', ''))",1165,21,5,8,0,42,0,31,0
+7138686,How to write a list to a file with newlines in Python3,write the elements of list `lines` concatenated by special character '\n' to file `myfile`,myfile.write('\n'.join(lines)),1198,22,9,31,1,61,0,31,0
+7263824,Get HTML Source of WebElement in Selenium WebDriver using Python,get html source of Selenium WebElement `element`,element.get_attribute('innerHTML'),1211,22,4,64,1,46,1,31,0
+7271385,How do I combine two lists into a dictionary in Python?,"combine two lists `[1, 2, 3, 4]` and `['a', 'b', 'c', 'd']` into a dictionary","dict(zip([1, 2, 3, 4], ['a', 'b', 'c', 'd']))",1213,22,1,30,0,1,0,31,0
+7503241,django models selecting single field,django return a QuerySet list containing the values of field 'eng_name' in model `Employees`,"Employees.objects.values_list('eng_name', flat=True)",1238,23,4,46,1,26,1,31,0
+7635237,"numpy: syntax/idiom to cast (n,) array to a (n, 1) array?",add a new axis to array `a`,"a[:, (np.newaxis)]",1247,23,6,50,0,18,0,31,0
+11331982,How to remove any URL within a string in Python,remove any url within string `text`,"text = re.sub('^https?:\\/\\/.*[\\r\\n]*', '', text, flags=re.MULTILINE)",1562,31,8,0,0,62,0,31,0
+11391969,How to group pandas DataFrame entries by date in a non-unique column,group dataframe `data` entries by year value of the date in column 'date',data.groupby(data['date'].map(lambda x: x.year)),1572,31,3,57,0,49,0,31,0
+13042013,Adding url to mysql row in python,adding url `url` to mysql row,"cursor.execute('INSERT INTO index(url) VALUES(%s)', (url,))",1692,34,4,59,1,45,1,31,0
+13745648,Running bash script from within python,running bash script 'sleep.sh',"subprocess.call('sleep.sh', shell=True)",1774,36,4,47,1,28,1,31,0
+13905936,converting integer to list in python,create a list containing digits of number 123 as its elements,list(str(123)),1789,37,5,2,0,57,0,31,0
+14299978,How to use lxml to find an element by text?,Find the`a` tag in html `root` which starts with the text `TEXT A`  and assign it to `e`,"e = root.xpath('.//a[starts-with(text(),""TEXT A"")]')",1820,37,0,46,0,56,0,31,0
+14716342,How do I find the string between two special characters?,"find the string in `your_string` between two special characters ""["" and ""]""","re.search('\\[(.*)\\]', your_string).group(1)",1851,38,0,16,0,19,0,31,0
+15666169,python + pymongo: how to insert a new field on an existing document in mongo from a for loop,insert a new field 'geolocCountry' on an existing document  'b' using pymongo,"db.Doc.update({'_id': b['_id']}, {'$set': {'geolocCountry': myGeolocCountry}})",1939,41,4,41,1,45,1,31,0
+16176996,Keep only date part when using pandas.to_datetime,get date from dataframe `df` column 'dates' to column 'just_date',df['just_date'] = df['dates'].dt.date,1973,41,3,41,0,55,0,31,0
+16387069,Open images,"Open image ""picture.jpg""","img = Image.open('picture.jpg')
+Img.show",1987,42,9,61,1,33,0,31,0
+17424182,Extracting all rows from pandas Dataframe that have certain value in a specific column,extract all rows from dataframe `data` where the value of column 'Value' is True,data[data['Value'] == True],2055,43,3,50,0,15,0,31,0
+19328874,Python - read text file with weird utf-16 format,open a text file `data.txt` in io module with encoding `utf-16-le`,"file = io.open('data.txt', 'r', encoding='utf-16-le')",2190,47,9,56,1,60,0,31,0
+21350605,python selenium click on button,python selenium click on button '.button.c_button.s_button',driver.find_element_by_css_selector('.button.c_button.s_button').click(),2304,50,4,58,1,46,1,31,0
+21562986,numpy matrix vector multiplication,multiply array `a` and array `b`respective elements then sum each row of the new array,"np.einsum('ji,i->j', a, b)",2311,50,6,44,0,36,0,31,0
+25040875,Get a list of values from a list of dictionaries in python,get a list of values with key 'key' from a list of dictionaries `l`,[d['key'] for d in l if 'key' in d],2415,53,1,57,0,19,0,31,0
+25388796,Most efficient way to convert items of a list to int and sum them up,"Sum integers contained in strings in list `['', '3.4', '', '', '1.0']`","sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if _f])",2422,53,7,19,1,57,0,31,0
+28684154,Python copy a list of lists,Copy list `old_list` and name it `new_list`,new_list = [x[:] for x in old_list],2497,55,7,57,1,60,0,31,0
+32464280,converting currency with $ to numbers in Python pandas,remove dollar sign '$' from second to last column data in dataframe 'df' and convert the data into floats,"df[df.columns[1:]].replace('[\\$,]', '', regex=True).astype(float)",2623,58,3,40,0,61,0,31,0

@@ -1,0 +1,40 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch
+26640145,Python Pandas: How to get the row names from index of a dataframe?,get a list of the row names from index of a pandas data frame,list(df.index),2446,54
+26720916,Faster way to rank rows in subgroups in pandas dataframe,"Get rank of rows from highest to lowest of dataframe `df`, grouped by value in column `group`, according to value in column `value`",df.groupby('group')['value'].rank(ascending=False),2447,54
+26724275,Removing the first folder in a path,remove first directory from path '/First/Second/Third/Fourth/Fifth',os.path.join(*x.split(os.path.sep)[2:]),2448,54
+26727314,Multiple files for one argument in argparse Python 2.7,argparse associate zero or more arguments with flag 'file',"parser.add_argument('file', nargs='*')",2449,54
+26809954,Splinter or Selenium: Can we get current html page after clicking a button?,get the html from the current web page of a Selenium driver,driver.execute_script('return document.documentElement.outerHTML;'),2450,54
+26894227,sum of squares in a list in one line?,calculate the sum of the squares of each value in list `l`,"sum(map(lambda x: x * x, l))",2451,54
+26894227,sum of squares in a list in one line?,sum of squares values in a list `l`,sum(i * i for i in l),2452,54
+26897536,Python Pandas drop columns based on max value of column,drop all columns in dataframe `df` that holds a maximum value bigger than 0,df.columns[df.max() > 0],2453,54
+27060098,Replacing few values in a pandas dataframe column with another value,"replace values `['ABC', 'AB']` in a column 'BrandName' of  pandas dataframe `df` with another value 'A'","df['BrandName'] = df['BrandName'].replace(['ABC', 'AB'], 'A')",2454,54
+27060098,Replacing few values in a pandas dataframe column with another value,replacing 'ABC' and 'AB' values in column 'BrandName' of dataframe `df` with 'A',"df['BrandName'].replace(['ABC', 'AB'], 'A')",2455,54
+27146262,Create variable key/value pairs with argparse (python),create variable key/value pairs with argparse,"parser.add_argument('--conf', nargs=2, action='append')",2456,54
+27175400,How to find the index of a value in 2d array in Python?,How to find the index of a value in 2d array in Python?,np.where(a == 1),2457,54
+27175400,How to find the index of a value in 2d array in Python?,find all the indexes in a Numpy 2D array where the value is 1,zip(*np.where(a == 1)),2458,54
+27218543,How can I select 'last business day of the month' in Pandas?,select the last business day of the month for each month in 2014 in pandas,"pd.date_range('1/1/2014', periods=12, freq='BM')",2459,54
+27318022,Read a File from redirected stdin with python,read a file from redirected stdin and save to variable `result`,result = sys.stdin.read(),2460,54
+27436748,Python: reduce (list of strings) -> string,"reduce the first element of list of strings `data` to a string, separated by '.'",print('.'.join([item[0] for item in data])),2461,54
+27457970,Python regex alternative for join,concatenate '-' in between characters of string `str`,"re.sub('(?<=.)(?=.)', '-', str)",2462,54
+27457970,Python regex alternative for join,separate each character in string `s` by '-',"re.sub('(.)(?=.)', '\\1-', s)",2463,54
+27516849,How to convert list of numpy arrays into single numpy array?,concatenate sequence of numpy arrays  `LIST` into a one dimensional array along the first axis,"numpy.concatenate(LIST, axis=0)",2464,54
+27587127,How to convert datetime.date.today() to UTC time?,return a DateTime object with the current UTC date,today = datetime.datetime.utcnow().date(),2465,54
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((?:(?!cat).)*cat(?:(?!cat).)*)cat', '\\1Bull', s)",2466,54
+27589325,How to find and replace nth occurence of word in a sentence using python regular expression?,find and replace 2nd occurrence of word 'cat' by 'Bull' in a sentence 's',"re.sub('^((.*?cat.*?){1})cat', '\\1Bull', s)",2467,54
+27659153,How to group similar items in a list?,make a list of lists in which each list `g` are the elements from list `test` which have the same characters up to the first `_` character,"[list(g) for _, g in itertools.groupby(test, lambda x: x.split('_')[0])]",2468,54
+27659153,How to group similar items in a list?,How to group similar items in a list?,"[list(g) for _, g in itertools.groupby(test, lambda x: x.partition('_')[0])]",2469,54
+27744882,Finding consecutive consonants in a word,find consecutive consonants in a word `CONCENTRATION` using regex,"re.findall('[bcdfghjklmnpqrstvwxyz]+', 'CONCERTATION', re.IGNORECASE)",2470,54
+27758657,How do I find the largest integer less than x?,find the largest integer less than `x`,int(math.ceil(x)) - 1,2471,54
+27867754,Python get focused entry name,get the widget which has currently the focus in tkinter instance `window2`,"print(('focus object class:', window2.focus_get().__class__))",2472,54
+27868020,How to subset a data frame using Pandas based on a group criteria?,select records of dataframe `df` where the sum of column 'X' for each value in column 'User' is 0,df.groupby('User')['X'].filter(lambda x: x.sum() == 0),2473,54
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data of dataframe `df` where the sum of column 'X' grouped by column 'User' is equal to 0,df.loc[df.groupby('User')['X'].transform(sum) == 0],2474,54
+27868020,How to subset a data frame using Pandas based on a group criteria?,Get data from dataframe `df` where column 'X' is equal to 0,df.groupby('User')['X'].transform(sum) == 0,2475,54
+27896214,"Reading tab-delimited file with Pandas - works on Windows, but not on Mac",reading tab-delimited csv file `filename` with pandas on mac,"pandas.read_csv(filename, sep='\t', lineterminator='\r')",2476,54
+27905295,How to replace NaNs by preceding values in pandas DataFrame?,replace nans by preceding values in pandas dataframe `df`,"df.fillna(method='ffill', inplace=True)",2477,54
+27946742,Regular expression in Python sentence extractor,Regular expression in Python sentence extractor,"re.split('\\.\\s', re.sub('\\.\\s*$', '', text))",2478,54
+27946742,Regular expression in Python sentence extractor,Get all the sentences from a string `text` using regex,"re.split('\\.\\s', text)",2479,54
+27966626,how to clear/delete the Textbox in tkinter python on Ubuntu,clear the textbox `text` in tkinter,"tex.delete('1.0', END)",2480,54
+27975069,How to filter rows containing a string pattern from a Pandas dataframe,filter rows containing key word `ball` in column `ids`,df[df['ids'].str.contains('ball')],2481,54
+28134319,Fastest way to remove first and last lines from a Python string,remove first and last lines of string `s`,s[s.find('\n') + 1:s.rfind('\n')],2482,54
+28161356,Sort Pandas Dataframe by Date,Sort Pandas Dataframe by Date,df.sort_values(by='Date'),2483,54
+28199524,Best way to count the number of rows with missing values in a pandas DataFrame,count the number of rows with missing values in a pandas dataframe `df`,"sum(df.apply(lambda x: sum(x.isnull().values), axis=1) > 0)",2484,54

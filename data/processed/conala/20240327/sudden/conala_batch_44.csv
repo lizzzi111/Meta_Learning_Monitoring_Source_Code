@@ -1,0 +1,42 @@
+question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
+123198,copy a file,copy a file from `src` to `dst`,"copyfile(src, dst)",72,0,9,30,1,63,0,44,0
+275018,remove (chomp) a newline,remove newline in string 'Windows EOL\r\n' on the right side,'Windows EOL\r\n'.rstrip('\r\n'),121,0,8,0,0,40,0,44,0
+533398,"In python 2.4, how can I execute external commands with csh instead of bash?",execute command 'echo $0' in Z shell,"os.system(""zsh -c 'echo $0'"")",228,0,9,41,1,55,0,44,0
+610883,know if an object has an attribute,check if object `a` has property 'property',"if hasattr(a, 'property'):
+    pass",244,0,4,54,1,27,1,44,0
+663171,substring a string,get a new string including the first two characters of string `x`,x[:2],263,0,8,0,0,54,0,44,0
+761804,Trimming a string,"left trimming ""\n\r"" from string `myString`",myString.lstrip('\n\r'),312,0,8,0,0,18,0,44,0
+1712227,get the size of a list,get the size of object `items`,items.__len__(),489,3,4,15,1,46,1,44,0
+2231663,Slicing a list into a list of sub-lists,"slice list `[1, 2, 3, 4, 5, 6, 7]` into lists of two elements each","list(grouper(2, [1, 2, 3, 4, 5, 6, 7]))",578,6,7,56,1,4,0,44,0
+2600191,count the occurrences of a list item,count the occurrences of items in list `l`,"dict(((x, l.count(x)) for x in set(l)))",629,7,7,20,1,19,0,44,0
+2793324,delete a list element by value,delete the element `c` from list `a`,"if (c in a):
+    a.remove(c)",662,8,7,57,1,55,0,44,0
+3804727,"python, subprocess: reading output from subprocess",flush output of python print,sys.stdout.flush(),816,12,4,22,1,28,1,44,0
+4682088,Call Perl script from Python,invoke perl script './uireplace.pl' using perl interpeter '/usr/bin/perl' and send argument `var` to it,"subprocess.call(['/usr/bin/perl', './uireplace.pl', var])",969,16,9,25,1,24,0,44,0
+4789021,"In Django, how do I check if a user is in a certain group?","check if a user `user` is in a group from list of groups `['group1', 'group2']`","return user.groups.filter(name__in=['group1', 'group2']).exists()",988,16,7,39,1,15,0,44,0
+5061582,Setting stacksize in a python script,Setting stacksize in a python script,os.system('ulimit -s unlimited; some_executable'),1030,17,4,18,1,45,1,44,0
+5503925,How do I use a dictionary to update fields in Django models?,update fields in Django model `Book` with arguments in dictionary `d` where primary key is equal to `pk`,Book.objects.filter(pk=pk).update(**d),1072,18,1,49,0,14,0,44,0
+5844672,Delete an element from a dictionary,Delete an element `key` from a dictionary `d`,del d[key],1099,19,1,5,0,7,0,44,0
+7373219,Attribute getters in python,get attribute 'attr' from object `obj`,"getattr(obj, 'attr')",1234,22,4,44,1,12,1,44,0
+7934620,python: dots in the name of variable in a format string,python: dots in the name of variable in a format string,"""""""Name: {0[person.name]}"""""".format({'person.name': 'Joe'})",1268,23,8,0,0,40,0,44,0
+7961363,Removing duplicates in lists,Removing duplicates in list `abracadabra`,list(OrderedDict.fromkeys('abracadabra')),1272,23,7,24,1,9,0,44,0
+8244915,How do you divide each element in a list by an int?,divide each element in list `myList` by integer `myInt`,myList[:] = [(x / myInt) for x in myList],1305,24,7,48,1,2,0,44,0
+8704952,How to convert a tuple to a string in Python?,convert a set of tuples `queryresult` to a string `emaillist`,emaillist = '\n'.join(item[0] for item in queryresult),1353,25,7,44,1,30,0,44,0
+9304408,How to add an integer to each element in a list?,Add 1 to each integer value in list `my_list`,new_list = [(x + 1) for x in my_list],1403,27,7,14,1,13,0,44,0
+10915391,Sorting a list of dicts by dict values,sort a list of dictionaries `a` by dictionary values in descending order,"sorted(a, key=lambda i: list(i.values())[0], reverse=True)",1531,30,1,35,0,56,0,44,0
+11764260,How to find the minimum value in a numpy matrix?,find the minimum value in a numpy array `arr` excluding 0,arr[arr != 0].min(),1603,32,6,10,0,2,0,44,0
+12681945,Reversing bits of Python integer,revers correlating bits of integer `n`,"int('{:08b}'.format(n)[::-1], 2)",1664,33,5,13,0,59,0,44,0
+15974730,How do I get the different parts of a Flask request's url?,retrieve the path from a Flask request,request.url,1957,41,4,30,1,10,1,44,0
+16677816,Printing lists onto tables in python,print list `t` into a table-like shape,"print('\n'.join('  '.join(map(str, row)) for row in t))",1997,42,7,58,1,9,0,44,0
+20477190,Get top biggest values from each column of the pandas.DataFrame,get biggest 3 values from each column of the pandas dataframe `data`,"data.apply(lambda x: sorted(x, 3))",2265,49,3,33,0,64,0,44,0
+22625616,listing files from a directory using glob python,List all the files that matches the pattern `hello*.txt`,glob.glob('hello*.txt'),2357,51,9,62,1,17,0,44,0
+26443308,Find last occurrence of character,"Find last occurrence of character '}' in string ""abcd}def}""",'abcd}def}'.rfind('}'),2443,53,0,15,0,58,0,44,0
+26894227,sum of squares in a list in one line?,sum of squares values in a list `l`,sum(i * i for i in l),2452,54,7,45,1,40,0,44,0
+27868020,How to subset a data frame using Pandas based on a group criteria?,select records of dataframe `df` where the sum of column 'X' for each value in column 'User' is 0,df.groupby('User')['X'].filter(lambda x: x.sum() == 0),2473,54,3,35,0,21,0,44,0
+30945784,How to remove all characters before a specific character in Python?,remove all characters from string `stri` upto character 'I',"re.sub('.*I', 'I', stri)",2569,57,8,0,0,19,0,44,0
+32838802,numpy with python: convert 3d array to 2d,convert a 3d array `img` of dimensions 4x2x3 to a 2d array   of dimensions 3x8,"img.transpose(2, 0, 1).reshape(3, -1)",2634,58,6,45,0,6,0,44,0
+32874539,Using a variable in xpath in Python Selenium,find a tag `option` whose `value` attribute is `state` in selenium,"driver.find_element_by_xpath(""//option[@value='"" + state + ""']"").click()",2635,58,4,58,1,45,1,44,0
+35420052,Adding Colorbar to a Spectrogram,add color bar with image `mappable` to plot `plt`,"plt.colorbar(mappable=mappable, cax=ax3)",2694,60,4,39,1,28,1,44,0
+39600161,Regular expression matching all but a string,regular expression matching all but 'aa' and 'bb' for string `string`,"re.findall('-(?!aa-|bb-)([^-]+)', string)",2767,62,0,51,0,5,0,44,0
+41552839,How can I convert literal escape sequences in a string to the corresponding bytes?,"encode string ""\\xc3\\x85あ"" to bytes","""""""\\xc3\\x85あ"""""".encode('utf-8')",2840,64,8,0,0,53,0,44,0
+42462530,How to replace the white space in a string in a pandas dataframe?,replace white spaces in dataframe `df` with '_',"df.replace(' ', '_', regex=True)",2874,64,3,63,0,58,0,44,0
