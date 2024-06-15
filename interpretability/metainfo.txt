@@ -1,0 +1,6 @@
+setup: 
+`cd interpretability
+conda create -n interpretability python=3.10
+conda activate interpretability
+pip install -r requirements.txt
+python -m ipykernel install --user --name=interpretability`

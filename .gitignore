@@ -3,3 +3,8 @@
 src/__pycache__
 notebooks/reports
 data/processed/conala/20240326
+data/raw/funcom
+
+# all cache files
+__pycache__
+.ipynb_checkpoints
