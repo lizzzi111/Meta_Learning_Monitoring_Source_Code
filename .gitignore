@@ -11,7 +11,7 @@ __pycache__
 /models
 ensemble_learning/models
 ensemble_learning/tmp
-ensemble_learning/catboost_info
+ensemble_learning/catboost_info/*
 ensemble_learning/reports
 ensemble_learning/pickle
 ensemble_learning/*pickle
