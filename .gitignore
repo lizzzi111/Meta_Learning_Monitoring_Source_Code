@@ -7,4 +7,11 @@ data/raw/funcom
 
 # all cache files
 __pycache__
-.ipynb_checkpoints
+.ipynb_checkpointsmodels
+/models
+ensemble_learning/models
+ensemble_learning/tmp
+ensemble_learning/catboost_info
+ensemble_learning/reports
+ensemble_learning/pickle
+ensemble_learning/*pickle

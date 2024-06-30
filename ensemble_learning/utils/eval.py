@@ -4,6 +4,29 @@ import numpy as np
 
 nltk.download('punkt')
 
+def compute_metric_post(preds, labels, metric):
+
+        # POST PROCESSING
+        decoded_preds, decoded_labels = postprocess_text(preds, labels)
+
+        results_dict = {}
+        m = metric
+        metric = evaluate.load(m)
+
+        if m=='bleu':
+            result = metric.compute(
+                predictions=decoded_preds, references=decoded_labels
+            )
+        elif m=='rouge':
+            result = metric.compute(
+                predictions=decoded_preds, references=decoded_labels, use_stemmer=True
+            )
+        result = {key: value for key, value in result.items() if key!='precisions'}
+
+        result = {k: round(v, 4) for k, v in result.items()}
+        results_dict.update(result)
+        return results_dict
+
 def postprocess_text(preds, labels):
 
     preds = [pred.strip() for pred in preds]
