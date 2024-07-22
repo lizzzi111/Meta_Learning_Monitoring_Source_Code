@@ -29,10 +29,11 @@ def batch_tokenize_preprocess(batch, tokenizer, max_input_length, max_output_len
 def preprocess_dataset(dataset: Dataset,
                tokenizer: AutoTokenizer,
                max_input_length:int=15, 
-               max_output_length:int=20) -> Dataset:
+               max_output_length:int=20,
+               intent_colum_name:str="rewritten_intent") -> Dataset:
 
     dataset = dataset.rename_column("snippet", "input_sequence")
-    dataset = dataset.rename_column("rewritten_intent", "output_sequence")
+    dataset = dataset.rename_column(intent_colum_name, "output_sequence")
 
     dataset = dataset.filter(lambda x: pd.notna(x["input_sequence"]))
     dataset = dataset.filter(lambda x: pd.notna(x["output_sequence"]))
