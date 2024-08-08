@@ -2,6 +2,7 @@
 select = ["ALL"]
 ignore = ["ERA001","E501"]
 include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+extend-include = ["*.ipynb"]
 line-length = 120
 indent-width = 4
 
