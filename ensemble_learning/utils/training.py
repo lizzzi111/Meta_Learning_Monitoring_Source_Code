@@ -10,6 +10,7 @@ import os
 import math
 import torch
 import evaluate
+from typing import Tuple
 
 import utils.prep as pr
 import utils.eval as ev
@@ -186,10 +187,8 @@ def cv_cluster_set(experiment_config:dict,
     #### LOAD CLUSTER_ID 
     # [5291, 5295, 5298]
     dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-    fold_train = dataset[dataset.cluster==cluster_id] 
-    fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
-    fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
-
+    cluster_fold_train = dataset[dataset.cluster==cluster_id] 
+    
     #### PREPARE THE RESULTS DICTIONARY
     fold_results[f"cluster_{cluster_id}"] = {}
 
@@ -202,6 +201,10 @@ def cv_cluster_set(experiment_config:dict,
             "validation": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[val_idxs]),
         })
         
+        fold_train = cluster_fold_train.loc[~cluster_fold_train.question_id.isin(train_dataset["question_id"]),:] 
+        fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
+        fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+
         fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
         fold_df = pd.DataFrame(fold_val)
@@ -330,12 +333,12 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
         # Prepare the input data
         vectorizer = TfidfVectorizer()
         X_train_tfidf = vectorizer.fit_transform(cv_df.loc[cv_df.fold!=test_fold, "input_sequence"])
-        X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold!=test_fold, "epoch_set"], sparse=True).sparse.to_coo().tocsr()
+        X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold!=test_fold, "model_set"], sparse=True).sparse.to_coo().tocsr()
         X_train = hstack([X_train_column_sparse, X_train_tfidf])
         y_train = cv_df.loc[cv_df.fold!=test_fold, "rouge"]
         
         X_val_tfidf = vectorizer.transform(cv_df.loc[cv_df.fold==test_fold, "input_sequence"])
-        X_val_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold==test_fold, "epoch_set"], sparse=True).sparse.to_coo().tocsr()
+        X_val_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold==test_fold, "model_set"], sparse=True).sparse.to_coo().tocsr()
         X_val = hstack([X_val_column_sparse, X_val_tfidf])
         y_val = cv_df.loc[cv_df.fold==test_fold, "rouge"]
 
@@ -355,12 +358,12 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
 
     # ENSEMBLE ESTIMATE (JUST HIGHEST PREDICTIONS)
     models_index = cv_df.groupby("id")["catboost_perf_hat"].idxmax()
-    optimal_ensemble = cv_df.iloc[models_index][["id", "epoch_set"]]
-    optimal_ensemble_map = dict(zip(optimal_ensemble.id, optimal_ensemble.epoch_set))
+    optimal_ensemble = cv_df.iloc[models_index][["id", "model_set"]]
+    optimal_ensemble_map = dict(zip(optimal_ensemble.id, optimal_ensemble.model_set))
     cv_df["opt_es_id"] = cv_df.id.map(optimal_ensemble_map)
-    ensemble_preds = cv_df.loc[cv_df["epoch_set"]==cv_df["opt_es_id"], :]
+    ensemble_preds = cv_df.loc[cv_df["model_set"]==cv_df["opt_es_id"], :]
     ensemble_preds["rouge"].mean()
-    ensemble_preds["epoch_set"] = "ensemble"
+    ensemble_preds["model_set"] = "ensemble"
     cv_df = pd.concat([cv_df, ensemble_preds], axis=0)
 
 
@@ -405,17 +408,197 @@ def full_step_2(cv_df:pd.DataFrame,
 
     # Prepare the input data
     vectorizer = TfidfVectorizer()
-    X_train_tfidf = vectorizer.fit_transform(cv_df.loc[cv_df.epoch_set!="ensemble", "input_sequence"])
-    X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.epoch_set!="ensemble", "epoch_set"], sparse=True).sparse.to_coo().tocsr()
+    X_train_tfidf = vectorizer.fit_transform(cv_df.loc[cv_df.model_set!="ensemble", "input_sequence"])
+    X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.model_set!="ensemble", "model_set"], sparse=True).sparse.to_coo().tocsr()
     X_train = hstack([X_train_column_sparse, X_train_tfidf])
-    y_train = cv_df.loc[cv_df.epoch_set!="ensemble", "rouge"]
+    y_train = cv_df.loc[cv_df.model_set!="ensemble", "rouge"]
         
     with open(f"./models/vectorizer_{ANALYSIS_POSTFIX}.pkl", "wb") as file:
         pickle.dump(vectorizer, file, protocol=pickle.HIGHEST_PROTOCOL) 
         
     for model in t_models:
         print(model)
-        preds_df = step_two(X_train=X_train,
+        preds_df = step_two(experiment_config=experiment_config,
+                            X_train=X_train,
                             y_train=y_train,
                             model=model,
                             save=True)
+        
+
+
+def test_training_epochs_sets(experiment_config:dict,
+                            test_df: pd.DataFrame,
+                            test_data: Dataset,
+                            train_data: Dataset,
+                            tokenizer: AutoTokenizer) -> pd.DataFrame:
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    rouge = evaluate.load('rouge')
+
+    FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
+    MODEL_NAME = experiment_config["MODEL_NAME"]
+    
+
+    #### PREPARE THE RESULTS DICTIONARY
+    results = {}
+    for epoch_i, epoch_set in enumerate(sorted(FULL_TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"])):
+        
+        set_df = test_df.copy()
+        print(f"TRAINING EPOCH SET {epoch_set}")
+
+        TRAIN_ARGS = copy.deepcopy(FULL_TRAIN_ARGS)
+        MODEL_PATH = f"./models/{epoch_set}_epoch_set"
+
+        results[epoch_set] = {}
+
+        if epoch_set > 1: 
+            TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = epoch_set - latest_run_epoch
+        else:
+            TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = epoch_set
+        
+        print(f'TRAINING EPOCHS {TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"]}')
+
+        if epoch_set > 1: 
+            MODEL_NAME = f"./models/{latest_run_epoch}_epoch_set"
+        
+        model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
+
+        print(device)
+        model.to(device)
+
+        data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
+        compute_metrics = ev.compute_metric_with_params(tokenizer) 
+
+        if not os.path.exists(f'reports/'): 
+            os.mkdir(f'reports/')
+
+        training_args = Seq2SeqTrainingArguments(
+                **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
+            )
+        
+        trainer = Seq2SeqTrainer(
+            model=model,
+            args=training_args,
+            data_collator=data_collator,
+            train_dataset=train_data,
+            eval_dataset=test_data,
+            tokenizer=tokenizer,
+            compute_metrics=compute_metrics,
+        )
+
+        if epoch_set!=0:
+            trainer.train()
+
+        text = list(test_df["input_sequence"].values)
+        summaries = infer.generate_summary(text, model, tokenizer, TRAIN_ARGS["ENCODER_LENGTH"], TRAIN_ARGS["DECODER_LENGTH"])
+        
+        
+        set_df["epoch_set"] = epoch_set
+        set_df["prediction"] = summaries[1]
+        set_df["rouge"] = rouge.compute(predictions=set_df["prediction"], 
+                    references=set_df["output_sequence"],
+                    use_stemmer=True, 
+                    use_aggregator=False,
+                    rouge_types=["rouge1"])["rouge1"]
+
+        if epoch_set==0:
+            test_result_df = set_df.copy()
+        else: 
+            test_result_df = pd.concat([test_result_df, set_df])
+        
+        ########## SAVE EPOCH SET MODEL
+        if not os.path.exists(MODEL_PATH): 
+            os.mkdir(MODEL_PATH)
+
+        trainer.save_model(MODEL_PATH)
+
+        latest_run_epoch = epoch_set
+
+    return test_result_df
+
+
+def test_cluster_set(experiment_config:dict,
+                    test_df: pd.DataFrame,
+                    test_data: Dataset,
+                    tokenizer: AutoTokenizer,
+                    results: dict,
+                    cluster_id: int,) -> pd.DataFrame:
+    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    rouge = evaluate.load('rouge')
+
+    FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
+    MODEL_NAME = experiment_config["MODEL_NAME"]
+    CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
+    DATE_STR = experiment_config["DATE_STR"]
+    RS = experiment_config["RS"]
+
+    #### LOAD CLUSTER_ID 
+    # [7942]
+    dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
+    fold_train = dataset.loc[(dataset.cluster==cluster_id) & (~ dataset.question_id.isin(test_df.question_id)),:] 
+    fold_train = Dataset.from_pandas(fold_train.sample(n=7942, random_state=RS).reset_index(drop=True))
+    fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+
+    #### PREPARE THE RESULTS DICTIONARY
+    results[f"cluster_{cluster_id}"] = {}
+
+    #### Learning LOOP
+    print(f"TRAINING CLUSTER SET {cluster_id} FOR EPOCHS{CLUSTER_EPOCHS}")
+
+    TRAIN_ARGS = copy.deepcopy(FULL_TRAIN_ARGS)
+    MODEL_PATH = f"./models/cluster_id{cluster_id}"
+
+    TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = CLUSTER_EPOCHS
+            
+    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
+    print(f"LOADING MODEL {MODEL_NAME}")
+
+    print(device)
+    model.to(device)
+
+    data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
+    compute_metrics = ev.compute_metric_with_params(tokenizer) 
+
+    if not os.path.exists(f'reports/'): 
+        os.mkdir(f'reports/')
+
+    training_args = Seq2SeqTrainingArguments(
+            **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
+        )
+        
+    trainer = Seq2SeqTrainer(
+        model=model,
+        args=training_args,
+        data_collator=data_collator,
+        train_dataset=fold_train,
+        eval_dataset=test_data,
+        tokenizer=tokenizer,
+        compute_metrics=compute_metrics,
+    )
+
+    trainer.train()
+
+    ########## SAVE CLUSTER MODEL
+    if not os.path.exists(MODEL_PATH): 
+        os.mkdir(MODEL_PATH)
+
+    trainer.save_model(MODEL_PATH)
+
+    text = test_data["input_sequence"]
+    test_df["prediction"] = generate_summaries_batches(text=text,
+                                                        model=model, 
+                                                        tokenizer=tokenizer,
+                                                        TRAIN_ARGS=TRAIN_ARGS)
+    
+
+
+    test_df["rouge"] = rouge.compute(predictions=test_df["prediction"], 
+                        references=test_df["output_sequence"],
+                        use_stemmer=True, 
+                        use_aggregator=False,
+                        rouge_types=["rouge1"])["rouge1"]
+            
+    results[f"cluster_{cluster_id}"] = test_df
+            
+    return results
