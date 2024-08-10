@@ -183,6 +183,7 @@ def cv_cluster_set(experiment_config:dict,
     CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
     DATE_STR = experiment_config["DATE_STR"]
     RS = experiment_config["RS"]
+    ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
 
     #### LOAD CLUSTER_ID 
     # [5291, 5295, 5298]
@@ -521,7 +522,7 @@ def test_cluster_set(experiment_config:dict,
                     test_df: pd.DataFrame,
                     test_data: Dataset,
                     tokenizer: AutoTokenizer,
-                    results: dict,
+                    results_df: pd.DataFrame,
                     cluster_id: int,) -> pd.DataFrame:
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -598,7 +599,9 @@ def test_cluster_set(experiment_config:dict,
                         use_stemmer=True, 
                         use_aggregator=False,
                         rouge_types=["rouge1"])["rouge1"]
+
+    result_df = pd.concat([result_df, test_df])
             
-    results[f"cluster_{cluster_id}"] = test_df
+    results_df[f"cluster_{cluster_id}"] = test_df
             
-    return results
+    return result_df
