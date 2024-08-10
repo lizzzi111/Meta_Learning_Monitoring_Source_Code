@@ -205,6 +205,7 @@ def cv_cluster_set(experiment_config:dict,
         fold_train = cluster_fold_train.loc[~cluster_fold_train.question_id.isin(train_dataset["question_id"]),:] 
         fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
         fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+        fold_train_df = pd.DataFrame(fold_train)
 
         fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
@@ -251,6 +252,7 @@ def cv_cluster_set(experiment_config:dict,
 
             trainer.save_model(FOLD_MODEL_PATH)
 
+        ### GENERATION VALIDATION
         text = fold_val["input_sequence"]
         fold_df["prediction"] = generate_summaries_batches(text=text,
                                                             model=model, 
@@ -266,7 +268,24 @@ def cv_cluster_set(experiment_config:dict,
                             rouge_types=["rouge1"])["rouge1"]
             
         fold_results[f"cluster_{cluster_id}"][i] = fold_df
+        
+        ### GENERATION TRAIN VALUES
+        text = fold_train["input_sequence"]
+        fold_train_df["prediction"] = generate_summaries_batches(text=text,
+                                                            model=model, 
+                                                            tokenizer=tokenizer,
+                                                            TRAIN_ARGS=TRAIN_ARGS)
+        
+
+
+        fold_train_df["rouge"] = rouge.compute(predictions=fold_train_df["prediction"], 
+                                                references=fold_train_df["output_sequence"],
+                                                use_stemmer=True, 
+                                                use_aggregator=False,
+                                                rouge_types=["rouge1"])["rouge1"]
             
+        fold_results[f"cluster_{cluster_id}_extra"][i] = fold_train_df
+
     return fold_results
 
 
