@@ -1,6 +1,7 @@
 import pandas as pd
 import pickle
 from scipy.sparse import hstack
+from typing import Tuple
     
 def generate_summary(test_samples, model, tokenizer, encoder_max_length, decoder_max_length):
 
@@ -73,11 +74,12 @@ def meta_predict(experiment_config:dict,
     return meta_preds_df
 
 
-def create_ensemble_map(meta_preds_df:pd.DataFrame, t_model_name:str="catboost") -> dict:
+def create_ensemble_map(meta_preds_df:pd.DataFrame, t_model_name:str="catboost") -> Tuple:
 
     models_index = meta_preds_df.groupby("id")[f"{t_model_name}_preds"].idxmax()
     optimal_ensemble = meta_preds_df.iloc[models_index][["id", "model_set"]]
-    return dict(zip(optimal_ensemble.id, optimal_ensemble.model_set))
+    optimal_ensemble_values = meta_preds_df.iloc[models_index][["id", f"{t_model_name}_preds"]]
+    return dict(zip(optimal_ensemble.id, optimal_ensemble.model_set)), optimal_ensemble_values
 
 def ensemble_compute(test_result_df:pd.DataFrame,
                     optimal_ensemble_map:dict) -> pd.DataFrame:
