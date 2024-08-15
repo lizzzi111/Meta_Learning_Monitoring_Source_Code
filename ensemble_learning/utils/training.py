@@ -192,6 +192,7 @@ def cv_cluster_set(experiment_config:dict,
     
     #### PREPARE THE RESULTS DICTIONARY
     fold_results[f"cluster_{cluster_id}"] = {}
+    #fold_results[f"cluster_{cluster_id}_extra"] = {}
 
     #### VALIDATION LOOP
     for i, (train_idxs, val_idxs) in enumerate(splits):
@@ -202,8 +203,11 @@ def cv_cluster_set(experiment_config:dict,
             "validation": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[val_idxs]),
         })
         
-        fold_train = cluster_fold_train.loc[~cluster_fold_train.question_id.isin(train_dataset["question_id"]),:] 
-        fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
+        #fold_train = cluster_fold_train.loc[~cluster_fold_train.question_id.isin(train_dataset["question_id"]),:] 
+        #fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
+
+        fold_train = cluster_fold_train.loc[cluster_fold_train.id.isin(fold_dataset["train"]["id"]),:] 
+        fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
         fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
         fold_train_df = pd.DataFrame(fold_train)
 
@@ -216,6 +220,9 @@ def cv_cluster_set(experiment_config:dict,
         FOLD_MODEL_PATH = "./tmp/"
 
         TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = CLUSTER_EPOCHS
+
+        if i>0:
+            MODEL_NAME = FOLD_MODEL_PATH   
             
         model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
         print(f"LOADING MODEL {MODEL_NAME}")
@@ -270,21 +277,21 @@ def cv_cluster_set(experiment_config:dict,
         fold_results[f"cluster_{cluster_id}"][i] = fold_df
         
         ### GENERATION TRAIN VALUES
-        text = fold_train["input_sequence"]
-        fold_train_df["prediction"] = generate_summaries_batches(text=text,
-                                                            model=model, 
-                                                            tokenizer=tokenizer,
-                                                            TRAIN_ARGS=TRAIN_ARGS)
+        # text = fold_train["input_sequence"]
+        # fold_train_df["prediction"] = generate_summaries_batches(text=text,
+        #                                                     model=model, 
+        #                                                     tokenizer=tokenizer,
+        #                                                     TRAIN_ARGS=TRAIN_ARGS)
         
 
 
-        fold_train_df["rouge"] = rouge.compute(predictions=fold_train_df["prediction"], 
-                                                references=fold_train_df["output_sequence"],
-                                                use_stemmer=True, 
-                                                use_aggregator=False,
-                                                rouge_types=["rouge1"])["rouge1"]
+        # fold_train_df["rouge"] = rouge.compute(predictions=fold_train_df["prediction"], 
+        #                                         references=fold_train_df["output_sequence"],
+        #                                         use_stemmer=True, 
+        #                                         use_aggregator=False,
+        #                                         rouge_types=["rouge1"])["rouge1"]
             
-        fold_results[f"cluster_{cluster_id}_extra"][i] = fold_train_df
+        # fold_results[f"cluster_{cluster_id}_extra"][i] = fold_train_df
 
     return fold_results
 
@@ -556,12 +563,12 @@ def test_cluster_set(experiment_config:dict,
     #### LOAD CLUSTER_ID 
     # [7942]
     dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-    fold_train = dataset.loc[(dataset.cluster==cluster_id) & (~ dataset.question_id.isin(test_df.question_id)),:] 
-    fold_train = Dataset.from_pandas(fold_train.sample(n=7942, random_state=RS).reset_index(drop=True))
+    #fold_train = dataset.loc[(dataset.cluster==cluster_id) & (~ dataset.question_id.isin(test_df.question_id)),:] 
+    #fold_train = Dataset.from_pandas(fold_train.sample(n=7942, random_state=RS).reset_index(drop=True))
+    fold_train = dataset.loc[(dataset.cluster==cluster_id) & (dataset.id.isin(results_df.id)),:] 
+    fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
     fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
 
-    #### PREPARE THE RESULTS DICTIONARY
-    results[f"cluster_{cluster_id}"] = {}
 
     #### Learning LOOP
     print(f"TRAINING CLUSTER SET {cluster_id} FOR EPOCHS{CLUSTER_EPOCHS}")
@@ -606,6 +613,7 @@ def test_cluster_set(experiment_config:dict,
     trainer.save_model(MODEL_PATH)
 
     text = test_data["input_sequence"]
+    test_df["model_set"] = f"cluster_{cluster_id}"
     test_df["prediction"] = generate_summaries_batches(text=text,
                                                         model=model, 
                                                         tokenizer=tokenizer,
@@ -619,8 +627,6 @@ def test_cluster_set(experiment_config:dict,
                         use_aggregator=False,
                         rouge_types=["rouge1"])["rouge1"]
 
-    result_df = pd.concat([result_df, test_df])
-            
-    results_df[f"cluster_{cluster_id}"] = test_df
-            
-    return result_df
+    results_df = pd.concat([results_df, test_df])
+  
+    return results_df
