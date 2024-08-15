@@ -63,7 +63,6 @@ def meta_predict(experiment_config:dict,
     X_test_column_sparse = pd.get_dummies(meta_preds_df.loc[:, "model_set"], sparse=True).sparse.to_coo().tocsr()
     X_test = hstack([X_test_column_sparse, X_test_tfidf])
 
-    models_preds = []
     for model in t_models:
         print(model)
         meta_preds_df[f"{model}_preds"] = pred_perf(experiment_config=experiment_config, 

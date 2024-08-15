@@ -13,7 +13,7 @@ def create_splits(experiment_config : dict,
                   tokenizer: AutoTokenizer,
                   test: bool=False) -> Tuple:
 
-    DATE_STR = experiment_config["DATE_STR"]
+    DATE_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
     DRIFT_TYPE = experiment_config["DRIFT_TYPE"]
 
@@ -33,10 +33,14 @@ def create_splits(experiment_config : dict,
         dataset_non_4_cl = dataset[dataset.cluster!=4].sample(n=8000, random_state=RS)
 
         qids_4_cl = sorted(dataset_4_cl.question_id.unique())
-        train_idx_4_cl, test_idx_4_cl = qids_4_cl[int(len(qids_4_cl)*0.99):], qids_4_cl[:int(len(qids_4_cl)*0.99)]
+        train_idx_4_cl, test_idx_4_cl = qids_4_cl[int(len(qids_4_cl)*0.87):], qids_4_cl[:int(len(qids_4_cl)*0.87)]
 
         qids_non4_cl = sorted(dataset_non_4_cl.question_id.unique())
-        train_idx_non4_cl, test_idx_non4_cl = qids_non4_cl[:int(len(qids_non4_cl)*0.99)], qids_non4_cl[int(len(qids_non4_cl)*0.99):]
+        train_idx_non4_cl, test_idx_non4_cl = qids_non4_cl[:int(len(qids_non4_cl)*0.96)], qids_non4_cl[int(len(qids_non4_cl)*0.96):]
+
+        for _ in range(8):    
+            test_idx_non4_cl.append(train_idx_non4_cl[-1])
+            train_idx_non4_cl.pop(-1)
 
         train_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(train_idx_4_cl)]
         test_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(test_idx_4_cl)]

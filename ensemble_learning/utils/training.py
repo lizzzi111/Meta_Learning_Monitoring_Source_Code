@@ -11,6 +11,7 @@ import math
 import torch
 import evaluate
 from typing import Tuple
+import time
 
 import utils.prep as pr
 import utils.eval as ev
@@ -321,6 +322,8 @@ def step_two(experiment_config,
              save=False): 
     
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
+    
+    training_start_time = time.time()
     if model=="lr":
         reg = LinearRegression().fit(X_train, y_train)
     elif model =="svm": 
@@ -333,6 +336,10 @@ def step_two(experiment_config,
     elif model=="catboost":
         reg = CatBoostRegressor()
         reg.fit(X=X_train, y=y_train)
+    training_end_time = time.time()
+    time_training = training_end_time - training_start_time
+
+    
 
     if save:
         with open(f'./models/reg_{model}_{ANALYSIS_POSTFIX}.pkl','wb') as f:
@@ -340,11 +347,15 @@ def step_two(experiment_config,
         return f'./models/reg_{model}_{ANALYSIS_POSTFIX}.pkl'
     
     else:
+        inference_start_time = time.time()
         y_pred = reg.predict(X_val)
+        inference_end_time = time.time()
+        time_inference = training_end_time - training_start_time
+
         y_pred[y_pred<0] = 0
         mae = mean_absolute_error(y_true=y_val, y_pred=y_pred)
         rmse = math.sqrt(mean_squared_error(y_true=y_val, y_pred=y_pred))
-        return {"pred": y_pred, "mae": mae, "rmse": rmse}
+        return {"pred": y_pred, "mae": mae, "rmse": rmse, "time_training" : time_training, "time_inference" : time_inference}
     
 
 def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
