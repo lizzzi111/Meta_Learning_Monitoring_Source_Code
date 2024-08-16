@@ -90,8 +90,10 @@ def cv_training_epochs_sets(experiment_config:dict,
             "train": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[train_idxs]),
             "validation": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[val_idxs]),
         })
-        fold_train = pr.preprocess_dataset(fold_dataset["train"], tokenizer=tokenizer, intent_colum_name="intent")
-        fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
+        fold_train = fold_dataset["train"]
+        fold_val = fold_dataset["validation"]
+        #fold_train = pr.preprocess_dataset(fold_dataset["train"], tokenizer=tokenizer, intent_colum_name="intent")
+        #fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
 
         for epoch_i, epoch_set in enumerate(sorted(FULL_TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"])):
@@ -203,9 +205,10 @@ def cv_cluster_set(experiment_config:dict,
         fold_train = pd.DataFrame(fold_dataset["train"])
         fold_train = fold_train.loc[fold_train.cluster==cluster_id,:] 
         fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
-        fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+        fold_val = fold_dataset["validation"]
 
-        fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
+        #fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+        #fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
         print(f"Cluster {cluster_id} training size {fold_train.shape}")
 
@@ -327,7 +330,7 @@ def step_two(experiment_config,
         reg = RandomForestRegressor.fit(X_train, y_train)
     elif model=="lgbm":
         reg = LGBMRegressor()
-        reg.fit(X=X_train, y=y_train)
+        reg.fit(X=X_train, y=y_train, max_depth=5)
     elif model=="catboost":
         reg = CatBoostRegressor()
         reg.fit(X=X_train, y=y_train)
@@ -345,7 +348,7 @@ def step_two(experiment_config,
         inference_start_time = time.time()
         y_pred = reg.predict(X_val)
         inference_end_time = time.time()
-        time_inference = training_end_time - training_start_time
+        time_inference = inference_end_time - inference_start_time
 
         y_pred[y_pred<0] = 0
         mae = mean_absolute_error(y_true=y_val, y_pred=y_pred)
@@ -569,7 +572,7 @@ def test_cluster_set(experiment_config:dict,
 
     #### LOAD CLUSTER_ID 
 
-    fold_train = train_df.loc[(train_df.cluster==cluster_id) & (train_df.id.isin(results_df.id)),:] 
+    fold_train = train_df.loc[(train_df.cluster==cluster_id),:] 
     fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
     print(f"Cluster {cluster_id} training size {fold_train.shape}")
 

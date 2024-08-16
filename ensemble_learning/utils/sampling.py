@@ -10,7 +10,6 @@ from transformers import AutoTokenizer
 
 def create_splits(experiment_config : dict,
                   tokenizer: AutoTokenizer,
-                  test: bool=False,
                   train_size: int=10000,
                   test_size: int=2500,
                   cluster_id: int=None) -> dict:
@@ -64,8 +63,7 @@ def create_splits(experiment_config : dict,
     train_dataset = Dataset.from_pandas(train_dataset.sample(frac=1, random_state=RS).reset_index(drop=True))
     test_dataset = Dataset.from_pandas(test_dataset.sample(frac=1, random_state=RS).reset_index(drop=True))
 
-    if test:
-        train_dataset = pr.preprocess_dataset(train_dataset, tokenizer=tokenizer, intent_colum_name="intent")
+    train_dataset = pr.preprocess_dataset(train_dataset, tokenizer=tokenizer, intent_colum_name="intent")
     test_data = pr.preprocess_dataset(test_dataset, tokenizer=tokenizer, intent_colum_name="intent")
     
     test_df = pd.DataFrame(test_data)
