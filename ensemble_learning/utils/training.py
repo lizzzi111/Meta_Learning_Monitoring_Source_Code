@@ -182,18 +182,14 @@ def cv_cluster_set(experiment_config:dict,
     FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
     MODEL_NAME = experiment_config["MODEL_NAME"]
     CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
-    DATE_STR = experiment_config["DATE_STR"]
+    DATA_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
 
     #### LOAD CLUSTER_ID 
-    # [5291, 5295, 5298]
-    dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-    cluster_fold_train = dataset[dataset.cluster==cluster_id] 
     
     #### PREPARE THE RESULTS DICTIONARY
     fold_results[f"cluster_{cluster_id}"] = {}
-    #fold_results[f"cluster_{cluster_id}_extra"] = {}
 
     #### VALIDATION LOOP
     for i, (train_idxs, val_idxs) in enumerate(splits):
@@ -204,18 +200,17 @@ def cv_cluster_set(experiment_config:dict,
             "validation": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[val_idxs]),
         })
         
-        #fold_train = cluster_fold_train.loc[~cluster_fold_train.question_id.isin(train_dataset["question_id"]),:] 
-        #fold_train = Dataset.from_pandas(fold_train.sample(n=5291, random_state=RS).reset_index(drop=True))
-
-        fold_train = cluster_fold_train.loc[cluster_fold_train.id.isin(fold_dataset["train"]["id"]),:] 
+        fold_train = pd.DataFrame(fold_dataset["train"])
+        fold_train = fold_train.loc[fold_train.cluster==cluster_id,:] 
         fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
         fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
-        fold_train_df = pd.DataFrame(fold_train)
 
         fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
+        print(f"Cluster {cluster_id} training size {fold_train.shape}")
+
         fold_df = pd.DataFrame(fold_val)
-        print(f"TRAINING CLUSTER SET {cluster_id} FOR EPOCHS{CLUSTER_EPOCHS}")
+        print(f"TRAINING CLUSTER SET {cluster_id} FOR EPOCHS {CLUSTER_EPOCHS}")
 
         TRAIN_ARGS = copy.deepcopy(FULL_TRAIN_ARGS)
         FOLD_MODEL_PATH = "./tmp/"
@@ -560,7 +555,8 @@ def test_cluster_set(experiment_config:dict,
                     test_data: Dataset,
                     tokenizer: AutoTokenizer,
                     results_df: pd.DataFrame,
-                    cluster_id: int,) -> pd.DataFrame:
+                    cluster_id: int,
+                    train_df:pd.DataFrame=None) -> pd.DataFrame:
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     rouge = evaluate.load('rouge')
@@ -568,17 +564,14 @@ def test_cluster_set(experiment_config:dict,
     FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
     MODEL_NAME = experiment_config["MODEL_NAME"]
     CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
-    DATE_STR = experiment_config["DATE_STR"]
+    DATA_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
 
     #### LOAD CLUSTER_ID 
-    # [7942]
-    dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-    #fold_train = dataset.loc[(dataset.cluster==cluster_id) & (~ dataset.question_id.isin(test_df.question_id)),:] 
-    #fold_train = Dataset.from_pandas(fold_train.sample(n=7942, random_state=RS).reset_index(drop=True))
-    fold_train = dataset.loc[(dataset.cluster==cluster_id) & (dataset.id.isin(results_df.id)),:] 
+
+    fold_train = train_df.loc[(train_df.cluster==cluster_id) & (train_df.id.isin(results_df.id)),:] 
     fold_train = Dataset.from_pandas(fold_train.sample(frac=1, random_state=RS).reset_index(drop=True))
-    fold_train = pr.preprocess_dataset(fold_train, tokenizer=tokenizer, intent_colum_name="intent")
+    print(f"Cluster {cluster_id} training size {fold_train.shape}")
 
 
     #### Learning LOOP

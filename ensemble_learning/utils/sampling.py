@@ -1,75 +1,56 @@
 import pandas as pd
-from datasets import load_dataset, DatasetDict, Dataset
-import torch
-import evaluate
+from datasets import load_dataset, Dataset
 import utils.prep as pr
 from sklearn.model_selection import KFold
 from typing import Tuple
 import numpy as np
+import math
 
 from transformers import AutoTokenizer
 
 def create_splits(experiment_config : dict,
                   tokenizer: AutoTokenizer,
-                  test: bool=False) -> Tuple:
+                  test: bool=False,
+                  train_size: int=10000,
+                  test_size: int=2500,
+                  cluster_id: int=None) -> dict:
 
-    DATE_STR = experiment_config["DATA_STR"]
+    DATA_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
     DRIFT_TYPE = experiment_config["DRIFT_TYPE"]
 
     if DRIFT_TYPE=="no_drift":
-        dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv").head(10000)
-        qids = sorted(dataset.question_id.unique())
-        train_idx, test_idx = qids[:int(len(qids)*0.785)], qids[int(len(qids)*0.785):]
-        test_idx.append(train_idx[-1])
-        train_idx.pop(-1)
-        train_dataset = dataset[dataset.question_id.isin(train_idx)]
-        test_dataset = dataset[dataset.question_id.isin(test_idx)]
+        dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
+        dataset = dataset.head(train_size+test_size).sample(frac=1, random_state=RS).reset_index(drop=True)
+
+        train_dataset = dataset.iloc[:train_size, :]
+        test_dataset = dataset.iloc[train_size:, :]
         
 
     elif DRIFT_TYPE=="sudden":
-        dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-        dataset_4_cl = dataset[dataset.cluster==4].sample(n=2000, random_state=RS)
-        dataset_non_4_cl = dataset[dataset.cluster!=4].sample(n=8000, random_state=RS)
+        dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
+        dataset_4_cl = dataset[dataset.cluster==cluster_id].sample(n=test_size, random_state=RS)
+        dataset_non_4_cl = dataset[dataset.cluster!=cluster_id].sample(n=train_size, random_state=RS)
 
-        qids_4_cl = sorted(dataset_4_cl.question_id.unique())
-        train_idx_4_cl, test_idx_4_cl = qids_4_cl[int(len(qids_4_cl)*0.87):], qids_4_cl[:int(len(qids_4_cl)*0.87)]
+        train_dataset_4cl = dataset_4_cl.iloc[:math.ceil(test_size*0.15), :]
+        test_dataset_4cl = dataset_4_cl.iloc[math.ceil(test_size*0.15):,:]
 
-        qids_non4_cl = sorted(dataset_non_4_cl.question_id.unique())
-        train_idx_non4_cl, test_idx_non4_cl = qids_non4_cl[:int(len(qids_non4_cl)*0.96)], qids_non4_cl[int(len(qids_non4_cl)*0.96):]
-
-        for _ in range(8):    
-            test_idx_non4_cl.append(train_idx_non4_cl[-1])
-            train_idx_non4_cl.pop(-1)
-
-        train_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(train_idx_4_cl)]
-        test_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(test_idx_4_cl)]
-
-        train_dataset_non4cl = dataset_non_4_cl[dataset_non_4_cl.question_id.isin(train_idx_non4_cl)]
-        test_dataset_non4cl = dataset_non_4_cl[dataset_non_4_cl.question_id.isin(test_idx_non4_cl)]
+        train_dataset_non4cl = dataset_non_4_cl.iloc[:(train_size-train_dataset_4cl.shape[0]),:]
+        test_dataset_non4cl = dataset_non_4_cl.iloc[(train_size-train_dataset_4cl.shape[0]):,:]
 
         train_dataset = pd.concat([train_dataset_4cl, train_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
         test_dataset = pd.concat([test_dataset_4cl, test_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
 
     elif DRIFT_TYPE=="slight":
-        dataset = pd.read_csv(f"../data/processed/conala/{DATE_STR}/conala_mined_clustered.csv")
-        dataset_4_cl = dataset[dataset.cluster==4].sample(n=2000, random_state=RS)
-        dataset_non_4_cl = dataset[dataset.cluster!=4].sample(n=8000, random_state=RS)
+        dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
+        dataset_4_cl = dataset[dataset.cluster==cluster_id].sample(n=test_size, random_state=RS)
+        dataset_non_4_cl = dataset[dataset.cluster!=cluster_id].sample(n=train_size, random_state=RS)
 
-        qids_4_cl = sorted(dataset_4_cl.question_id.unique())
-        train_idx_4_cl, test_idx_4_cl = qids_4_cl[int(len(qids_4_cl)*0.9):], qids_4_cl[:int(len(qids_4_cl)*0.9)]
+        train_dataset_4cl = dataset_4_cl.iloc[:math.ceil(test_size*0.25), :]
+        test_dataset_4cl = dataset_4_cl.iloc[math.ceil(test_size*0.25):,:]
 
-        qids_non4_cl = sorted(dataset_non_4_cl.question_id.unique())
-        train_idx_non4_cl, test_idx_non4_cl = qids_non4_cl[:int(len(qids_non4_cl)*0.968)], qids_non4_cl[int(len(qids_non4_cl)*0.968):]
-
-        test_idx_non4_cl.append(train_idx_non4_cl[0])
-        train_idx_non4_cl.pop(0)
-        
-        train_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(train_idx_4_cl)]
-        test_dataset_4cl = dataset_4_cl[dataset_4_cl.question_id.isin(test_idx_4_cl)]
-
-        train_dataset_non4cl = dataset_non_4_cl[dataset_non_4_cl.question_id.isin(train_idx_non4_cl)]
-        test_dataset_non4cl = dataset_non_4_cl[dataset_non_4_cl.question_id.isin(test_idx_non4_cl)]
+        train_dataset_non4cl = dataset_non_4_cl.iloc[:(train_size-train_dataset_4cl.shape[0]),:]
+        test_dataset_non4cl = dataset_non_4_cl.iloc[(train_size-train_dataset_4cl.shape[0]):,:]
 
         train_dataset = pd.concat([train_dataset_4cl, train_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
         test_dataset = pd.concat([test_dataset_4cl, test_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
@@ -90,9 +71,13 @@ def create_splits(experiment_config : dict,
     test_df = pd.DataFrame(test_data)
     test_df["id"] = test_df.index
 
+    train_df = pd.DataFrame(train_dataset)
+    train_df["id"] = train_df.index
+
     return {"train_data": train_dataset,
             "test_data": test_data,
-            "test_df": test_df}
+            "test_df": test_df,
+            "train_df" : train_df}
 
 def prep_cv_validation(train_dataset: Dataset,
                        experiment_config : dict) -> Tuple:
