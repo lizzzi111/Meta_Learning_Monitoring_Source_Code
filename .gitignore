@@ -15,3 +15,10 @@ ensemble_learning/catboost_info/*
 ensemble_learning/reports
 ensemble_learning/pickle
 ensemble_learning/*pickle
+ensemble_learning/configs/catboost_info/
+
+interpretability/catboost_info/
+ensemble_learning/catboost_info/
+
+
+catboost_info
