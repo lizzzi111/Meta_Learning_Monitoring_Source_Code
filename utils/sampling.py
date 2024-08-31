@@ -20,39 +20,18 @@ def create_splits(experiment_config : dict,
 
     if DRIFT_TYPE=="no_drift":
         dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
-        dataset = dataset.head(train_size+test_size).sample(frac=1, random_state=RS).reset_index(drop=True)
+        dataset = dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
 
         train_dataset = dataset.iloc[:train_size, :]
         test_dataset = dataset.iloc[train_size:, :]
         
 
-    elif DRIFT_TYPE=="sudden":
+    elif DRIFT_TYPE=="drift":
         dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
-        dataset_4_cl = dataset[dataset.cluster==cluster_id].sample(n=test_size, random_state=RS)
-        dataset_non_4_cl = dataset[dataset.cluster!=cluster_id].sample(n=train_size, random_state=RS)
+        dataset = dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
 
-        train_dataset_4cl = dataset_4_cl.iloc[:math.ceil(test_size*0.15), :]
-        test_dataset_4cl = dataset_4_cl.iloc[math.ceil(test_size*0.15):,:]
-
-        train_dataset_non4cl = dataset_non_4_cl.iloc[:(train_size-train_dataset_4cl.shape[0]),:]
-        test_dataset_non4cl = dataset_non_4_cl.iloc[(train_size-train_dataset_4cl.shape[0]):,:]
-
-        train_dataset = pd.concat([train_dataset_4cl, train_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
-        test_dataset = pd.concat([test_dataset_4cl, test_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
-
-    elif DRIFT_TYPE=="slight":
-        dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
-        dataset_4_cl = dataset[dataset.cluster==cluster_id].sample(n=test_size, random_state=RS)
-        dataset_non_4_cl = dataset[dataset.cluster!=cluster_id].sample(n=train_size, random_state=RS)
-
-        train_dataset_4cl = dataset_4_cl.iloc[:math.ceil(test_size*0.25), :]
-        test_dataset_4cl = dataset_4_cl.iloc[math.ceil(test_size*0.25):,:]
-
-        train_dataset_non4cl = dataset_non_4_cl.iloc[:(train_size-train_dataset_4cl.shape[0]),:]
-        test_dataset_non4cl = dataset_non_4_cl.iloc[(train_size-train_dataset_4cl.shape[0]):,:]
-
-        train_dataset = pd.concat([train_dataset_4cl, train_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
-        test_dataset = pd.concat([test_dataset_4cl, test_dataset_non4cl], axis=0).sample(frac=1, random_state=RS).reset_index(drop=True)
+        train_dataset = dataset.iloc[:train_size, :]
+        test_dataset = dataset.loc[(dataset.cluster.isin([4, 1, 0]) and (-dataset.question_id.isin(train_dataset))), :].sample(frac=1, random_state=RS)[:test_size, :]
 
     print("Train Data: ", train_dataset.shape)
     print("Test Data: ", test_dataset.shape)
