@@ -31,7 +31,16 @@ def create_splits(experiment_config : dict,
         dataset = dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
 
         train_dataset = dataset.iloc[:train_size, :]
-        test_dataset = dataset.loc[(dataset.cluster.isin([4, 1, 0]) and (-dataset.question_id.isin(train_dataset))), :].sample(frac=1, random_state=RS)[:test_size, :]
+        temp_df = dataset.loc[(dataset.cluster.isin([4, 1, 0]) & (-dataset.id.isin(train_dataset))), :].sample(frac=1, random_state=RS)
+
+        if test_size <= temp_df.shape[0]: 
+            test_dataset = temp_df[:test_size, :].reset_index(drop=True)
+        else: 
+            missing_n = test_size - temp_df.shape[0]
+            test_dataset = temp_df.copy()
+            major_df = dataset.loc[(-dataset.id.isin(test_dataset) & (-dataset.id.isin(train_dataset))), :].sample(n=missing_n, random_state=RS)
+            test_dataset = pd.concat([test_dataset, major_df]).sample(frac=1, random_state=RS).reset_index(drop=True)
+            
 
     print("Train Data: ", train_dataset.shape)
     print("Test Data: ", test_dataset.shape)
