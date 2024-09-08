@@ -27,14 +27,14 @@ def create_splits(experiment_config : dict,
         
 
     elif DRIFT_TYPE=="drift":
-        dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
-        dataset = dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
+        full_dataset = pd.read_csv(f"../data/processed/conala/{DATA_STR}/conala_mined_clustered.csv").drop_duplicates("question_id").reset_index(drop=True)
+        dataset = full_dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
 
         train_dataset = dataset.iloc[:train_size, :]
-        temp_df = dataset.loc[(dataset.cluster.isin([4, 1, 0]) & (-dataset.id.isin(train_dataset))), :].sample(frac=1, random_state=RS)
+        temp_df = full_dataset.loc[(full_dataset.cluster.isin([4, 1, 0]) & (-full_dataset.id.isin(train_dataset))), :].sample(frac=1, random_state=RS)
 
         if test_size <= temp_df.shape[0]: 
-            test_dataset = temp_df[:test_size, :].reset_index(drop=True)
+            test_dataset = temp_df.iloc[:test_size, :].reset_index(drop=True)
         else: 
             missing_n = test_size - temp_df.shape[0]
             test_dataset = temp_df.copy()

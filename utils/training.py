@@ -360,9 +360,7 @@ def step_two(experiment_config,
         return {"pred": y_pred, "mae": mae, "rmse": rmse, "time_training" : time_training, "time_inference" : time_inference}
     
 
-def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
-
-    t_models = ["lr", "svm", "lgbm", "catboost"]
+def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "svm", "lgbm", "catboost"]) -> Tuple:
 
     results = {}
 
@@ -397,7 +395,7 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
     cv_df = cv_df.reset_index(drop=True)
 
     # ENSEMBLE ESTIMATE (JUST HIGHEST PREDICTIONS)
-    models_index = cv_df.groupby("id")["catboost_perf_hat"].idxmax()
+    models_index = cv_df.groupby("id")[f"lgbm_perf_hat"].idxmax()
     optimal_ensemble = cv_df.iloc[models_index][["id", "model_set"]]
     optimal_ensemble_map = dict(zip(optimal_ensemble.id, optimal_ensemble.model_set))
     cv_df["opt_es_id"] = cv_df.id.map(optimal_ensemble_map)
@@ -439,12 +437,11 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame) -> Tuple:
     return cv_df, model_results
 
 def full_step_2(cv_df:pd.DataFrame,
-                experiment_config:dict) -> None:
+                experiment_config:dict,
+               t_models:list=["lr", "svm", "lgbm", "catboost"]) -> None:
     
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
     # TRAIN ON ALL PREDICTIONS AT ONCE
-
-    t_models = ["lr", "svm", "lgbm", "catboost"]
 
     # Prepare the input data
     vectorizer = TfidfVectorizer()
@@ -500,6 +497,8 @@ def test_training_epochs_sets(experiment_config:dict,
 
         if epoch_set > 1: 
             MODEL_NAME = f"./models/{latest_run_epoch}_epoch_set"
+
+        print(MODEL_NAME)
         
         model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
 

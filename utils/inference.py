@@ -42,7 +42,7 @@ def pred_perf(experiment_config,
 def meta_predict(experiment_config:dict, 
                  test_df: pd.DataFrame,
                  base_models_names: list,
-                 t_models:list = ["svm", "catboost"]) -> pd.DataFrame:
+                 t_models:list=["lr", "svm", "lgbm", "catboost"]) -> pd.DataFrame:
 
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
     
