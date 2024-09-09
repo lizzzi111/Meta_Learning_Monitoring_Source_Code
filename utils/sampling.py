@@ -31,7 +31,7 @@ def create_splits(experiment_config : dict,
         dataset = full_dataset.sample(frac=1, random_state=RS).head(train_size+test_size).reset_index(drop=True)
 
         train_dataset = dataset.iloc[:train_size, :]
-        temp_df = full_dataset.loc[(full_dataset.cluster.isin([4, 1, 0]) & (-full_dataset.id.isin(train_dataset))), :].sample(frac=1, random_state=RS)
+        temp_df = full_dataset.loc[(full_dataset.cluster.isin([0]) & (-full_dataset.id.isin(train_dataset))), :].sample(frac=1, random_state=RS)
 
         if test_size <= temp_df.shape[0]: 
             test_dataset = temp_df.iloc[:test_size, :].reset_index(drop=True)

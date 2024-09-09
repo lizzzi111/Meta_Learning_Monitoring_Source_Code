@@ -86,23 +86,27 @@ def cv_training_epochs_sets(experiment_config:dict,
     for i, (train_idxs, val_idxs) in enumerate(splits):
 
         print(f"Fold {i}")
+        print(os.getcwd())
         fold_dataset = DatasetDict({
             "train": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[train_idxs]),
             "validation": train_dataset.filter(lambda q_id: q_id["question_id"] in questions_list[val_idxs]),
         })
         fold_train = fold_dataset["train"]
         fold_val = fold_dataset["validation"]
+        print("Fold train: ", fold_train.shape)
+        print("Fold val: ", fold_val.shape)
         #fold_train = pr.preprocess_dataset(fold_dataset["train"], tokenizer=tokenizer, intent_colum_name="intent")
         #fold_val = pr.preprocess_dataset(fold_dataset["validation"], tokenizer=tokenizer, intent_colum_name="intent")
         
-
+        latest_run_epoch = 0
         for epoch_i, epoch_set in enumerate(sorted(FULL_TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"])):
 
             fold_df = pd.DataFrame(fold_val)
             print(f"TRAINING EPOCH SET {epoch_set}")
 
             TRAIN_ARGS = copy.deepcopy(FULL_TRAIN_ARGS)
-            FOLD_MODEL_PATH = "./tmp/"
+            
+            FOLD_MODEL_PATH = "./models/tmp/"
 
             if epoch_set > 1: 
                 TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = epoch_set - latest_run_epoch
@@ -124,8 +128,8 @@ def cv_training_epochs_sets(experiment_config:dict,
             data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
             compute_metrics = ev.compute_metric_with_params(tokenizer) 
 
-            if not os.path.exists(f'reports/'): 
-                os.mkdir(f'reports/')
+            if not os.path.exists('reports/'): 
+                os.mkdir('reports/')
 
             training_args = Seq2SeqTrainingArguments(
                     **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
@@ -145,13 +149,14 @@ def cv_training_epochs_sets(experiment_config:dict,
                 trainer.train()
 
             text = fold_val["input_sequence"]
+            print("Generating Summaries")
             fold_df["prediction"] = generate_summaries_batches(text=text,
                                                                 model=model, 
                                                                 tokenizer=tokenizer,
                                                                 TRAIN_ARGS=TRAIN_ARGS)
             
 
-
+            print("Computing Performance")
             fold_df["rouge"] = rouge.compute(predictions=fold_df["prediction"], 
                                 references=fold_df["output_sequence"],
                                 use_stemmer=True, 
@@ -161,10 +166,12 @@ def cv_training_epochs_sets(experiment_config:dict,
             fold_results[epoch_set][i] = fold_df
             
             ########## SAVE FOLD MODEL
+            print("Saving the model")
             if not os.path.exists(FOLD_MODEL_PATH): 
                 os.mkdir(FOLD_MODEL_PATH)
-
-            trainer.save_model(FOLD_MODEL_PATH)
+            
+            if epoch_set!=0:
+                trainer.save_model(FOLD_MODEL_PATH)
             latest_run_epoch = epoch_set
 
     return fold_results
@@ -184,9 +191,7 @@ def cv_cluster_set(experiment_config:dict,
     FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
     MODEL_NAME = experiment_config["MODEL_NAME"]
     CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
-    DATA_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
-    ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
 
     #### LOAD CLUSTER_ID 
     if isinstance(cluster_id, str):
@@ -220,7 +225,7 @@ def cv_cluster_set(experiment_config:dict,
         print(f"TRAINING CLUSTER SET {cluster_id} FOR EPOCHS {CLUSTER_EPOCHS}")
 
         TRAIN_ARGS = copy.deepcopy(FULL_TRAIN_ARGS)
-        FOLD_MODEL_PATH = "./tmp/"
+        FOLD_MODEL_PATH = "./models/tmp/"
 
         TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"] = CLUSTER_EPOCHS
 
@@ -236,8 +241,8 @@ def cv_cluster_set(experiment_config:dict,
         data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
         compute_metrics = ev.compute_metric_with_params(tokenizer) 
 
-        if not os.path.exists(f'reports/'): 
-            os.mkdir(f'reports/')
+        if not os.path.exists('reports/'): 
+            os.mkdir('reports/')
 
         training_args = Seq2SeqTrainingArguments(
                 **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
@@ -272,10 +277,10 @@ def cv_cluster_set(experiment_config:dict,
 
 
         fold_df["rouge"] = rouge.compute(predictions=fold_df["prediction"], 
-                            references=fold_df["output_sequence"],
-                            use_stemmer=True, 
-                            use_aggregator=False,
-                            rouge_types=["rouge1"])["rouge1"]
+                                        references=fold_df["output_sequence"],
+                                        use_stemmer=True, 
+                                        use_aggregator=False,
+                                        rouge_types=["rouge1"])["rouge1"]
             
         fold_results[f"cluster_{cluster_id}"][i] = fold_df
         
@@ -395,7 +400,7 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "
     cv_df = cv_df.reset_index(drop=True)
 
     # ENSEMBLE ESTIMATE (JUST HIGHEST PREDICTIONS)
-    models_index = cv_df.groupby("id")[f"lgbm_perf_hat"].idxmax()
+    models_index = cv_df.groupby("id")["lgbm_perf_hat"].idxmax()
     optimal_ensemble = cv_df.iloc[models_index][["id", "model_set"]]
     optimal_ensemble_map = dict(zip(optimal_ensemble.id, optimal_ensemble.model_set))
     cv_df["opt_es_id"] = cv_df.id.map(optimal_ensemble_map)
@@ -455,7 +460,7 @@ def full_step_2(cv_df:pd.DataFrame,
         
     for model in t_models:
         print(model)
-        preds_df = step_two(experiment_config=experiment_config,
+        step_two(experiment_config=experiment_config,
                             X_train=X_train,
                             y_train=y_train,
                             model=model,
@@ -478,6 +483,7 @@ def test_training_epochs_sets(experiment_config:dict,
 
     #### PREPARE THE RESULTS DICTIONARY
     results = {}
+    latest_run_epoch = 0 
     for epoch_i, epoch_set in enumerate(sorted(FULL_TRAIN_ARGS["SEQ_TRAINER_ARGS"]["num_train_epochs"])):
         
         set_df = test_df.copy()
@@ -508,8 +514,8 @@ def test_training_epochs_sets(experiment_config:dict,
         data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
         compute_metrics = ev.compute_metric_with_params(tokenizer) 
 
-        if not os.path.exists(f'reports/'): 
-            os.mkdir(f'reports/')
+        if not os.path.exists('reports/'): 
+            os.mkdir('reports/')
 
         training_args = Seq2SeqTrainingArguments(
                 **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
@@ -548,8 +554,9 @@ def test_training_epochs_sets(experiment_config:dict,
         ########## SAVE EPOCH SET MODEL
         if not os.path.exists(MODEL_PATH): 
             os.mkdir(MODEL_PATH)
-
-        trainer.save_model(MODEL_PATH)
+        
+        if epoch_set!=0:
+            trainer.save_model(MODEL_PATH)
 
         latest_run_epoch = epoch_set
 
@@ -570,7 +577,6 @@ def test_cluster_set(experiment_config:dict,
     FULL_TRAIN_ARGS = experiment_config["FULL_TRAIN_ARGS"]
     MODEL_NAME = experiment_config["MODEL_NAME"]
     CLUSTER_EPOCHS = experiment_config["CLUSTER_EPOCHS"]
-    DATA_STR = experiment_config["DATA_STR"]
     RS = experiment_config["RS"]
 
     if isinstance(cluster_id, str):
@@ -601,8 +607,8 @@ def test_cluster_set(experiment_config:dict,
     data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
     compute_metrics = ev.compute_metric_with_params(tokenizer) 
 
-    if not os.path.exists(f'reports/'): 
-        os.mkdir(f'reports/')
+    if not os.path.exists('reports/'): 
+        os.mkdir('reports/')
 
     training_args = Seq2SeqTrainingArguments(
             **TRAIN_ARGS["SEQ_TRAINER_ARGS"],
