@@ -365,7 +365,10 @@ def step_two(experiment_config,
         return {"pred": y_pred, "mae": mae, "rmse": rmse, "time_training" : time_training, "time_inference" : time_inference}
     
 
-def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "svm", "lgbm", "catboost"]) -> Tuple:
+def cv_step_2(experiment_config:dict,
+            cv_df:pd.DataFrame,
+            t_models:list=["lr", "svm", "lgbm", "catboost"],
+            add_cluster:bool=False) -> Tuple:
 
     results = {}
 
@@ -377,12 +380,21 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "
         vectorizer = TfidfVectorizer()
         X_train_tfidf = vectorizer.fit_transform(cv_df.loc[cv_df.fold!=test_fold, "input_sequence"])
         X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold!=test_fold, "model_set"], sparse=True).sparse.to_coo().tocsr()
-        X_train = hstack([X_train_column_sparse, X_train_tfidf])
+        if add_cluster:
+            X_train = hstack([cv_df.loc[cv_df.fold!=test_fold, ["cluster"]], X_train_column_sparse])
+            X_train = hstack([X_train, X_train_tfidf])
+        else: 
+            X_train = hstack([X_train_column_sparse, X_train_tfidf])
         y_train = cv_df.loc[cv_df.fold!=test_fold, "rouge"]
         
         X_val_tfidf = vectorizer.transform(cv_df.loc[cv_df.fold==test_fold, "input_sequence"])
         X_val_column_sparse = pd.get_dummies(cv_df.loc[cv_df.fold==test_fold, "model_set"], sparse=True).sparse.to_coo().tocsr()
-        X_val = hstack([X_val_column_sparse, X_val_tfidf])
+
+        if add_cluster:
+            X_val = hstack([cv_df.loc[cv_df.fold==test_fold, ["cluster"]], X_val_column_sparse])
+            X_val = hstack([X_val, X_val_tfidf])
+        else: 
+            X_val = hstack([X_val_column_sparse, X_val_tfidf])
         y_val = cv_df.loc[cv_df.fold==test_fold, "rouge"]
 
         results[test_fold] = {}
@@ -400,7 +412,7 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "
     cv_df = cv_df.reset_index(drop=True)
 
     # ENSEMBLE ESTIMATE (JUST HIGHEST PREDICTIONS)
-    models_index = cv_df.groupby("id")["lgbm_perf_hat"].idxmax()
+    models_index = cv_df.groupby("id")["catboost_perf_hat"].idxmax()
     optimal_ensemble = cv_df.iloc[models_index][["id", "model_set"]]
     optimal_ensemble_map = dict(zip(optimal_ensemble.id, optimal_ensemble.model_set))
     cv_df["opt_es_id"] = cv_df.id.map(optimal_ensemble_map)
@@ -443,7 +455,8 @@ def cv_step_2(experiment_config:dict, cv_df:pd.DataFrame, t_models:list=["lr", "
 
 def full_step_2(cv_df:pd.DataFrame,
                 experiment_config:dict,
-               t_models:list=["lr", "svm", "lgbm", "catboost"]) -> None:
+                t_models:list=["lr", "svm", "lgbm", "catboost"],
+                add_cluster:bool=False) -> None:
     
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
     # TRAIN ON ALL PREDICTIONS AT ONCE
@@ -452,7 +465,11 @@ def full_step_2(cv_df:pd.DataFrame,
     vectorizer = TfidfVectorizer()
     X_train_tfidf = vectorizer.fit_transform(cv_df.loc[cv_df.model_set!="ensemble", "input_sequence"])
     X_train_column_sparse = pd.get_dummies(cv_df.loc[cv_df.model_set!="ensemble", "model_set"], sparse=True).sparse.to_coo().tocsr()
-    X_train = hstack([X_train_column_sparse, X_train_tfidf])
+    if add_cluster:
+        X_train = hstack([cv_df.loc[cv_df.model_set!="ensemble", ["cluster"]], X_train_column_sparse])
+        X_train = hstack([X_train, X_train_tfidf])
+    else: 
+        X_train = hstack([X_train_column_sparse, X_train_tfidf])
     y_train = cv_df.loc[cv_df.model_set!="ensemble", "rouge"]
         
     with open(f"./models/vectorizer_{ANALYSIS_POSTFIX}.pkl", "wb") as file:
@@ -465,8 +482,6 @@ def full_step_2(cv_df:pd.DataFrame,
                             y_train=y_train,
                             model=model,
                             save=True)
-        
-
 
 def test_training_epochs_sets(experiment_config:dict,
                             test_df: pd.DataFrame,
