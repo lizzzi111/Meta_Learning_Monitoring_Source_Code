@@ -42,7 +42,8 @@ def pred_perf(experiment_config,
 def meta_predict(experiment_config:dict, 
                  test_df: pd.DataFrame,
                  base_models_names: list,
-                 t_models:list = ["svm", "catboost"]) -> pd.DataFrame:
+                 t_models:list=["lr", "svm", "lgbm", "catboost"],
+                 add_cluster:bool=False) -> pd.DataFrame:
 
     ANALYSIS_POSTFIX = experiment_config["ANALYSIS_POSTFIX"]
     
@@ -61,7 +62,11 @@ def meta_predict(experiment_config:dict,
             
     X_test_tfidf = vectorizer.transform(meta_preds_df.loc[:, "input_sequence"])
     X_test_column_sparse = pd.get_dummies(meta_preds_df.loc[:, "model_set"], sparse=True).sparse.to_coo().tocsr()
-    X_test = hstack([X_test_column_sparse, X_test_tfidf])
+    if add_cluster:
+        X_test = hstack([meta_preds_df.loc[:, ["cluster"]], X_test_column_sparse])
+        X_test = hstack([X_test, X_test_tfidf])
+    else: 
+        X_test = hstack([X_test_column_sparse, X_test_tfidf])
 
     for model in t_models:
         print(model)
