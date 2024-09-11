@@ -17,11 +17,12 @@ def vectorize_input_df(df: pd.DataFrame,
                        fit: bool=True) -> dict:
     
     X = "model_" + df.loc[:, "model_set"].astype(str) + " " + df.loc[:, "input_sequence"]
-    
     if fit:
         X = vectorizer.fit_transform(X)
     else: 
         X = vectorizer.transform(X)
+
+    print(X.shape)
 
     y = (df.loc[:, "catboost_perf_hat"]>=acc_rouge).astype(int)
     return {"X": X,
