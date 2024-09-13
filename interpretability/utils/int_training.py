@@ -17,6 +17,7 @@ def vectorize_input_df(df: pd.DataFrame,
                        fit: bool=True) -> dict:
     
     X = "model_" + df.loc[:, "model_set"].astype(str) + " " + df.loc[:, "input_sequence"]
+    print(X)
     if fit:
         X = vectorizer.fit_transform(X)
     else: 
