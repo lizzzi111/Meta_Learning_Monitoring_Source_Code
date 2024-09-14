@@ -16,8 +16,7 @@ def vectorize_input_df(df: pd.DataFrame,
                        acc_rouge: float=0.25,
                        fit: bool=True) -> dict:
     
-    X = "model_" + df.loc[:, "model_set"].astype(str) + " " + df.loc[:, "input_sequence"]
-    print(X)
+    X = df.loc[:, "input_sequence"]
     if fit:
         X = vectorizer.fit_transform(X)
     else: 
@@ -42,7 +41,6 @@ def classifier_inference(classifier: CatBoostClassifier,
                          vectorizer: TfidfVectorizer): 
     vectorized = vectorize_input_df(df=X, vectorizer=vectorizer, fit=False)
     X = vectorized["X"]
-    y = vectorized["y"]
 
     probs = classifier.predict(X)
     pp = 1 - probs
