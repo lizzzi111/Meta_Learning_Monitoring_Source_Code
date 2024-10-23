@@ -1,0 +1,22 @@
+Name of Quantlet: 'load_data_from_git'
+
+Published in: 'Towards Code Summarization for Domain Experts on Scarce Data'
+
+Description: 'This script loads the CoNaLa data from huggingface, creates pandas data frame, performs pre-processing.
+Moreover, it performs clustering of data points, for further Data Drift simulation'
+
+Keywords:
+- HuggingFace
+- clustering
+- CodeT5
+- CoNala
+- Machine Learning on Code
+- preprocessing
+
+Author: 'Elizaveta Zinovyeva'
+
+Submitted:  'January 2024, Elizaveta Zinovyeva'
+
+Input: None
+
+Output:  './data folder'
