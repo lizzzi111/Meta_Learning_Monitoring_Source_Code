@@ -1,5 +1,0 @@
-question_id,intent,rewritten_intent,snippet,idx,time_batch
-42548362,Python. Convert escaped utf string to utf-string,Convert escaped utf string to utf string in `your string`,print('your string'.decode('string_escape')),2875,65
-42731970,Regex add character to matched string,replace periods `.` that are not followed by periods or spaces with a period and a space `. `,"re.sub('\\.(?=[^ .])', '. ', para)",2876,65
-42747987,In pandas Dataframe with multiindex how can I filter by order?,select the first row grouped per level 0 of dataframe `df`,"df.groupby(level=0, as_index=False).nth(0)",2877,65
-42765620,How to sort a dictionary in python by value when the value is a list and I want to sort it by the first index of that list,How to sort a dictionary in python by value when the value is a list and I want to sort it by the first index of that list,"sorted(list(data.items()), key=lambda x: x[1][0])",2878,65

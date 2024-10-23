@@ -1,6 +1,6 @@
 Name of Quantlet: 'Conala_mined_preprocessing'
 
-Published in: 'Towards Code Summarization for Domain Experts on Scarce Data'
+Published in: 'Meta-Learning for Monitoring in Code Summarization Systems'
 
 Description: 'This script loads the CoNaLa data from huggingface, creates pandas data frame, performs pre-processing.
 Moreover, it performs clustering of data points, for further Data Drift simulation'
