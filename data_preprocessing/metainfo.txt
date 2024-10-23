@@ -1,4 +1,4 @@
-Name of Quantlet: 'load_data_from_git'
+Name of Quantlet: 'Conala_mined_preprocessing'
 
 Published in: 'Towards Code Summarization for Domain Experts on Scarce Data'
 
