@@ -1,6 +1,0 @@
-question_id,intent,rewritten_intent,snippet,idx,time_batch,cluster,gradual_batch,gradual_new,recurring_batch,rec_new,sudden_batch,sudden_new
-3294889,Iterating over dictionaries using for loops,Iterating key and items over dictionary `d`,"for (k, v) in list(d.items()):
-    pass",737,10,1,2,0,30,0,65,0
-6696027,split elements of a list in python,Split each string in list `myList` on the tab character,myList = [i.split('\t')[0] for i in myList],1171,21,8,0,0,8,0,65,0
-19334374,Python - converting a string of numbers into a list of int,Convert a string of numbers 'example_string' separated by comma into a list of numbers,"[int(s) for s in example_string.split(',')]",2191,47,5,6,0,50,0,65,0
-31522361,Python: Getting rid of \u200b from a string using regular expressions,replacing  '\u200b' with '*' in a string  using regular expressions,"'used\u200b'.replace('\u200b', '*')",2585,57,8,0,0,29,0,65,0
