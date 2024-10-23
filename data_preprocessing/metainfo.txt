@@ -20,3 +20,9 @@ Submitted:  'January 2024, Elizaveta Zinovyeva'
 Input: None
 
 Output:  './data folder'
+
+Setup: '    `cd ensemble
+            conda create -n preprocessing python=3.10
+            conda activate preprocessing
+            pip install -r requirements.txt
+            python -m ipykernel install --user --name=preprocessing`'
